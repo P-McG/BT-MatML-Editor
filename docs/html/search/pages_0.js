@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bt_2dmatml_2dediter_0',['BT-MatML-Editer',['../index.html',1,'']]]
+  ['bt_2dmatml_2deditor_0',['BT-MatML-Editor',['../index.html',1,'']]]
 ];

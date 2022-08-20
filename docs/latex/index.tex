@@ -1,23 +1,23 @@
-\label{index_md_C__Users_paulm_source_repos_BT_MatML_Editer_README}%
-\Hypertarget{index_md_C__Users_paulm_source_repos_BT_MatML_Editer_README}%
+\label{index_md_C__Users_paulm_source_repos_BT_MatML_Editor_README}%
+\Hypertarget{index_md_C__Users_paulm_source_repos_BT_MatML_Editor_README}%
  {\bfseries{Author}} Paul Mc\+Grath {\bfseries{Date}} June, 2022
 
-The Mat\+ML Editer is a text editer for the \href{https://www.matml.org/}{\texttt{ Mat\+ML 3.\+1 XML Schema}}.
+The Mat\+ML Editor is a text Editor for the \href{https://www.matml.org/}{\texttt{ Mat\+ML 3.\+1 XML Schema}}.
 
 Mat\+ML is an extensible markup language (XML) developed especially for the interchange of material information. It provides a medium of communication for users in materials science and related fields such as manufacturing and aerospace. It sets the stage for the development of semantic web standards to enhance knowledge discovery in materials science and related areas.\hypertarget{index_autotoc_md0}{}\doxysection{Binary Downloads}\label{index_autotoc_md0}
-Goto \href{https://github.com/P-McG/BT-MatML-Editer/releases}{\texttt{ Releases}} and under {\itshape Assets} download the win64 for Microsoft Windows releases and Linux for Linux releases.\hypertarget{index_autotoc_md1}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editer Usage}\label{index_autotoc_md1}
-To run the program, click on the BT-\/\+Mat\+ML-\/\+Editer application.
+Goto \href{https://github.com/P-McG/BT-MatML-Editor/releases}{\texttt{ Releases}} and under {\itshape Assets} download the win64 for Microsoft Windows releases and Linux for Linux releases.\hypertarget{index_autotoc_md1}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editor Usage}\label{index_autotoc_md1}
+To run the program, click on the BT-\/\+Mat\+ML-\/\+Editor application.
 
 Once running click on \textquotesingle{}File-\/\texorpdfstring{$>$}{>}Open\textquotesingle{}, or \textquotesingle{}File-\/\texorpdfstring{$>$}{>}New\textquotesingle{}, to start.
 
 The general approach to the program is to use the Tree Control user interface to navigate through the Mat\+ML data elements. The tree on the left side is the main navigation aid. Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The Mat\+ML Schema Information will show up on the right panel. The tabs for the right panel will display either the Mat\+ML Schema Information (default) or the Mat\+ML data itself (can be changed in \textquotesingle{}Edit-\/\texorpdfstring{$>$}{>}Preferences\textquotesingle{}).
 
-While the BT-\/\+Mat\+ML-\/\+Editer is not a database, and not optimized for extremely large files, it can handle multimaterial files. These larger files are more manageable using the following tools.
+While the BT-\/\+Mat\+ML-\/\+Editor is not a database, and not optimized for extremely large files, it can handle multimaterial files. These larger files are more manageable using the following tools.
 
 Sorting the view of the materials. In \textquotesingle{}Edit-\/\texorpdfstring{$>$}{>}Preferences-\/\texorpdfstring{$>$}{>}Sort class\textquotesingle{}, it is possible to add sort classes. This option will changed the view (not the xml file) of the materials. Adding \char`\"{}\+STEEL\char`\"{} for an example, will display the Materials with the class name of \char`\"{}\+STEEL\char`\"{} first. Then the remainding materials will be displayed in the order the are in inside the XML file. Once set, \textquotesingle{}view-\/\texorpdfstring{$>$}{>}perform material sort\textquotesingle{} will change the view order of the materials.
 
-One other option for viewing larger files is the use of \textquotesingle{}view-\/\texorpdfstring{$>$}{>}Isolate \mbox{\hyperlink{class_material}{Material}} Branch\textquotesingle{}. This will isolate materials which are interconnected with \textquotesingle{} \mbox{\hyperlink{class_material}{Material}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_component_details}{Component\+Details}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_class}{Class}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_parent_material}{Parent\+Material}} \textquotesingle{} associations. To exit this view, \textquotesingle{}View-\/\texorpdfstring{$>$}{>}Exit Isolate material branch\textquotesingle{} will bring back the original list of materials.\hypertarget{index_autotoc_md2}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editer Builds}\label{index_autotoc_md2}
-Development source code is hosted on \href{https://github.com/P-McG/BT-MatML-Editer}{\texttt{ Git\+Hub}} and source code for stable release versions are found at \href{https://github.com/P-McG/BT-MatML-Editer/releases}{\texttt{ releases}} along with the binaries.
+One other option for viewing larger files is the use of \textquotesingle{}view-\/\texorpdfstring{$>$}{>}Isolate material branch\textquotesingle{}. This will isolate materials which are interconnected with \textquotesingle{} \mbox{\hyperlink{class_material}{Material}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_component_details}{Component\+Details}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_class}{Class}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_parent_material}{Parent\+Material}} \textquotesingle{} associations. To exit this view, \textquotesingle{}View-\/\texorpdfstring{$>$}{>}Exit Isolate material branch\textquotesingle{} will bring back the original list of materials.\hypertarget{index_autotoc_md2}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editor Builds}\label{index_autotoc_md2}
+Development source code is hosted on \href{https://github.com/P-McG/BT-MatML-Editor}{\texttt{ Git\+Hub}} and source code for stable release versions are found at \href{https://github.com/P-McG/BT-MatML-Editor/releases}{\texttt{ releases}} along with the binaries.
 
 The following prerequisites dependencies are\+:
 \begin{DoxyItemize}
@@ -27,17 +27,17 @@ The following prerequisites dependencies are\+:
 \item \href{https://www.boost.org/}{\texttt{ Boost}} 1.\+79.\+0
 \end{DoxyItemize}
 
-For Building \href{https://cmake.org}{\texttt{ CMake}} 3.\+24\hypertarget{index_autotoc_md3}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editer Windows Build}\label{index_autotoc_md3}
+For Building \href{https://cmake.org}{\texttt{ CMake}} 3.\+24\hypertarget{index_autotoc_md3}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editor Windows Build}\label{index_autotoc_md3}
 To Build\+:
 
 cmake-\/gui
 
 Within cmake-\/gui\+:
 \begin{DoxyItemize}
-\item Set the \char`\"{}\+Where is the source code\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editer root.
+\item Set the \char`\"{}\+Where is the source code\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editor root.
 \end{DoxyItemize}
 
-Set the \char`\"{}\+Where to build the binaries\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editer root/build
+Set the \char`\"{}\+Where to build the binaries\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editor root/build
 \begin{DoxyItemize}
 \item Add the following entries (change paths depending on your installation)\+:
 \begin{DoxyItemize}
@@ -60,18 +60,29 @@ Within the generator (e.\+g. Visual Studio)\+:
 
 In a shell with Administrator privileges (so you can install into \char`\"{}\+C\+:/\+Program Files\char`\"{})\+:
 \begin{DoxyItemize}
-\item cd into the \$\{BT-\/\+Mat\+ML-\/\+Editer\}/build directory.
+\item cd into the \$\{BT-\/\+Mat\+ML-\/\+Editor\}/build/win64 directory.
 \item cmake --install . --config release
 \end{DoxyItemize}
 
 To run\+:
 \begin{DoxyItemize}
-\item dir \char`\"{}\+C\+:/\+Program Files/\+BT-\/\+Mat\+ML-\/\+Editer\char`\"{}
-\item ./\+BT-\/\+Mat\+ML-\/\+Editer
-\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editer Linux Build}\label{index_autotoc_md4}
+\item dir \char`\"{}\+C\+:/\+Program Files/\+BT-\/\+Mat\+ML-\/\+Editor\char`\"{}
+\item ./\+BT-\/\+Mat\+ML-\/\+Editor
+\end{DoxyItemize}
+
+Package generation\+:
+\begin{DoxyItemize}
+\item dir \$\{source\}/build/win64
+\item cpack
+\end{DoxyItemize}
+
+Package Checksum Values in Windows 10
+\begin{DoxyItemize}
+\item certutil -\/hashfile BT-\/\+Mat\+ML-\/\+Editor-\/0.\+1.\+1-\/win64.\+exe SHA1
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editor Linux Build}\label{index_autotoc_md4}
 To build\+:
 \begin{DoxyItemize}
-\item cd /path/to/\+BT-\/\+Mat\+ML-\/\+Editer/build/linux
+\item cd /path/to/\+BT-\/\+Mat\+ML-\/\+Editor/build/linux
 \item cmake -\/S ../.. -\/B .
 \item make
 \item sudo cmake --install . --config release
@@ -79,9 +90,9 @@ To build\+:
 
 To run\+:
 \begin{DoxyItemize}
-\item BT-\/\+Mat\+ML-\/\+Editer
+\item BT-\/\+Mat\+ML-\/\+Editor
 \end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{Programming Guide}\label{index_autotoc_md5}
-\href{https://p-mcg.github.io/BT-MatML-Editer}{\texttt{ for doxygen doc see here for active hyperlinks}}
+\href{https://p-mcg.github.io/BT-MatML-Editor}{\texttt{ for doxygen doc see here for active hyperlinks}}
 
 The program is structure to perform the following tasks\+:
 \begin{DoxyEnumerate}
