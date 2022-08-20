@@ -1,0 +1,115 @@
+\hypertarget{class_data_format}{}\doxysection{Data\+Format Class Reference}
+\label{class_data_format}\index{DataFormat@{DataFormat}}
+Inheritance diagram for Data\+Format\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_data_format}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_format_a0afad9f6c28c7d7f2a5cf312aee82281}\label{class_data_format_a0afad9f6c28c7d7f2a5cf312aee82281}} 
+enum {\bfseries value} \{ \newline
+{\bfseries float\+\_\+}
+, {\bfseries integer}
+, {\bfseries string}
+, {\bfseries exponential}
+, \newline
+{\bfseries mixed}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_format_a932d4d7f862a610e460b387074d427be}\label{class_data_format_a932d4d7f862a610e460b387074d427be}} 
+{\bfseries Data\+Format} (value v)
+\item 
+\mbox{\Hypertarget{class_data_format_a64ed8d8bc8e0fb862626104723faa6c5}\label{class_data_format_a64ed8d8bc8e0fb862626104723faa6c5}} 
+{\bfseries Data\+Format} (const char $\ast$v)
+\item 
+\mbox{\Hypertarget{class_data_format_aedf09cd2ebc02d96c0032eea378c2a42}\label{class_data_format_aedf09cd2ebc02d96c0032eea378c2a42}} 
+{\bfseries Data\+Format} (const \+::std\+::string \&v)
+\item 
+\mbox{\Hypertarget{class_data_format_af895aa4ed0346472ca1f95e0588be645}\label{class_data_format_af895aa4ed0346472ca1f95e0588be645}} 
+{\bfseries Data\+Format} (const \+::xml\+\_\+schema\+::string \&v)
+\item 
+\mbox{\Hypertarget{class_data_format_ad84151a67673d06e4dc7a7a07aebdd81}\label{class_data_format_ad84151a67673d06e4dc7a7a07aebdd81}} 
+{\bfseries Data\+Format} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_format_ab3df1c4f1ae34209cae12b9ca711177b}\label{class_data_format_ab3df1c4f1ae34209cae12b9ca711177b}} 
+{\bfseries Data\+Format} (const \+::xercesc\+::\+DOMAttr \&a, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_format_a6e6bd5a834edec4139f4c8026af27897}\label{class_data_format_a6e6bd5a834edec4139f4c8026af27897}} 
+{\bfseries Data\+Format} (const \+::std\+::string \&s, const \+::xercesc\+::\+DOMElement $\ast$e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_format_ad63f520d70fe942598b6bc79df097899}\label{class_data_format_ad63f520d70fe942598b6bc79df097899}} 
+{\bfseries Data\+Format} (const \mbox{\hyperlink{class_data_format}{Data\+Format}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_format_a2c6a27fcd70a3958ce694e793658fa44}\label{class_data_format_a2c6a27fcd70a3958ce694e793658fa44}} 
+virtual \mbox{\hyperlink{class_data_format}{Data\+Format}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_data_format_ae211f1385656d9516603d39f904139d0}\label{class_data_format_ae211f1385656d9516603d39f904139d0}} 
+\mbox{\hyperlink{class_data_format}{Data\+Format}} \& {\bfseries operator=} (value v)
+\item 
+\mbox{\Hypertarget{class_data_format_a1a09d38ba7b4f3124e8d67b14e9a4a20}\label{class_data_format_a1a09d38ba7b4f3124e8d67b14e9a4a20}} 
+virtual {\bfseries operator value} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$const \mbox{\hyperlink{class_data_format_a5b339ad97c99f90f012fc017698674a0}{\+\_\+xsd\+\_\+\+Data\+Format\+\_\+literals\+\_\+}} \mbox{[}5\mbox{]}
+\item 
+static const value \mbox{\hyperlink{class_data_format_a0f475b6c7ace114f01569737cdf1f642}{\+\_\+xsd\+\_\+\+Data\+Format\+\_\+indexes\+\_\+}} \mbox{[}5\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_format_afc78527c21ab3e8a3d6ee096aaccdd12}\label{class_data_format_afc78527c21ab3e8a3d6ee096aaccdd12}} 
+value {\bfseries \+\_\+xsd\+\_\+\+Data\+Format\+\_\+convert} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_data_format_a0f475b6c7ace114f01569737cdf1f642}\label{class_data_format_a0f475b6c7ace114f01569737cdf1f642}} 
+\index{DataFormat@{DataFormat}!\_xsd\_DataFormat\_indexes\_@{\_xsd\_DataFormat\_indexes\_}}
+\index{\_xsd\_DataFormat\_indexes\_@{\_xsd\_DataFormat\_indexes\_}!DataFormat@{DataFormat}}
+\doxysubsubsection{\texorpdfstring{\_xsd\_DataFormat\_indexes\_}{\_xsd\_DataFormat\_indexes\_}}
+{\footnotesize\ttfamily const Data\+Format\+::value Data\+Format\+::\+\_\+xsd\+\_\+\+Data\+Format\+\_\+indexes\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  ::DataFormat::exponential,}
+\DoxyCodeLine{  ::DataFormat::float\_,}
+\DoxyCodeLine{  ::DataFormat::integer,}
+\DoxyCodeLine{  ::DataFormat::mixed,}
+\DoxyCodeLine{  ::DataFormat::string}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_data_format_a5b339ad97c99f90f012fc017698674a0}\label{class_data_format_a5b339ad97c99f90f012fc017698674a0}} 
+\index{DataFormat@{DataFormat}!\_xsd\_DataFormat\_literals\_@{\_xsd\_DataFormat\_literals\_}}
+\index{\_xsd\_DataFormat\_literals\_@{\_xsd\_DataFormat\_literals\_}!DataFormat@{DataFormat}}
+\doxysubsubsection{\texorpdfstring{\_xsd\_DataFormat\_literals\_}{\_xsd\_DataFormat\_literals\_}}
+{\footnotesize\ttfamily const char $\ast$const Data\+Format\+::\+\_\+xsd\+\_\+\+Data\+Format\+\_\+literals\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{stringliteral}{"{}float"{}},}
+\DoxyCodeLine{  \textcolor{stringliteral}{"{}integer"{}},}
+\DoxyCodeLine{  \textcolor{stringliteral}{"{}string"{}},}
+\DoxyCodeLine{  \textcolor{stringliteral}{"{}exponential"{}},}
+\DoxyCodeLine{  \textcolor{stringliteral}{"{}mixed"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}

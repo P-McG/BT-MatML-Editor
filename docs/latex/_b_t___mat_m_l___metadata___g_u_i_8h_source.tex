@@ -1,0 +1,148 @@
+\hypertarget{_b_t___mat_m_l___metadata___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Metadata\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___metadata___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Metadata\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Metadata\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Metadata\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Metadata\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_ID\_GUI.h"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base}{Metadata\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45     \textcolor{keyword}{public}:}
+\DoxyCodeLine{46         wxNotebook* m\_GUI;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base}{Metadata\_GUI\_Base}}();}
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base}{Metadata\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{50         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base_abfe56041a753fbdf4d32d2e2fd1626f9}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{51         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base}{\string~Metadata\_GUI\_Base}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{54         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{55         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_metadata}{Metadata}}* element);}
+\DoxyCodeLine{58         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base_a8d3e499705c218289ad8c58abf8f4268}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{59             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{60             \mbox{\hyperlink{class_metadata}{Metadata}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{61             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{62         );}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertAuthorityDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertDataSourceDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertMeasurementTechniqueDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertParameterDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertPropertyDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSourceDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSpecimenDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertTestConditionDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteAuthorityDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteDataSourceDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteMeasurementTechniqueDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteParameterDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeletePropertyDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSpecimenDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{81         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSourceDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteTestConditionDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteAuthorityDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteDataSourceDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{86         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteMeasurementTechniqueDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteParameterDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPastePropertyDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSourceDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSpecimenDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{91         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteTestConditionDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keyword}{private}:}
+\DoxyCodeLine{94     \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i}{Metadata\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i___base}{Metadata\_GUI\_Base}}}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98     \textcolor{keyword}{public}:}
+\DoxyCodeLine{99         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{100         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i_a7d41864e2f580b4ec2733ef91b6f8a45}{Metadata\_GUI}}();}
+\DoxyCodeLine{103         \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i_a7d41864e2f580b4ec2733ef91b6f8a45}{Metadata\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i_a3e1869b0dc663167a92c37f102d00a9b}{\string~Metadata\_GUI}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i_a6f06677662e77485922a203f419ba7e4}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i_ab06afef7069c89a4069ee84e6d611bac}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} OnInsertAuthorityDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} OnInsertDataSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnInsertMeasurementTechniqueDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnInsertParameterDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnInsertPropertyDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} OnInsertSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} OnInsertSpecimenDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnInsertTestConditionDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnDeleteAuthorityDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnDeleteDataSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnDeleteMeasurementTechniqueDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnDeleteParameterDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnDeletePropertyDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnDeleteSpecimenDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnDeleteSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteTestConditionDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnPasteAuthorityDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnPasteDataSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnPasteMeasurementTechniqueDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{133         \textcolor{keywordtype}{void} OnPasteParameterDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnPastePropertyDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteSourceDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{136         \textcolor{keywordtype}{void} OnPasteSpecimenDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{137         \textcolor{keywordtype}{void} OnPasteTestConditionDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{keyword}{private}:}
+\DoxyCodeLine{141     \};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

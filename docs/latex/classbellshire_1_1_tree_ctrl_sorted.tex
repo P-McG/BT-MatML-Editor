@@ -1,0 +1,63 @@
+\hypertarget{classbellshire_1_1_tree_ctrl_sorted}{}\doxysection{bellshire\+::Tree\+Ctrl\+Sorted Class Reference}
+\label{classbellshire_1_1_tree_ctrl_sorted}\index{bellshire::TreeCtrlSorted@{bellshire::TreeCtrlSorted}}
+Inheritance diagram for bellshire\+::Tree\+Ctrl\+Sorted\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbellshire_1_1_tree_ctrl_sorted}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_aa8ffe16e41731c8419d542c4cc135e69}\label{classbellshire_1_1_tree_ctrl_sorted_aa8ffe16e41731c8419d542c4cc135e69}} 
+{\bfseries Tree\+Ctrl\+Sorted} (wx\+Window $\ast$parent=NULL, wx\+Window\+ID id=wx\+ID\+\_\+\+ANY, const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Default\+Size, long style=wx\+TR\+\_\+\+HAS\+\_\+\+BUTTONS, const wx\+Validator \&validator=wx\+Default\+Validator, const wx\+String \&name=wx\+String(wxT(\char`\"{}tree\+Ctrl\char`\"{})))
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_a2afe28cb0672577f8550caca498d851d}\label{classbellshire_1_1_tree_ctrl_sorted_a2afe28cb0672577f8550caca498d851d}} 
+wx\+Array\+String {\bfseries Get\+Sort\+Classes} ()
+\item 
+int \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted_a5391feff104fb8ca738ade85e14e0474}{Class\+Order}} (\mbox{\hyperlink{class_class}{Class}} \&item)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_a40256a5dabf1abc3fdfe283d47a10d64}\label{classbellshire_1_1_tree_ctrl_sorted_a40256a5dabf1abc3fdfe283d47a10d64}} 
+int {\bfseries Position\+Order} (\mbox{\hyperlink{class_material}{Material}} $\ast$material)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_ac9bc6105d7b9282cccf4187b049e5f5f}\label{classbellshire_1_1_tree_ctrl_sorted_ac9bc6105d7b9282cccf4187b049e5f5f}} 
+int {\bfseries Position\+Order} (\mbox{\hyperlink{class_bulk_details}{Bulk\+Details}} $\ast$parent, \mbox{\hyperlink{class_class}{Class}} $\ast$element)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_a6502b1d26c29b301689be48232db0a95}\label{classbellshire_1_1_tree_ctrl_sorted_a6502b1d26c29b301689be48232db0a95}} 
+wx\+Array\+String {\bfseries Class\+Order\+Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted_a231b1c353baadefcae3de3ead896e2db}{On\+Compare\+Items}} (const wx\+Tree\+Item\+Id \&item1, const wx\+Tree\+Item\+Id \&item2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_a5391feff104fb8ca738ade85e14e0474}\label{classbellshire_1_1_tree_ctrl_sorted_a5391feff104fb8ca738ade85e14e0474}} 
+\index{bellshire::TreeCtrlSorted@{bellshire::TreeCtrlSorted}!ClassOrder@{ClassOrder}}
+\index{ClassOrder@{ClassOrder}!bellshire::TreeCtrlSorted@{bellshire::TreeCtrlSorted}}
+\doxysubsubsection{\texorpdfstring{ClassOrder()}{ClassOrder()}}
+{\footnotesize\ttfamily int Tree\+Ctrl\+Sorted\+::\+Class\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_class}{Class}} \&}]{item }\end{DoxyParamCaption})}
+
+Implementation Class\+Order
+
+Returns int value based on the hardcoding of the class order. \mbox{\Hypertarget{classbellshire_1_1_tree_ctrl_sorted_a231b1c353baadefcae3de3ead896e2db}\label{classbellshire_1_1_tree_ctrl_sorted_a231b1c353baadefcae3de3ead896e2db}} 
+\index{bellshire::TreeCtrlSorted@{bellshire::TreeCtrlSorted}!OnCompareItems@{OnCompareItems}}
+\index{OnCompareItems@{OnCompareItems}!bellshire::TreeCtrlSorted@{bellshire::TreeCtrlSorted}}
+\doxysubsubsection{\texorpdfstring{OnCompareItems()}{OnCompareItems()}}
+{\footnotesize\ttfamily int Tree\+Ctrl\+Sorted\+::\+On\+Compare\+Items (\begin{DoxyParamCaption}\item[{const wx\+Tree\+Item\+Id \&}]{item1,  }\item[{const wx\+Tree\+Item\+Id \&}]{item2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation On\+Compare\+Items
+
+Comparison test for ordering of the Tree\+Ctrl
+
+Sorts the \mbox{\hyperlink{class_metadata}{Metadata}} to the end of the list Sorts the \mbox{\hyperlink{class_material}{Material}} as per its Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} Sorts the \mbox{\hyperlink{class_material}{Material}} as per its position 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Tree\+Ctrl\+Sorted.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Tree\+Ctrl\+Sorted.\+cpp\end{DoxyCompactItemize}

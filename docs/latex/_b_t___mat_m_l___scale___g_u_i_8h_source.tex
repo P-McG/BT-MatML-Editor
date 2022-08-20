@@ -1,0 +1,125 @@
+\hypertarget{_b_t___mat_m_l___scale___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Scale\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___scale___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Scale\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Scale\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Scale\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Scale\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/statline.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <wx/checkbox.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <boost/lexical\_cast.hpp>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <boost/algorithm/string.hpp>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <boost/algorithm/string/classification.hpp>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}BT\_MatML\_StringValidator.h"{}}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base}{Scale\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48     \textcolor{keyword}{public}:}
+\DoxyCodeLine{49         wxNotebook* m\_GUI;}
+\DoxyCodeLine{50         wxChoice* m\_ScaleChoice;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base}{Scale\_GUI\_Base}}();\textcolor{comment}{//ctor}}
+\DoxyCodeLine{53         \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base}{Scale\_GUI\_Base}}(wxWindow* parent);\textcolor{comment}{//ctor}}
+\DoxyCodeLine{54         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base}{\string~Scale\_GUI\_Base}}();\textcolor{comment}{//dtor}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base_a02e006484b8a445f5912a707860a7ff3}{Create}}(wxWindow* parent,}
+\DoxyCodeLine{57             wxChoice*\& ScaleChoice}
+\DoxyCodeLine{58         );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{61         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{62         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_scale}{Scale}}* element);}
+\DoxyCodeLine{65         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base_a8907b987941318fb48383b0225242e35}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{66             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{67             \mbox{\hyperlink{class_scale}{Scale}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{68             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{69         );}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnScaleChoiceKillFocus(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{private}:}
+\DoxyCodeLine{75     \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_scale___g_u_i}{Scale\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i___base}{Scale\_GUI\_Base}}}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79     \textcolor{keyword}{public}:}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_aadc3076eabd7edff61743dd3554d144e}{Scale\_GUI}}();\textcolor{comment}{//ctor}}
+\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_aadc3076eabd7edff61743dd3554d144e}{Scale\_GUI}}(wxWindow* parent);\textcolor{comment}{//ctor}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_aab0a1611d1cbec42f6d50a3511a774ef}{\string~Scale\_GUI}}();\textcolor{comment}{//dtor}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_a8619ca4864208d80204b080b42341985}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{comment}{// Overwrites the base class functions}}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} OnScaleChoiceKillFocus(wxCommandEvent\& event);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{comment}{// validator for wxWidget ScaletextCtrl}}
+\DoxyCodeLine{92         \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_1_1_scale_choice_validator}{ScaleChoiceValidator}} : \textcolor{keyword}{public} wxValidator}
+\DoxyCodeLine{93         \{}
+\DoxyCodeLine{94         \textcolor{keyword}{public}:}
+\DoxyCodeLine{95             \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97             \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_1_1_scale_choice_validator}{ScaleChoiceValidator}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl}
+\DoxyCodeLine{98             ) : m\_MatMLTreeCtrl(MatMLTreeCtrl)}
+\DoxyCodeLine{99             \{ \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} Validate(wxWindow* parent) wxOVERRIDE;}
+\DoxyCodeLine{102             \textcolor{keyword}{virtual} wxObject* Clone() \textcolor{keyword}{const} wxOVERRIDE \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_1_1_scale_choice_validator}{ScaleChoiceValidator}}(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104             \textcolor{comment}{// Called to transfer data to the window}}
+\DoxyCodeLine{105             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferToWindow() wxOVERRIDE;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107             \textcolor{comment}{// Called to transfer data from the window}}
+\DoxyCodeLine{108             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferFromWindow() wxOVERRIDE;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \textcolor{keyword}{private}:}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{private}:}
+\DoxyCodeLine{115         \mbox{\hyperlink{classbellshire_1_1_scale___g_u_i_1_1_scale_choice_validator}{ScaleChoiceValidator}}* m\_ScaleChoiceValidator;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{120 }
+
+\end{DoxyCode}

@@ -1,0 +1,1899 @@
+\hypertarget{classbellshire_1_1_material_frame}{}\doxysection{bellshire\+::Material\+Frame Class Reference}
+\label{classbellshire_1_1_material_frame}\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+
+
+Application\textquotesingle{}s GUIs (not directly associated with the Mat\+ML data classes) e.\+g. File Menu, Edit Menu, View Menu, etc.  
+
+
+
+
+{\ttfamily \#include $<$BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame.\+h$>$}
+
+Inheritance diagram for bellshire\+::Material\+Frame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbellshire_1_1_material_frame}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a0e869ae15251f3f14a7e1ebb5ee2fc30}{On\+Element\+Activated}} (wx\+Tree\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On \mbox{\hyperlink{class_element}{Element}} Activated. Event Handlers Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7357e2be2ca952916c8175949736d521}{On\+Element\+Expanded}} (wx\+Tree\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On \mbox{\hyperlink{class_element}{Element}} Expanded Event Handlers functions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ab6711224dd93967f45830ae70585ced9}{On\+Element\+Collapsed}} (wx\+Tree\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On \mbox{\hyperlink{class_element}{Element}} Collapsed Event Handlers functions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ab9c0ce8c2f82dad5b556bbc66a364eca}{On\+Mat\+MLItem\+Menu}} (wx\+Tree\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Mat\+ML Item Selection Event Handlers functions \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbellshire_1_1_material_frame_a0bfa828464e0eb1ab3fbfac8c86a7532}{Material\+Frame}} (wx\+Window $\ast$parent, wx\+Window\+ID id=wx\+ID\+\_\+\+MATERIAL, const wx\+String \&title=wxT(\char`\"{}Mat\+ML Editer\char`\"{}), const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Size(770, 628), long style=wx\+CAPTION$\vert$wx\+CLOSE\+\_\+\+BOX$\vert$wx\+MAXIMIZE\+\_\+\+BOX$\vert$wx\+MINIMIZE\+\_\+\+BOX$\vert$wx\+RESIZE\+\_\+\+BORDER$\vert$wx\+SYSTEM\+\_\+\+MENU$\vert$wx\+TAB\+\_\+\+TRAVERSAL)
+\item 
+virtual \mbox{\hyperlink{classbellshire_1_1_material_frame_ab6db48d572175c3853fe2a1f8152b7ed}{$\sim$\+Material\+Frame}} ()
+\item 
+wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_material_frame_a97c73046bf351245f5def408b57caf55}{find\+Tree\+Item}} (wx\+Tree\+Ctrl $\ast$p\+Tree\+Ctrl, const wx\+Tree\+Item\+Id \&root, const wx\+String \&text, bool b\+Case\+Sensitive, bool b\+Exact\+Match)
+\begin{DoxyCompactList}\small\item\em Based on the pointer to wx\+Tree\+Ctrl and the root element, finds the matching wx\+String content. Can do \end{DoxyCompactList}\item 
+wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_material_frame_a718d08c499e3c49988804bfe7c03cc03}{find\+Tree\+Item}} (wx\+Tree\+Ctrl $\ast$p\+Tree\+Ctrl, const wx\+Tree\+Item\+Id \&root, const \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}} \&Mat\+ML\+\_\+\+Data)
+\begin{DoxyCompactList}\small\item\em Based on the pointer to wx\+Tree\+Ctrl and the root element, finds the matching \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}} memory location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a41201ead7b2353574c163cd98abb898d}\label{classbellshire_1_1_material_frame_a41201ead7b2353574c163cd98abb898d}} 
+void {\bfseries On\+Class\+Insert\+Related\+Elements\+Button} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a602532969a53303e468a78322abe1cae}\label{classbellshire_1_1_material_frame_a602532969a53303e468a78322abe1cae}} 
+void {\bfseries Setup\+Template\+Doc} (\mbox{\hyperlink{class_material}{Material}} \&\mbox{\hyperlink{class_element}{Element}})
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a217431ab1964ad52a8f56194ff5d9af2}\label{classbellshire_1_1_material_frame_a217431ab1964ad52a8f56194ff5d9af2}} 
+void {\bfseries Load\+Template\+Doc} (wx\+String \&Template\+Name)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a226625004d0dda98f57481ba741ce3d2}\label{classbellshire_1_1_material_frame_a226625004d0dda98f57481ba741ce3d2}} 
+void {\bfseries Copy\+Template\+Metadata} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a29e0d0b00353ba61617cb32cd13008a9}\label{classbellshire_1_1_material_frame_a29e0d0b00353ba61617cb32cd13008a9}} 
+void {\bfseries Copy\+Template\+Parameter\+Value} (\mbox{\hyperlink{class_processing_details}{Processing\+Details}} \&\mbox{\hyperlink{class_element}{Element}})
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a29563c848b083ce629933e45386dfa81}\label{classbellshire_1_1_material_frame_a29563c848b083ce629933e45386dfa81}} 
+void {\bfseries Copy\+Template\+Property} (\mbox{\hyperlink{class_component_details}{Component\+Details}} \&\mbox{\hyperlink{class_element}{Element}}, \mbox{\hyperlink{class_component_details}{Component\+Details}} \&Template\+Element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aee3b99aa58b496bc361fd2a1c6a4b05a}\label{classbellshire_1_1_material_frame_aee3b99aa58b496bc361fd2a1c6a4b05a}} 
+void {\bfseries Copy\+Template\+Processing\+Details} (\mbox{\hyperlink{class_component_details}{Component\+Details}} \&\mbox{\hyperlink{class_element}{Element}}, \mbox{\hyperlink{class_component_details}{Component\+Details}} \&Template\+Element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ada9ecf12187d26183b1d4f2858622e6a}\label{classbellshire_1_1_material_frame_ada9ecf12187d26183b1d4f2858622e6a}} 
+void {\bfseries Copy\+Component\+Name\+To\+Parent\+Material} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_af5382fe6ad5ba59a2899dc9bdf111dfe}\label{classbellshire_1_1_material_frame_af5382fe6ad5ba59a2899dc9bdf111dfe}} 
+void {\bfseries Replace\+IDwith\+Uuid} ()
+\begin{DoxyCompactList}\small\item\em This was used only to make the old data format compatible with the new arrangement \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a668d41d5909bf0f27ec0cf8f97aad413}\label{classbellshire_1_1_material_frame_a668d41d5909bf0f27ec0cf8f97aad413}} 
+boost\+::any {\bfseries m\+\_\+\+Mat\+MLItem\+To\+Copy}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbellshire_1_1_material_frame_a083e10d89bffe80a2aba029e35ab1507}{re\+Estabilish\+Tree\+Ctrl\+Sizer}} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab661ff97a19d0cfa35f73acb3262f8e7}\label{classbellshire_1_1_material_frame_ab661ff97a19d0cfa35f73acb3262f8e7}} 
+void {\bfseries Load\+File} ()
+\begin{DoxyCompactList}\small\item\em Load File \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a59af9c0e67a2adab87074e8629a03264}{Import\+File}} (const char $\ast$File)
+\begin{DoxyCompactList}\small\item\em Import File \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a44de8e2a20cbe0a632aac4ffb2538b2c}\label{classbellshire_1_1_material_frame_a44de8e2a20cbe0a632aac4ffb2538b2c}} 
+void {\bfseries backup} ()
+\begin{DoxyCompactList}\small\item\em Perform a file backup \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a91c6de2b0ebf6ed451a586fbc969d3ba}{On\+Close\+Sel}} (wx\+Close\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event Handler Function for Closing \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a2e867a218bbda610b85aa583828e6e9b}{On\+New\+Sel}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event Handler Function for new \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a1e155d5241bdbb00d269e064796f56e5}{On\+Open\+Sel}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Open Selection Event Handler Function for opening a \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ac672ed89331b13884816c23625e21c22}{On\+Save\+Sel}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Save Selection Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a9ca724457198a94ef34cdebcd79ffc44}{On\+Save\+As\+Sel}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Save\+As Selection Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}{On\+Export\+Material}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Export \mbox{\hyperlink{class_material}{Material}} Selection Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_af4d4b277b6a871d5d68e277e72327bf7}{On\+Export\+Material}} (wx\+String \&filename)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}{On\+Export\+Material\+Branch}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Export \mbox{\hyperlink{class_material}{Material}} Branch Selection Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a82a6afea8d31a5ec74e29cbb4c767ab7}{On\+Export\+Material\+Branch}} (wx\+String \&filename)
+\begin{DoxyCompactList}\small\item\em On Export of \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a0bc7f81c402cb5d2b087482038f57987}{On\+Import\+Material\+Branch}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Import of \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_abb232253d72e0cbb9509a2750911a1cf}{On\+Isolate\+Material\+Branch}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Isolate to the \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_aa471095dbbea688d8b868d1851d3000a}{Isolate\+Material\+Branch}} ()
+\begin{DoxyCompactList}\small\item\em Isolate to the \mbox{\hyperlink{class_material}{Material}} Branch This function\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7dbf9229c006a646298aab8b63088f77}{On\+Exit\+Isolate\+Material\+Branch}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Exit Isolate of the \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_af7b0d9429cca8040f8d03188ef4c69ba}\label{classbellshire_1_1_material_frame_af7b0d9429cca8040f8d03188ef4c69ba}} 
+void {\bfseries Exit\+Isolate\+Material\+Branch} ()
+\begin{DoxyCompactList}\small\item\em Exit Isolate of the \mbox{\hyperlink{class_material}{Material}} Branch \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a624284c7023d7f86f818e12054fea493}{On\+Exit\+Sel}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Exit Selection Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a06e8e6768516ec0561eb5f522450f4a6}{On\+Edit\+Menu\+Preferences\+Item}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Edit Menu Preferences Item Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a53d8a0d29d4dcdbba2c429e5bbae9c2e}{On\+Sort\+Menu\+Item}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Sort Menu Item Event Handler Function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a82b492b17a22819ff6f6b4d92ccc59df}\label{classbellshire_1_1_material_frame_a82b492b17a22819ff6f6b4d92ccc59df}} 
+void {\bfseries Sort\+Menu\+Item} ()
+\begin{DoxyCompactList}\small\item\em On Sort Menu Item \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab86e05a4947bf270e67cab2f9430a673}\label{classbellshire_1_1_material_frame_ab86e05a4947bf270e67cab2f9430a673}} 
+void {\bfseries XSLT2\+HTMLviewer} (const wx\+String XMLfilename, const wx\+String XSLTFile, const wx\+String HTMLDir, const wx\+String HTMLFile\+Name)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab2d36c09fd45c3363267a319223f4e1d}\label{classbellshire_1_1_material_frame_ab2d36c09fd45c3363267a319223f4e1d}} 
+void {\bfseries XSLTProcessing} (const wx\+String XMLfilename, const wx\+String XSLTFile, const wx\+String Out\+Dir, const wx\+String Out\+File\+Name, const wx\+String XSLTParameters)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_adea97410524486510e6ce68a20f5c573}{On\+About}} (wx\+Command\+Event \&event)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a2fda40a2a46e0bf9aa977fb34fb37fd2}{Set\+Tree\+Ctrl\+Connect}} ()
+\begin{DoxyCompactList}\small\item\em Sets the Connection of the wx\+Tree\+Ctrl event handler from an instant of a wx\+Tree\+Ctrl to events associated functions These calls overwrite the \mbox{\hyperlink{classbellshire_1_1_material_frame_base}{Material\+Frame\+Base}} class calls. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Event\+Tag , typename \mbox{\hyperlink{class_class}{Class}} , typename Event\+Arg , typename Event\+Handler $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_material_frame_a2b5bc87be7d57612e34cfce1fba78926}{Popup\+Link\+Bind}} (wx\+Menu \&menu, \+::std\+::string desc, const Event\+Tag \&event\+Type, void(Class\+::$\ast$method)(Event\+Arg \&), Event\+Handler $\ast$handler)
+\begin{DoxyCompactList}\small\item\em Pop-\/up menu linking and binding Links the Menu Item to the context menu. Binds the Event Handler Functions to the Menu Item. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Mat\+MLClass , typename Parent\+\_\+\+GUIClass , typename Event\+Tag , typename Parent\+Base\+\_\+\+GUIClass , typename Event\+Arg , typename Event\+Handler $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_material_frame_ae01aa5fd4aec8a02be42401531dd94f9}{Popup\+\_\+\+Paste}} (const boost\+::any \&Mat\+MLItem\+To\+Copy, Parent\+\_\+\+GUIClass $\ast$Parent\+\_\+\+GUI, wx\+Menu \&menu, \+::std\+::string desc, const Event\+Tag \&event\+Type, void(Parent\+Base\+\_\+\+GUIClass\+::$\ast$method)(Event\+Arg \&), Event\+Handler $\ast$handler)
+\begin{DoxyCompactList}\small\item\em Pop-\/up menu For Pasting Places the Mat\+ML Item To Copy. Pop-\/up menu linking and binding Polymorphicly associated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a62dbd938705e88cfdafa26b00d5dd7a7}{Show\+Context\+Menu}} (wx\+Tree\+Item\+Id id, const wx\+Point \&pt)
+\begin{DoxyCompactList}\small\item\em Shows/\+Creates the wx\+Tree\+Ctrl context menu Event Handler functions polymorphicly associated with the context menu are binded here. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab0e59c41a74a8f29791e4f472dd9dbb0}\label{classbellshire_1_1_material_frame_ab0e59c41a74a8f29791e4f472dd9dbb0}} 
+\+::vector$<$ \mbox{\hyperlink{class_parent_material}{Parent\+Material}} $\ast$ $>$ {\bfseries Material\+Gather\+Associated\+Component\+Parent\+Material} (\mbox{\hyperlink{class_material}{Material}} $\ast$material)
+\begin{DoxyCompactList}\small\item\em Given a \mbox{\hyperlink{class_material}{Material}} Gather \mbox{\hyperlink{class_associate}{Associate}} \mbox{\hyperlink{class_component_details}{Component\+Details}} Parent\+Materials \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a65a093578793082c1a7adc771e46f2ae}{Material\+Set\+Parent\+Material}} (\+::vector$<$ \mbox{\hyperlink{class_parent_material}{Parent\+Material}} $\ast$ $>$ compparentmateriallist, \mbox{\hyperlink{class_material}{Material}} $\ast$material)
+\begin{DoxyCompactList}\small\item\em Given a \mbox{\hyperlink{class_material}{Material}} Set the \mbox{\hyperlink{class_parent_material}{Parent\+Material}} from a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a0a23a2c9645ccb11ede55d2c47af12e9}{On\+Copy}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Copy Event Handler Function Sets the Mat\+ML Item To Copy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a63f045830bc8205dc56683591bec87ee}{On\+Delete\+Associate}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em following functions are for the Deletion of the wx\+Tree\+Ctrl elements \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_af78d2f660c12284a6e4380bb2f24dd3a}{On\+Delete\+Association\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a30f08666afaaa32830d7b57bd8b575a8}{On\+Delete\+Authority\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a87ecb65c4093942f9ad56747f3e0dd88}{On\+Delete\+Bulk\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a52b4ff9ce0bd07ee4146825a0ea75678}{On\+Delete\+Characterization}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a3ead76626f6989e799a6b102d252e4d8}{On\+Delete\+Chemical\+Composition}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a1b790abdf8039839f151874827badb39}{On\+Delete\+Chemical\+Element\+Symbol}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ad9cff8455205bb2ce24c1365ec85c802}{On\+Delete\+Class}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a5230e58c5b76522984e44b2ca7238c7c}{On\+Delete\+Component\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a193f3329ad363db99b054ec487cbadf2}{On\+Delete\+Compound}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a5074c47232f493c151e516b5e554814e}{On\+Delete\+Concentration}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a0cb94e3211341f0c4e29cabbc260a289}{On\+Delete\+Currency\+Code}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_af98a7933db96149b385726e4b9395fa6}{On\+Delete\+Data\+Source\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7f79c6eb186c53b7825250327e43066a}{On\+Delete\+Dimensional\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a8661ac2b011885affb3056ed12072cf6}{On\+Delete\+Element}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a0c478138d945c07b95f50fb50de99525}{On\+Delete\+Form}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_aa1cb14f7b68d279710535713334fa4e7}{On\+Delete\+Formula}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ad4d84657fe89572cf38e89ffedffb52f}{On\+Delete\+Geometry}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_afaedd743e2ec3d8b8abc2e7f46220e3b}{On\+Delete\+Glossary}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_aa34cfdb34f5c575b4d61bb3766ca07c7}{On\+Delete\+Glossary\+Term}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a6406e9e3d33223b0022cd7fda44a8819}{On\+Delete\+Definition}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_aa7b08aecec8fae8118abef9019f274fa}{On\+Delete\+Abbreviation}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a2c1dd396c9ac2d03cc16677a36d7e50b}{On\+Delete\+Synonym}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a5efcb8fed0be51f111e448ed04672294}{On\+Delete\+Graphs}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ae84b23ab13ee37afc3c4a95cee093d4c}{On\+Delete\+Material}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_afd0b260673a5dcb0d87c0a27e6fbb727}{On\+Delete\+Measurement\+Technique\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ade79c8453402a798fc205d5d52d0e91b}{On\+Delete\+Metadata}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7ea86d39e33b89de0a51fdb38b457833}{On\+Delete\+Name}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7e5928222374ebe6e6a936e4b1f38eb4}{On\+Delete\+Notes}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a3aa8f84fbce84b3c6df8023016152a95}{On\+Delete\+Parameter\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ac7834edab87e5ff41aa5b26f38442f31}{On\+Delete\+Parent\+Material}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ad4e3520f01dd0011f9e5f83d15f4ab8f}{On\+Delete\+Parent\+Sub\+Class}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_aaad057ff7c1c7dba68f44ccdb4ae9d4f}{On\+Delete\+Parameter\+Value}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_afa1929b9c76317063091f5ba1216b329}{On\+Delete\+Phase\+Composition}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a022d0d320884d2500b9a33b59e085d4a}{On\+Delete\+Processing\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_af680fdc28b476d0f95b324c9b61f87de}{On\+Delete\+Result}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a579a7219a7f6aeacce934a5f833fcbfb}{On\+Delete\+Property\+Data}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a681634317af3bfabc3dd9d2587132d46}{On\+Delete\+Property\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a1850f3796a9f16cb24de80cdf1a94d9c}{On\+Delete\+Qualifier}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a4d737df3804dbb581963d68ec8d94b64}{On\+Delete\+Relationship}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a2f8434b16f4452d43436038b8a0dcc29}{On\+Delete\+Source}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ad0632a9a6ea133f1980f4c1e19904add}{On\+Delete\+Source\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a8f32de18f809b165eb724cef0271e741}{On\+Delete\+Specification}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_ac99b3e709110270804a2e576e088d1f7}{On\+Delete\+Specimen\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a6e848edd55348f4814a727cec00fe549}{On\+Delete\+Test\+Condition\+Details}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a8a9ec522c39bfff8db84c442f717a4fc}{On\+Delete\+Uncertainty}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a7093817f78cef134cfbfbdbc21255a55}{On\+Delete\+Scale}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a476cf7cde005c1bcd0a27bedfeb108b9}{On\+Delete\+Unit}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a187f0221de71a313d963ba2f4cf7ffaa}{On\+Delete\+Unitless}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a5f75c68e488b12c97cac62073c32c785}{On\+Delete\+Units}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a3a540449dc3900faf5bf2b5ecb271c34}{On\+Delete\+Value}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Call parents to delete Mat\+ML data Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a802edc415c78144556fb905a1bcadcf0}{On\+Goto\+Parent\+Material}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em On Component Details Goto Parent \mbox{\hyperlink{class_material}{Material}} Event Handler Function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_af5d3806c21ecb3fabe4d22b84cbd9aee}{Setup\+Material\+Branch}} (\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \&element, std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&materials)
+\begin{DoxyCompactList}\small\item\em //\+The following functions setup wx\+Tree\+Ctrl branches and assigns a Mat\+ML element pointer to the wx\+Tree\+Ctrl elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a77542cb8094eb2062c7626539ff7ac17}\label{classbellshire_1_1_material_frame_a77542cb8094eb2062c7626539ff7ac17}} 
+void {\bfseries Update\+Current\+Panel} ()
+\begin{DoxyCompactList}\small\item\em This function Updates the wx\+Tree\+Ctrl\textquotesingle{}s Current selected element\textquotesingle{}s polymorhically associated wx\+Notebook/wx\+Panel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a38a954408b780f34287366c73eba25b8}\label{classbellshire_1_1_material_frame_a38a954408b780f34287366c73eba25b8}} 
+{\footnotesize template$<$class Mat\+ML $>$ }\\Mat\+ML $\ast$ {\bfseries Get\+Mat\+ML} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{bellshire\+::\+Tree\+Ctrl\+Sorted}} $\ast$Tree\+Ctrl, wx\+Tree\+Item\+Id $\ast$Item\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0d923464f951ce9c1626f96e72f3eabf}\label{classbellshire_1_1_material_frame_a0d923464f951ce9c1626f96e72f3eabf}} 
+{\footnotesize template$<$class Mat\+ML $>$ }\\Mat\+ML $\ast$ {\bfseries Get\+Mat\+ML} (\mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}} $\ast$treeitemdata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+String \mbox{\hyperlink{classbellshire_1_1_material_frame_a58991582b2b3118193be1ce0189d938a}{m\+\_\+\+Current\+Doc\+Path}}
+\item 
+boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ \mbox{\hyperlink{classbellshire_1_1_material_frame_a51dc04b22e0bcfb954a32084f0a3d212}{doc}}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_material_frame_ae98d0687ed47a311cef9af8c04a1b064}{m\+\_\+\+Mat\+MLTree\+Ctrl\+Stack}}
+\item 
+std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ \mbox{\hyperlink{classbellshire_1_1_material_frame_a3bd42328d2a224deb7b45372c5ac3fa9}{template\+\_\+doc}}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a626758e32d989457f710f8d7832f13c2}\label{classbellshire_1_1_material_frame_a626758e32d989457f710f8d7832f13c2}} 
+\mbox{\hyperlink{classbellshire_1_1_preference_frame}{Preference\+Frame}} $\ast$ {\bfseries preferenceframe}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a464709e9b99cb2f171ebb5c2999fc7f8}\label{classbellshire_1_1_material_frame_a464709e9b99cb2f171ebb5c2999fc7f8}} 
+\mbox{\hyperlink{classbellshire_1_1_h_t_m_l_frame}{HTMLFrame}} $\ast$ {\bfseries htmlframe}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Application\textquotesingle{}s GUIs (not directly associated with the Mat\+ML data classes) e.\+g. File Menu, Edit Menu, View Menu, etc. 
+
+\mbox{\hyperlink{classbellshire_1_1_material_frame}{Material\+Frame}}
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} pointer holding the Mat\+ML \mbox{\hyperlink{class_data}{Data}}.
+\item Placeholder member location for items to be copied.
+\item Event handlers, overiding the base classes functions, which are not directly related to Mat\+ML \mbox{\hyperlink{class_data}{Data}} classes.
+\item On\+Delete context menu event handler functions
+\item Current Document Path 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0bfa828464e0eb1ab3fbfac8c86a7532}\label{classbellshire_1_1_material_frame_a0bfa828464e0eb1ab3fbfac8c86a7532}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!MaterialFrame@{MaterialFrame}}
+\index{MaterialFrame@{MaterialFrame}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{MaterialFrame()}{MaterialFrame()}}
+{\footnotesize\ttfamily bellshire\+::\+Material\+Frame\+::\+Material\+Frame (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Window\+ID}]{id = {\ttfamily wxID\+\_\+MATERIAL},  }\item[{const wx\+String \&}]{title = {\ttfamily wxT(\char`\"{}MatML~Editer\char`\"{})},  }\item[{const wx\+Point \&}]{pos = {\ttfamily wxDefaultPosition},  }\item[{const wx\+Size \&}]{size = {\ttfamily wxSize(770,~628)},  }\item[{long}]{style = {\ttfamily wxCAPTION~$\vert$~wxCLOSE\+\_\+BOX~$\vert$~wxMAXIMIZE\+\_\+BOX~$\vert$~wxMINIMIZE\+\_\+BOX~$\vert$~wxRESIZE\+\_\+BORDER~$\vert$~wxSYSTEM\+\_\+MENU~$\vert$~wxTAB\+\_\+TRAVERSAL} }\end{DoxyParamCaption})}
+
+Constructor Creates the Preference Frame Window\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab6db48d572175c3853fe2a1f8152b7ed}\label{classbellshire_1_1_material_frame_ab6db48d572175c3853fe2a1f8152b7ed}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!````~MaterialFrame@{$\sim$MaterialFrame}}
+\index{````~MaterialFrame@{$\sim$MaterialFrame}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{$\sim$MaterialFrame()}{~MaterialFrame()}}
+{\footnotesize\ttfamily bellshire\+::\+Material\+Frame\+::$\sim$\+Material\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor Delete Preference Frame Window
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a718d08c499e3c49988804bfe7c03cc03}\label{classbellshire_1_1_material_frame_a718d08c499e3c49988804bfe7c03cc03}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!findTreeItem@{findTreeItem}}
+\index{findTreeItem@{findTreeItem}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{findTreeItem()}{findTreeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id bellshire\+::\+Material\+Frame\+::find\+Tree\+Item (\begin{DoxyParamCaption}\item[{wx\+Tree\+Ctrl $\ast$}]{p\+Tree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{root,  }\item[{const \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}} \&}]{Mat\+ML\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Based on the pointer to wx\+Tree\+Ctrl and the root element, finds the matching \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}} memory location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Tree\+Ctrl} & \\
+\hline
+{\em root} & \\
+\hline
+{\em Mat\+ML\+\_\+\+Data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a97c73046bf351245f5def408b57caf55}\label{classbellshire_1_1_material_frame_a97c73046bf351245f5def408b57caf55}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!findTreeItem@{findTreeItem}}
+\index{findTreeItem@{findTreeItem}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{findTreeItem()}{findTreeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id bellshire\+::\+Material\+Frame\+::find\+Tree\+Item (\begin{DoxyParamCaption}\item[{wx\+Tree\+Ctrl $\ast$}]{p\+Tree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{root,  }\item[{const wx\+String \&}]{text,  }\item[{bool}]{b\+Case\+Sensitive,  }\item[{bool}]{b\+Exact\+Match }\end{DoxyParamCaption})}
+
+
+
+Based on the pointer to wx\+Tree\+Ctrl and the root element, finds the matching wx\+String content. Can do 
+
+
+\begin{DoxyItemize}
+\item a Case\+Senitive match
+\item Exact match or contains match. 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Tree\+Ctrl} & \\
+\hline
+{\em root} & \\
+\hline
+{\em text} & \\
+\hline
+{\em b\+Case\+Sensitive} & \\
+\hline
+{\em b\+Exact\+Match} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a59af9c0e67a2adab87074e8629a03264}\label{classbellshire_1_1_material_frame_a59af9c0e67a2adab87074e8629a03264}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!ImportFile@{ImportFile}}
+\index{ImportFile@{ImportFile}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{ImportFile()}{ImportFile()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Import\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Import File 
+
+
+\begin{DoxyParams}{Parameters}
+{\em File} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aa471095dbbea688d8b868d1851d3000a}\label{classbellshire_1_1_material_frame_aa471095dbbea688d8b868d1851d3000a}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!IsolateMaterialBranch@{IsolateMaterialBranch}}
+\index{IsolateMaterialBranch@{IsolateMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{IsolateMaterialBranch()}{IsolateMaterialBranch()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Isolate\+Material\+Branch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Isolate to the \mbox{\hyperlink{class_material}{Material}} Branch This function\+: 
+
+
+\begin{DoxyItemize}
+\item finds selected branch\textquotesingle{}s Mat\+ML materials
+\item Hides the Tree\+Ctrl item if its Mat\+ML \mbox{\hyperlink{class_data}{Data}} is in the branch. 
+\end{DoxyItemize}\mbox{\Hypertarget{classbellshire_1_1_material_frame_a65a093578793082c1a7adc771e46f2ae}\label{classbellshire_1_1_material_frame_a65a093578793082c1a7adc771e46f2ae}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!MaterialSetParentMaterial@{MaterialSetParentMaterial}}
+\index{MaterialSetParentMaterial@{MaterialSetParentMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{MaterialSetParentMaterial()}{MaterialSetParentMaterial()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Material\+Set\+Parent\+Material (\begin{DoxyParamCaption}\item[{\+::vector$<$ \mbox{\hyperlink{class_parent_material}{Parent\+Material}} $\ast$ $>$}]{compparentmateriallist,  }\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Given a \mbox{\hyperlink{class_material}{Material}} Set the \mbox{\hyperlink{class_parent_material}{Parent\+Material}} from a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em compparentmateriallist} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_adea97410524486510e6ce68a20f5c573}\label{classbellshire_1_1_material_frame_adea97410524486510e6ce68a20f5c573}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnAbout@{OnAbout}}
+\index{OnAbout@{OnAbout}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnAbout()}{OnAbout()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+About (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On About Menu Select 
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a5b58777a7528278df09b983860354d5a}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a91c6de2b0ebf6ed451a586fbc969d3ba}\label{classbellshire_1_1_material_frame_a91c6de2b0ebf6ed451a586fbc969d3ba}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnCloseSel@{OnCloseSel}}
+\index{OnCloseSel@{OnCloseSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnCloseSel()}{OnCloseSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Close\+Sel (\begin{DoxyParamCaption}\item[{wx\+Close\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Event Handler Function for Closing \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} 
+
+On Close Selection
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+Create Save wx\+Dialog
+
+Prepare namespace mapping
+
+Prepare schema location information.
+
+Write file out.
+
+If there were any errors on opening? Exit.
+
+Parse Mat\+ML data
+
+Close files
+
+Delete all Items in Mat\+ML wx\+Tree\+Ctrl
+
+Destroy \mbox{\hyperlink{classbellshire_1_1_material_frame}{Material\+Frame}}
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_afdf4ffa39139a460ad2687490b65ad93}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0a23a2c9645ccb11ede55d2c47af12e9}\label{classbellshire_1_1_material_frame_a0a23a2c9645ccb11ede55d2c47af12e9}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnCopy@{OnCopy}}
+\index{OnCopy@{OnCopy}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnCopy()}{OnCopy()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Copy (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+On Copy Event Handler Function Sets the Mat\+ML Item To Copy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aa7b08aecec8fae8118abef9019f274fa}\label{classbellshire_1_1_material_frame_aa7b08aecec8fae8118abef9019f274fa}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteAbbreviation@{OnDeleteAbbreviation}}
+\index{OnDeleteAbbreviation@{OnDeleteAbbreviation}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteAbbreviation()}{OnDeleteAbbreviation()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Abbreviation (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a63f045830bc8205dc56683591bec87ee}\label{classbellshire_1_1_material_frame_a63f045830bc8205dc56683591bec87ee}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteAssociate@{OnDeleteAssociate}}
+\index{OnDeleteAssociate@{OnDeleteAssociate}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteAssociate()}{OnDeleteAssociate()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Associate (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+following functions are for the Deletion of the wx\+Tree\+Ctrl elements 
+
+For Deletion the Mat\+ML Elements may have multiple parents. Need to keep the following functions and have them call the deletion functions in the parents. These calls are made to the Base class\textquotesingle{} virtual functions which is overwriten by the derived classes. Calling the derived class directly will not allow that inheritence. Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+Call parents to delete Mat\+ML data\mbox{\Hypertarget{classbellshire_1_1_material_frame_af78d2f660c12284a6e4380bb2f24dd3a}\label{classbellshire_1_1_material_frame_af78d2f660c12284a6e4380bb2f24dd3a}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteAssociationDetails@{OnDeleteAssociationDetails}}
+\index{OnDeleteAssociationDetails@{OnDeleteAssociationDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteAssociationDetails()}{OnDeleteAssociationDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Association\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a30f08666afaaa32830d7b57bd8b575a8}\label{classbellshire_1_1_material_frame_a30f08666afaaa32830d7b57bd8b575a8}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteAuthorityDetails@{OnDeleteAuthorityDetails}}
+\index{OnDeleteAuthorityDetails@{OnDeleteAuthorityDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteAuthorityDetails()}{OnDeleteAuthorityDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Authority\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a87ecb65c4093942f9ad56747f3e0dd88}\label{classbellshire_1_1_material_frame_a87ecb65c4093942f9ad56747f3e0dd88}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteBulkDetails@{OnDeleteBulkDetails}}
+\index{OnDeleteBulkDetails@{OnDeleteBulkDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteBulkDetails()}{OnDeleteBulkDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Bulk\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a52b4ff9ce0bd07ee4146825a0ea75678}\label{classbellshire_1_1_material_frame_a52b4ff9ce0bd07ee4146825a0ea75678}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteCharacterization@{OnDeleteCharacterization}}
+\index{OnDeleteCharacterization@{OnDeleteCharacterization}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteCharacterization()}{OnDeleteCharacterization()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Characterization (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a3ead76626f6989e799a6b102d252e4d8}\label{classbellshire_1_1_material_frame_a3ead76626f6989e799a6b102d252e4d8}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteChemicalComposition@{OnDeleteChemicalComposition}}
+\index{OnDeleteChemicalComposition@{OnDeleteChemicalComposition}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteChemicalComposition()}{OnDeleteChemicalComposition()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Chemical\+Composition (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a1b790abdf8039839f151874827badb39}\label{classbellshire_1_1_material_frame_a1b790abdf8039839f151874827badb39}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteChemicalElementSymbol@{OnDeleteChemicalElementSymbol}}
+\index{OnDeleteChemicalElementSymbol@{OnDeleteChemicalElementSymbol}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteChemicalElementSymbol()}{OnDeleteChemicalElementSymbol()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Chemical\+Element\+Symbol (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ad9cff8455205bb2ce24c1365ec85c802}\label{classbellshire_1_1_material_frame_ad9cff8455205bb2ce24c1365ec85c802}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteClass@{OnDeleteClass}}
+\index{OnDeleteClass@{OnDeleteClass}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteClass()}{OnDeleteClass()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Class (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a5230e58c5b76522984e44b2ca7238c7c}\label{classbellshire_1_1_material_frame_a5230e58c5b76522984e44b2ca7238c7c}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteComponentDetails@{OnDeleteComponentDetails}}
+\index{OnDeleteComponentDetails@{OnDeleteComponentDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteComponentDetails()}{OnDeleteComponentDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Component\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a193f3329ad363db99b054ec487cbadf2}\label{classbellshire_1_1_material_frame_a193f3329ad363db99b054ec487cbadf2}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteCompound@{OnDeleteCompound}}
+\index{OnDeleteCompound@{OnDeleteCompound}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteCompound()}{OnDeleteCompound()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Compound (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a5074c47232f493c151e516b5e554814e}\label{classbellshire_1_1_material_frame_a5074c47232f493c151e516b5e554814e}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteConcentration@{OnDeleteConcentration}}
+\index{OnDeleteConcentration@{OnDeleteConcentration}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteConcentration()}{OnDeleteConcentration()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Concentration (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0cb94e3211341f0c4e29cabbc260a289}\label{classbellshire_1_1_material_frame_a0cb94e3211341f0c4e29cabbc260a289}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteCurrencyCode@{OnDeleteCurrencyCode}}
+\index{OnDeleteCurrencyCode@{OnDeleteCurrencyCode}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteCurrencyCode()}{OnDeleteCurrencyCode()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Currency\+Code (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_af98a7933db96149b385726e4b9395fa6}\label{classbellshire_1_1_material_frame_af98a7933db96149b385726e4b9395fa6}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteDataSourceDetails@{OnDeleteDataSourceDetails}}
+\index{OnDeleteDataSourceDetails@{OnDeleteDataSourceDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteDataSourceDetails()}{OnDeleteDataSourceDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Data\+Source\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a6406e9e3d33223b0022cd7fda44a8819}\label{classbellshire_1_1_material_frame_a6406e9e3d33223b0022cd7fda44a8819}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteDefinition@{OnDeleteDefinition}}
+\index{OnDeleteDefinition@{OnDeleteDefinition}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteDefinition()}{OnDeleteDefinition()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Definition (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7f79c6eb186c53b7825250327e43066a}\label{classbellshire_1_1_material_frame_a7f79c6eb186c53b7825250327e43066a}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteDimensionalDetails@{OnDeleteDimensionalDetails}}
+\index{OnDeleteDimensionalDetails@{OnDeleteDimensionalDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteDimensionalDetails()}{OnDeleteDimensionalDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Dimensional\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a8661ac2b011885affb3056ed12072cf6}\label{classbellshire_1_1_material_frame_a8661ac2b011885affb3056ed12072cf6}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteElement@{OnDeleteElement}}
+\index{OnDeleteElement@{OnDeleteElement}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteElement()}{OnDeleteElement()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Element (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0c478138d945c07b95f50fb50de99525}\label{classbellshire_1_1_material_frame_a0c478138d945c07b95f50fb50de99525}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteForm@{OnDeleteForm}}
+\index{OnDeleteForm@{OnDeleteForm}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteForm()}{OnDeleteForm()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Form (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aa1cb14f7b68d279710535713334fa4e7}\label{classbellshire_1_1_material_frame_aa1cb14f7b68d279710535713334fa4e7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteFormula@{OnDeleteFormula}}
+\index{OnDeleteFormula@{OnDeleteFormula}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteFormula()}{OnDeleteFormula()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Formula (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ad4d84657fe89572cf38e89ffedffb52f}\label{classbellshire_1_1_material_frame_ad4d84657fe89572cf38e89ffedffb52f}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteGeometry@{OnDeleteGeometry}}
+\index{OnDeleteGeometry@{OnDeleteGeometry}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteGeometry()}{OnDeleteGeometry()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Geometry (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_afaedd743e2ec3d8b8abc2e7f46220e3b}\label{classbellshire_1_1_material_frame_afaedd743e2ec3d8b8abc2e7f46220e3b}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteGlossary@{OnDeleteGlossary}}
+\index{OnDeleteGlossary@{OnDeleteGlossary}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteGlossary()}{OnDeleteGlossary()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Glossary (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aa34cfdb34f5c575b4d61bb3766ca07c7}\label{classbellshire_1_1_material_frame_aa34cfdb34f5c575b4d61bb3766ca07c7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteGlossaryTerm@{OnDeleteGlossaryTerm}}
+\index{OnDeleteGlossaryTerm@{OnDeleteGlossaryTerm}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteGlossaryTerm()}{OnDeleteGlossaryTerm()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Glossary\+Term (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a5efcb8fed0be51f111e448ed04672294}\label{classbellshire_1_1_material_frame_a5efcb8fed0be51f111e448ed04672294}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteGraphs@{OnDeleteGraphs}}
+\index{OnDeleteGraphs@{OnDeleteGraphs}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteGraphs()}{OnDeleteGraphs()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Graphs (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ae84b23ab13ee37afc3c4a95cee093d4c}\label{classbellshire_1_1_material_frame_ae84b23ab13ee37afc3c4a95cee093d4c}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteMaterial@{OnDeleteMaterial}}
+\index{OnDeleteMaterial@{OnDeleteMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteMaterial()}{OnDeleteMaterial()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_afd0b260673a5dcb0d87c0a27e6fbb727}\label{classbellshire_1_1_material_frame_afd0b260673a5dcb0d87c0a27e6fbb727}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteMeasurementTechniqueDetails@{OnDeleteMeasurementTechniqueDetails}}
+\index{OnDeleteMeasurementTechniqueDetails@{OnDeleteMeasurementTechniqueDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteMeasurementTechniqueDetails()}{OnDeleteMeasurementTechniqueDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Measurement\+Technique\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ade79c8453402a798fc205d5d52d0e91b}\label{classbellshire_1_1_material_frame_ade79c8453402a798fc205d5d52d0e91b}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteMetadata@{OnDeleteMetadata}}
+\index{OnDeleteMetadata@{OnDeleteMetadata}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteMetadata()}{OnDeleteMetadata()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Metadata (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7ea86d39e33b89de0a51fdb38b457833}\label{classbellshire_1_1_material_frame_a7ea86d39e33b89de0a51fdb38b457833}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteName@{OnDeleteName}}
+\index{OnDeleteName@{OnDeleteName}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteName()}{OnDeleteName()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Name (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7e5928222374ebe6e6a936e4b1f38eb4}\label{classbellshire_1_1_material_frame_a7e5928222374ebe6e6a936e4b1f38eb4}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteNotes@{OnDeleteNotes}}
+\index{OnDeleteNotes@{OnDeleteNotes}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteNotes()}{OnDeleteNotes()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Notes (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a3aa8f84fbce84b3c6df8023016152a95}\label{classbellshire_1_1_material_frame_a3aa8f84fbce84b3c6df8023016152a95}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteParameterDetails@{OnDeleteParameterDetails}}
+\index{OnDeleteParameterDetails@{OnDeleteParameterDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteParameterDetails()}{OnDeleteParameterDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Parameter\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_aaad057ff7c1c7dba68f44ccdb4ae9d4f}\label{classbellshire_1_1_material_frame_aaad057ff7c1c7dba68f44ccdb4ae9d4f}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteParameterValue@{OnDeleteParameterValue}}
+\index{OnDeleteParameterValue@{OnDeleteParameterValue}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteParameterValue()}{OnDeleteParameterValue()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Parameter\+Value (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ac7834edab87e5ff41aa5b26f38442f31}\label{classbellshire_1_1_material_frame_ac7834edab87e5ff41aa5b26f38442f31}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteParentMaterial@{OnDeleteParentMaterial}}
+\index{OnDeleteParentMaterial@{OnDeleteParentMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteParentMaterial()}{OnDeleteParentMaterial()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Parent\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ad4e3520f01dd0011f9e5f83d15f4ab8f}\label{classbellshire_1_1_material_frame_ad4e3520f01dd0011f9e5f83d15f4ab8f}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteParentSubClass@{OnDeleteParentSubClass}}
+\index{OnDeleteParentSubClass@{OnDeleteParentSubClass}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteParentSubClass()}{OnDeleteParentSubClass()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Parent\+Sub\+Class (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_afa1929b9c76317063091f5ba1216b329}\label{classbellshire_1_1_material_frame_afa1929b9c76317063091f5ba1216b329}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeletePhaseComposition@{OnDeletePhaseComposition}}
+\index{OnDeletePhaseComposition@{OnDeletePhaseComposition}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeletePhaseComposition()}{OnDeletePhaseComposition()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Phase\+Composition (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a022d0d320884d2500b9a33b59e085d4a}\label{classbellshire_1_1_material_frame_a022d0d320884d2500b9a33b59e085d4a}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteProcessingDetails@{OnDeleteProcessingDetails}}
+\index{OnDeleteProcessingDetails@{OnDeleteProcessingDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteProcessingDetails()}{OnDeleteProcessingDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Processing\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a579a7219a7f6aeacce934a5f833fcbfb}\label{classbellshire_1_1_material_frame_a579a7219a7f6aeacce934a5f833fcbfb}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeletePropertyData@{OnDeletePropertyData}}
+\index{OnDeletePropertyData@{OnDeletePropertyData}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeletePropertyData()}{OnDeletePropertyData()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Property\+Data (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a681634317af3bfabc3dd9d2587132d46}\label{classbellshire_1_1_material_frame_a681634317af3bfabc3dd9d2587132d46}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeletePropertyDetails@{OnDeletePropertyDetails}}
+\index{OnDeletePropertyDetails@{OnDeletePropertyDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeletePropertyDetails()}{OnDeletePropertyDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Property\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a1850f3796a9f16cb24de80cdf1a94d9c}\label{classbellshire_1_1_material_frame_a1850f3796a9f16cb24de80cdf1a94d9c}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteQualifier@{OnDeleteQualifier}}
+\index{OnDeleteQualifier@{OnDeleteQualifier}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteQualifier()}{OnDeleteQualifier()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Qualifier (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a4d737df3804dbb581963d68ec8d94b64}\label{classbellshire_1_1_material_frame_a4d737df3804dbb581963d68ec8d94b64}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteRelationship@{OnDeleteRelationship}}
+\index{OnDeleteRelationship@{OnDeleteRelationship}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteRelationship()}{OnDeleteRelationship()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Relationship (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_af680fdc28b476d0f95b324c9b61f87de}\label{classbellshire_1_1_material_frame_af680fdc28b476d0f95b324c9b61f87de}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteResult@{OnDeleteResult}}
+\index{OnDeleteResult@{OnDeleteResult}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteResult()}{OnDeleteResult()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Result (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7093817f78cef134cfbfbdbc21255a55}\label{classbellshire_1_1_material_frame_a7093817f78cef134cfbfbdbc21255a55}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteScale@{OnDeleteScale}}
+\index{OnDeleteScale@{OnDeleteScale}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteScale()}{OnDeleteScale()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Scale (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a2f8434b16f4452d43436038b8a0dcc29}\label{classbellshire_1_1_material_frame_a2f8434b16f4452d43436038b8a0dcc29}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteSource@{OnDeleteSource}}
+\index{OnDeleteSource@{OnDeleteSource}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteSource()}{OnDeleteSource()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Source (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ad0632a9a6ea133f1980f4c1e19904add}\label{classbellshire_1_1_material_frame_ad0632a9a6ea133f1980f4c1e19904add}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteSourceDetails@{OnDeleteSourceDetails}}
+\index{OnDeleteSourceDetails@{OnDeleteSourceDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteSourceDetails()}{OnDeleteSourceDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Source\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a8f32de18f809b165eb724cef0271e741}\label{classbellshire_1_1_material_frame_a8f32de18f809b165eb724cef0271e741}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteSpecification@{OnDeleteSpecification}}
+\index{OnDeleteSpecification@{OnDeleteSpecification}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteSpecification()}{OnDeleteSpecification()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Specification (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ac99b3e709110270804a2e576e088d1f7}\label{classbellshire_1_1_material_frame_ac99b3e709110270804a2e576e088d1f7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteSpecimenDetails@{OnDeleteSpecimenDetails}}
+\index{OnDeleteSpecimenDetails@{OnDeleteSpecimenDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteSpecimenDetails()}{OnDeleteSpecimenDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Specimen\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a2c1dd396c9ac2d03cc16677a36d7e50b}\label{classbellshire_1_1_material_frame_a2c1dd396c9ac2d03cc16677a36d7e50b}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteSynonym@{OnDeleteSynonym}}
+\index{OnDeleteSynonym@{OnDeleteSynonym}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteSynonym()}{OnDeleteSynonym()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Synonym (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a6e848edd55348f4814a727cec00fe549}\label{classbellshire_1_1_material_frame_a6e848edd55348f4814a727cec00fe549}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteTestConditionDetails@{OnDeleteTestConditionDetails}}
+\index{OnDeleteTestConditionDetails@{OnDeleteTestConditionDetails}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteTestConditionDetails()}{OnDeleteTestConditionDetails()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Test\+Condition\+Details (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a8a9ec522c39bfff8db84c442f717a4fc}\label{classbellshire_1_1_material_frame_a8a9ec522c39bfff8db84c442f717a4fc}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteUncertainty@{OnDeleteUncertainty}}
+\index{OnDeleteUncertainty@{OnDeleteUncertainty}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteUncertainty()}{OnDeleteUncertainty()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Uncertainty (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a476cf7cde005c1bcd0a27bedfeb108b9}\label{classbellshire_1_1_material_frame_a476cf7cde005c1bcd0a27bedfeb108b9}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteUnit@{OnDeleteUnit}}
+\index{OnDeleteUnit@{OnDeleteUnit}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteUnit()}{OnDeleteUnit()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Unit (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a187f0221de71a313d963ba2f4cf7ffaa}\label{classbellshire_1_1_material_frame_a187f0221de71a313d963ba2f4cf7ffaa}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteUnitless@{OnDeleteUnitless}}
+\index{OnDeleteUnitless@{OnDeleteUnitless}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteUnitless()}{OnDeleteUnitless()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Unitless (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a5f75c68e488b12c97cac62073c32c785}\label{classbellshire_1_1_material_frame_a5f75c68e488b12c97cac62073c32c785}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteUnits@{OnDeleteUnits}}
+\index{OnDeleteUnits@{OnDeleteUnits}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteUnits()}{OnDeleteUnits()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Units (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a3a540449dc3900faf5bf2b5ecb271c34}\label{classbellshire_1_1_material_frame_a3a540449dc3900faf5bf2b5ecb271c34}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnDeleteValue@{OnDeleteValue}}
+\index{OnDeleteValue@{OnDeleteValue}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnDeleteValue()}{OnDeleteValue()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Delete\+Value (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Call parents to delete Mat\+ML data Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a06e8e6768516ec0561eb5f522450f4a6}\label{classbellshire_1_1_material_frame_a06e8e6768516ec0561eb5f522450f4a6}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnEditMenuPreferencesItem@{OnEditMenuPreferencesItem}}
+\index{OnEditMenuPreferencesItem@{OnEditMenuPreferencesItem}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnEditMenuPreferencesItem()}{OnEditMenuPreferencesItem()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Edit\+Menu\+Preferences\+Item (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Edit Menu Preferences Item Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a4843d95b0ef2263ff248a6b168b1474d}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0e869ae15251f3f14a7e1ebb5ee2fc30}\label{classbellshire_1_1_material_frame_a0e869ae15251f3f14a7e1ebb5ee2fc30}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnElementActivated@{OnElementActivated}}
+\index{OnElementActivated@{OnElementActivated}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnElementActivated()}{OnElementActivated()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Element\+Activated (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+On \mbox{\hyperlink{class_element}{Element}} Activated. Event Handlers Function 
+
+Provides Calls for the updating the associated Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a715e69b6e11c93b883dbdb1a7aaf8bd2}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab6711224dd93967f45830ae70585ced9}\label{classbellshire_1_1_material_frame_ab6711224dd93967f45830ae70585ced9}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnElementCollapsed@{OnElementCollapsed}}
+\index{OnElementCollapsed@{OnElementCollapsed}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnElementCollapsed()}{OnElementCollapsed()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Element\+Collapsed (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+On \mbox{\hyperlink{class_element}{Element}} Collapsed Event Handlers functions 
+
+On element collapsed sets the layout
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_adf62d00ce1fcd00b6c6dc1be32534f95}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7357e2be2ca952916c8175949736d521}\label{classbellshire_1_1_material_frame_a7357e2be2ca952916c8175949736d521}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnElementExpanded@{OnElementExpanded}}
+\index{OnElementExpanded@{OnElementExpanded}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnElementExpanded()}{OnElementExpanded()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Element\+Expanded (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+On \mbox{\hyperlink{class_element}{Element}} Expanded Event Handlers functions 
+
+On element expansion sets the layout
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab45fa1e681feb5a671b8cae4b853e1cc}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a7dbf9229c006a646298aab8b63088f77}\label{classbellshire_1_1_material_frame_a7dbf9229c006a646298aab8b63088f77}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExitIsolateMaterialBranch@{OnExitIsolateMaterialBranch}}
+\index{OnExitIsolateMaterialBranch@{OnExitIsolateMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExitIsolateMaterialBranch()}{OnExitIsolateMaterialBranch()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Exit\+Isolate\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Exit Isolate of the \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a028bc89879c1535de375db5451e9c96a}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a624284c7023d7f86f818e12054fea493}\label{classbellshire_1_1_material_frame_a624284c7023d7f86f818e12054fea493}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExitSel@{OnExitSel}}
+\index{OnExitSel@{OnExitSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExitSel()}{OnExitSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Exit\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Exit Selection Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab77f4f8809415c5b381d7f5d56076f5b}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}\label{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExportMaterial@{OnExportMaterial}}
+\index{OnExportMaterial@{OnExportMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterial()}{OnExportMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Export\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Export \mbox{\hyperlink{class_material}{Material}} Selection Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a0395e505b0981793704997f6d00f8596}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_af4d4b277b6a871d5d68e277e72327bf7}\label{classbellshire_1_1_material_frame_af4d4b277b6a871d5d68e277e72327bf7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExportMaterial@{OnExportMaterial}}
+\index{OnExportMaterial@{OnExportMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterial()}{OnExportMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Export\+Material (\begin{DoxyParamCaption}\item[{wx\+String \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}\label{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExportMaterialBranch@{OnExportMaterialBranch}}
+\index{OnExportMaterialBranch@{OnExportMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterialBranch()}{OnExportMaterialBranch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Export\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Export \mbox{\hyperlink{class_material}{Material}} Branch Selection Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a8f27caed4ca8212c8d2146a711c453be}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a82a6afea8d31a5ec74e29cbb4c767ab7}\label{classbellshire_1_1_material_frame_a82a6afea8d31a5ec74e29cbb4c767ab7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnExportMaterialBranch@{OnExportMaterialBranch}}
+\index{OnExportMaterialBranch@{OnExportMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterialBranch()}{OnExportMaterialBranch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Export\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+String \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+On Export of \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a802edc415c78144556fb905a1bcadcf0}\label{classbellshire_1_1_material_frame_a802edc415c78144556fb905a1bcadcf0}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnGotoParentMaterial@{OnGotoParentMaterial}}
+\index{OnGotoParentMaterial@{OnGotoParentMaterial}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnGotoParentMaterial()}{OnGotoParentMaterial()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Goto\+Parent\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+On Component Details Goto Parent \mbox{\hyperlink{class_material}{Material}} Event Handler Function 
+
+Call parent\textquotesingle{}s to delete the Mat\+ML data
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a0bc7f81c402cb5d2b087482038f57987}\label{classbellshire_1_1_material_frame_a0bc7f81c402cb5d2b087482038f57987}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnImportMaterialBranch@{OnImportMaterialBranch}}
+\index{OnImportMaterialBranch@{OnImportMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnImportMaterialBranch()}{OnImportMaterialBranch()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Import\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Import of \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a368ca2ec4cf4416877e234e98ecb03c6}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_abb232253d72e0cbb9509a2750911a1cf}\label{classbellshire_1_1_material_frame_abb232253d72e0cbb9509a2750911a1cf}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnIsolateMaterialBranch@{OnIsolateMaterialBranch}}
+\index{OnIsolateMaterialBranch@{OnIsolateMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnIsolateMaterialBranch()}{OnIsolateMaterialBranch()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Isolate\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Isolate to the \mbox{\hyperlink{class_material}{Material}} Branch Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a06c047f5e3787c4cf8f6c0ad9fda5859}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ab9c0ce8c2f82dad5b556bbc66a364eca}\label{classbellshire_1_1_material_frame_ab9c0ce8c2f82dad5b556bbc66a364eca}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnMatMLItemMenu@{OnMatMLItemMenu}}
+\index{OnMatMLItemMenu@{OnMatMLItemMenu}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnMatMLItemMenu()}{OnMatMLItemMenu()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Mat\+MLItem\+Menu (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+On Mat\+ML Item Selection Event Handlers functions 
+
+On Mat\+ML item menu selection shows the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Shows context menu
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_aa87a18bf365e6ce80667446fbf6757d1}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a2e867a218bbda610b85aa583828e6e9b}\label{classbellshire_1_1_material_frame_a2e867a218bbda610b85aa583828e6e9b}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnNewSel@{OnNewSel}}
+\index{OnNewSel@{OnNewSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnNewSel()}{OnNewSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+New\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Event Handler Function for new \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} 
+
+On new selections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+Create Save wx\+Dialog
+
+Reset the Mat\+ML pointer to a new \mbox{\hyperlink{class_default}{Default}} Mat\+ML Document
+
+Delete all Items in Mat\+ML wx\+Tree\+Ctrl
+
+reset Mat\+ML Item to copy to nullptr
+
+Set the Mat\+ML Elements to the wx\+Tree\+Ctrl.
+
+Set the Event Handler\textquotesingle{}s Variables for the Mat\+ML\+\_\+\+GUIs.
+
+reset the path of our current open file
+
+Set the Title to reflect the file open
+
+Hide all the Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} panels
+
+Show the \mbox{\hyperlink{class_metadata}{Metadata}} panel
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a64ed6e9ca94947fd95462dda33bf6434}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a1e155d5241bdbb00d269e064796f56e5}\label{classbellshire_1_1_material_frame_a1e155d5241bdbb00d269e064796f56e5}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnOpenSel@{OnOpenSel}}
+\index{OnOpenSel@{OnOpenSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnOpenSel()}{OnOpenSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Open\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Open Selection Event Handler Function for opening a \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a7fc37d0c308156ee35a2c6e77e4d82e4}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a9ca724457198a94ef34cdebcd79ffc44}\label{classbellshire_1_1_material_frame_a9ca724457198a94ef34cdebcd79ffc44}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnSaveAsSel@{OnSaveAsSel}}
+\index{OnSaveAsSel@{OnSaveAsSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnSaveAsSel()}{OnSaveAsSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Save\+As\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Save\+As Selection Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_abd022137e64938d9743dc41cfc5ccaa4}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ac672ed89331b13884816c23625e21c22}\label{classbellshire_1_1_material_frame_ac672ed89331b13884816c23625e21c22}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnSaveSel@{OnSaveSel}}
+\index{OnSaveSel@{OnSaveSel}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnSaveSel()}{OnSaveSel()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Save\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Save Selection Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a840609ab6e82dcf5db7df7519fe3104b}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a53d8a0d29d4dcdbba2c429e5bbae9c2e}\label{classbellshire_1_1_material_frame_a53d8a0d29d4dcdbba2c429e5bbae9c2e}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!OnSortMenuItem@{OnSortMenuItem}}
+\index{OnSortMenuItem@{OnSortMenuItem}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{OnSortMenuItem()}{OnSortMenuItem()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+On\+Sort\+Menu\+Item (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+On Sort Menu Item Event Handler Function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ae73b427a3535a389f0d72a948e2a75df}{bellshire\+::\+Material\+Frame\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_ae01aa5fd4aec8a02be42401531dd94f9}\label{classbellshire_1_1_material_frame_ae01aa5fd4aec8a02be42401531dd94f9}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!Popup\_Paste@{Popup\_Paste}}
+\index{Popup\_Paste@{Popup\_Paste}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{Popup\_Paste()}{Popup\_Paste()}}
+{\footnotesize\ttfamily template$<$typename Mat\+MLClass , typename Parent\+\_\+\+GUIClass , typename Event\+Tag , typename Parent\+Base\+\_\+\+GUIClass , typename Event\+Arg , typename Event\+Handler $>$ \\
+void bellshire\+::\+Material\+Frame\+::\+Popup\+\_\+\+Paste (\begin{DoxyParamCaption}\item[{const boost\+::any \&}]{Mat\+MLItem\+To\+Copy,  }\item[{Parent\+\_\+\+GUIClass $\ast$}]{Parent\+\_\+\+GUI,  }\item[{wx\+Menu \&}]{menu,  }\item[{\+::std\+::string}]{desc,  }\item[{const Event\+Tag \&}]{event\+Type,  }\item[{void(Parent\+Base\+\_\+\+GUIClass\+::$\ast$)(Event\+Arg \&)}]{method,  }\item[{Event\+Handler $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pop-\/up menu For Pasting Places the Mat\+ML Item To Copy. Pop-\/up menu linking and binding Polymorphicly associated 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event\+Arg} & \\
+\hline
+{\em Parent\+\_\+\+GUIClass} & \\
+\hline
+{\em Event\+Handler} & \\
+\hline
+{\em Event\+Tag} & \\
+\hline
+{\em Mat\+MLClass} & \\
+\hline
+{\em Parent\+Base\+\_\+\+GUIClass} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLItem\+To\+Copy} & \\
+\hline
+{\em Parent\+\_\+\+GUI} & \\
+\hline
+{\em menu} & \\
+\hline
+{\em desc} & \\
+\hline
+{\em event\+Type} & \\
+\hline
+{\em method} & \\
+\hline
+{\em handler} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a2b5bc87be7d57612e34cfce1fba78926}\label{classbellshire_1_1_material_frame_a2b5bc87be7d57612e34cfce1fba78926}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!PopupLinkBind@{PopupLinkBind}}
+\index{PopupLinkBind@{PopupLinkBind}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{PopupLinkBind()}{PopupLinkBind()}}
+{\footnotesize\ttfamily template$<$typename Event\+Tag , typename \mbox{\hyperlink{class_class}{Class}} , typename Event\+Arg , typename Event\+Handler $>$ \\
+void bellshire\+::\+Material\+Frame\+::\+Popup\+Link\+Bind (\begin{DoxyParamCaption}\item[{wx\+Menu \&}]{menu,  }\item[{\+::std\+::string}]{desc,  }\item[{const Event\+Tag \&}]{event\+Type,  }\item[{void(Class\+::$\ast$)(Event\+Arg \&)}]{method,  }\item[{Event\+Handler $\ast$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pop-\/up menu linking and binding Links the Menu Item to the context menu. Binds the Event Handler Functions to the Menu Item. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event\+Arg} & \\
+\hline
+{\em Event\+Tag} & \\
+\hline
+{\em \mbox{\hyperlink{class_class}{Class}}} & \\
+\hline
+{\em Event\+Handler} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em menu} & \\
+\hline
+{\em desc} & \\
+\hline
+{\em event\+Type} & \\
+\hline
+{\em method} & \\
+\hline
+{\em handler} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a083e10d89bffe80a2aba029e35ab1507}\label{classbellshire_1_1_material_frame_a083e10d89bffe80a2aba029e35ab1507}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!reEstabilishTreeCtrlSizer@{reEstabilishTreeCtrlSizer}}
+\index{reEstabilishTreeCtrlSizer@{reEstabilishTreeCtrlSizer}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{reEstabilishTreeCtrlSizer()}{reEstabilishTreeCtrlSizer()}}
+{\footnotesize\ttfamily bool bellshire\+::\+Material\+Frame\+::re\+Estabilish\+Tree\+Ctrl\+Sizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+
+
+Re-\/\+Estabilished the wx\+Tree\+Ctrl Sizer.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Create new Sizer
+
+Add member wx\+Tree\+Ctrl to sizer
+
+Set main member panel sizer
+
+Set member wx\+Tree\+Ctrl size\mbox{\Hypertarget{classbellshire_1_1_material_frame_a2fda40a2a46e0bf9aa977fb34fb37fd2}\label{classbellshire_1_1_material_frame_a2fda40a2a46e0bf9aa977fb34fb37fd2}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!SetTreeCtrlConnect@{SetTreeCtrlConnect}}
+\index{SetTreeCtrlConnect@{SetTreeCtrlConnect}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{SetTreeCtrlConnect()}{SetTreeCtrlConnect()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Set\+Tree\+Ctrl\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the Connection of the wx\+Tree\+Ctrl event handler from an instant of a wx\+Tree\+Ctrl to events associated functions These calls overwrite the \mbox{\hyperlink{classbellshire_1_1_material_frame_base}{Material\+Frame\+Base}} class calls. 
+
+Connection of the wx\+Tree\+Ctrl event handler to fn On\+Element\+Actived
+
+Connection of the wx\+Tree\+Ctrl event handler to fn On\+Mat\+MLItem\+Menu
+
+Connection of the wx\+Tree\+Ctrl event handler to fn On\+Element\+Activated\mbox{\Hypertarget{classbellshire_1_1_material_frame_af5d3806c21ecb3fabe4d22b84cbd9aee}\label{classbellshire_1_1_material_frame_af5d3806c21ecb3fabe4d22b84cbd9aee}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!SetupMaterialBranch@{SetupMaterialBranch}}
+\index{SetupMaterialBranch@{SetupMaterialBranch}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{SetupMaterialBranch()}{SetupMaterialBranch()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Setup\+Material\+Branch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \&}]{element,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&}]{materials }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+//\+The following functions setup wx\+Tree\+Ctrl branches and assigns a Mat\+ML element pointer to the wx\+Tree\+Ctrl elements 
+
+The following functions setup wx\+Tree\+Ctrl branchesand assigns a Mat\+ML element pointer to the wx\+Tree\+Ctrl elements
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & \\
+\hline
+{\em materials} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a62dbd938705e88cfdafa26b00d5dd7a7}\label{classbellshire_1_1_material_frame_a62dbd938705e88cfdafa26b00d5dd7a7}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!ShowContextMenu@{ShowContextMenu}}
+\index{ShowContextMenu@{ShowContextMenu}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{ShowContextMenu()}{ShowContextMenu()}}
+{\footnotesize\ttfamily void bellshire\+::\+Material\+Frame\+::\+Show\+Context\+Menu (\begin{DoxyParamCaption}\item[{wx\+Tree\+Item\+Id}]{id,  }\item[{const wx\+Point \&}]{pt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shows/\+Creates the wx\+Tree\+Ctrl context menu Event Handler functions polymorphicly associated with the context menu are binded here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em pt} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_a51dc04b22e0bcfb954a32084f0a3d212}\label{classbellshire_1_1_material_frame_a51dc04b22e0bcfb954a32084f0a3d212}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!doc@{doc}}
+\index{doc@{doc}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily boost\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}}$>$ bellshire\+::\+Material\+Frame\+::doc\hspace{0.3cm}{\ttfamily [protected]}}
+
+Main Mat\+ML Document Pointer \mbox{\Hypertarget{classbellshire_1_1_material_frame_a58991582b2b3118193be1ce0189d938a}\label{classbellshire_1_1_material_frame_a58991582b2b3118193be1ce0189d938a}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!m\_CurrentDocPath@{m\_CurrentDocPath}}
+\index{m\_CurrentDocPath@{m\_CurrentDocPath}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{m\_CurrentDocPath}{m\_CurrentDocPath}}
+{\footnotesize\ttfamily wx\+String bellshire\+::\+Material\+Frame\+::m\+\_\+\+Current\+Doc\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+The Path to the file we have open \mbox{\Hypertarget{classbellshire_1_1_material_frame_ae98d0687ed47a311cef9af8c04a1b064}\label{classbellshire_1_1_material_frame_ae98d0687ed47a311cef9af8c04a1b064}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!m\_MatMLTreeCtrlStack@{m\_MatMLTreeCtrlStack}}
+\index{m\_MatMLTreeCtrlStack@{m\_MatMLTreeCtrlStack}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{m\_MatMLTreeCtrlStack}{m\_MatMLTreeCtrlStack}}
+{\footnotesize\ttfamily std\+::stack$<$\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}}$\ast$$>$ bellshire\+::\+Material\+Frame\+::m\+\_\+\+Mat\+MLTree\+Ctrl\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stack of wx\+Tree\+Ctrl Pointers. Allows for different Tree versions. \mbox{\Hypertarget{classbellshire_1_1_material_frame_a3bd42328d2a224deb7b45372c5ac3fa9}\label{classbellshire_1_1_material_frame_a3bd42328d2a224deb7b45372c5ac3fa9}} 
+\index{bellshire::MaterialFrame@{bellshire::MaterialFrame}!template\_doc@{template\_doc}}
+\index{template\_doc@{template\_doc}!bellshire::MaterialFrame@{bellshire::MaterialFrame}}
+\doxysubsubsection{\texorpdfstring{template\_doc}{template\_doc}}
+{\footnotesize\ttfamily std\+::auto\+\_\+ptr$<$\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}}$>$ bellshire\+::\+Material\+Frame\+::template\+\_\+doc\hspace{0.3cm}{\ttfamily [protected]}}
+
+used in the class tempates 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame.\+cpp\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/\mbox{\hyperlink{_material_frame_helper_8cpp}{Material\+Frame\+Helper.\+cpp}}\end{DoxyCompactItemize}

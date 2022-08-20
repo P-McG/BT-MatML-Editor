@@ -1,0 +1,284 @@
+\hypertarget{class_uncertainty}{}\doxysection{Uncertainty Class Reference}
+\label{class_uncertainty}\index{Uncertainty@{Uncertainty}}
+Inheritance diagram for Uncertainty\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_uncertainty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ac453bdbb894dbe8b94a5f5e03c873ea1}\label{class_uncertainty_ac453bdbb894dbe8b94a5f5e03c873ea1}} 
+typedef \mbox{\hyperlink{class_value}{\+::\+Value}} {\bfseries Value\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a211e2a210e44cbfbf16d195f19e39bf1}\label{class_uncertainty_a211e2a210e44cbfbf16d195f19e39bf1}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_value}{Value\+\_\+type}}, char $>$ {\bfseries Value\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_aff1a538e1406d889eeb7ffaf4fd923c3}\label{class_uncertainty_aff1a538e1406d889eeb7ffaf4fd923c3}} 
+typedef \mbox{\hyperlink{class_units}{\+::\+Units}} {\bfseries Units\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a6dedc1417128f3e94597980114e6fbca}\label{class_uncertainty_a6dedc1417128f3e94597980114e6fbca}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ \mbox{\hyperlink{class_units}{Units\+\_\+type}} $>$ {\bfseries Units\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a80701e1cb78b09ebbafb3d6607631733}\label{class_uncertainty_a80701e1cb78b09ebbafb3d6607631733}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_units}{Units\+\_\+type}}, char $>$ {\bfseries Units\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ad5652650669e0efeeaf95c55df48c75b}\label{class_uncertainty_ad5652650669e0efeeaf95c55df48c75b}} 
+typedef \mbox{\hyperlink{class_unitless}{\+::\+Unitless}} {\bfseries Unitless\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a294e15d11cedcc9a94e90cd12f941141}\label{class_uncertainty_a294e15d11cedcc9a94e90cd12f941141}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ \mbox{\hyperlink{class_unitless}{Unitless\+\_\+type}} $>$ {\bfseries Unitless\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_abb5cc2a6e1f589eb9e893b1386901247}\label{class_uncertainty_abb5cc2a6e1f589eb9e893b1386901247}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_unitless}{Unitless\+\_\+type}}, char $>$ {\bfseries Unitless\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a0bb2c0b7550128b28b65b4a243af87fb}\label{class_uncertainty_a0bb2c0b7550128b28b65b4a243af87fb}} 
+typedef \mbox{\hyperlink{class_notes}{\+::\+Notes}} {\bfseries Notes\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_af25fcf9755c4cf56e380a97ecb4484dc}\label{class_uncertainty_af25fcf9755c4cf56e380a97ecb4484dc}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ \mbox{\hyperlink{class_notes}{Notes\+\_\+type}} $>$ {\bfseries Notes\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a8d72bd92cbbc565773f82e5d09d4ad2b}\label{class_uncertainty_a8d72bd92cbbc565773f82e5d09d4ad2b}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_notes}{Notes\+\_\+type}}, char $>$ {\bfseries Notes\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ada94aa23112d7e213aeacdfc9c59e131}\label{class_uncertainty_ada94aa23112d7e213aeacdfc9c59e131}} 
+typedef \mbox{\hyperlink{class_scale}{\+::\+Scale}} {\bfseries Scale\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_aef49a6cdf3eb7a9b423c9760ac065db5}\label{class_uncertainty_aef49a6cdf3eb7a9b423c9760ac065db5}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ \mbox{\hyperlink{class_scale}{Scale\+\_\+type}} $>$ {\bfseries Scale\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_af79545dd43207ec0c279b4bc0ec70e86}\label{class_uncertainty_af79545dd43207ec0c279b4bc0ec70e86}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_scale}{Scale\+\_\+type}}, char $>$ {\bfseries Scale\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ac31a8b7d5948f7969b851efaf76a53ed}\label{class_uncertainty_ac31a8b7d5948f7969b851efaf76a53ed}} 
+typedef \+::xml\+\_\+schema\+::string {\bfseries Distribution\+Type\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a739a9905fdfa46de29e12bc43ca66282}\label{class_uncertainty_a739a9905fdfa46de29e12bc43ca66282}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ Distribution\+Type\+\_\+type, char $>$ {\bfseries Distribution\+Type\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_aef3390ad2f1a35bd9b1b206b199e0f35}\label{class_uncertainty_aef3390ad2f1a35bd9b1b206b199e0f35}} 
+typedef \+::xml\+\_\+schema\+::float\+\_\+ {\bfseries Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_afd3c8f2ed7de6115b92eb92142bc2aa7}\label{class_uncertainty_afd3c8f2ed7de6115b92eb92142bc2aa7}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type, char $>$ {\bfseries Num\+\_\+\+Std\+\_\+\+Dev\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a508a37eab3de8127b0be14c00ed4b791}\label{class_uncertainty_a508a37eab3de8127b0be14c00ed4b791}} 
+typedef \+::xml\+\_\+schema\+::float\+\_\+ {\bfseries Percentile\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a92ba811e87976fcf0f1865a0669dd25e}\label{class_uncertainty_a92ba811e87976fcf0f1865a0669dd25e}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ Percentile\+\_\+type $>$ {\bfseries Percentile\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_aff84dee452d722fce22d2c7891111612}\label{class_uncertainty_aff84dee452d722fce22d2c7891111612}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ Percentile\+\_\+type, char $>$ {\bfseries Percentile\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a1960c770291602152f5227b9930d48cb}\label{class_uncertainty_a1960c770291602152f5227b9930d48cb}} 
+typedef \+::xml\+\_\+schema\+::float\+\_\+ {\bfseries Confidence\+Level\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a530c3c28a2f4d817bd259692a4b001de}\label{class_uncertainty_a530c3c28a2f4d817bd259692a4b001de}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ Confidence\+Level\+\_\+type $>$ {\bfseries Confidence\+Level\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a0becb1b5bfbd51469f810e4cf62138fe}\label{class_uncertainty_a0becb1b5bfbd51469f810e4cf62138fe}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ Confidence\+Level\+\_\+type, char $>$ {\bfseries Confidence\+Level\+\_\+traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_afe2ac62a6c229c05743b055711b43087}\label{class_uncertainty_afe2ac62a6c229c05743b055711b43087}} 
+const \mbox{\hyperlink{class_value}{Value\+\_\+type}} \& {\bfseries Value} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_a6e086788b0c8847be6c7aa9c5ef8dd96}\label{class_uncertainty_a6e086788b0c8847be6c7aa9c5ef8dd96}} 
+\mbox{\hyperlink{class_value}{Value\+\_\+type}} \& {\bfseries Value} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a616815462fd51b8fd1c15beb189de21b}\label{class_uncertainty_a616815462fd51b8fd1c15beb189de21b}} 
+void {\bfseries Value} (const \mbox{\hyperlink{class_value}{Value\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a46c05f0109db7c82648dd9aa150d9239}\label{class_uncertainty_a46c05f0109db7c82648dd9aa150d9239}} 
+void {\bfseries Value} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_value}{Value\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_acbed381432737a221641c622684299ae}\label{class_uncertainty_acbed381432737a221641c622684299ae}} 
+const Units\+\_\+optional \& {\bfseries Units} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_aebd91e1479e22f27573826d35fc83276}\label{class_uncertainty_aebd91e1479e22f27573826d35fc83276}} 
+Units\+\_\+optional \& {\bfseries Units} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a5b2163f1cf9044a438069f7046115b57}\label{class_uncertainty_a5b2163f1cf9044a438069f7046115b57}} 
+void {\bfseries Units} (const \mbox{\hyperlink{class_units}{Units\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_acc1374e4df814526178d6e1a62a2d5f3}\label{class_uncertainty_acc1374e4df814526178d6e1a62a2d5f3}} 
+void {\bfseries Units} (const Units\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_aeba8d1d2ae37d479f48b7bc2a2fec90c}\label{class_uncertainty_aeba8d1d2ae37d479f48b7bc2a2fec90c}} 
+void {\bfseries Units} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_units}{Units\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a341019148f4c677f1f4b4b457caf575c}\label{class_uncertainty_a341019148f4c677f1f4b4b457caf575c}} 
+const Unitless\+\_\+optional \& {\bfseries Unitless} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_afa7488f0da69974504cabd8507ca640a}\label{class_uncertainty_afa7488f0da69974504cabd8507ca640a}} 
+Unitless\+\_\+optional \& {\bfseries Unitless} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_ac0ae75a84e73d4ea4e58becbb0143cb9}\label{class_uncertainty_ac0ae75a84e73d4ea4e58becbb0143cb9}} 
+void {\bfseries Unitless} (const \mbox{\hyperlink{class_unitless}{Unitless\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_ad684906e195145436d86d6a9c94539d7}\label{class_uncertainty_ad684906e195145436d86d6a9c94539d7}} 
+void {\bfseries Unitless} (const Unitless\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_af27e4d48d9825ac380e9bf5ffa8b3aee}\label{class_uncertainty_af27e4d48d9825ac380e9bf5ffa8b3aee}} 
+void {\bfseries Unitless} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_unitless}{Unitless\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a644cd927d22e498ee0744de6f16ba9d3}\label{class_uncertainty_a644cd927d22e498ee0744de6f16ba9d3}} 
+const Notes\+\_\+optional \& {\bfseries Notes} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_a9c15b3ce0340c5f5c83d521fa318a548}\label{class_uncertainty_a9c15b3ce0340c5f5c83d521fa318a548}} 
+Notes\+\_\+optional \& {\bfseries Notes} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a4e8247c686eee636b368538c116bb356}\label{class_uncertainty_a4e8247c686eee636b368538c116bb356}} 
+void {\bfseries Notes} (const \mbox{\hyperlink{class_notes}{Notes\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a7316fdefeab6a2e9af2cf5bbb5b421ff}\label{class_uncertainty_a7316fdefeab6a2e9af2cf5bbb5b421ff}} 
+void {\bfseries Notes} (const Notes\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a67784949cae30e3d81c69d3e7945f43c}\label{class_uncertainty_a67784949cae30e3d81c69d3e7945f43c}} 
+void {\bfseries Notes} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_notes}{Notes\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_afa5b76b1b08193baafa5982ac78ab4e9}\label{class_uncertainty_afa5b76b1b08193baafa5982ac78ab4e9}} 
+const Scale\+\_\+optional \& {\bfseries Scale} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_abe79327384a74d394a0df94d3c439f31}\label{class_uncertainty_abe79327384a74d394a0df94d3c439f31}} 
+Scale\+\_\+optional \& {\bfseries Scale} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a4adfedd546671e1d29fa7371fff92099}\label{class_uncertainty_a4adfedd546671e1d29fa7371fff92099}} 
+void {\bfseries Scale} (const \mbox{\hyperlink{class_scale}{Scale\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_ad9a2ea10b99e552523d1920a95e3bda4}\label{class_uncertainty_ad9a2ea10b99e552523d1920a95e3bda4}} 
+void {\bfseries Scale} (const Scale\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_af7560d90010d64936c8c1ff2b9eb0023}\label{class_uncertainty_af7560d90010d64936c8c1ff2b9eb0023}} 
+void {\bfseries Scale} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_scale}{Scale\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a30c391aea8c960f0804d1f24e9396456}\label{class_uncertainty_a30c391aea8c960f0804d1f24e9396456}} 
+const Distribution\+Type\+\_\+type \& {\bfseries Distribution\+Type} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_a5bd8d36742bf64897c15278f2a205f41}\label{class_uncertainty_a5bd8d36742bf64897c15278f2a205f41}} 
+Distribution\+Type\+\_\+type \& {\bfseries Distribution\+Type} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_ae14db67557546337a32da92dedcb5d37}\label{class_uncertainty_ae14db67557546337a32da92dedcb5d37}} 
+void {\bfseries Distribution\+Type} (const Distribution\+Type\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a22957117100a1bc5bf0ce31cfe67dcaf}\label{class_uncertainty_a22957117100a1bc5bf0ce31cfe67dcaf}} 
+void {\bfseries Distribution\+Type} (\+::std\+::auto\+\_\+ptr$<$ Distribution\+Type\+\_\+type $>$ p)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a8ad476d347f8f6f9bcf1d16dbf341b19}\label{class_uncertainty_a8ad476d347f8f6f9bcf1d16dbf341b19}} 
+const Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type \& {\bfseries Num\+\_\+\+Std\+\_\+\+Dev} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_aad5876b397d424d9154962eced9647c6}\label{class_uncertainty_aad5876b397d424d9154962eced9647c6}} 
+Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type \& {\bfseries Num\+\_\+\+Std\+\_\+\+Dev} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a7d44fc54595525e904319e818b648918}\label{class_uncertainty_a7d44fc54595525e904319e818b648918}} 
+void {\bfseries Num\+\_\+\+Std\+\_\+\+Dev} (const Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a03b75868b68c5560406ece27c9715b93}\label{class_uncertainty_a03b75868b68c5560406ece27c9715b93}} 
+const Percentile\+\_\+optional \& {\bfseries Percentile} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_a0888c5925a659e8a7df12b58ee9d8183}\label{class_uncertainty_a0888c5925a659e8a7df12b58ee9d8183}} 
+Percentile\+\_\+optional \& {\bfseries Percentile} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a7a524e96091ebe3554cf404dadcb834d}\label{class_uncertainty_a7a524e96091ebe3554cf404dadcb834d}} 
+void {\bfseries Percentile} (const Percentile\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_adf2bfc60b6378633ac78312ec4fbe455}\label{class_uncertainty_adf2bfc60b6378633ac78312ec4fbe455}} 
+void {\bfseries Percentile} (const Percentile\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_ab6bcce4527897893811660f7a1a6aff1}\label{class_uncertainty_ab6bcce4527897893811660f7a1a6aff1}} 
+const Confidence\+Level\+\_\+optional \& {\bfseries Confidence\+Level} () const
+\item 
+\mbox{\Hypertarget{class_uncertainty_af8abc9ebaee1cbe2da34b0922395d390}\label{class_uncertainty_af8abc9ebaee1cbe2da34b0922395d390}} 
+Confidence\+Level\+\_\+optional \& {\bfseries Confidence\+Level} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_aed972ee8d5bda92a4ea3a0fc97cf7da0}\label{class_uncertainty_aed972ee8d5bda92a4ea3a0fc97cf7da0}} 
+void {\bfseries Confidence\+Level} (const Confidence\+Level\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a2e28185619078880f528fe8991bbb2c9}\label{class_uncertainty_a2e28185619078880f528fe8991bbb2c9}} 
+void {\bfseries Confidence\+Level} (const Confidence\+Level\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a427988ff0c0687317a62b21879515e90}\label{class_uncertainty_a427988ff0c0687317a62b21879515e90}} 
+{\bfseries Uncertainty} (const \mbox{\hyperlink{class_value}{Value\+\_\+type}} \&)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a0ebef267590b7d1ace56e4742460b762}\label{class_uncertainty_a0ebef267590b7d1ace56e4742460b762}} 
+{\bfseries Uncertainty} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_value}{Value\+\_\+type}} $>$)
+\item 
+\mbox{\Hypertarget{class_uncertainty_adb488b683544e0485afc7a6726e2ed5b}\label{class_uncertainty_adb488b683544e0485afc7a6726e2ed5b}} 
+{\bfseries Uncertainty} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_uncertainty_acaba53880e7fe0216c45d354ae1a2e9c}\label{class_uncertainty_acaba53880e7fe0216c45d354ae1a2e9c}} 
+{\bfseries Uncertainty} (const \mbox{\hyperlink{class_uncertainty}{Uncertainty}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_uncertainty_a6259780e911dd895a3bc1f2a55a62449}\label{class_uncertainty_a6259780e911dd895a3bc1f2a55a62449}} 
+virtual \mbox{\hyperlink{class_uncertainty}{Uncertainty}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_uncertainty_af9e1b76314fb9b86dbdd481b3ee9c0f9}\label{class_uncertainty_af9e1b76314fb9b86dbdd481b3ee9c0f9}} 
+\mbox{\hyperlink{class_uncertainty}{Uncertainty}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_uncertainty}{Uncertainty}} \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ad6847ef9c07b2931af8ad76b5a9e6a33}\label{class_uncertainty_ad6847ef9c07b2931af8ad76b5a9e6a33}} 
+static const \mbox{\hyperlink{class_scale}{Scale\+\_\+type}} \& {\bfseries Scale\+\_\+default\+\_\+value} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a284d214566b29598dd889ab735eb0ad2}\label{class_uncertainty_a284d214566b29598dd889ab735eb0ad2}} 
+static const Distribution\+Type\+\_\+type \& {\bfseries Distribution\+Type\+\_\+default\+\_\+value} ()
+\item 
+\mbox{\Hypertarget{class_uncertainty_a84c0bdb644e94b770f5f21e7e747549c}\label{class_uncertainty_a84c0bdb644e94b770f5f21e7e747549c}} 
+static Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type {\bfseries Num\+\_\+\+Std\+\_\+\+Dev\+\_\+default\+\_\+value} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a8e593f8d34c3a54ec04b2dc3ce7bcf37}\label{class_uncertainty_a8e593f8d34c3a54ec04b2dc3ce7bcf37}} 
+void {\bfseries parse} (\+::xsd\+::cxx\+::xml\+::dom\+::parser$<$ char $>$ \&, \+::xml\+\_\+schema\+::flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_aaeb02e33f1735bd5c3da248826a0f89d}\label{class_uncertainty_aaeb02e33f1735bd5c3da248826a0f89d}} 
+\+::xsd\+::cxx\+::tree\+::one$<$ \mbox{\hyperlink{class_value}{Value\+\_\+type}} $>$ {\bfseries Value\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a54065c8596ab7bab65c16c7ed36a63fe}\label{class_uncertainty_a54065c8596ab7bab65c16c7ed36a63fe}} 
+Units\+\_\+optional {\bfseries Units\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a39115c59c6e019dbabd25dea3ef93473}\label{class_uncertainty_a39115c59c6e019dbabd25dea3ef93473}} 
+Unitless\+\_\+optional {\bfseries Unitless\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a10d751bafacc440201242912e59a7cd6}\label{class_uncertainty_a10d751bafacc440201242912e59a7cd6}} 
+Notes\+\_\+optional {\bfseries Notes\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a4be7809fd67386506085c3645d858d49}\label{class_uncertainty_a4be7809fd67386506085c3645d858d49}} 
+Scale\+\_\+optional {\bfseries Scale\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a6e3ccf035a8ee963a047addf78763ba5}\label{class_uncertainty_a6e3ccf035a8ee963a047addf78763ba5}} 
+\+::xsd\+::cxx\+::tree\+::one$<$ Distribution\+Type\+\_\+type $>$ {\bfseries Distribution\+Type\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a0a78adbd8fbf06c7afe25ce0a2cb4ccd}\label{class_uncertainty_a0a78adbd8fbf06c7afe25ce0a2cb4ccd}} 
+\+::xsd\+::cxx\+::tree\+::one$<$ Num\+\_\+\+Std\+\_\+\+Dev\+\_\+type $>$ {\bfseries Num\+\_\+\+Std\+\_\+\+Dev\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_acdf956d0fd76230037986f3fa233bd18}\label{class_uncertainty_acdf956d0fd76230037986f3fa233bd18}} 
+Percentile\+\_\+optional {\bfseries Percentile\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_ac80f47f4a502a7fd9ea20cf251882179}\label{class_uncertainty_ac80f47f4a502a7fd9ea20cf251882179}} 
+Confidence\+Level\+\_\+optional {\bfseries Confidence\+Level\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a14f89abf18d91569db5850c6e1317ad3}\label{class_uncertainty_a14f89abf18d91569db5850c6e1317ad3}} 
+static const \mbox{\hyperlink{class_scale}{Scale\+\_\+type}} {\bfseries Scale\+\_\+default\+\_\+value\+\_\+}
+\item 
+\mbox{\Hypertarget{class_uncertainty_a1d5d5bf574459f3e38cfeba6fe4245e6}\label{class_uncertainty_a1d5d5bf574459f3e38cfeba6fe4245e6}} 
+static const Distribution\+Type\+\_\+type {\bfseries Distribution\+Type\+\_\+default\+\_\+value\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}

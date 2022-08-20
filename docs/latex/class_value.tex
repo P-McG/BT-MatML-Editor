@@ -1,0 +1,74 @@
+\hypertarget{class_value}{}\doxysection{Value Class Reference}
+\label{class_value}\index{Value@{Value}}
+Inheritance diagram for Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_value}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_value_a5727b432ddf5add2d5a54ebe103de990}\label{class_value_a5727b432ddf5add2d5a54ebe103de990}} 
+typedef \mbox{\hyperlink{class_data_format}{\+::\+Data\+Format}} {\bfseries format\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_value_a6a027ccf81d6172c7b15f7d60add5b56}\label{class_value_a6a027ccf81d6172c7b15f7d60add5b56}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}}, char $>$ {\bfseries format\+\_\+traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_value_a84f220a6afd7be4ce6bb8822147c2575}\label{class_value_a84f220a6afd7be4ce6bb8822147c2575}} 
+const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \& {\bfseries format} () const
+\item 
+\mbox{\Hypertarget{class_value_a4b7404405c5a925f819d35d9136b52a8}\label{class_value_a4b7404405c5a925f819d35d9136b52a8}} 
+\mbox{\hyperlink{class_data_format}{format\+\_\+type}} \& {\bfseries format} ()
+\item 
+\mbox{\Hypertarget{class_value_a8f37cc9a9111f01767254540e047e4ae}\label{class_value_a8f37cc9a9111f01767254540e047e4ae}} 
+void {\bfseries format} (const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_value_a54ae7b8cef15c6c124b9119e23d58714}\label{class_value_a54ae7b8cef15c6c124b9119e23d58714}} 
+void {\bfseries format} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_value_a2a5550a3218209548c20c4ccb55edac9}\label{class_value_a2a5550a3218209548c20c4ccb55edac9}} 
+{\bfseries Value} (const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&)
+\item 
+\mbox{\Hypertarget{class_value_a5959808eb16066a3e54842905747ca06}\label{class_value_a5959808eb16066a3e54842905747ca06}} 
+{\bfseries Value} (const char $\ast$, const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&)
+\item 
+\mbox{\Hypertarget{class_value_a110672864432ba4e8822ef72555a45f5}\label{class_value_a110672864432ba4e8822ef72555a45f5}} 
+{\bfseries Value} (const \+::std\+::string \&, const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&)
+\item 
+\mbox{\Hypertarget{class_value_a6a4f30612b217c7818c5056af2ecbe62}\label{class_value_a6a4f30612b217c7818c5056af2ecbe62}} 
+{\bfseries Value} (const \+::xml\+\_\+schema\+::string \&, const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&)
+\item 
+\mbox{\Hypertarget{class_value_a302500fa9a188ab497dd89124f229ec3}\label{class_value_a302500fa9a188ab497dd89124f229ec3}} 
+{\bfseries Value} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_value_a15fe5db6c26dc1339c79c20b75182057}\label{class_value_a15fe5db6c26dc1339c79c20b75182057}} 
+{\bfseries Value} (const \mbox{\hyperlink{class_value}{Value}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_value_ada3a054be83fdccb4895f31dfbf5630d}\label{class_value_ada3a054be83fdccb4895f31dfbf5630d}} 
+virtual \mbox{\hyperlink{class_value}{Value}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_value_a1a4408fb33ad5a1debfb234006d00fd2}\label{class_value_a1a4408fb33ad5a1debfb234006d00fd2}} 
+\mbox{\hyperlink{class_value}{Value}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_value}{Value}} \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_value_aec98da3824e99e620055ba892bc4de20}\label{class_value_aec98da3824e99e620055ba892bc4de20}} 
+void {\bfseries parse} (\+::xsd\+::cxx\+::xml\+::dom\+::parser$<$ char $>$ \&, \+::xml\+\_\+schema\+::flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_value_a53368afa6e3fa98487940a68b2e18453}\label{class_value_a53368afa6e3fa98487940a68b2e18453}} 
+\+::xsd\+::cxx\+::tree\+::one$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}} $>$ {\bfseries format\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}

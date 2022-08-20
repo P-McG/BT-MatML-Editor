@@ -1,0 +1,86 @@
+\hypertarget{_b_t___mat_m_l___associate___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Associate\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___associate___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Associate\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Associate\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Associate\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Associate\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_ID\_GUI.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base}{Associate\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37     \textcolor{keyword}{public}:}
+\DoxyCodeLine{38         wxTextCtrl* m\_AssociateTextCtrl;}
+\DoxyCodeLine{39         wxNotebook* m\_GUI;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base}{Associate\_GUI\_Base}}();}
+\DoxyCodeLine{42         \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base}{Associate\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{43         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base_a56b49da3f8186ab8d09a506861551df9}{Create}}(wxWindow* parent, wxTextCtrl*\& AssociateTextCtrl);}
+\DoxyCodeLine{44         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base}{\string~Associate\_GUI\_Base}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{47         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base_a9d808de3d285e8314d0af0b7bdb62300}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{50             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{51             \mbox{\hyperlink{class_associate}{Associate}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{52             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{53         );}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_associate}{Associate}}* element);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base_a6e6d7a4b3911c95949d09abaeeef23ff}{SetConnect}}();}
+\DoxyCodeLine{57         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnAssociateTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{private}:}
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{Associate\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i___base}{Associate\_GUI\_Base}}}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64     \textcolor{keyword}{public}:}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{Associate\_GUI}}();}
+\DoxyCodeLine{69         \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{Associate\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{\string~Associate\_GUI}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i_acf1657933da7df21ad43ba4290130fed}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_associate___g_u_i_a475eb9d27bb4e8c9087325809d9670e6}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{77         \textcolor{keywordtype}{void} OnAssociateTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keyword}{private}:}
+\DoxyCodeLine{80     \};}
+\DoxyCodeLine{81 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\hypertarget{_b_t___mat_m_l___parent_sub_class___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Parent\+Sub\+Class\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___parent_sub_class___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_ParentSubClass\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_ParentSubClass\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_ParentSubClass\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     ParentSubClasses of ParentSubClass\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base}{ParentSubClass\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37     \textcolor{keyword}{public}:}
+\DoxyCodeLine{38         wxNotebook* m\_GUI;}
+\DoxyCodeLine{39         wxTextCtrl* m\_ParentSubClassTextCtrl;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base}{ParentSubClass\_GUI\_Base}}();}
+\DoxyCodeLine{42         \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base}{ParentSubClass\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{43         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base}{\string~ParentSubClass\_GUI\_Base}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base_a1a0354ebea87d57941425a7f8532519b}{Create}}(wxWindow* parent, wxTextCtrl*\& ParentSubClassTextCtrl);}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{47         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base_afb9ca4de43e83ff68b37e1f123aee475}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{50             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{51             \mbox{\hyperlink{class_class}{Class::ParentSubClass\_type}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{52             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{53         );}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} Update(ParentSubClass* element);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{57         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{58         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertParentMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{59         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertParentSubClass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{62         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteParentMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{63         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteParentSubClass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteParentMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteParentSubClass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{private}:}
+\DoxyCodeLine{73     \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i}{ParentSubClass\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i___base}{ParentSubClass\_GUI\_Base}}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77     \textcolor{keyword}{public}:}
+\DoxyCodeLine{78         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{79         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_a18b0e41e0c7409ae06564ed2e76f41aa}{ParentSubClass\_GUI}}();}
+\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_a18b0e41e0c7409ae06564ed2e76f41aa}{ParentSubClass\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_a5b85d5b818c7ad4a2fb776d26de28791}{\string~ParentSubClass\_GUI}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_a4c69cb99e91d01e66647b0c0a54283bb}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_af1bf0f5c5153a19039c16d551971be7a}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} OnInsertParentMaterial(wxCommandEvent\& event);}
+\DoxyCodeLine{93         \textcolor{keywordtype}{void} OnInsertParentSubClass(wxCommandEvent\& event);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} OnDeleteParentMaterial(wxCommandEvent\& event);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} OnDeleteParentSubClass(wxCommandEvent\& event);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} OnPasteParentMaterial(wxCommandEvent\& event);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} OnPasteParentSubClass(wxCommandEvent\& event);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_ad88fdd521ec011d18b5b8d79f11bc00b}{OnBumpUp}}(wxCommandEvent\& event);}
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i_a0031207182eb7905446aeae40cebb19c}{OnBumpDown}}(wxCommandEvent\& event);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{keyword}{private}:}
+\DoxyCodeLine{107     \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\hypertarget{_preference_frame_8h_source}{}\doxysection{Preference\+Frame.\+h}
+\label{_preference_frame_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/PreferenceFrame.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/PreferenceFrame.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        PreferenceFrame.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Preferences wxWidget Frame.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef \_\_PreferenceFrame\_\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_\_PreferenceFrame\_\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MaterialFrameBase.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}\{}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_preference_frame}{PreferenceFrame}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_preference_frame_base}{PreferenceFrameBase}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{comment}{//configuration}}
+\DoxyCodeLine{24     wxConfig* config;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// Handlers for PreferenceFrameBase events.}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} OnSavePreferencesButton( wxCommandEvent\& event );}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} OnCancelPreferencesButton( wxCommandEvent\& event );}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} SetPreferenceControls();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     wxArrayString GetSortClasses();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \mbox{\hyperlink{classbellshire_1_1_preference_frame_a0146cae1182882e5a5ed07bdf021ce42}{PreferenceFrame}}( wxWindow* parent );}
+\DoxyCodeLine{37     \mbox{\hyperlink{classbellshire_1_1_preference_frame}{\string~PreferenceFrame}}();}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 \}\textcolor{comment}{//namespace bellshire}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_PreferenceFrame\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+Microsoft Window 10
+
+Xerces-c (static libraries)
+========
+Download xerces-c-3.2.3.zip
+extract all
+cd xerces-c-3.2.3/xerces-c-3.2.3
+
+cmake-gui
+Set source code directory
+Set build binary directory /build
+Add entry BUILD_SHARED_LIBS BOOL=OFF
+Press Configure
+Press Generate
+Press Open Project
+
+This will launch the generator (Microsoft Visual Studio)
+
+Set the Solution Configuration to Release
+Set the Solution Plateform to x64
+Build
+
+In Administrator Command prompt
+cd to the build directory
+cmake --install .
+[done]
+
+WxWidget (static libraries)
+===========================
+Download source code installer at
+https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxMSW-3.2.0-Setup.exe
+Ran the installer and install at c:/wxWidgets-3.2.0
+
+cmake-gui
+Set source code directory
+Set build binary
+Press Configure
+Deselected SHARED
+Press Generate
+Press Open Project
+
+This will launch the generator (Microsoft Visual Studio)
+
+Set the Solution Configuration to Release
+Set the Solution Plateform to x64
+Build
+
+In Administrator Command prompt
+cd to the build directory
+cmake --install .
+[done]
+ 

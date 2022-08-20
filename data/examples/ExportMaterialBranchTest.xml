@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
+  <Material id="BT-05d6fe5b-02ba-46c5-9c33-b907fcd91cd3">
+    <BulkDetails>
+      <Name>RESIN</Name>
+      <Class>
+        <Name>RESIN</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-62bb4133-1646-4647-967e-af03f5e5a5e4">
+    <BulkDetails>
+      <Name>CARBON</Name>
+      <Class>
+        <Name>REINFORCEMENT</Name>
+      </Class>
+      <Class>
+        <Name>CARBON</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-cfd15461-bdf6-4b71-8e60-35d6c9e78938">
+    <BulkDetails>
+      <Name>LAMINA</Name>
+    </BulkDetails>
+    <ComponentDetails>
+      <Name>RESIN</Name>
+      <Class>
+        <ParentMaterial id="BT-05d6fe5b-02ba-46c5-9c33-b907fcd91cd3"/>
+      </Class>
+    </ComponentDetails>
+    <ComponentDetails>
+      <Name>REINFORCEMENT</Name>
+      <Class>
+        <ParentMaterial id="BT-62bb4133-1646-4647-967e-af03f5e5a5e4"/>
+      </Class>
+    </ComponentDetails>
+  </Material>
+  <Metadata/>
+</MatML_Doc>

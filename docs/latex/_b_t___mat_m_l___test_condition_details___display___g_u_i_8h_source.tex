@@ -1,0 +1,71 @@
+\hypertarget{_b_t___mat_m_l___test_condition_details___display___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Test\+Condition\+Details\+\_\+\+Display\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___test_condition_details___display___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_TestConditionDetails\_Display\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_TestConditionDetails\_Display\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_TestConditionDetails\_Display\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of TestConditionDetails\_Display\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/grid.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//Utility for std:string and wxString}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define \_std2wx(var) wxString (var.c\_str(),wxConvUTF8)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define \_wx2std(var) std::string(var.mb\_str())}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_test_condition_details___display___g_u_i}{TestConditionDetails\_Display\_GUI}}}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45     \textcolor{keyword}{public}:}
+\DoxyCodeLine{46         wxPanel* m\_GUI;}
+\DoxyCodeLine{47         wxTextCtrl* m\_TestConditionDetailsNotesTextCtrl;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_test_condition_details___display___g_u_i}{TestConditionDetails\_Display\_GUI}}();}
+\DoxyCodeLine{50         \mbox{\hyperlink{classbellshire_1_1_test_condition_details___display___g_u_i}{TestConditionDetails\_Display\_GUI}}(wxNotebook* parent);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_test_condition_details___display___g_u_i}{\string~TestConditionDetails\_Display\_GUI}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         wxPanel* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxPanel* Create(}
+\DoxyCodeLine{57             wxNotebook* parent,}
+\DoxyCodeLine{58             wxTextCtrl*\& TestConditionDetailsNotesTextCtrl}
+\DoxyCodeLine{59         );}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_property_data}{PropertyData}}* element);}
+\DoxyCodeLine{62     \textcolor{keyword}{private}:}
+\DoxyCodeLine{63     \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}

@@ -1,0 +1,216 @@
+\label{index_md_C__Users_paulm_source_repos_BT_MatML_Editer_README}%
+\Hypertarget{index_md_C__Users_paulm_source_repos_BT_MatML_Editer_README}%
+ {\bfseries{Author}} Paul Mc\+Grath {\bfseries{Date}} June, 2022
+
+The Mat\+ML Editer is a text editer for the \href{https://www.matml.org/}{\texttt{ Mat\+ML 3.\+1 XML Schema}}.
+
+Mat\+ML is an extensible markup language (XML) developed especially for the interchange of material information. It provides a medium of communication for users in materials science and related fields such as manufacturing and aerospace. It sets the stage for the development of semantic web standards to enhance knowledge discovery in materials science and related areas.\hypertarget{index_autotoc_md0}{}\doxysection{Binary Downloads}\label{index_autotoc_md0}
+Goto \href{https://github.com/P-McG/BT-MatML-Editer/releases}{\texttt{ Releases}} and under {\itshape Assets} download the win64 for Microsoft Windows releases and Linux for Linux releases.\hypertarget{index_autotoc_md1}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editer Usage}\label{index_autotoc_md1}
+To run the program, click on the BT-\/\+Mat\+ML-\/\+Editer application.
+
+Once running click on \textquotesingle{}File-\/\texorpdfstring{$>$}{>}Open\textquotesingle{}, or \textquotesingle{}File-\/\texorpdfstring{$>$}{>}New\textquotesingle{}, to start.
+
+The general approach to the program is to use the Tree Control user interface to navigate through the Mat\+ML data elements. The tree on the left side is the main navigation aid. Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The Mat\+ML Schema Information will show up on the right panel. The tabs for the right panel will display either the Mat\+ML Schema Information (default) or the Mat\+ML data itself (can be changed in \textquotesingle{}Edit-\/\texorpdfstring{$>$}{>}Preferences\textquotesingle{}).
+
+While the BT-\/\+Mat\+ML-\/\+Editer is not a database, and not optimized for extremely large files, it can handle multimaterial files. These larger files are more manageable using the following tools.
+
+Sorting the view of the materials. In \textquotesingle{}Edit-\/\texorpdfstring{$>$}{>}Preferences-\/\texorpdfstring{$>$}{>}Sort class\textquotesingle{}, it is possible to add sort classes. This option will changed the view (not the xml file) of the materials. Adding \char`\"{}\+STEEL\char`\"{} for an example, will display the Materials with the class name of \char`\"{}\+STEEL\char`\"{} first. Then the remainding materials will be displayed in the order the are in inside the XML file. Once set, \textquotesingle{}view-\/\texorpdfstring{$>$}{>}perform material sort\textquotesingle{} will change the view order of the materials.
+
+One other option for viewing larger files is the use of \textquotesingle{}view-\/\texorpdfstring{$>$}{>}Isolate \mbox{\hyperlink{class_material}{Material}} Branch\textquotesingle{}. This will isolate materials which are interconnected with \textquotesingle{} \mbox{\hyperlink{class_material}{Material}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_component_details}{Component\+Details}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_class}{Class}} -\/\texorpdfstring{$>$}{>} \mbox{\hyperlink{class_parent_material}{Parent\+Material}} \textquotesingle{} associations. To exit this view, \textquotesingle{}View-\/\texorpdfstring{$>$}{>}Exit Isolate material branch\textquotesingle{} will bring back the original list of materials.\hypertarget{index_autotoc_md2}{}\doxysection{BT-\/\+Mat\+ML-\/\+Editer Builds}\label{index_autotoc_md2}
+Development source code is hosted on \href{https://github.com/P-McG/BT-MatML-Editer}{\texttt{ Git\+Hub}} and source code for stable release versions are found at \href{https://github.com/P-McG/BT-MatML-Editer/releases}{\texttt{ releases}} along with the binaries.
+
+The following prerequisites dependencies are\+:
+\begin{DoxyItemize}
+\item \href{https://xerces.apache.org/xerces-c/}{\texttt{ Xerces-\/c}} 3.\+2.\+3
+\item \href{https://www.codesynthesis.com/products/xsd/}{\texttt{ Code\+Synthesis-\/\+XSD}} 4.\+0.\+0
+\item \href{https://www.wxwidgets.org/}{\texttt{ wx\+Widget}} 3.\+2.\+0
+\item \href{https://www.boost.org/}{\texttt{ Boost}} 1.\+79.\+0
+\end{DoxyItemize}
+
+For Building \href{https://cmake.org}{\texttt{ CMake}} 3.\+24\hypertarget{index_autotoc_md3}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editer Windows Build}\label{index_autotoc_md3}
+To Build\+:
+
+cmake-\/gui
+
+Within cmake-\/gui\+:
+\begin{DoxyItemize}
+\item Set the \char`\"{}\+Where is the source code\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editer root.
+\end{DoxyItemize}
+
+Set the \char`\"{}\+Where to build the binaries\char`\"{} directory to the BT-\/\+Mat\+ML-\/\+Editer root/build
+\begin{DoxyItemize}
+\item Add the following entries (change paths depending on your installation)\+:
+\begin{DoxyItemize}
+\item Xerces\+C\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/xerces-\/c\char`\"{}
+\item XSD\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/code\+\_\+synthesis\+\_\+xsd/xsd-\/4.\+0.\+0-\/i686-\/windows/bin\char`\"{}
+\item wx\+Widgets\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/wx\+Widgets/wx\+Widgets-\/3.\+2.\+0\char`\"{}
+\item BOOST\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/boost/boost\+\_\+1\+\_\+79\+\_\+0\char`\"{}
+\end{DoxyItemize}
+\item Press \char`\"{}\+Configure\char`\"{} button. Specify your generator
+\item Press \char`\"{}\+Generate\char`\"{} button.
+\item Press \char`\"{}\+Open Project\char`\"{} button.
+\end{DoxyItemize}
+
+Within the generator (e.\+g. Visual Studio)\+:
+\begin{DoxyItemize}
+\item Set the \char`\"{}\+Solution Configuration\char`\"{} to Release.
+\item Set the \char`\"{}\+Solution Platform\char`\"{} to x64.
+\item Build Solution.
+\end{DoxyItemize}
+
+In a shell with Administrator privileges (so you can install into \char`\"{}\+C\+:/\+Program Files\char`\"{})\+:
+\begin{DoxyItemize}
+\item cd into the \$\{BT-\/\+Mat\+ML-\/\+Editer\}/build directory.
+\item cmake --install . --config release
+\end{DoxyItemize}
+
+To run\+:
+\begin{DoxyItemize}
+\item dir \char`\"{}\+C\+:/\+Program Files/\+BT-\/\+Mat\+ML-\/\+Editer\char`\"{}
+\item ./\+BT-\/\+Mat\+ML-\/\+Editer
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{BT-\/\+Mat\+ML-\/\+Editer Linux Build}\label{index_autotoc_md4}
+To build\+:
+\begin{DoxyItemize}
+\item cd /path/to/\+BT-\/\+Mat\+ML-\/\+Editer/build/linux
+\item cmake -\/S ../.. -\/B .
+\item make
+\item sudo cmake --install . --config release
+\end{DoxyItemize}
+
+To run\+:
+\begin{DoxyItemize}
+\item BT-\/\+Mat\+ML-\/\+Editer
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{Programming Guide}\label{index_autotoc_md5}
+\href{https://p-mcg.github.io/BT-MatML-Editer}{\texttt{ for doxygen doc see here for active hyperlinks}}
+
+The program is structure to perform the following tasks\+:
+\begin{DoxyEnumerate}
+\item Parsing the Mat\+ML XML Schema using Xerces-\/c and binding the XML data into C++ using Code\+Synthesis-\/\+XSD.
+\item Create GUIs using wx\+Widgets.
+\item Polymorphically bind the Mat\+ML XML data to the wx\+Widgets GUIs.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md6}{}\doxysubsection{Parsing the Mat\+ML XML Schema using Xerces-\/c and binding the XML data into C++ using Code\+Synthesis-\/\+XSD.}\label{index_autotoc_md6}
+The XML data binding into C++ is done using Code\+Synthesis-\/\+XSD data binding compiler. The compiler produces the \mbox{\hyperlink{matml31_8hxx_source}{matml31.\+hxx}}, matml31.\+cxx files. Add these to your project file.
+
+Place the XML Schema Definition file matml31.\+xsd in the same directory as the xml data ($\ast$.xml).
+
+The xerces-\/c parsing libraries should be linked in your project. For Windows adding xerces-\/c\+\_\+3\+\_\+1.\+dll and xerces-\/c\+\_\+3\+\_\+1\+D.\+dll to the library paths would do it.
+
+With these files above, the user can perform C++ material calculations.
+
+The Mat\+ML\+\_\+\+Editor is the GUI for the purpose of providing an input, or output, to these C++ material calculations or used on its own as a Mat\+ML Editor.\hypertarget{index_autotoc_md7}{}\doxysubsection{Create GUIs using wx\+Widgets}\label{index_autotoc_md7}
+As per the wx\+Widgets DECLARE\+\_\+\+APP and IMPLEMENT\+\_\+\+APP macros, class \mbox{\hyperlink{classbellshire_1_1_b_t___mat_m_l___app}{bellshire\+::\+BT\+\_\+\+Mat\+ML\+\_\+\+App}} defines the entry point for the console application.
+
+\mbox{\hyperlink{classbellshire_1_1_b_t___mat_m_l___app_a88e6aede9e4dd98b1793f84883872310}{bellshire\+::\+BT\+\_\+\+Mat\+ML\+\_\+\+App\+::\+On\+Init}} function calls for the creation of the class \mbox{\hyperlink{classbellshire_1_1_material_frame}{bellshire\+::\+Material\+Frame}}, which is the main GUI class for the application.
+
+\mbox{\hyperlink{classbellshire_1_1_material_frame}{bellshire\+::\+Material\+Frame}} constructor \mbox{\hyperlink{classbellshire_1_1_material_frame_base_aeed67876cae3e4d072f6272407ae2ab3}{bellshire\+::\+Material\+Frame\+Base\+::\+Material\+Frame\+Base}} then calls for the creation of all the different Mat\+ML GUI classes via the class \mbox{\hyperlink{classbellshire_1_1_g_u_i}{bellshire\+::\+GUI}}.
+
+The class \mbox{\hyperlink{classbellshire_1_1_g_u_i}{bellshire\+::\+GUI}} constructor \mbox{\hyperlink{classbellshire_1_1_g_u_i_a8a0da888fba0f022d360e3769712c327}{bellshire\+::\+GUI\+::\+GUI(wx\+Window$\ast$ parent)}}, calls for the creation of the individual Mat\+ML GUIs, such as class \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}}.
+
+The individual Mat\+ML GUIs, such as class \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}} constructor \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}}, then create the final GUI for the associated Mat\+ML data class, such as \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}}. See the table below for the Mat\+ML data and the associated Mat\+ML GUI classes.
+
+The base classes, such as \mbox{\hyperlink{classbellshire_1_1_material_frame_base}{bellshire\+::\+Material\+Frame\+Base}} and the individual Mat\+ML GUIs, such as \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}}, contain the creation of the GUIs, virtual Event Handler Functions, and binding the Event Handler Functions.
+
+The derived classes, such as \mbox{\hyperlink{classbellshire_1_1_material_frame}{bellshire\+::\+Material\+Frame}} and the individual Mat\+ML GUIs, such as \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}}, contain the overwriting of the Event Handler Functions occuring in the base.
+
+It should also be noted that not all {\itshape instances} of Mat\+ML data have Mat\+ML GUIs associated with them, but all {\itshape classes} of Mat\+ML data do. This means that changing Mat\+ML data will require showing, and updating, the Mat\+ML GUIs to show the new Mat\+ML data.
+
+The naming Mat\+ML data class and associated Mat\+ML GUI classes is as such,
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mat\+ML data   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mat\+ML GUI    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mat\+ML data   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mat\+ML GUI    }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{class_associate}{Associate}}   &\mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{bellshire\+::\+Associate\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_association_details}{Association\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i}{bellshire\+::\+Association\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_bulk_details}{Bulk\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i}{bellshire\+::\+Bulk\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_characterization}{Characterization}}   &\mbox{\hyperlink{classbellshire_1_1_characterization___g_u_i}{bellshire\+::\+Characterization\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}}   &\mbox{\hyperlink{classbellshire_1_1_chemical_composition___g_u_i}{bellshire\+::\+Chemical\+Composition\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_class}{Class}}   &\mbox{\hyperlink{classbellshire_1_1_class___g_u_i}{bellshire\+::\+Class\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_component_details}{Component\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_component_details___g_u_i}{bellshire\+::\+Component\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_compound}{Compound}}   &\mbox{\hyperlink{classbellshire_1_1_compound___g_u_i}{bellshire\+::\+Compound\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_concentration}{Concentration}}   &\mbox{\hyperlink{classbellshire_1_1_concentration___g_u_i}{bellshire\+::\+Concentration\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_data_format}{Data\+Format}}   &\mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i}{bellshire\+::\+Data\+Format\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_dimensional_details}{Dimensional\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_dimensional_details___g_u_i}{bellshire\+::\+Dimensional\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_element}{Element}}   &\mbox{\hyperlink{classbellshire_1_1_element___g_u_i}{bellshire\+::\+Element\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_form}{Form}}   &\mbox{\hyperlink{classbellshire_1_1_form___g_u_i}{bellshire\+::\+Form\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_formula}{Formula}}   &\mbox{\hyperlink{classbellshire_1_1_formula___g_u_i}{bellshire\+::\+Formula\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_geometry}{Geometry}}   &\mbox{\hyperlink{classbellshire_1_1_geometry___g_u_i}{bellshire\+::\+Geometry\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_glossary}{Glossary}}   &\mbox{\hyperlink{classbellshire_1_1_glossary___g_u_i}{bellshire\+::\+Glossary\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_glossary_term}{Glossary\+Term}}   &\mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i}{bellshire\+::\+Glossary\+Term\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_graphs}{Graphs}}   &\mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i}{bellshire\+::\+Graphs\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_material}{Material}}   &\mbox{\hyperlink{classbellshire_1_1_material___g_u_i}{bellshire\+::\+Material\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_metadata}{Metadata}}   &\mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i}{bellshire\+::\+Metadata\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_name}{Name}}   &\mbox{\hyperlink{classbellshire_1_1_name___g_u_i}{bellshire\+::\+Name\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_notes}{Notes}}   &\mbox{\hyperlink{classbellshire_1_1_notes___g_u_i}{bellshire\+::\+Notes\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_parameter_value}{Parameter\+Value}}   &\mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i}{bellshire\+::\+Parameter\+Value\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_phase_composition}{Phase\+Composition}}   &\mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i}{bellshire\+::\+Phase\+Composition\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_processing_details}{Processing\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_processing_details___g_u_i}{bellshire\+::\+Processing\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_property_data}{Property\+Data}}   &\mbox{\hyperlink{classbellshire_1_1_property_data___g_u_i}{bellshire\+::\+Property\+Data\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_qualifier}{Qualifier}}   &\mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i}{bellshire\+::\+Qualifier\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_relationship}{Relationship}}   &\mbox{\hyperlink{classbellshire_1_1_relationship___g_u_i}{bellshire\+::\+Relationship\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_source}{Source}}   &\mbox{\hyperlink{classbellshire_1_1_source___g_u_i}{bellshire\+::\+Source\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_specification}{Specification}}   &\mbox{\hyperlink{classbellshire_1_1_specification___g_u_i}{bellshire\+::\+Specification\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_uncertainty}{Uncertainty}}   &\mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i}{bellshire\+::\+Uncertainty\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_unit}{Unit}}   &\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i}{bellshire\+::\+Unit\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_unitless}{Unitless}}   &\mbox{\hyperlink{classbellshire_1_1_unitless___g_u_i}{bellshire\+::\+Unitless\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_units}{Units}}   &\mbox{\hyperlink{classbellshire_1_1_units___g_u_i}{bellshire\+::\+Units\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_value}{Value}}   &\mbox{\hyperlink{classbellshire_1_1_value___g_u_i}{bellshire\+::\+Value\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_authority_details}{Authority\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_authority_details___g_u_i}{bellshire\+::\+Authority\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_data_source_details}{Data\+Source\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_data_source_details___g_u_i}{bellshire\+::\+Data\+Source\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_measurement_technique_details}{Measurement\+Technique\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i}{bellshire\+::\+Measurement\+Technique\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_parameter_details}{Parameter\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_parameter_details___g_u_i}{bellshire\+::\+Parameter\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_property_details}{Property\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_property_details___g_u_i}{bellshire\+::\+Property\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_source_details}{Source\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_source_details___g_u_i}{bellshire\+::\+Source\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_specimen_details}{Specimen\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_specimen_details___g_u_i}{bellshire\+::\+Specimen\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_test_condition_details}{Test\+Condition\+Details}}   &\mbox{\hyperlink{classbellshire_1_1_test_condition_details___g_u_i}{bellshire\+::\+Test\+Condition\+Details\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}}   &\mbox{\hyperlink{classbellshire_1_1_chemical_element_symbol___g_u_i}{bellshire\+::\+Chemical\+Element\+Symbol\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_currency_code}{Currency\+Code}}   &\mbox{\hyperlink{classbellshire_1_1_currency_code___g_u_i}{bellshire\+::\+Currency\+Code\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}}   &\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_parent_material}{Parent\+Material}}   &\mbox{\hyperlink{classbellshire_1_1_parent_material___g_u_i}{bellshire\+::\+Parent\+Material\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_symbol}{Symbol}}   &\mbox{\hyperlink{classbellshire_1_1_symbol___g_u_i}{bellshire\+::\+Symbol\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_graph}{Graph}}   &\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i}{bellshire\+::\+Graph\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_data}{Data}}   &\mbox{\hyperlink{classbellshire_1_1_data___g_u_i}{bellshire\+::\+Data\+\_\+\+GUI}}    \\\cline{1-2}
+\mbox{\hyperlink{class_data1}{Data1}}   &\mbox{\hyperlink{classbellshire_1_1_data1___g_u_i}{bellshire\+::\+Data1\+\_\+\+GUI}}    \\\cline{1-2}
+delimiter   &bellshire\+::delimiter\+\_\+\+GUI\mbox{[}not implemented\mbox{]}    \\\cline{1-2}
+\mbox{\hyperlink{class_scale}{Scale}}   &\mbox{\hyperlink{classbellshire_1_1_scale___g_u_i}{bellshire\+::\+Scale\+\_\+\+GUI}}    \\\cline{1-2}
+Definition   &\mbox{\hyperlink{classbellshire_1_1_definition___g_u_i}{bellshire\+::\+Definition\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Abbreviation   &\mbox{\hyperlink{classbellshire_1_1_abbreviation___g_u_i}{bellshire\+::\+Abbreviation\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Synonym   &\mbox{\hyperlink{classbellshire_1_1_synonym___g_u_i}{bellshire\+::\+Synonym\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Shape   &\mbox{\hyperlink{classbellshire_1_1_shape___g_u_i}{bellshire\+::\+Shape\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Dimensions   &\mbox{\hyperlink{classbellshire_1_1_dimensions___g_u_i}{bellshire\+::\+Dimensions\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Orientation   &\mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i}{bellshire\+::\+Orientation\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Result   &\mbox{\hyperlink{classbellshire_1_1_result___g_u_i}{bellshire\+::\+Result\+\_\+\+GUI}} $\ast$    \\\cline{1-2}
+Description   &bellshire\+::\+Description\+\_\+\+GUI\mbox{[}not implemented\mbox{]}    \\\cline{1-2}
+Parent\+Sub\+Class   &\mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i}{bellshire\+::\+Parent\+Sub\+Class\+\_\+\+GUI}}\mbox{[}not implemented\mbox{]}   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyItemize}
+\item used BOOST\+\_\+\+STRONG\+\_\+\+TYPEDEF to implement as a strong type.
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Polymorphically bind the Mat\+ML XML data to the wx\+Widgets GUIs}\label{index_autotoc_md8}
+Because the not all {\itshape instances} of Mat\+ML data have Mat\+ML GUIs associated with them, but all {\itshape classes} of Mat\+ML data do, the Mat\+ML Editor relies on polymorphic functions to select the appropriate class type to operate on.
+
+The polymorphic functions uses boost\+::any pointers. The \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{bellshire\+::\+Tree\+Ctrl\+Sorted}}, a derivative of wx\+Tree\+Ctrl, stores user data in each of its tree elements. Using this functionality the editor stores data such as the \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{bellshire\+::\+Mat\+MLTree\+Item\+Data}} which contains the boost\+::any pointer.
+
+The \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{bellshire\+::\+Tree\+Ctrl\+Sorted}} mimics the tree structure of the Mat\+ML\+\_\+data and allows the user data to be pulled from the tree elements and used.
+
+After the user data is pulled the a given Mat\+ML data\`{}s class typeid is compared to the boost\+::any.\+type. When the comparison matches, a function is either called, or the data is boost\+::any\+\_\+cast back into the Mat\+ML data pointer for further processing.
+
+When the Mat\+ML data structure is changed the \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{bellshire\+::\+Tree\+Ctrl\+Sorted}} is recreated once again mimicking the Mat\+ML data structure.
+
+An example is a function for updating of the Mat\+ML GUIs,
+
+void \mbox{\hyperlink{classbellshire_1_1_g_u_i_af44e953baa7788a7ff32461ea93395ee}{bellshire\+::\+GUI\+::\+Update\+\_\+\+GUI(\+::boost\+::any anyptr, \+::boost\+::shared\+\_\+ptr$<$\+Mat\+ML\+\_\+\+Doc$>$ doc)}}
+
+this will Update the appropriate GUI depending on the type of Mat\+ML data pointer the \+::boost\+::any pointer caste into.
+
+Another, function is a function showing the context menu,
+
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_a62dbd938705e88cfdafa26b00d5dd7a7}{bellshire\+::\+Material\+Frame\+::\+Show\+Context\+Menu(wx\+Tree\+Item\+Id id, const wx\+Point\& pt)}}
+
+it will create a context menu showing possible selections depending on the \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{bellshire\+::\+Mat\+MLTree\+Item\+Data}} (has a member of boost\+::any pointer) selected. 

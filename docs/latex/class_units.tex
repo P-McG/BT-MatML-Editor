@@ -1,0 +1,173 @@
+\hypertarget{class_units}{}\doxysection{Units Class Reference}
+\label{class_units}\index{Units@{Units}}
+Inheritance diagram for Units\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_units}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_units_a5f17402ba0c8d5d668ec04bd5b64a22c}\label{class_units_a5f17402ba0c8d5d668ec04bd5b64a22c}} 
+typedef \mbox{\hyperlink{class_unit}{\+::\+Unit}} {\bfseries Unit\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_units_aa137ce639bb0e5390519e64cf19a9d35}\label{class_units_aa137ce639bb0e5390519e64cf19a9d35}} 
+typedef \+::xsd\+::cxx\+::tree\+::sequence$<$ \mbox{\hyperlink{class_unit}{Unit\+\_\+type}} $>$ {\bfseries Unit\+\_\+sequence}
+\item 
+\mbox{\Hypertarget{class_units_a75e1dbb87c97b2ddce066fdd16c8cb27}\label{class_units_a75e1dbb87c97b2ddce066fdd16c8cb27}} 
+typedef Unit\+\_\+sequence\+::iterator {\bfseries Unit\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_units_a4e8980e3a8a1f23555142a05de916b12}\label{class_units_a4e8980e3a8a1f23555142a05de916b12}} 
+typedef Unit\+\_\+sequence\+::const\+\_\+iterator {\bfseries Unit\+\_\+const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_units_a3d5c9fa11d59e2473655e2a85c0de938}\label{class_units_a3d5c9fa11d59e2473655e2a85c0de938}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_unit}{Unit\+\_\+type}}, char $>$ {\bfseries Unit\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_units_a19b31db5c68c81a56e2cdf01517fcacc}\label{class_units_a19b31db5c68c81a56e2cdf01517fcacc}} 
+typedef \+::xml\+\_\+schema\+::string {\bfseries system\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_units_a1dcfa5d4409de6ad8f69e92414da200d}\label{class_units_a1dcfa5d4409de6ad8f69e92414da200d}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ system\+\_\+type $>$ {\bfseries system\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_units_a30912c2c633158dbe6009e9e0d68710f}\label{class_units_a30912c2c633158dbe6009e9e0d68710f}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ system\+\_\+type, char $>$ {\bfseries system\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_units_a10587c392836382c2a11cb203dba7702}\label{class_units_a10587c392836382c2a11cb203dba7702}} 
+typedef \+::xml\+\_\+schema\+::float\+\_\+ {\bfseries factor\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_units_a311077865836387bce97cd74d38740c6}\label{class_units_a311077865836387bce97cd74d38740c6}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ factor\+\_\+type $>$ {\bfseries factor\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_units_a97d1fb1d6aa09baeec49c05e1c454faa}\label{class_units_a97d1fb1d6aa09baeec49c05e1c454faa}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ factor\+\_\+type, char $>$ {\bfseries factor\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_units_a62c3a525b6c33fb51f56c896b8075659}\label{class_units_a62c3a525b6c33fb51f56c896b8075659}} 
+typedef \+::xml\+\_\+schema\+::string {\bfseries name\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_units_a24aa4b861cdca799335aed3e5376897d}\label{class_units_a24aa4b861cdca799335aed3e5376897d}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ name\+\_\+type $>$ {\bfseries name\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_units_a4bde480caf4fdfa6c903d5397784a577}\label{class_units_a4bde480caf4fdfa6c903d5397784a577}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ name\+\_\+type, char $>$ {\bfseries name\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_units_a0eb0b072c2fb266042dd528dfbe50278}\label{class_units_a0eb0b072c2fb266042dd528dfbe50278}} 
+typedef \+::xml\+\_\+schema\+::string {\bfseries description\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_units_a40d2539c0c6863bb7f8015d0133b291e}\label{class_units_a40d2539c0c6863bb7f8015d0133b291e}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ description\+\_\+type $>$ {\bfseries description\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_units_a121d792761456641d7d9f05af00748c8}\label{class_units_a121d792761456641d7d9f05af00748c8}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ description\+\_\+type, char $>$ {\bfseries description\+\_\+traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_units_a8c307572b49fc55d7fbc847fde67b2ae}\label{class_units_a8c307572b49fc55d7fbc847fde67b2ae}} 
+const Unit\+\_\+sequence \& {\bfseries Unit} () const
+\item 
+\mbox{\Hypertarget{class_units_ab2229778b265ae35d2111a0d96857a88}\label{class_units_ab2229778b265ae35d2111a0d96857a88}} 
+Unit\+\_\+sequence \& {\bfseries Unit} ()
+\item 
+\mbox{\Hypertarget{class_units_ad26b433a759e0ec332c4c5c73078041d}\label{class_units_ad26b433a759e0ec332c4c5c73078041d}} 
+void {\bfseries Unit} (const Unit\+\_\+sequence \&s)
+\item 
+\mbox{\Hypertarget{class_units_aa2c9f0f38c271ba96681acd34d1a04bd}\label{class_units_aa2c9f0f38c271ba96681acd34d1a04bd}} 
+const system\+\_\+optional \& {\bfseries system} () const
+\item 
+\mbox{\Hypertarget{class_units_a87b0432fb7abc5c056a75f24d0da25b4}\label{class_units_a87b0432fb7abc5c056a75f24d0da25b4}} 
+system\+\_\+optional \& {\bfseries system} ()
+\item 
+\mbox{\Hypertarget{class_units_a8b08f0b5351aa0ed80717c053bc1ba64}\label{class_units_a8b08f0b5351aa0ed80717c053bc1ba64}} 
+void {\bfseries system} (const system\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_units_a359ca5bb350cedc1e3c61fe157015307}\label{class_units_a359ca5bb350cedc1e3c61fe157015307}} 
+void {\bfseries system} (const system\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_units_a2a127b294a57aac212df986e8a955dde}\label{class_units_a2a127b294a57aac212df986e8a955dde}} 
+void {\bfseries system} (\+::std\+::auto\+\_\+ptr$<$ system\+\_\+type $>$ p)
+\item 
+\mbox{\Hypertarget{class_units_a357834a64379decf374a9c08e8bf7ffe}\label{class_units_a357834a64379decf374a9c08e8bf7ffe}} 
+const factor\+\_\+optional \& {\bfseries factor} () const
+\item 
+\mbox{\Hypertarget{class_units_a48ad01b6aa5717cf49012e8192238088}\label{class_units_a48ad01b6aa5717cf49012e8192238088}} 
+factor\+\_\+optional \& {\bfseries factor} ()
+\item 
+\mbox{\Hypertarget{class_units_a3279a49e172b3e6e9825e1d936b8602a}\label{class_units_a3279a49e172b3e6e9825e1d936b8602a}} 
+void {\bfseries factor} (const factor\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_units_aebf524a0827c48467f460a437cda1322}\label{class_units_aebf524a0827c48467f460a437cda1322}} 
+void {\bfseries factor} (const factor\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_units_a2e4e4b96d2bd21e2992604ff9da728c4}\label{class_units_a2e4e4b96d2bd21e2992604ff9da728c4}} 
+const name\+\_\+optional \& {\bfseries name} () const
+\item 
+\mbox{\Hypertarget{class_units_acb11318ede61845634d407b100372206}\label{class_units_acb11318ede61845634d407b100372206}} 
+name\+\_\+optional \& {\bfseries name} ()
+\item 
+\mbox{\Hypertarget{class_units_ad2bab5bb60f6d00feb3a5d7b28f8187a}\label{class_units_ad2bab5bb60f6d00feb3a5d7b28f8187a}} 
+void {\bfseries name} (const name\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_units_a228e34f90f56d024ec628f201d08e809}\label{class_units_a228e34f90f56d024ec628f201d08e809}} 
+void {\bfseries name} (const name\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_units_a4e1d86f546607a119781fef9cd322599}\label{class_units_a4e1d86f546607a119781fef9cd322599}} 
+void {\bfseries name} (\+::std\+::auto\+\_\+ptr$<$ name\+\_\+type $>$ p)
+\item 
+\mbox{\Hypertarget{class_units_a0c0648e49cabff9ead7d6c43c0abbdec}\label{class_units_a0c0648e49cabff9ead7d6c43c0abbdec}} 
+const description\+\_\+optional \& {\bfseries description} () const
+\item 
+\mbox{\Hypertarget{class_units_a8d231f027850f87ce027fe2d50d3cb8f}\label{class_units_a8d231f027850f87ce027fe2d50d3cb8f}} 
+description\+\_\+optional \& {\bfseries description} ()
+\item 
+\mbox{\Hypertarget{class_units_ac063557b8bdf397db5c2d729be782d6a}\label{class_units_ac063557b8bdf397db5c2d729be782d6a}} 
+void {\bfseries description} (const description\+\_\+type \&x)
+\item 
+\mbox{\Hypertarget{class_units_af63a27bfc7674260ee165839dd12e314}\label{class_units_af63a27bfc7674260ee165839dd12e314}} 
+void {\bfseries description} (const description\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_units_a835b58a0e23732f4271f2a592c29f3ca}\label{class_units_a835b58a0e23732f4271f2a592c29f3ca}} 
+void {\bfseries description} (\+::std\+::auto\+\_\+ptr$<$ description\+\_\+type $>$ p)
+\item 
+\mbox{\Hypertarget{class_units_ac8bc62542401bb7a710d93602a7e1bfb}\label{class_units_ac8bc62542401bb7a710d93602a7e1bfb}} 
+{\bfseries Units} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_units_abdd4a993aff51353137cf5994043daf7}\label{class_units_abdd4a993aff51353137cf5994043daf7}} 
+{\bfseries Units} (const \mbox{\hyperlink{class_units}{Units}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_units_a5b1f93f54a4c55367d96872f1ed56929}\label{class_units_a5b1f93f54a4c55367d96872f1ed56929}} 
+virtual \mbox{\hyperlink{class_units}{Units}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_units_a2192a2741ef475bd379bb10fe01d11a9}\label{class_units_a2192a2741ef475bd379bb10fe01d11a9}} 
+\mbox{\hyperlink{class_units}{Units}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_units}{Units}} \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_units_aa1d629b88995cdda12c647bd8c405b93}\label{class_units_aa1d629b88995cdda12c647bd8c405b93}} 
+void {\bfseries parse} (\+::xsd\+::cxx\+::xml\+::dom\+::parser$<$ char $>$ \&, \+::xml\+\_\+schema\+::flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_units_afb870bb5caf938729aa2dfddfb610401}\label{class_units_afb870bb5caf938729aa2dfddfb610401}} 
+Unit\+\_\+sequence {\bfseries Unit\+\_\+}
+\item 
+\mbox{\Hypertarget{class_units_a3d1323c1f4700ced67c2e7bb41c450ed}\label{class_units_a3d1323c1f4700ced67c2e7bb41c450ed}} 
+system\+\_\+optional {\bfseries system\+\_\+}
+\item 
+\mbox{\Hypertarget{class_units_a5478f933f2633115e0250414295c430f}\label{class_units_a5478f933f2633115e0250414295c430f}} 
+factor\+\_\+optional {\bfseries factor\+\_\+}
+\item 
+\mbox{\Hypertarget{class_units_a8d6e1b074d1111524e83271ea920567c}\label{class_units_a8d6e1b074d1111524e83271ea920567c}} 
+name\+\_\+optional {\bfseries name\+\_\+}
+\item 
+\mbox{\Hypertarget{class_units_aca206ffb2f9745969fe1b00cbb259e30}\label{class_units_aca206ffb2f9745969fe1b00cbb259e30}} 
+description\+\_\+optional {\bfseries description\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}

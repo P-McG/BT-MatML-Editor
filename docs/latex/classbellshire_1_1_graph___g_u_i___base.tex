@@ -1,0 +1,95 @@
+\hypertarget{classbellshire_1_1_graph___g_u_i___base}{}\doxysection{bellshire\+::Graph\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_graph___g_u_i___base}\index{bellshire::Graph\_GUI\_Base@{bellshire::Graph\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Graph\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_graph___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_a6aab373a57a67c73db09f910982f917e}\label{classbellshire_1_1_graph___g_u_i___base_a6aab373a57a67c73db09f910982f917e}} 
+{\bfseries Graph\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_abb5b22af811e4a36c8a3c8beadb81314}\label{classbellshire_1_1_graph___g_u_i___base_abb5b22af811e4a36c8a3c8beadb81314}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_ae290ad70fed967a0d535eb26403f7904}\label{classbellshire_1_1_graph___g_u_i___base_ae290ad70fed967a0d535eb26403f7904}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_ac6303a06937fa7ef3cfb09f457217d0b}\label{classbellshire_1_1_graph___g_u_i___base_ac6303a06937fa7ef3cfb09f457217d0b}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_graph}{Graph}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_a703f5608260324944ee2394fbe37a334}\label{classbellshire_1_1_graph___g_u_i___base_a703f5608260324944ee2394fbe37a334}} 
+void {\bfseries Set\+Connect} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base_aad980f42b00f75b96e5cf35cf5895ce8}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&graphtextctrl, \mbox{\hyperlink{classbellshire_1_1_graph_display}{Graph\+Display}} $\ast$\&graphdisplay)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_graph}{Graph}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base_a8ce159c2481e933ca86ec1280d43cdd5}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_ae5c20b73f368d981f7bdff21f78c229a}\label{classbellshire_1_1_graph___g_u_i___base_ae5c20b73f368d981f7bdff21f78c229a}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+graphtextctrl}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_a6ef40de9036d7b1ce00bdecf452d7bae}\label{classbellshire_1_1_graph___g_u_i___base_a6ef40de9036d7b1ce00bdecf452d7bae}} 
+\mbox{\hyperlink{classbellshire_1_1_graph_display}{Graph\+Display}} $\ast$ {\bfseries m\+\_\+graphdisplay}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_a9fa0ddb6b8953888e2f0b13214be1ff7}\label{classbellshire_1_1_graph___g_u_i___base_a9fa0ddb6b8953888e2f0b13214be1ff7}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_aad980f42b00f75b96e5cf35cf5895ce8}\label{classbellshire_1_1_graph___g_u_i___base_aad980f42b00f75b96e5cf35cf5895ce8}} 
+\index{bellshire::Graph\_GUI\_Base@{bellshire::Graph\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Graph\_GUI\_Base@{bellshire::Graph\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Graph\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{graphtextctrl,  }\item[{\mbox{\hyperlink{classbellshire_1_1_graph_display}{Graph\+Display}} $\ast$\&}]{graphdisplay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_graph}{Graph}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em Graph\+Text\+Ctrl} & \\
+\hline
+{\em Graph\+Display\+Panel} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wx\+Notebook$\ast$
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i___base_a8ce159c2481e933ca86ec1280d43cdd5}\label{classbellshire_1_1_graph___g_u_i___base_a8ce159c2481e933ca86ec1280d43cdd5}} 
+\index{bellshire::Graph\_GUI\_Base@{bellshire::Graph\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Graph\_GUI\_Base@{bellshire::Graph\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Graph\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Graph\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Graph\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

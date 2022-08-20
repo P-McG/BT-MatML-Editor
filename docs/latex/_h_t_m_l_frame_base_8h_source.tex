@@ -1,0 +1,72 @@
+\hypertarget{_h_t_m_l_frame_base_8h_source}{}\doxysection{HTMLFrame\+Base.\+h}
+\label{_h_t_m_l_frame_base_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/HTMLFrameBase.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/HTMLFrameBase.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <wx/bitmap.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <wx/image.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <wx/icon.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <wx/menu.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <wx/gdicmn.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <wx/font.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <wx/colour.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <wx/settings.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <wx/statusbr.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <wx/treectrl.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <wx/sizer.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <wx/panel.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <wx/stattext.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <wx/scrolwin.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <wx/button.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <wx/textctrl.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/choice.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/combobox.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <wx/statbox.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <wx/statline.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <wx/radiobox.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <wx/statbmp.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <wx/listbox.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <wx/bmpbuttn.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <wx/checkbox.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <wx/radiobut.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <wx/splitter.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <wx/frame.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <wx/html/htmlwin.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <wx/filepicker.h>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <wx/gbsizer.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <wx/listbook.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <wx/listctrl.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <wx/checklst.h>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_h_t_m_l_frame_base}{HTMLFrameBase}} : \textcolor{keyword}{public} wxFrame}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{private}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{50     wxPanel* m\_panel62;}
+\DoxyCodeLine{51     wxButton* m\_HTMLPreviewButton;}
+\DoxyCodeLine{52     wxButton* m\_HTMLPrintButton;}
+\DoxyCodeLine{53     wxButton* m\_HTMLCloseButton;}
+\DoxyCodeLine{54     wxStatusBar* m\_statusBar2;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// Virtual event handlers, overide them in your derived class}}
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnClose(wxCloseEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnHTMLPreviewButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{59     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnHTMLPrintButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnCloseButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{public}:}
+\DoxyCodeLine{64     wxHtmlWindow* m\_HTMLWindow;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \mbox{\hyperlink{class_h_t_m_l_frame_base}{HTMLFrameBase}}(wxWindow* parent, wxWindowID \textcolor{keywordtype}{id} = wxID\_ANY, \textcolor{keyword}{const} wxString\& title = wxEmptyString, \textcolor{keyword}{const} wxPoint\& pos = wxDefaultPosition, \textcolor{keyword}{const} wxSize\& size = wxSize(500, 300), \textcolor{keywordtype}{long} style = wxCAPTION | wxDEFAULT\_FRAME\_STYLE | wxFRAME\_TOOL\_WINDOW | wxTAB\_TRAVERSAL);}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_h_t_m_l_frame_base}{\string~HTMLFrameBase}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \};}
+
+\end{DoxyCode}

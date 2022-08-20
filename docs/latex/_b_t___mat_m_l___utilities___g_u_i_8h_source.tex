@@ -1,0 +1,64 @@
+\hypertarget{_b_t___mat_m_l___utilities___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Utilities\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___utilities___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Utilities\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Utilities\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Utilities\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Utilities\_GUI Base and Derived Misc. }}
+\DoxyCodeLine{4 \textcolor{comment}{//              fn used in other classes.}}
+\DoxyCodeLine{5 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{6 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{8 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{9 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{11 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <boost/algorithm/string.hpp>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <boost/algorithm/string/classification.hpp>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <wx/treebase.h>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//Utility for std:string and wxString}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define \_std2wx(var) wxString (var.c\_str(),wxConvUTF8)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define \_wx2std(var) std::string(var.mb\_str())}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_utilities}{Utilities}}}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39     \textcolor{keyword}{public}:}
+\DoxyCodeLine{40         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_utilities_a56d3e17fd1c220dd4fbf2fa7e15723a9}{MatMLtoTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl, \mbox{\hyperlink{class_material}{Material}}* MatMLMaterial);}
+\DoxyCodeLine{41         \textcolor{keyword}{static} std::list< std::pair< Material*, xml\_schema::string > > \mbox{\hyperlink{classbellshire_1_1_utilities_a38d19750b6433e7c9427db57ba1f99eb}{GetMaterialIDPair}}(::boost::shared\_ptr<MatML\_Doc> MatMLDoc, std::list<xml\_schema::string> ClassFilters = std::list<xml\_schema::string>());}
+\DoxyCodeLine{42         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbellshire_1_1_utilities_aa913a50a4ea4b04b8c68d516d04e0594}{InFilter}}(\mbox{\hyperlink{class_material}{Material}}* material, std::list<xml\_schema::string> Filter);}
+\DoxyCodeLine{43         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbellshire_1_1_utilities_aa913a50a4ea4b04b8c68d516d04e0594}{InFilter}}(\mbox{\hyperlink{class_material}{Material}}* material, xml\_schema::string* Filter);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keyword}{static} std::list<Name*> \mbox{\hyperlink{classbellshire_1_1_utilities_afacfe57d72dbef35ed419acc46ef99cc}{GetMatMLDocClassNames}}(::boost::shared\_ptr<MatML\_Doc> MatMLDoc);}
+\DoxyCodeLine{46         \textcolor{keyword}{static} std::list<Name*> \mbox{\hyperlink{classbellshire_1_1_utilities_a21ded85aba45e777b678fef892f7805d}{GetBulkDetailsClassNames}}(\mbox{\hyperlink{class_material}{Material}}* material);}
+\DoxyCodeLine{47         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbellshire_1_1_utilities_ad97cfc5d5ff5ecade142834a46259ef5}{CompareName}}( \mbox{\hyperlink{class_name}{Name}}*\& first, \mbox{\hyperlink{class_name}{Name}}*\& second);}
+\DoxyCodeLine{48         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbellshire_1_1_utilities_a4eb4152b3b562c77a2eea5d8754457ca}{SameName}}(\mbox{\hyperlink{class_name}{Name}}*\& first, \mbox{\hyperlink{class_name}{Name}}*\& second);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         static ::std::string \mbox{\hyperlink{classbellshire_1_1_utilities_a4d423bfd1b3b92213d6d88d7b8763643}{Label}}(::std::string name, ::std::string \textcolor{keywordtype}{id});}
+\DoxyCodeLine{51         static ::std::string LabelToId(::std::string label);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keyword}{static} std::list<xml\_schema::string> \mbox{\hyperlink{classbellshire_1_1_utilities_a713b2f3fd0eb01dd6f650904646c6c84}{wx2std}}(\textcolor{keyword}{const} wxArrayString\& wxstr);}
+\DoxyCodeLine{54         \textcolor{keyword}{static} wxArrayString \mbox{\hyperlink{classbellshire_1_1_utilities_a846260b2d8314c30a126b842bbbd830f}{std2wx}}(\textcolor{keyword}{const} std::list<xml\_schema::string>\& stdstr);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_utilities_aa4ca114e05c250fd1b71c42d7c0e653b}{CollectBranchMaterials}}(boost::shared\_ptr<MatML\_Doc> doc, \mbox{\hyperlink{class_material}{Material}}* m, std::vector<Material*>\& ms);}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_utilities_af81e40bdba3cb44e7a9c97cc7907ee9c}{CollectBranchMaterialsBackwards}}(\mbox{\hyperlink{class_material}{Material}}* m, std::vector<Material*>\& ms);}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_utilities_aaa2872c0e5a970669e311a0d33ac6854}{CollectBranchMaterialsForewards}}(boost::shared\_ptr<MatML\_Doc> doc, \mbox{\hyperlink{class_material}{Material}}* m, std::vector<Material*>\& ms);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \};\textcolor{comment}{//namespace bellshire}}
+
+\end{DoxyCode}

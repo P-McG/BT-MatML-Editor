@@ -1,0 +1,94 @@
+\hypertarget{classbellshire_1_1_synonym___g_u_i___base}{}\doxysection{bellshire\+::Synonym\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_synonym___g_u_i___base}\index{bellshire::Synonym\_GUI\_Base@{bellshire::Synonym\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Synonym\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_synonym___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_a682838016e3da57d05ff03e3ae52b5e4}\label{classbellshire_1_1_synonym___g_u_i___base_a682838016e3da57d05ff03e3ae52b5e4}} 
+{\bfseries Synonym\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_af2b726b3608b084f3a11d263e048c5da}\label{classbellshire_1_1_synonym___g_u_i___base_af2b726b3608b084f3a11d263e048c5da}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_ac0eed0ef164753a2840041a752606c22}\label{classbellshire_1_1_synonym___g_u_i___base_ac0eed0ef164753a2840041a752606c22}} 
+bool {\bfseries Is\+Shown} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_a9d9e0ce9a4ff65d15846987a1810d71c}\label{classbellshire_1_1_synonym___g_u_i___base_a9d9e0ce9a4ff65d15846987a1810d71c}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_a0623c6817d92c656b569585bebe84383}\label{classbellshire_1_1_synonym___g_u_i___base_a0623c6817d92c656b569585bebe84383}} 
+void {\bfseries Update} (Synonym $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_a30b01a62a31f126a1744bfd226816d3f}\label{classbellshire_1_1_synonym___g_u_i___base_a30b01a62a31f126a1744bfd226816d3f}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_a10dfb23a32aaea0df5ccd3eaf5f8c894}\label{classbellshire_1_1_synonym___g_u_i___base_a10dfb23a32aaea0df5ccd3eaf5f8c894}} 
+virtual void {\bfseries On\+Synonym\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_synonym___g_u_i___base_ad572c48068a84dca121e3ea17ca73efa}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Synonym\+Text\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the Synonym Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_synonym___g_u_i___base_aed880163ec6c598f467673cf5c869987}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, Glossary\+Term\+::\+Synonym\+\_\+type \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_af4af38cbf6aa8591899ed66bb92f1578}\label{classbellshire_1_1_synonym___g_u_i___base_af4af38cbf6aa8591899ed66bb92f1578}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_abb3dd2c7120aed57b2f7c94483e2e59f}\label{classbellshire_1_1_synonym___g_u_i___base_abb3dd2c7120aed57b2f7c94483e2e59f}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Synonym\+Text\+Ctrl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_ad572c48068a84dca121e3ea17ca73efa}\label{classbellshire_1_1_synonym___g_u_i___base_ad572c48068a84dca121e3ea17ca73efa}} 
+\index{bellshire::Synonym\_GUI\_Base@{bellshire::Synonym\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Synonym\_GUI\_Base@{bellshire::Synonym\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Synonym\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Synonym\+Text\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the Synonym Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wx\+Notebook$\ast$
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_synonym___g_u_i___base_aed880163ec6c598f467673cf5c869987}\label{classbellshire_1_1_synonym___g_u_i___base_aed880163ec6c598f467673cf5c869987}} 
+\index{bellshire::Synonym\_GUI\_Base@{bellshire::Synonym\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Synonym\_GUI\_Base@{bellshire::Synonym\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Synonym\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{Glossary\+Term\+::\+Synonym\+\_\+type \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Synonym\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Synonym\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

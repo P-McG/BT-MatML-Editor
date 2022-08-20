@@ -1,0 +1,88 @@
+\hypertarget{_b_t___mat_m_l___graph___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Graph\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___graph___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Graph\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Graph\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Graph\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Graph\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graph_display}{GraphDisplay}} : \textcolor{keyword}{public} wxScrolledWindow}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38     \textcolor{keyword}{public}:}
+\DoxyCodeLine{39         \mbox{\hyperlink{classbellshire_1_1_graph_display}{GraphDisplay}}(wxNotebook* parent, wxTextCtrl* graphtextctrl);}
+\DoxyCodeLine{40         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDraw(wxDC\& dc) wxOVERRIDE;}
+\DoxyCodeLine{41     \textcolor{keyword}{private}:}
+\DoxyCodeLine{42         wxTextCtrl* m\_GraphTextCtrl = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{43     \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47     \textcolor{keyword}{public}:}
+\DoxyCodeLine{48         wxTextCtrl* m\_graphtextctrl;}
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_graph_display}{GraphDisplay}}* m\_graphdisplay;}
+\DoxyCodeLine{50         wxNotebook* m\_GUI;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}}();}
+\DoxyCodeLine{53         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{54         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base_aad980f42b00f75b96e5cf35cf5895ce8}{Create}}(wxWindow* parent, wxTextCtrl*\& graphtextctrl, \mbox{\hyperlink{classbellshire_1_1_graph_display}{GraphDisplay}}*\& graphdisplay);}
+\DoxyCodeLine{55         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{\string~Graph\_GUI\_Base}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show=\textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{58         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_graph}{Graph}}* element);}
+\DoxyCodeLine{61         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base_a8ce159c2481e933ca86ec1280d43cdd5}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{62             \textcolor{keyword}{const} wxTreeItemId\& ParentId,}
+\DoxyCodeLine{63             \mbox{\hyperlink{class_graph}{Graph}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{64             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{65         );}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{68     \textcolor{keyword}{private}:}
+\DoxyCodeLine{69     \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i}{Graph\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}}}
+\DoxyCodeLine{72     \{}
+\DoxyCodeLine{73     \textcolor{keyword}{public}:}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}();}
+\DoxyCodeLine{76         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_afdd9f3b96d3fe9dfe83549fbdb7668ef}{\string~Graph\_GUI}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} SetEvtHandlerVar() \{\};}
+\DoxyCodeLine{80     \textcolor{keyword}{private}:}
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

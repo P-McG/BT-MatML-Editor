@@ -1,0 +1,101 @@
+\hypertarget{_preference_frame_base_8h_source}{}\doxysection{Preference\+Frame\+Base.\+h}
+\label{_preference_frame_base_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/PreferenceFrameBase.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/PreferenceFrameBase.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        PreferenceFrameBase.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Base Class for Preferences wxWidget Frame.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <wx/bitmap.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <wx/image.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <wx/icon.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <wx/menu.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <wx/gdicmn.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <wx/font.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/colour.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/settings.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/statusbr.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <wx/treectrl.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <wx/sizer.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <wx/panel.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <wx/stattext.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <wx/scrolwin.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <wx/button.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <wx/textctrl.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <wx/choice.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <wx/combobox.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <wx/statbox.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <wx/statline.h>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <wx/radiobox.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <wx/statbmp.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <wx/listbox.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <wx/bmpbuttn.h>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <wx/checkbox.h>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <wx/radiobut.h>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <wx/splitter.h>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <wx/frame.h>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <wx/html/htmlwin.h>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <wx/filepicker.h>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <wx/gbsizer.h>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <wx/listbook.h>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <wx/listctrl.h>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <wx/checklst.h>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <wx/editlbox.h>}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{class_preference_frame_base}{PreferenceFrameBase}} : \textcolor{keyword}{public} wxFrame}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61     wxListbook* m\_listbook1;}
+\DoxyCodeLine{62     wxPanel* m\_GeneralPanel;}
+\DoxyCodeLine{63     wxCheckBox* m\_MatMLDataSelection;}
+\DoxyCodeLine{64     wxDirPickerCtrl* m\_WorkingDirPicker;}
+\DoxyCodeLine{65     wxDirPickerCtrl* m\_TemplateDirPicker;}
+\DoxyCodeLine{66     wxTextCtrl* m\_UUIDPrefixTextCtrl;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     wxPanel* m\_SortClassPanel;}
+\DoxyCodeLine{69     wxTextCtrl* m\_ClassSortOrderTextCtrl;}
+\DoxyCodeLine{70     wxButton* m\_ClassSortOrderAddButton;}
+\DoxyCodeLine{71     \textcolor{comment}{//wxListBox* m\_ClassSortOrderListBox;}}
+\DoxyCodeLine{72     wxEditableListBox* m\_ClassSortOrderListBox;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     wxPanel* m\_SavePanel;}
+\DoxyCodeLine{75     wxButton* m\_SavePreferencesButton;}
+\DoxyCodeLine{76     wxButton* m\_CancelPreferencesButton;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// Virtual event handlers, overide them in your derived class}}
+\DoxyCodeLine{79     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnMatMLInfoSelection(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnWorkingDirPicker(wxFileDirPickerEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{81     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnTemplateDirPicker(wxFileDirPickerEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{82     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUUIDPrefixTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{83     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnClassSortOrderTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{84     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnClassSortOrderAddButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnSavePreferencesButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{87     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnCancelPreferencesButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} CreateGeneralPanel();}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} CreateSortClassPanel();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{public}:}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \mbox{\hyperlink{class_preference_frame_base}{PreferenceFrameBase}}(wxWindow* parent, wxWindowID \textcolor{keywordtype}{id} = wxID\_ANY, \textcolor{keyword}{const} wxString\& title = wxT(\textcolor{stringliteral}{"{}Preferences"{}}), \textcolor{keyword}{const} wxPoint\& pos = wxDefaultPosition, \textcolor{keyword}{const} wxSize\& size = wxSize(680, 628), \textcolor{keywordtype}{long} style = wxCAPTION | wxFRAME\_FLOAT\_ON\_PARENT | wxFRAME\_NO\_TASKBAR | wxSTAY\_ON\_TOP | wxTAB\_TRAVERSAL);}
+\DoxyCodeLine{95     \mbox{\hyperlink{class_preference_frame_base}{\string~PreferenceFrameBase}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \};}
+
+\end{DoxyCode}

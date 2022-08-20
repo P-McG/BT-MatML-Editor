@@ -1,0 +1,113 @@
+\hypertarget{classbellshire_1_1_specification___g_u_i___base}{}\doxysection{bellshire\+::Specification\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_specification___g_u_i___base}\index{bellshire::Specification\_GUI\_Base@{bellshire::Specification\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Specification\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_specification___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_a46c31eec317e9ff5db9dc4909f08675e}\label{classbellshire_1_1_specification___g_u_i___base_a46c31eec317e9ff5db9dc4909f08675e}} 
+{\bfseries Specification\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_af90f0569ad9366f9534ba9db41007f65}\label{classbellshire_1_1_specification___g_u_i___base_af90f0569ad9366f9534ba9db41007f65}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_aa42737c069058127ded61cb002e8a225}\label{classbellshire_1_1_specification___g_u_i___base_aa42737c069058127ded61cb002e8a225}} 
+bool {\bfseries Is\+Shown} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_a501fbb6c5048a6baa9473549c758ed74}\label{classbellshire_1_1_specification___g_u_i___base_a501fbb6c5048a6baa9473549c758ed74}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_a902f5c558090b29a4a0ad49906ee5aad}\label{classbellshire_1_1_specification___g_u_i___base_a902f5c558090b29a4a0ad49906ee5aad}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_specification}{Specification}} $\ast$element, const \+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_adb3dfe598e59d1c7b9b9c4d2789eeafa}\label{classbellshire_1_1_specification___g_u_i___base_adb3dfe598e59d1c7b9b9c4d2789eeafa}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_abaca016ec579dece8fdac8d2dfb68407}\label{classbellshire_1_1_specification___g_u_i___base_abaca016ec579dece8fdac8d2dfb68407}} 
+virtual void {\bfseries On\+Specification\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_ab0b2a69d9f4fc472aaad04a069531df8}\label{classbellshire_1_1_specification___g_u_i___base_ab0b2a69d9f4fc472aaad04a069531df8}} 
+virtual void {\bfseries On\+Specification\+Authority\+Choice} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i___base_af3368a05c1b2898d9895b876472e7cd3}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Specification\+Text\+Ctrl, wx\+Choice $\ast$\&Authority\+Choice, \mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{Authority\+Details\+\_\+\+Display\+\_\+\+GUI}} $\ast$\&Specification\+Authority\+Details\+\_\+\+Display\+\_\+\+GUI)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_specification}{Specification}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i___base_ab339debc26def6f0b04c1049377411dc}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_specification}{Specification}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_a9f02b05931bd1780e27847a9c6a9fef2}\label{classbellshire_1_1_specification___g_u_i___base_a9f02b05931bd1780e27847a9c6a9fef2}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_aa7c722c71626bec882fdeafa1e396001}\label{classbellshire_1_1_specification___g_u_i___base_aa7c722c71626bec882fdeafa1e396001}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Specification\+Text\+Ctrl}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_a1d3224cae21d33eddff8632756f81aef}\label{classbellshire_1_1_specification___g_u_i___base_a1d3224cae21d33eddff8632756f81aef}} 
+wx\+Choice $\ast$ {\bfseries m\+\_\+\+Authority\+Choice}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_ac6cecf144dbffb49dec8be3ed3033be8}\label{classbellshire_1_1_specification___g_u_i___base_ac6cecf144dbffb49dec8be3ed3033be8}} 
+\mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{Authority\+Details\+\_\+\+Display\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Specification\+Authority\+Details\+\_\+\+Display\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_af3368a05c1b2898d9895b876472e7cd3}\label{classbellshire_1_1_specification___g_u_i___base_af3368a05c1b2898d9895b876472e7cd3}} 
+\index{bellshire::Specification\_GUI\_Base@{bellshire::Specification\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Specification\_GUI\_Base@{bellshire::Specification\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Specification\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Specification\+Text\+Ctrl,  }\item[{wx\+Choice $\ast$\&}]{Authority\+Choice,  }\item[{\mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{Authority\+Details\+\_\+\+Display\+\_\+\+GUI}} $\ast$\&}]{Specification\+Authority\+Details\+\_\+\+Display\+\_\+\+GUI }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_specification}{Specification}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em fg\+Sizer} & \\
+\hline
+{\em Specification\+Notebook} & \\
+\hline
+{\em Specification\+Panel} & \\
+\hline
+{\em Specification\+Text\+Ctrl} & \\
+\hline
+{\em Authority\+Choice} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_specification___g_u_i___base_ab339debc26def6f0b04c1049377411dc}\label{classbellshire_1_1_specification___g_u_i___base_ab339debc26def6f0b04c1049377411dc}} 
+\index{bellshire::Specification\_GUI\_Base@{bellshire::Specification\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Specification\_GUI\_Base@{bellshire::Specification\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Specification\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_specification}{Specification}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Specification\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Specification\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

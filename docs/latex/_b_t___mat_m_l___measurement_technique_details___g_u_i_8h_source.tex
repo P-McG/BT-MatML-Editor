@@ -1,0 +1,120 @@
+\hypertarget{_b_t___mat_m_l___measurement_technique_details___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Measurement\+Technique\+Details\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___measurement_technique_details___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MeasurementTechniqueDetails\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MeasurementTechniqueDetails\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_MeasurementTechniqueDetails\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of MeasurementTechniqueDetails\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_ID\_GUI.h"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i}{ID\_GUI}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base}{MeasurementTechniqueDetails\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47     \textcolor{keyword}{public}:}
+\DoxyCodeLine{48         wxNotebook* m\_GUI;}
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i}{ID\_GUI}}* m\_MeasurementTechniqueDetails\_ID\_GUI;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base}{MeasurementTechniqueDetails\_GUI\_Base}}();}
+\DoxyCodeLine{52         \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base}{MeasurementTechniqueDetails\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base}{\string~MeasurementTechniqueDetails\_GUI\_Base}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base_ae44fcaf56418385087bd98c153a29e98}{Create}}(wxWindow* parent, }
+\DoxyCodeLine{57             \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i}{ID\_GUI}}*\& MeasurementTechniqueDetails\_ID\_GUI}
+\DoxyCodeLine{58         );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{61         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{62         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}* element);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         static ::std::string Label(::std::string name, ::std::string \textcolor{keywordtype}{id});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base_ad7d81756869ddb169c96dc38c2f7b2b9}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{69             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{70             \mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{71             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{72         );}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keyword}{private}:}
+\DoxyCodeLine{85     \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i}{MeasurementTechniqueDetails\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i___base}{MeasurementTechniqueDetails\_GUI\_Base}}}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89     \textcolor{keyword}{public}:}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{92         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i_a05a0f37059491c5e56cc55d8f2d514b4}{MeasurementTechniqueDetails\_GUI}}();}
+\DoxyCodeLine{95         \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i_a05a0f37059491c5e56cc55d8f2d514b4}{MeasurementTechniqueDetails\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i_aefca02084f7d7bba51b7bcdffb5643d4}{\string~MeasurementTechniqueDetails\_GUI}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i_a5a43dfaed92091ed35395da827f71f19}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i_a9925041687ba7b6b0731bee66de8b77f}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{comment}{//Overwrites the base class event handler functions}}
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keyword}{private}:}
+\DoxyCodeLine{114     \};}
+\DoxyCodeLine{115 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

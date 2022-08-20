@@ -1,0 +1,99 @@
+\hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base}{}\doxysection{bellshire\+::Chemical\+Element\+Symbol\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base}\index{bellshire::ChemicalElementSymbol\_GUI\_Base@{bellshire::ChemicalElementSymbol\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Chemical\+Element\+Symbol\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_chemical_element_symbol___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ad7648d92adf0b599c2b591de2f29c6d3}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ad7648d92adf0b599c2b591de2f29c6d3}} 
+{\bfseries Chemical\+Element\+Symbol\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_abac2bd068577e40f909d85c0713c54cb}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_abac2bd068577e40f909d85c0713c54cb}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ae0672b0f19f049881439e281b963e4a5}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ae0672b0f19f049881439e281b963e4a5}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a12025043663e37624665faa8057814b6}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a12025043663e37624665faa8057814b6}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a75ae7cee40c2e422bf86580808a14f5d}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a75ae7cee40c2e422bf86580808a14f5d}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a4f7d4923f1573364094f0954aa8dad8e}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a4f7d4923f1573364094f0954aa8dad8e}} 
+virtual void {\bfseries On\+Chemical\+Element\+Symbol} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ac8fd153fc37190b8614846d658a8f4ee}{Create}} (wx\+Window $\ast$parent, wx\+Choice $\ast$\&Chemical\+Element\+Symbol\+Choice)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_chemical_element_symbol___g_u_i___base_af033861215d709ae60f516bc7a469dd5}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a64772e1dc925e0f832aec1d09b0a8ba0}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a64772e1dc925e0f832aec1d09b0a8ba0}} 
+wx\+Choice $\ast$ {\bfseries m\+\_\+\+Chemical\+Element\+Symbol\+Choice}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a6d77844cd7200c87f6ea5d64dcc108fb}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_a6d77844cd7200c87f6ea5d64dcc108fb}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ac8fd153fc37190b8614846d658a8f4ee}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_ac8fd153fc37190b8614846d658a8f4ee}} 
+\index{bellshire::ChemicalElementSymbol\_GUI\_Base@{bellshire::ChemicalElementSymbol\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::ChemicalElementSymbol\_GUI\_Base@{bellshire::ChemicalElementSymbol\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Chemical\+Element\+Symbol\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Choice $\ast$\&}]{Chemical\+Element\+Symbol\+Choice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em fg\+Sizer} & \\
+\hline
+{\em Chemical\+Element\+Symbol\+Notebook} & \\
+\hline
+{\em Chemical\+Element\+Symbol\+Panel} & \\
+\hline
+{\em Chemical\+Element\+Symbol\+Choice} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_chemical_element_symbol___g_u_i___base_af033861215d709ae60f516bc7a469dd5}\label{classbellshire_1_1_chemical_element_symbol___g_u_i___base_af033861215d709ae60f516bc7a469dd5}} 
+\index{bellshire::ChemicalElementSymbol\_GUI\_Base@{bellshire::ChemicalElementSymbol\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::ChemicalElementSymbol\_GUI\_Base@{bellshire::ChemicalElementSymbol\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Chemical\+Element\+Symbol\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_chemical_element_symbol}{Chemical\+Element\+Symbol}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Chemical\+Element\+Symbol\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Chemical\+Element\+Symbol\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

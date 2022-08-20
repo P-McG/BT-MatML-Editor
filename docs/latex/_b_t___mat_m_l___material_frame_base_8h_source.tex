@@ -1,0 +1,159 @@
+\hypertarget{_b_t___mat_m_l___material_frame_base_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame\+Base.\+h}
+\label{_b_t___mat_m_l___material_frame_base_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MaterialFrameBase.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MaterialFrameBase.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_MaterialFrameBase\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Class of MaterialFrameBase.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef \_\_BT\_MatML\_MaterialFrameBase\_GUI\_\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_\_BT\_MatML\_MaterialFrameBase\_GUI\_\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// For compilers that don't support precompilation, include "{}wx/wx.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#   include "{}wx/wx.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <wx/bitmap.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <wx/image.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <wx/icon.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <wx/menu.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <wx/gdicmn.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <wx/font.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <wx/colour.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <wx/settings.h>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <wx/statusbr.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <wx/treectrl.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <wx/sizer.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <wx/panel.h>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <wx/stattext.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <wx/scrolwin.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <wx/button.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <wx/textctrl.h>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <wx/choice.h>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <wx/combobox.h>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <wx/statbox.h>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <wx/statline.h>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <wx/radiobox.h>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <wx/statbmp.h>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <wx/listbox.h>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <wx/bmpbuttn.h>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <wx/checkbox.h>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <wx/radiobut.h>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <wx/splitter.h>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <wx/frame.h>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <wx/html/htmlwin.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <wx/filepicker.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <wx/gbsizer.h>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <wx/listbook.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <wx/listctrl.h>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <wx/checklst.h>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{60  }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}PreferenceFrameBase.h"{}}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define wxID\_MATERIAL 1000}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define wxID\_MaterialMB 1001}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define wxID\_MatMLTreeCtrl 1002}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{85     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_material_frame_base}{MaterialFrameBase}} : \textcolor{keyword}{public} wxFrame}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87     \textcolor{keyword}{private}:}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{90         wxMenuBar* \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a199fe2ebe48502fbde0cceb20ed0196f}{m\_menubar1}};}
+\DoxyCodeLine{92         wxMenu* m\_FileMenu;}
+\DoxyCodeLine{93         wxMenuItem* m\_NewMenuItem;}
+\DoxyCodeLine{94         wxMenuItem* m\_OpenMenuItem;}
+\DoxyCodeLine{95         wxMenuItem* m\_SaveMenuItem;}
+\DoxyCodeLine{96         wxMenuItem* m\_SaveAsMenuItem;}
+\DoxyCodeLine{97         wxMenuItem* m\_ExportMaterialMenuItem;}
+\DoxyCodeLine{98         wxMenuItem* m\_ExportMaterialBranchMenuItem;}
+\DoxyCodeLine{99         wxMenuItem* m\_ImportMaterialBranchMenuItem;}
+\DoxyCodeLine{100         wxMenuItem* m\_ExitMenuItem;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         wxMenu* m\_EditMenu;}
+\DoxyCodeLine{103         wxMenuItem* m\_EditMenuPreferencesItem;}
+\DoxyCodeLine{104         wxMenuItem* m\_SortClass1MenuItem;}
+\DoxyCodeLine{105         wxMenuItem* m\_IsolateMaterialBranchMenuItem;}
+\DoxyCodeLine{106         wxMenuItem* m\_ExitIsolateMaterialBranchMenuItem;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         wxMenu* m\_ViewMenu;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         wxMenu* m\_HelpMenu;}
+\DoxyCodeLine{111         wxMenuItem* m\_AboutMenuItem;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         wxStatusBar* m\_statusBar1;}
+\DoxyCodeLine{114         wxSplitterWindow* m\_splitter1;}
+\DoxyCodeLine{115         wxPanel* m\_panel68;}
+\DoxyCodeLine{116         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;}
+\DoxyCodeLine{117         wxPanel* m\_MultiPanel;}
+\DoxyCodeLine{118         wxPanel* m\_IntroPanel;}
+\DoxyCodeLine{119         wxStaticBitmap* m\_logobitmap;}
+\DoxyCodeLine{120         wxStaticText* m\_IntroStaticText;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}* \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a12cf344da3d5a2d7c155251229cd59e6}{m\_GUI}};}
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_adfd03bc5f2b3abb04bc8eef7e37c22f2}{SetMenuConnect}}();}
+\DoxyCodeLine{128         \textcolor{comment}{// Virtual event handlers, overide them in your derived class}}
+\DoxyCodeLine{129         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_afdf4ffa39139a460ad2687490b65ad93}{OnCloseSel}}(wxCloseEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{130         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a64ed6e9ca94947fd95462dda33bf6434}{OnNewSel}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{131         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a7fc37d0c308156ee35a2c6e77e4d82e4}{OnOpenSel}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{132         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a840609ab6e82dcf5db7df7519fe3104b}{OnSaveSel}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{133         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_abd022137e64938d9743dc41cfc5ccaa4}{OnSaveAsSel}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{134         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a0395e505b0981793704997f6d00f8596}{OnExportMaterial}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{135         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a8f27caed4ca8212c8d2146a711c453be}{OnExportMaterialBranch}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{136         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a368ca2ec4cf4416877e234e98ecb03c6}{OnImportMaterialBranch}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{137         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab77f4f8809415c5b381d7f5d56076f5b}{OnExitSel}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{138         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a4843d95b0ef2263ff248a6b168b1474d}{OnEditMenuPreferencesItem}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{139         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ae73b427a3535a389f0d72a948e2a75df}{OnSortMenuItem}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{140         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a06c047f5e3787c4cf8f6c0ad9fda5859}{OnIsolateMaterialBranch}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{141         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a028bc89879c1535de375db5451e9c96a}{OnExitIsolateMaterialBranch}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{142         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a5b58777a7528278df09b983860354d5a}{OnAbout}}(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{144         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a8348f7843bdc26485e067c0f6fe2b467}{SetTreeCtrlConnect}}();}
+\DoxyCodeLine{146         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a715e69b6e11c93b883dbdb1a7aaf8bd2}{OnElementActivated}}(wxTreeEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{147         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_adf62d00ce1fcd00b6c6dc1be32534f95}{OnElementCollapsed}}(wxTreeEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{148         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab45fa1e681feb5a671b8cae4b853e1cc}{OnElementExpanded}}(wxTreeEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{149         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_base_aa87a18bf365e6ce80667446fbf6757d1}{OnMatMLItemMenu}}(wxTreeEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{151     \textcolor{keyword}{public}:}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         \mbox{\hyperlink{classbellshire_1_1_material_frame_base_aeed67876cae3e4d072f6272407ae2ab3}{MaterialFrameBase}}(wxWindow* parent,}
+\DoxyCodeLine{154             wxWindowID \textcolor{keywordtype}{id} = wxID\_MATERIAL,}
+\DoxyCodeLine{155             \textcolor{keyword}{const} wxString\& title = wxT(\textcolor{stringliteral}{"{}MatML Editer"{}}),}
+\DoxyCodeLine{156             \textcolor{keyword}{const} wxPoint\& pos = wxDefaultPosition,}
+\DoxyCodeLine{157             \textcolor{keyword}{const} wxSize\& size = wxSize(770, 628),}
+\DoxyCodeLine{158             \textcolor{keywordtype}{long} style = wxCAPTION | wxCLOSE\_BOX | wxMAXIMIZE\_BOX | wxMINIMIZE\_BOX | wxRESIZE\_BORDER | wxSYSTEM\_MENU | wxTAB\_TRAVERSAL}
+\DoxyCodeLine{159         );}
+\DoxyCodeLine{160         \mbox{\hyperlink{classbellshire_1_1_material_frame_base_abad83d2e6e1cca86002d32d908627085}{\string~MaterialFrameBase}}();}
+\DoxyCodeLine{162         \textcolor{keywordtype}{void} m\_splitter1OnIdle(wxIdleEvent\&)}
+\DoxyCodeLine{163         \{}
+\DoxyCodeLine{164             m\_splitter1-\/>SetSashPosition(200);}
+\DoxyCodeLine{165             m\_splitter1-\/>Disconnect(wxEVT\_IDLE, wxIdleEventHandler(MaterialFrameBase::m\_splitter1OnIdle), NULL, \textcolor{keyword}{this});}
+\DoxyCodeLine{166         \}}
+\DoxyCodeLine{167     \};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \}; \textcolor{comment}{// namespace bellshire}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_BT\_MatML\_MaterialFrameBase\_GUI\_\_}}
+
+\end{DoxyCode}

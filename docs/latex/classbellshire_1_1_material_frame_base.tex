@@ -1,0 +1,415 @@
+\hypertarget{classbellshire_1_1_material_frame_base}{}\doxysection{bellshire\+::Material\+Frame\+Base Class Reference}
+\label{classbellshire_1_1_material_frame_base}\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+
+
+Contains\+:~\newline
+ 
+
+
+
+
+{\ttfamily \#include $<$BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame\+Base.\+h$>$}
+
+Inheritance diagram for bellshire\+::Material\+Frame\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbellshire_1_1_material_frame_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbellshire_1_1_material_frame_base_aeed67876cae3e4d072f6272407ae2ab3}{Material\+Frame\+Base}} (wx\+Window $\ast$parent, wx\+Window\+ID id=wx\+ID\+\_\+\+MATERIAL, const wx\+String \&title=wxT(\char`\"{}Mat\+ML Editer\char`\"{}), const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Size(770, 628), long style=wx\+CAPTION$\vert$wx\+CLOSE\+\_\+\+BOX$\vert$wx\+MAXIMIZE\+\_\+\+BOX$\vert$wx\+MINIMIZE\+\_\+\+BOX$\vert$wx\+RESIZE\+\_\+\+BORDER$\vert$wx\+SYSTEM\+\_\+\+MENU$\vert$wx\+TAB\+\_\+\+TRAVERSAL)
+\begin{DoxyCompactList}\small\item\em Create the Main entry \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the Menus, the wx\+Tree\+Ctrl, and all the Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info, then connects the Event Handler Functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbellshire_1_1_material_frame_base_abad83d2e6e1cca86002d32d908627085}{$\sim$\+Material\+Frame\+Base}} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a575039399d2aeebdf114302554da05c9}\label{classbellshire_1_1_material_frame_base_a575039399d2aeebdf114302554da05c9}} 
+void {\bfseries m\+\_\+splitter1\+On\+Idle} (wx\+Idle\+Event \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_adfd03bc5f2b3abb04bc8eef7e37c22f2}{Set\+Menu\+Connect}} ()
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_afdf4ffa39139a460ad2687490b65ad93}{On\+Close\+Sel}} (wx\+Close\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a64ed6e9ca94947fd95462dda33bf6434}{On\+New\+Sel}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a7fc37d0c308156ee35a2c6e77e4d82e4}{On\+Open\+Sel}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a840609ab6e82dcf5db7df7519fe3104b}{On\+Save\+Sel}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_abd022137e64938d9743dc41cfc5ccaa4}{On\+Save\+As\+Sel}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a0395e505b0981793704997f6d00f8596}{On\+Export\+Material}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a8f27caed4ca8212c8d2146a711c453be}{On\+Export\+Material\+Branch}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a368ca2ec4cf4416877e234e98ecb03c6}{On\+Import\+Material\+Branch}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab77f4f8809415c5b381d7f5d56076f5b}{On\+Exit\+Sel}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a4843d95b0ef2263ff248a6b168b1474d}{On\+Edit\+Menu\+Preferences\+Item}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ae73b427a3535a389f0d72a948e2a75df}{On\+Sort\+Menu\+Item}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a06c047f5e3787c4cf8f6c0ad9fda5859}{On\+Isolate\+Material\+Branch}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a028bc89879c1535de375db5451e9c96a}{On\+Exit\+Isolate\+Material\+Branch}} (wx\+Command\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a5b58777a7528278df09b983860354d5a}{On\+About}} (wx\+Command\+Event \&event)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a8348f7843bdc26485e067c0f6fe2b467}{Set\+Tree\+Ctrl\+Connect}} ()
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a715e69b6e11c93b883dbdb1a7aaf8bd2}{On\+Element\+Activated}} (wx\+Tree\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_adf62d00ce1fcd00b6c6dc1be32534f95}{On\+Element\+Collapsed}} (wx\+Tree\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_ab45fa1e681feb5a671b8cae4b853e1cc}{On\+Element\+Expanded}} (wx\+Tree\+Event \&event)
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_material_frame_base_aa87a18bf365e6ce80667446fbf6757d1}{On\+Mat\+MLItem\+Menu}} (wx\+Tree\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+Menu\+Bar $\ast$ \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a199fe2ebe48502fbde0cceb20ed0196f}{m\+\_\+menubar1}}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_acbe7b7cc0d950ba9e2e67d85435b4a30}\label{classbellshire_1_1_material_frame_base_acbe7b7cc0d950ba9e2e67d85435b4a30}} 
+wx\+Menu $\ast$ {\bfseries m\+\_\+\+File\+Menu}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a744c03af3ab528d73f4c59945a53fb2a}\label{classbellshire_1_1_material_frame_base_a744c03af3ab528d73f4c59945a53fb2a}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+New\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_af83925110e6948b1254db4a0aad18934}\label{classbellshire_1_1_material_frame_base_af83925110e6948b1254db4a0aad18934}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Open\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_aa58361b30a63fd43a34ad24f97962dfc}\label{classbellshire_1_1_material_frame_base_aa58361b30a63fd43a34ad24f97962dfc}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Save\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a7a17ff3915d9a75086613e80f36c3e20}\label{classbellshire_1_1_material_frame_base_a7a17ff3915d9a75086613e80f36c3e20}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Save\+As\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a5bc0c45ef4da2a4e4b1629d1abed38db}\label{classbellshire_1_1_material_frame_base_a5bc0c45ef4da2a4e4b1629d1abed38db}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Export\+Material\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a51723e9b94199e1d212683a44459e9b2}\label{classbellshire_1_1_material_frame_base_a51723e9b94199e1d212683a44459e9b2}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Export\+Material\+Branch\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a74a69b163f21a05f162aeee35069e0ac}\label{classbellshire_1_1_material_frame_base_a74a69b163f21a05f162aeee35069e0ac}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Import\+Material\+Branch\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_aa8b21d3a78447bd5d8e18a918fe9ce32}\label{classbellshire_1_1_material_frame_base_aa8b21d3a78447bd5d8e18a918fe9ce32}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Exit\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ad277927a97850d969e7a0eabf18a55f6}\label{classbellshire_1_1_material_frame_base_ad277927a97850d969e7a0eabf18a55f6}} 
+wx\+Menu $\ast$ {\bfseries m\+\_\+\+Edit\+Menu}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a884c03382d744901de918c3e1718f6c3}\label{classbellshire_1_1_material_frame_base_a884c03382d744901de918c3e1718f6c3}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Edit\+Menu\+Preferences\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a88344fb2275efee84a8568ba2afad861}\label{classbellshire_1_1_material_frame_base_a88344fb2275efee84a8568ba2afad861}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Sort\+Class1\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_acf09908840596aacf031c32a270542f9}\label{classbellshire_1_1_material_frame_base_acf09908840596aacf031c32a270542f9}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Isolate\+Material\+Branch\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a65470f036be50e923c2da5be27753fcd}\label{classbellshire_1_1_material_frame_base_a65470f036be50e923c2da5be27753fcd}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+Exit\+Isolate\+Material\+Branch\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_aa6f3dc4e50be27e7a12639e1b8de70af}\label{classbellshire_1_1_material_frame_base_aa6f3dc4e50be27e7a12639e1b8de70af}} 
+wx\+Menu $\ast$ {\bfseries m\+\_\+\+View\+Menu}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_accf715c34e7d4365911afb0389cde75e}\label{classbellshire_1_1_material_frame_base_accf715c34e7d4365911afb0389cde75e}} 
+wx\+Menu $\ast$ {\bfseries m\+\_\+\+Help\+Menu}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ac859fe5819a2e737683fa3f34121c3e7}\label{classbellshire_1_1_material_frame_base_ac859fe5819a2e737683fa3f34121c3e7}} 
+wx\+Menu\+Item $\ast$ {\bfseries m\+\_\+\+About\+Menu\+Item}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a9d4dec1e6080ec05bf5ccb1e2ce487f0}\label{classbellshire_1_1_material_frame_base_a9d4dec1e6080ec05bf5ccb1e2ce487f0}} 
+wx\+Status\+Bar $\ast$ {\bfseries m\+\_\+status\+Bar1}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a92aa4664bea997504c3adc6de04ecf66}\label{classbellshire_1_1_material_frame_base_a92aa4664bea997504c3adc6de04ecf66}} 
+wx\+Splitter\+Window $\ast$ {\bfseries m\+\_\+splitter1}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a2573d72f27146cdcee1062e383182c07}\label{classbellshire_1_1_material_frame_base_a2573d72f27146cdcee1062e383182c07}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+panel68}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ae501d2cd54921cbb987a267e2e0d4b64}\label{classbellshire_1_1_material_frame_base_ae501d2cd54921cbb987a267e2e0d4b64}} 
+\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$ {\bfseries m\+\_\+\+Mat\+MLTree\+Ctrl}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_accc40c7b85738169fbb74aeb6e3267e2}\label{classbellshire_1_1_material_frame_base_accc40c7b85738169fbb74aeb6e3267e2}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+\+Multi\+Panel}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a655a1b424b771fdc8c297ae8a60ccb8a}\label{classbellshire_1_1_material_frame_base_a655a1b424b771fdc8c297ae8a60ccb8a}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+\+Intro\+Panel}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a62f47a9e5eda37e4f3d76f40240410fa}\label{classbellshire_1_1_material_frame_base_a62f47a9e5eda37e4f3d76f40240410fa}} 
+wx\+Static\+Bitmap $\ast$ {\bfseries m\+\_\+logobitmap}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a7645be54b314dbb9eea97c5351c5b41a}\label{classbellshire_1_1_material_frame_base_a7645be54b314dbb9eea97c5351c5b41a}} 
+wx\+Static\+Text $\ast$ {\bfseries m\+\_\+\+Intro\+Static\+Text}
+\item 
+\mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} $\ast$ \mbox{\hyperlink{classbellshire_1_1_material_frame_base_a12cf344da3d5a2d7c155251229cd59e6}{m\+\_\+\+GUI}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains\+:~\newline
+
+
+\mbox{\hyperlink{classbellshire_1_1_material_frame_base}{Material\+Frame\+Base}} Sets up the Applications \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}
+\begin{DoxyItemize}
+\item Application wx\+Widget \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} data Members.
+\item Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} members
+\item Virtual event handlers, overiden in the derived classes
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_aeed67876cae3e4d072f6272407ae2ab3}\label{classbellshire_1_1_material_frame_base_aeed67876cae3e4d072f6272407ae2ab3}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!MaterialFrameBase@{MaterialFrameBase}}
+\index{MaterialFrameBase@{MaterialFrameBase}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{MaterialFrameBase()}{MaterialFrameBase()}}
+{\footnotesize\ttfamily Material\+Frame\+Base\+::\+Material\+Frame\+Base (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Window\+ID}]{id = {\ttfamily wxID\+\_\+MATERIAL},  }\item[{const wx\+String \&}]{title = {\ttfamily wxT(\char`\"{}MatML~Editer\char`\"{})},  }\item[{const wx\+Point \&}]{pos = {\ttfamily wxDefaultPosition},  }\item[{const wx\+Size \&}]{size = {\ttfamily wxSize(770,~628)},  }\item[{long}]{style = {\ttfamily wxCAPTION~$\vert$~wxCLOSE\+\_\+BOX~$\vert$~wxMAXIMIZE\+\_\+BOX~$\vert$~wxMINIMIZE\+\_\+BOX~$\vert$~wxRESIZE\+\_\+BORDER~$\vert$~wxSYSTEM\+\_\+MENU~$\vert$~wxTAB\+\_\+TRAVERSAL} }\end{DoxyParamCaption})}
+
+
+
+Create the Main entry \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the Menus, the wx\+Tree\+Ctrl, and all the Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info, then connects the Event Handler Functions. 
+
+Constructor Creation of Menu Bar
+
+Creation of Status bar
+
+Creation of Windows
+
+Set growable columns for the Mat\+ML\+\_\+\+GUI
+
+Creation of all the Mat\+ML GUIs
+
+Layout the windows
+
+Connect Menu and Tree\+Ctrl Events\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_abad83d2e6e1cca86002d32d908627085}\label{classbellshire_1_1_material_frame_base_abad83d2e6e1cca86002d32d908627085}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!````~MaterialFrameBase@{$\sim$MaterialFrameBase}}
+\index{````~MaterialFrameBase@{$\sim$MaterialFrameBase}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$MaterialFrameBase()}{~MaterialFrameBase()}}
+{\footnotesize\ttfamily Material\+Frame\+Base\+::$\sim$\+Material\+Frame\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Destructor
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a5b58777a7528278df09b983860354d5a}\label{classbellshire_1_1_material_frame_base_a5b58777a7528278df09b983860354d5a}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnAbout@{OnAbout}}
+\index{OnAbout@{OnAbout}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnAbout()}{OnAbout()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+About (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On About Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_adea97410524486510e6ce68a20f5c573}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_afdf4ffa39139a460ad2687490b65ad93}\label{classbellshire_1_1_material_frame_base_afdf4ffa39139a460ad2687490b65ad93}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnCloseSel@{OnCloseSel}}
+\index{OnCloseSel@{OnCloseSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnCloseSel()}{OnCloseSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Close\+Sel (\begin{DoxyParamCaption}\item[{wx\+Close\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Close Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a91c6de2b0ebf6ed451a586fbc969d3ba}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a4843d95b0ef2263ff248a6b168b1474d}\label{classbellshire_1_1_material_frame_base_a4843d95b0ef2263ff248a6b168b1474d}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnEditMenuPreferencesItem@{OnEditMenuPreferencesItem}}
+\index{OnEditMenuPreferencesItem@{OnEditMenuPreferencesItem}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnEditMenuPreferencesItem()}{OnEditMenuPreferencesItem()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Edit\+Menu\+Preferences\+Item (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Edit Menu\textquotesingle{}s Preferences Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a06e8e6768516ec0561eb5f522450f4a6}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a715e69b6e11c93b883dbdb1a7aaf8bd2}\label{classbellshire_1_1_material_frame_base_a715e69b6e11c93b883dbdb1a7aaf8bd2}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnElementActivated@{OnElementActivated}}
+\index{OnElementActivated@{OnElementActivated}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnElementActivated()}{OnElementActivated()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Element\+Activated (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On \mbox{\hyperlink{class_element}{Element}} Activated wx\+Tree\+Ctrl Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a0e869ae15251f3f14a7e1ebb5ee2fc30}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_adf62d00ce1fcd00b6c6dc1be32534f95}\label{classbellshire_1_1_material_frame_base_adf62d00ce1fcd00b6c6dc1be32534f95}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnElementCollapsed@{OnElementCollapsed}}
+\index{OnElementCollapsed@{OnElementCollapsed}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnElementCollapsed()}{OnElementCollapsed()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Element\+Collapsed (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On \mbox{\hyperlink{class_element}{Element}} Colapse wx\+Tree\+Ctrl Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_ab6711224dd93967f45830ae70585ced9}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ab45fa1e681feb5a671b8cae4b853e1cc}\label{classbellshire_1_1_material_frame_base_ab45fa1e681feb5a671b8cae4b853e1cc}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnElementExpanded@{OnElementExpanded}}
+\index{OnElementExpanded@{OnElementExpanded}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnElementExpanded()}{OnElementExpanded()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Element\+Expanded (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On \mbox{\hyperlink{class_element}{Element}} Expanded wx\+Tree\+Ctrl Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a7357e2be2ca952916c8175949736d521}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a028bc89879c1535de375db5451e9c96a}\label{classbellshire_1_1_material_frame_base_a028bc89879c1535de375db5451e9c96a}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnExitIsolateMaterialBranch@{OnExitIsolateMaterialBranch}}
+\index{OnExitIsolateMaterialBranch@{OnExitIsolateMaterialBranch}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnExitIsolateMaterialBranch()}{OnExitIsolateMaterialBranch()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Exit\+Isolate\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Exit Isolate \mbox{\hyperlink{class_material}{Material}} Branch Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a7dbf9229c006a646298aab8b63088f77}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ab77f4f8809415c5b381d7f5d56076f5b}\label{classbellshire_1_1_material_frame_base_ab77f4f8809415c5b381d7f5d56076f5b}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnExitSel@{OnExitSel}}
+\index{OnExitSel@{OnExitSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnExitSel()}{OnExitSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Exit\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Exit Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a624284c7023d7f86f818e12054fea493}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a0395e505b0981793704997f6d00f8596}\label{classbellshire_1_1_material_frame_base_a0395e505b0981793704997f6d00f8596}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnExportMaterial@{OnExportMaterial}}
+\index{OnExportMaterial@{OnExportMaterial}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterial()}{OnExportMaterial()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Export\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Export \mbox{\hyperlink{class_material}{Material}} Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a8f27caed4ca8212c8d2146a711c453be}\label{classbellshire_1_1_material_frame_base_a8f27caed4ca8212c8d2146a711c453be}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnExportMaterialBranch@{OnExportMaterialBranch}}
+\index{OnExportMaterialBranch@{OnExportMaterialBranch}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnExportMaterialBranch()}{OnExportMaterialBranch()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Export\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Export \mbox{\hyperlink{class_material}{Material}} Branch Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a368ca2ec4cf4416877e234e98ecb03c6}\label{classbellshire_1_1_material_frame_base_a368ca2ec4cf4416877e234e98ecb03c6}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnImportMaterialBranch@{OnImportMaterialBranch}}
+\index{OnImportMaterialBranch@{OnImportMaterialBranch}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnImportMaterialBranch()}{OnImportMaterialBranch()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Import\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Import \mbox{\hyperlink{class_material}{Material}} Branch Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a0bc7f81c402cb5d2b087482038f57987}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a06c047f5e3787c4cf8f6c0ad9fda5859}\label{classbellshire_1_1_material_frame_base_a06c047f5e3787c4cf8f6c0ad9fda5859}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnIsolateMaterialBranch@{OnIsolateMaterialBranch}}
+\index{OnIsolateMaterialBranch@{OnIsolateMaterialBranch}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnIsolateMaterialBranch()}{OnIsolateMaterialBranch()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Isolate\+Material\+Branch (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Isolate \mbox{\hyperlink{class_material}{Material}} Branch Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_abb232253d72e0cbb9509a2750911a1cf}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_aa87a18bf365e6ce80667446fbf6757d1}\label{classbellshire_1_1_material_frame_base_aa87a18bf365e6ce80667446fbf6757d1}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnMatMLItemMenu@{OnMatMLItemMenu}}
+\index{OnMatMLItemMenu@{OnMatMLItemMenu}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnMatMLItemMenu()}{OnMatMLItemMenu()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Mat\+MLItem\+Menu (\begin{DoxyParamCaption}\item[{wx\+Tree\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Mat\+ML Item wx\+Tree\+Ctrl Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_ab9c0ce8c2f82dad5b556bbc66a364eca}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a64ed6e9ca94947fd95462dda33bf6434}\label{classbellshire_1_1_material_frame_base_a64ed6e9ca94947fd95462dda33bf6434}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnNewSel@{OnNewSel}}
+\index{OnNewSel@{OnNewSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnNewSel()}{OnNewSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+New\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On New Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a2e867a218bbda610b85aa583828e6e9b}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a7fc37d0c308156ee35a2c6e77e4d82e4}\label{classbellshire_1_1_material_frame_base_a7fc37d0c308156ee35a2c6e77e4d82e4}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnOpenSel@{OnOpenSel}}
+\index{OnOpenSel@{OnOpenSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnOpenSel()}{OnOpenSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Open\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Open Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a1e155d5241bdbb00d269e064796f56e5}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_abd022137e64938d9743dc41cfc5ccaa4}\label{classbellshire_1_1_material_frame_base_abd022137e64938d9743dc41cfc5ccaa4}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnSaveAsSel@{OnSaveAsSel}}
+\index{OnSaveAsSel@{OnSaveAsSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnSaveAsSel()}{OnSaveAsSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Save\+As\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Save\+As Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a9ca724457198a94ef34cdebcd79ffc44}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a840609ab6e82dcf5db7df7519fe3104b}\label{classbellshire_1_1_material_frame_base_a840609ab6e82dcf5db7df7519fe3104b}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnSaveSel@{OnSaveSel}}
+\index{OnSaveSel@{OnSaveSel}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnSaveSel()}{OnSaveSel()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Save\+Sel (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Save Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_ac672ed89331b13884816c23625e21c22}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_ae73b427a3535a389f0d72a948e2a75df}\label{classbellshire_1_1_material_frame_base_ae73b427a3535a389f0d72a948e2a75df}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!OnSortMenuItem@{OnSortMenuItem}}
+\index{OnSortMenuItem@{OnSortMenuItem}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{OnSortMenuItem()}{OnSortMenuItem()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Material\+Frame\+Base\+::\+On\+Sort\+Menu\+Item (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Virtual event handlers for On Sort Menu Select 
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_material_frame_a53d8a0d29d4dcdbba2c429e5bbae9c2e}{bellshire\+::\+Material\+Frame}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_adfd03bc5f2b3abb04bc8eef7e37c22f2}\label{classbellshire_1_1_material_frame_base_adfd03bc5f2b3abb04bc8eef7e37c22f2}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!SetMenuConnect@{SetMenuConnect}}
+\index{SetMenuConnect@{SetMenuConnect}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{SetMenuConnect()}{SetMenuConnect()}}
+{\footnotesize\ttfamily void Material\+Frame\+Base\+::\+Set\+Menu\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Connect event handlers for Menu Select \mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a8348f7843bdc26485e067c0f6fe2b467}\label{classbellshire_1_1_material_frame_base_a8348f7843bdc26485e067c0f6fe2b467}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!SetTreeCtrlConnect@{SetTreeCtrlConnect}}
+\index{SetTreeCtrlConnect@{SetTreeCtrlConnect}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{SetTreeCtrlConnect()}{SetTreeCtrlConnect()}}
+{\footnotesize\ttfamily void Material\+Frame\+Base\+::\+Set\+Tree\+Ctrl\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Connect event handlers for wx\+Tree\+Ctrl 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a12cf344da3d5a2d7c155251229cd59e6}\label{classbellshire_1_1_material_frame_base_a12cf344da3d5a2d7c155251229cd59e6}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!m\_GUI@{m\_GUI}}
+\index{m\_GUI@{m\_GUI}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{m\_GUI}{m\_GUI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}$\ast$ bellshire\+::\+Material\+Frame\+Base\+::m\+\_\+\+GUI\hspace{0.3cm}{\ttfamily [protected]}}
+
+Mat\+ML GUIs Classes \mbox{\Hypertarget{classbellshire_1_1_material_frame_base_a199fe2ebe48502fbde0cceb20ed0196f}\label{classbellshire_1_1_material_frame_base_a199fe2ebe48502fbde0cceb20ed0196f}} 
+\index{bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}!m\_menubar1@{m\_menubar1}}
+\index{m\_menubar1@{m\_menubar1}!bellshire::MaterialFrameBase@{bellshire::MaterialFrameBase}}
+\doxysubsubsection{\texorpdfstring{m\_menubar1}{m\_menubar1}}
+{\footnotesize\ttfamily wx\+Menu\+Bar$\ast$ bellshire\+::\+Material\+Frame\+Base\+::m\+\_\+menubar1\hspace{0.3cm}{\ttfamily [protected]}}
+
+Main Menu Bar 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame\+Base.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame\+Base.\+cpp\end{DoxyCompactItemize}

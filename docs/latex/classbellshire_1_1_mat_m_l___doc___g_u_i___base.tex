@@ -1,0 +1,174 @@
+\hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{}\doxysection{bellshire\+::Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base}\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+
+
+ 
+
+
+
+
+{\ttfamily \#include $<$BT\+\_\+\+Mat\+ML\+\_\+\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI.\+h$>$}
+
+Inheritance diagram for bellshire\+::Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_mat_m_l___doc___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}{Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}} ()
+\item 
+\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a16291666370ddd6cd2ca7289321e6650}{Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}} (wx\+Window $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a7706ecfd58239c847642fc53f557546b}{$\sim$\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a2d3d35b3a10292b76d8a17e32c7062f8}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a2d3d35b3a10292b76d8a17e32c7062f8}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a495efa11709f09a7a68c071d741312e4}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a495efa11709f09a7a68c071d741312e4}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_aed7a7551d079c9a300ee19be632d2823}{Update}} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_adb5f5c2a08feb448165dfd032dbe85f6}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_adb5f5c2a08feb448165dfd032dbe85f6}} 
+void {\bfseries Set\+Connect} ()
+\item 
+virtual void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a48e0b0a92b6ea0265e018cd5a351a6db}{On\+Delete\+Material}} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a410423bd7a70e7a3e31c6b0c1f1e8870}{Create}} (wx\+Window $\ast$parent)
+\item 
+static void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a62f423d6a5cf2b70946bceba51b92e09}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \&\mbox{\hyperlink{class_element}{Element}})
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML data into a wx\+Tree\+Ctrl element and then call on the Children to do the same. This mimics the Mat\+ML data tree into wx\+Widget wx\+Tree\+Ctrl. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a61974583bffca19f73968514c4f3e2ed}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a61974583bffca19f73968514c4f3e2ed}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base}} Base Gui class for Mat\+ML data \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}}.
+\begin{DoxyItemize}
+\item Creates the Gui,
+\item Update the Gui,
+\item Sets up the Mat\+ML wx\+Tree\+Ctrl
+\item Connects Event Handler Functions 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!MatML\_Doc\_GUI\_Base@{MatML\_Doc\_GUI\_Base}}
+\index{MatML\_Doc\_GUI\_Base@{MatML\_Doc\_GUI\_Base}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{MatML\_Doc\_GUI\_Base()}{MatML\_Doc\_GUI\_Base()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Constructor\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a16291666370ddd6cd2ca7289321e6650}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a16291666370ddd6cd2ca7289321e6650}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!MatML\_Doc\_GUI\_Base@{MatML\_Doc\_GUI\_Base}}
+\index{MatML\_Doc\_GUI\_Base@{MatML\_Doc\_GUI\_Base}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{MatML\_Doc\_GUI\_Base()}{MatML\_Doc\_GUI\_Base()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+
+
+Main Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+Create Gui\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a7706ecfd58239c847642fc53f557546b}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a7706ecfd58239c847642fc53f557546b}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!````~MatML\_Doc\_GUI\_Base@{$\sim$MatML\_Doc\_GUI\_Base}}
+\index{````~MatML\_Doc\_GUI\_Base@{$\sim$MatML\_Doc\_GUI\_Base}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{$\sim$MatML\_Doc\_GUI\_Base()}{~MatML\_Doc\_GUI\_Base()}}
+{\footnotesize\ttfamily Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::$\sim$\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Destructorparent will distroy Ctrl or window
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a410423bd7a70e7a3e31c6b0c1f1e8870}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a410423bd7a70e7a3e31c6b0c1f1e8870}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+
+
+Creates the Gui for the \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} Mat\+ML data and Info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wx\+Notebook$\ast$
+\end{DoxyReturn}
+Creates wx\+Notebook
+
+Creates the Mat\+ML data panel
+
+Creates the Mat\+ML Info panel
+
+Adds the above panels to the wx\+Notebook\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a48e0b0a92b6ea0265e018cd5a351a6db}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a48e0b0a92b6ea0265e018cd5a351a6db}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!OnDeleteMaterial@{OnDeleteMaterial}}
+\index{OnDeleteMaterial@{OnDeleteMaterial}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{OnDeleteMaterial()}{OnDeleteMaterial()}}
+{\footnotesize\ttfamily virtual void bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+On\+Delete\+Material (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a90c0aa008649cdb95ebed4c3531bfe2b}{bellshire\+::\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a62f423d6a5cf2b70946bceba51b92e09}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a62f423d6a5cf2b70946bceba51b92e09}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily void Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} \&}]{Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML data into a wx\+Tree\+Ctrl element and then call on the Children to do the same. This mimics the Mat\+ML data tree into wx\+Widget wx\+Tree\+Ctrl. 
+
+As this is the root element in the wx\+Tree\+Ctrl, clear out all wx\+Tree\+Ctrl data and start fresh.
+
+Create the current element and add the \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{Mat\+MLTree\+Item\+Data}}
+
+Setup element \mbox{\hyperlink{class_material}{Material}}
+
+Setup element \mbox{\hyperlink{class_metadata}{Metadata}}
+
+Sort Children in order. Order is set by \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}}.\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___doc___g_u_i___base_aed7a7551d079c9a300ee19be632d2823}\label{classbellshire_1_1_mat_m_l___doc___g_u_i___base_aed7a7551d079c9a300ee19be632d2823}} 
+\index{bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}!Update@{Update}}
+\index{Update@{Update}!bellshire::MatML\_Doc\_GUI\_Base@{bellshire::MatML\_Doc\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Mat\+ML\+\_\+\+Doc\+\_\+\+GUI\+\_\+\+Base\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Nothing to update
+
+Show Gui
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

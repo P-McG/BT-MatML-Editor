@@ -1,0 +1,93 @@
+\hypertarget{classbellshire_1_1_relationship___g_u_i___base}{}\doxysection{bellshire\+::Relationship\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_relationship___g_u_i___base}\index{bellshire::Relationship\_GUI\_Base@{bellshire::Relationship\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Relationship\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_relationship___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_a038afddec34ca62ce7bbfb48bbc2e0fe}\label{classbellshire_1_1_relationship___g_u_i___base_a038afddec34ca62ce7bbfb48bbc2e0fe}} 
+{\bfseries Relationship\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_acf2ca91c5445a775c987e5072462445c}\label{classbellshire_1_1_relationship___g_u_i___base_acf2ca91c5445a775c987e5072462445c}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_ac4d3bb9567c2d5feee9628eec2f77618}\label{classbellshire_1_1_relationship___g_u_i___base_ac4d3bb9567c2d5feee9628eec2f77618}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_a456cf5840a879c091b2908b9430b272e}\label{classbellshire_1_1_relationship___g_u_i___base_a456cf5840a879c091b2908b9430b272e}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_relationship}{Relationship}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_ae3275fc93e6b10f086180511359e3944}\label{classbellshire_1_1_relationship___g_u_i___base_ae3275fc93e6b10f086180511359e3944}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_a37611f91fd9e3fcb2534b3a78e4a8be6}\label{classbellshire_1_1_relationship___g_u_i___base_a37611f91fd9e3fcb2534b3a78e4a8be6}} 
+virtual void {\bfseries On\+Relationship\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_relationship___g_u_i___base_af4a0e4320c6f05409fccd29e4c4cab3b}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Relationship\+Text\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_relationship}{Relationship}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_relationship___g_u_i___base_ac6599efe7ebc9721398be3c9905d6836}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_relationship}{Relationship}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_ac76f6a589dbf74259f93ed8f515e3e46}\label{classbellshire_1_1_relationship___g_u_i___base_ac76f6a589dbf74259f93ed8f515e3e46}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_ae6d1e6bae619c0f2c8eb93e4ff0be4fc}\label{classbellshire_1_1_relationship___g_u_i___base_ae6d1e6bae619c0f2c8eb93e4ff0be4fc}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Relationship\+Text\+Ctrl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_af4a0e4320c6f05409fccd29e4c4cab3b}\label{classbellshire_1_1_relationship___g_u_i___base_af4a0e4320c6f05409fccd29e4c4cab3b}} 
+\index{bellshire::Relationship\_GUI\_Base@{bellshire::Relationship\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Relationship\_GUI\_Base@{bellshire::Relationship\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Relationship\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Relationship\+Text\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_relationship}{Relationship}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em Relationship\+Text\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_relationship___g_u_i___base_ac6599efe7ebc9721398be3c9905d6836}\label{classbellshire_1_1_relationship___g_u_i___base_ac6599efe7ebc9721398be3c9905d6836}} 
+\index{bellshire::Relationship\_GUI\_Base@{bellshire::Relationship\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Relationship\_GUI\_Base@{bellshire::Relationship\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Relationship\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_relationship}{Relationship}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Relationship\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Relationship\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

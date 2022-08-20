@@ -1,0 +1,457 @@
+\hypertarget{_b_t___mat_m_l___default_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Default.\+h}
+\label{_b_t___mat_m_l___default_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Default.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Default.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Default.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Defaults for the MatML Classes.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef CLASSDEFAULT\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define CLASSDEFAULT\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}:\textcolor{keyword}{public} T}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_default}{Default<T>}}():T(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_associate}{Associate}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_associate}{Associate}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keyword}{public}:}
+\DoxyCodeLine{29         \mbox{\hyperlink{class_default_3_01_associate_01_4}{Default<Associate>}}():\mbox{\hyperlink{class_associate}{Associate}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_association_details}{AssociationDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_association_details}{AssociationDetails}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{keyword}{public}:}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_default}{Default}}()\{\};}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_name}{Name}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_name}{Name}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_default_3_01_name_01_4}{Default<Name>}}():\mbox{\hyperlink{class_name}{Name}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_bulk_details}{BulkDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_bulk_details}{BulkDetails}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_default_3_01_bulk_details_01_4}{Default<BulkDetails>}}():\mbox{\hyperlink{class_bulk_details}{BulkDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}())\{\};}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_formula}{Formula}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_formula}{Formula}}}
+\DoxyCodeLine{55 \{}
+\DoxyCodeLine{56 \textcolor{keyword}{public}:}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_default_3_01_formula_01_4}{Default<Formula>}}():\mbox{\hyperlink{class_formula}{Formula}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{61 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_characterization}{Characterization}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_characterization}{Characterization}}}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63 \textcolor{keyword}{public}:}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_default_3_01_characterization_01_4}{Default<Characterization>}}():\mbox{\hyperlink{class_characterization}{Characterization}}(\mbox{\hyperlink{class_default}{Default<::Formula>}}())\{\};}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{68 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_chemical_composition}{ChemicalComposition}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_chemical_composition}{ChemicalComposition}}}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70 \textcolor{keyword}{public}:}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_default_3_01_chemical_composition_01_4}{Default<ChemicalComposition>}}()\{\};}
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{75 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_chemical_element_symbol}{ChemicalElementSymbol}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_chemical_element_symbol}{ChemicalElementSymbol}}}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77 \textcolor{keyword}{public}:}
+\DoxyCodeLine{78     \mbox{\hyperlink{class_default_3_01_chemical_element_symbol_01_4}{Default<ChemicalElementSymbol>}}():\mbox{\hyperlink{class_chemical_element_symbol}{ChemicalElementSymbol}}(\textcolor{stringliteral}{"{}C"{}})\{\};}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{82 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_class}{Class}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_class}{Class}}}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84 \textcolor{keyword}{public}:}
+\DoxyCodeLine{85     \mbox{\hyperlink{class_default_3_01_class_01_4}{Default<Class>}}()\{\};}
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{89 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_parent_material}{ParentMaterial}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_parent_material}{ParentMaterial}}}
+\DoxyCodeLine{90 \{}
+\DoxyCodeLine{91 \textcolor{keyword}{public}:}
+\DoxyCodeLine{92     \mbox{\hyperlink{class_default_3_01_parent_material_01_4}{Default<ParentMaterial>}}():\mbox{\hyperlink{class_parent_material}{ParentMaterial}}(xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{96 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<ParentSubClass>:\textcolor{keyword}{public} \mbox{\hyperlink{class_class}{Class::ParentSubClass\_type}}}
+\DoxyCodeLine{97 \{}
+\DoxyCodeLine{98 \textcolor{keyword}{public}:}
+\DoxyCodeLine{99     \mbox{\hyperlink{class_default}{Default<bellshire::ParentSubClass>}}()\{\};}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{103 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_component_details}{ComponentDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_component_details}{ComponentDetails}}}
+\DoxyCodeLine{104 \{}
+\DoxyCodeLine{105 \textcolor{keyword}{public}:}
+\DoxyCodeLine{106     \mbox{\hyperlink{class_default_3_01_component_details_01_4}{Default<ComponentDetails>}}():\mbox{\hyperlink{class_component_details}{ComponentDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}())\{\};}
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{110 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_compound}{Compound}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_compound}{Compound}}}
+\DoxyCodeLine{111 \{}
+\DoxyCodeLine{112 \textcolor{keyword}{public}:}
+\DoxyCodeLine{113     \mbox{\hyperlink{class_default_3_01_compound_01_4}{Default<Compound>}}()\{\};}
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{117 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_value}{Value}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_value}{Value}}}
+\DoxyCodeLine{118 \{}
+\DoxyCodeLine{119 \textcolor{keyword}{public}:}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_default_3_01_value_01_4}{Default<Value>}}():\mbox{\hyperlink{class_value}{Value}}(\textcolor{stringliteral}{"{}0.0"{}},format\_type::float\_)\{\};}
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{124 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_unit}{Unit}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_unit}{Unit}}}
+\DoxyCodeLine{125 \{}
+\DoxyCodeLine{126 \textcolor{keyword}{public}:}
+\DoxyCodeLine{127       \mbox{\hyperlink{class_default_3_01_unit_01_4}{Default<Unit>}}()\{this-\/>\mbox{\hyperlink{class_name}{Name}}(\textcolor{stringliteral}{"{}REPLACE"{}});\};}
+\DoxyCodeLine{128 \};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{131 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_units}{Units}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_units}{Units}}}
+\DoxyCodeLine{132 \{}
+\DoxyCodeLine{133 \textcolor{keyword}{public}:}
+\DoxyCodeLine{134     \mbox{\hyperlink{class_default_3_01_units_01_4}{Default<Units>}}():\mbox{\hyperlink{class_units}{Units}}()\{this-\/>\mbox{\hyperlink{class_unit}{Unit}}().push\_back(\mbox{\hyperlink{class_default}{Default<::Unit>}}());\};}
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{138 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_concentration}{Concentration}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_concentration}{Concentration}}}
+\DoxyCodeLine{139 \{}
+\DoxyCodeLine{140 \textcolor{keyword}{public}:}
+\DoxyCodeLine{141     \mbox{\hyperlink{class_default_3_01_concentration_01_4}{Default<Concentration>}}():\mbox{\hyperlink{class_concentration}{Concentration}}(\mbox{\hyperlink{class_default}{Default<::Value>}}(),\mbox{\hyperlink{class_default}{Default<::Units>}}())\{\};}
+\DoxyCodeLine{142 \};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{145 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_currency_code}{CurrencyCode}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_currency_code}{CurrencyCode}}}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147 \textcolor{keyword}{public}:}
+\DoxyCodeLine{148     \mbox{\hyperlink{class_default_3_01_currency_code_01_4}{Default<CurrencyCode>}}():\mbox{\hyperlink{class_currency_code}{CurrencyCode}}(\textcolor{stringliteral}{"{}CAD"{}})\{\};}
+\DoxyCodeLine{149 \};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{152 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_data_format}{DataFormat}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_data_format}{DataFormat}}}
+\DoxyCodeLine{153 \{}
+\DoxyCodeLine{154 \textcolor{keyword}{public}:}
+\DoxyCodeLine{155     \mbox{\hyperlink{class_default_3_01_data_format_01_4}{Default<DataFormat>}}():\mbox{\hyperlink{class_data_format}{DataFormat}}(DataFormat::float\_)\{\};}
+\DoxyCodeLine{156 \};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{159 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_dimensional_details}{DimensionalDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_dimensional_details}{DimensionalDetails}}}
+\DoxyCodeLine{160 \{}
+\DoxyCodeLine{161 \textcolor{keyword}{public}:}
+\DoxyCodeLine{162     \mbox{\hyperlink{class_default_3_01_dimensional_details_01_4}{Default<DimensionalDetails>}}():\mbox{\hyperlink{class_dimensional_details}{DimensionalDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),\mbox{\hyperlink{class_default}{Default<::Value>}}(),\mbox{\hyperlink{class_default}{Default<::Units>}}())\{\};}
+\DoxyCodeLine{163 \};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{166 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_symbol}{Symbol}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_symbol}{Symbol}}}
+\DoxyCodeLine{167 \{}
+\DoxyCodeLine{168 \textcolor{keyword}{public}:}
+\DoxyCodeLine{169     \mbox{\hyperlink{class_default_3_01_symbol_01_4}{Default<Symbol>}}():\mbox{\hyperlink{class_symbol}{Symbol}}(\mbox{\hyperlink{class_chemical_element_symbol}{ChemicalElementSymbol}}(\textcolor{stringliteral}{"{}C"{}}))\{\};}
+\DoxyCodeLine{170 \};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{173 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_element}{Element}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_element}{Element}}}
+\DoxyCodeLine{174 \{}
+\DoxyCodeLine{175 \textcolor{keyword}{public}:}
+\DoxyCodeLine{176     \mbox{\hyperlink{class_default_3_01_element_01_4}{Default<Element>}}():\mbox{\hyperlink{class_element}{Element}}(\mbox{\hyperlink{class_default}{Default<::Symbol>}}())\{\};}
+\DoxyCodeLine{177 \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{comment}{//template<>}}
+\DoxyCodeLine{180 \textcolor{comment}{//class Default<Description>:public Form::Description\_type}}
+\DoxyCodeLine{181 \textcolor{comment}{//\{}}
+\DoxyCodeLine{182 \textcolor{comment}{//public:}}
+\DoxyCodeLine{183 \textcolor{comment}{//  Default<Description>():Form::Description\_type(Default<::Name>())\{\};}}
+\DoxyCodeLine{184 \textcolor{comment}{//\};}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{187 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_form}{Form}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_form}{Form}}}
+\DoxyCodeLine{188 \{}
+\DoxyCodeLine{189 \textcolor{keyword}{public}:}
+\DoxyCodeLine{190     \mbox{\hyperlink{class_default_3_01_form_01_4}{Default<Form>}}():\mbox{\hyperlink{class_form}{Form}}(\mbox{\hyperlink{class_default}{Default<::Name>}}())\{\};}
+\DoxyCodeLine{191 \};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{194 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Dimensions>:\textcolor{keyword}{public} Geometry::Dimensions\_type}
+\DoxyCodeLine{195 \{}
+\DoxyCodeLine{196 \textcolor{keyword}{public}:}
+\DoxyCodeLine{197     \mbox{\hyperlink{class_default_3_01_dimensions_01_4}{Default<Dimensions>}}():Geometry::Dimensions\_type(\textcolor{stringliteral}{"{}REPLACE"{}}) \{\};}
+\DoxyCodeLine{198 \};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{201 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Orientation>:\textcolor{keyword}{public} Geometry::Orientation\_type}
+\DoxyCodeLine{202 \{}
+\DoxyCodeLine{203 \textcolor{keyword}{public}:}
+\DoxyCodeLine{204     \mbox{\hyperlink{class_default_3_01_orientation_01_4}{Default<Orientation>}}():Geometry::Orientation\_type(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{205 \};}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{208 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Shape>:\textcolor{keyword}{public} Geometry::Shape\_type}
+\DoxyCodeLine{209 \{}
+\DoxyCodeLine{210 \textcolor{keyword}{public}:}
+\DoxyCodeLine{211     \mbox{\hyperlink{class_default_3_01_shape_01_4}{Default<Shape>}}():Geometry::Shape\_type(\textcolor{stringliteral}{"{}REPLACE"{}}) \{\};}
+\DoxyCodeLine{212 \};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{215 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_geometry}{Geometry}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_geometry}{Geometry}}}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217 \textcolor{keyword}{public}:}
+\DoxyCodeLine{218     \mbox{\hyperlink{class_default_3_01_geometry_01_4}{Default<Geometry>}}():\mbox{\hyperlink{class_geometry}{Geometry}}(\mbox{\hyperlink{class_default}{Default<::Shape>}}()) \{\};}
+\DoxyCodeLine{219 \};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{222 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_glossary}{Glossary}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_glossary}{Glossary}}}
+\DoxyCodeLine{223 \{}
+\DoxyCodeLine{224 \textcolor{keyword}{public}:}
+\DoxyCodeLine{225       \mbox{\hyperlink{class_default_3_01_glossary_01_4}{Default<Glossary>}}():\mbox{\hyperlink{class_glossary}{Glossary}}() \{\};}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{230 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Definition>:\textcolor{keyword}{public} GlossaryTerm::Definition\_type}
+\DoxyCodeLine{231 \{}
+\DoxyCodeLine{232 \textcolor{keyword}{public}:}
+\DoxyCodeLine{233     \mbox{\hyperlink{class_default_3_01_definition_01_4}{Default<Definition>}}():GlossaryTerm::Definition\_type()\{\};}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{237 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}}
+\DoxyCodeLine{238 \{}
+\DoxyCodeLine{239 \textcolor{keyword}{public}:}
+\DoxyCodeLine{240     \mbox{\hyperlink{class_default_3_01_glossary_term_01_4}{Default<GlossaryTerm>}}():\mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{241 \};}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{244 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Abbreviation>:\textcolor{keyword}{public} GlossaryTerm::Abbreviation\_type}
+\DoxyCodeLine{245 \{}
+\DoxyCodeLine{246 \textcolor{keyword}{public}:}
+\DoxyCodeLine{247     \mbox{\hyperlink{class_default_3_01_abbreviation_01_4}{Default<Abbreviation>}}():GlossaryTerm::Abbreviation\_type(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{248 \};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{251 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Synonym>:\textcolor{keyword}{public} GlossaryTerm::Synonym\_type}
+\DoxyCodeLine{252 \{}
+\DoxyCodeLine{253 \textcolor{keyword}{public}:}
+\DoxyCodeLine{254     \mbox{\hyperlink{class_default_3_01_synonym_01_4}{Default<Synonym>}}():GlossaryTerm::Synonym\_type(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{255 \};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{258 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_graph}{Graph}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_graph}{Graphs::Graph\_type}}}
+\DoxyCodeLine{259 \{}
+\DoxyCodeLine{260 \textcolor{keyword}{public}:}
+\DoxyCodeLine{261     \mbox{\hyperlink{class_default_3_01_graph_01_4}{Default<Graph>}}():\mbox{\hyperlink{class_graph}{Graphs::Graph\_type}}() \{\};}
+\DoxyCodeLine{262 \};}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{265 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_graphs}{Graphs}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_graphs}{Graphs}}}
+\DoxyCodeLine{266 \{}
+\DoxyCodeLine{267 \textcolor{keyword}{public}:}
+\DoxyCodeLine{268     \mbox{\hyperlink{class_default_3_01_graphs_01_4}{Default<Graphs>}}() :\mbox{\hyperlink{class_graphs}{Graphs}}() \{ this-\/>\mbox{\hyperlink{class_graph}{Graph}}().push\_back(\mbox{\hyperlink{class_default}{Default<::Graph>}}()); \};}
+\DoxyCodeLine{269 \};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{272 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_material}{Material}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_material}{Material}}}
+\DoxyCodeLine{273 \{}
+\DoxyCodeLine{274 \textcolor{keyword}{public}:}
+\DoxyCodeLine{275     \mbox{\hyperlink{class_default_3_01_material_01_4}{Default<Material>}}():\mbox{\hyperlink{class_material}{Material}}(\mbox{\hyperlink{class_default}{Default<::BulkDetails>}}())\{\};}
+\DoxyCodeLine{276 \};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{279 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_metadata}{Metadata}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_metadata}{Metadata}}}
+\DoxyCodeLine{280 \{}
+\DoxyCodeLine{281 \textcolor{keyword}{public}:}
+\DoxyCodeLine{282       \mbox{\hyperlink{class_default_3_01_metadata_01_4}{Default<Metadata>}}()\{\};}
+\DoxyCodeLine{283 \};}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{286 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_notes}{Notes}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_notes}{Notes}}}
+\DoxyCodeLine{287 \{}
+\DoxyCodeLine{288 \textcolor{keyword}{public}:}
+\DoxyCodeLine{289     \mbox{\hyperlink{class_default_3_01_notes_01_4}{Default<Notes>}}():\mbox{\hyperlink{class_notes}{Notes}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{290 \};}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{293 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_parameter_value}{ParameterValue}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_parameter_value}{ParameterValue}}}
+\DoxyCodeLine{294 \{}
+\DoxyCodeLine{295 \textcolor{keyword}{public}:}
+\DoxyCodeLine{296     \mbox{\hyperlink{class_default_3_01_parameter_value_01_4}{Default<ParameterValue>}}():\mbox{\hyperlink{class_parameter_value}{ParameterValue}}(\mbox{\hyperlink{class_data}{ParameterValue::Data\_type}}(\textcolor{stringliteral}{"{}0.0"{}}),}
+\DoxyCodeLine{297          ParameterValue::parameter\_type(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{298          \mbox{\hyperlink{class_default}{Default<::DataFormat>}}())\{\};}
+\DoxyCodeLine{299 \};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{302 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_phase_composition}{PhaseComposition}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_phase_composition}{PhaseComposition}}}
+\DoxyCodeLine{303 \{}
+\DoxyCodeLine{304 \textcolor{keyword}{public}:}
+\DoxyCodeLine{305     \mbox{\hyperlink{class_default_3_01_phase_composition_01_4}{Default<PhaseComposition>}}():\mbox{\hyperlink{class_phase_composition}{PhaseComposition}}(\mbox{\hyperlink{class_default}{Default<::Name>}}())\{\};}
+\DoxyCodeLine{306 \};}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{309 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_processing_details}{ProcessingDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_processing_details}{ProcessingDetails}}}
+\DoxyCodeLine{310 \{}
+\DoxyCodeLine{311 \textcolor{keyword}{public}:}
+\DoxyCodeLine{312     \mbox{\hyperlink{class_default_3_01_processing_details_01_4}{Default<ProcessingDetails>}}():\mbox{\hyperlink{class_processing_details}{ProcessingDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}())\{\};}
+\DoxyCodeLine{313 \};}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{316 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<Result>:\textcolor{keyword}{public} ProcessingDetails::Result\_type}
+\DoxyCodeLine{317 \{}
+\DoxyCodeLine{318 \textcolor{keyword}{public}:}
+\DoxyCodeLine{319     \mbox{\hyperlink{class_default_3_01_result_01_4}{Default<Result>}}():ProcessingDetails::Result\_type(\textcolor{stringliteral}{"{}REPLACE"{}}) \{\};}
+\DoxyCodeLine{320 \};}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{323 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_property_data}{PropertyData}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_property_data}{PropertyData}}}
+\DoxyCodeLine{324 \{}
+\DoxyCodeLine{325 \textcolor{keyword}{public}:}
+\DoxyCodeLine{326     \mbox{\hyperlink{class_default_3_01_property_data_01_4}{Default<PropertyData>}}():\mbox{\hyperlink{class_property_data}{PropertyData}}(\mbox{\hyperlink{class_data1}{Data1}}(\textcolor{stringliteral}{"{}0.0"{}},\mbox{\hyperlink{class_default}{Default<::DataFormat>}}()),}
+\DoxyCodeLine{327          PropertyData::property\_type(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{328 \};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{331 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_qualifier}{Qualifier}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_qualifier}{Qualifier}}}
+\DoxyCodeLine{332 \{}
+\DoxyCodeLine{333 \textcolor{keyword}{public}:}
+\DoxyCodeLine{334     \mbox{\hyperlink{class_default_3_01_qualifier_01_4}{Default<Qualifier>}}():\mbox{\hyperlink{class_qualifier}{Qualifier}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{335 \};}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{338 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_relationship}{Relationship}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_relationship}{Relationship}}}
+\DoxyCodeLine{339 \{}
+\DoxyCodeLine{340 \textcolor{keyword}{public}:}
+\DoxyCodeLine{341     \mbox{\hyperlink{class_default_3_01_relationship_01_4}{Default<Relationship>}}():\mbox{\hyperlink{class_relationship}{Relationship}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{342 \};}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{345 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_source}{Source}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_source}{Source}}}
+\DoxyCodeLine{346 \{}
+\DoxyCodeLine{347 \textcolor{keyword}{public}:}
+\DoxyCodeLine{348       \mbox{\hyperlink{class_default_3_01_source_01_4}{Default<Source>}}()\{\};}
+\DoxyCodeLine{349 \};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{352 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_specification}{Specification}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_specification}{Specification}}}
+\DoxyCodeLine{353 \{}
+\DoxyCodeLine{354 \textcolor{keyword}{public}:}
+\DoxyCodeLine{355     \mbox{\hyperlink{class_default_3_01_specification_01_4}{Default<Specification>}}():\mbox{\hyperlink{class_specification}{Specification}}(\textcolor{stringliteral}{"{}REPLACE"{}})\{\};}
+\DoxyCodeLine{356 \};}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{359 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_uncertainty}{Uncertainty}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_uncertainty}{Uncertainty}}}
+\DoxyCodeLine{360 \{}
+\DoxyCodeLine{361 \textcolor{keyword}{public}:}
+\DoxyCodeLine{362     \mbox{\hyperlink{class_default_3_01_uncertainty_01_4}{Default<Uncertainty>}}():\mbox{\hyperlink{class_uncertainty}{Uncertainty}}(\mbox{\hyperlink{class_default}{Default<::Value>}}())\{}
+\DoxyCodeLine{363         Uncertainty::Units\_optional\& cont(this-\/>\mbox{\hyperlink{class_units}{Units}}());}
+\DoxyCodeLine{364         cont.set(\mbox{\hyperlink{class_default}{Default<::Units>}}());}
+\DoxyCodeLine{365     \};}
+\DoxyCodeLine{366 \};}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{369 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_scale}{Scale}}> :\textcolor{keyword}{public} \mbox{\hyperlink{class_scale}{Scale}}}
+\DoxyCodeLine{370 \{}
+\DoxyCodeLine{371 \textcolor{keyword}{public}:}
+\DoxyCodeLine{372     \mbox{\hyperlink{class_default_3_01_scale_01_4}{Default<Scale>}}() :\mbox{\hyperlink{class_scale}{Scale}}(\textcolor{stringliteral}{"{}Linear"{}}) \{\};}
+\DoxyCodeLine{373 \};}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{376 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_unitless}{Unitless}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_unitless}{Unitless}}}
+\DoxyCodeLine{377 \{}
+\DoxyCodeLine{378 \textcolor{keyword}{public}:}
+\DoxyCodeLine{379       \mbox{\hyperlink{class_default_3_01_unitless_01_4}{Default<Unitless>}}()\{\};}
+\DoxyCodeLine{380 \};}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{383 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_authority_details}{AuthorityDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_authority_details}{AuthorityDetails}}}
+\DoxyCodeLine{384 \{}
+\DoxyCodeLine{385 \textcolor{keyword}{public}:}
+\DoxyCodeLine{386     \mbox{\hyperlink{class_default_3_01_authority_details_01_4}{Default<AuthorityDetails>}}():\mbox{\hyperlink{class_authority_details}{AuthorityDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{387 \};}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{390 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}}
+\DoxyCodeLine{391 \{}
+\DoxyCodeLine{392 \textcolor{keyword}{public}:}
+\DoxyCodeLine{393     \mbox{\hyperlink{class_default_3_01_data_source_details_01_4}{Default<DataSourceDetails>}}():\mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{394 \};}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{397 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}}
+\DoxyCodeLine{398 \{}
+\DoxyCodeLine{399 \textcolor{keyword}{public}:}
+\DoxyCodeLine{400     \mbox{\hyperlink{class_default_3_01_measurement_technique_details_01_4}{Default<MeasurementTechniqueDetails>}}():\mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{401 \};}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{404 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_parameter_details}{ParameterDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_parameter_details}{ParameterDetails}}}
+\DoxyCodeLine{405 \{}
+\DoxyCodeLine{406 \textcolor{keyword}{public}:}
+\DoxyCodeLine{407     \mbox{\hyperlink{class_default_3_01_parameter_details_01_4}{Default<ParameterDetails>}}():\mbox{\hyperlink{class_parameter_details}{ParameterDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{408 \};}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{411 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_property_details}{PropertyDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_property_details}{PropertyDetails}}}
+\DoxyCodeLine{412 \{}
+\DoxyCodeLine{413 \textcolor{keyword}{public}:}
+\DoxyCodeLine{414     \mbox{\hyperlink{class_default_3_01_property_details_01_4}{Default<PropertyDetails>}}():\mbox{\hyperlink{class_property_details}{PropertyDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{}
+\DoxyCodeLine{415         PropertyDetails::Units\_optional\& cont(this-\/>\mbox{\hyperlink{class_units}{Units}}());}
+\DoxyCodeLine{416         cont.set(\mbox{\hyperlink{class_default}{Default<::Units>}}());}
+\DoxyCodeLine{417     \};}
+\DoxyCodeLine{418 \};}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{421 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_source_details}{SourceDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_source_details}{SourceDetails}}}
+\DoxyCodeLine{422 \{}
+\DoxyCodeLine{423 \textcolor{keyword}{public}:}
+\DoxyCodeLine{424     \mbox{\hyperlink{class_default_3_01_source_details_01_4}{Default<SourceDetails>}}():\mbox{\hyperlink{class_source_details}{SourceDetails}}(\mbox{\hyperlink{class_default}{Default<::Name>}}(),xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{425 \};}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{428 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}}
+\DoxyCodeLine{429 \{}
+\DoxyCodeLine{430 \textcolor{keyword}{public}:}
+\DoxyCodeLine{431     \mbox{\hyperlink{class_default_3_01_specimen_details_01_4}{Default<SpecimenDetails>}}():\mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}(xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{432 \};}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{435 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}}
+\DoxyCodeLine{436 \{}
+\DoxyCodeLine{437 \textcolor{keyword}{public}:}
+\DoxyCodeLine{438     \mbox{\hyperlink{class_default_3_01_test_condition_details_01_4}{Default<TestConditionDetails>}}():\mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}(xml\_schema::id(\textcolor{stringliteral}{"{}REPLACE"{}}))\{\};}
+\DoxyCodeLine{439 \};}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{442 \textcolor{keyword}{class }\mbox{\hyperlink{class_default}{Default}}<\mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}>:\textcolor{keyword}{public} \mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}}
+\DoxyCodeLine{443 \{}
+\DoxyCodeLine{444 \textcolor{keyword}{public}:}
+\DoxyCodeLine{445     \mbox{\hyperlink{class_default_3_01_mat_m_l___doc_01_4}{Default<MatML\_Doc>}}():\mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}()\{}
+\DoxyCodeLine{446         this-\/>\mbox{\hyperlink{class_material}{Material}}().push\_back(\mbox{\hyperlink{class_default}{Default<::Material>}}());}
+\DoxyCodeLine{447         this-\/>\mbox{\hyperlink{class_metadata}{Metadata}}().set(\mbox{\hyperlink{class_default}{Default<::Metadata>}}());}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449 \};}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,88 @@
+\hypertarget{_b_t___mat_m_l___notes___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Notes\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___notes___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Notes\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Notes\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Notes\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Notes\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base}{Notes\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37     \textcolor{keyword}{public}:}
+\DoxyCodeLine{38         wxNotebook* m\_GUI;}
+\DoxyCodeLine{39         wxTextCtrl* m\_NotesTextCtrl;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base}{Notes\_GUI\_Base}}();}
+\DoxyCodeLine{42         \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base}{Notes\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{43         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base_a8490c40de19c64a63cafdbcb9ed7aa69}{Create}}(wxWindow* parent, wxTextCtrl*\& NotesTextCtrl);}
+\DoxyCodeLine{44         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base}{\string~Notes\_GUI\_Base}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{47         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_notes}{Notes}}* element);}
+\DoxyCodeLine{50         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base_adb596bfe188fab88178b03f1f2670f72}{SetupMatMLTreeCtrl}}(}
+\DoxyCodeLine{51             \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{52             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{53             \mbox{\hyperlink{class_notes}{Notes}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{54             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{55         );}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{58         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnNotesTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{private}:}
+\DoxyCodeLine{61     \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_notes___g_u_i}{Notes\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base}{Notes\_GUI\_Base}}}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65     \textcolor{keyword}{public}:}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i_af2046a732c9e28c462b52bcc0f69501d}{Notes\_GUI}}();}
+\DoxyCodeLine{70         \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i_af2046a732c9e28c462b52bcc0f69501d}{Notes\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i_a7739babb2e7ed5b70da5d2f6b22da510}{\string~Notes\_GUI}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i_ad5ad4747850b9b5de2d2dc8ff1c325b4}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{75         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i_a17dbf0c6d27c81bf52d2d5a7e4f514ef}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{78         \textcolor{keywordtype}{void} OnNotesTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keyword}{private}:}
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

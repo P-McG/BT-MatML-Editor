@@ -1,0 +1,47 @@
+\hypertarget{_b_t___mat_m_l___tree_ctrl_sorted_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Tree\+Ctrl\+Sorted.\+h}
+\label{_b_t___mat_m_l___tree_ctrl_sorted_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_TreeCtrlSorted.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_TreeCtrlSorted.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        TreeCtrlSorted.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     MatML Sorted Version of the wxTree.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef \_\_TreeCtrlSorted\_\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_\_TreeCtrlSorted\_\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <wx/treectrl.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <wx/object.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}\{}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}} : \textcolor{keyword}{public} ::wxTreeCtrl}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}(wxWindow* parent=NULL, wxWindowID \textcolor{keywordtype}{id} = wxID\_ANY, \textcolor{keyword}{const} wxPoint\& pos = wxDefaultPosition, \textcolor{keyword}{const} wxSize\& size = wxDefaultSize,}
+\DoxyCodeLine{23                 \textcolor{keywordtype}{long} style = wxTR\_HAS\_BUTTONS, \textcolor{keyword}{const} wxValidator\& validator = wxDefaultValidator, \textcolor{keyword}{const} wxString\& name = wxString(wxT(\textcolor{stringliteral}{"{}treeCtrl"{}})))}
+\DoxyCodeLine{24                 :wxTreeCtrl(parent, \textcolor{keywordtype}{id}, pos, size, style, validator, name)\{\};}
+\DoxyCodeLine{25         wxArrayString GetSortClasses();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{int} \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted_a5391feff104fb8ca738ade85e14e0474}{ClassOrder}}(\mbox{\hyperlink{class_class}{Class}}\& item);}
+\DoxyCodeLine{27         \textcolor{keywordtype}{int} PositionOrder(\mbox{\hyperlink{class_material}{Material}}* material);}
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} PositionOrder(\mbox{\hyperlink{class_bulk_details}{BulkDetails}}* parent, \mbox{\hyperlink{class_class}{Class}}* element);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted_a231b1c353baadefcae3de3ead896e2db}{OnCompareItems}}(\textcolor{keyword}{const} wxTreeItemId\& item1, \textcolor{keyword}{const} wxTreeItemId\& item2);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         DECLARE\_DYNAMIC\_CLASS(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}})}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{public}:}
+\DoxyCodeLine{37         wxArrayString ClassOrderIndex;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 \}\textcolor{comment}{//namespace bellshire}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_TreeCtrlSorted\_\_}}
+
+\end{DoxyCode}

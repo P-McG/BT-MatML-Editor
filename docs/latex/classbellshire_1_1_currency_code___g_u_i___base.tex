@@ -1,0 +1,102 @@
+\hypertarget{classbellshire_1_1_currency_code___g_u_i___base}{}\doxysection{bellshire\+::Currency\+Code\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_currency_code___g_u_i___base}\index{bellshire::CurrencyCode\_GUI\_Base@{bellshire::CurrencyCode\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Currency\+Code\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_currency_code___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_acdfa862a0e7650601246cd14a75bb210}\label{classbellshire_1_1_currency_code___g_u_i___base_acdfa862a0e7650601246cd14a75bb210}} 
+{\bfseries Currency\+Code\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a0f192ea338c2c140160b485f1b5aad36}\label{classbellshire_1_1_currency_code___g_u_i___base_a0f192ea338c2c140160b485f1b5aad36}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a2bb48055b19f30b8c756f5c741b32a4f}\label{classbellshire_1_1_currency_code___g_u_i___base_a2bb48055b19f30b8c756f5c741b32a4f}} 
+bool {\bfseries Is\+Shown} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a95cffe53219c1c1792a40bba4a764c99}\label{classbellshire_1_1_currency_code___g_u_i___base_a95cffe53219c1c1792a40bba4a764c99}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a6731a6dbef7a5a0d0391f48836a963e1}\label{classbellshire_1_1_currency_code___g_u_i___base_a6731a6dbef7a5a0d0391f48836a963e1}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_currency_code}{Currency\+Code}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_aa0955920cdd371c26c1fea805b395b08}\label{classbellshire_1_1_currency_code___g_u_i___base_aa0955920cdd371c26c1fea805b395b08}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_ab17ca39873790bb202fe003520358151}\label{classbellshire_1_1_currency_code___g_u_i___base_ab17ca39873790bb202fe003520358151}} 
+virtual void {\bfseries On\+Currency\+Code\+Choice} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_currency_code___g_u_i___base_ab8fed20bf861257103173e4af62ecb28}{Create}} (wx\+Window $\ast$parent, wx\+Choice $\ast$\&Currency\+Code\+Choice)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_currency_code}{Currency\+Code}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_currency_code___g_u_i___base_add297bdac118b17cb105594da885372d}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_currency_code}{Currency\+Code}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a980b19aa4cb112026576d4d2f4badd45}\label{classbellshire_1_1_currency_code___g_u_i___base_a980b19aa4cb112026576d4d2f4badd45}} 
+wx\+Choice $\ast$ {\bfseries m\+\_\+\+Currency\+Code\+Choice}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_a92322008d389b86c24eee7a532caac4a}\label{classbellshire_1_1_currency_code___g_u_i___base_a92322008d389b86c24eee7a532caac4a}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_ab8fed20bf861257103173e4af62ecb28}\label{classbellshire_1_1_currency_code___g_u_i___base_ab8fed20bf861257103173e4af62ecb28}} 
+\index{bellshire::CurrencyCode\_GUI\_Base@{bellshire::CurrencyCode\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::CurrencyCode\_GUI\_Base@{bellshire::CurrencyCode\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Currency\+Code\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Choice $\ast$\&}]{Currency\+Code\+Choice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_currency_code}{Currency\+Code}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em fg\+Sizer} & \\
+\hline
+{\em Currency\+Code\+Notebook} & \\
+\hline
+{\em Currency\+Code\+Panel} & \\
+\hline
+{\em Currency\+Code\+Choice} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_currency_code___g_u_i___base_add297bdac118b17cb105594da885372d}\label{classbellshire_1_1_currency_code___g_u_i___base_add297bdac118b17cb105594da885372d}} 
+\index{bellshire::CurrencyCode\_GUI\_Base@{bellshire::CurrencyCode\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::CurrencyCode\_GUI\_Base@{bellshire::CurrencyCode\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Currency\+Code\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_currency_code}{Currency\+Code}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Currency\+Code\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Currency\+Code\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

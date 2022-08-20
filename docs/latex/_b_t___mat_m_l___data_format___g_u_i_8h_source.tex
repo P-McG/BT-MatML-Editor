@@ -1,0 +1,69 @@
+\hypertarget{_b_t___mat_m_l___data_format___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Data\+Format\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___data_format___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_DataFormat\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_DataFormat\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_DataFormat\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of DataFormat\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//Utility for std:string and wxString}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_std2wx(var) wxString (var.c\_str(),wxConvUTF8)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define \_wx2std(var) std::string(var.mb\_str())}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i}{DataFormat\_GUI}}}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44         wxNotebook* m\_GUI;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i}{DataFormat\_GUI}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i}{DataFormat\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{48         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i_acd7b4974ba3ca2611a80499b0a9854f8}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{49         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i}{\string~DataFormat\_GUI}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{52         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_data_format___g_u_i_a431bf8f9505312e69f045dbf9925e105}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{55             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{56             \mbox{\hyperlink{class_data_format}{DataFormat}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{57             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{58         );}
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_data_format}{DataFormat}}* element);}
+\DoxyCodeLine{60     \textcolor{keyword}{private}:}
+\DoxyCodeLine{61     \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

@@ -1,0 +1,323 @@
+\hypertarget{classbellshire_1_1_utilities}{}\doxysection{bellshire\+::Utilities Class Reference}
+\label{classbellshire_1_1_utilities}\index{bellshire::Utilities@{bellshire::Utilities}}
+
+
+ 
+
+
+
+
+{\ttfamily \#include $<$BT\+\_\+\+Mat\+ML\+\_\+\+Utilities\+\_\+\+GUI.\+h$>$}
+
+Inheritance diagram for bellshire\+::Utilities\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classbellshire_1_1_utilities}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_utilities_aa4ca114e05c250fd1b71c42d7c0e653b}{Collect\+Branch\+Materials}} (boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc, \mbox{\hyperlink{class_material}{Material}} $\ast$m, std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&ms)
+\begin{DoxyCompactList}\small\item\em Collect Branch of Materials \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_utilities_af81e40bdba3cb44e7a9c97cc7907ee9c}{Collect\+Branch\+Materials\+Backwards}} (\mbox{\hyperlink{class_material}{Material}} $\ast$m, std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&ms)
+\begin{DoxyCompactList}\small\item\em Collect Branch of Materials in the Backwards direction \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_utilities_aaa2872c0e5a970669e311a0d33ac6854}{Collect\+Branch\+Materials\+Forewards}} (boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc, \mbox{\hyperlink{class_material}{Material}} $\ast$m, std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&ms)
+\begin{DoxyCompactList}\small\item\em Collect Branch of Materials in the Forwards direction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_utilities_a56d3e17fd1c220dd4fbf2fa7e15723a9}{Mat\+MLto\+Tree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, \mbox{\hyperlink{class_material}{Material}} $\ast$Mat\+MLMaterial)
+\begin{DoxyCompactList}\small\item\em Searches the Tree\+Ctrl to find the Mat\+ML \mbox{\hyperlink{class_element}{Element}} \end{DoxyCompactList}\item 
+static std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$, xml\+\_\+schema\+::string $>$ $>$ \mbox{\hyperlink{classbellshire_1_1_utilities_a38d19750b6433e7c9427db57ba1f99eb}{Get\+Material\+IDPair}} (\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ Mat\+MLDoc, std\+::list$<$ xml\+\_\+schema\+::string $>$ Class\+Filters=std\+::list$<$ xml\+\_\+schema\+::string $>$())
+\begin{DoxyCompactList}\small\item\em Gather Material$\ast$ and Material-\/\texorpdfstring{$>$}{>}ID paired together in a list. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classbellshire_1_1_utilities_aa913a50a4ea4b04b8c68d516d04e0594}{In\+Filter}} (\mbox{\hyperlink{class_material}{Material}} $\ast$material, std\+::list$<$ xml\+\_\+schema\+::string $>$ Filter)
+\begin{DoxyCompactList}\small\item\em Determines if the \mbox{\hyperlink{class_material}{Material}} has a Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} for each of the Class\+Filter strings If the filter is empty then the default is true. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classbellshire_1_1_utilities_ab6b333fe36220c5ada7b9dcade1ffe5f}{In\+Filter}} (\mbox{\hyperlink{class_material}{Material}} $\ast$material, xml\+\_\+schema\+::string $\ast$Filter)
+\begin{DoxyCompactList}\small\item\em Determines if the \mbox{\hyperlink{class_material}{Material}} has a Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} that matches the Class\+Filter string \end{DoxyCompactList}\item 
+static std\+::list$<$ \mbox{\hyperlink{class_name}{Name}} $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_utilities_afacfe57d72dbef35ed419acc46ef99cc}{Get\+Mat\+MLDoc\+Class\+Names}} (\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ Mat\+MLDoc)
+\begin{DoxyCompactList}\small\item\em Gathers within the Mat\+MLDoc all of the materials-\/\texorpdfstring{$>$}{>}Bulk\+Details-\/\texorpdfstring{$>$}{>}Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} \end{DoxyCompactList}\item 
+static std\+::list$<$ \mbox{\hyperlink{class_name}{Name}} $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_utilities_a21ded85aba45e777b678fef892f7805d}{Get\+Bulk\+Details\+Class\+Names}} (\mbox{\hyperlink{class_material}{Material}} $\ast$material)
+\begin{DoxyCompactList}\small\item\em Get the Materials Bulk\+Details-\/\texorpdfstring{$>$}{>}Class-\/\texorpdfstring{$>$}{>}Names \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classbellshire_1_1_utilities_ad97cfc5d5ff5ecade142834a46259ef5}{Compare\+Name}} (\mbox{\hyperlink{class_name}{Name}} $\ast$\&first, \mbox{\hyperlink{class_name}{Name}} $\ast$\&second)
+\begin{DoxyCompactList}\small\item\em Comparision of the First \mbox{\hyperlink{class_name}{Name}} to the Second \mbox{\hyperlink{class_name}{Name}} \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classbellshire_1_1_utilities_a4eb4152b3b562c77a2eea5d8754457ca}{Same\+Name}} (\mbox{\hyperlink{class_name}{Name}} $\ast$\&first, \mbox{\hyperlink{class_name}{Name}} $\ast$\&second)
+\begin{DoxyCompactList}\small\item\em Compare if the First \mbox{\hyperlink{class_name}{Name}} and Second \mbox{\hyperlink{class_name}{Name}} are the same a binary predicate implemented as a function \end{DoxyCompactList}\item 
+\+::std\+::string \mbox{\hyperlink{classbellshire_1_1_utilities_a4d423bfd1b3b92213d6d88d7b8763643}{Label}} (\+::std\+::string name, \+::std\+::string id)
+\begin{DoxyCompactList}\small\item\em Creates a string of the Labels used in wx\+Widgets displays \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a28c0b003b86ef81ea135cf51ce7bac2e}\label{classbellshire_1_1_utilities_a28c0b003b86ef81ea135cf51ce7bac2e}} 
+\+::std\+::string {\bfseries Label\+To\+Id} (\+::std\+::string label)
+\item 
+static std\+::list$<$ xml\+\_\+schema\+::string $>$ \mbox{\hyperlink{classbellshire_1_1_utilities_a713b2f3fd0eb01dd6f650904646c6c84}{wx2std}} (const wx\+Array\+String \&wxstr)
+\begin{DoxyCompactList}\small\item\em Converts wx\+Array\+String to std\+::list of xml\+\_\+schema\+::string \end{DoxyCompactList}\item 
+static wx\+Array\+String \mbox{\hyperlink{classbellshire_1_1_utilities_a846260b2d8314c30a126b842bbbd830f}{std2wx}} (const std\+::list$<$ xml\+\_\+schema\+::string $>$ \&stdstr)
+\begin{DoxyCompactList}\small\item\em Converts list of xml\+\_\+schema\+::string to wx\+Array\+String \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Utility Functions 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_aa4ca114e05c250fd1b71c42d7c0e653b}\label{classbellshire_1_1_utilities_aa4ca114e05c250fd1b71c42d7c0e653b}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!CollectBranchMaterials@{CollectBranchMaterials}}
+\index{CollectBranchMaterials@{CollectBranchMaterials}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{CollectBranchMaterials()}{CollectBranchMaterials()}}
+{\footnotesize\ttfamily void Utilities\+::\+Collect\+Branch\+Materials (\begin{DoxyParamCaption}\item[{boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{doc,  }\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{m,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&}]{ms }\end{DoxyParamCaption})}
+
+
+
+Collect Branch of Materials 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \\
+\hline
+{\em ms} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_af81e40bdba3cb44e7a9c97cc7907ee9c}\label{classbellshire_1_1_utilities_af81e40bdba3cb44e7a9c97cc7907ee9c}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!CollectBranchMaterialsBackwards@{CollectBranchMaterialsBackwards}}
+\index{CollectBranchMaterialsBackwards@{CollectBranchMaterialsBackwards}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{CollectBranchMaterialsBackwards()}{CollectBranchMaterialsBackwards()}}
+{\footnotesize\ttfamily void Utilities\+::\+Collect\+Branch\+Materials\+Backwards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{m,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&}]{ms }\end{DoxyParamCaption})}
+
+
+
+Collect Branch of Materials in the Backwards direction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \\
+\hline
+{\em ms} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_aaa2872c0e5a970669e311a0d33ac6854}\label{classbellshire_1_1_utilities_aaa2872c0e5a970669e311a0d33ac6854}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!CollectBranchMaterialsForewards@{CollectBranchMaterialsForewards}}
+\index{CollectBranchMaterialsForewards@{CollectBranchMaterialsForewards}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{CollectBranchMaterialsForewards()}{CollectBranchMaterialsForewards()}}
+{\footnotesize\ttfamily void Utilities\+::\+Collect\+Branch\+Materials\+Forewards (\begin{DoxyParamCaption}\item[{boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{doc,  }\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{m,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$ $>$ \&}]{ms }\end{DoxyParamCaption})}
+
+
+
+Collect Branch of Materials in the Forwards direction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \\
+\hline
+{\em ms} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_ad97cfc5d5ff5ecade142834a46259ef5}\label{classbellshire_1_1_utilities_ad97cfc5d5ff5ecade142834a46259ef5}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!CompareName@{CompareName}}
+\index{CompareName@{CompareName}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{CompareName()}{CompareName()}}
+{\footnotesize\ttfamily bool Utilities\+::\+Compare\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_name}{Name}} $\ast$\&}]{first,  }\item[{\mbox{\hyperlink{class_name}{Name}} $\ast$\&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Comparision of the First \mbox{\hyperlink{class_name}{Name}} to the Second \mbox{\hyperlink{class_name}{Name}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & \\
+\hline
+{\em second} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a21ded85aba45e777b678fef892f7805d}\label{classbellshire_1_1_utilities_a21ded85aba45e777b678fef892f7805d}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!GetBulkDetailsClassNames@{GetBulkDetailsClassNames}}
+\index{GetBulkDetailsClassNames@{GetBulkDetailsClassNames}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{GetBulkDetailsClassNames()}{GetBulkDetailsClassNames()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_name}{Name}} $\ast$ $>$ Utilities\+::\+Get\+Bulk\+Details\+Class\+Names (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Materials Bulk\+Details-\/\texorpdfstring{$>$}{>}Class-\/\texorpdfstring{$>$}{>}Names 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a38d19750b6433e7c9427db57ba1f99eb}\label{classbellshire_1_1_utilities_a38d19750b6433e7c9427db57ba1f99eb}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!GetMaterialIDPair@{GetMaterialIDPair}}
+\index{GetMaterialIDPair@{GetMaterialIDPair}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{GetMaterialIDPair()}{GetMaterialIDPair()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_material}{Material}} $\ast$, xml\+\_\+schema\+::string $>$ $>$ Utilities\+::\+Get\+Material\+IDPair (\begin{DoxyParamCaption}\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{Mat\+MLDoc,  }\item[{std\+::list$<$ xml\+\_\+schema\+::string $>$}]{Class\+Filters = {\ttfamily std\+:\+:list$<$xml\+\_\+schema\+:\+:string$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gather Material$\ast$ and Material-\/\texorpdfstring{$>$}{>}ID paired together in a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLDoc} & \\
+\hline
+{\em Class\+Filters} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Material\+IDPair
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_afacfe57d72dbef35ed419acc46ef99cc}\label{classbellshire_1_1_utilities_afacfe57d72dbef35ed419acc46ef99cc}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!GetMatMLDocClassNames@{GetMatMLDocClassNames}}
+\index{GetMatMLDocClassNames@{GetMatMLDocClassNames}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{GetMatMLDocClassNames()}{GetMatMLDocClassNames()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_name}{Name}} $\ast$ $>$ Utilities\+::\+Get\+Mat\+MLDoc\+Class\+Names (\begin{DoxyParamCaption}\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{Mat\+MLDoc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gathers within the Mat\+MLDoc all of the materials-\/\texorpdfstring{$>$}{>}Bulk\+Details-\/\texorpdfstring{$>$}{>}Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLDoc} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_aa913a50a4ea4b04b8c68d516d04e0594}\label{classbellshire_1_1_utilities_aa913a50a4ea4b04b8c68d516d04e0594}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!InFilter@{InFilter}}
+\index{InFilter@{InFilter}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{InFilter()}{InFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Utilities\+::\+In\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material,  }\item[{std\+::list$<$ xml\+\_\+schema\+::string $>$}]{Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determines if the \mbox{\hyperlink{class_material}{Material}} has a Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} for each of the Class\+Filter strings If the filter is empty then the default is true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+{\em Class\+Filters} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_ab6b333fe36220c5ada7b9dcade1ffe5f}\label{classbellshire_1_1_utilities_ab6b333fe36220c5ada7b9dcade1ffe5f}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!InFilter@{InFilter}}
+\index{InFilter@{InFilter}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{InFilter()}{InFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Utilities\+::\+In\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material,  }\item[{xml\+\_\+schema\+::string $\ast$}]{Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determines if the \mbox{\hyperlink{class_material}{Material}} has a Class-\/\texorpdfstring{$>$}{>}\mbox{\hyperlink{class_name}{Name}} that matches the Class\+Filter string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+{\em Class\+Filter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a4d423bfd1b3b92213d6d88d7b8763643}\label{classbellshire_1_1_utilities_a4d423bfd1b3b92213d6d88d7b8763643}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!Label@{Label}}
+\index{Label@{Label}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{Label()}{Label()}}
+{\footnotesize\ttfamily std\+::string Utilities\+::\+Label (\begin{DoxyParamCaption}\item[{\+::std\+::string}]{name,  }\item[{\+::std\+::string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a string of the Labels used in wx\+Widgets displays 
+
+summary\texorpdfstring{$>$}{>} Takes the Label, used in wx\+Widgets displays, and pulls out the Id \mbox{\Hypertarget{classbellshire_1_1_utilities_a56d3e17fd1c220dd4fbf2fa7e15723a9}\label{classbellshire_1_1_utilities_a56d3e17fd1c220dd4fbf2fa7e15723a9}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!MatMLtoTreeCtrl@{MatMLtoTreeCtrl}}
+\index{MatMLtoTreeCtrl@{MatMLtoTreeCtrl}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{MatMLtoTreeCtrl()}{MatMLtoTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Utilities\+::\+Mat\+MLto\+Tree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$}]{Mat\+MLTree\+Ctrl,  }\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Searches the Tree\+Ctrl to find the Mat\+ML \mbox{\hyperlink{class_element}{Element}} 
+
+Find the associated Tree\+Ctrl
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLTree\+Ctrl} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matching Tree\+Ctrl\+Id
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a4eb4152b3b562c77a2eea5d8754457ca}\label{classbellshire_1_1_utilities_a4eb4152b3b562c77a2eea5d8754457ca}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!SameName@{SameName}}
+\index{SameName@{SameName}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{SameName()}{SameName()}}
+{\footnotesize\ttfamily bool Utilities\+::\+Same\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_name}{Name}} $\ast$\&}]{first,  }\item[{\mbox{\hyperlink{class_name}{Name}} $\ast$\&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compare if the First \mbox{\hyperlink{class_name}{Name}} and Second \mbox{\hyperlink{class_name}{Name}} are the same a binary predicate implemented as a function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & \\
+\hline
+{\em second} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a846260b2d8314c30a126b842bbbd830f}\label{classbellshire_1_1_utilities_a846260b2d8314c30a126b842bbbd830f}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!std2wx@{std2wx}}
+\index{std2wx@{std2wx}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{std2wx()}{std2wx()}}
+{\footnotesize\ttfamily wx\+Array\+String Utilities\+::std2wx (\begin{DoxyParamCaption}\item[{const std\+::list$<$ xml\+\_\+schema\+::string $>$ \&}]{stdstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts list of xml\+\_\+schema\+::string to wx\+Array\+String 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stdstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_utilities_a713b2f3fd0eb01dd6f650904646c6c84}\label{classbellshire_1_1_utilities_a713b2f3fd0eb01dd6f650904646c6c84}} 
+\index{bellshire::Utilities@{bellshire::Utilities}!wx2std@{wx2std}}
+\index{wx2std@{wx2std}!bellshire::Utilities@{bellshire::Utilities}}
+\doxysubsubsection{\texorpdfstring{wx2std()}{wx2std()}}
+{\footnotesize\ttfamily std\+::list$<$ xml\+\_\+schema\+::string $>$ Utilities\+::wx2std (\begin{DoxyParamCaption}\item[{const wx\+Array\+String \&}]{wxstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts wx\+Array\+String to std\+::list of xml\+\_\+schema\+::string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wxstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Utilities\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Utilities\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

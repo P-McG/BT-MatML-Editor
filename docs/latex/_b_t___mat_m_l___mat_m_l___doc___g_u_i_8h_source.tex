@@ -1,0 +1,86 @@
+\hypertarget{_b_t___mat_m_l___mat_m_l___doc___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___mat_m_l___doc___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MatML\_Doc\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MatML\_Doc\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_MatML\_Doc\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of MatML\_Doc\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{MatML\_Doc\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45     \textcolor{keyword}{public}:}
+\DoxyCodeLine{46         wxNotebook* m\_GUI;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}{MatML\_Doc\_GUI\_Base}}();}
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a0d928b23f428c42d3a658574e19721ad}{MatML\_Doc\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{50         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a410423bd7a70e7a3e31c6b0c1f1e8870}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{51         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a7706ecfd58239c847642fc53f557546b}{\string~MatML\_Doc\_GUI\_Base}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{54         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{55         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_a62f423d6a5cf2b70946bceba51b92e09}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{56             \mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}\& \mbox{\hyperlink{class_element}{Element}}}
+\DoxyCodeLine{57         );}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base_aed7a7551d079c9a300ee19be632d2823}{Update}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keyword}{private}:}
+\DoxyCodeLine{65     \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{73     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i}{MatML\_Doc\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i___base}{MatML\_Doc\_GUI\_Base}}}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75     \textcolor{keyword}{public}:}
+\DoxyCodeLine{76         \textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{77         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;}
+\DoxyCodeLine{78         ::boost::shared\_ptr<MatML\_Doc> m\_MatMLDoc;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a6e646fd1d0810a9d59e89c312fc37984}{MatML\_Doc\_GUI}}();}
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a6e646fd1d0810a9d59e89c312fc37984}{MatML\_Doc\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a825d1f9e36b06c9fe739940973103dce}{\string~MatML\_Doc\_GUI}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a31a57deed28018603f2e1590e7e9d48e}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, ::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a2ae11f740da6d37ef9cfda612ff35390}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_aabed93068ce21286fbc491c15b10dc1f}{SetMatMLDoc}}(::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i_a90c0aa008649cdb95ebed4c3531bfe2b}{OnDeleteMaterial}}(wxCommandEvent\& event);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keyword}{private}:}
+\DoxyCodeLine{93     \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

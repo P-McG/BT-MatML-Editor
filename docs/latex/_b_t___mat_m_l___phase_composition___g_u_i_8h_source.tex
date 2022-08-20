@@ -1,0 +1,119 @@
+\hypertarget{_b_t___mat_m_l___phase_composition___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Phase\+Composition\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___phase_composition___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_PhaseComposition\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_PhaseComposition\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_PhaseComposition\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of PhaseComposition\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base}{PhaseComposition\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         wxNotebook* m\_GUI;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base}{PhaseComposition\_GUI\_Base}}();}
+\DoxyCodeLine{44         \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base}{PhaseComposition\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{45         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base_a6bbd93f6d6f8a1d38ac2a6f8f4c0cfe0}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{46         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base}{\string~PhaseComposition\_GUI\_Base}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{49         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_phase_composition}{PhaseComposition}}* element);}
+\DoxyCodeLine{52         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base_a202c269b48b5fb66faf38cc26f6cb76f}{SetupMatMLTreeCtrl}}(}
+\DoxyCodeLine{53             \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{54             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{55             \mbox{\hyperlink{class_phase_composition}{PhaseComposition}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{56             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{57         );}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{62         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertConcentration(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{63         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertPropertyData(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{64         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteConcentration(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteConcentration(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keyword}{private}:}
+\DoxyCodeLine{77     \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i}{PhaseComposition\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i___base}{PhaseComposition\_GUI\_Base}}}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81     \textcolor{keyword}{public}:}
+\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{83         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i_aa0144878cb50eeb23f1db43869285efe}{PhaseComposition\_GUI}}();}
+\DoxyCodeLine{86         \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i_aa0144878cb50eeb23f1db43869285efe}{PhaseComposition\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i_ae23f6e7e8bdcf537e5357c687ba400b7}{\string~PhaseComposition\_GUI}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i_a9d01380b7dac8f2d02ae0b917d0de0c0}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i_a683ff1793c0d23a4d39ac41d7e3dd1a7}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} OnInsertConcentration(wxCommandEvent\& event);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} OnInsertPropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} OnDeleteConcentration(wxCommandEvent\& event);}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
+\DoxyCodeLine{106         \textcolor{keywordtype}{void} OnPasteConcentration(wxCommandEvent\& event);}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keyword}{private}:}
+\DoxyCodeLine{111     \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{114 }
+
+\end{DoxyCode}

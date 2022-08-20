@@ -1,0 +1,507 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ClassName
+%%Creator: Doxygen
+%%CreationDate: Time
+%%For: 
+%Magnification: 1.00
+%%Orientation: Portrait
+%%BoundingBox: 0 0 500 1341.991333
+%%Pages: 0
+%%BeginSetup
+%%EndSetup
+%%EndComments
+
+% ----- variables -----
+
+/boxwidth 0 def
+/boxheight 40 def
+/fontheight 24 def
+/marginwidth 10 def
+/distx 20 def
+/disty 40 def
+/boundaspect 0.372581 def  % aspect ratio of the BoundingBox (width/height)
+/boundx 500 def
+/boundy boundx boundaspect div def
+/xspacing 0 def
+/yspacing 0 def
+/rows 62 def
+/cols 3 def
+/scalefactor 0 def
+/boxfont /Times-Roman findfont fontheight scalefont def
+
+% ----- procedures -----
+
+/dotted { [1 4] 0 setdash } def
+/dashed { [5] 0 setdash } def
+/solid  { [] 0 setdash } def
+
+/max % result = MAX(arg1,arg2)
+{
+  /a exch def
+  /b exch def
+  a b gt {a} {b} ifelse
+} def
+
+/xoffset % result = MAX(0,(scalefactor-(boxwidth*cols+distx*(cols-1)))/2)
+{
+  0 scalefactor boxwidth cols mul distx cols 1 sub mul add sub 2 div max
+} def
+
+/cw % boxwidth = MAX(boxwidth, stringwidth(arg1))
+{
+  /str exch def
+  /boxwidth boxwidth str stringwidth pop max def
+} def
+
+/box % draws a box with text 'arg1' at grid pos (arg2,arg3)
+{ gsave
+  2 setlinewidth
+  newpath
+  exch xspacing mul xoffset add
+  exch yspacing mul
+  moveto
+  boxwidth 0 rlineto 
+  0 boxheight rlineto 
+  boxwidth neg 0 rlineto 
+  0 boxheight neg rlineto 
+  closepath
+  dup stringwidth pop neg boxwidth add 2 div
+  boxheight fontheight 2 div sub 2 div
+  rmoveto show stroke
+  grestore
+} def  
+
+/mark
+{ newpath
+  exch xspacing mul xoffset add boxwidth add
+  exch yspacing mul
+  moveto
+  0 boxheight 4 div rlineto
+  boxheight neg 4 div boxheight neg 4 div rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/arrow
+{ newpath
+  moveto
+  3 -8 rlineto
+  -6 0 rlineto
+  3 8 rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/out % draws an output connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight add
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto 
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/in % draws an input connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul disty 2 div sub
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/hedge
+{
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight 2 div sub
+  /y exch def
+  /x exch def
+  newpath
+  x y moveto
+  boxwidth 2 div distx add 0 rlineto
+  stroke
+  1 eq
+  { newpath x boxwidth 2 div distx add add y moveto
+    -8 3 rlineto
+    0 -6 rlineto
+    8 3 rlineto
+    closepath
+    eofill
+    stroke
+  } if
+} def
+
+/vedge
+{
+  /ye exch def
+  /ys exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add dup
+  ys yspacing mul boxheight 2 div sub
+  moveto
+  ye yspacing mul boxheight 2 div sub
+  lineto
+  stroke
+} def
+
+/conn % connections the blocks from col 'arg1' to 'arg2' of row 'arg3'
+{
+  /ys exch def
+  /xe exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add
+  ys yspacing mul disty 2 div sub
+  moveto
+  xspacing xe xs sub mul 0
+  rlineto
+  stroke
+} def
+
+% ----- main ------
+
+boxfont setfont
+1 boundaspect scale
+(bellshire::MatML_Base_GUI) cw
+(wxEvtHandler) cw
+(bellshire::Utilities) cw
+(bellshire::Abbreviation_GUI_Base) cw
+(bellshire::Associate_GUI_Base) cw
+(bellshire::AssociationDetails_GUI_Base) cw
+(bellshire::AuthorityDetails_GUI_Base) cw
+(bellshire::BulkDetails_GUI_Base) cw
+(bellshire::Characterization_GUI_Base) cw
+(bellshire::ChemicalComposition_GUI_Base) cw
+(bellshire::ChemicalElementSymbol_GUI_Base) cw
+(bellshire::Class_GUI_Base) cw
+(bellshire::ComponentDetails_GUI_Base) cw
+(bellshire::Compound_GUI_Base) cw
+(bellshire::Concentration_GUI_Base) cw
+(bellshire::CurrencyCode_GUI_Base) cw
+(bellshire::Data1_GUI_Base) cw
+(bellshire::DataSourceDetails_GUI_Base) cw
+(bellshire::Data_GUI_Base) cw
+(bellshire::Definition_GUI_Base) cw
+(bellshire::DimensionalDetails_GUI_Base) cw
+(bellshire::Dimensions_GUI_Base) cw
+(bellshire::Element_GUI_Base) cw
+(bellshire::Form_GUI_Base) cw
+(bellshire::Formula_GUI_Base) cw
+(bellshire::Geometry_GUI_Base) cw
+(bellshire::GlossaryTerm_GUI_Base) cw
+(bellshire::Glossary_GUI_Base) cw
+(bellshire::Graph_GUI_Base) cw
+(bellshire::Graphs_GUI_Base) cw
+(bellshire::Intro_GUI_Base) cw
+(bellshire::MatML_Doc_GUI_Base) cw
+(bellshire::Material_GUI_Base) cw
+(bellshire::MeasurementTechniqueDetails_GUI_Base) cw
+(bellshire::Metadata_GUI_Base) cw
+(bellshire::Name_GUI_Base) cw
+(bellshire::Notes_GUI_Base) cw
+(bellshire::Orientation_GUI_Base) cw
+(bellshire::ParameterDetails_GUI_Base) cw
+(bellshire::ParameterValue_GUI_Base) cw
+(bellshire::ParentMaterial_GUI_Base) cw
+(bellshire::ParentSubClass_GUI_Base) cw
+(bellshire::PhaseComposition_GUI_Base) cw
+(bellshire::ProcessingDetails_GUI_Base) cw
+(bellshire::PropertyData_GUI_Base) cw
+(bellshire::PropertyDetails_GUI_Base) cw
+(bellshire::Qualifier_GUI_Base) cw
+(bellshire::Relationship_GUI_Base) cw
+(bellshire::Result_GUI_Base) cw
+(bellshire::Scale_GUI_Base) cw
+(bellshire::Shape_GUI_Base) cw
+(bellshire::SourceDetails_GUI_Base) cw
+(bellshire::Source_GUI_Base) cw
+(bellshire::Specification_GUI_Base) cw
+(bellshire::SpecimenDetails_GUI_Base) cw
+(bellshire::Symbol_GUI_Base) cw
+(bellshire::Synonym_GUI_Base) cw
+(bellshire::TestConditionDetails_GUI_Base) cw
+(bellshire::Uncertainty_GUI_Base) cw
+(bellshire::Unit_GUI_Base) cw
+(bellshire::Unitless_GUI_Base) cw
+(bellshire::Units_GUI_Base) cw
+(bellshire::Value_GUI_Base) cw
+/boxwidth boxwidth marginwidth 2 mul add def
+/xspacing boxwidth distx add def
+/yspacing boxheight disty add def
+/scalefactor 
+  boxwidth cols mul distx cols 1 sub mul add
+  boxheight rows mul disty rows 1 sub mul add boundaspect mul 
+  max def
+boundx scalefactor div boundy scalefactor div scale
+
+% ----- classes -----
+
+ (bellshire::MatML_Base_GUI) 0.500000 60.000000 box
+ (wxEvtHandler) 0.000000 61.000000 box
+ (bellshire::Utilities) 1.000000 61.000000 box
+ (bellshire::Abbreviation_GUI_Base) 1.500000 59.000000 box
+1.500000 59.000000 mark
+ (bellshire::Associate_GUI_Base) 1.500000 58.000000 box
+1.500000 58.000000 mark
+ (bellshire::AssociationDetails_GUI_Base) 1.500000 57.000000 box
+1.500000 57.000000 mark
+ (bellshire::AuthorityDetails_GUI_Base) 1.500000 56.000000 box
+1.500000 56.000000 mark
+ (bellshire::BulkDetails_GUI_Base) 1.500000 55.000000 box
+1.500000 55.000000 mark
+ (bellshire::Characterization_GUI_Base) 1.500000 54.000000 box
+1.500000 54.000000 mark
+ (bellshire::ChemicalComposition_GUI_Base) 1.500000 53.000000 box
+1.500000 53.000000 mark
+ (bellshire::ChemicalElementSymbol_GUI_Base) 1.500000 52.000000 box
+1.500000 52.000000 mark
+ (bellshire::Class_GUI_Base) 1.500000 51.000000 box
+1.500000 51.000000 mark
+ (bellshire::ComponentDetails_GUI_Base) 1.500000 50.000000 box
+1.500000 50.000000 mark
+ (bellshire::Compound_GUI_Base) 1.500000 49.000000 box
+1.500000 49.000000 mark
+ (bellshire::Concentration_GUI_Base) 1.500000 48.000000 box
+1.500000 48.000000 mark
+ (bellshire::CurrencyCode_GUI_Base) 1.500000 47.000000 box
+1.500000 47.000000 mark
+ (bellshire::Data1_GUI_Base) 1.500000 46.000000 box
+1.500000 46.000000 mark
+ (bellshire::DataSourceDetails_GUI_Base) 1.500000 45.000000 box
+1.500000 45.000000 mark
+ (bellshire::Data_GUI_Base) 1.500000 44.000000 box
+1.500000 44.000000 mark
+ (bellshire::Definition_GUI_Base) 1.500000 43.000000 box
+1.500000 43.000000 mark
+ (bellshire::DimensionalDetails_GUI_Base) 1.500000 42.000000 box
+1.500000 42.000000 mark
+ (bellshire::Dimensions_GUI_Base) 1.500000 41.000000 box
+1.500000 41.000000 mark
+ (bellshire::Element_GUI_Base) 1.500000 40.000000 box
+1.500000 40.000000 mark
+ (bellshire::Form_GUI_Base) 1.500000 39.000000 box
+1.500000 39.000000 mark
+ (bellshire::Formula_GUI_Base) 1.500000 38.000000 box
+1.500000 38.000000 mark
+ (bellshire::Geometry_GUI_Base) 1.500000 37.000000 box
+1.500000 37.000000 mark
+ (bellshire::GlossaryTerm_GUI_Base) 1.500000 36.000000 box
+1.500000 36.000000 mark
+ (bellshire::Glossary_GUI_Base) 1.500000 35.000000 box
+1.500000 35.000000 mark
+ (bellshire::Graph_GUI_Base) 1.500000 34.000000 box
+1.500000 34.000000 mark
+ (bellshire::Graphs_GUI_Base) 1.500000 33.000000 box
+1.500000 33.000000 mark
+ (bellshire::Intro_GUI_Base) 1.500000 32.000000 box
+1.500000 32.000000 mark
+ (bellshire::MatML_Doc_GUI_Base) 1.500000 31.000000 box
+1.500000 31.000000 mark
+ (bellshire::Material_GUI_Base) 1.500000 30.000000 box
+1.500000 30.000000 mark
+ (bellshire::MeasurementTechniqueDetails_GUI_Base) 1.500000 29.000000 box
+1.500000 29.000000 mark
+ (bellshire::Metadata_GUI_Base) 1.500000 28.000000 box
+1.500000 28.000000 mark
+ (bellshire::Name_GUI_Base) 1.500000 27.000000 box
+1.500000 27.000000 mark
+ (bellshire::Notes_GUI_Base) 1.500000 26.000000 box
+1.500000 26.000000 mark
+ (bellshire::Orientation_GUI_Base) 1.500000 25.000000 box
+1.500000 25.000000 mark
+ (bellshire::ParameterDetails_GUI_Base) 1.500000 24.000000 box
+1.500000 24.000000 mark
+ (bellshire::ParameterValue_GUI_Base) 1.500000 23.000000 box
+1.500000 23.000000 mark
+ (bellshire::ParentMaterial_GUI_Base) 1.500000 22.000000 box
+1.500000 22.000000 mark
+ (bellshire::ParentSubClass_GUI_Base) 1.500000 21.000000 box
+1.500000 21.000000 mark
+ (bellshire::PhaseComposition_GUI_Base) 1.500000 20.000000 box
+1.500000 20.000000 mark
+ (bellshire::ProcessingDetails_GUI_Base) 1.500000 19.000000 box
+1.500000 19.000000 mark
+ (bellshire::PropertyData_GUI_Base) 1.500000 18.000000 box
+1.500000 18.000000 mark
+ (bellshire::PropertyDetails_GUI_Base) 1.500000 17.000000 box
+1.500000 17.000000 mark
+ (bellshire::Qualifier_GUI_Base) 1.500000 16.000000 box
+1.500000 16.000000 mark
+ (bellshire::Relationship_GUI_Base) 1.500000 15.000000 box
+1.500000 15.000000 mark
+ (bellshire::Result_GUI_Base) 1.500000 14.000000 box
+1.500000 14.000000 mark
+ (bellshire::Scale_GUI_Base) 1.500000 13.000000 box
+1.500000 13.000000 mark
+ (bellshire::Shape_GUI_Base) 1.500000 12.000000 box
+1.500000 12.000000 mark
+ (bellshire::SourceDetails_GUI_Base) 1.500000 11.000000 box
+1.500000 11.000000 mark
+ (bellshire::Source_GUI_Base) 1.500000 10.000000 box
+1.500000 10.000000 mark
+ (bellshire::Specification_GUI_Base) 1.500000 9.000000 box
+1.500000 9.000000 mark
+ (bellshire::SpecimenDetails_GUI_Base) 1.500000 8.000000 box
+1.500000 8.000000 mark
+ (bellshire::Symbol_GUI_Base) 1.500000 7.000000 box
+1.500000 7.000000 mark
+ (bellshire::Synonym_GUI_Base) 1.500000 6.000000 box
+1.500000 6.000000 mark
+ (bellshire::TestConditionDetails_GUI_Base) 1.500000 5.000000 box
+1.500000 5.000000 mark
+ (bellshire::Uncertainty_GUI_Base) 1.500000 4.000000 box
+1.500000 4.000000 mark
+ (bellshire::Unit_GUI_Base) 1.500000 3.000000 box
+1.500000 3.000000 mark
+ (bellshire::Unitless_GUI_Base) 1.500000 2.000000 box
+1.500000 2.000000 mark
+ (bellshire::Units_GUI_Base) 1.500000 1.000000 box
+1.500000 1.000000 mark
+ (bellshire::Value_GUI_Base) 1.500000 0.000000 box
+1.500000 0.000000 mark
+
+% ----- relations -----
+
+solid
+0 0.500000 60.000000 out
+solid
+0.000000 1.000000 61.000000 conn
+solid
+1 0.000000 61.000000 in
+solid
+1 1.000000 61.000000 in
+solid
+1 0.500000 59.250000 out
+solid
+0 0.500000 59.500000 hedge
+solid
+0 0.500000 58.500000 hedge
+solid
+0 0.500000 57.500000 hedge
+solid
+0 0.500000 56.500000 hedge
+solid
+0 0.500000 55.500000 hedge
+solid
+0 0.500000 54.500000 hedge
+solid
+0 0.500000 53.500000 hedge
+solid
+0 0.500000 52.500000 hedge
+solid
+0 0.500000 51.500000 hedge
+solid
+0 0.500000 50.500000 hedge
+solid
+0 0.500000 49.500000 hedge
+solid
+0 0.500000 48.500000 hedge
+solid
+0 0.500000 47.500000 hedge
+solid
+0 0.500000 46.500000 hedge
+solid
+0 0.500000 45.500000 hedge
+solid
+0 0.500000 44.500000 hedge
+solid
+0 0.500000 43.500000 hedge
+solid
+0 0.500000 42.500000 hedge
+solid
+0 0.500000 41.500000 hedge
+solid
+0 0.500000 40.500000 hedge
+solid
+0 0.500000 39.500000 hedge
+solid
+0 0.500000 38.500000 hedge
+solid
+0 0.500000 37.500000 hedge
+solid
+0 0.500000 36.500000 hedge
+solid
+0 0.500000 35.500000 hedge
+solid
+0 0.500000 34.500000 hedge
+solid
+0 0.500000 33.500000 hedge
+solid
+0 0.500000 32.500000 hedge
+solid
+0 0.500000 31.500000 hedge
+solid
+0 0.500000 30.500000 hedge
+solid
+0 0.500000 29.500000 hedge
+solid
+0 0.500000 28.500000 hedge
+solid
+0 0.500000 27.500000 hedge
+solid
+0 0.500000 26.500000 hedge
+solid
+0 0.500000 25.500000 hedge
+solid
+0 0.500000 24.500000 hedge
+solid
+0 0.500000 23.500000 hedge
+solid
+0 0.500000 22.500000 hedge
+solid
+0 0.500000 21.500000 hedge
+solid
+0 0.500000 20.500000 hedge
+solid
+0 0.500000 19.500000 hedge
+solid
+0 0.500000 18.500000 hedge
+solid
+0 0.500000 17.500000 hedge
+solid
+0 0.500000 16.500000 hedge
+solid
+0 0.500000 15.500000 hedge
+solid
+0 0.500000 14.500000 hedge
+solid
+0 0.500000 13.500000 hedge
+solid
+0 0.500000 12.500000 hedge
+solid
+0 0.500000 11.500000 hedge
+solid
+0 0.500000 10.500000 hedge
+solid
+0 0.500000 9.500000 hedge
+solid
+0 0.500000 8.500000 hedge
+solid
+0 0.500000 7.500000 hedge
+solid
+0 0.500000 6.500000 hedge
+solid
+0 0.500000 5.500000 hedge
+solid
+0 0.500000 4.500000 hedge
+solid
+0 0.500000 3.500000 hedge
+solid
+0 0.500000 2.500000 hedge
+solid
+0 0.500000 1.500000 hedge
+solid
+0 0.500000 0.500000 hedge
+solid
+0.500000 60.000000 0.500000 vedge

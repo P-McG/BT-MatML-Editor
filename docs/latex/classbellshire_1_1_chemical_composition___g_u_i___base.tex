@@ -1,0 +1,109 @@
+\hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base}{}\doxysection{bellshire\+::Chemical\+Composition\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_chemical_composition___g_u_i___base}\index{bellshire::ChemicalComposition\_GUI\_Base@{bellshire::ChemicalComposition\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Chemical\+Composition\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_chemical_composition___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a5f9942fd11ad049afa7c9f642b63457d}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a5f9942fd11ad049afa7c9f642b63457d}} 
+{\bfseries Chemical\+Composition\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a04e164ec5b93aff5ebd7a8bf314ee54e}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a04e164ec5b93aff5ebd7a8bf314ee54e}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_abe6cd7bc238a0b641d7f2e8440037e26}\label{classbellshire_1_1_chemical_composition___g_u_i___base_abe6cd7bc238a0b641d7f2e8440037e26}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a9bc7491630dcdb75a21effe1a6bc3a1d}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a9bc7491630dcdb75a21effe1a6bc3a1d}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_adcd2560eb1ce1203a178ca6356588766}\label{classbellshire_1_1_chemical_composition___g_u_i___base_adcd2560eb1ce1203a178ca6356588766}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a4667df961435f3580e9bd4f66d1387ea}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a4667df961435f3580e9bd4f66d1387ea}} 
+virtual void {\bfseries On\+Insert\+Compound} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a540507699fadb8c029738b4e81068f60}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a540507699fadb8c029738b4e81068f60}} 
+virtual void {\bfseries On\+Insert\+Element} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_adda370adcba030c04c65fe6d6ef64d3d}\label{classbellshire_1_1_chemical_composition___g_u_i___base_adda370adcba030c04c65fe6d6ef64d3d}} 
+virtual void {\bfseries On\+Delete\+Compound} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a54d78f9396d851c9b1734b301f5b03f9}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a54d78f9396d851c9b1734b301f5b03f9}} 
+virtual void {\bfseries On\+Delete\+Element} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_ae6d764783c065758bf7b35f226d99f1c}\label{classbellshire_1_1_chemical_composition___g_u_i___base_ae6d764783c065758bf7b35f226d99f1c}} 
+virtual void {\bfseries On\+Paste\+Compound} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_ae83e9b8e4a3631933d0a0185a25f7d75}\label{classbellshire_1_1_chemical_composition___g_u_i___base_ae83e9b8e4a3631933d0a0185a25f7d75}} 
+virtual void {\bfseries On\+Paste\+Element} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_chemical_composition___g_u_i___base_a6c3a1a6d60d9498ff1ce37105e528c8e}{Create}} (wx\+Window $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_chemical_composition___g_u_i___base_a788746bb967249b0b6390a421f8ccf8b}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_ad1a85981e432c86d228bdab09093c198}\label{classbellshire_1_1_chemical_composition___g_u_i___base_ad1a85981e432c86d228bdab09093c198}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a6c3a1a6d60d9498ff1ce37105e528c8e}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a6c3a1a6d60d9498ff1ce37105e528c8e}} 
+\index{bellshire::ChemicalComposition\_GUI\_Base@{bellshire::ChemicalComposition\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::ChemicalComposition\_GUI\_Base@{bellshire::ChemicalComposition\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Chemical\+Composition\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em fg\+Sizer} & \\
+\hline
+{\em Chemical\+Composition\+Notebook} & \\
+\hline
+{\em Chemical\+Composition\+Panel} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_chemical_composition___g_u_i___base_a788746bb967249b0b6390a421f8ccf8b}\label{classbellshire_1_1_chemical_composition___g_u_i___base_a788746bb967249b0b6390a421f8ccf8b}} 
+\index{bellshire::ChemicalComposition\_GUI\_Base@{bellshire::ChemicalComposition\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::ChemicalComposition\_GUI\_Base@{bellshire::ChemicalComposition\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Chemical\+Composition\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Chemical\+Composition\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Chemical\+Composition\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

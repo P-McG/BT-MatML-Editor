@@ -1,0 +1,96 @@
+\hypertarget{classbellshire_1_1_formula___g_u_i___base}{}\doxysection{bellshire\+::Formula\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_formula___g_u_i___base}\index{bellshire::Formula\_GUI\_Base@{bellshire::Formula\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Formula\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_formula___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_ab9e6503b70e3145c8e699a9820f18be8}\label{classbellshire_1_1_formula___g_u_i___base_ab9e6503b70e3145c8e699a9820f18be8}} 
+{\bfseries Formula\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a88ed9e4fa45b2b7fba8c384f7788481c}\label{classbellshire_1_1_formula___g_u_i___base_a88ed9e4fa45b2b7fba8c384f7788481c}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a2c7eb5089556e52cc571aadb7df86557}\label{classbellshire_1_1_formula___g_u_i___base_a2c7eb5089556e52cc571aadb7df86557}} 
+bool {\bfseries Is\+Shown} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a29b306626863830a8cf776d9c668765b}\label{classbellshire_1_1_formula___g_u_i___base_a29b306626863830a8cf776d9c668765b}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a54aee0a0e54b81ee98db753844e7183f}\label{classbellshire_1_1_formula___g_u_i___base_a54aee0a0e54b81ee98db753844e7183f}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_formula}{Formula}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a15c09fe56f7037d4083c48dc681a2cd1}\label{classbellshire_1_1_formula___g_u_i___base_a15c09fe56f7037d4083c48dc681a2cd1}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a897ec2126b6c19db8c03a7dbf09f9fbb}\label{classbellshire_1_1_formula___g_u_i___base_a897ec2126b6c19db8c03a7dbf09f9fbb}} 
+virtual void {\bfseries On\+Formula\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base_ad444b376baf4ed8ac40f551071e7ced7}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Formula\+Text\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_formula}{Formula}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base_a48e1058188a84191c3a666f80f603aa8}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_formula}{Formula}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a1595eb54d4031d2c7b79e7bda3606417}\label{classbellshire_1_1_formula___g_u_i___base_a1595eb54d4031d2c7b79e7bda3606417}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a1cafdf06977cc6e13eeb66432b5f2de2}\label{classbellshire_1_1_formula___g_u_i___base_a1cafdf06977cc6e13eeb66432b5f2de2}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Formula\+Text\+Ctrl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_ad444b376baf4ed8ac40f551071e7ced7}\label{classbellshire_1_1_formula___g_u_i___base_ad444b376baf4ed8ac40f551071e7ced7}} 
+\index{bellshire::Formula\_GUI\_Base@{bellshire::Formula\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Formula\_GUI\_Base@{bellshire::Formula\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Formula\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Formula\+Text\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_formula}{Formula}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em Formula\+Text\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_formula___g_u_i___base_a48e1058188a84191c3a666f80f603aa8}\label{classbellshire_1_1_formula___g_u_i___base_a48e1058188a84191c3a666f80f603aa8}} 
+\index{bellshire::Formula\_GUI\_Base@{bellshire::Formula\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Formula\_GUI\_Base@{bellshire::Formula\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Formula\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_formula}{Formula}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Formula\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Formula\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

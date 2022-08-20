@@ -1,0 +1,69 @@
+\hypertarget{_b_t___mat_m_l___authority_details___display___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Authority\+Details\+\_\+\+Display\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___authority_details___display___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_AuthorityDetails\_Display\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_AuthorityDetails\_Display\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_AuthorityDetails\_Display\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of AuthorityDetails\_Display\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/grid.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{AuthorityDetails\_Display\_GUI}}}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         wxPanel* m\_GUI;}
+\DoxyCodeLine{42         wxTextCtrl* m\_AuthorityDetailsNameTextCtrl;}
+\DoxyCodeLine{43         wxTextCtrl* m\_AuthorityDetailsNotesTextCtrl;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{AuthorityDetails\_Display\_GUI}}();}
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{AuthorityDetails\_Display\_GUI}}(wxNotebook* parent);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_authority_details___display___g_u_i}{\string~AuthorityDetails\_Display\_GUI}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         wxPanel* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{static} wxPanel* Create(}
+\DoxyCodeLine{53             wxNotebook* parent,}
+\DoxyCodeLine{54             wxTextCtrl*\& AuthorityDetailsNameTextCtrl,}
+\DoxyCodeLine{55             wxTextCtrl*\& AuthorityDetailsNotesTextCtrl}
+\DoxyCodeLine{56         );}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_name}{Name}}* element);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_specification}{Specification}}* element);}
+\DoxyCodeLine{60     \textcolor{keyword}{private}:}
+\DoxyCodeLine{61     \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{64 }
+
+\end{DoxyCode}

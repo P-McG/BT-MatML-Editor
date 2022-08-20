@@ -1,0 +1,94 @@
+\hypertarget{_b_t___mat_m_l___formula___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Formula\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___formula___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Formula\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Formula\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:       BT\_MatML\_Formula\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Formula\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base}{Formula\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42     \textcolor{keyword}{public}:}
+\DoxyCodeLine{43         wxNotebook* m\_GUI;}
+\DoxyCodeLine{44         wxTextCtrl* m\_FormulaTextCtrl;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base}{Formula\_GUI\_Base}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base}{Formula\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{48         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base}{\string~Formula\_GUI\_Base}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{52         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base_ad444b376baf4ed8ac40f551071e7ced7}{Create}}(wxWindow* parent, wxTextCtrl*\& FormulaTextCtrl);}
+\DoxyCodeLine{55         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base_a48e1058188a84191c3a666f80f603aa8}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{56             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{57             \mbox{\hyperlink{class_formula}{Formula}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{58             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{59         );}
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_formula}{Formula}}* element);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{63         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnFormulaTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{private}:}
+\DoxyCodeLine{66     \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_formula___g_u_i}{Formula\_GUI}}: \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i___base}{Formula\_GUI\_Base}}}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70     \textcolor{keyword}{public}:}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i_a1d07f0d161579169190800fc8e632eea}{Formula\_GUI}}();}
+\DoxyCodeLine{75         \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i_a1d07f0d161579169190800fc8e632eea}{Formula\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i_aae3909558d1a9c2e7e9cacc46a3bf0ac}{\string~Formula\_GUI}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i_a9447eefa8a8c8844a0a9c57e6109198a}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{80         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_formula___g_u_i_a0e9cd5f785d17ad33c740abe2d2ea3e6}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{83         \textcolor{keywordtype}{void} OnFormulaTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#pragma once}}
+
+\end{DoxyCode}

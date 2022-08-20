@@ -1,0 +1,399 @@
+\hypertarget{classbellshire_1_1_g_u_i}{}\doxysection{bellshire\+::GUI Class Reference}
+\label{classbellshire_1_1_g_u_i}\index{bellshire::GUI@{bellshire::GUI}}
+
+
+\mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for each of the Mat\+ML classes  
+
+
+
+
+{\ttfamily \#include $<$BT\+\_\+\+Mat\+ML\+\_\+\+GUI.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbellshire_1_1_g_u_i_a8cbb3140b7d3c9d8e942d6ce6b60a0e8}{GUI}} ()
+\item 
+\mbox{\hyperlink{classbellshire_1_1_g_u_i_a8a0da888fba0f022d360e3769712c327}{GUI}} (wx\+Window $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Initiallizes with new individual Mat\+ML GUIs \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classbellshire_1_1_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}{$\sim$\+GUI}} ()
+\begin{DoxyCompactList}\small\item\em Destroys individual Mat\+ML GUIs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_g_u_i_a3c4fc54dd58ffb48acbb1f6d14267943}{Set\+Sizer}} (wx\+Flex\+Grid\+Sizer $\ast$\&fg\+Sizer)
+\begin{DoxyCompactList}\small\item\em Assumes the same sizer for all the Mat\+ML GUIs and that the panels are placed adjacent. Panels of the Mat\+ML GUIs are hiden and shown on updating with data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class GUI\+\_\+\+Class $>$ }\\bool \mbox{\hyperlink{classbellshire_1_1_g_u_i_aeeaf9a44b5d9b1b3e23b567e34781591}{Update\+\_\+individual\+\_\+\+GUI}} (\+::boost\+::any anyptr, GUI\+\_\+\+Class \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}})
+\begin{DoxyCompactList}\small\item\em Template for updating the individual \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} based on the boost\+::any pointer caste type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class GUI\+\_\+\+Class $>$ }\\bool \mbox{\hyperlink{classbellshire_1_1_g_u_i_a6b380a82d03db04ade84a11f48c7b946}{Update\+\_\+individual\+\_\+\+GUI}} (\+::boost\+::any anyptr, GUI\+\_\+\+Class \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}, \+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc)
+\begin{DoxyCompactList}\small\item\em Template for updating the individual \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} based on the boost\+::any pointer caste type. For Mat\+ML GUIs that require access to \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} pointer for additional data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_g_u_i_af44e953baa7788a7ff32461ea93395ee}{Update\+\_\+\+GUI}} (\+::boost\+::any anyptr, \+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc)
+\begin{DoxyCompactList}\small\item\em Updating one of the Mat\+ML GUIs based on the boost\+::any pointer. Polymorphic calls using the anyptr. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_g_u_i_affcc9e423879b63cca814d03d2024856}{Hide\+All\+Panels}} ()
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_g_u_i_a02fd362fcc46840d738e8d726eb15812}{Set\+Evt\+Handler\+Var}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, \+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ doc)
+\begin{DoxyCompactList}\small\item\em Sets the variables for the Event Handlers related to the Mat\+ML\+\_\+\+GUIs. These variables are members of the \mbox{\hyperlink{classbellshire_1_1_material_frame}{Material\+Frame}} class. Need to be run before using Mat\+ML\+\_\+\+GUIs events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a6e5d0a2579f0c81e64bbdfa2eadf6871}\label{classbellshire_1_1_g_u_i_a6e5d0a2579f0c81e64bbdfa2eadf6871}} 
+\mbox{\hyperlink{classbellshire_1_1_intro___g_u_i}{Intro\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Intro\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a4db2bae08a555301ebd2593e9d2dd180}\label{classbellshire_1_1_g_u_i_a4db2bae08a555301ebd2593e9d2dd180}} 
+\mbox{\hyperlink{classbellshire_1_1_mat_m_l___doc___g_u_i}{Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Mat\+ML\+\_\+\+Doc\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a25c8c11e0ec4a9553290e5c388df3f2e}\label{classbellshire_1_1_g_u_i_a25c8c11e0ec4a9553290e5c388df3f2e}} 
+\mbox{\hyperlink{classbellshire_1_1_material___g_u_i}{Material\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Material\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a7bdb7dbc7de8ddfc8f860b0cf45df3c4}\label{classbellshire_1_1_g_u_i_a7bdb7dbc7de8ddfc8f860b0cf45df3c4}} 
+\mbox{\hyperlink{classbellshire_1_1_associate___g_u_i}{Associate\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Associate\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a752b966e2c163c3c40a95493d02f16fe}\label{classbellshire_1_1_g_u_i_a752b966e2c163c3c40a95493d02f16fe}} 
+\mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i}{Association\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Association\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ad9fdc4f23ef7a883ccec18fa6bdb1e18}\label{classbellshire_1_1_g_u_i_ad9fdc4f23ef7a883ccec18fa6bdb1e18}} 
+\mbox{\hyperlink{classbellshire_1_1_authority_details___g_u_i}{Authority\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Authority\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab375829bd0744f3d3f715d629c9b7d29}\label{classbellshire_1_1_g_u_i_ab375829bd0744f3d3f715d629c9b7d29}} 
+\mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i}{Bulk\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Bulk\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_af07f628b4cddf0cecf05d3490fb11117}\label{classbellshire_1_1_g_u_i_af07f628b4cddf0cecf05d3490fb11117}} 
+\mbox{\hyperlink{classbellshire_1_1_characterization___g_u_i}{Characterization\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Characterization\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a04199bd6ea62315ed22f959d39a33f38}\label{classbellshire_1_1_g_u_i_a04199bd6ea62315ed22f959d39a33f38}} 
+\mbox{\hyperlink{classbellshire_1_1_chemical_composition___g_u_i}{Chemical\+Composition\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Chemical\+Composition\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aa21b673545be0abc4d35505ef7f7896d}\label{classbellshire_1_1_g_u_i_aa21b673545be0abc4d35505ef7f7896d}} 
+\mbox{\hyperlink{classbellshire_1_1_chemical_element_symbol___g_u_i}{Chemical\+Element\+Symbol\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Chemical\+Element\+Symbol\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a89b6a6916a81a303d2e02529af085383}\label{classbellshire_1_1_g_u_i_a89b6a6916a81a303d2e02529af085383}} 
+\mbox{\hyperlink{classbellshire_1_1_class___g_u_i}{Class\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Class\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a26ed261c8bfa04a0ea1dfa274590a373}\label{classbellshire_1_1_g_u_i_a26ed261c8bfa04a0ea1dfa274590a373}} 
+\mbox{\hyperlink{classbellshire_1_1_parent_material___g_u_i}{Parent\+Material\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Parent\+Material\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a274be93e2ce60c7e65522cc52dddd217}\label{classbellshire_1_1_g_u_i_a274be93e2ce60c7e65522cc52dddd217}} 
+\mbox{\hyperlink{classbellshire_1_1_parent_sub_class___g_u_i}{Parent\+Sub\+Class\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Parent\+Sub\+Class\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ad95ae30a39612828ee2e842bb047e482}\label{classbellshire_1_1_g_u_i_ad95ae30a39612828ee2e842bb047e482}} 
+\mbox{\hyperlink{classbellshire_1_1_component_details___g_u_i}{Component\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Component\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ae79f457f2c0207b49151a908739af2d2}\label{classbellshire_1_1_g_u_i_ae79f457f2c0207b49151a908739af2d2}} 
+\mbox{\hyperlink{classbellshire_1_1_compound___g_u_i}{Compound\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Compound\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aaeced208e2aa40f38890862922c511e8}\label{classbellshire_1_1_g_u_i_aaeced208e2aa40f38890862922c511e8}} 
+\mbox{\hyperlink{classbellshire_1_1_concentration___g_u_i}{Concentration\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Concentration\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a69944a96ce2e9b13fb70226c1d7dc71e}\label{classbellshire_1_1_g_u_i_a69944a96ce2e9b13fb70226c1d7dc71e}} 
+\mbox{\hyperlink{classbellshire_1_1_currency_code___g_u_i}{Currency\+Code\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Currency\+Code\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aa11a737127a514e35d35cc7e99f5204a}\label{classbellshire_1_1_g_u_i_aa11a737127a514e35d35cc7e99f5204a}} 
+\mbox{\hyperlink{classbellshire_1_1_data_source_details___g_u_i}{Data\+Source\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Data\+Source\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a1f797f2da9957d14e0cd9cb236e1a384}\label{classbellshire_1_1_g_u_i_a1f797f2da9957d14e0cd9cb236e1a384}} 
+\mbox{\hyperlink{classbellshire_1_1_dimensional_details___g_u_i}{Dimensional\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Dimensional\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ac13755532c11a5de146d8ebb808f2247}\label{classbellshire_1_1_g_u_i_ac13755532c11a5de146d8ebb808f2247}} 
+\mbox{\hyperlink{classbellshire_1_1_element___g_u_i}{Element\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Element\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ada01ad96e9def615c3a03690a246dc09}\label{classbellshire_1_1_g_u_i_ada01ad96e9def615c3a03690a246dc09}} 
+\mbox{\hyperlink{classbellshire_1_1_symbol___g_u_i}{Symbol\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Symbol\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a31e2487b7c1ef637bf2aebe62e710486}\label{classbellshire_1_1_g_u_i_a31e2487b7c1ef637bf2aebe62e710486}} 
+\mbox{\hyperlink{classbellshire_1_1_form___g_u_i}{Form\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Form\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a4236f7733c0289d349d2a286d9c48f86}\label{classbellshire_1_1_g_u_i_a4236f7733c0289d349d2a286d9c48f86}} 
+\mbox{\hyperlink{classbellshire_1_1_formula___g_u_i}{Formula\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Formula\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ac42e94de1aa2be8e69d08acd6cf2d247}\label{classbellshire_1_1_g_u_i_ac42e94de1aa2be8e69d08acd6cf2d247}} 
+\mbox{\hyperlink{classbellshire_1_1_geometry___g_u_i}{Geometry\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Geometry\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a6d13bd95a19007bb8f969e77693923da}\label{classbellshire_1_1_g_u_i_a6d13bd95a19007bb8f969e77693923da}} 
+\mbox{\hyperlink{classbellshire_1_1_shape___g_u_i}{Shape\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Shape\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ae6c0dcdc3534f40fca667944abdea7d5}\label{classbellshire_1_1_g_u_i_ae6c0dcdc3534f40fca667944abdea7d5}} 
+\mbox{\hyperlink{classbellshire_1_1_dimensions___g_u_i}{Dimensions\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Dimensions\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a7a228d0fc26268c312cbda864256ad3a}\label{classbellshire_1_1_g_u_i_a7a228d0fc26268c312cbda864256ad3a}} 
+\mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i}{Orientation\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Orientation\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab6a6b3450f1002f345e4c96cf067e80c}\label{classbellshire_1_1_g_u_i_ab6a6b3450f1002f345e4c96cf067e80c}} 
+\mbox{\hyperlink{classbellshire_1_1_glossary___g_u_i}{Glossary\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Glossary\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a8831c8d25e29239fb9b8381d52dce8da}\label{classbellshire_1_1_g_u_i_a8831c8d25e29239fb9b8381d52dce8da}} 
+\mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i}{Glossary\+Term\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Glossary\+Term\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ae06685837135cefb82d100bee24a70e9}\label{classbellshire_1_1_g_u_i_ae06685837135cefb82d100bee24a70e9}} 
+\mbox{\hyperlink{classbellshire_1_1_definition___g_u_i}{Definition\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Definition\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a6356ef4cffa70ec494c20c49cb4c6e32}\label{classbellshire_1_1_g_u_i_a6356ef4cffa70ec494c20c49cb4c6e32}} 
+\mbox{\hyperlink{classbellshire_1_1_abbreviation___g_u_i}{Abbreviation\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Abbreviation\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ae894d93ead692f6d1e290e32983773a7}\label{classbellshire_1_1_g_u_i_ae894d93ead692f6d1e290e32983773a7}} 
+\mbox{\hyperlink{classbellshire_1_1_synonym___g_u_i}{Synonym\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Synonym\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aeb60d1705106b52b6f5ea9067f55a23d}\label{classbellshire_1_1_g_u_i_aeb60d1705106b52b6f5ea9067f55a23d}} 
+\mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i}{Graphs\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Graphs\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a9740183fc8e9e8ce0e749b761b8abffa}\label{classbellshire_1_1_g_u_i_a9740183fc8e9e8ce0e749b761b8abffa}} 
+\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i}{Graph\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Graph\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab029b08f4a904a2b2e1675dfbb92425d}\label{classbellshire_1_1_g_u_i_ab029b08f4a904a2b2e1675dfbb92425d}} 
+\mbox{\hyperlink{classbellshire_1_1_measurement_technique_details___g_u_i}{Measurement\+Technique\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Measurement\+Technique\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab9daabe4a418ee3cdc85db1631f3edbd}\label{classbellshire_1_1_g_u_i_ab9daabe4a418ee3cdc85db1631f3edbd}} 
+\mbox{\hyperlink{classbellshire_1_1_metadata___g_u_i}{Metadata\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Metadata\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a9a11f9db4926d771a6237322ca2c3b48}\label{classbellshire_1_1_g_u_i_a9a11f9db4926d771a6237322ca2c3b48}} 
+\mbox{\hyperlink{classbellshire_1_1_name___g_u_i}{Name\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Name\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ac15f8930045232455fe6f762c0401309}\label{classbellshire_1_1_g_u_i_ac15f8930045232455fe6f762c0401309}} 
+\mbox{\hyperlink{classbellshire_1_1_notes___g_u_i}{Notes\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Notes\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a88c0f3a25c8bab2c7fca4ec2b8bfe605}\label{classbellshire_1_1_g_u_i_a88c0f3a25c8bab2c7fca4ec2b8bfe605}} 
+\mbox{\hyperlink{classbellshire_1_1_parameter_details___g_u_i}{Parameter\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Parameter\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aec198f5ecafeea1e5c92971d2a04b353}\label{classbellshire_1_1_g_u_i_aec198f5ecafeea1e5c92971d2a04b353}} 
+\mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i}{Parameter\+Value\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Parameter\+Value\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a263c951dd19c6b1da11ee141260bbc7a}\label{classbellshire_1_1_g_u_i_a263c951dd19c6b1da11ee141260bbc7a}} 
+\mbox{\hyperlink{classbellshire_1_1_data___g_u_i}{Data\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Data\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a2e194d3597385bb2463d45b323b28018}\label{classbellshire_1_1_g_u_i_a2e194d3597385bb2463d45b323b28018}} 
+\mbox{\hyperlink{classbellshire_1_1_phase_composition___g_u_i}{Phase\+Composition\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Phase\+Composition\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ad16eae3df908ed998ed858fd19ca8566}\label{classbellshire_1_1_g_u_i_ad16eae3df908ed998ed858fd19ca8566}} 
+\mbox{\hyperlink{classbellshire_1_1_processing_details___g_u_i}{Processing\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Processing\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_acbe9d6649a6d5d5255cf9ad4df5ff506}\label{classbellshire_1_1_g_u_i_acbe9d6649a6d5d5255cf9ad4df5ff506}} 
+\mbox{\hyperlink{classbellshire_1_1_result___g_u_i}{Result\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Result\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_afff491896d4b450bdb4656a2df0a25ba}\label{classbellshire_1_1_g_u_i_afff491896d4b450bdb4656a2df0a25ba}} 
+\mbox{\hyperlink{classbellshire_1_1_relationship___g_u_i}{Relationship\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Relationship\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a3bef70299116309376c5e698f3aabff5}\label{classbellshire_1_1_g_u_i_a3bef70299116309376c5e698f3aabff5}} 
+\mbox{\hyperlink{classbellshire_1_1_property_data___g_u_i}{Property\+Data\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Property\+Data\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a35ed52a92b778b1de7aaaf7f4dcbbe93}\label{classbellshire_1_1_g_u_i_a35ed52a92b778b1de7aaaf7f4dcbbe93}} 
+\mbox{\hyperlink{classbellshire_1_1_data1___g_u_i}{Data1\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Data1\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_adaa4218d582a37ed7aff2a5c93b733b8}\label{classbellshire_1_1_g_u_i_adaa4218d582a37ed7aff2a5c93b733b8}} 
+\mbox{\hyperlink{classbellshire_1_1_property_details___g_u_i}{Property\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Property\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a930384dc24f883b46f686ab06ff74c42}\label{classbellshire_1_1_g_u_i_a930384dc24f883b46f686ab06ff74c42}} 
+\mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i}{Qualifier\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Qualifier\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ae85e6f84246aa1a06436b60e80b73339}\label{classbellshire_1_1_g_u_i_ae85e6f84246aa1a06436b60e80b73339}} 
+\mbox{\hyperlink{classbellshire_1_1_source___g_u_i}{Source\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Source\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a86ac3897016297f6358ce5e043a90656}\label{classbellshire_1_1_g_u_i_a86ac3897016297f6358ce5e043a90656}} 
+\mbox{\hyperlink{classbellshire_1_1_source_details___g_u_i}{Source\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Source\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a93b1c95f790b8c01caa0ab8db0faff99}\label{classbellshire_1_1_g_u_i_a93b1c95f790b8c01caa0ab8db0faff99}} 
+\mbox{\hyperlink{classbellshire_1_1_specification___g_u_i}{Specification\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Specification\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ac1dff30727075847b7252d771e20c3c1}\label{classbellshire_1_1_g_u_i_ac1dff30727075847b7252d771e20c3c1}} 
+\mbox{\hyperlink{classbellshire_1_1_specimen_details___g_u_i}{Specimen\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Specimen\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab07205235645a54a491aed68907563a7}\label{classbellshire_1_1_g_u_i_ab07205235645a54a491aed68907563a7}} 
+\mbox{\hyperlink{classbellshire_1_1_test_condition_details___g_u_i}{Test\+Condition\+Details\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Test\+Condition\+Details\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aaf0dd9eb2bf4a9f20dd8ab6bad0396ad}\label{classbellshire_1_1_g_u_i_aaf0dd9eb2bf4a9f20dd8ab6bad0396ad}} 
+\mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i}{Uncertainty\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Uncertainty\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_adda303beabaf262ec04aed50bcb42e67}\label{classbellshire_1_1_g_u_i_adda303beabaf262ec04aed50bcb42e67}} 
+\mbox{\hyperlink{classbellshire_1_1_scale___g_u_i}{Scale\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Scale\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ab049f1daf6302136450f70493d0c0f55}\label{classbellshire_1_1_g_u_i_ab049f1daf6302136450f70493d0c0f55}} 
+\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i}{Unit\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Unit\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a0b353c8c62265e9aef2e08c89a8589ea}\label{classbellshire_1_1_g_u_i_a0b353c8c62265e9aef2e08c89a8589ea}} 
+\mbox{\hyperlink{classbellshire_1_1_unitless___g_u_i}{Unitless\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Unitless\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a873ce8205e4429dc94333f7b2c1a5a83}\label{classbellshire_1_1_g_u_i_a873ce8205e4429dc94333f7b2c1a5a83}} 
+\mbox{\hyperlink{classbellshire_1_1_units___g_u_i}{Units\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Units\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aa0616d3a3936ff574449c773cc4cf148}\label{classbellshire_1_1_g_u_i_aa0616d3a3936ff574449c773cc4cf148}} 
+\mbox{\hyperlink{classbellshire_1_1_value___g_u_i}{Value\+\_\+\+GUI}} $\ast$ {\bfseries m\+\_\+\+Value\+\_\+\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for each of the Mat\+ML classes 
+
+Mat\+ML\+\_\+\+GUI class
+
+{\bfseries{EACH}} of the Mat\+ML {\bfseries{CLASSES}} have a GUIs associated with it.~\newline
+ However, {\bfseries{INDIVIDUAL INSTANCES}} of Mat\+ML classes do {\bfseries{NOT}} have a \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} associated with them, because Mat\+ML Instances {\bfseries{SHARE}} the Mat\+ML GUIs among the different instances.~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a8cbb3140b7d3c9d8e942d6ce6b60a0e8}\label{classbellshire_1_1_g_u_i_a8cbb3140b7d3c9d8e942d6ce6b60a0e8}} 
+\index{bellshire::GUI@{bellshire::GUI}!GUI@{GUI}}
+\index{GUI@{GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{GUI()}{GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily GUI\+::\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Constructor
+
+Constuctor\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a8a0da888fba0f022d360e3769712c327}\label{classbellshire_1_1_g_u_i_a8a0da888fba0f022d360e3769712c327}} 
+\index{bellshire::GUI@{bellshire::GUI}!GUI@{GUI}}
+\index{GUI@{GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{GUI()}{GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily GUI\+::\+GUI (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Initiallizes with new individual Mat\+ML GUIs 
+
+Main Constructor
+
+Main Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}\label{classbellshire_1_1_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}} 
+\index{bellshire::GUI@{bellshire::GUI}!````~GUI@{$\sim$GUI}}
+\index{````~GUI@{$\sim$GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{$\sim$GUI()}{~GUI()}}
+{\footnotesize\ttfamily GUI\+::$\sim$\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroys individual Mat\+ML GUIs 
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_affcc9e423879b63cca814d03d2024856}\label{classbellshire_1_1_g_u_i_affcc9e423879b63cca814d03d2024856}} 
+\index{bellshire::GUI@{bellshire::GUI}!HideAllPanels@{HideAllPanels}}
+\index{HideAllPanels@{HideAllPanels}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{HideAllPanels()}{HideAllPanels()}}
+{\footnotesize\ttfamily void GUI\+::\+Hide\+All\+Panels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Hide all the Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} panels
+
+Hide all \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} Panels\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a02fd362fcc46840d738e8d726eb15812}\label{classbellshire_1_1_g_u_i_a02fd362fcc46840d738e8d726eb15812}} 
+\index{bellshire::GUI@{bellshire::GUI}!SetEvtHandlerVar@{SetEvtHandlerVar}}
+\index{SetEvtHandlerVar@{SetEvtHandlerVar}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{SetEvtHandlerVar()}{SetEvtHandlerVar()}}
+{\footnotesize\ttfamily void GUI\+::\+Set\+Evt\+Handler\+Var (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$}]{Mat\+MLTree\+Ctrl,  }\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{doc }\end{DoxyParamCaption})}
+
+
+
+Sets the variables for the Event Handlers related to the Mat\+ML\+\_\+\+GUIs. These variables are members of the \mbox{\hyperlink{classbellshire_1_1_material_frame}{Material\+Frame}} class. Need to be run before using Mat\+ML\+\_\+\+GUIs events. 
+
+Set the Event Handler functions variable
+
+Set Event Handler Variable \mbox{\Hypertarget{classbellshire_1_1_g_u_i_a3c4fc54dd58ffb48acbb1f6d14267943}\label{classbellshire_1_1_g_u_i_a3c4fc54dd58ffb48acbb1f6d14267943}} 
+\index{bellshire::GUI@{bellshire::GUI}!SetSizer@{SetSizer}}
+\index{SetSizer@{SetSizer}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{SetSizer()}{SetSizer()}}
+{\footnotesize\ttfamily void GUI\+::\+Set\+Sizer (\begin{DoxyParamCaption}\item[{wx\+Flex\+Grid\+Sizer $\ast$\&}]{fg\+Sizer }\end{DoxyParamCaption})}
+
+
+
+Assumes the same sizer for all the Mat\+ML GUIs and that the panels are placed adjacent. Panels of the Mat\+ML GUIs are hiden and shown on updating with data. 
+
+Sets the window to have the given layout sizer.
+
+Set\+Sizer Adds the GUIs to the controlling Sizer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fg\+Sizer} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_af44e953baa7788a7ff32461ea93395ee}\label{classbellshire_1_1_g_u_i_af44e953baa7788a7ff32461ea93395ee}} 
+\index{bellshire::GUI@{bellshire::GUI}!Update\_GUI@{Update\_GUI}}
+\index{Update\_GUI@{Update\_GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{Update\_GUI()}{Update\_GUI()}}
+{\footnotesize\ttfamily void GUI\+::\+Update\+\_\+\+GUI (\begin{DoxyParamCaption}\item[{\+::boost\+::any}]{anyptr,  }\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{doc }\end{DoxyParamCaption})}
+
+
+
+Updating one of the Mat\+ML GUIs based on the boost\+::any pointer. Polymorphic calls using the anyptr. 
+
+Update {\bfseries{all}} the individual Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em anyptr} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_aeeaf9a44b5d9b1b3e23b567e34781591}\label{classbellshire_1_1_g_u_i_aeeaf9a44b5d9b1b3e23b567e34781591}} 
+\index{bellshire::GUI@{bellshire::GUI}!Update\_individual\_GUI@{Update\_individual\_GUI}}
+\index{Update\_individual\_GUI@{Update\_individual\_GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{Update\_individual\_GUI()}{Update\_individual\_GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class , class GUI\+\_\+\+Class $>$ \\
+bool GUI\+::\+Update\+\_\+individual\+\_\+\+GUI (\begin{DoxyParamCaption}\item[{\+::boost\+::any}]{anyptr,  }\item[{GUI\+\_\+\+Class}]{GUI }\end{DoxyParamCaption})}
+
+
+
+Template for updating the individual \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} based on the boost\+::any pointer caste type. 
+
+Updates the individual Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em GUI\+\_\+\+Class} & \\
+\hline
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em anyptr} & \\
+\hline
+{\em \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_g_u_i_a6b380a82d03db04ade84a11f48c7b946}\label{classbellshire_1_1_g_u_i_a6b380a82d03db04ade84a11f48c7b946}} 
+\index{bellshire::GUI@{bellshire::GUI}!Update\_individual\_GUI@{Update\_individual\_GUI}}
+\index{Update\_individual\_GUI@{Update\_individual\_GUI}!bellshire::GUI@{bellshire::GUI}}
+\doxysubsubsection{\texorpdfstring{Update\_individual\_GUI()}{Update\_individual\_GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class , class GUI\+\_\+\+Class $>$ \\
+bool GUI\+::\+Update\+\_\+individual\+\_\+\+GUI (\begin{DoxyParamCaption}\item[{\+::boost\+::any}]{anyptr,  }\item[{GUI\+\_\+\+Class}]{GUI,  }\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{doc }\end{DoxyParamCaption})}
+
+
+
+Template for updating the individual \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} based on the boost\+::any pointer caste type. For Mat\+ML GUIs that require access to \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} pointer for additional data. 
+
+Updates the individual Mat\+ML \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} with information from the doc
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+{\em GUI\+\_\+\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em anyptr} & \\
+\hline
+{\em \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}}} & \\
+\hline
+{\em doc} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

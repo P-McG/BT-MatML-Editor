@@ -1,0 +1,85 @@
+\hypertarget{matml31__strongtypedef_8h_source}{}\doxysection{matml31\+\_\+strongtypedef.\+h}
+\label{matml31__strongtypedef_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/matml31\_strongtypedef.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/matml31\_strongtypedef.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        matml31\_strongtypedef.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Extension to the matml31.h classes to include strongtypesdef.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <boost/serialization/strong\_typedef.hpp>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <boost/config.hpp>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <boost/operators.hpp>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <boost/type\_traits/has\_nothrow\_assign.hpp>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <boost/type\_traits/has\_nothrow\_constructor.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <boost/type\_traits/has\_nothrow\_copy.hpp>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//Breaks Strongtype to Weaktype linkage.}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define STRONG\_TYPEDEF(T, D)                                                                                                                \(\backslash\)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{    struct D                                                                                                                                \(\backslash\)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{        : boost::totally\_ordered1< D                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{        , boost::totally\_ordered2< D, T                                                                                                     \(\backslash\)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{        > >                                                                                                                                 \(\backslash\)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{    \{                                                                                                                                       \(\backslash\)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{        T* t;                                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{        explicit D(T* t\_) BOOST\_NOEXCEPT\_IF(boost::has\_nothrow\_copy\_constructor<T>::value) : t((t\_)) \{\}                 \(\backslash\)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{        D() BOOST\_NOEXCEPT\_IF(boost::has\_nothrow\_default\_constructor<T>::value) : t(nullptr) \{\}                                             \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{        D( D* t\_) BOOST\_NOEXCEPT\_IF(boost::has\_nothrow\_copy\_constructor<T>::value) : t(t\_-\/>t) \{\}                                        \(\backslash\)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{        D* operator=( D* rhs) BOOST\_NOEXCEPT\_IF(boost::has\_nothrow\_assign<T>::value) \{ t = (rhs)-\/>t; return this; \}     \(\backslash\)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{        D* operator=( T* rhs) BOOST\_NOEXCEPT\_IF(boost::has\_nothrow\_assign<T>::value) \{ t = (rhs); return this; \}            \(\backslash\)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{        operator const T* () const \{ return t; \}                                                                                            \(\backslash\)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{        operator T* () \{ return t; \}                        \(\backslash\)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{        operator const T\& () const \{ return *t; \}                                                                        \(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{        operator T\& () \{ return *t; \}                                                                                    \(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{        bool operator==(const D* rhs) \{ return t == rhs-\/>t; \}                                                                               \(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{        bool operator<(const D* rhs) \{ return t < rhs-\/>t; \}                                                                                 \(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{        void null() \{ t = nullptr; \}                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{52     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespacebellshire_af2ba3c0469f3ce9622b0723a29cd58ac}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_class}{Class::ParentSubClass\_type}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{class_class}{Class::ParentSubClass\_type}}\& rhs) \{}
+\DoxyCodeLine{53         \textcolor{keyword}{const} \mbox{\hyperlink{class_class}{Class}}\& lhs\_mod(lhs);}
+\DoxyCodeLine{54         \textcolor{keyword}{const} \mbox{\hyperlink{class_class}{Class}}\& rhs\_mod(rhs);}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} lhs\_mod < rhs\_mod;}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     \textcolor{comment}{/* The following is an example of how to use the strong\_type created by the strong\_typedef.}}
+\DoxyCodeLine{61 \textcolor{comment}{        It is important to note that all the data contained in MatMLTreeItemData is destroyed/deleted by}}
+\DoxyCodeLine{62 \textcolor{comment}{        MatMLTreeItemData::\string~MatMLTreeItemData using individual delete functions like }}
+\DoxyCodeLine{63 \textcolor{comment}{        DeleteStrongType<Shape>() so the use of new is required and any new strongtypes have to be added }}
+\DoxyCodeLine{64 \textcolor{comment}{        to the delete MatMLTreeItemData::\string~MatMLTreeItemData function.}}
+\DoxyCodeLine{65 \textcolor{comment}{     }}
+\DoxyCodeLine{66 \textcolor{comment}{        MatMLTreeItemData data = new MatMLTreeItemData(new Shape(MatML\_Element));}}
+\DoxyCodeLine{67 \textcolor{comment}{        CurrentId = m\_MatMLTreeCtrl-\/>AppendItem(ParentId, str, -\/1, -\/1,  data );}}
+\DoxyCodeLine{68 \textcolor{comment}{}}
+\DoxyCodeLine{69 \textcolor{comment}{        It should be noted that the strongtypes are used for selections and comparisions. Actual}}
+\DoxyCodeLine{70 \textcolor{comment}{        manipulation of MatML data is done using the MatML data types.}}
+\DoxyCodeLine{71 \textcolor{comment}{}}
+\DoxyCodeLine{72 \textcolor{comment}{        e.g. Use Definition strongtype for comparisions and selection of the data from the}}
+\DoxyCodeLine{73 \textcolor{comment}{        MatMLTreeCtrl. Use GlossaryTerms::Definition\_type for the manipulation of the }}
+\DoxyCodeLine{74 \textcolor{comment}{        MatML data. If a comparision is required between the strongtype and the MatML type}}
+\DoxyCodeLine{75 \textcolor{comment}{        then use strongtype-\/>t which is the MatML type encased within the strongtype.}}
+\DoxyCodeLine{76 \textcolor{comment}{    */} }
+\DoxyCodeLine{77     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(GlossaryTerm::Definition\_type, Definition);}
+\DoxyCodeLine{78     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(GlossaryTerm::Abbreviation\_type, Abbreviation);}
+\DoxyCodeLine{79     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(GlossaryTerm::Synonym\_type, Synonym);}
+\DoxyCodeLine{80     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(Geometry::Shape\_type, Shape);}
+\DoxyCodeLine{81     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(Geometry::Dimensions\_type, Dimensions);}
+\DoxyCodeLine{82     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(Geometry::Orientation\_type, Orientation);}
+\DoxyCodeLine{83     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(ProcessingDetails::Result\_type, Result);}
+\DoxyCodeLine{84     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(\mbox{\hyperlink{class_class}{Class::ParentSubClass\_type}}, ParentSubClass);}
+\DoxyCodeLine{85     \mbox{\hyperlink{namespacebellshire_aba1095b4141b7b3cdd8a76004a70643e}{STRONG\_TYPEDEF}}(\mbox{\hyperlink{class_name}{Form::Description\_type}}, Description); \textcolor{comment}{// Form::Description is Name.  Use Name instead;}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \}\textcolor{comment}{//namespace bellshire}}
+
+\end{DoxyCode}

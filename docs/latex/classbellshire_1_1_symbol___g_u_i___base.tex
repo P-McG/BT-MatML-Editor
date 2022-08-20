@@ -1,0 +1,107 @@
+\hypertarget{classbellshire_1_1_symbol___g_u_i___base}{}\doxysection{bellshire\+::Symbol\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_symbol___g_u_i___base}\index{bellshire::Symbol\_GUI\_Base@{bellshire::Symbol\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Symbol\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_symbol___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a96fd1e809a27c9433a1417c4a4edfd18}\label{classbellshire_1_1_symbol___g_u_i___base_a96fd1e809a27c9433a1417c4a4edfd18}} 
+{\bfseries Symbol\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a7f265b78f6e3f7660a9f04e09eb352f7}\label{classbellshire_1_1_symbol___g_u_i___base_a7f265b78f6e3f7660a9f04e09eb352f7}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a73a6e76f6ebcb3b7eeda7c6516b8a9f1}\label{classbellshire_1_1_symbol___g_u_i___base_a73a6e76f6ebcb3b7eeda7c6516b8a9f1}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a938272eab2407fb79c1ca5fe49594828}\label{classbellshire_1_1_symbol___g_u_i___base_a938272eab2407fb79c1ca5fe49594828}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_symbol}{Symbol}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_acf7fac4e148f2719d5f93f02e538ed65}\label{classbellshire_1_1_symbol___g_u_i___base_acf7fac4e148f2719d5f93f02e538ed65}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_ab73ede53c690de488eea4342e9295a2d}\label{classbellshire_1_1_symbol___g_u_i___base_ab73ede53c690de488eea4342e9295a2d}} 
+virtual void {\bfseries On\+Symbol\+Sub\+Script\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a36814b325c3b49bc7294d25d012a3451}\label{classbellshire_1_1_symbol___g_u_i___base_a36814b325c3b49bc7294d25d012a3451}} 
+virtual void {\bfseries On\+Symbol\+Choice} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_symbol___g_u_i___base_af7dce2f1cd50c92cfda10542d913dde0}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Symbol\+Sub\+Script\+Text\+Ctrl, wx\+Choice $\ast$\&Symbol\+Choice)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_symbol}{Symbol}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_symbol___g_u_i___base_a352b136285b12e2da0811b3004181888}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_symbol}{Symbol}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_aa657544e7c333ce1ba7bada8a90ad40a}\label{classbellshire_1_1_symbol___g_u_i___base_aa657544e7c333ce1ba7bada8a90ad40a}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a5136d48dcd17bb14087aba6335b25975}\label{classbellshire_1_1_symbol___g_u_i___base_a5136d48dcd17bb14087aba6335b25975}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Symbol\+Sub\+Script\+Text\+Ctrl}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a4f62f590fc5e09493c366d158bb73237}\label{classbellshire_1_1_symbol___g_u_i___base_a4f62f590fc5e09493c366d158bb73237}} 
+wx\+Choice $\ast$ {\bfseries m\+\_\+\+Symbol\+Choice}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_af7dce2f1cd50c92cfda10542d913dde0}\label{classbellshire_1_1_symbol___g_u_i___base_af7dce2f1cd50c92cfda10542d913dde0}} 
+\index{bellshire::Symbol\_GUI\_Base@{bellshire::Symbol\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Symbol\_GUI\_Base@{bellshire::Symbol\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Symbol\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Symbol\+Sub\+Script\+Text\+Ctrl,  }\item[{wx\+Choice $\ast$\&}]{Symbol\+Choice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_symbol}{Symbol}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em fg\+Sizer} & \\
+\hline
+{\em Symbol\+Notebook} & \\
+\hline
+{\em Symbol\+Panel} & \\
+\hline
+{\em Symbol\+Sub\+Script\+Text\+Ctrl} & \\
+\hline
+{\em Symbol\+Choice} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_symbol___g_u_i___base_a352b136285b12e2da0811b3004181888}\label{classbellshire_1_1_symbol___g_u_i___base_a352b136285b12e2da0811b3004181888}} 
+\index{bellshire::Symbol\_GUI\_Base@{bellshire::Symbol\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Symbol\_GUI\_Base@{bellshire::Symbol\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Symbol\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Symbol\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Symbol\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

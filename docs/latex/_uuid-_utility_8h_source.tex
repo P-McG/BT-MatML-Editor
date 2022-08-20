@@ -1,0 +1,54 @@
+\hypertarget{_uuid-_utility_8h_source}{}\doxysection{Uuid-\/\+Utility.h}
+\label{_uuid-_utility_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/Uuid-\/Utility.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/Uuid-\/Utility.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        Uuid-\/Utility.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Utilities for the generation of the Uuids.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <boost/uuid/uuid.hpp>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <boost/uuid/uuid\_generators.hpp>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <boost/uuid/uuid\_io.hpp>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//creating a uuid class that}}
+\DoxyCodeLine{18 \textcolor{comment}{// initializes the uuid in the constructor}}
+\DoxyCodeLine{19 \textcolor{comment}{// using a defined mechanism}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}\{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1uuid__class}{uuid\_class}} : \textcolor{keyword}{public} boost::uuids::uuid}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{classbellshire_1_1uuid__class}{uuid\_class}}()}
+\DoxyCodeLine{27         : boost::uuids::uuid(boost::uuids::random\_generator()())}
+\DoxyCodeLine{28     \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{explicit} \mbox{\hyperlink{classbellshire_1_1uuid__class}{uuid\_class}}(boost::uuids::uuid \textcolor{keyword}{const}\& u)}
+\DoxyCodeLine{31         : boost::uuids::uuid(u)}
+\DoxyCodeLine{32     \{\}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{operator} boost::uuids::uuid() \{}
+\DoxyCodeLine{35         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}boost::uuids::uuid\&\textcolor{keyword}{>}(*this);}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{operator} boost::uuids::uuid()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}boost::uuids::uuid const\&\textcolor{keyword}{>}(*this);}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// Usage}}
+\DoxyCodeLine{44 \textcolor{comment}{// uuid\_class u1;}}
+\DoxyCodeLine{45 \textcolor{comment}{// uuid\_class u2;}}
+\DoxyCodeLine{46 \textcolor{comment}{//}}
+\DoxyCodeLine{47 \textcolor{comment}{// assert(u1 != u2);}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \}\textcolor{comment}{//namespace bellshire}}
+
+\end{DoxyCode}

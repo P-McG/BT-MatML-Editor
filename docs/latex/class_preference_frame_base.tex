@@ -1,0 +1,107 @@
+\hypertarget{class_preference_frame_base}{}\doxysection{Preference\+Frame\+Base Class Reference}
+\label{class_preference_frame_base}\index{PreferenceFrameBase@{PreferenceFrameBase}}
+
+
+\mbox{\hyperlink{class_class}{Class}} \mbox{\hyperlink{class_preference_frame_base}{Preference\+Frame\+Base}}.  
+
+
+
+
+{\ttfamily \#include $<$Preference\+Frame\+Base.\+h$>$}
+
+Inheritance diagram for Preference\+Frame\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_preference_frame_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a8d7c9b1472b194b78b43174812cfd9cc}\label{class_preference_frame_base_a8d7c9b1472b194b78b43174812cfd9cc}} 
+{\bfseries Preference\+Frame\+Base} (wx\+Window $\ast$parent, wx\+Window\+ID id=wx\+ID\+\_\+\+ANY, const wx\+String \&title=wxT(\char`\"{}Preferences\char`\"{}), const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Size(680, 628), long style=wx\+CAPTION$\vert$wx\+FRAME\+\_\+\+FLOAT\+\_\+\+ON\+\_\+\+PARENT$\vert$wx\+FRAME\+\_\+\+NO\+\_\+\+TASKBAR$\vert$wx\+STAY\+\_\+\+ON\+\_\+\+TOP$\vert$wx\+TAB\+\_\+\+TRAVERSAL)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a95c4aecaa9a285099e942463e5436a5f}\label{class_preference_frame_base_a95c4aecaa9a285099e942463e5436a5f}} 
+virtual void {\bfseries On\+Mat\+MLInfo\+Selection} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_ad0954b571da639ebd396ada8d04b4ae4}\label{class_preference_frame_base_ad0954b571da639ebd396ada8d04b4ae4}} 
+virtual void {\bfseries On\+Working\+Dir\+Picker} (wx\+File\+Dir\+Picker\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a39f6f1fc82774adeaab6bebedcb87c7e}\label{class_preference_frame_base_a39f6f1fc82774adeaab6bebedcb87c7e}} 
+virtual void {\bfseries On\+Template\+Dir\+Picker} (wx\+File\+Dir\+Picker\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a3c20f1e1ef2d50b93937203c34f3e7f5}\label{class_preference_frame_base_a3c20f1e1ef2d50b93937203c34f3e7f5}} 
+virtual void {\bfseries On\+UUIDPrefix\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a526676c5fbf68c0180ff55afee716df7}\label{class_preference_frame_base_a526676c5fbf68c0180ff55afee716df7}} 
+virtual void {\bfseries On\+Class\+Sort\+Order\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a5dd0cd1ff0b920122160199fc62a1f21}\label{class_preference_frame_base_a5dd0cd1ff0b920122160199fc62a1f21}} 
+virtual void {\bfseries On\+Class\+Sort\+Order\+Add\+Button} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_af9f6eb0a7caf20c3c830897cd32aec3e}\label{class_preference_frame_base_af9f6eb0a7caf20c3c830897cd32aec3e}} 
+virtual void {\bfseries On\+Save\+Preferences\+Button} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a02b8228059516ecb4b1f4394b103b5d0}\label{class_preference_frame_base_a02b8228059516ecb4b1f4394b103b5d0}} 
+virtual void {\bfseries On\+Cancel\+Preferences\+Button} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_ac7f867592e82e5d17e89f1b199297d64}\label{class_preference_frame_base_ac7f867592e82e5d17e89f1b199297d64}} 
+void {\bfseries Create\+General\+Panel} ()
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a65f3cea572b486c30500c73f753754d9}\label{class_preference_frame_base_a65f3cea572b486c30500c73f753754d9}} 
+void {\bfseries Create\+Sort\+Class\+Panel} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a699b7c4773bc846175ec05d1c12b8a7a}\label{class_preference_frame_base_a699b7c4773bc846175ec05d1c12b8a7a}} 
+wx\+Listbook $\ast$ {\bfseries m\+\_\+listbook1}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_ac1afbc288cac2705b56805db8050a7c3}\label{class_preference_frame_base_ac1afbc288cac2705b56805db8050a7c3}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+\+General\+Panel}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a0b41d310a8e09d644c5b2ff24d176a35}\label{class_preference_frame_base_a0b41d310a8e09d644c5b2ff24d176a35}} 
+wx\+Check\+Box $\ast$ {\bfseries m\+\_\+\+Mat\+MLData\+Selection}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_aad84099ebac775f29b71c0e07d95b05b}\label{class_preference_frame_base_aad84099ebac775f29b71c0e07d95b05b}} 
+wx\+Dir\+Picker\+Ctrl $\ast$ {\bfseries m\+\_\+\+Working\+Dir\+Picker}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a32d2759bb511e8ee28ab947582dddb15}\label{class_preference_frame_base_a32d2759bb511e8ee28ab947582dddb15}} 
+wx\+Dir\+Picker\+Ctrl $\ast$ {\bfseries m\+\_\+\+Template\+Dir\+Picker}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a41ee4acc39acf9a25b01eaa06cf78ac5}\label{class_preference_frame_base_a41ee4acc39acf9a25b01eaa06cf78ac5}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+UUIDPrefix\+Text\+Ctrl}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a406d6e59e8e7f226956a047cbdbe57ec}\label{class_preference_frame_base_a406d6e59e8e7f226956a047cbdbe57ec}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+\+Sort\+Class\+Panel}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a5b4b77c45422b8f8fb6e6ceac4721a18}\label{class_preference_frame_base_a5b4b77c45422b8f8fb6e6ceac4721a18}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Class\+Sort\+Order\+Text\+Ctrl}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a761dfa4d68a3cda22348c148b06636b8}\label{class_preference_frame_base_a761dfa4d68a3cda22348c148b06636b8}} 
+wx\+Button $\ast$ {\bfseries m\+\_\+\+Class\+Sort\+Order\+Add\+Button}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_aca8cae1ae18aa9eb6c339add6df25b6b}\label{class_preference_frame_base_aca8cae1ae18aa9eb6c339add6df25b6b}} 
+wx\+Editable\+List\+Box $\ast$ {\bfseries m\+\_\+\+Class\+Sort\+Order\+List\+Box}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a2a467885e3aa857d6b0326b57073073e}\label{class_preference_frame_base_a2a467885e3aa857d6b0326b57073073e}} 
+wx\+Panel $\ast$ {\bfseries m\+\_\+\+Save\+Panel}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a5d623c176b01394cd887b6d85c41ba2a}\label{class_preference_frame_base_a5d623c176b01394cd887b6d85c41ba2a}} 
+wx\+Button $\ast$ {\bfseries m\+\_\+\+Save\+Preferences\+Button}
+\item 
+\mbox{\Hypertarget{class_preference_frame_base_a0258a61490a4e5cb9a31181fb61202ce}\label{class_preference_frame_base_a0258a61490a4e5cb9a31181fb61202ce}} 
+wx\+Button $\ast$ {\bfseries m\+\_\+\+Cancel\+Preferences\+Button}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_class}{Class}} \mbox{\hyperlink{class_preference_frame_base}{Preference\+Frame\+Base}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/Preference\+Frame\+Base.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/Preference\+Frame\+Base.\+cpp\end{DoxyCompactItemize}

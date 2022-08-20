@@ -1,0 +1,71 @@
+\hypertarget{_b_t___mat_m_l___intro___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Intro\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___intro___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Intro\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Intro\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Intro\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Intro\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/statbmp.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{42     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base}{Intro\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44     \textcolor{keyword}{public}:}
+\DoxyCodeLine{45         wxNotebook* m\_GUI;}
+\DoxyCodeLine{46         wxStaticBitmap* m\_logobitmap;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base_a2c503f0b60e606ce000d6a26b4df8850}{Intro\_GUI\_Base}}();}
+\DoxyCodeLine{49         \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base_a2c503f0b60e606ce000d6a26b4df8850}{Intro\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{50         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base_ad68e3d8d6d855ea290bb7388195bcf2a}{Create}}(wxWindow* parent, wxStaticBitmap* logobitmap);}
+\DoxyCodeLine{51         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base_a5aa4078a2e0764dd8ca6d1e2356e2b0f}{\string~Intro\_GUI\_Base}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{54         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base_a79840680d922cc5da7b9e6be86a50369}{Update}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{66     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_intro___g_u_i}{Intro\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i___base}{Intro\_GUI\_Base}}}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68     \textcolor{keyword}{public}:}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i_aa49673cc173af92f75ff89b2ef606ba4}{Intro\_GUI}}();}
+\DoxyCodeLine{71         \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i_aa49673cc173af92f75ff89b2ef606ba4}{Intro\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_intro___g_u_i_a090fcafbed6de5855ab9fcfa08b2fb8d}{\string~Intro\_GUI}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

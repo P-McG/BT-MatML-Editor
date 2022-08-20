@@ -1,0 +1,98 @@
+\hypertarget{_b_t___mat_m_l___graphs___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Graphs\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___graphs___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Graphs\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Graphs\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Graphs\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Graphs\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base}{Graphs\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44         wxNotebook* m\_GUI;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base}{Graphs\_GUI\_Base}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base}{Graphs\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{48         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base_a23208c9a3889b9a544f22aa7fb7226a8}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{49         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base}{\string~Graphs\_GUI\_Base}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{53         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_graphs}{Graphs}}* element);}
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base_a516929a8552523048b5d990122dabda9}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, }
+\DoxyCodeLine{57             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{58             \mbox{\hyperlink{class_graphs}{Graphs}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{59             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{60         );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGraph(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGraph(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{67     \textcolor{keyword}{private}:}
+\DoxyCodeLine{68     \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i}{Graphs\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i___base}{Graphs\_GUI\_Base}}}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72     \textcolor{keyword}{public}:}
+\DoxyCodeLine{73         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{74         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i_a4549c6754d35ba388d0a7929b779cfeb}{Graphs\_GUI}}();}
+\DoxyCodeLine{77         \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i_a4549c6754d35ba388d0a7929b779cfeb}{Graphs\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i_a4aeb1822f83b65194376e46526cdaf9a}{\string~Graphs\_GUI}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i_ab6f1ace2a22e7b6e58d5c2a33b3d3b04}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_graphs___g_u_i_a32fade302dddd190ea15dd8e94be8cf3}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{83         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} OnInsertGraph(wxCommandEvent\& event);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} OnPasteGraph(wxCommandEvent\& event);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keyword}{private}:}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

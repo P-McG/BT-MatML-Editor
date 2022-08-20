@@ -1,0 +1,55 @@
+\hypertarget{printing_8h_source}{}\doxysection{printing.\+h}
+\label{printing_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/printing.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/printing.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        samples/printing.h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// Purpose:     Printing demo for wxWidgets}}
+\DoxyCodeLine{5 \textcolor{comment}{// Author:      Julian Smart}}
+\DoxyCodeLine{6 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Created:     1995}}
+\DoxyCodeLine{8 \textcolor{comment}{// RCS-\/ID:      \$Id: printing.h 42522 2006-\/10-\/27 13:07:40Z JS \$}}
+\DoxyCodeLine{9 \textcolor{comment}{// Copyright:   (c) Julian Smart}}
+\DoxyCodeLine{10 \textcolor{comment}{// Licence:     wxWindows licence}}
+\DoxyCodeLine{12 \textcolor{comment}{}\textcolor{preprocessor}{\#include "{}wx/metafile.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/print.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/printdlg.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}wx/image.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}wx/accel.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_my_printout}{MyPrintout}}: \textcolor{keyword}{public} wxPrintout}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21  \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{class_my_printout}{MyPrintout}}(\textcolor{keyword}{const} wxChar *title = \_T(\textcolor{stringliteral}{"{}My printout"{}})):wxPrintout(title) \{\}}
+\DoxyCodeLine{23   \textcolor{keywordtype}{bool} OnPrintPage(\textcolor{keywordtype}{int} page);}
+\DoxyCodeLine{24   \textcolor{keywordtype}{bool} HasPage(\textcolor{keywordtype}{int} page);}
+\DoxyCodeLine{25   \textcolor{keywordtype}{bool} OnBeginDocument(\textcolor{keywordtype}{int} startPage, \textcolor{keywordtype}{int} endPage);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} GetPageInfo(\textcolor{keywordtype}{int} *minPage, \textcolor{keywordtype}{int} *maxPage, \textcolor{keywordtype}{int} *selPageFrom, \textcolor{keywordtype}{int} *selPageTo);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//  void DrawPageOne();}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//  void DrawPageTwo();}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define WXPRINT\_QUIT            100}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define WXPRINT\_PRINT           101}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define WXPRINT\_PAGE\_SETUP      103}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define WXPRINT\_PREVIEW         104}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define WXPRINT\_PRINT\_PS        105}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define WXPRINT\_PAGE\_SETUP\_PS   107}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define WXPRINT\_PREVIEW\_PS      108}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define WXPRINT\_ABOUT           109}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define WXPRINT\_ANGLEUP         110}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define WXPRINT\_ANGLEDOWN       111}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_WXMAC\_\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{    \#define WXPRINT\_PAGE\_MARGINS 112}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

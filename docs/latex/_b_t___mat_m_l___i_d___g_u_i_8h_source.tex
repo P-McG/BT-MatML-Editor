@@ -1,0 +1,115 @@
+\hypertarget{_b_t___mat_m_l___i_d___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+ID\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___i_d___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_ID\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_ID\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_ID\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of ID\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}wx/event.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <wx/msgdlg.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}Uuid-\/Utility.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{ID\_GUI\_Base}} : \textcolor{keyword}{public} wxEvtHandler}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         wxPanel* m\_GUI;}
+\DoxyCodeLine{42         wxButton* m\_GenerateUuidButton;}
+\DoxyCodeLine{43         wxTextCtrl* m\_IDTextCtrl;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{ID\_GUI\_Base}}();}
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{ID\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{47         \textcolor{keyword}{static} wxPanel* \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a3e84dc088601a0acb17a3e998b497922}{Create}}(wxWindow* parent, wxButton*\& GenerateUuidButton, wxTextCtrl*\& IDTextCtrl);}
+\DoxyCodeLine{48         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{\string~ID\_GUI\_Base}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{comment}{//template<class MatML\_class>}}
+\DoxyCodeLine{51         \textcolor{comment}{//void Update(MatML\_class* element);}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_material}{Material}}* element);}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_component_details}{ComponentDetails}}* element);}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}* element);}
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}* element);}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_source_details}{SourceDetails}}* element);}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_property_details}{PropertyDetails}}* element);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_parameter_details}{ParameterDetails}}* element);}
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}* element);}
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}* element);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base_a8f42d04f1b6b9a2207caa92e88e611af}{Update}}( \mbox{\hyperlink{class_authority_details}{AuthorityDetails}}* element);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{66         wxPanel* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnGenerateUuidButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnIDTextCtrl(wxCommandEvent\& event) \{\textcolor{keyword}{event}.Skip();\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keyword}{private}:}
+\DoxyCodeLine{74     \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i}{ID\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{ID\_GUI\_Base}}}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78     \textcolor{keyword}{public}:}
+\DoxyCodeLine{79         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a9458e1dbe8c15008fc6845ecdeb63244}{ID\_GUI}}();}
+\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a9458e1dbe8c15008fc6845ecdeb63244}{ID\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a07c6bab110b569502219a4b09097136b}{\string~ID\_GUI}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a40c025d5825c96b97c19478aaedfbc4b}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_af94c0e8a33f4e4e1bde197f3ed5d7e28}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_aacac1a3b495e641747145f89661fca61}{OnGenerateUuidButton}}(wxCommandEvent\& event);}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} OnIDTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{92         \textcolor{keywordtype}{bool} Warning();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_material}{Material}}* element);}
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}* element);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}* element);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_source_details}{SourceDetails}}* element);}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_property_details}{PropertyDetails}}* element);}
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_parameter_details}{ParameterDetails}}* element);}
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}* element);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}* element);}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_component_details}{ComponentDetails}}* element);}
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a19689e96455a222b3c045745ec643bfa}{GenerateUuid}}(\mbox{\hyperlink{class_authority_details}{AuthorityDetails}}* element);}
+\DoxyCodeLine{104         ::string \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_ab72c43798efadd3d9c77c5f1e24015be}{GetUUIDLabel}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{keyword}{private}:}
+\DoxyCodeLine{107     \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \};\textcolor{comment}{//ending Bellshire namespace}}
+\DoxyCodeLine{110 }
+
+\end{DoxyCode}

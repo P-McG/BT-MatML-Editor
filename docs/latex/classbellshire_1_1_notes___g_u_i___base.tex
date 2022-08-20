@@ -1,0 +1,93 @@
+\hypertarget{classbellshire_1_1_notes___g_u_i___base}{}\doxysection{bellshire\+::Notes\+\_\+\+GUI\+\_\+\+Base Class Reference}
+\label{classbellshire_1_1_notes___g_u_i___base}\index{bellshire::Notes\_GUI\_Base@{bellshire::Notes\_GUI\_Base}}
+Inheritance diagram for bellshire\+::Notes\+\_\+\+GUI\+\_\+\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbellshire_1_1_notes___g_u_i___base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a026e623f16101f086ae0a87fe5617e19}\label{classbellshire_1_1_notes___g_u_i___base_a026e623f16101f086ae0a87fe5617e19}} 
+{\bfseries Notes\+\_\+\+GUI\+\_\+\+Base} (wx\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_aff3e5582b795d58afe71398981f4658c}\label{classbellshire_1_1_notes___g_u_i___base_aff3e5582b795d58afe71398981f4658c}} 
+void {\bfseries Show} (bool show=true)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a275ea69e3c2b0e56ee80ab99581adaf7}\label{classbellshire_1_1_notes___g_u_i___base_a275ea69e3c2b0e56ee80ab99581adaf7}} 
+wx\+Notebook $\ast$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a030b417f6b0b9ff3ba5529edfc81ac0b}\label{classbellshire_1_1_notes___g_u_i___base_a030b417f6b0b9ff3ba5529edfc81ac0b}} 
+void {\bfseries Update} (\mbox{\hyperlink{class_notes}{Notes}} $\ast$element)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_aee1957a16226bef8ac6664de3e7197ac}\label{classbellshire_1_1_notes___g_u_i___base_aee1957a16226bef8ac6664de3e7197ac}} 
+void {\bfseries Set\+Connect} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a51594b58c019431369262f4d56ac49af}\label{classbellshire_1_1_notes___g_u_i___base_a51594b58c019431369262f4d56ac49af}} 
+virtual void {\bfseries On\+Notes\+Text\+Ctrl} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wx\+Notebook $\ast$ \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base_a8490c40de19c64a63cafdbcb9ed7aa69}{Create}} (wx\+Window $\ast$parent, wx\+Text\+Ctrl $\ast$\&Notes\+Text\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_notes}{Notes}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info \end{DoxyCompactList}\item 
+static wx\+Tree\+Item\+Id \mbox{\hyperlink{classbellshire_1_1_notes___g_u_i___base_adb596bfe188fab88178b03f1f2670f72}{Setup\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, const wx\+Tree\+Item\+Id \&Parent\+Id, \mbox{\hyperlink{class_notes}{Notes}} \&\mbox{\hyperlink{class_element}{Element}}, const wx\+Tree\+Item\+Id \&Previous\+Id)
+\begin{DoxyCompactList}\small\item\em This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a737a91ac006a046043df9859b4121d87}\label{classbellshire_1_1_notes___g_u_i___base_a737a91ac006a046043df9859b4121d87}} 
+wx\+Notebook $\ast$ {\bfseries m\+\_\+\+GUI}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_ae3d67a89fe2a2b3cb7e22772cce14a7c}\label{classbellshire_1_1_notes___g_u_i___base_ae3d67a89fe2a2b3cb7e22772cce14a7c}} 
+wx\+Text\+Ctrl $\ast$ {\bfseries m\+\_\+\+Notes\+Text\+Ctrl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_a8490c40de19c64a63cafdbcb9ed7aa69}\label{classbellshire_1_1_notes___g_u_i___base_a8490c40de19c64a63cafdbcb9ed7aa69}} 
+\index{bellshire::Notes\_GUI\_Base@{bellshire::Notes\_GUI\_Base}!Create@{Create}}
+\index{Create@{Create}!bellshire::Notes\_GUI\_Base@{bellshire::Notes\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily wx\+Notebook $\ast$ Notes\+\_\+\+GUI\+\_\+\+Base\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Text\+Ctrl $\ast$\&}]{Notes\+Text\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \mbox{\hyperlink{classbellshire_1_1_g_u_i}{GUI}} for the \mbox{\hyperlink{class_notes}{Notes}} Mat\+ML \mbox{\hyperlink{class_data}{Data}} and Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em Notes\+Text\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_notes___g_u_i___base_adb596bfe188fab88178b03f1f2670f72}\label{classbellshire_1_1_notes___g_u_i___base_adb596bfe188fab88178b03f1f2670f72}} 
+\index{bellshire::Notes\_GUI\_Base@{bellshire::Notes\_GUI\_Base}!SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}}
+\index{SetupMatMLTreeCtrl@{SetupMatMLTreeCtrl}!bellshire::Notes\_GUI\_Base@{bellshire::Notes\_GUI\_Base}}
+\doxysubsubsection{\texorpdfstring{SetupMatMLTreeCtrl()}{SetupMatMLTreeCtrl()}}
+{\footnotesize\ttfamily wx\+Tree\+Item\+Id Notes\+\_\+\+GUI\+\_\+\+Base\+::\+Setup\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{const wx\+Tree\+Item\+Id \&}]{Parent\+Id,  }\item[{\mbox{\hyperlink{class_notes}{Notes}} \&}]{Element,  }\item[{const wx\+Tree\+Item\+Id \&}]{Previous\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This set-\/up the Parent Mat\+ML \mbox{\hyperlink{class_data}{Data}} into a wx\+Tree\+Ctrl element and then call on the Children to do the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parent\+Id} & \\
+\hline
+{\em \mbox{\hyperlink{class_element}{Element}}} & \\
+\hline
+{\em Previous\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Notes\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Notes\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{_string_stream_8h_source}{}\doxysection{String\+Stream.\+h}
+\label{_string_stream_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/StringStream.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/StringStream.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef STRINGSTREAM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define STRINGSTREAM\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{//************Converting an Arbitrary Type to String**************}}
+\DoxyCodeLine{5 \textcolor{comment}{//Our first function template takes a value of an arbitrary type T,}}
+\DoxyCodeLine{6 \textcolor{comment}{//converts it to string, and writes the result to a user-\/supplied}}
+\DoxyCodeLine{7 \textcolor{comment}{//string called val. We use the stringstream::str() member function}}
+\DoxyCodeLine{8 \textcolor{comment}{//to obtain a copy of the stream's internal string:}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}\{}
+\DoxyCodeLine{15 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} string\_fmt(\textcolor{keywordtype}{string} \& val, \textcolor{keyword}{const} T \& t)}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18  ostringstream oss; \textcolor{comment}{// create a stream}}
+\DoxyCodeLine{19  oss << t; \textcolor{comment}{// insert value to stream}}
+\DoxyCodeLine{20  val=oss.str(); \textcolor{comment}{// extract string and copy}}
+\DoxyCodeLine{21 \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//In the following example, we use the string\_fmt() function}}
+\DoxyCodeLine{24 \textcolor{comment}{//template to convert the value 10.76 to string and write the}}
+\DoxyCodeLine{25 \textcolor{comment}{//result to val:}}
+\DoxyCodeLine{26 \textcolor{comment}{//}}
+\DoxyCodeLine{27 \textcolor{comment}{//}}
+\DoxyCodeLine{28 \textcolor{comment}{//string val;}}
+\DoxyCodeLine{29 \textcolor{comment}{//string\_fmt(val,10.76);}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//************Converting from One Arbitrary Type to Another************}}
+\DoxyCodeLine{33 \textcolor{comment}{//Our second function template is called cast\_stream().}}
+\DoxyCodeLine{34 \textcolor{comment}{//It converts a variable of type in\_value to a variable}}
+\DoxyCodeLine{35 \textcolor{comment}{//of type out\_type (in\_value and out\_value are template parameters):}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{template} <\textcolor{keyword}{class} out\_type, \textcolor{keyword}{class} in\_value>}
+\DoxyCodeLine{38 out\_type cast\_stream(\textcolor{keyword}{const} in\_value \& t)}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40  stringstream ss;}
+\DoxyCodeLine{41  ss << t; \textcolor{comment}{// first insert value to stream}}
+\DoxyCodeLine{42  out\_type result; \textcolor{comment}{// value will be converted to out\_type}}
+\DoxyCodeLine{43  ss >> result; \textcolor{comment}{// write value to result}}
+\DoxyCodeLine{44  \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 \textcolor{comment}{//In the following example, cast\_stream() converts}}
+\DoxyCodeLine{47 \textcolor{comment}{//a string with the value "{}18.67"{} to double using cast\_stream():}}
+\DoxyCodeLine{48 \textcolor{comment}{//}}
+\DoxyCodeLine{49 \textcolor{comment}{//string s="{}18.67"{};}}
+\DoxyCodeLine{50 \textcolor{comment}{//double d=cast\_stream < double > (s); // assign 18.67 to d}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \}\textcolor{comment}{//namespace bellshire}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// STRINGSTREAM\_H}}
+
+\end{DoxyCode}

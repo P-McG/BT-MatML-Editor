@@ -1,0 +1,126 @@
+\hypertarget{_b_t___mat_m_l___glossary_term___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Glossary\+Term\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___glossary_term___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_GlossaryTerm\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_GlossaryTerm\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_GlossaryTerm\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of GlossaryTerm\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base}{GlossaryTerm\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44         wxNotebook* m\_GUI;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base}{GlossaryTerm\_GUI\_Base}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base}{GlossaryTerm\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{48         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base_a3be8155b2d81cfc626e5f9a9ecd081d6}{Create}}(wxWindow* parent);}
+\DoxyCodeLine{49         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base}{\string~GlossaryTerm\_GUI\_Base}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{53         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}* element);}
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base_ae93aa63b10053ddb9cfe4ceb30a8c7b2}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{57             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{58             \mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}\& \mbox{\hyperlink{class_element}{Element}},}
+\DoxyCodeLine{59             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{60         );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} SetConnect() \{\};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{65         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertDefinition(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertAbbreviation(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSynonym(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteDefinition(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteAbbreviation(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSynonym(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteDefinition(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteAbbreviation(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSynonym(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keyword}{private}:}
+\DoxyCodeLine{82     \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i}{GlossaryTerm\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i___base}{GlossaryTerm\_GUI\_Base}}}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87     \textcolor{keyword}{public}:}
+\DoxyCodeLine{88         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{89         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i_acc2a1aba7110a5d2b93f0dc220d16864}{GlossaryTerm\_GUI}}();}
+\DoxyCodeLine{92         \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i_acc2a1aba7110a5d2b93f0dc220d16864}{GlossaryTerm\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i_a2a6d2db5df2cc5aad0eb7878d6e53389}{\string~GlossaryTerm\_GUI}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i_a41bd998133447af3be610b316d58268b}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_glossary_term___g_u_i_a871558255a4cda325c9a8ee4289a952e}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} OnInsertDefinition(wxCommandEvent\& event);}
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} OnInsertAbbreviation(wxCommandEvent\& event);}
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} OnInsertSynonym(wxCommandEvent\& event);}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnDeleteDefinition(wxCommandEvent\& event);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnDeleteAbbreviation(wxCommandEvent\& event);}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} OnDeleteSynonym(wxCommandEvent\& event);}
+\DoxyCodeLine{110         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} OnPasteDefinition(wxCommandEvent\& event);}
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnPasteAbbreviation(wxCommandEvent\& event);}
+\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnPasteSynonym(wxCommandEvent\& event);}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keyword}{private}:}
+\DoxyCodeLine{119     \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

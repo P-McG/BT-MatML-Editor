@@ -1,0 +1,93 @@
+\hypertarget{_b_t___mat_m_l___orientation___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Orientation\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___orientation___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Orientation\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Orientation\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Orientation\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Orientation\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <wx/dcsvg.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <wx/notebook.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <wx/string.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base}{Orientation\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42     \textcolor{keyword}{public}:}
+\DoxyCodeLine{43         wxNotebook* m\_GUI;}
+\DoxyCodeLine{44         wxTextCtrl* m\_OrientationTextCtrl;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base}{Orientation\_GUI\_Base}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base}{Orientation\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{48         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base_aae16cb960dc21e069e429ac9774b5c5c}{Create}}(wxWindow* parent, wxTextCtrl*\& m\_OrientationTextCtrl);}
+\DoxyCodeLine{49         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base}{\string~Orientation\_GUI\_Base}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{53         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} Update( Orientation* element);}
+\DoxyCodeLine{56         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base_aabb8239bf5cce5e266fc77c080570fdc}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{57             \textcolor{keyword}{const} wxTreeItemId\& ParentId,}
+\DoxyCodeLine{58             Geometry::Orientation\_type\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{59             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{60         );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{63         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnOrientationTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{private}:}
+\DoxyCodeLine{66     \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i}{Orientation\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i___base}{Orientation\_GUI\_Base}}}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70     \textcolor{keyword}{public}:}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i_ae573ae9bdf73ab3078808d351fd100ed}{Orientation\_GUI}}();}
+\DoxyCodeLine{75         \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i_ae573ae9bdf73ab3078808d351fd100ed}{Orientation\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i_a928a0ad1050df2c1a751df283f65339d}{\string~Orientation\_GUI}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i_ad4d4fe6c10d72cd644c2dc308961be3a}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{80         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_orientation___g_u_i_a486ff65e78a6bb6cb5f5e28b7c81e5a3}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{83         \textcolor{keywordtype}{void} OnOrientationTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \}; \textcolor{comment}{//namespace bellshire end}}
+
+\end{DoxyCode}

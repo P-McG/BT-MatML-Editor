@@ -1,0 +1,126 @@
+\hypertarget{_b_t___mat_m_l___unit___g_u_i_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Unit\+\_\+\+GUI.\+h}
+\label{_b_t___mat_m_l___unit___g_u_i_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Unit\_GUI.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_Unit\_GUI.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// Name:        BT\_MatML\_Unit\_GUI.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Purpose:     Classes of Unit\_GUI Base and Derived.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author:      Paul McGrath}}
+\DoxyCodeLine{5 \textcolor{comment}{// Modified by:}}
+\DoxyCodeLine{6 \textcolor{comment}{// Created:}}
+\DoxyCodeLine{7 \textcolor{comment}{// Copyright:   (c) Paul McGrath}}
+\DoxyCodeLine{8 \textcolor{comment}{// Licence:     CC licence}}
+\DoxyCodeLine{10 \textcolor{comment}{}\textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// For compilers that support precompilation, includes "{}wx/wx.h"{}.}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}wx/wxprec.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WX\_PRECOMP}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}wx/wx.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}wx/dcsvg.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}wx/notebook.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <wx/statline.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}StringStream.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLInfo\_GUI.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_ID\_GUI.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GUI.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42     \textcolor{keyword}{public}:}
+\DoxyCodeLine{43         wxNotebook* m\_GUI;}
+\DoxyCodeLine{44         wxTextCtrl* m\_UnitNameTextCtrl;}
+\DoxyCodeLine{45         wxCheckBox* m\_UnitCurrencyCheckBox;}
+\DoxyCodeLine{46         wxChoice* m\_UnitCurrencyChoice;}
+\DoxyCodeLine{47         wxTextCtrl* m\_UnitPowerTextCtrl;}
+\DoxyCodeLine{48         wxTextCtrl* m\_UnitDescriptionTextCtrl;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}}();}
+\DoxyCodeLine{51         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}}(wxWindow* parent);}
+\DoxyCodeLine{52         \textcolor{keyword}{static} wxNotebook* \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base_aa16cc2c0804c4013e8a7d222ebde52be}{Create}}(wxWindow* parent, wxTextCtrl*\& UnitNameTextCtrl, wxCheckBox*\& UnitCurrencyCheckBox, wxChoice*\& UnitCurrencyChoice, wxTextCtrl*\& UnitPowerTextCtrl, wxTextCtrl*\& UnitDescriptionTextCtrl);}
+\DoxyCodeLine{53         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{\string~Unit\_GUI\_Base}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} Show(\textcolor{keywordtype}{bool} show = \textcolor{keyword}{true}) \{ \textcolor{keywordflow}{if} (m\_GUI != \textcolor{keyword}{nullptr}) m\_GUI-\/>Show(show); \};}
+\DoxyCodeLine{56         \textcolor{keywordtype}{bool} IsShown() \{ \textcolor{keywordflow}{return} m\_GUI-\/>IsShown(); \};}
+\DoxyCodeLine{57         wxNotebook* get() \{ \textcolor{keywordflow}{return} m\_GUI; \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} Update( \mbox{\hyperlink{class_unit}{Unit}}* element);}
+\DoxyCodeLine{60         \textcolor{keyword}{static} wxTreeItemId  \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base_a026b6eccea531631460ab6f4b8c25134}{SetupMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl,}
+\DoxyCodeLine{61             \textcolor{keyword}{const} wxTreeItemId\& ParentId, }
+\DoxyCodeLine{62             \mbox{\hyperlink{class_unit}{Unit}}\& \mbox{\hyperlink{class_element}{Element}}, }
+\DoxyCodeLine{63             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
+\DoxyCodeLine{64         );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{void} SetConnect();}
+\DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitNotebook(wxNotebookEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitNameTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitCurrencyCheckBox(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitCurrencyChoice(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitPowerTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUnitDescriptionTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertCurrency(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteCurrencyCode(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keyword}{private}:}
+\DoxyCodeLine{83     \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i}{Unit\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}}}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87     \textcolor{keyword}{public}:}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{90         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}();}
+\DoxyCodeLine{93         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a50db318daf3074e100aa0abf931b5e54}{\string~Unit\_GUI}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a43769513b36e79f8a756311279a7c367}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a6bac979b50b48857b7a6af2ab31ce727}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} OnUnitNameTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} OnUnitCurrencyCheckBox(wxCommandEvent\& event);}
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} OnUnitCurrencyChoice(wxCommandEvent\& event);}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnUnitPowerTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{106         \textcolor{keywordtype}{void} OnUnitDescriptionTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} OnInsertCurrency(wxCommandEvent\& event);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         \textcolor{comment}{//void OnPasteName(wxCommandEvent\& event);}}
+\DoxyCodeLine{114         \textcolor{comment}{//void OnPasteCurrencyCode(wxCommandEvent\& event);}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{keyword}{private}:}
+\DoxyCodeLine{118     \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{121 }
+
+\end{DoxyCode}

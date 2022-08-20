@@ -1,0 +1,77 @@
+\hypertarget{class_data}{}\doxysection{Data Class Reference}
+\label{class_data}\index{Data@{Data}}
+Inheritance diagram for Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_abdc092b5641496e41bcc16bffd715749}\label{class_data_abdc092b5641496e41bcc16bffd715749}} 
+typedef \mbox{\hyperlink{class_data_format}{\+::\+Data\+Format}} {\bfseries format\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_data_a45d9afaac3e698f825f0c24b70025a7d}\label{class_data_a45d9afaac3e698f825f0c24b70025a7d}} 
+typedef \+::xsd\+::cxx\+::tree\+::optional$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}} $>$ {\bfseries format\+\_\+optional}
+\item 
+\mbox{\Hypertarget{class_data_a5d3ce06f0c2c8f567adcea41b38d6c03}\label{class_data_a5d3ce06f0c2c8f567adcea41b38d6c03}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}}, char $>$ {\bfseries format\+\_\+traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_a686e86fa8c37459d95b0dacda38b68bf}\label{class_data_a686e86fa8c37459d95b0dacda38b68bf}} 
+const format\+\_\+optional \& {\bfseries format} () const
+\item 
+\mbox{\Hypertarget{class_data_a7351901f3741143e179a53ca2cbe5c3d}\label{class_data_a7351901f3741143e179a53ca2cbe5c3d}} 
+format\+\_\+optional \& {\bfseries format} ()
+\item 
+\mbox{\Hypertarget{class_data_a06ed67e3f917e77364ec0d014830e66e}\label{class_data_a06ed67e3f917e77364ec0d014830e66e}} 
+void {\bfseries format} (const \mbox{\hyperlink{class_data_format}{format\+\_\+type}} \&x)
+\item 
+\mbox{\Hypertarget{class_data_a2d66706560dc62ce0295f8fe778d746e}\label{class_data_a2d66706560dc62ce0295f8fe778d746e}} 
+void {\bfseries format} (const format\+\_\+optional \&x)
+\item 
+\mbox{\Hypertarget{class_data_a457fe923ac6ee85ffbb3a8a2a9232f57}\label{class_data_a457fe923ac6ee85ffbb3a8a2a9232f57}} 
+void {\bfseries format} (\+::std\+::auto\+\_\+ptr$<$ \mbox{\hyperlink{class_data_format}{format\+\_\+type}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_data_a6503961c7c92755782f864b29728c6d5}\label{class_data_a6503961c7c92755782f864b29728c6d5}} 
+{\bfseries Data} (const char $\ast$)
+\item 
+\mbox{\Hypertarget{class_data_a7dc25f70a41c01875cb49f3d44464a04}\label{class_data_a7dc25f70a41c01875cb49f3d44464a04}} 
+{\bfseries Data} (const \+::std\+::string \&)
+\item 
+\mbox{\Hypertarget{class_data_a3c3821d21452bc2b1f62051b0a611d79}\label{class_data_a3c3821d21452bc2b1f62051b0a611d79}} 
+{\bfseries Data} (const \+::xml\+\_\+schema\+::string \&)
+\item 
+\mbox{\Hypertarget{class_data_aa831042e661f7692f8f43e2ff4178c16}\label{class_data_aa831042e661f7692f8f43e2ff4178c16}} 
+{\bfseries Data} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_a82b84ab27cbf07b30805e68812fe4c78}\label{class_data_a82b84ab27cbf07b30805e68812fe4c78}} 
+{\bfseries Data} (const \mbox{\hyperlink{class_data}{Data}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_data_a0ec4cb05484aa4903dbc1ad1bc0564cf}\label{class_data_a0ec4cb05484aa4903dbc1ad1bc0564cf}} 
+virtual \mbox{\hyperlink{class_data}{Data}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_data_a64bef441fc13cdd153b4e43ef7dcfe5d}\label{class_data_a64bef441fc13cdd153b4e43ef7dcfe5d}} 
+\mbox{\hyperlink{class_data}{Data}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_data}{Data}} \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_afe0cb8770ddcb292f8c80e51fcde8d0e}\label{class_data_afe0cb8770ddcb292f8c80e51fcde8d0e}} 
+void {\bfseries parse} (\+::xsd\+::cxx\+::xml\+::dom\+::parser$<$ char $>$ \&, \+::xml\+\_\+schema\+::flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_af67fa205ababe4f492f5129f66ec6147}\label{class_data_af67fa205ababe4f492f5129f66ec6147}} 
+format\+\_\+optional {\bfseries format\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}

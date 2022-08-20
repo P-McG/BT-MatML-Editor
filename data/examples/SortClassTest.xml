@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
+  <Material id="BT-05d6fe5b-02ba-46c5-9c33-b907fcd91cd3">
+    <BulkDetails>
+      <Name>RESIN</Name>
+      <Class>
+        <Name>RESIN</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-1319f712-8d8b-424a-b442-eaf757aaba3c">
+    <BulkDetails>
+      <Name>REINFORCEMENT</Name>
+      <Class>
+        <Name>REINFORCEMENT</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-62bb4133-1646-4647-967e-af03f5e5a5e4">
+    <BulkDetails>
+      <Name>CARBON</Name>
+      <Class>
+        <Name>REINFORCEMENT</Name>
+      </Class>
+      <Class>
+        <Name>CARBON</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-568ce43a-3978-40a5-bd7b-bdb782c9f5e8">
+    <BulkDetails>
+      <Name>GLASS</Name>
+      <Class>
+        <Name>REINFORCEMENT</Name>
+      </Class>
+      <Class>
+        <Name>GLASS</Name>
+      </Class>
+    </BulkDetails>
+  </Material>
+  <Material>
+    <BulkDetails>
+      <Name>LAMINA</Name>
+    </BulkDetails>
+    <ComponentDetails>
+      <Name>RESIN</Name>
+      <Class>
+        <ParentMaterial id="BT-05d6fe5b-02ba-46c5-9c33-b907fcd91cd3"/>
+      </Class>
+    </ComponentDetails>
+    <ComponentDetails>
+      <Name>REINFORCEMENT</Name>
+      <Class>
+        <ParentMaterial id="BT-62bb4133-1646-4647-967e-af03f5e5a5e4"/>
+      </Class>
+    </ComponentDetails>
+  </Material>
+  <Metadata/>
+</MatML_Doc>

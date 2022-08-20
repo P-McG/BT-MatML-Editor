@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	******************************************************************************************************************************
+	MatML Version 3.0 Schema Example 3 - Steel with TiC Coating from a Journal Article
+	Prepared by - E.F. Begley, NIST
+	Source - A. Agarwal and N.B. Dahotre, �Pulsed Electrode Surfacing of Steel With TiC Coating -
+	Microstructure and Wear Properties,� ASM Journal of Materials Engineering and Performance, Vol. 8,
+	No. 4, pp. 479-486, 1999.
+
+	Modified 16 July 2004 by Craig Seymour, Granta Design to match MatML Version 3.1
+	******************************************************************************************************************************	
+-->
+<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
+	<Material>
+		<BulkDetails>
+			<Name>TiC coated AISI 1018 steel</Name>
+			<Class>
+				<Name>composite</Name>
+			</Class>
+			<Subclass>
+				<Name>ceramic coating on metal substrate</Name>
+			</Subclass>
+			<Form>
+				<Description>coupon</Description>
+			</Form>
+			<PropertyData property="pr1" technique="mt1" source="ds1">
+				<Data format="float">.0011,.0018,.0023,.0027,.0029</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>2,4,6,8,10</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>270,270,270,270,270</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="integer">
+					<Data>2,2,2,2,2</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr2" technique="mt2" source="ds1">
+				<Data format="float">0.58</Data>
+			</PropertyData>
+		</BulkDetails>
+		<ComponentDetails>
+			<Name>steel</Name>
+			<Class>
+				<Name>metal</Name>
+			</Class>
+			<Specification authority="AISI">AISI 1018</Specification>
+			<Form>
+				<Description>coupon</Description>
+				<Geometry>
+					<Shape>square</Shape>
+					<Dimensions>25mm x 25mm</Dimensions>
+				</Geometry>
+			</Form>
+			<ProcessingDetails>
+				<Name>Mechanical Polishing</Name>
+				<Notes>The coupons were mechanically polished on emery paper of grit size 240.</Notes>
+			</ProcessingDetails>
+			<ProcessingDetails>
+				<Name>Rinsing</Name>
+				<Notes>After polishing, the coupons were rinsed in acetone.</Notes>
+			</ProcessingDetails>
+			<ProcessingDetails>
+				<Name>Coating</Name>
+				<Notes>
+				"A sintered electrode of TiC was used to deposit a coating on these steel coupons. The TiC electrode
+				had 3 to 5 wt% Ni and 1 to 3 wt% Fe as binder. Deposition was carried out using a handheld gun in air
+				at room temperature. Pulsed electrode deposition was carried out at a voltage of 50V and spark time of
+				10�s. The discharge capacitance used for the PES process was 450�F with a current of 25A."
+				</Notes>
+			</ProcessingDetails>
+			<PropertyData property="pr1" technique="mt3" source="ds1">
+				<Data format="float">.0019,.0036,.0057,.0073,.0090</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>2,4,6,8,10</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>270,270,270,270,270</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="integer">
+					<Data>2,2,2,2,2</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr3" technique="mt4" source="ds1">
+				<Data format="integer">172</Data>
+				<Uncertainty>
+					<Value format="integer">12</Value>
+					<Units name="kg/mm^2" description="kilograms per square millimeter">
+						<Unit>
+							<Name>kg</Name>
+						</Unit>
+						<Unit power="-2">
+							<Name>mm</Name>
+						</Unit>
+					</Units>
+				</Uncertainty>
+			</PropertyData>
+			<AssociationDetails>
+				<Associate>titanium carbide coating</Associate>
+				<Relationship>substrate</Relationship>
+			</AssociationDetails>
+		</ComponentDetails>
+		<ComponentDetails>
+			<Name>titanium carbide coating</Name>
+			<Class>
+				<Name>carbide</Name>
+			</Class>
+			<Subclass>
+				<Name>monocarbide</Name>
+			</Subclass>
+			<Characterization>
+				<Formula>TiC�xFe</Formula>
+				<PhaseComposition>
+					<Name>TiC</Name>
+				</PhaseComposition>
+				<PhaseComposition>
+					<Name>Ti</Name>
+					<Concentration>
+						<Value format="string">5,25</Value>
+						<Units description="mass fraction">
+							<Unit>
+								<Name>%</Name>
+							</Unit>
+						</Units>
+						<Qualifier>min.,max.</Qualifier>
+					</Concentration>
+				</PhaseComposition>
+				<PhaseComposition>
+					<Name>Fe-C (austenite)</Name>
+				</PhaseComposition>
+				<PhaseComposition>
+					<Name>Fe (ferrite)</Name>
+				</PhaseComposition>
+				<PhaseComposition>
+					<Name>FeTi</Name>
+					<Notes>Possible</Notes>
+				</PhaseComposition>
+			</Characterization>
+			<PropertyData property="pr3" technique="mt4" source="ds1">
+				<Data format="integer">1235</Data>
+				<Uncertainty>
+					<Value format="integer">86</Value>
+					<Units name="kg/mm^2" description="kilograms per square millimeter">
+						<Unit>
+							<Name>kg</Name>
+						</Unit>
+						<Unit power="-2">
+							<Name>mm</Name>
+						</Unit>
+					</Units>
+				</Uncertainty>
+			</PropertyData>
+			<AssociationDetails>
+				<Associate>AISI 1018 steel</Associate>
+				<Relationship>coating</Relationship>
+			</AssociationDetails>
+		</ComponentDetails>
+		<ComponentDetails>
+			<Name>heat affected zone (HAZ)</Name>
+			<PropertyData property="pr3" technique="mt4" source="ds1">
+				<Data format="integer">352</Data>
+				<Uncertainty>
+					<Value format="integer">32</Value>
+					<Units name="kg/mm^2" description="kilograms per square millimeter">
+						<Unit>
+							<Name>kg</Name>
+						</Unit>
+						<Unit power="-2">
+							<Name>mm</Name>
+						</Unit>
+					</Units>
+				</Uncertainty>
+				<Notes>Martensitic Zone</Notes>
+			</PropertyData>
+		</ComponentDetails>
+	</Material>
+	<Metadata>
+		<AuthorityDetails id="AISI">
+			<Name>American Iron and Steel Institute</Name>
+		</AuthorityDetails>
+		<DataSourceDetails id="ds1" type="journal article">
+			<Name>
+				A. Agarwal and N.B. Dahotre, "Pulse Electrode Surfacing of Steel with TiC Coating: Microstructure and Wear
+				Properties," ASM Journal of Materials Engineering and Performance, Vol. 8, No. 4, pp. 479-486, 1999
+			</Name>
+			<Notes>
+				Data were digitized from Fig. 9. The reported unit, "gm", is interpreted to mean "g", grams.
+			</Notes>
+		</DataSourceDetails>
+		<MeasurementTechniqueDetails id="mt1">
+			<Name>Block-on-Disk Tribometer</Name>
+			<Notes>
+				"Coated coupons of dimension 25 x 25mm were tested for dry sliding wear against a hardened steel ring
+				rotating at a linear speed of 270m/min. Weight loss measurements were made after successive 2 min. The
+				dry sliding wear test was conducted for 10 min with an applied normal load of 2 kg."
+			</Notes>
+		</MeasurementTechniqueDetails>
+		<MeasurementTechniqueDetails id="mt2">
+			<Name>Block-on-Disk Tribometer</Name>
+			<Notes>
+				"The coefficient of friction (�) was also recorded simultaneously by an interface computer, which acquired
+				data in the form of electrical output power of the motor. Even though data were recorded at a frequency of
+				1 Hz for a total test time of 10 min, an average of 10 successive points was taken for computing the coefficient
+				of friction, �. ...the coefficient of friction is calculated by measuring the changes in voltage and current in the
+				electrical circuit of the motor driving the block-on-ring tribometer during loading..."
+			</Notes>
+		</MeasurementTechniqueDetails>
+		<MeasurementTechniqueDetails id="mt3">
+			<Name>Block-on-Disk Tribometer</Name>
+		</MeasurementTechniqueDetails>
+		<MeasurementTechniqueDetails id="mt4">
+			<Name>Knoop Indentation</Name>
+			<Notes>
+				"Microhardness measurements were performed on a Buehler Micromet II microhardness tester using a Knoop
+				indenter with normal load of 200 g applied for 15 s."
+			</Notes>
+		</MeasurementTechniqueDetails>
+		<ParameterDetails id="pa1">
+			<Name>Time</Name>
+			<Units name="min" description="minutes">
+				<Unit>
+					<Name>min</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<ParameterDetails id="pa2">
+			<Name>Sliding Speed (Steel Ring)</Name>
+			<Units name="m/min" description="meters per minute">
+				<Unit>
+					<Name>m</Name>
+				</Unit>
+				<Unit power="-1">
+					<Name>min</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<ParameterDetails id="pa3">
+			<Name>Applied Normal Load</Name>
+			<Units name="kg" description="kilograms">
+				<Unit>
+					<Name>kg</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<PropertyDetails id="pr1" type="mechanical">
+			<Name>Wear (Weight Loss Analysis)</Name>
+			<Units name="g" description="gram">
+				<Unit>
+					<Name>g</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<PropertyDetails id="pr2" type="mechanical">
+			<Name>Coefficient of Friction</Name>
+			<Unitless/>
+		</PropertyDetails>
+		<PropertyDetails id="pr3" type="mechanical">
+			<Name>Microhardness</Name>
+			<Units name="kg/mm^2" description="kilograms per square millimeter">
+				<Unit>
+					<Name>kg</Name>
+				</Unit>
+				<Unit power="-2">
+					<Name>mm</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+	</Metadata>
+</MatML_Doc>

@@ -1,0 +1,45 @@
+Ubuntu 20.04
+
+CMake 3.24.0 build
+------------------
+3.24.0 (or greater) required to find the wxWidgets packages properly.
+sudo apt-get install build-essential libssl-dev
+ cd /tmp
+wget https://github.com/Kitware/CMake/releases/download/v3.24.0/cmake-3.24.0.tar.gz
+tar -zxvf cmake-3.24.0.tar.gz
+cd cmake-3.24.0
+./bootstrap
+make
+sudo make install
+cmake --version
+
+wxWidgets 3.2.0 build
+---------------------
+sudo apt-get install libgtk-3-dev build-essential checkinstall
+mkdir gtk-build
+cd gtk-build/
+../configure --disable-shared --enable-unicode
+make
+sudo checkinstall
+[set the version number as 3.2.0]
+cd samples
+make
+
+
+boost 1.79.0 Packages and Repositories
+--------------------------------------
+for more detailed installation instructions see https://www.boost.org/doc/libs/1_79_0/more/getting_started/unix-variants.html
+
+wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
+tar --bzip2 -xf /path/to/boost_1_79_0.tar.bz2
+cd boost_1_79_0
+./bootstrap.sh
+sudo ./b2 install
+
+
+xerces-c Packages and Repositories
+----------------------------------------
+sudo apt-get update
+sudo apt-get install libxerces-c-dev
+
+

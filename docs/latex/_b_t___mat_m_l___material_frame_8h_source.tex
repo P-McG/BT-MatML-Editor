@@ -1,0 +1,237 @@
+\hypertarget{_b_t___mat_m_l___material_frame_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Material\+Frame.\+h}
+\label{_b_t___mat_m_l___material_frame_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MaterialFrame.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editer/include/GUI/BT\_MatML\_MaterialFrame.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_\_MaterialFrame\_\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_\_MaterialFrame\_\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// For storing configuration data}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <wx/config.h>} \textcolor{comment}{//(to let wxWidgets choose a wxConfig class for your platform)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <wx/confbase.h>} \textcolor{comment}{//(base config class)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <wx/fileconf.h>} \textcolor{comment}{//(wxFileConfig class)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef WIN32}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <wx/msw/regconf.h>} \textcolor{comment}{//(wxRegConfig class)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <wx/stdpaths.h>} \textcolor{comment}{//returns the standard locations in the file system}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <boost/multi\_index\_container.hpp>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <boost/multi\_index/ordered\_index.hpp>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <boost/multi\_index/identity.hpp>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <boost/multi\_index/member.hpp>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}PreferenceFrame.h"{}} \textcolor{comment}{//user preference interface.}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <wx/event.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <wx/settings.h>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MaterialFrameBase.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Utilities\_GUI.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <boost/any.hpp>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <stack>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}HTMLFrame.h"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <boost/serialization/strong\_typedef.hpp>}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}}\{}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 typedef ::std::list<boost::any> many;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_material_frame}{MaterialFrame}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_material_frame_base}{MaterialFrameBase}}, \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_utilities}{Utilities}}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     boost::any m\_MatMLItemToCopy;\textcolor{comment}{//placeholder location for items to be copied.}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// Event Handlers functions for MaterialFrameBase events.}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a0e869ae15251f3f14a7e1ebb5ee2fc30}{OnElementActivated}}(wxTreeEvent\& event);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7357e2be2ca952916c8175949736d521}{OnElementExpanded}}(wxTreeEvent\& event);}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ab6711224dd93967f45830ae70585ced9}{OnElementCollapsed}}(wxTreeEvent\& event);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ab9c0ce8c2f82dad5b556bbc66a364eca}{OnMatMLItemMenu}}(wxTreeEvent\& event);}
+\DoxyCodeLine{72 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{73     wxString \mbox{\hyperlink{classbellshire_1_1_material_frame_a58991582b2b3118193be1ce0189d938a}{m\_CurrentDocPath}};}
+\DoxyCodeLine{75     boost::shared\_ptr<MatML\_Doc> \mbox{\hyperlink{classbellshire_1_1_material_frame_a51dc04b22e0bcfb954a32084f0a3d212}{doc}};}
+\DoxyCodeLine{77     std::stack<TreeCtrlSorted*> \mbox{\hyperlink{classbellshire_1_1_material_frame_ae98d0687ed47a311cef9af8c04a1b064}{m\_MatMLTreeCtrlStack}};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbellshire_1_1_material_frame_a083e10d89bffe80a2aba029e35ab1507}{reEstabilishTreeCtrlSizer}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{//Templates}}
+\DoxyCodeLine{81     std::auto\_ptr<MatML\_Doc> \mbox{\hyperlink{classbellshire_1_1_material_frame_a3bd42328d2a224deb7b45372c5ac3fa9}{template\_doc}};}
+\DoxyCodeLine{83     \textcolor{comment}{//wxTreeItemId m\_draggedItem;}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \mbox{\hyperlink{classbellshire_1_1_preference_frame}{PreferenceFrame}}* preferenceframe;}
+\DoxyCodeLine{86     \mbox{\hyperlink{classbellshire_1_1_h_t_m_l_frame}{HTMLFrame}}* htmlframe;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{//Wrappers for MatML Data}}
+\DoxyCodeLine{89     \textcolor{comment}{//std::list<boost::any> MatMLDataWrapper;}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ab661ff97a19d0cfa35f73acb3262f8e7}{LoadFile}}();}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a59af9c0e67a2adab87074e8629a03264}{ImportFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* File);}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a44de8e2a20cbe0a632aac4ffb2538b2c}{backup}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// Handlers for MaterialFrameBase events.}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a91c6de2b0ebf6ed451a586fbc969d3ba}{OnCloseSel}}( wxCloseEvent\& event );}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a2e867a218bbda610b85aa583828e6e9b}{OnNewSel}}( wxCommandEvent\& event );}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a1e155d5241bdbb00d269e064796f56e5}{OnOpenSel}}( wxCommandEvent\& event );}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ac672ed89331b13884816c23625e21c22}{OnSaveSel}}( wxCommandEvent\& event );}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a9ca724457198a94ef34cdebcd79ffc44}{OnSaveAsSel}}( wxCommandEvent\& event );}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}{OnExportMaterial}}( wxCommandEvent\& event );}
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_adf15306c08555dbf699ecaf1301176e1}{OnExportMaterial}}( wxString\& filename );}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}{OnExportMaterialBranch}}( wxCommandEvent\& event );}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a6755488cebf74674a491798835a4f72e}{OnExportMaterialBranch}}( wxString\& filename);}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a0bc7f81c402cb5d2b087482038f57987}{OnImportMaterialBranch}}( wxCommandEvent\& event );}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_abb232253d72e0cbb9509a2750911a1cf}{OnIsolateMaterialBranch}}( wxCommandEvent\& event );\textcolor{comment}{//New events have tobe implemented in SetupMaterialBranch}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_aa471095dbbea688d8b868d1851d3000a}{IsolateMaterialBranch}}();}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7dbf9229c006a646298aab8b63088f77}{OnExitIsolateMaterialBranch}}( wxCommandEvent\& event );}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af7b0d9429cca8040f8d03188ef4c69ba}{ExitIsolateMaterialBranch}}();}
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a624284c7023d7f86f818e12054fea493}{OnExitSel}}( wxCommandEvent\& event );}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a06e8e6768516ec0561eb5f522450f4a6}{OnEditMenuPreferencesItem}}( wxCommandEvent\& event );}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a53d8a0d29d4dcdbba2c429e5bbae9c2e}{OnSortMenuItem}}( wxCommandEvent\& event );}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a82b492b17a22819ff6f6b4d92ccc59df}{SortMenuItem}}();}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} XSLT2HTMLviewer(\textcolor{keyword}{const} wxString XMLfilename, \textcolor{keyword}{const} wxString XSLTFile, \textcolor{keyword}{const} wxString HTMLDir,\textcolor{keyword}{const} wxString HTMLFileName);}
+\DoxyCodeLine{116     \textcolor{keywordtype}{void} XSLTProcessing(\textcolor{keyword}{const} wxString XMLfilename, \textcolor{keyword}{const} wxString XSLTFile, \textcolor{keyword}{const} wxString OutDir, \textcolor{keyword}{const} wxString OutFileName, \textcolor{keyword}{const} wxString XSLTParameters);}
+\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_adea97410524486510e6ce68a20f5c573}{OnAbout}}(wxCommandEvent\& event);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a2fda40a2a46e0bf9aa977fb34fb37fd2}{SetTreeCtrlConnect}}();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{//wxTreeCtrl context menu}}
+\DoxyCodeLine{122     \textcolor{keyword}{template}<\textcolor{keyword}{typename} EventTag, \textcolor{keyword}{typename} Class, \textcolor{keyword}{typename} EventArg, \textcolor{keyword}{typename} EventHandler >}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a2b5bc87be7d57612e34cfce1fba78926}{PopupLinkBind}}(wxMenu\& menu, ::std::string desc, \textcolor{keyword}{const} EventTag\& eventType, \textcolor{keywordtype}{void}(\mbox{\hyperlink{class_class}{Class}}::* method)(EventArg\&), EventHandler* handler);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatMLClass, \textcolor{keyword}{typename} Parent\_GUIClass, \textcolor{keyword}{typename} EventTag, \textcolor{keyword}{typename} ParentBase\_GUIClass, \textcolor{keyword}{typename} EventArg, \textcolor{keyword}{typename} EventHandler >}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ae01aa5fd4aec8a02be42401531dd94f9}{Popup\_Paste}}(\textcolor{keyword}{const} boost::any\& MatMLItemToCopy, Parent\_GUIClass* Parent\_GUI, wxMenu\& menu, ::std::string desc, \textcolor{keyword}{const} EventTag\& eventType, \textcolor{keywordtype}{void}(ParentBase\_GUIClass::* method)(EventArg\&), EventHandler* handler);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a62dbd938705e88cfdafa26b00d5dd7a7}{ShowContextMenu}}(wxTreeItemId \textcolor{keywordtype}{id}, \textcolor{keyword}{const} wxPoint\& pt);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     ::vector<ParentMaterial*> \mbox{\hyperlink{classbellshire_1_1_material_frame_ab0e59c41a74a8f29791e4f472dd9dbb0}{MaterialGatherAssociatedComponentParentMaterial}}(\mbox{\hyperlink{class_material}{Material}}* material);}
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a65a093578793082c1a7adc771e46f2ae}{MaterialSetParentMaterial}}(::vector<ParentMaterial*> compparentmateriallist, \mbox{\hyperlink{class_material}{Material}}* material);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a0a23a2c9645ccb11ede55d2c47af12e9}{OnCopy}}(wxCommandEvent\& event);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{comment}{//void OnPasteMaterial(wxCommandEvent\& event);}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a63f045830bc8205dc56683591bec87ee}{OnDeleteAssociate}}(wxCommandEvent\& event);}
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af78d2f660c12284a6e4380bb2f24dd3a}{OnDeleteAssociationDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a30f08666afaaa32830d7b57bd8b575a8}{OnDeleteAuthorityDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{141     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a87ecb65c4093942f9ad56747f3e0dd88}{OnDeleteBulkDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{142     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a52b4ff9ce0bd07ee4146825a0ea75678}{OnDeleteCharacterization}}(wxCommandEvent\& event);}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a3ead76626f6989e799a6b102d252e4d8}{OnDeleteChemicalComposition}}(wxCommandEvent\& event);}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a1b790abdf8039839f151874827badb39}{OnDeleteChemicalElementSymbol}}(wxCommandEvent\& event);}
+\DoxyCodeLine{145     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ad9cff8455205bb2ce24c1365ec85c802}{OnDeleteClass}}(wxCommandEvent\& event);}
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a5230e58c5b76522984e44b2ca7238c7c}{OnDeleteComponentDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a193f3329ad363db99b054ec487cbadf2}{OnDeleteCompound}}(wxCommandEvent\& event);}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a5074c47232f493c151e516b5e554814e}{OnDeleteConcentration}}(wxCommandEvent\& event);}
+\DoxyCodeLine{149     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a0cb94e3211341f0c4e29cabbc260a289}{OnDeleteCurrencyCode}}(wxCommandEvent\& event);}
+\DoxyCodeLine{150     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af98a7933db96149b385726e4b9395fa6}{OnDeleteDataSourceDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{151     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7f79c6eb186c53b7825250327e43066a}{OnDeleteDimensionalDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{152     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a8661ac2b011885affb3056ed12072cf6}{OnDeleteElement}}(wxCommandEvent\& event);}
+\DoxyCodeLine{153     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a0c478138d945c07b95f50fb50de99525}{OnDeleteForm}}(wxCommandEvent\& event);}
+\DoxyCodeLine{154     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_aa1cb14f7b68d279710535713334fa4e7}{OnDeleteFormula}}(wxCommandEvent\& event);}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ad4d84657fe89572cf38e89ffedffb52f}{OnDeleteGeometry}}(wxCommandEvent\& event);}
+\DoxyCodeLine{156     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_afaedd743e2ec3d8b8abc2e7f46220e3b}{OnDeleteGlossary}}(wxCommandEvent\& event);}
+\DoxyCodeLine{157     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_aa34cfdb34f5c575b4d61bb3766ca07c7}{OnDeleteGlossaryTerm}}(wxCommandEvent\& event);}
+\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a6406e9e3d33223b0022cd7fda44a8819}{OnDeleteDefinition}}(wxCommandEvent\& event);}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_aa7b08aecec8fae8118abef9019f274fa}{OnDeleteAbbreviation}}(wxCommandEvent\& event);}
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a2c1dd396c9ac2d03cc16677a36d7e50b}{OnDeleteSynonym}}(wxCommandEvent\& event);}
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a5efcb8fed0be51f111e448ed04672294}{OnDeleteGraphs}}(wxCommandEvent\& event);}
+\DoxyCodeLine{162     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ae84b23ab13ee37afc3c4a95cee093d4c}{OnDeleteMaterial}}(wxCommandEvent\& event);}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_afd0b260673a5dcb0d87c0a27e6fbb727}{OnDeleteMeasurementTechniqueDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ade79c8453402a798fc205d5d52d0e91b}{OnDeleteMetadata}}(wxCommandEvent\& event);}
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7ea86d39e33b89de0a51fdb38b457833}{OnDeleteName}}(wxCommandEvent\& event);}
+\DoxyCodeLine{166     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7e5928222374ebe6e6a936e4b1f38eb4}{OnDeleteNotes}}(wxCommandEvent\& event);}
+\DoxyCodeLine{167     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a3aa8f84fbce84b3c6df8023016152a95}{OnDeleteParameterDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{168     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ac7834edab87e5ff41aa5b26f38442f31}{OnDeleteParentMaterial}}(wxCommandEvent\& event);}
+\DoxyCodeLine{169     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ad4e3520f01dd0011f9e5f83d15f4ab8f}{OnDeleteParentSubClass}}(wxCommandEvent\& event);}
+\DoxyCodeLine{170     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_aaad057ff7c1c7dba68f44ccdb4ae9d4f}{OnDeleteParameterValue}}(wxCommandEvent\& event);}
+\DoxyCodeLine{171     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_afa1929b9c76317063091f5ba1216b329}{OnDeletePhaseComposition}}(wxCommandEvent\& event);}
+\DoxyCodeLine{172     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a022d0d320884d2500b9a33b59e085d4a}{OnDeleteProcessingDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{173     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af680fdc28b476d0f95b324c9b61f87de}{OnDeleteResult}}(wxCommandEvent\& event);}
+\DoxyCodeLine{174     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a579a7219a7f6aeacce934a5f833fcbfb}{OnDeletePropertyData}}(wxCommandEvent\& event);}
+\DoxyCodeLine{175     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a681634317af3bfabc3dd9d2587132d46}{OnDeletePropertyDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{176     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a1850f3796a9f16cb24de80cdf1a94d9c}{OnDeleteQualifier}}(wxCommandEvent\& event);}
+\DoxyCodeLine{177     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a4d737df3804dbb581963d68ec8d94b64}{OnDeleteRelationship}}(wxCommandEvent\& event);}
+\DoxyCodeLine{178     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a2f8434b16f4452d43436038b8a0dcc29}{OnDeleteSource}}(wxCommandEvent\& event);}
+\DoxyCodeLine{179     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ad0632a9a6ea133f1980f4c1e19904add}{OnDeleteSourceDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{180     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a8f32de18f809b165eb724cef0271e741}{OnDeleteSpecification}}(wxCommandEvent\& event);}
+\DoxyCodeLine{181     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_ac99b3e709110270804a2e576e088d1f7}{OnDeleteSpecimenDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{182     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a6e848edd55348f4814a727cec00fe549}{OnDeleteTestConditionDetails}}(wxCommandEvent\& event);}
+\DoxyCodeLine{183     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a8a9ec522c39bfff8db84c442f717a4fc}{OnDeleteUncertainty}}(wxCommandEvent\& event);}
+\DoxyCodeLine{184     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a7093817f78cef134cfbfbdbc21255a55}{OnDeleteScale}}(wxCommandEvent\& event);}
+\DoxyCodeLine{185     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a476cf7cde005c1bcd0a27bedfeb108b9}{OnDeleteUnit}}(wxCommandEvent\& event);}
+\DoxyCodeLine{186     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a187f0221de71a313d963ba2f4cf7ffaa}{OnDeleteUnitless}}(wxCommandEvent\& event);}
+\DoxyCodeLine{187     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a5f75c68e488b12c97cac62073c32c785}{OnDeleteUnits}}(wxCommandEvent\& event);}
+\DoxyCodeLine{188     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a3a540449dc3900faf5bf2b5ecb271c34}{OnDeleteValue}}(wxCommandEvent\& event);}
+\DoxyCodeLine{190     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a802edc415c78144556fb905a1bcadcf0}{OnGotoParentMaterial}}(wxCommandEvent\& event);}
+\DoxyCodeLine{191     }
+\DoxyCodeLine{192     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af5d3806c21ecb3fabe4d22b84cbd9aee}{SetupMaterialBranch}}(\mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}} \&element,std::vector<Material*> \&materials); }
+\DoxyCodeLine{194     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_a77542cb8094eb2062c7626539ff7ac17}{UpdateCurrentPanel}}();}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{keyword}{template}< \textcolor{keyword}{class} MatML>}
+\DoxyCodeLine{197     MatML* GetMatML(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{bellshire::TreeCtrlSorted}}* TreeCtrl, wxTreeItemId* ItemId)}
+\DoxyCodeLine{198     \{}
+\DoxyCodeLine{199         \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}* treeitemdata = (\mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}*)(TreeCtrl-\/>GetItemData(*ItemId));}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         MatML* matml(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{202         \textcolor{keywordflow}{if} (treeitemdata) }
+\DoxyCodeLine{203             matml=GetMatML<MatML>(treeitemdata);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205         \textcolor{keywordflow}{return} matml;}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{keyword}{template}< \textcolor{keyword}{class} MatML>}
+\DoxyCodeLine{209     MatML* GetMatML(\mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}* treeitemdata)}
+\DoxyCodeLine{210     \{}
+\DoxyCodeLine{211         \textcolor{keyword}{const} boost::any anyptr(treeitemdata-\/>GetAnyMatMLDataPointer());}
+\DoxyCodeLine{212         MatML* matml = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{213         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{214             \textcolor{keywordflow}{if} (anyptr.type() == \textcolor{keyword}{typeid}(MatML*)) \{}
+\DoxyCodeLine{215                 matml = boost::any\_cast<MatML*>(anyptr);}
+\DoxyCodeLine{216             \}}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218         \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} boost::bad\_any\_cast\&) \{\}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220         \textcolor{keywordflow}{return} matml;}
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{keyword}{public}:}
+\DoxyCodeLine{224     }
+\DoxyCodeLine{225     \mbox{\hyperlink{classbellshire_1_1_material_frame_a0bfa828464e0eb1ab3fbfac8c86a7532}{MaterialFrame}}(wxWindow* parent,}
+\DoxyCodeLine{226         wxWindowID \textcolor{keywordtype}{id} = wxID\_MATERIAL,}
+\DoxyCodeLine{227         \textcolor{keyword}{const} wxString\& title = wxT(\textcolor{stringliteral}{"{}MatML Editer"{}}),}
+\DoxyCodeLine{228         \textcolor{keyword}{const} wxPoint\& pos = wxDefaultPosition,}
+\DoxyCodeLine{229         \textcolor{keyword}{const} wxSize\& size = wxSize(770, 628),}
+\DoxyCodeLine{230         \textcolor{keywordtype}{long} style = wxCAPTION | wxCLOSE\_BOX | wxMAXIMIZE\_BOX | wxMINIMIZE\_BOX | wxRESIZE\_BORDER | wxSYSTEM\_MENU | wxTAB\_TRAVERSAL}
+\DoxyCodeLine{231     );}
+\DoxyCodeLine{232     \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_material_frame_ab6db48d572175c3853fe2a1f8152b7ed}{\string~MaterialFrame}}();}
+\DoxyCodeLine{234     wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_material_frame_a97c73046bf351245f5def408b57caf55}{findTreeItem}}(wxTreeCtrl* pTreeCtrl, \textcolor{keyword}{const} wxTreeItemId\& root, \textcolor{keyword}{const} wxString\& text, \textcolor{keywordtype}{bool} bCaseSensitive, \textcolor{keywordtype}{bool} bExactMatch);}
+\DoxyCodeLine{235     wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_material_frame_a97c73046bf351245f5def408b57caf55}{findTreeItem}}(wxTreeCtrl* pTreeCtrl, \textcolor{keyword}{const} wxTreeItemId\& root, \textcolor{keyword}{const} \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}\& MatML\_Data);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordtype}{void} OnClassInsertRelatedElementsButton( wxCommandEvent\& event );}
+\DoxyCodeLine{238     \textcolor{keywordtype}{void} SetupTemplateDoc(\mbox{\hyperlink{class_material}{Material}}\& \mbox{\hyperlink{class_element}{Element}});}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{comment}{//MatML Template Utility}}
+\DoxyCodeLine{241     \textcolor{keywordtype}{void} LoadTemplateDoc(wxString\& TemplateName);}
+\DoxyCodeLine{242     \textcolor{keywordtype}{void} CopyTemplateMetadata();}
+\DoxyCodeLine{243     \textcolor{keywordtype}{void} CopyTemplateParameterValue(\mbox{\hyperlink{class_processing_details}{ProcessingDetails}}\& \mbox{\hyperlink{class_element}{Element}});}
+\DoxyCodeLine{244     \textcolor{keywordtype}{void} CopyTemplateProperty(\mbox{\hyperlink{class_component_details}{ComponentDetails}}\& \mbox{\hyperlink{class_element}{Element}}, \mbox{\hyperlink{class_component_details}{ComponentDetails}}\& TemplateElement);}
+\DoxyCodeLine{245     \textcolor{keywordtype}{void} CopyTemplateProcessingDetails(\mbox{\hyperlink{class_component_details}{ComponentDetails}}\& \mbox{\hyperlink{class_element}{Element}}, \mbox{\hyperlink{class_component_details}{ComponentDetails}}\& TemplateElement);}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{keywordtype}{void} CopyComponentNameToParentMaterial();}
+\DoxyCodeLine{248     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material_frame_af5382fe6ad5ba59a2899dc9bdf111dfe}{ReplaceIDwithUuid}}();}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \}\textcolor{comment}{//namespace bellshire}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_MaterialFrame\_\_}}
+
+\end{DoxyCode}

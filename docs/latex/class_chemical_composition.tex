@@ -1,0 +1,95 @@
+\hypertarget{class_chemical_composition}{}\doxysection{Chemical\+Composition Class Reference}
+\label{class_chemical_composition}\index{ChemicalComposition@{ChemicalComposition}}
+Inheritance diagram for Chemical\+Composition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_chemical_composition}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_aa1ce158ffa2e515987aff00bad9b6959}\label{class_chemical_composition_aa1ce158ffa2e515987aff00bad9b6959}} 
+typedef \mbox{\hyperlink{class_compound}{\+::\+Compound}} {\bfseries Compound\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a745e0819ac02e72af262d72d769c62c8}\label{class_chemical_composition_a745e0819ac02e72af262d72d769c62c8}} 
+typedef \+::xsd\+::cxx\+::tree\+::sequence$<$ \mbox{\hyperlink{class_compound}{Compound\+\_\+type}} $>$ {\bfseries Compound\+\_\+sequence}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a73b19cdea148038ff06d0ec1e70f9446}\label{class_chemical_composition_a73b19cdea148038ff06d0ec1e70f9446}} 
+typedef Compound\+\_\+sequence\+::iterator {\bfseries Compound\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a958b8fdc9a0a27c5184911eaff9e0dc4}\label{class_chemical_composition_a958b8fdc9a0a27c5184911eaff9e0dc4}} 
+typedef Compound\+\_\+sequence\+::const\+\_\+iterator {\bfseries Compound\+\_\+const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a96c9ec370b17114d48a66ad761ec54c8}\label{class_chemical_composition_a96c9ec370b17114d48a66ad761ec54c8}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_compound}{Compound\+\_\+type}}, char $>$ {\bfseries Compound\+\_\+traits}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a083f8afae64631da084ec21e490eded5}\label{class_chemical_composition_a083f8afae64631da084ec21e490eded5}} 
+typedef \mbox{\hyperlink{class_element}{\+::\+Element}} {\bfseries Element\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a1309c034d074669a794f05096b7dd317}\label{class_chemical_composition_a1309c034d074669a794f05096b7dd317}} 
+typedef \+::xsd\+::cxx\+::tree\+::sequence$<$ \mbox{\hyperlink{class_element}{Element\+\_\+type}} $>$ {\bfseries Element\+\_\+sequence}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ab524201c359b208dcc938d597e005bd2}\label{class_chemical_composition_ab524201c359b208dcc938d597e005bd2}} 
+typedef Element\+\_\+sequence\+::iterator {\bfseries Element\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ab0f60c45230a6068b60087d44400de1a}\label{class_chemical_composition_ab0f60c45230a6068b60087d44400de1a}} 
+typedef Element\+\_\+sequence\+::const\+\_\+iterator {\bfseries Element\+\_\+const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_aaf44b25845279b037757ad806ef9ee4c}\label{class_chemical_composition_aaf44b25845279b037757ad806ef9ee4c}} 
+typedef \+::xsd\+::cxx\+::tree\+::traits$<$ \mbox{\hyperlink{class_element}{Element\+\_\+type}}, char $>$ {\bfseries Element\+\_\+traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a2d4d68c42696e9085c5199860407eb90}\label{class_chemical_composition_a2d4d68c42696e9085c5199860407eb90}} 
+const Compound\+\_\+sequence \& {\bfseries Compound} () const
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ab5caeb14518459e8c125475606ef4957}\label{class_chemical_composition_ab5caeb14518459e8c125475606ef4957}} 
+Compound\+\_\+sequence \& {\bfseries Compound} ()
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a9c6ec3a72cbb9ff939dbac56b5354280}\label{class_chemical_composition_a9c6ec3a72cbb9ff939dbac56b5354280}} 
+void {\bfseries Compound} (const Compound\+\_\+sequence \&s)
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a179572988d180429294e915fbe8570c9}\label{class_chemical_composition_a179572988d180429294e915fbe8570c9}} 
+const Element\+\_\+sequence \& {\bfseries Element} () const
+\item 
+\mbox{\Hypertarget{class_chemical_composition_add35215bb9d0998ce210bcab186eec6f}\label{class_chemical_composition_add35215bb9d0998ce210bcab186eec6f}} 
+Element\+\_\+sequence \& {\bfseries Element} ()
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ae9384088febc953550a026126083ef8d}\label{class_chemical_composition_ae9384088febc953550a026126083ef8d}} 
+void {\bfseries Element} (const Element\+\_\+sequence \&s)
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ae4e6851a2386cd5c6bcb5301b39da836}\label{class_chemical_composition_ae4e6851a2386cd5c6bcb5301b39da836}} 
+{\bfseries Chemical\+Composition} (const \+::xercesc\+::\+DOMElement \&e, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ad731037c43c5da73d5702e50477d2caf}\label{class_chemical_composition_ad731037c43c5da73d5702e50477d2caf}} 
+{\bfseries Chemical\+Composition} (const \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} \&x, \+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0)
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a7f4a497174e341e742897dd6d05023e6}\label{class_chemical_composition_a7f4a497174e341e742897dd6d05023e6}} 
+virtual \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} $\ast$ {\bfseries \+\_\+clone} (\+::xml\+\_\+schema\+::flags f=0, \+::xml\+\_\+schema\+::container $\ast$c=0) const
+\item 
+\mbox{\Hypertarget{class_chemical_composition_ab38138e1352cc2bce0af7804520b61e5}\label{class_chemical_composition_ab38138e1352cc2bce0af7804520b61e5}} 
+\mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_chemical_composition}{Chemical\+Composition}} \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a352404bff0b5da1c3dadb61c229dc3aa}\label{class_chemical_composition_a352404bff0b5da1c3dadb61c229dc3aa}} 
+void {\bfseries parse} (\+::xsd\+::cxx\+::xml\+::dom\+::parser$<$ char $>$ \&, \+::xml\+\_\+schema\+::flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_aca085669ebfdb8b32a9c34ada40793c0}\label{class_chemical_composition_aca085669ebfdb8b32a9c34ada40793c0}} 
+Compound\+\_\+sequence {\bfseries Compound\+\_\+}
+\item 
+\mbox{\Hypertarget{class_chemical_composition_a4f8ec24892104de26a8aba94172513be}\label{class_chemical_composition_a4f8ec24892104de26a8aba94172513be}} 
+Element\+\_\+sequence {\bfseries Element\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/include/matml31.\+hxx\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editer/src/matml31.\+cxx\end{DoxyCompactItemize}
