@@ -183,6 +183,8 @@ void ParentMaterial_GUI_Base::UpdateFilterComboBox(::boost::shared_ptr<MatML_Doc
 	::std::list<Name*> classNames(Utilities::GetMatMLDocClassNames(MatMLDoc));
 	wxArrayString wxClassNames;
 
+	wxClassNames.Add("");//Add a blank for removing class selection
+
 	for (::std::list<Name*>::iterator iterClass(classNames.begin()); iterClass != classNames.end(); ++iterClass) {
 		Name* name(*iterClass);
 		const xml_schema::string& tmp(*name);
@@ -257,12 +259,14 @@ wxTreeItemId ParentMaterial_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLT
 		}
 	}
 
+	MatMLTreeItemData* data = new MatMLTreeItemData(&Element);
+
 	wxTreeItemId CurrentId;
 
 	if (PreviousId.IsOk())
-		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, _std2wx(label), -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, _std2wx(label), -1, -1, data);
 	else
-		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, _std2wx(label), -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, _std2wx(label), -1, -1, data);
 
 	//Setup MatML Attribute
 	//SetupId();
@@ -404,8 +408,8 @@ void ParentMaterial_GUI::OnParentMaterialClassFilterComboBox(wxCommandEvent& eve
 
 		if (m_ParentMaterialIDChoice->SetStringSelection(Selection) == false) {
 			std::string msg("ParentMaterial ID Filtered Out.\nPlease select another ParentMaterial ID, \nOR adjust the filters before poceeding.\nNote: Leaving ParentMaterial ID blank will create parsing errors!");
-			wxMessageDialog* Dialog = new wxMessageDialog(NULL, msg, _("MatML Message"), wxOK, wxDefaultPosition);
-			Dialog->ShowModal();
+			wxMessageDialog Dialog(NULL, msg, _("MatML Message"), wxOK, wxDefaultPosition);
+			Dialog.ShowModal();
 		}
 	}
 	else{ 
