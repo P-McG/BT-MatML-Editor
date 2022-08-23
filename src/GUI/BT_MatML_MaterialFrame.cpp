@@ -770,7 +770,7 @@ void bellshire::MaterialFrame::OnAbout(wxCommandEvent& WXUNUSED(event))
 {
     wxAboutDialogInfo info;
     info.SetName("BT-MatML-Editor");
-    info.SetVersion("0.1.2","version 0.1.2");
+    info.SetVersion("0.1.3","version 0.1.3");
     info.SetDescription(_("Editor for the XML MatML Schema"));
     info.SetCopyright("(C) 2022-2023");
     info.SetWebSite("https://p-mcg.github.io/BT-MatML-Editor/");
@@ -824,6 +824,7 @@ void bellshire::MaterialFrame::OnElementCollapsed(wxTreeEvent& event)
     m_MatMLTreeCtrl->Layout();
 }
 
+
 /// <summary>
 /// On MatML Item Selection
 /// Event Handlers functions
@@ -832,6 +833,8 @@ void bellshire::MaterialFrame::OnElementCollapsed(wxTreeEvent& event)
 void bellshire::MaterialFrame::OnMatMLItemMenu( wxTreeEvent& event )
 {
     wxTreeItemId itemId = event.GetItem();
+    m_MatMLTreeCtrl->SelectItem(itemId);
+
     MatMLTreeItemData *item = itemId.IsOk() ? (MatMLTreeItemData *)m_MatMLTreeCtrl->GetItemData(itemId)
                                          : NULL;
     wxPoint clientpt = event.GetPoint();

@@ -66,6 +66,7 @@ public:
 	void OnElementActivated(wxTreeEvent& event);/*!< Provides Calls for the updating the associated MatML GUI. */
 	void OnElementExpanded(wxTreeEvent& event);/*!< On element expansion sets the layout */
 	void OnElementCollapsed(wxTreeEvent& event);/*!< On element collapsed sets the layout */
+	void OnLeftDown(wxTreeEvent& event);/*!< On element collapsed sets the layout */
 
 	void OnMatMLItemMenu(wxTreeEvent& event);/*!< On MatML item menu selection shows the GUI*/
 

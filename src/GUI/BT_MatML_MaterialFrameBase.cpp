@@ -197,5 +197,6 @@ void MaterialFrameBase::SetTreeCtrlConnect()
 	m_MatMLTreeCtrl->Connect(wxEVT_COMMAND_TREE_ITEM_EXPANDED, wxTreeEventHandler(MaterialFrameBase::OnElementExpanded), NULL, this);
 	m_MatMLTreeCtrl->Connect(wxEVT_COMMAND_TREE_ITEM_MENU, wxTreeEventHandler(MaterialFrameBase::OnMatMLItemMenu), NULL, this);
 	m_MatMLTreeCtrl->Connect(wxEVT_COMMAND_TREE_SEL_CHANGED, wxTreeEventHandler(MaterialFrameBase::OnElementActivated), NULL, this);
+	
 }
 

@@ -57,6 +57,7 @@ BT-MatML-Editor Windows Build
  - Set the "Where is the source code" directory to the BT-MatML-Editor root.
 - Set the "Where to build the binaries" directory to the BT-MatML-Editor root/build
 - Add the following entries (change paths depending on your installation):
+  - CMAKE_BUILD_TYPE STREQUAL "Release"
   - XercesC_ROOT PATH "C:/Program Files/xerces-c" 
   - XSD_ROOT PATH "C:/Program Files/code_synthesis_xsd/xsd-4.0.0-i686-windows/bin" 
   - wxWidgets_ROOT PATH "C:/Program Files/wxWidgets/wxWidgets-3.2.0"
@@ -80,7 +81,7 @@ To run:
 - ./BT-MatML-Editor
 
 Package generation:
-- dir ${source}/build/win64
+- cd ${source}/build/win64
 - cpack
 
 Package Checksum Values in Windows 10
@@ -97,6 +98,12 @@ To build:
 To run:
 - BT-MatML-Editor
 
+Package generation:
+- cd ${source}/build/linux
+- cpack
+
+Package Checksum Values in Linux
+- sha1sum  BT-MatML-Editor-0.1.2-Linux.tar.gz 
 
 Programming Guide 
 =================

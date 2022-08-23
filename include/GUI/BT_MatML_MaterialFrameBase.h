@@ -147,7 +147,6 @@ namespace bellshire
 		virtual void OnElementCollapsed(wxTreeEvent& event) { event.Skip(); }/*!<Virtual event handlers for On Element Colapse wxTreeCtrl Select*/
 		virtual void OnElementExpanded(wxTreeEvent& event) { event.Skip(); }/*!<Virtual event handlers for On Element Expanded wxTreeCtrl Select*/
 		virtual void OnMatMLItemMenu(wxTreeEvent& event) { event.Skip(); }/*!<Virtual event handlers for On MatML Item wxTreeCtrl Select*/
-
 	public:
 
 		MaterialFrameBase(wxWindow* parent,

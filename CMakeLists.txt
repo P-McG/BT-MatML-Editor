@@ -9,8 +9,9 @@
 cmake_minimum_required(VERSION 3.24)
 
 # set the project name
-project(BT-MatML-Editor VERSION 0.1.2)
+project(BT-MatML-Editor VERSION 0.1.3)
 
+set(CMAKE_BUILD_TYPE)
 set(CMAKE_DEBUG_POSTFIX d)
 
 # Packaging support
@@ -59,13 +60,13 @@ include_directories(${Boost_INCLUDE_DIRS})
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
   set(XercesC_LIBRARY_DIR "${XercesC_ROOT}/lib")
 
-# the following doesnt work in multi config generators (like visual studio)
-#  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-#    set(XercesC_LIBRARY "xerces-c_3D")
-#  else ()
-#    set(XercesC_LIBRARY "xerces-c_3")
-#  endif ()
-set(XercesC_LIBRARY "xerces-c_3D")
+# the following doesnt work in multi config generators (like visual studio), 
+# unless it is assigned explicitly
+  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(XercesC_LIBRARY "xerces-c_3D")
+  else ()
+    set(XercesC_LIBRARY "xerces-c_3")
+  endif ()
 
   set(BUILD_SHARED_LIBS OFF)
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
