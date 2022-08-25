@@ -144,6 +144,8 @@ protected:
 	void OnDeleteChemicalComposition(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteChemicalElementSymbol(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteClass(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
+	void OnDeleteSubclass(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
+	void OnDeleteSubclass1(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteComponentDetails(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteCompound(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteConcentration(wxCommandEvent& event);/*! Call parent's to delete the MatML data */

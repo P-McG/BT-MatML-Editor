@@ -32,6 +32,8 @@
 #include "BT_MatML_ChemicalComposition_GUI.h"
 #include "BT_MatML_ChemicalElementSymbol_GUI.h"
 #include "BT_MatML_Class_GUI.h"
+#include "BT_MatML_Subclass_GUI.h"
+#include "BT_MatML_Subclass1_GUI.h"
 #include "BT_MatML_ParentMaterial_GUI.h"
 #include "BT_MatML_ParentSubClass_GUI.h"
 #include "BT_MatML_ComponentDetails_GUI.h"
@@ -94,6 +96,8 @@ namespace bellshire {
 	class ChemicalComposition_GUI;
 	class ChemicalElementSymbol_GUI;
 	class Class_GUI;
+	class Subclass_GUI;
+	class Subclass1_GUI;
 	class ParentMaterial_GUI;
 	class ParentSubClass_GUI;
 	class ComponentDetails_GUI;
@@ -154,6 +158,7 @@ namespace bellshire {
 	class GUI
 	{
 	public:
+		static const unsigned m_nclasses=63;
 		Intro_GUI* m_Intro_GUI;
 		MatML_Doc_GUI* m_MatML_Doc_GUI;
 		Material_GUI* m_Material_GUI;
@@ -165,6 +170,8 @@ namespace bellshire {
 		ChemicalComposition_GUI* m_ChemicalComposition_GUI;
 		ChemicalElementSymbol_GUI* m_ChemicalElementSymbol_GUI;
 		Class_GUI* m_Class_GUI;
+		Subclass_GUI* m_Subclass_GUI;
+		Subclass1_GUI* m_Subclass1_GUI;
 		ParentMaterial_GUI* m_ParentMaterial_GUI;
 		ParentSubClass_GUI* m_ParentSubClass_GUI;
 		ComponentDetails_GUI* m_ComponentDetails_GUI;

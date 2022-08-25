@@ -128,10 +128,10 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 	fgSizer125->Fit( m_panel68 );
 	m_MultiPanel = new wxPanel( m_splitter1, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
 
-	wxFlexGridSizer* fgSizer124 = new wxFlexGridSizer( 1, 62, 0, 0 );
+	wxFlexGridSizer* fgSizer124 = new wxFlexGridSizer(1, GUI::m_nclasses+1 , 0, 0);
 
 	///Set growable columns for the MatML_GUI
-	for (size_t i = 0; i < 62; i++)
+	for (size_t i = 0; i < fgSizer124->GetCols(); i++)
 		fgSizer124->AddGrowableCol( i );
 
 	fgSizer124->AddGrowableRow( 0 );

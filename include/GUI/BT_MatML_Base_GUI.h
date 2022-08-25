@@ -40,11 +40,26 @@ namespace bellshire {
 		MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
 	}
 
+#define ON_PARENT_STRONGTYPE_INSERT_CONT_CHILD(parent,child) \
+    parent* element = MatML_Base_GUI::GetSelMatML<parent>(m_MatMLTreeCtrl); \
+    if (element) { \
+        MatML_Base_GUI::InsertContChild<child>((element->t)->child()); \
+        MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl); \
+    }
+
 // Note: PARENT is Selected in the menu 
 #define ON_PARENT_INSERT_ITER_CONT_CHILD(parent,child) \
 	parent* element = MatML_Base_GUI::GetSelMatML<parent>(m_MatMLTreeCtrl);\
 if (element) {\
    	MatML_Base_GUI::InsertSeqContChild<child>(element->child());\
+	MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+}
+
+    // Note: PARENT is Selected in the menu 
+#define ON_PARENT_STRONGTYPE_INSERT_ITER_CONT_CHILD(parent,child) \
+	parent* element = MatML_Base_GUI::GetSelMatML<parent>(m_MatMLTreeCtrl);\
+if (element) {\
+   	MatML_Base_GUI::InsertSeqContChild<child>(element->t->child());\
 	MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
 }
 
@@ -67,11 +82,29 @@ if (element) {\
 	}
 
 // Note: PARENT is Selected in the menu 
+#define ON_PARENT_STRONGTYPE_PASTE_CONT_CHILD(parent,child) \
+	parent* element = MatML_Base_GUI::GetSelMatML< parent>(m_MatMLTreeCtrl);\
+	child* copy_element = boost::any_cast< child* >(m_MatMLItemToCopy);\
+	if (element && copy_element) {\
+		PasteContChild(copy_element, (element->t)->child());\
+		MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+	}
+
+// Note: PARENT is Selected in the menu 
 #define ON_PARENT_PASTE_ITER_CONT_CHILD(parent,child) \
 	parent* element = MatML_Base_GUI::GetSelMatML<parent>(m_MatMLTreeCtrl);\
 	child* copy_element = boost::any_cast<child* >(m_MatMLItemToCopy);\
 	if (element && copy_element) {\
 		PasteSeqContChild(copy_element, element->child());\
+		MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+	}
+
+// Note: PARENT is Selected in the menu 
+#define ON_PARENT_STRONGTYPE_PASTE_ITER_CONT_CHILD(parent,child) \
+	parent* element = MatML_Base_GUI::GetSelMatML<parent>(m_MatMLTreeCtrl);\
+	child* copy_element = boost::any_cast<child* >(m_MatMLItemToCopy);\
+	if (element && copy_element) {\
+		PasteSeqContChild(copy_element, (element->t)->child());\
 		MatML_Base_GUI::SetupSel<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
 	}
 
@@ -92,6 +125,14 @@ if (element) {\
 	}
 
 // Note: CHILD is Selected in the menu 
+#define ON_PARENT_STRONGTYPE_DELETE_CONT_CHILD(parent,child) \
+	parent* element = MatML_Base_GUI::GetSelParentMatML<parent>(m_MatMLTreeCtrl);\
+	if (element) {\
+		MatML_Base_GUI::DeleteContChild((element->t)->child());\
+		MatML_Base_GUI::SetupSelParent<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+	}
+
+// Note: CHILD is Selected in the menu 
 #define ON_PARENT_DELETE_ITER_CONT_CHILD(parent,child) \
 	child* element = MatML_Base_GUI::GetSelMatML<child>(m_MatMLTreeCtrl);\
 	parent* elementparent = MatML_Base_GUI::GetSelParentMatML<parent>(m_MatMLTreeCtrl);\
@@ -100,7 +141,23 @@ if (element) {\
 		MatML_Base_GUI::SetupSelParent<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
 	}
 
+// Note: CHILD is Selected in the menu 
+#define ON_PARENT_DELETE_ITER_CONT_CHILD_STRONGTYPE(parent,child) \
+	child* element = MatML_Base_GUI::GetSelMatML<child>(m_MatMLTreeCtrl);\
+	parent* elementparent = MatML_Base_GUI::GetSelParentMatML<parent>(m_MatMLTreeCtrl);\
+	if (element && elementparent) {\
+		MatML_Base_GUI::DeleteSeqContChild(element->t, elementparent->child());\
+		MatML_Base_GUI::SetupSelParent<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+	}
 
+// Note: CHILD is Selected in the menu 
+#define ON_PARENT_STRONGTYPE_DELETE_ITER_CONT_CHILD(parent,child) \
+	child* element = MatML_Base_GUI::GetSelMatML<child>(m_MatMLTreeCtrl);\
+	parent* elementparent = MatML_Base_GUI::GetSelParentMatML<parent>(m_MatMLTreeCtrl);\
+	if (element && elementparent) {\
+		MatML_Base_GUI::DeleteSeqContChild(element, (elementparent->t)->child());\
+		MatML_Base_GUI::SetupSelParent<parent, parent ##_GUI>(m_MatMLTreeCtrl);\
+	}
 
     class MatML_Base_GUI : public wxEvtHandler, public Utilities
     {
@@ -327,7 +384,7 @@ if (element) {\
         {
             auto& cont(MatML_Cont);
 
-            const auto& iter = find(cont.begin(), cont.end(), MatML);
+            auto iter = find(cont.begin(), cont.end(), MatML);
             if (iter != cont.end()) 
                 cont.erase(iter);
         }

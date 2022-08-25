@@ -114,14 +114,14 @@ wxTreeItemId ComponentDetails_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatM
 				Class_GUI::SetupMatMLTreeCtrl(MatMLTreeCtrl, CurrentId, *iter, wxTreeItemId());
 	}
 
-	////Setup Element Subclass
-	//{
-	//	ComponentDetails::Subclass_sequence& cont(Element.Subclass());
-	//	ComponentDetails::Subclass_iterator iter(cont.begin());
-	//	if (!cont.empty())
-	//		for (; iter != cont.end(); ++iter)
-	//			SubClass_GUI::SetupMatMLTreeCtrl(MatMLTreeCtrl, CurrentId, *iter, wxTreeItemId());
-	//}
+	//Setup Element Subclass
+	{
+		ComponentDetails::Subclass_sequence& cont(Element.Subclass());
+		ComponentDetails::Subclass_iterator iter(cont.begin());
+		if (!cont.empty())
+			for (; iter != cont.end(); ++iter)
+				Subclass1_GUI::SetupMatMLTreeCtrl(MatMLTreeCtrl, CurrentId, *iter, wxTreeItemId());
+	}
 
 	//Setup Element Specification
 	{
@@ -251,7 +251,16 @@ void ComponentDetails_GUI::SetMatMLItemToCopy(const ::boost::any& MatMLItemToCop
 
 void ComponentDetails_GUI::OnInsertName(wxCommandEvent& event) { ON_PARENT_INSERT_CHILD(ComponentDetails, Name) }
 void ComponentDetails_GUI::OnInsertClass(wxCommandEvent& event) { ON_PARENT_INSERT_ITER_CONT_CHILD(ComponentDetails, Class) }
-//void ComponentDetails_GUI::OnInsertSubclass(wxCommandEvent& event) { ON_PARENT_INSERT_ITER_CONT_CHILD(ComponentDetails, Subclass) }
+void ComponentDetails_GUI::OnInsertSubclass1(wxCommandEvent& event) 
+{ 
+	//ON_PARENT_INSERT_ITER_CONT_CHILD(ComponentDetails, Subclass1 ) //This doesn't work because function name differs from child class name.
+	//#define ON_PARENT_INSERT_ITER_CONT_CHILD(parent,child) 
+	ComponentDetails* element = MatML_Base_GUI::GetSelMatML<ComponentDetails>(m_MatMLTreeCtrl);
+	if (element) {
+   		MatML_Base_GUI::InsertSeqContChild<Subclass1>(element->Subclass());//Note: function name differs from child class name
+		MatML_Base_GUI::SetupSel<ComponentDetails, ComponentDetails_GUI>(m_MatMLTreeCtrl);
+	}
+}
 void ComponentDetails_GUI::OnInsertSpecification(wxCommandEvent& event) { ON_PARENT_INSERT_ITER_CONT_CHILD(ComponentDetails, Specification) }
 void ComponentDetails_GUI::OnInsertSource(wxCommandEvent& event) { ON_PARENT_INSERT_CONT_CHILD(ComponentDetails, Source) }
 void ComponentDetails_GUI::OnInsertForm(wxCommandEvent& event) { ON_PARENT_INSERT_CONT_CHILD(ComponentDetails, Form) }
@@ -268,7 +277,7 @@ void ComponentDetails_GUI::OnInsertComponentDetails(wxCommandEvent& event) {
 	try {
 		ComponentDetails* const Element = boost::any_cast<ComponentDetails* const>(item->GetAnyMatMLDataPointer());
 		if (Element != 0) {
-			ComponentDetails::ComponentDetails1_sequence& cont(Element->ComponentDetails1());
+			ComponentDetails::ComponentDetails1_sequence& cont(Element->ComponentDetails1());//Note: THE DIFFERENCE IN FUNCTION NAME
 			cont.push_back(Default<::ComponentDetails>());
 			ComponentDetails_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemId, cont.back(), wxTreeItemId());
 			return;
@@ -279,6 +288,17 @@ void ComponentDetails_GUI::OnInsertComponentDetails(wxCommandEvent& event) {
 
 void ComponentDetails_GUI::OnDeleteName(wxCommandEvent& event) {ON_PARENT_DELETE_CHILD(ComponentDetails, Name)}
 void ComponentDetails_GUI::OnDeleteClass(wxCommandEvent& event) {ON_PARENT_DELETE_ITER_CONT_CHILD(ComponentDetails, Class)}
+void ComponentDetails_GUI::OnDeleteSubclass1(wxCommandEvent& event)
+{
+	//ON_PARENT_DELETE_ITER_CONT_CHILD_STRONGTYPE(ComponentDetails, Subclass)
+	//#define ON_PARENT_DELETE_ITER_CONT_CHILD_STRONGTYPE(parent,child) Doesn't work because ComponentDetails doesn't have a function Subclass1
+	Subclass1* element = MatML_Base_GUI::GetSelMatML<Subclass1>(m_MatMLTreeCtrl);
+	ComponentDetails* elementparent = MatML_Base_GUI::GetSelParentMatML<ComponentDetails>(m_MatMLTreeCtrl);
+	if (element && elementparent) {
+		MatML_Base_GUI::DeleteSeqContChild(element->t, elementparent->Subclass());//Note: ComponentDetails doesn't have a function Subclass1
+		MatML_Base_GUI::SetupSelParent<ComponentDetails, ComponentDetails_GUI>(m_MatMLTreeCtrl);
+	}
+}
 void ComponentDetails_GUI::OnDeleteAssociationDetails(wxCommandEvent& event) { ON_PARENT_DELETE_ITER_CONT_CHILD(ComponentDetails, AssociationDetails) }
 void ComponentDetails_GUI::OnDeleteCharacterization(wxCommandEvent& event) {ON_PARENT_DELETE_CONT_CHILD(ComponentDetails, Characterization)}
 //void ComponentDetails_GUI::OnDeleteComponentDetails(wxCommandEvent& event) {ON_PARENT_DELETE_ITER_CONT_CHILD(ComponentDetails,ComponentDetails)}
@@ -290,7 +310,19 @@ void ComponentDetails_GUI::OnDeleteSource(wxCommandEvent& event) {ON_PARENT_DELE
 
 void ComponentDetails_GUI::OnPasteName(wxCommandEvent& event) { ON_PARENT_PASTE_CHILD(ComponentDetails, Name) }
 void ComponentDetails_GUI::OnPasteClass(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(ComponentDetails, Class) }
-//void ComponentDetails_GUI::OnPasteSubclass(wxCommandEvent& event){ON_PARENT_PASTE_ITER_CONT_CHILD(ComponentDetails,Subclass)}
+void ComponentDetails_GUI::OnPasteSubclass(wxCommandEvent& event)
+{
+	//ON_PARENT_PASTE_ITER_CONT_CHILD(ComponentDetails,Subclass1)//This doesn't work because function name differs from child class name.
+	//#define ON_PARENT_PASTE_ITER_CONT_CHILD(parent,child) 
+	ComponentDetails* element = MatML_Base_GUI::GetSelMatML<ComponentDetails>(m_MatMLTreeCtrl);
+	Subclass1* copy_element = boost::any_cast<Subclass1* >(m_MatMLItemToCopy);
+	if (element && copy_element) {
+		PasteSeqContChild(copy_element, element->Subclass());//Note: function name differs from child class name.
+		MatML_Base_GUI::SetupSel<ComponentDetails, ComponentDetails_GUI>(m_MatMLTreeCtrl);
+	}
+
+}
+
 void ComponentDetails_GUI::OnPasteSpecification(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(ComponentDetails, Specification) }
 void ComponentDetails_GUI::OnPasteSource(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(ComponentDetails, Source) }
 void ComponentDetails_GUI::OnPasteForm(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(ComponentDetails, Form) }

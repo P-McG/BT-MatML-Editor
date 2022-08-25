@@ -64,7 +64,7 @@ namespace bellshire {
         void SetConnect();
         virtual void OnInsertName(wxCommandEvent& event) { event.Skip(); }
         virtual void OnInsertClass(wxCommandEvent& event) { event.Skip(); }
-        //virtual void OnInsertSubclass(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnInsertSubclass1(wxCommandEvent& event) { event.Skip(); }
         virtual void OnInsertSpecification(wxCommandEvent& event) { event.Skip(); }
         virtual void OnInsertSource(wxCommandEvent& event) { event.Skip(); }
         virtual void OnInsertForm(wxCommandEvent& event) { event.Skip(); }
@@ -76,6 +76,7 @@ namespace bellshire {
 
         virtual void OnDeleteName(wxCommandEvent& event) { event.Skip(); }
         virtual void OnDeleteClass(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnDeleteSubclass1(wxCommandEvent& event) { event.Skip(); }
         virtual void OnDeleteAssociationDetails(wxCommandEvent& event) { event.Skip(); }
         virtual void OnDeleteCharacterization(wxCommandEvent& event) { event.Skip(); }
         //virtual void OnDeleteComponentDetails(wxCommandEvent& event) { event.Skip(); }
@@ -87,7 +88,7 @@ namespace bellshire {
 
         virtual void OnPasteName(wxCommandEvent& event) { event.Skip(); }
         virtual void OnPasteClass(wxCommandEvent& event) { event.Skip(); }
-        //virtual void OnPasteSubclass(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnPasteSubclass1(wxCommandEvent& event) { event.Skip(); }
         virtual void OnPasteSpecification(wxCommandEvent& event) { event.Skip(); }
         virtual void OnPasteSource(wxCommandEvent& event) { event.Skip(); }
         virtual void OnPasteForm(wxCommandEvent& event) { event.Skip(); }
@@ -124,7 +125,7 @@ namespace bellshire {
         //Overwrites the base class Event handler functions
         void OnInsertName(wxCommandEvent& event);
         void OnInsertClass(wxCommandEvent& event);
-        //void OnInsertSubclass(wxCommandEvent& event);
+        void OnInsertSubclass1(wxCommandEvent& event);
         void OnInsertSpecification(wxCommandEvent& event);
         void OnInsertSource(wxCommandEvent& event);
         void OnInsertForm(wxCommandEvent& event);
@@ -136,6 +137,7 @@ namespace bellshire {
 
         void OnDeleteName(wxCommandEvent& event);
         void OnDeleteClass(wxCommandEvent& event);
+        void OnDeleteSubclass1(wxCommandEvent& event);
         void OnDeleteAssociationDetails(wxCommandEvent& event);
         void OnDeleteCharacterization(wxCommandEvent& event);
         //void OnDeleteComponentDetails(wxCommandEvent& event);
@@ -147,7 +149,7 @@ namespace bellshire {
 
         void OnPasteName(wxCommandEvent& event);
         void OnPasteClass(wxCommandEvent& event);
-        //void OnPasteSubclass(wxCommandEvent& event);
+        void OnPasteSubclass(wxCommandEvent& event);
         void OnPasteSpecification(wxCommandEvent& event);
         void OnPasteSource(wxCommandEvent& event);
         void OnPasteForm(wxCommandEvent& event);

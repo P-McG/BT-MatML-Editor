@@ -86,6 +86,20 @@ public:
 };
 
 template<>
+class Default<Subclass> :public BulkDetails::Subclass_type
+{
+public:
+	Default<bellshire::Subclass>() {};
+};
+
+template<>
+class Default<Subclass1> :public ComponentDetails::Subclass_type
+{
+public:
+	Default<bellshire::Subclass1>() {};
+};
+
+template<>
 class Default<ParentMaterial>:public ParentMaterial
 {
 public:

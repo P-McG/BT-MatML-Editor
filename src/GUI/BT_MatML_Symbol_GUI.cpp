@@ -75,7 +75,7 @@ wxNotebook* Symbol_GUI_Base::Create(wxWindow* parent, wxTextCtrl*& SymbolSubScri
 	MatMLInfo_GUI matMLInfo_GUI(SymbolNotebook,
 		wxT("*************** Symbol *************************\n\nSymbol contains the symbol for the chemical element, which is one\namong those enumerated by the ChemicalSymbol datatype.\nSymbol has one optional attribute, subscript, for indicating the \nsubscript (formula units) of the chemical element.\t"));
 
-	bool b, b_dflt(false);//temps
+	bool b_dflt(false);//temps
 	wxConfig(wxT("BTMatML")).Read(wxT("/General/MatMLDataSelection"), &b_dflt);
 
 	SymbolNotebook->AddPage(SymbolPanel, wxT("MatML Data."), b_dflt);

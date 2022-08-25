@@ -83,6 +83,7 @@ namespace bellshire {
 	STRONG_TYPEDEF(ProcessingDetails::Result_type, Result);
 	STRONG_TYPEDEF(Class::ParentSubClass_type, ParentSubClass);
 	STRONG_TYPEDEF(Form::Description_type, Description); // Form::Description is Name.  Use Name instead;
-
+	STRONG_TYPEDEF(BulkDetails::Subclass_type, Subclass);
+	STRONG_TYPEDEF(ComponentDetails::Subclass_type, Subclass1);
 
 }//namespace bellshire

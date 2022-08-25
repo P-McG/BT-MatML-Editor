@@ -19,6 +19,8 @@ GUI::GUI()
 	m_ChemicalComposition_GUI(nullptr),
 	m_ChemicalElementSymbol_GUI(nullptr),
 	m_Class_GUI(nullptr),
+	m_Subclass_GUI(nullptr),
+	m_Subclass1_GUI(nullptr),
 	m_ParentMaterial_GUI(nullptr),
 	m_ParentSubClass_GUI(nullptr),
 	m_ComponentDetails_GUI(nullptr),
@@ -88,6 +90,8 @@ GUI::GUI(wxWindow* parent)
 	m_ChemicalComposition_GUI(new ChemicalComposition_GUI(parent)),
 	m_ChemicalElementSymbol_GUI(new ChemicalElementSymbol_GUI(parent)),
 	m_Class_GUI(new Class_GUI(parent)),
+	m_Subclass_GUI(new Subclass_GUI(parent)),
+	m_Subclass1_GUI(new Subclass1_GUI(parent)),
 	m_ParentMaterial_GUI(new ParentMaterial_GUI(parent)),
 	m_ParentSubClass_GUI(new ParentSubClass_GUI(parent)),
 	m_ComponentDetails_GUI(new ComponentDetails_GUI(parent)),
@@ -157,6 +161,8 @@ GUI::~GUI()
 	delete m_ChemicalComposition_GUI;
 	delete m_ChemicalElementSymbol_GUI;
 	delete m_Class_GUI;
+	delete m_Subclass_GUI;
+	delete m_Subclass1_GUI;
 	delete m_ParentMaterial_GUI;
 	delete m_ParentSubClass_GUI;
 	delete m_ComponentDetails_GUI;
@@ -230,6 +236,8 @@ void GUI::SetSizer(wxFlexGridSizer*& fgSizer)
 	fgSizer->Add(m_ChemicalComposition_GUI->get(), 1, wxEXPAND | wxALL, 5);
 	fgSizer->Add(m_ChemicalElementSymbol_GUI->get(), 1, wxEXPAND | wxALL, 5);
 	fgSizer->Add(m_Class_GUI->get(), 1, wxEXPAND | wxALL, 5);
+	fgSizer->Add(m_Subclass_GUI->get(), 1, wxEXPAND | wxALL, 5);
+	fgSizer->Add(m_Subclass1_GUI->get(), 1, wxEXPAND | wxALL, 5);
 	fgSizer->Add(m_ParentMaterial_GUI->get(), 1, wxEXPAND | wxALL, 5);
 	fgSizer->Add(m_ParentSubClass_GUI->get(), 1, wxEXPAND | wxALL, 5);
 	fgSizer->Add(m_ComponentDetails_GUI->get(), 1, wxEXPAND | wxALL, 5);
@@ -356,6 +364,8 @@ void GUI::Update_GUI(::boost::any anyptr, ::boost::shared_ptr<MatML_Doc> doc)
 	if (Update_individual_GUI< ChemicalComposition*, ChemicalComposition_GUI*>(anyptr, m_ChemicalComposition_GUI)) goto done;
 	if (Update_individual_GUI< ChemicalElementSymbol*, ChemicalElementSymbol_GUI*>(anyptr, m_ChemicalElementSymbol_GUI)) goto done;
 	if (Update_individual_GUI< Class*, Class_GUI*>(anyptr, m_Class_GUI)) goto done;
+	if (Update_individual_GUI< Subclass*, Subclass_GUI*>(anyptr, m_Subclass_GUI)) goto done;
+	if (Update_individual_GUI< Subclass1*, Subclass1_GUI*>(anyptr, m_Subclass1_GUI)) goto done;
 	if (Update_individual_GUI< ParentMaterial*, ParentMaterial_GUI*>(anyptr, m_ParentMaterial_GUI, doc)) goto done;
 	if (Update_individual_GUI< ParentSubClass*, ParentSubClass_GUI*>(anyptr, m_ParentSubClass_GUI)) goto done;
 	if (Update_individual_GUI< ComponentDetails*, ComponentDetails_GUI*>(anyptr, m_ComponentDetails_GUI)) goto done;
@@ -431,6 +441,8 @@ void GUI::HideAllPanels()
 	m_ChemicalComposition_GUI->Show(false);
 	m_ChemicalElementSymbol_GUI->Show(false);
 	m_Class_GUI->Show(false);
+	m_Subclass_GUI->Show(false);
+	m_Subclass1_GUI->Show(false);
 	m_ParentMaterial_GUI->Show(false);
 	m_ParentSubClass_GUI->Show(false);
 	m_Compound_GUI->Show(false);
@@ -501,6 +513,8 @@ void GUI::SetEvtHandlerVar(TreeCtrlSorted* MatMLTreeCtrl, ::boost::shared_ptr<Ma
 	m_ChemicalComposition_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ChemicalElementSymbol_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Class_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_Subclass_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_Subclass1_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ParentMaterial_GUI->SetEvtHandlerVar(MatMLTreeCtrl, doc);
 	m_ParentSubClass_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ComponentDetails_GUI->SetEvtHandlerVar(MatMLTreeCtrl);

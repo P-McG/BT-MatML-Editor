@@ -38,6 +38,8 @@ public:
 	MatMLTreeItemData(ChemicalComposition*  MatMLData,const wxString& desc=wxT("ChemicalComposition")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
 	MatMLTreeItemData(ChemicalElementSymbol*  MatMLData,const wxString& desc=wxT("ChemicalElementSymbol")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
 	MatMLTreeItemData(Class*  MatMLData,const wxString& desc=wxT("Class")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
+	MatMLTreeItemData(Subclass*  MatMLData,const wxString& desc=wxT("Subclass")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
+	MatMLTreeItemData(Subclass1*  MatMLData,const wxString& desc=wxT("Subclass1")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
 	MatMLTreeItemData(ParentMaterial*  MatMLData,const wxString& desc=wxT("ParentMaterial")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
 	MatMLTreeItemData(ParentSubClass*  MatMLData,const wxString& desc=wxT("ParentSubClass")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
 	MatMLTreeItemData(ComponentDetails*  MatMLData,const wxString& desc=wxT("ComponentDetails")) : m_AnyMatMLData(MatMLData), m_desc(desc), voidptr((void*)MatMLData) { }
@@ -104,6 +106,8 @@ public:
 		DeleteStrongType< Result>();
 		DeleteStrongType< ParentSubClass>();
 		DeleteStrongType< Description>();
+		DeleteStrongType< Subclass>();
+		DeleteStrongType< Subclass1>();
 	};
 
 	template<class T>

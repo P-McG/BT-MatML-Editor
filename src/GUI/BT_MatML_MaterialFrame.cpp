@@ -982,6 +982,7 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         Popup_Paste< Name>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteName, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         Popup_Paste< Class>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Class"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteClass, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
+        Popup_Paste< Subclass>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Subclass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteSubclass, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         Popup_Paste< Specification>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Specification"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteSpecification, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         Popup_Paste< Source>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Source"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteSource, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         Popup_Paste< Form>(m_MatMLItemToCopy, m_GUI->m_BulkDetails_GUI, menu, ::std::string("Paste Form"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnPasteForm, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
@@ -998,6 +999,7 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         PopupLinkBind(menu, ::std::string("Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertName, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         PopupLinkBind(menu, ::std::string("Class"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertClass, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
+        PopupLinkBind(menu, ::std::string("Subclass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertSubclass, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         PopupLinkBind(menu, ::std::string("Specification"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertSpecification, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         PopupLinkBind(menu, ::std::string("Source"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertSource, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
         PopupLinkBind(menu, ::std::string("Form"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::BulkDetails_GUI_Base::OnInsertForm, (BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI);
@@ -1109,6 +1111,54 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         goto done;
     }
 
+   if (anyptr.type() == typeid(Subclass*)) {
+
+        Popup_Paste< Name>(m_MatMLItemToCopy, m_GUI->m_Subclass_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnPasteName, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+        Popup_Paste< ParentMaterial>(m_MatMLItemToCopy, m_GUI->m_Subclass_GUI, menu, ::std::string("Paste ParentMaterial"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnPasteParentMaterial, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+        Popup_Paste< ParentSubClass>(m_MatMLItemToCopy, m_GUI->m_Subclass_GUI, menu, ::std::string("Paste ParentSubClass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnPasteParentSubClass, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnBumpUp, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnBumpDown, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+
+        menu.AppendSeparator();
+            
+        PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteSubclass, this);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnInsertName, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+        PopupLinkBind(menu, ::std::string("Material"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnInsertParentMaterial, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+        PopupLinkBind(menu, ::std::string("ParentSubClass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass_GUI_Base::OnInsertParentSubClass, (Subclass_GUI_Base*)m_GUI->m_Subclass_GUI);
+
+        goto done;
+    }
+
+   if (anyptr.type() == typeid(Subclass1*)) {
+
+       Popup_Paste< Name>(m_MatMLItemToCopy, m_GUI->m_Subclass1_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnPasteName, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+       Popup_Paste< ParentMaterial>(m_MatMLItemToCopy, m_GUI->m_Subclass1_GUI, menu, ::std::string("Paste ParentMaterial"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnPasteParentMaterial, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+       Popup_Paste< ParentSubClass>(m_MatMLItemToCopy, m_GUI->m_Subclass1_GUI, menu, ::std::string("Paste ParentSubclass1"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnPasteParentSubClass, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+
+       menu.AppendSeparator();
+
+       PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnBumpUp, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+       PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnBumpDown, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+
+       menu.AppendSeparator();
+
+       PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteSubclass1, this);
+
+       menu.AppendSeparator();
+
+       PopupLinkBind(menu, ::std::string("Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnInsertName, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+       PopupLinkBind(menu, ::std::string("Material"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnInsertParentMaterial, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+       PopupLinkBind(menu, ::std::string("ParentSubClass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Subclass1_GUI_Base::OnInsertParentSubClass, (Subclass1_GUI_Base*)m_GUI->m_Subclass1_GUI);
+
+       goto done;
+   }
+
     if (anyptr.type() == typeid(ComponentDetails*)) {
 
         //menu.AppendSeparator();
@@ -1121,7 +1171,7 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         Popup_Paste<Name>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteName, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         Popup_Paste<Class>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Class"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteClass, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
-        //Popup_Paste<Subclass>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Subclass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteSubclass, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
+        Popup_Paste<Subclass1>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Subclass1"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteSubclass1, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         Popup_Paste<Specification>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Specification"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteSpecification, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         Popup_Paste<Source>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Source"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteSource, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         Popup_Paste<Form>(m_MatMLItemToCopy, m_GUI->m_ComponentDetails_GUI, menu, ::std::string("Paste Form"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnPasteForm, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
@@ -1144,7 +1194,7 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         PopupLinkBind(menu, ::std::string("Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertName, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         PopupLinkBind(menu, ::std::string("Class"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertClass, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
-        //PopupLinkBind(menu, ::std::string("Subclass"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertSubclass, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
+        PopupLinkBind(menu, ::std::string("Subclass1"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertSubclass1, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         PopupLinkBind(menu, ::std::string("Specification"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertSpecification, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         PopupLinkBind(menu, ::std::string("Source"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertSource, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
         PopupLinkBind(menu, ::std::string("Form"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ComponentDetails_GUI_Base::OnInsertForm, (ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI);
@@ -2306,6 +2356,26 @@ void bellshire::MaterialFrame::OnDeleteChemicalElementSymbol(wxCommandEvent& eve
 void bellshire::MaterialFrame::OnDeleteClass(wxCommandEvent& event){
     ((BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI)->OnDeleteClass(event);
     ((ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI)->OnDeleteClass(event);
+}
+
+/// <summary>
+/// Call parents to delete MatML data
+/// Event Handler Function
+/// </summary>
+/// <param name="event"></param>
+void bellshire::MaterialFrame::OnDeleteSubclass(wxCommandEvent& event)
+{
+    ((BulkDetails_GUI_Base*)m_GUI->m_BulkDetails_GUI)->OnDeleteSubclass(event);
+}
+
+/// <summary>
+/// Call parents to delete MatML data
+/// Event Handler Function
+/// </summary>
+/// <param name="event"></param>
+void bellshire::MaterialFrame::OnDeleteSubclass1(wxCommandEvent& event)
+{
+    ((ComponentDetails_GUI_Base*)m_GUI->m_ComponentDetails_GUI)->OnDeleteSubclass1(event);
 }
 
 /// <summary>
