@@ -230,3 +230,63 @@ void AssociationDetails_GUI::OnPasteNotes(wxCommandEvent& event)
 }
 
 
+
+void AssociationDetails_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ComponentDetails*)) {
+			AssociationDetails* element = boost::any_cast<AssociationDetails*>(anyptr);
+			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
+
+			auto& cont = elementParent->AssociationDetails();
+			std::pair<AssociationDetails*, AssociationDetails*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<AssociationDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void AssociationDetails_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ComponentDetails*)) {
+			AssociationDetails* element = boost::any_cast<AssociationDetails*>(anyptr);
+			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
+
+			auto& cont = elementParent->AssociationDetails();
+			std::pair<AssociationDetails*, AssociationDetails*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<AssociationDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+}
+

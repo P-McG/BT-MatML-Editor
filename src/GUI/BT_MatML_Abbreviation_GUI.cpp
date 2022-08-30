@@ -172,7 +172,7 @@ void Abbreviation_GUI::OnAbbreviationTextCtrl(wxCommandEvent& event)
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
 	try {
-		Abbreviation* Element = boost::any_cast<Abbreviation*>(item->GetAnyMatMLDataPointer());	 
+		Abbreviation* Element = boost::any_cast<Abbreviation*>(item->GetAnyMatMLDataPointer());
 		if (Element != 0) {
 			wxString str(m_AbbreviationTextCtrl->GetValue());
 			GlossaryTerm::Abbreviation_type NewData(::xml_schema::string(str.mb_str()));
@@ -181,5 +181,64 @@ void Abbreviation_GUI::OnAbbreviationTextCtrl(wxCommandEvent& event)
 		}
 	}
 	catch (const boost::bad_any_cast&) { return; };
+}
+
+void Abbreviation_GUI::OnBumpDown(wxCommandEvent & event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
+			Abbreviation* element = boost::any_cast<Abbreviation*>(anyptr);
+			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
+
+			auto& cont = elementParent->Abbreviation();
+			std::pair<GlossaryTerm::Abbreviation_type*, GlossaryTerm::Abbreviation_type*> data(MatMLFindAndBumpDown(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Abbreviation_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void Abbreviation_GUI::OnBumpUp(wxCommandEvent & event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
+			Abbreviation* element = boost::any_cast<Abbreviation*>(anyptr);
+			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
+
+			auto& cont = elementParent->Abbreviation();
+			std::pair<GlossaryTerm::Abbreviation_type*, GlossaryTerm::Abbreviation_type*> data(MatMLFindAndBumpUp(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Abbreviation_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
 
 }

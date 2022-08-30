@@ -62,6 +62,10 @@ namespace bellshire {
         void SetConnect();
         virtual void OnAbbreviationTextCtrl(wxCommandEvent& event) { event.Skip(); }
 
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
+
+
     private:
     };
 
@@ -81,6 +85,9 @@ namespace bellshire {
 
         //Overwrites the base class functions
         void OnAbbreviationTextCtrl(wxCommandEvent& event); //todo
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
     };

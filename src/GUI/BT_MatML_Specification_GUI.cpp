@@ -271,3 +271,89 @@ void Specification_GUI::OnSpecificationAuthorityChoice(wxCommandEvent& event)
 	}
 	catch (const boost::bad_any_cast&) { return; }
 }
+
+void Specification_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type()==typeid(BulkDetails*)) {
+			Specification* element = boost::any_cast<Specification*>(anyptr);
+			BulkDetails* elementParent = boost::any_cast<BulkDetails*>(anyptrparent);
+
+			auto& cont = elementParent->Specification();
+			std::pair<Specification*, Specification*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(ComponentDetails*)) {
+			Specification* element = boost::any_cast<Specification*>(anyptr);
+			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
+
+			auto& cont(elementParent->Specification());
+			std::pair<Specification*, Specification*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+}
+
+void Specification_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(BulkDetails*)) {
+			Specification* element = boost::any_cast<Specification*>(anyptr);
+			BulkDetails* elementParent = boost::any_cast<BulkDetails*>(anyptrparent);
+
+			auto& cont = elementParent->Specification();
+			std::pair<Specification*, Specification*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(ComponentDetails*)) {
+			Specification* element = boost::any_cast<Specification*>(anyptr);
+			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
+
+			auto& cont(elementParent->Specification());
+			std::pair<Specification*, Specification*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+}

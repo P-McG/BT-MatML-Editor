@@ -93,6 +93,8 @@ namespace bellshire {
         bool InFilter(Material* material, xml_schema::string* Filter);
         bool InFilter(Material* material, std::list<xml_schema::string> Filter);
 
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
 
     private:
 
@@ -117,6 +119,9 @@ namespace bellshire {
         //Overwrites the base class functions
         void OnParentMaterialIDChoice(wxCommandEvent& event);
         void OnParentMaterialClassFilterComboBox(wxCommandEvent& event);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
 

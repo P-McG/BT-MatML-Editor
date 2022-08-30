@@ -537,7 +537,7 @@ void GUI::SetEvtHandlerVar(TreeCtrlSorted* MatMLTreeCtrl, ::boost::shared_ptr<Ma
 	m_Abbreviation_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Synonym_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Graphs_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
-	m_Graph_GUI->SetEvtHandlerVar();
+	m_Graph_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_MeasurementTechniqueDetails_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Metadata_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Name_GUI->SetEvtHandlerVar(MatMLTreeCtrl);

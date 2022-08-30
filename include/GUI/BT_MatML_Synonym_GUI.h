@@ -63,6 +63,9 @@ namespace bellshire {
         void SetConnect();
         virtual void OnSynonymTextCtrl(wxCommandEvent& event) { event.Skip(); }
 
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
+
     private:
     };
 
@@ -82,6 +85,9 @@ namespace bellshire {
 
         //Overwrites the base class functions
         void OnSynonymTextCtrl(wxCommandEvent& event);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
     };

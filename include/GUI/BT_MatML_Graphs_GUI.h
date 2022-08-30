@@ -62,7 +62,7 @@ namespace bellshire {
         void SetConnect() {};
 
         virtual void OnInsertGraph(wxCommandEvent& event) { event.Skip(); }
-
+        virtual void OnDeleteGraph(wxCommandEvent& event) { event.Skip(); }
         virtual void OnPasteGraph(wxCommandEvent& event) { event.Skip(); }
     private:
     };
@@ -84,7 +84,7 @@ namespace bellshire {
 
         //Overwrites the base class functions
         void OnInsertGraph(wxCommandEvent& event);
-
+        void OnDeleteGraph(wxCommandEvent& event);
         void OnPasteGraph(wxCommandEvent& event);
 
     private:

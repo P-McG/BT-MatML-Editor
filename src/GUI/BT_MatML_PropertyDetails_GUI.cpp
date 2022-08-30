@@ -256,3 +256,66 @@ void PropertyDetails_GUI::OnPasteName(wxCommandEvent& event) { ON_PARENT_PASTE_C
 void PropertyDetails_GUI::OnPasteUnits(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(PropertyDetails, Units) }
 void PropertyDetails_GUI::OnPasteUnitless(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(PropertyDetails, Unitless) }
 void PropertyDetails_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(PropertyDetails, Notes) }
+
+
+void PropertyDetails_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			PropertyDetails* element = boost::any_cast<PropertyDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->PropertyDetails();
+			std::pair<PropertyDetails*, PropertyDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<PropertyDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+}
+
+void PropertyDetails_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			PropertyDetails* element = boost::any_cast<PropertyDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->PropertyDetails();
+			std::pair<PropertyDetails*, PropertyDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<PropertyDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+

@@ -70,6 +70,7 @@ namespace bellshire {
         virtual void OnBumpUp(wxCommandEvent& event){ event.Skip(); }
         virtual void OnBumpDown(wxCommandEvent& event){ event.Skip(); }
 
+
     private:
     };
 
@@ -106,5 +107,6 @@ namespace bellshire {
 
     private:
     };
+
 
 }; //namespace bellshire end

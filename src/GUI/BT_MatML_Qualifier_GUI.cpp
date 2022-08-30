@@ -93,7 +93,7 @@ wxNotebook* Qualifier_GUI_Base::Create(wxWindow* parent,
 		wxT("*********** Qualifier *************************\n\nThis element declares the content model for Qualifier, which contains\na string representing a qualifier.\t\t\t")
 	);
 
-	bool b, b_dflt(false);//temps
+	bool b_dflt(false);//temps
 		wxConfig(wxT("BTMatML")).Read(wxT("/General/MatMLDataSelection"), &b_dflt);
 
 	QualifierNotebook->AddPage(QualifierPanel, wxT("MatML Data."), b_dflt);
@@ -155,6 +155,7 @@ void Qualifier_GUI_Base::SetConnect()
 /// </summary>
 Qualifier_GUI::Qualifier_GUI()
 	: Qualifier_GUI_Base(),
+	m_MatMLTreeCtrl(nullptr),
 	m_TextCtrlValidator(nullptr)
 {
 
@@ -167,6 +168,7 @@ Qualifier_GUI::Qualifier_GUI()
 /// <param name="MatMLTreeCtrl"></param>
 Qualifier_GUI::Qualifier_GUI(wxWindow* parent)
 	: Qualifier_GUI_Base(parent),
+	m_MatMLTreeCtrl(nullptr),
 	m_TextCtrlValidator(nullptr)
 {
 	SetConnect();
@@ -189,8 +191,19 @@ Qualifier_GUI::~Qualifier_GUI() {
 void Qualifier_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 	//Set the validators for the wxWidgets.
+	SetMatMLTreeCtrl(MatMLTreeCtrl);
 	m_TextCtrlValidator = new TextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
 	m_QualifierTextCtrl->SetValidator(*m_TextCtrlValidator);
+}
+
+/// <summary>
+/// Set the Event Handler associated with the MatML wxTreeCtrl 
+/// Required before using the derived class's event handler functions.
+/// </summary>
+/// <param name="MatMLTreeCtrl"></param>
+void Qualifier_GUI::SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl)
+{
+	m_MatMLTreeCtrl = MatMLTreeCtrl;
 }
 
 void Qualifier_GUI::OnQualifierTextCtrlKillFocus(wxCommandEvent& event)
@@ -308,7 +321,7 @@ bool Qualifier_GUI::TextCtrlValidator::TransferFromWindow()
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
 	try {
-		Data1* const element = boost::any_cast<Data1* const>(item->GetAnyMatMLDataPointer());
+		Qualifier* const element = boost::any_cast<Qualifier* const>(item->GetAnyMatMLDataPointer());
 
 		if (element)
 		{
@@ -322,4 +335,68 @@ bool Qualifier_GUI::TextCtrlValidator::TransferFromWindow()
 	catch (const boost::bad_any_cast&) { return false; }
 
 	return true;
+}
+
+
+void Qualifier_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ParameterValue*)) {
+			Qualifier* element = boost::any_cast<Qualifier*>(anyptr);
+			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
+
+			auto& cont = elementParent->Qualifier();
+			std::pair<Qualifier*, Qualifier*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) 
+				MatMLTreeCtrlBumpDown<Qualifier_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void Qualifier_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ParameterValue*)) {
+			Qualifier* element = boost::any_cast<Qualifier*>(anyptr);
+			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
+
+			auto& cont = elementParent->Qualifier();
+			std::pair<Qualifier*, Qualifier*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) 
+				MatMLTreeCtrlBumpUp<Qualifier_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
 }

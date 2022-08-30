@@ -54,7 +54,7 @@ wxNotebook* AuthorityDetails_GUI_Base::Create(wxWindow* parent, ID_GUI*& Authori
 		wxT("********* AuthorityDetails *************************\n\nThis element declares the content model for AuthorityDetails, which\ncontains a description of an authority referenced by other elements,\n such as the Specification and Name elements. An authority is typically an\norganisation that is the authoritative source of information about the \nelement that is referencing it.\n\t\t\t\nAuthorityDetails has one required attribute, id, which may be\narbitrarily assigned but must be unique among id attributes assigned\nelsewhere in a MatML document. \n\t\t\t\nAuthorityDetails additionally has two elements, Name and Notes.\n\nName contains the name of the Authority. Name must occur once and \nonly once within the AuthorityDetails element.\n\nNotes contains any additional information concerning the parameter and\nmay occur once or not at all within the AuthorityDetails element.\t\t\t")
 	);
 
-	bool b, b_dflt(false);//temps
+	bool b_dflt(false);//temps
 		wxConfig(wxT("BTMatML")).Read(wxT("/General/MatMLDataSelection"), &b_dflt);
 
 	AuthorityDetailsNotebook->AddPage(AuthorityDetailsPanel, wxT("MatML Data."), b_dflt);
@@ -186,3 +186,66 @@ void AuthorityDetails_GUI::OnDeleteNotes(wxCommandEvent& event) {
 
 void AuthorityDetails_GUI::OnPasteName(wxCommandEvent& event) { ON_PARENT_PASTE_CHILD(AuthorityDetails, Name) }
 void AuthorityDetails_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(AuthorityDetails, Notes) }
+
+
+void AuthorityDetails_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			AuthorityDetails* element = boost::any_cast<AuthorityDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->AuthorityDetails();
+			std::pair<AuthorityDetails*, AuthorityDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<AuthorityDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+}
+
+void AuthorityDetails_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			AuthorityDetails* element = boost::any_cast<AuthorityDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->AuthorityDetails();
+			std::pair<AuthorityDetails*, AuthorityDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<AuthorityDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+

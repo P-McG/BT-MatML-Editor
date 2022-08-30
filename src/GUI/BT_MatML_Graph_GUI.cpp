@@ -84,7 +84,10 @@ wxNotebook* Graph_GUI_Base::Create(wxWindow* parent, wxTextCtrl*& graphtextctrl,
 
 void Graph_GUI_Base::Update( Graph* element)
 {
-	//UNSUPPORTED
+	wxString str;
+
+	//str << _std2wx((*element));//double paranthesis required
+	//m_graphtextctrl->ChangeValue(str);
 
 	Show(true);
 }
@@ -180,4 +183,84 @@ Graph_GUI::Graph_GUI(wxWindow* parent)
 /// </summary>
 Graph_GUI::~Graph_GUI() {
 	/*parent will distroy Ctrl or window */
+}
+
+/// <summary>
+/// Function used to set up this objects member variables which is used in the EventHandler's functions.
+/// Required before using the derived class's event handler functions.
+/// </summary>
+/// <param name="MatMLTreeCtrl"></param>
+void Graph_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+{
+	SetMatMLTreeCtrl(MatMLTreeCtrl);
+}
+
+/// <summary>
+/// Set the Event Handler associated with the MatML wxTreeCtrl 
+/// Required before using the derived class's event handler functions.
+/// </summary>
+/// <param name="MatMLTreeCtrl"></param>
+void Graph_GUI::SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl)
+{
+	m_MatMLTreeCtrl = MatMLTreeCtrl;
+}
+
+void Graph_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Graphs*)) {
+			Graph* element = boost::any_cast<Graph*>(anyptr);
+			Graphs* elementParent = boost::any_cast<Graphs*>(anyptrparent);
+
+			auto& cont = elementParent->Graph();
+			std::pair<Graph*, Graph*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Graph_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+}
+
+void Graph_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Graphs*)) {
+			Graph* element = boost::any_cast<Graph*>(anyptr);
+			Graphs* elementParent = boost::any_cast<Graphs*>(anyptrparent);
+
+			auto& cont = elementParent->Graph();
+			std::pair<Graph*, Graph*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Graph_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
 }

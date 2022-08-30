@@ -342,3 +342,120 @@ void ParameterValue_GUI::OnPasteData(wxCommandEvent& event) {/*ON_PARENT_PASTE_C
 void ParameterValue_GUI::OnPasteUncertainty(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(ParameterValue, Uncertainty) }
 void ParameterValue_GUI::OnPasteQualifier(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(ParameterValue, Qualifier) }
 void ParameterValue_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(ParameterValue, Notes) }
+
+
+void ParameterValue_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ProcessingDetails*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			ProcessingDetails* elementParent = boost::any_cast<ProcessingDetails*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(PropertyData*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(TestConditionDetails*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			TestConditionDetails* elementParent = boost::any_cast<TestConditionDetails*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void ParameterValue_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(ProcessingDetails*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			ProcessingDetails* elementParent = boost::any_cast<ProcessingDetails*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(PropertyData*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(TestConditionDetails*)) {
+			ParameterValue* element = boost::any_cast<ParameterValue*>(anyptr);
+			TestConditionDetails* elementParent = boost::any_cast<TestConditionDetails*>(anyptrparent);
+
+			auto& cont = elementParent->ParameterValue();
+			std::pair<ParameterValue*, ParameterValue*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<ParameterValue_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+}
+

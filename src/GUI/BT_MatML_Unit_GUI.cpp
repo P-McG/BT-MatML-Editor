@@ -429,3 +429,62 @@ void Unit_GUI::OnInsertCurrency(wxCommandEvent& event) {
 void Unit_GUI::OnDeleteName(wxCommandEvent& event) {ON_PARENT_DELETE_CHILD(Unit, Name)}
 
 
+void Unit_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Units*)) {
+			Unit* element = boost::any_cast<Unit*>(anyptr);
+			Units* elementParent = boost::any_cast<Units*>(anyptrparent);
+
+			auto& cont = elementParent->Unit();
+			std::pair<Unit*, Unit*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Unit_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void Unit_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Units*)) {
+			Unit* element = boost::any_cast<Unit*>(anyptr);
+			Units* elementParent = boost::any_cast<Units*>(anyptrparent);
+
+			auto& cont = elementParent->Unit();
+			std::pair<Unit*, Unit*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Unit_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+}
+

@@ -67,6 +67,12 @@ namespace bellshire {
         virtual void OnSpecificationTextCtrl(wxCommandEvent& event) { event.Skip(); }
         virtual void OnSpecificationAuthorityChoice(wxCommandEvent& event) { event.Skip(); }
 
+
+ 
+
+        virtual void OnBumpDown(wxCommandEvent& event){ event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event){ event.Skip(); }
+
     private:
     };
 
@@ -87,6 +93,9 @@ namespace bellshire {
         //Overwrites the base class functions
         void OnSpecificationTextCtrl(wxCommandEvent& event);
         void OnSpecificationAuthorityChoice(wxCommandEvent& event);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
     };

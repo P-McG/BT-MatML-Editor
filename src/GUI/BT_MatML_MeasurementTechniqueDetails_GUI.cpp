@@ -182,3 +182,64 @@ void MeasurementTechniqueDetails_GUI::OnDeleteNotes(wxCommandEvent& event) {ON_P
 
 void MeasurementTechniqueDetails_GUI::OnPasteName(wxCommandEvent& event) {}
 void MeasurementTechniqueDetails_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(MeasurementTechniqueDetails, Notes) }
+
+void MeasurementTechniqueDetails_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			MeasurementTechniqueDetails* element = boost::any_cast<MeasurementTechniqueDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->MeasurementTechniqueDetails();
+			std::pair<MeasurementTechniqueDetails*, MeasurementTechniqueDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<MeasurementTechniqueDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+}
+
+void MeasurementTechniqueDetails_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			MeasurementTechniqueDetails* element = boost::any_cast<MeasurementTechniqueDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->MeasurementTechniqueDetails();
+			std::pair<MeasurementTechniqueDetails*, MeasurementTechniqueDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<MeasurementTechniqueDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}

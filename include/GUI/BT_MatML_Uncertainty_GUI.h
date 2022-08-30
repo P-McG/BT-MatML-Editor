@@ -90,6 +90,9 @@ namespace bellshire {
         virtual void OnPasteNotes(wxCommandEvent& event){ event.Skip(); }
         virtual void OnPasteScale(wxCommandEvent& event){ event.Skip(); }
 
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
+
     private:
     };
 
@@ -133,6 +136,9 @@ namespace bellshire {
         void OnPasteUnitless(wxCommandEvent& event);
         void OnPasteNotes(wxCommandEvent& event);
         void OnPasteScale(wxCommandEvent& event);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
     };

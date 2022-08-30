@@ -949,6 +949,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AssociationDetails_GUI_Base::OnBumpUp, (AssociationDetails_GUI_Base*)m_GUI->m_AssociationDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AssociationDetails_GUI_Base::OnBumpDown, (AssociationDetails_GUI_Base*)m_GUI->m_AssociationDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteAssociationDetails, this);
 
         menu.AppendSeparator();
@@ -965,6 +970,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         Popup_Paste<Name>(m_MatMLItemToCopy, m_GUI->m_AuthorityDetails_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AuthorityDetails_GUI_Base::OnPasteName, (AuthorityDetails_GUI_Base*)m_GUI->m_AuthorityDetails_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_AuthorityDetails_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AuthorityDetails_GUI_Base::OnPasteNotes, (AuthorityDetails_GUI_Base*)m_GUI->m_AuthorityDetails_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AuthorityDetails_GUI_Base::OnBumpUp, (AuthorityDetails_GUI_Base*)m_GUI->m_AuthorityDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::AuthorityDetails_GUI_Base::OnBumpDown, (AuthorityDetails_GUI_Base*)m_GUI->m_AuthorityDetails_GUI);
 
         menu.AppendSeparator();
 
@@ -1214,6 +1224,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Compound_GUI_Base::OnBumpUp, (Compound_GUI_Base*)m_GUI->m_Compound_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Compound_GUI_Base::OnBumpDown, (Compound_GUI_Base*)m_GUI->m_Compound_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteCompound, this);
 
         menu.AppendSeparator();
@@ -1281,6 +1296,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::DataSourceDetails_GUI_Base::OnBumpUp, (DataSourceDetails_GUI_Base*)m_GUI->m_DataSourceDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::DataSourceDetails_GUI_Base::OnBumpDown, (DataSourceDetails_GUI_Base*)m_GUI->m_DataSourceDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteDataSourceDetails, this);
 
         menu.AppendSeparator();
@@ -1303,6 +1323,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::DimensionalDetails_GUI_Base::OnBumpUp, (DimensionalDetails_GUI_Base*)m_GUI->m_DimensionalDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::DimensionalDetails_GUI_Base::OnBumpDown, (DimensionalDetails_GUI_Base*)m_GUI->m_DimensionalDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteDimensionalDetails, this);
 
         menu.AppendSeparator();
@@ -1322,6 +1347,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         Popup_Paste<Symbol>(m_MatMLItemToCopy, m_GUI->m_Element_GUI, menu, ::std::string("Paste Symbol"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Element_GUI_Base::OnPasteSymbol, (Element_GUI_Base*)m_GUI->m_Element_GUI);
         Popup_Paste<Concentration>(m_MatMLItemToCopy, m_GUI->m_Element_GUI, menu, ::std::string("Paste Concentration"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Element_GUI_Base::OnPasteConcentration, (Element_GUI_Base*)m_GUI->m_Element_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_Element_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Element_GUI_Base::OnPasteNotes, (Element_GUI_Base*)m_GUI->m_Element_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Element_GUI_Base::OnBumpUp, (Element_GUI_Base*)m_GUI->m_Element_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Element_GUI_Base::OnBumpDown, (Element_GUI_Base*)m_GUI->m_Element_GUI);
 
         menu.AppendSeparator();
 
@@ -1414,6 +1444,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::GlossaryTerm_GUI_Base::OnBumpUp, (GlossaryTerm_GUI_Base*)m_GUI->m_GlossaryTerm_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::GlossaryTerm_GUI_Base::OnBumpDown, (GlossaryTerm_GUI_Base*)m_GUI->m_GlossaryTerm_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteGlossaryTerm, this);
 
         menu.AppendSeparator();
@@ -1441,21 +1476,31 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteAbbreviation, this);
 
-            menu.AppendSeparator();
+        menu.AppendSeparator();
 
-            //None
-            goto done;
-        }
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Abbreviation_GUI_Base::OnBumpUp, (Abbreviation_GUI_Base*)m_GUI->m_Abbreviation_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Abbreviation_GUI_Base::OnBumpDown, (Abbreviation_GUI_Base*)m_GUI->m_Abbreviation_GUI);
+
+        menu.AppendSeparator();
+
+        //None
+        goto done;
+    }
 
     if (anyptr.type() == typeid(Synonym*)) {
 
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteSynonym, this);
 
-            menu.AppendSeparator();
+        menu.AppendSeparator();
 
-            //None
-            goto done;
-        }
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Synonym_GUI_Base::OnBumpUp, (Synonym_GUI_Base*)m_GUI->m_Synonym_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Synonym_GUI_Base::OnBumpDown, (Synonym_GUI_Base*)m_GUI->m_Synonym_GUI);
+
+        menu.AppendSeparator();
+
+        //None
+        goto done;
+    }
 
     if (anyptr.type() == typeid(Graphs*)) {
 
@@ -1472,6 +1517,20 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         goto done;
     }
 
+    if (anyptr.type() == typeid(Graph*)) {
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Graph_GUI_Base::OnBumpUp, (Graph_GUI_Base*)m_GUI->m_Graph_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Graph_GUI_Base::OnBumpDown, (Graph_GUI_Base*)m_GUI->m_Graph_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteGraph, this);
+
+        goto done;
+    }
+
     if (anyptr.type() == typeid(Material*)) {
 
         PopupLinkBind(menu, ::std::string("NewMaterial"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnInsertMaterial, (Material_GUI_Base*)m_GUI->m_Material_GUI);
@@ -1483,6 +1542,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         Popup_Paste<ComponentDetails>(m_MatMLItemToCopy, m_GUI->m_Material_GUI, menu, ::std::string("Paste ComponentDetails"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnPasteComponentDetails, (Material_GUI_Base*)m_GUI->m_Material_GUI);
         Popup_Paste<Graphs>(m_MatMLItemToCopy, m_GUI->m_Material_GUI, menu, ::std::string("Paste Graphs"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnPasteGraphs, (Material_GUI_Base*)m_GUI->m_Material_GUI);
         Popup_Paste<Glossary>(m_MatMLItemToCopy, m_GUI->m_Material_GUI, menu, ::std::string("Paste Glossary"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnPasteGlossary, (Material_GUI_Base*)m_GUI->m_Material_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnBumpUp, (Material_GUI_Base*)m_GUI->m_Material_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Material_GUI_Base::OnBumpDown, (Material_GUI_Base*)m_GUI->m_Material_GUI);
 
         menu.AppendSeparator();
 
@@ -1519,6 +1583,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         Popup_Paste<Name>(m_MatMLItemToCopy, m_GUI->m_MeasurementTechniqueDetails_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::MeasurementTechniqueDetails_GUI_Base::OnPasteName, (MeasurementTechniqueDetails_GUI_Base*)m_GUI->m_MeasurementTechniqueDetails_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_MeasurementTechniqueDetails_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::MeasurementTechniqueDetails_GUI_Base::OnPasteNotes, (MeasurementTechniqueDetails_GUI_Base*)m_GUI->m_MeasurementTechniqueDetails_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::MeasurementTechniqueDetails_GUI_Base::OnBumpUp, (MeasurementTechniqueDetails_GUI_Base*)m_GUI->m_MeasurementTechniqueDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::MeasurementTechniqueDetails_GUI_Base::OnBumpDown, (MeasurementTechniqueDetails_GUI_Base*)m_GUI->m_MeasurementTechniqueDetails_GUI);
 
         menu.AppendSeparator();
 
@@ -1594,6 +1663,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParameterDetails_GUI_Base::OnBumpUp, (ParameterDetails_GUI_Base*)m_GUI->m_ParameterDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParameterDetails_GUI_Base::OnBumpDown, (ParameterDetails_GUI_Base*)m_GUI->m_ParameterDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteParameterDetails, this);
 
         menu.AppendSeparator();
@@ -1615,6 +1689,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParameterValue_GUI_Base::OnBumpUp, (ParameterValue_GUI_Base*)m_GUI->m_ParameterValue_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParameterValue_GUI_Base::OnBumpDown, (ParameterValue_GUI_Base*)m_GUI->m_ParameterValue_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteParameterValue, this);
 
         menu.AppendSeparator();
@@ -1629,6 +1708,14 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
     if (anyptr.type() == typeid(ParentMaterial*)) {
 
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParentMaterial_GUI_Base::OnBumpUp, (ParentMaterial_GUI_Base*)m_GUI->m_ParentMaterial_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::ParentMaterial_GUI_Base::OnBumpDown, (ParentMaterial_GUI_Base*)m_GUI->m_ParentMaterial_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteParentMaterial, this);
 
             goto done;
@@ -1641,6 +1728,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         Popup_Paste<Concentration>(m_MatMLItemToCopy, m_GUI->m_PhaseComposition_GUI, menu, ::std::string("Paste Concentration"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PhaseComposition_GUI_Base::OnPasteConcentration, (PhaseComposition_GUI_Base*)m_GUI->m_PhaseComposition_GUI);
         Popup_Paste<PropertyData>(m_MatMLItemToCopy, m_GUI->m_PhaseComposition_GUI, menu, ::std::string("Paste PropertyData"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PhaseComposition_GUI_Base::OnPastePropertyData, (PhaseComposition_GUI_Base*)m_GUI->m_PhaseComposition_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_PhaseComposition_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PhaseComposition_GUI_Base::OnPasteNotes, (PhaseComposition_GUI_Base*)m_GUI->m_PhaseComposition_GUI);
+ 
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PhaseComposition_GUI_Base::OnBumpUp, (PhaseComposition_GUI_Base*)m_GUI->m_PhaseComposition_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PhaseComposition_GUI_Base::OnBumpDown, (PhaseComposition_GUI_Base*)m_GUI->m_PhaseComposition_GUI);
 
         menu.AppendSeparator();
 
@@ -1726,6 +1818,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PropertyDetails_GUI_Base::OnBumpUp, (PropertyDetails_GUI_Base*)m_GUI->m_PropertyDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::PropertyDetails_GUI_Base::OnBumpDown, (PropertyDetails_GUI_Base*)m_GUI->m_PropertyDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeletePropertyDetails, this);
 
         menu.AppendSeparator();
@@ -1739,6 +1836,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
     }
 
     if (anyptr.type() == typeid(Qualifier*)) {
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Qualifier_GUI_Base::OnBumpUp, (Qualifier_GUI_Base*)m_GUI->m_Qualifier_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Qualifier_GUI_Base::OnBumpDown, (Qualifier_GUI_Base*)m_GUI->m_Qualifier_GUI);
 
             menu.AppendSeparator();
 
@@ -1779,6 +1881,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SourceDetails_GUI_Base::OnBumpUp, (SourceDetails_GUI_Base*)m_GUI->m_SourceDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SourceDetails_GUI_Base::OnBumpDown, (SourceDetails_GUI_Base*)m_GUI->m_SourceDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteSourceDetails, this);
 
         menu.AppendSeparator();
@@ -1790,6 +1897,10 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
     }
 
     if (anyptr.type() == typeid(Specification*)) {
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Specification_GUI_Base::OnBumpUp, (Specification_GUI_Base*)m_GUI->m_Specification_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Specification_GUI_Base::OnBumpDown, (Specification_GUI_Base*)m_GUI->m_Specification_GUI);
 
             menu.AppendSeparator();
 
@@ -1806,6 +1917,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         Popup_Paste<Name>(m_MatMLItemToCopy, m_GUI->m_SpecimenDetails_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SpecimenDetails_GUI_Base::OnPasteName, (SpecimenDetails_GUI_Base*)m_GUI->m_SpecimenDetails_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_SpecimenDetails_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SpecimenDetails_GUI_Base::OnPasteNotes, (SpecimenDetails_GUI_Base*)m_GUI->m_SpecimenDetails_GUI);
         Popup_Paste<Geometry>(m_MatMLItemToCopy, m_GUI->m_SpecimenDetails_GUI, menu, ::std::string("Paste Geometry"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SpecimenDetails_GUI_Base::OnPasteGeometry, (SpecimenDetails_GUI_Base*)m_GUI->m_SpecimenDetails_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SpecimenDetails_GUI_Base::OnBumpUp, (SpecimenDetails_GUI_Base*)m_GUI->m_SpecimenDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::SpecimenDetails_GUI_Base::OnBumpDown, (SpecimenDetails_GUI_Base*)m_GUI->m_SpecimenDetails_GUI);
 
         menu.AppendSeparator();
 
@@ -1827,6 +1943,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         menu.AppendSeparator();
 
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::TestConditionDetails_GUI_Base::OnBumpUp, (TestConditionDetails_GUI_Base*)m_GUI->m_TestConditionDetails_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::TestConditionDetails_GUI_Base::OnBumpDown, (TestConditionDetails_GUI_Base*)m_GUI->m_TestConditionDetails_GUI);
+
+        menu.AppendSeparator();
+
         PopupLinkBind(menu, ::std::string("Delete"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::MaterialFrame::OnDeleteTestConditionDetails, this);
 
         menu.AppendSeparator();
@@ -1844,6 +1965,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
         Popup_Paste<Unitless>(m_MatMLItemToCopy, m_GUI->m_Uncertainty_GUI, menu, ::std::string("Paste Unitless"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Uncertainty_GUI_Base::OnPasteUnitless, (Uncertainty_GUI_Base*)m_GUI->m_Uncertainty_GUI);
         Popup_Paste<Notes>(m_MatMLItemToCopy, m_GUI->m_Uncertainty_GUI, menu, ::std::string("Paste Notes"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Uncertainty_GUI_Base::OnPasteNotes, (Uncertainty_GUI_Base*)m_GUI->m_Uncertainty_GUI);
         Popup_Paste<Scale>(m_MatMLItemToCopy, m_GUI->m_Uncertainty_GUI, menu, ::std::string("Paste Scale"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Uncertainty_GUI_Base::OnPasteScale, (Uncertainty_GUI_Base*)m_GUI->m_Uncertainty_GUI);
+ 
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Uncertainty_GUI_Base::OnBumpUp, (Uncertainty_GUI_Base*)m_GUI->m_Uncertainty_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Uncertainty_GUI_Base::OnBumpDown, (Uncertainty_GUI_Base*)m_GUI->m_Uncertainty_GUI);
 
         menu.AppendSeparator();
 
@@ -1864,6 +1990,11 @@ void bellshire::MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& p
 
         Popup_Paste<Name>(m_MatMLItemToCopy, m_GUI->m_Unit_GUI, menu, ::std::string("Paste Name"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Unit_GUI_Base::OnPasteName, (Unit_GUI_Base*)m_GUI->m_Unit_GUI);
         Popup_Paste<CurrencyCode>(m_MatMLItemToCopy, m_GUI->m_Unit_GUI, menu, ::std::string("Paste CurrencyCode"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Unit_GUI_Base::OnPasteCurrencyCode, (Unit_GUI_Base*)m_GUI->m_Unit_GUI);
+
+        menu.AppendSeparator();
+
+        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Unit_GUI_Base::OnBumpUp, (Unit_GUI_Base*)m_GUI->m_Unit_GUI);
+        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &bellshire::Unit_GUI_Base::OnBumpDown, (Unit_GUI_Base*)m_GUI->m_Unit_GUI);
 
         menu.AppendSeparator();
 
@@ -2530,6 +2661,15 @@ void bellshire::MaterialFrame::OnDeleteSynonym(wxCommandEvent& event)
 /// <param name="event"></param>
 void bellshire::MaterialFrame::OnDeleteGraphs(wxCommandEvent& event) { 
     ((Material_GUI_Base*)m_GUI->m_Material_GUI)->OnDeleteGraphs(event); 
+}
+
+/// <summary>
+/// Call parents to delete MatML data
+/// Event Handler Function
+/// </summary>
+/// <param name="event"></param>
+void bellshire::MaterialFrame::OnDeleteGraph(wxCommandEvent& event) { 
+    ((Graphs_GUI_Base*)m_GUI->m_Graphs_GUI)->OnDeleteGraph(event); 
 }
 
 /// <summary>

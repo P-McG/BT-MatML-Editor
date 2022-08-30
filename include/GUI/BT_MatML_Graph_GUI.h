@@ -65,6 +65,10 @@ namespace bellshire {
         );
 
         void SetConnect() {};
+
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
+
     private:
     };
 
@@ -72,11 +76,18 @@ namespace bellshire {
     {
     public:
 
+        TreeCtrlSorted* m_MatMLTreeCtrl;//Required before Event Handling.
+
         Graph_GUI();
         Graph_GUI(wxWindow* parent);
         virtual ~Graph_GUI();
 
-        void SetEvtHandlerVar() {};
+        void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl);//Required before Event Handling.
+        void SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
+
     private:
     };
 

@@ -368,3 +368,149 @@ void Uncertainty_GUI::OnPasteUnits(wxCommandEvent& event) { ON_PARENT_PASTE_CONT
 void Uncertainty_GUI::OnPasteUnitless(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(Uncertainty, Unitless) }
 void Uncertainty_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(Uncertainty, Notes) }
 void Uncertainty_GUI::OnPasteScale(wxCommandEvent& event) {ON_PARENT_PASTE_CONT_CHILD(Uncertainty,Scale) }
+
+void Uncertainty_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Concentration*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			Concentration* elementParent = boost::any_cast<Concentration*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(DimensionalDetails*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			DimensionalDetails* elementParent = boost::any_cast<DimensionalDetails*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(ParameterValue*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+	try {
+		if (anyptrparent.type() == typeid(PropertyData*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void Uncertainty_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Concentration*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			Concentration* elementParent = boost::any_cast<Concentration*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(DimensionalDetails*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			DimensionalDetails* elementParent = boost::any_cast<DimensionalDetails*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(ParameterValue*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+	try {
+		if (anyptrparent.type() == typeid(PropertyData*)) {
+			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
+			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
+
+			auto& cont = elementParent->Uncertainty();
+			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+

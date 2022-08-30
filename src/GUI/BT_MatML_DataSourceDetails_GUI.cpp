@@ -243,3 +243,65 @@ void DataSourceDetails_GUI::OnDeleteNotes(wxCommandEvent& event) {ON_PARENT_DELE
 
 void DataSourceDetails_GUI::OnPasteName(wxCommandEvent& event) { ON_PARENT_PASTE_CHILD(DataSourceDetails, Name) }
 void DataSourceDetails_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CONT_CHILD(DataSourceDetails, Notes) }
+
+
+void DataSourceDetails_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			DataSourceDetails* element = boost::any_cast<DataSourceDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->DataSourceDetails();
+			std::pair<DataSourceDetails*, DataSourceDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<DataSourceDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+
+}
+
+void DataSourceDetails_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(Metadata*)) {
+			DataSourceDetails* element = boost::any_cast<DataSourceDetails*>(anyptr);
+			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+
+			auto& cont = elementParent->DataSourceDetails();
+			std::pair<DataSourceDetails*, DataSourceDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<DataSourceDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}

@@ -68,6 +68,9 @@ namespace bellshire {
         virtual void OnQualifierTextCtrlKillFocus(wxCommandEvent& event) { event.Skip(); }
         virtual void OnValidationButtonButton(wxCommandEvent& event) { event.Skip(); }
 
+        virtual void OnBumpDown(wxCommandEvent& event) { event.Skip(); }
+        virtual void OnBumpUp(wxCommandEvent& event) { event.Skip(); }
+
     private:
     };
 
@@ -75,16 +78,22 @@ namespace bellshire {
     {
     public:
 
+        TreeCtrlSorted* m_MatMLTreeCtrl;//Required before Event Handling.
+
         Qualifier_GUI();
         Qualifier_GUI(wxWindow* parent);
 
         virtual ~Qualifier_GUI();
 
         void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl);//Required before Event Handling.
+        void SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl);
 
         //Overwrites the base class functions
         void OnQualifierTextCtrlKillFocus(wxCommandEvent& event);
         void OnValidationButtonButton(wxCommandEvent& event);
+
+        void OnBumpDown(wxCommandEvent& event);
+        void OnBumpUp(wxCommandEvent& event);
 
     private:
         // validator for wxWidget Data1textCtrl
@@ -108,6 +117,7 @@ namespace bellshire {
 
             // Called to transfer data from the window
             virtual bool TransferFromWindow() wxOVERRIDE;
+
 
         private:
 

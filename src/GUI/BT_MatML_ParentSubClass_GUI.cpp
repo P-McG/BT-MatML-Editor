@@ -305,131 +305,62 @@ void ParentSubClass_GUI::OnPasteParentSubClass(wxCommandEvent& event) {
 		//catch (const boost::bad_any_cast&) { return; }
 }
 
-/// On Bump Down
-/// <summary>
-/// Event Handler Function
-/// This function uses strongtype for comparisions and selection, but
-/// uses MatML types to manipulates the data.
-/// </summary>
-/// <param name="event"></param>
 void ParentSubClass_GUI::OnBumpDown(wxCommandEvent& event)
 {
-	/* Gets the MatMLTreeItemData which is stored on the wxTreeCtrl. This user 
-	   data is of the strongtype, not the MatML Type.
-	*/	
+
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
-	/* wxTreeCtrl item to switch with */
 	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
 
-	/* Gets the parents MatML type */
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
 	try {
-		/* Cast MatMLTreeItemData from boost::any type into strongtype for comparision */
-		ParentSubClass* element = boost::any_cast<ParentSubClass*>(item->GetAnyMatMLDataPointer());
+		if (anyptrparent.type() == typeid(Class*)) {
+			ParentSubClass* element = boost::any_cast<ParentSubClass*>(anyptr);
+			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
 
-		/* Cast Parent  from boost::any type into MatML type for Manipulation */
-		Class*  elementParent = boost::any_cast<Class* >(itemParent->GetAnyMatMLDataPointer());//
+			auto& cont = elementParent->ParentSubClass();
+			std::pair<Class::ParentSubClass_type*, Class::ParentSubClass_type*> data(MatMLFindAndBumpDown(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<ParentSubClass_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
 
-			Class::ParentSubClass_sequence& cont(elementParent->ParentSubClass());
-			if (cont.empty() || cont.size() < 2) { return; }
-
-			for (Class::ParentSubClass_iterator iter = cont.begin(); iter != cont.end() - 1; ++iter) {
-				
-				/* if the pointer are the same(aka same memory location) 
-				   use the MatML Type, or Strongtype->t (the stored MatML type) for comparision
-				*/
-				if (element->t == static_cast<Class::ParentSubClass_type*>(&*iter)) {
-
-					/*Manipulation of MatML type data*/
-					/* Bump the MatML type data down */
-					Class::ParentSubClass_type temp = *(iter);
-					*(iter) = *(iter + 1);
-					*(iter + 1) = temp;
-
-					/*Re-Setup the MatMLTreeCtrl data*/
-					ParentSubClass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, * iter, itemId);
-					ParentSubClass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter + 1), nextitemId);
-
-					/* Set the selection so it is one down */
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(nextitemId));
-
-					/* Delete the old MatMLTreeCtrl items*/
-					m_MatMLTreeCtrl->Delete(itemId);
-					m_MatMLTreeCtrl->Delete(nextitemId);
-
-					return;
-				}
-			}
+			return;
 		}
-		catch (const boost::bad_any_cast&) {return;}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
 }
 
-/// On Bump Up
-/// <summary>
-/// Event Handler Function
-/// This function uses strongtype for comparisions and selection, but
-/// uses MatML types to manipulates the data. 
-/// </summary>
-/// <param name="event"></param>
 void ParentSubClass_GUI::OnBumpUp(wxCommandEvent& event)
 {
-	/*	Gets the MatMLTreeItemData which is stored on the wxTreeCtrl. This user
-		data is of the strongtype, not the MatML Type.
-	*/
+
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
-	/* wxTreeCtrl item to switch with */
 	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
-	MatMLTreeItemData* previtem = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(previtemId));
 
-	/* Gets the parents MatML type */
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-		try {
-			/* Cast MatMLTreeItemData from boost::any type into strongtype for comparision */
-			ParentSubClass* element = boost::any_cast<ParentSubClass*>(item->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-			/* Cast Parent  from boost::any type into MatML type for Manipulation */
-			Class*  elementParent = boost::any_cast<Class*>(itemParent->GetAnyMatMLDataPointer());
+	try {
+		if (anyptrparent.type() == typeid(Class*)) {
+			ParentSubClass* element = boost::any_cast<ParentSubClass*>(anyptr);
+			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
 
+			auto& cont = elementParent->ParentSubClass();
+			std::pair<Class::ParentSubClass_type*, Class::ParentSubClass_type*> data(MatMLFindAndBumpUp(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<ParentSubClass_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
 
-			Class::ParentSubClass_sequence& cont(elementParent->ParentSubClass());
-			if (cont.empty() || cont.size() < 2) { return; }
-
-			for (Class::ParentSubClass_iterator iter = cont.begin() + 1; iter != cont.end(); ++iter) {
-
-				/*	if the pointer are the same(aka same memory location)
-					use the MatML Type, or Strongtype->t (the stored MatML type) for comparision 
-				*/
-				if (element->t == static_cast<Class::ParentSubClass_type*>(&*iter)) {
-
-					/* Manipulation of MatML type data */
-					/* Bump the MatML type data up 
-					*/
-					Class::ParentSubClass_type temp = *(iter);
-					*(iter) = *(iter - 1);
-					*(iter - 1) = temp;
-
-					/*Re-Setup the MatMLTreeCtrl data*/
-					ParentSubClass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-					ParentSubClass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter - 1), previtemId);
-
-					/* Set the selection so it is one down */
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(previtemId));//setup so selection bumps down
-
-					/* Delete the old MatMLTreeCtrl items*/
-					m_MatMLTreeCtrl->Delete(previtemId);
-					m_MatMLTreeCtrl->Delete(itemId);//perform last so selection bumps down
-
-					return;
-				}
-			}
+			return;
 		}
-		catch (const boost::bad_any_cast&) { return; }
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
 }

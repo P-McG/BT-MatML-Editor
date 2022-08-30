@@ -162,6 +162,7 @@ protected:
 	void OnDeleteAbbreviation(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteSynonym(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteGraphs(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
+	void OnDeleteGraph(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteMaterial(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteMeasurementTechniqueDetails(wxCommandEvent& event);/*! Call parent's to delete the MatML data */
 	void OnDeleteMetadata(wxCommandEvent& event);/*! Call parent's to delete the MatML data */

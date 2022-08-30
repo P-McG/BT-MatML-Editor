@@ -153,6 +153,6 @@ void Graphs_GUI::SetMatMLItemToCopy(const ::boost::any& MatMLItemToCopy)
 	m_MatMLItemToCopy = MatMLItemToCopy;
 }
 
-void Graphs_GUI::OnInsertGraph(wxCommandEvent& event) {}
-
-void Graphs_GUI::OnPasteGraph(wxCommandEvent& event) {}
+void Graphs_GUI::OnInsertGraph(wxCommandEvent& event) { ON_PARENT_INSERT_ITER_CONT_CHILD(Graphs, Graph) }
+void Graphs_GUI::OnDeleteGraph(wxCommandEvent& event) { ON_PARENT_DELETE_ITER_CONT_CHILD(Graphs, Graph) }
+void Graphs_GUI::OnPasteGraph(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(Graphs, Graph) }

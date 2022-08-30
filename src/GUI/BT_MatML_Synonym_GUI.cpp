@@ -178,3 +178,64 @@ void Synonym_GUI::OnSynonymTextCtrl(wxCommandEvent& event)
 	}
 	catch (const boost::bad_any_cast&) { return; }
 }
+
+
+void Synonym_GUI::OnBumpDown(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId nextitemId = m_MatMLTreeCtrl->GetNextSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
+			Synonym* element = boost::any_cast<Synonym*>(anyptr);
+			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
+
+			auto& cont = elementParent->Synonym();
+			std::pair<GlossaryTerm::Synonym_type*, GlossaryTerm::Synonym_type*> data(MatMLFindAndBumpDown(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpDown<Synonym_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
+
+void Synonym_GUI::OnBumpUp(wxCommandEvent& event)
+{
+
+	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+
+	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+
+	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+
+	try {
+		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
+			Synonym* element = boost::any_cast<Synonym*>(anyptr);
+			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
+
+			auto& cont = elementParent->Synonym();
+			std::pair<GlossaryTerm::Synonym_type*, GlossaryTerm::Synonym_type*> data(MatMLFindAndBumpUp(element->t, cont));
+			if (data.second) MatMLTreeCtrlBumpUp<Synonym_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+
+			return;
+		}
+	}
+	catch (const boost::bad_any_cast&) {};//do nothing
+
+}
