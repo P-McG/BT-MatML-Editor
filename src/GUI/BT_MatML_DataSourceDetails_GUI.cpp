@@ -259,20 +259,13 @@ void DataSourceDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			DataSourceDetails* element = boost::any_cast<DataSourceDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->DataSourceDetails();
-			std::pair<DataSourceDetails*, DataSourceDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<DataSourceDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< DataSourceDetails,
+		Metadata,
+		Metadata::DataSourceDetails_sequence,
+		DataSourceDetails_GUI,
+		&Metadata::DataSourceDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -290,18 +283,12 @@ void DataSourceDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			DataSourceDetails* element = boost::any_cast<DataSourceDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->DataSourceDetails();
-			std::pair<DataSourceDetails*, DataSourceDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<DataSourceDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< DataSourceDetails,
+		Metadata,
+		Metadata::DataSourceDetails_sequence,
+		DataSourceDetails_GUI,
+		&Metadata::DataSourceDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

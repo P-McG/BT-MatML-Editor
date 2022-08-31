@@ -432,25 +432,19 @@ void ParentMaterial_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Class*)) {
-			ParentMaterial* element = boost::any_cast<ParentMaterial*>(anyptr);
-			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
+	IndividualBumpDown< ParentMaterial,
+		Class,
+		Class::ParentMaterial_sequence,
+		ParentMaterial_GUI,
+		&Class::ParentMaterial
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont = elementParent->ParentMaterial();
-			std::pair<ParentMaterial*, ParentMaterial*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<ParentMaterial_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 
 }
 
 void ParentMaterial_GUI::OnBumpUp(wxCommandEvent& event)
 {
-
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
@@ -462,17 +456,12 @@ void ParentMaterial_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Class*)) {
-			ParentMaterial* element = boost::any_cast<ParentMaterial*>(anyptr);
-			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
+	IndividualBumpUp< ParentMaterial,
+		Class,
+		Class::ParentMaterial_sequence,
+		ParentMaterial_GUI,
+		&Class::ParentMaterial
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			auto& cont = elementParent->ParentMaterial();
-			std::pair<ParentMaterial*, ParentMaterial*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<ParentMaterial_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }

@@ -194,19 +194,13 @@ void Synonym_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
-			Synonym* element = boost::any_cast<Synonym*>(anyptr);
-			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
-
-			auto& cont = elementParent->Synonym();
-			std::pair<GlossaryTerm::Synonym_type*, GlossaryTerm::Synonym_type*> data(MatMLFindAndBumpDown(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Synonym_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDownStrongtype< Synonym,
+		GlossaryTerm,
+		GlossaryTerm::Synonym_sequence,
+		Synonym_GUI,
+		&GlossaryTerm::Synonym
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -224,18 +218,12 @@ void Synonym_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
-			Synonym* element = boost::any_cast<Synonym*>(anyptr);
-			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
-
-			auto& cont = elementParent->Synonym();
-			std::pair<GlossaryTerm::Synonym_type*, GlossaryTerm::Synonym_type*> data(MatMLFindAndBumpUp(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Synonym_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpStrongtype< Synonym,
+		GlossaryTerm,
+		GlossaryTerm::Synonym_sequence,
+		Synonym_GUI,
+		&GlossaryTerm::Synonym
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

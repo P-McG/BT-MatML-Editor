@@ -112,7 +112,11 @@ namespace bellshire {
         void OnBumpDown(wxCommandEvent& event);
         void OnBumpUp(wxCommandEvent& event);
 
+        typedef Metadata::AuthorityDetails_sequence& (Metadata::* Cont_Func)();
+
     private:
     };
-
 }; //namespace bellshire end
+
+ // Template include
+ #include "BT_MatML_AuthorityDetails_GUI.inl"

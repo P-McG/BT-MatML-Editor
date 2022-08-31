@@ -723,7 +723,6 @@ void PropertyData_GUI::OnPasteNotes(wxCommandEvent& event) { ON_PARENT_PASTE_CON
 
 void PropertyData_GUI::OnBumpDown(wxCommandEvent& event)
 {
-	// this->Freeze();
 
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
@@ -733,130 +732,52 @@ void PropertyData_GUI::OnBumpDown(wxCommandEvent& event)
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		PropertyData* element = boost::any_cast<PropertyData*>(item->GetAnyMatMLDataPointer());
-		try {
-			BulkDetails* const elementParent = boost::any_cast<BulkDetails* const>(itemParent->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-			BulkDetails::PropertyData_sequence& cont(elementParent->PropertyData());
-			if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
+	IndividualBumpDown< PropertyData,
+		BulkDetails,
+		BulkDetails::PropertyData_sequence,
+		PropertyData_GUI,
+		&BulkDetails::PropertyData
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			for (BulkDetails::PropertyData_iterator iter = cont.begin(); iter != cont.end() - 1; ++iter) {
-				if (element == static_cast<PropertyData*>(&*iter)) {//if the pointer are the same (aka same memory location
-					PropertyData temp = *(iter);
-					*(iter) = *(iter + 1);
-					*(iter + 1) = temp;
+	IndividualBumpDown< PropertyData,
+		ComponentDetails,
+		ComponentDetails::PropertyData_sequence,
+		PropertyData_GUI,
+		&ComponentDetails::PropertyData
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter + 1), nextitemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(nextitemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(itemId);
-					m_MatMLTreeCtrl->Delete(nextitemId);
-
-					// this->Thaw();
-
-					return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {}
-		try {
-			ComponentDetails* const elementParent = boost::any_cast<ComponentDetails* const>(itemParent->GetAnyMatMLDataPointer());
-
-			ComponentDetails::PropertyData_sequence& cont(elementParent->PropertyData());
-			if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
-
-			for (ComponentDetails::PropertyData_iterator iter = cont.begin(); iter != cont.end() - 1; ++iter) {
-				if (element == static_cast<PropertyData*>(&*iter)) {//if the pointer are the same (aka same memory location
-					PropertyData temp = *(iter);
-					*(iter) = *(iter + 1);
-					*(iter + 1) = temp;
-
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter + 1), nextitemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(nextitemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(itemId);
-					m_MatMLTreeCtrl->Delete(nextitemId);
-
-					// this->Thaw();
-
-					return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {}
-
-	}
-	catch (const boost::bad_any_cast&) { return; }
 }
 void PropertyData_GUI::OnBumpUp(wxCommandEvent& event)
 {
-	// this->Freeze();
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
 	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
-	MatMLTreeItemData* previtem = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(previtemId));
 
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		PropertyData* element = boost::any_cast<PropertyData*>(item->GetAnyMatMLDataPointer());
-		try {
-			BulkDetails* const elementParent = boost::any_cast<BulkDetails* const>(itemParent->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-			BulkDetails::PropertyData_sequence& cont(elementParent->PropertyData());
-			if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
+	IndividualBumpUp< PropertyData,
+		BulkDetails,
+		BulkDetails::PropertyData_sequence,
+		PropertyData_GUI,
+		&BulkDetails::PropertyData
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			for (BulkDetails::PropertyData_iterator iter = cont.begin() + 1; iter != cont.end(); ++iter) {
-				if (element == static_cast<PropertyData*>(&*iter)) {//if the pointer are the same (aka same memory location
-					PropertyData temp = *(iter);
-					*(iter) = *(iter - 1);
-					*(iter - 1) = temp;
-
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter - 1), previtemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(previtemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(previtemId);
-					m_MatMLTreeCtrl->Delete(itemId);//perform last so selection bumps down
-
-					/* this->Thaw();*/ return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {}
-		try {
-			ComponentDetails* const elementParent = boost::any_cast<ComponentDetails* const>(itemParent->GetAnyMatMLDataPointer());
-
-			ComponentDetails::PropertyData_sequence& cont(elementParent->PropertyData());
-			if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
-
-			for (ComponentDetails::PropertyData_iterator iter = cont.begin() + 1; iter != cont.end(); ++iter) {
-				if (element == static_cast<PropertyData*>(&*iter)) {//if the pointer are the same (aka same memory location
-					PropertyData temp = *(iter);
-					*(iter) = *(iter - 1);
-					*(iter - 1) = temp;
-
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-					PropertyData_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter - 1), previtemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(previtemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(previtemId);
-					m_MatMLTreeCtrl->Delete(itemId);//perform last so selection bumps down
-
-					/* this->Thaw();*/ return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {}
-	}
-	catch (const boost::bad_any_cast&) {/* this->Thaw();*/ return; }
+	IndividualBumpUp< PropertyData,
+		ComponentDetails,
+		ComponentDetails::PropertyData_sequence,
+		PropertyData_GUI,
+		&ComponentDetails::PropertyData
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 }

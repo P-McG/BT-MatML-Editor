@@ -219,20 +219,13 @@ void ParameterDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			ParameterDetails* element = boost::any_cast<ParameterDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->ParameterDetails();
-			std::pair<ParameterDetails*, ParameterDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<ParameterDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< ParameterDetails,
+		Metadata,
+		Metadata::ParameterDetails_sequence,
+		ParameterDetails_GUI,
+		&Metadata::ParameterDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -250,19 +243,13 @@ void ParameterDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			ParameterDetails* element = boost::any_cast<ParameterDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->ParameterDetails();
-			std::pair<ParameterDetails*, ParameterDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<ParameterDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< ParameterDetails,
+		Metadata,
+		Metadata::ParameterDetails_sequence,
+		ParameterDetails_GUI,
+		&Metadata::ParameterDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }
 

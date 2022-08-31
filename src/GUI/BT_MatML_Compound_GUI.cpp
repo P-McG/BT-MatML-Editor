@@ -196,19 +196,14 @@ void Compound_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(ChemicalComposition*)) {
-			Compound* element = boost::any_cast<Compound*>(anyptr);
-			ChemicalComposition* elementParent = boost::any_cast<ChemicalComposition*>(anyptrparent);
+	IndividualBumpDown< Compound,
+		ChemicalComposition,
+		ChemicalComposition::Compound_sequence,
+		Compound_GUI,
+		&ChemicalComposition::Compound
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont = elementParent->Compound();
-			std::pair<Compound*, Compound*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Compound_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }
 
 void Compound_GUI::OnBumpUp(wxCommandEvent& event)
@@ -225,17 +220,12 @@ void Compound_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(ChemicalComposition*)) {
-			Compound* element = boost::any_cast<Compound*>(anyptr);
-			ChemicalComposition* elementParent = boost::any_cast<ChemicalComposition*>(anyptrparent);
+	IndividualBumpUp< Compound,
+		ChemicalComposition,
+		ChemicalComposition::Compound_sequence,
+		Compound_GUI,
+		&ChemicalComposition::Compound
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			auto& cont = elementParent->Compound();
-			std::pair<Compound*, Compound*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Compound_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }

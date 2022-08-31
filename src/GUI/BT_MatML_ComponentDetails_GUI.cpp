@@ -356,7 +356,6 @@ void ComponentDetails_GUI::OnPasteComponentDetails(wxCommandEvent& event) {
 
 void ComponentDetails_GUI::OnBumpDown(wxCommandEvent& event)
 {
-	// this->Freeze();
 
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
@@ -366,75 +365,37 @@ void ComponentDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		ComponentDetails* element = boost::any_cast<ComponentDetails*>(item->GetAnyMatMLDataPointer());
-		Material* const elementParent = boost::any_cast<Material* const>(itemParent->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-		Material::ComponentDetails_sequence& cont(elementParent->ComponentDetails());
-		if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
+	IndividualBumpDown< ComponentDetails,
+		Material,
+		Material::ComponentDetails_sequence,
+		ComponentDetails_GUI,
+		&Material::ComponentDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-		for (Material::ComponentDetails_iterator iter = cont.begin(); iter != cont.end() - 1; ++iter) {
-			if (element == static_cast<ComponentDetails*>(&*iter)) {//if the pointer are the same (aka same memory location
-				ComponentDetails temp = *(iter);
-				*(iter) = *(iter + 1);
-				*(iter + 1) = temp;
-
-				ComponentDetails_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-				ComponentDetails_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter + 1), nextitemId);
-
-				m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(nextitemId));//setup so selection bumps down
-
-				m_MatMLTreeCtrl->Delete(itemId);
-				m_MatMLTreeCtrl->Delete(nextitemId);
-
-				// this->Thaw();
-
-				return;
-			}
-		}
-
-	}
-	catch (const boost::bad_any_cast&) {// this->Thaw();
-		return;
-	}
 }
 void ComponentDetails_GUI::OnBumpUp(wxCommandEvent& event)
 {
-	// this->Freeze();
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
 	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
-	MatMLTreeItemData* previtem = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(previtemId));
 
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		ComponentDetails* element = boost::any_cast<ComponentDetails*>(item->GetAnyMatMLDataPointer());
-		Material* const elementParent = boost::any_cast<Material* const>(itemParent->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-		Material::ComponentDetails_sequence& cont(elementParent->ComponentDetails());
-		if (cont.empty() || cont.size() < 2) {/* this->Thaw();*/ return; }
+	IndividualBumpUp< ComponentDetails,
+		Material,
+		Material::ComponentDetails_sequence,
+		ComponentDetails_GUI,
+		&Material::ComponentDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-		for (Material::ComponentDetails_iterator iter = cont.begin() + 1; iter != cont.end(); ++iter) {
-			if (element == static_cast<ComponentDetails*>(&*iter)) {//if the pointer are the same (aka same memory location
-				ComponentDetails temp = *(iter);
-				*(iter) = *(iter - 1);
-				*(iter - 1) = temp;
-
-				ComponentDetails_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *iter, itemId);
-				ComponentDetails_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter - 1), previtemId);
-
-				m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(previtemId));//setup so selection bumps down
-
-				m_MatMLTreeCtrl->Delete(previtemId);
-				m_MatMLTreeCtrl->Delete(itemId);//perform last so selection bumps down
-
-				/* this->Thaw();*/ return;
-			}
-		}
-
-	}
-	catch (const boost::bad_any_cast&) {/* this->Thaw();*/ return; }
 }

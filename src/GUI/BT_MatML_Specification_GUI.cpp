@@ -286,33 +286,22 @@ void Specification_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type()==typeid(BulkDetails*)) {
-			Specification* element = boost::any_cast<Specification*>(anyptr);
-			BulkDetails* elementParent = boost::any_cast<BulkDetails*>(anyptrparent);
+	IndividualBumpDown< Specification,
+		BulkDetails,
+		BulkDetails::Specification_sequence,
+		Specification_GUI,
+		&BulkDetails::Specification
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont = elementParent->Specification();
-			std::pair<Specification*, Specification*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+	IndividualBumpDown< Specification,
+		ComponentDetails,
+		ComponentDetails::Specification_sequence,
+		Specification_GUI,
+		&ComponentDetails::Specification
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-	try {
-		if (anyptrparent.type() == typeid(ComponentDetails*)) {
-			Specification* element = boost::any_cast<Specification*>(anyptr);
-			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
-
-			auto& cont(elementParent->Specification());
-			std::pair<Specification*, Specification*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }
 
 void Specification_GUI::OnBumpUp(wxCommandEvent& event)
@@ -329,31 +318,20 @@ void Specification_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(BulkDetails*)) {
-			Specification* element = boost::any_cast<Specification*>(anyptr);
-			BulkDetails* elementParent = boost::any_cast<BulkDetails*>(anyptrparent);
+	IndividualBumpUp< Specification,
+		BulkDetails,
+		BulkDetails::Specification_sequence,
+		Specification_GUI,
+		&BulkDetails::Specification
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			auto& cont = elementParent->Specification();
-			std::pair<Specification*, Specification*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+	IndividualBumpUp< Specification,
+		ComponentDetails,
+		ComponentDetails::Specification_sequence,
+		Specification_GUI,
+		&ComponentDetails::Specification
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-	try {
-		if (anyptrparent.type() == typeid(ComponentDetails*)) {
-			Specification* element = boost::any_cast<Specification*>(anyptr);
-			ComponentDetails* elementParent = boost::any_cast<ComponentDetails*>(anyptrparent);
-
-			auto& cont(elementParent->Specification());
-			std::pair<Specification*, Specification*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Specification_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }

@@ -383,62 +383,37 @@ void Uncertainty_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Concentration*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			Concentration* elementParent = boost::any_cast<Concentration*>(anyptrparent);
+	IndividualBumpDown< Uncertainty,
+		Concentration,
+		Concentration::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&Concentration::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
+	IndividualBumpDown< Uncertainty,
+		DimensionalDetails,
+		DimensionalDetails::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&DimensionalDetails::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< Uncertainty,
+		ParameterValue,
+		ParameterValue::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&ParameterValue::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-	try {
-		if (anyptrparent.type() == typeid(DimensionalDetails*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			DimensionalDetails* elementParent = boost::any_cast<DimensionalDetails*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-	try {
-		if (anyptrparent.type() == typeid(ParameterValue*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-
-	try {
-		if (anyptrparent.type() == typeid(PropertyData*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< Uncertainty,
+		PropertyData,
+		PropertyData::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&PropertyData::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -456,61 +431,37 @@ void Uncertainty_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Concentration*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			Concentration* elementParent = boost::any_cast<Concentration*>(anyptrparent);
+	IndividualBumpUp< Uncertainty,
+		Concentration,
+		Concentration::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&Concentration::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+	IndividualBumpUp< Uncertainty,
+		DimensionalDetails,
+		DimensionalDetails::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&DimensionalDetails::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUp< Uncertainty,
+		ParameterValue,
+		ParameterValue::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&ParameterValue::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-	try {
-		if (anyptrparent.type() == typeid(DimensionalDetails*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			DimensionalDetails* elementParent = boost::any_cast<DimensionalDetails*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-	try {
-		if (anyptrparent.type() == typeid(ParameterValue*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-	try {
-		if (anyptrparent.type() == typeid(PropertyData*)) {
-			Uncertainty* element = boost::any_cast<Uncertainty*>(anyptr);
-			PropertyData* elementParent = boost::any_cast<PropertyData*>(anyptrparent);
-
-			auto& cont = elementParent->Uncertainty();
-			std::pair<Uncertainty*, Uncertainty*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Uncertainty_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUp< Uncertainty,
+		PropertyData,
+		PropertyData::Uncertainty_sequence,
+		Uncertainty_GUI,
+		&PropertyData::Uncertainty
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }
 

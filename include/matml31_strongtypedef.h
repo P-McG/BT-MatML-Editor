@@ -26,7 +26,8 @@ namespace bellshire {
 		: boost::totally_ordered1< D																										\
 		, boost::totally_ordered2< D, T																										\
 		> >																																	\
-	{																																		\
+	{					\
+        typedef T* value_type;																													\
 		T* t;																																\
 		explicit D(T* t_) BOOST_NOEXCEPT_IF(boost::has_nothrow_copy_constructor<T>::value) : t((t_)) {}					\
 		D() BOOST_NOEXCEPT_IF(boost::has_nothrow_default_constructor<T>::value) : t(nullptr) {}												\

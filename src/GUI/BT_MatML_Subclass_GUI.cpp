@@ -303,7 +303,6 @@ void Subclass_GUI::OnPasteParentSubClass(wxCommandEvent& event) {
 
 void Subclass_GUI::OnBumpDown(wxCommandEvent& event)
 {
-	// this->Freeze();
 
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
@@ -313,78 +312,38 @@ void Subclass_GUI::OnBumpDown(wxCommandEvent& event)
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		Subclass* element = boost::any_cast<Subclass*>(item->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-		try {
-			BulkDetails* elementParent = boost::any_cast<BulkDetails*>(itemParent->GetAnyMatMLDataPointer());
+	IndividualBumpDownStrongtype< Subclass,
+		BulkDetails,
+		BulkDetails::Subclass_sequence,
+		Subclass_GUI,
+		&BulkDetails::Subclass
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont(elementParent->Subclass());
-			if (cont.empty() || cont.size() < 2)  return; 
-
-			for (auto iter = cont.begin(); iter != cont.end() - 1; ++iter) {
-				if ((element->t) == (&*iter)) {//if the pointer are the same (aka same memory location
-					BulkDetails::Subclass_type temp = *(iter);
-					*(iter) = *(iter + 1);
-					*(iter + 1) = temp;
-
-					Subclass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter), itemId);
-					Subclass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter + 1), nextitemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(nextitemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(itemId);
-					m_MatMLTreeCtrl->Delete(nextitemId);
-
-					return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {};//do nothing
-	}
-	catch (const boost::bad_any_cast&) {
-		return;
-	}
 }
 void Subclass_GUI::OnBumpUp(wxCommandEvent& event)
 {
-	// this->Freeze();
+
 	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
 
 	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
-	MatMLTreeItemData* previtem = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(previtemId));
 
 	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
 	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
 
-	try {
-		try {
-			BulkDetails*  elementParent = boost::any_cast<BulkDetails* >(itemParent->GetAnyMatMLDataPointer());
-			Subclass* element = boost::any_cast<Subclass*>(item->GetAnyMatMLDataPointer());
+	boost::any anyptr(item->GetAnyMatMLDataPointer());
+	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-			auto& cont(elementParent->Subclass());
-			if (cont.empty() || cont.size() < 2)  return; 
+	IndividualBumpUpStrongtype< Subclass,
+		BulkDetails,
+		BulkDetails::Subclass_sequence,
+		Subclass_GUI,
+		&BulkDetails::Subclass
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			for (auto iter = cont.begin() + 1; iter != cont.end(); ++iter) {
-				if ((element->t) == (&*iter)) {//if the pointer are the same (aka same memory location
-					BulkDetails::Subclass_type temp = *(iter);
-					*(iter) = *(iter - 1);
-					*(iter - 1) = temp;
-
-					Subclass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter), itemId);
-					Subclass_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, itemParentId, *(iter - 1), previtemId);
-
-					m_MatMLTreeCtrl->SelectItem(m_MatMLTreeCtrl->GetNextSibling(previtemId));//setup so selection bumps down
-
-					m_MatMLTreeCtrl->Delete(previtemId);
-					m_MatMLTreeCtrl->Delete(itemId);//perform last so selection bumps down
-
-					return;
-				}
-			}
-		}
-		catch (const boost::bad_any_cast&) {}
-	}
-	catch (const boost::bad_any_cast&) { return; }
 }

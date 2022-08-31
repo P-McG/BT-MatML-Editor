@@ -197,19 +197,14 @@ void Abbreviation_GUI::OnBumpDown(wxCommandEvent & event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
-			Abbreviation* element = boost::any_cast<Abbreviation*>(anyptr);
-			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
+	IndividualBumpDownStrongtype< Abbreviation,
+		GlossaryTerm,
+		GlossaryTerm::Abbreviation_sequence,
+		Abbreviation_GUI,
+		&GlossaryTerm::Abbreviation
+	>
+	(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
-			auto& cont = elementParent->Abbreviation();
-			std::pair<GlossaryTerm::Abbreviation_type*, GlossaryTerm::Abbreviation_type*> data(MatMLFindAndBumpDown(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Abbreviation_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 
 }
 
@@ -227,18 +222,12 @@ void Abbreviation_GUI::OnBumpUp(wxCommandEvent & event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(GlossaryTerm*)) {
-			Abbreviation* element = boost::any_cast<Abbreviation*>(anyptr);
-			GlossaryTerm* elementParent = boost::any_cast<GlossaryTerm*>(anyptrparent);
-
-			auto& cont = elementParent->Abbreviation();
-			std::pair<GlossaryTerm::Abbreviation_type*, GlossaryTerm::Abbreviation_type*> data(MatMLFindAndBumpUp(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Abbreviation_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpStrongtype< Abbreviation,
+		GlossaryTerm,
+		GlossaryTerm::Abbreviation_sequence,
+		Abbreviation_GUI,
+		&GlossaryTerm::Abbreviation
+	>
+	(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

@@ -202,20 +202,13 @@ void AuthorityDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			AuthorityDetails* element = boost::any_cast<AuthorityDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->AuthorityDetails();
-			std::pair<AuthorityDetails*, AuthorityDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<AuthorityDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< AuthorityDetails, 
+		Metadata, 
+		Metadata::AuthorityDetails_sequence, 
+		AuthorityDetails_GUI, 
+		&Metadata::AuthorityDetails 
+	>
+	(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -233,19 +226,47 @@ void AuthorityDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			AuthorityDetails* element = boost::any_cast<AuthorityDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->AuthorityDetails();
-			std::pair<AuthorityDetails*, AuthorityDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<AuthorityDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< AuthorityDetails,
+		Metadata,
+		Metadata::AuthorityDetails_sequence,
+		AuthorityDetails_GUI,
+		&Metadata::AuthorityDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }
 
+
+//void AuthorityDetails_GUI::OnBumpUp(wxCommandEvent& event)
+//{
+//
+//	wxTreeItemId itemId = m_MatMLTreeCtrl->GetSelection();
+//	MatMLTreeItemData* item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemId));
+//
+//	wxTreeItemId previtemId = m_MatMLTreeCtrl->GetPrevSibling(itemId);
+//
+//	wxTreeItemId itemParentId = (m_MatMLTreeCtrl->GetItemParent(m_MatMLTreeCtrl->GetSelection()));
+//	MatMLTreeItemData* itemParent = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(itemParentId));
+//
+//	boost::any anyptr(item->GetAnyMatMLDataPointer());
+//	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
+//
+//	try {
+//		if (anyptrparent.type() == typeid(Metadata*)) {
+//			AuthorityDetails* element = boost::any_cast<AuthorityDetails*>(anyptr);
+//			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
+//
+//			typedef Metadata::AuthorityDetails_sequence& (Metadata::* Cont_Func)();
+//
+//			Cont_Func cont_func = &Metadata::AuthorityDetails;
+//
+//			std::pair<AuthorityDetails*, AuthorityDetails*> data(MatMLFindAndBumpUpHavingId(element, (elementParent->*cont_func)()));
+//			if (data.second)
+//				MatMLTreeCtrlBumpUp<AuthorityDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+//
+//			return;
+//		}
+//	}
+//	catch (const boost::bad_any_cast&) {};//do nothing
+//
+//}

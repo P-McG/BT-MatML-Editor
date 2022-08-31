@@ -319,19 +319,13 @@ void ParentSubClass_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Class*)) {
-			ParentSubClass* element = boost::any_cast<ParentSubClass*>(anyptr);
-			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
-
-			auto& cont = elementParent->ParentSubClass();
-			std::pair<Class::ParentSubClass_type*, Class::ParentSubClass_type*> data(MatMLFindAndBumpDown(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<ParentSubClass_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDownStrongtype< ParentSubClass,
+		Class,
+		Class::ParentSubClass_sequence,
+		ParentSubClass_GUI,
+		&Class::ParentSubClass
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -349,18 +343,12 @@ void ParentSubClass_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Class*)) {
-			ParentSubClass* element = boost::any_cast<ParentSubClass*>(anyptr);
-			Class* elementParent = boost::any_cast<Class*>(anyptrparent);
-
-			auto& cont = elementParent->ParentSubClass();
-			std::pair<Class::ParentSubClass_type*, Class::ParentSubClass_type*> data(MatMLFindAndBumpUp(element->t, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<ParentSubClass_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpStrongtype< ParentSubClass,
+		Class,
+		Class::ParentSubClass_sequence,
+		ParentSubClass_GUI,
+		&Class::ParentSubClass
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

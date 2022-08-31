@@ -207,19 +207,13 @@ void PhaseComposition_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Characterization*)) {
-			PhaseComposition* element = boost::any_cast<PhaseComposition*>(anyptr);
-			Characterization* elementParent = boost::any_cast<Characterization*>(anyptrparent);
-
-			auto& cont = elementParent->PhaseComposition();
-			std::pair<PhaseComposition*, PhaseComposition*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<PhaseComposition_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< PhaseComposition,
+		Characterization,
+		Characterization::PhaseComposition_sequence,
+		PhaseComposition_GUI,
+		&Characterization::PhaseComposition
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 }
 
 void PhaseComposition_GUI::OnBumpUp(wxCommandEvent& event)
@@ -236,17 +230,11 @@ void PhaseComposition_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Characterization*)) {
-			PhaseComposition* element = boost::any_cast<PhaseComposition*>(anyptr);
-			Characterization* elementParent = boost::any_cast<Characterization*>(anyptrparent);
-
-			auto& cont = elementParent->PhaseComposition();
-			std::pair<PhaseComposition*, PhaseComposition*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<PhaseComposition_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUp< PhaseComposition,
+		Characterization,
+		Characterization::PhaseComposition_sequence,
+		PhaseComposition_GUI,
+		&Characterization::PhaseComposition
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 }

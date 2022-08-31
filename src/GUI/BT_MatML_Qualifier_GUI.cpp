@@ -352,20 +352,13 @@ void Qualifier_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(ParameterValue*)) {
-			Qualifier* element = boost::any_cast<Qualifier*>(anyptr);
-			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
-
-			auto& cont = elementParent->Qualifier();
-			std::pair<Qualifier*, Qualifier*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) 
-				MatMLTreeCtrlBumpDown<Qualifier_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< Qualifier,
+		ParameterValue,
+		ParameterValue::Qualifier_sequence,
+		Qualifier_GUI,
+		&ParameterValue::Qualifier
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -383,20 +376,12 @@ void Qualifier_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(ParameterValue*)) {
-			Qualifier* element = boost::any_cast<Qualifier*>(anyptr);
-			ParameterValue* elementParent = boost::any_cast<ParameterValue*>(anyptrparent);
-
-			auto& cont = elementParent->Qualifier();
-			std::pair<Qualifier*, Qualifier*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) 
-				MatMLTreeCtrlBumpUp<Qualifier_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpUp< Qualifier,
+		ParameterValue,
+		ParameterValue::Qualifier_sequence,
+		Qualifier_GUI,
+		&ParameterValue::Qualifier
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

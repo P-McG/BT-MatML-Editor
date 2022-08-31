@@ -257,20 +257,13 @@ void SpecimenDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			SpecimenDetails* element = boost::any_cast<SpecimenDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->SpecimenDetails();
-			std::pair<SpecimenDetails*, SpecimenDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<SpecimenDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< SpecimenDetails,
+		Metadata,
+		Metadata::SpecimenDetails_sequence,
+		SpecimenDetails_GUI,
+		&Metadata::SpecimenDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -288,18 +281,12 @@ void SpecimenDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			SpecimenDetails* element = boost::any_cast<SpecimenDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->SpecimenDetails();
-			std::pair<SpecimenDetails*, SpecimenDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<SpecimenDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< SpecimenDetails,
+		Metadata,
+		Metadata::SpecimenDetails_sequence,
+		SpecimenDetails_GUI,
+		&Metadata::SpecimenDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

@@ -213,19 +213,13 @@ void DimensionalDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Characterization*)) {
-			DimensionalDetails* element = boost::any_cast<DimensionalDetails*>(anyptr);
-			Characterization* elementParent = boost::any_cast<Characterization*>(anyptrparent);
-
-			auto& cont = elementParent->DimensionalDetails();
-			std::pair<DimensionalDetails*, DimensionalDetails*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<DimensionalDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< DimensionalDetails,
+		Characterization,
+		Characterization::DimensionalDetails_sequence,
+		DimensionalDetails_GUI,
+		&Characterization::DimensionalDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 }
 
 void DimensionalDetails_GUI::OnBumpUp(wxCommandEvent& event)
@@ -242,17 +236,11 @@ void DimensionalDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Characterization*)) {
-			DimensionalDetails* element = boost::any_cast<DimensionalDetails*>(anyptr);
-			Characterization* elementParent = boost::any_cast<Characterization*>(anyptrparent);
-
-			auto& cont = elementParent->DimensionalDetails();
-			std::pair<DimensionalDetails*, DimensionalDetails*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<DimensionalDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUp< DimensionalDetails,
+		Characterization,
+		Characterization::DimensionalDetails_sequence,
+		DimensionalDetails_GUI,
+		&Characterization::DimensionalDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 }

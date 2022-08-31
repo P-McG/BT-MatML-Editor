@@ -443,19 +443,13 @@ void Unit_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Units*)) {
-			Unit* element = boost::any_cast<Unit*>(anyptr);
-			Units* elementParent = boost::any_cast<Units*>(anyptrparent);
-
-			auto& cont = elementParent->Unit();
-			std::pair<Unit*, Unit*> data(MatMLFindAndBumpDown(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Unit_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpDown< Unit,
+		Units,
+		Units::Unit_sequence,
+		Unit_GUI,
+		&Units::Unit
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -473,18 +467,13 @@ void Unit_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Units*)) {
-			Unit* element = boost::any_cast<Unit*>(anyptr);
-			Units* elementParent = boost::any_cast<Units*>(anyptrparent);
+	IndividualBumpUp< Unit,
+		Units,
+		Units::Unit_sequence,
+		Unit_GUI,
+		&Units::Unit
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			auto& cont = elementParent->Unit();
-			std::pair<Unit*, Unit*> data(MatMLFindAndBumpUp(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Unit_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 }
 

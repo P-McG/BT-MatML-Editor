@@ -534,20 +534,13 @@ void Material_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(MatML_Doc*)) {
-			Material* element = boost::any_cast<Material*>(anyptr);
-			MatML_Doc* elementParent = boost::any_cast<MatML_Doc*>(anyptrparent);
-
-			auto& cont = elementParent->Material();
-			std::pair<Material*, Material*> data(MatMLFindAndBumpDownHavingOptionalId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<Material_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingOptionalId< Material,
+		MatML_Doc,
+		MatML_Doc::Material_sequence,
+		Material_GUI,
+		&MatML_Doc::Material
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -565,18 +558,12 @@ void Material_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(MatML_Doc*)) {
-			Material* element = boost::any_cast<Material*>(anyptr);
-			MatML_Doc* elementParent = boost::any_cast<MatML_Doc*>(anyptrparent);
-
-			auto& cont = elementParent->Material();
-			std::pair<Material*, Material*> data(MatMLFindAndBumpUpHavingOptionalId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<Material_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingOptionalId< Material,
+		MatML_Doc,
+		MatML_Doc::Material_sequence,
+		Material_GUI,
+		&MatML_Doc::Material
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

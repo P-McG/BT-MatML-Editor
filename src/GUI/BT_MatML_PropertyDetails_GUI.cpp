@@ -272,20 +272,13 @@ void PropertyDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			PropertyDetails* element = boost::any_cast<PropertyDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->PropertyDetails();
-			std::pair<PropertyDetails*, PropertyDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<PropertyDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< PropertyDetails,
+		Metadata,
+		Metadata::PropertyDetails_sequence,
+		PropertyDetails_GUI,
+		&Metadata::PropertyDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -303,19 +296,13 @@ void PropertyDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			PropertyDetails* element = boost::any_cast<PropertyDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->PropertyDetails();
-			std::pair<PropertyDetails*, PropertyDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<PropertyDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< PropertyDetails,
+		Metadata,
+		Metadata::PropertyDetails_sequence,
+		PropertyDetails_GUI,
+		&Metadata::PropertyDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }
 

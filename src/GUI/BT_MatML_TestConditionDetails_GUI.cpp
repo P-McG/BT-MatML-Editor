@@ -210,21 +210,13 @@ void TestConditionDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			TestConditionDetails* element = boost::any_cast<TestConditionDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->TestConditionDetails();
-			std::pair<TestConditionDetails*, TestConditionDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<TestConditionDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
-
+	IndividualBumpDownHavingId< TestConditionDetails,
+		Metadata,
+		Metadata::TestConditionDetails_sequence,
+		TestConditionDetails_GUI,
+		&Metadata::TestConditionDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 }
 
 void TestConditionDetails_GUI::OnBumpUp(wxCommandEvent& event)
@@ -241,18 +233,12 @@ void TestConditionDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			TestConditionDetails* element = boost::any_cast<TestConditionDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->TestConditionDetails();
-			std::pair<TestConditionDetails*, TestConditionDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<TestConditionDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
+	IndividualBumpUpHavingId< TestConditionDetails,
+		Metadata,
+		Metadata::TestConditionDetails_sequence,
+		TestConditionDetails_GUI,
+		&Metadata::TestConditionDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
 }

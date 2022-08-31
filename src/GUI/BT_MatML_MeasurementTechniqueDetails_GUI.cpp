@@ -197,20 +197,13 @@ void MeasurementTechniqueDetails_GUI::OnBumpDown(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			MeasurementTechniqueDetails* element = boost::any_cast<MeasurementTechniqueDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
-
-			auto& cont = elementParent->MeasurementTechniqueDetails();
-			std::pair<MeasurementTechniqueDetails*, MeasurementTechniqueDetails*> data(MatMLFindAndBumpDownHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpDown<MeasurementTechniqueDetails_GUI>(m_MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
-
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
-
+	IndividualBumpDownHavingId< MeasurementTechniqueDetails,
+		Metadata,
+		Metadata::MeasurementTechniqueDetails_sequence,
+		MeasurementTechniqueDetails_GUI,
+		&Metadata::MeasurementTechniqueDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, itemId, nextitemId);
 
 }
 
@@ -228,18 +221,14 @@ void MeasurementTechniqueDetails_GUI::OnBumpUp(wxCommandEvent& event)
 	boost::any anyptr(item->GetAnyMatMLDataPointer());
 	boost::any anyptrparent(itemParent->GetAnyMatMLDataPointer());
 
-	try {
-		if (anyptrparent.type() == typeid(Metadata*)) {
-			MeasurementTechniqueDetails* element = boost::any_cast<MeasurementTechniqueDetails*>(anyptr);
-			Metadata* elementParent = boost::any_cast<Metadata*>(anyptrparent);
 
-			auto& cont = elementParent->MeasurementTechniqueDetails();
-			std::pair<MeasurementTechniqueDetails*, MeasurementTechniqueDetails*> data(MatMLFindAndBumpUpHavingId(element, cont));
-			if (data.second) MatMLTreeCtrlBumpUp<MeasurementTechniqueDetails_GUI>(m_MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
+	IndividualBumpUpHavingId< MeasurementTechniqueDetails,
+		Metadata,
+		Metadata::MeasurementTechniqueDetails_sequence,
+		MeasurementTechniqueDetails_GUI,
+		&Metadata::MeasurementTechniqueDetails
+	>
+		(anyptr, anyptrparent, m_MatMLTreeCtrl, itemParentId, previtemId, itemId);
 
-			return;
-		}
-	}
-	catch (const boost::bad_any_cast&) {};//do nothing
 
 }
