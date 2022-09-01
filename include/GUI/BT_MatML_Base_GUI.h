@@ -22,9 +22,6 @@
 
 namespace bellshire {
 
-
-
-
 // The following are added in the MatML_defaults already. 
 // Therefore inserting new elements is not allowed. So do nothing.
 // Note: PARENT is Selected in the menu 
@@ -168,283 +165,60 @@ if (element) {\
         MatML_Base_GUI() {};
         virtual ~MatML_Base_GUI() {};
 
-        template<class MatML_Class>
-        MatML_Class* GetSelMatML(TreeCtrlSorted* MatMLTreeCtrl)
-        {
-
-            wxTreeItemId selItemId = MatMLTreeCtrl->GetSelection();
-            MatMLTreeItemData* item = NULL;
-
-            if (selItemId.IsOk()) {
-
-                item = (MatMLTreeItemData*)(MatMLTreeCtrl->GetItemData(selItemId));
-                const ::boost::any& anyptr(item->GetAnyMatMLDataPointer());
-
-                try {
-                    MatML_Class* element = boost::any_cast<MatML_Class* >(anyptr);
-                    if (element != 0) {
-
-                        return element;
-                    }
-                }
-                catch (const boost::bad_any_cast&) {}
-            }
-
-            return nullptr;
-        }
-
-        template<class MatML_Class>
-        MatML_Class* GetSelParentMatML(TreeCtrlSorted* MatMLTreeCtrl)
-        {
-
-            wxTreeItemId selItemId = MatMLTreeCtrl->GetSelection();
-
-            if (selItemId.IsOk()) {
-                wxTreeItemId selItemParentId = MatMLTreeCtrl->GetItemParent(selItemId);
-
-                if (selItemParentId.IsOk()) {
-
-                    MatMLTreeItemData* item = (MatMLTreeItemData*)(MatMLTreeCtrl->GetItemData(selItemParentId));
-                    ::boost::any anyptr(item->GetAnyMatMLDataPointer());
-
-                    try {
-                        MatML_Class* element = boost::any_cast<MatML_Class* >(anyptr);
-                        if (element != 0) {
-
-                            return element;
-                        }
-                    }
-                    catch ( boost::bad_any_cast&) {}
-                }
-            }
-
-            return nullptr;
-        }
-
-        template<typename MatML_ParentClass, typename GUI_ParentClass>
-        void SetupSel(TreeCtrlSorted* MatMLTreeCtrl)
-        {
-            wxTreeItemId selItemId = MatMLTreeCtrl->GetSelection();
-            wxTreeItemId selItemParentId = MatMLTreeCtrl->GetItemParent(selItemId);
-
-            MatML_ParentClass* element = GetSelMatML<MatML_ParentClass>(MatMLTreeCtrl);
-
-            GUI_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemParentId, *element, selItemId);
-
-            wxTreeItemId selNextItemId = MatMLTreeCtrl->GetNextSibling(selItemId);
-            if (selNextItemId.IsOk()) {
-
-                MatMLTreeCtrl->SelectItem(selNextItemId);
-                //MatMLTreeCtrl->Expand(selNextItemId);
-            }
-            if (selItemId.IsOk()) MatMLTreeCtrl->Delete(selItemId);
-        }
-
-        /// <summary>
-        /// Setup the selected wxTreeCtrl Item for MatML strongtypes 
-        /// </summary>
-        /// <typeparam name="MatML_ParentClass"></typeparam>
-        /// <typeparam name="GUI_ParentClass"></typeparam>
-        /// <param name="MatMLTreeCtrl"></param>
-        template<typename MatML_ParentClass, typename GUI_ParentClass>
-        void SetupStrongTypeSel(TreeCtrlSorted* MatMLTreeCtrl)
-        {
-            const wxTreeItemId selItemId = MatMLTreeCtrl->GetSelection();
-            const wxTreeItemId selItemParentId = MatMLTreeCtrl->GetItemParent(selItemId);
-
-            /* Get the MatML Data, which is selected in the wxTreeCtrl */
-            MatML_ParentClass* element = GetSelMatML<MatML_ParentClass>(MatMLTreeCtrl);
-
-            /* Set up wxTreeCtrl to mimic the MatML Data starting at the selItemParent as the parent and the 
-               selItemId as the previous Item in the tree.
-               Creates a new strongtype to weaktype linkage.
-            */
-            GUI_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemParentId, *(element->t), selItemId);
-
-            const wxTreeItemId selNextItemId = MatMLTreeCtrl->GetNextSibling(selItemId);/* Get the next sibling in the tree () */
-            /* If the next sibling is okay then select and expand */
-            if (selNextItemId.IsOk()) {
-
-                MatMLTreeCtrl->SelectItem(selNextItemId);
-                MatMLTreeCtrl->Expand(selNextItemId);
-            }
-
-            /* No longer need the original Selected Item, so delete */
-            element->null();//Break old Strongtype to Weaktype linkage.
-             if (selItemId.IsOk())  MatMLTreeCtrl->Delete(selItemId);     
-            
-        }
-
-        template<typename MatML_ParentClass, typename GUI_ParentClass>
-        void SetupSelParent(TreeCtrlSorted* MatMLTreeCtrl)
-        {
-            wxTreeItemId selItemId = MatMLTreeCtrl->GetSelection();
-            wxTreeItemId selItemParentId =MatMLTreeCtrl->GetItemParent(selItemId);
-            wxTreeItemId selItemGrandParentId =MatMLTreeCtrl->GetItemParent(selItemParentId);
-
-            MatML_ParentClass* element = GetSelParentMatML<MatML_ParentClass>(MatMLTreeCtrl);
-
-            GUI_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemGrandParentId, *element, selItemParentId);
-
-            wxTreeItemId selNextItemId = MatMLTreeCtrl->GetNextSibling(selItemId);
-            if (selNextItemId.IsOk()) {
-
-                MatMLTreeCtrl->SelectItem(selNextItemId);
-                MatMLTreeCtrl->Expand(selNextItemId);
-            }
-
-            if (selItemParentId.IsOk())
-                MatMLTreeCtrl->Delete(selItemParentId);
-        }
-
-        template<class InputIterator, class T>
-        InputIterator find(InputIterator first, InputIterator last, const T& val)
-        {
-            while (first != last) {
-                if (&*first == val) return first;
-                ++first;
-            }
-            return last;
-        }
-
         bool Warning(::std::string msg)
         {
-
             wxMessageDialog* WarningDialog = new wxMessageDialog(NULL, msg, _("MatML Editer"), wxOK | wxICON_EXCLAMATION, wxDefaultPosition);
             return (WarningDialog->ShowModal() == wxID_YES);
         }
 
-        /// <summary>
-        /// Does Nothing. 
-        /// Child are required in the MatML structure and are
-        /// inserted automatically through the Default classes.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="MatML"></param>
-        template<typename MatML_Class, typename MatML_ContClass >
-        void InsertChild(MatML_ContClass& MatML_Cont) {
-            Warning("Required element already exist");
-        }
+        template<class MatML_Class>
+        MatML_Class* GetSelMatML(TreeCtrlSorted* MatMLTreeCtrl);
 
-        /// <summary>
-        /// Inserts the MatML Data into the MatML container element
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="MatML">MatML Container Class</param>
-        template<typename MatML_Class, typename MatML_ContClass >
-        void InsertContChild(MatML_ContClass& MatML_Cont)
-        {
-            auto& cont(MatML_Cont);
-            if (cont.present())
-                cont = Default<MatML_Class>();
-            else {
-                cont.set(Default<MatML_Class>());
-            }
-        }
+        template<class MatML_Class>
+        MatML_Class* GetSelParentMatML(TreeCtrlSorted* MatMLTreeCtrl);
 
-        /// <summary>
-        /// Inserts the MatML Data into the MatML sequence container element
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="MatML"></param>
-        template<typename MatML_Class, typename MatML_ContClass >
-        void InsertSeqContChild(MatML_ContClass& MatML_Cont)
-        {
-            auto& cont(MatML_Cont);
-            try {
-                cont.push_back(Default<MatML_Class>());
-            }
-            catch (const xml_schema::duplicate_id&) {}
-        }
+        template<typename MatML_ParentClass, typename GUI_ParentClass>
+        void SetupSel(TreeCtrlSorted* MatMLTreeCtrl);
 
-        /// <summary>
-        /// Does Nothing. 
-        /// Child are REQUIRED in the MatML structure and are
-        /// inserted automatically through the Default classes.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="MatML"></param>
-        template<typename MatML_ContClass >
-        void DeleteChild(MatML_ContClass& MatML) 
-        {
-            Warning("Can not delete required element");
-        }
+        template<typename MatML_ParentClass, typename GUI_ParentClass>
+        void SetupStrongTypeSel(TreeCtrlSorted* MatMLTreeCtrl);
+
+        template<typename MatML_ParentClass, typename GUI_ParentClass>
+        void SetupSelParent(TreeCtrlSorted* MatMLTreeCtrl);
+
+        template<class InputIterator, class T>
+        InputIterator find(InputIterator first, InputIterator last, const T& val);
+
+        template<typename MatML_Class, typename MatML_ContClass >
+        void InsertChild(MatML_ContClass& MatML_Cont);
+
+        template<typename MatML_Class, typename MatML_ContClass >
+        void InsertContChild(MatML_ContClass& MatML_Cont);
+
+        template<typename MatML_Class, typename MatML_ContClass >
+        void InsertSeqContChild(MatML_ContClass& MatML_Cont);
 
         template<typename MatML_ContClass >
-        void DeleteContChild(MatML_ContClass& MatML_Cont)
-        {
-            auto& cont(MatML_Cont);
-            if (cont.present())
-                cont.reset();
-        }
+        void DeleteChild(MatML_ContClass& MatML);
+
+        template<typename MatML_ContClass >
+        void DeleteContChild(MatML_ContClass& MatML_Cont);
 
         template<typename MatML_Class, typename MatML_ContClass>
-        void DeleteSeqContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont)
-        {
-            auto& cont(MatML_Cont);
-
-            auto iter = find(cont.begin(), cont.end(), MatML);
-            if (iter != cont.end()) 
-                cont.erase(iter);
-        }
-
-        /// <summary>
-        /// Does Nothing. 
-        /// Child are required in the MatML structure and are
-        /// inserted automatically through the Default classes.
-        /// </summary>
-        template<typename MatML_Class, typename MatML_ContClass>
-        void PasteChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont)
-        {
-            Warning("Can not paste over Required element");
-        }
+        void DeleteSeqContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont);
 
         template<typename MatML_Class, typename MatML_ContClass>
-        void PasteContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont)
-        {
-		    auto& cont(MatML_Cont);   
-
-			if(cont.present()) 
-                cont=*MatML; 
-			else {   
-				cont.set(*MatML);		
-			}
-        }
+        void PasteChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont);
 
         template<typename MatML_Class, typename MatML_ContClass>
-        void PasteSeqContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont)
-        {
-            auto& cont(MatML_Cont);
+        void PasteContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont);
 
-            try {
-                cont.push_back(*MatML);
-            }
-            catch (const xml_schema::duplicate_id&) {}
-        }
+        template<typename MatML_Class, typename MatML_ContClass>
+        void PasteSeqContChild(MatML_Class* MatML, MatML_ContClass& MatML_Cont);
 
-        /// <summary>
-        /// Swap function with MatML Classes that have required Id.
-        /// This has the added complication that the id's can not
-        /// be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <param name="matml0"></param>
-        /// <param name="matml1"></param>
         template<class MatML_Class>
         void SwapHavingId(MatML_Class* matml0, MatML_Class* matml1);
 
-        /// <summary>
-        /// Swap function with MatML Classes that have Optional Id.
-        /// This has the added complication that the id's can not
-        /// be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <param name="matml0"></param>
-        /// <param name="matml1"></param>
         template<class MatML_Class>
         void SwapHavingOptionalId(MatML_Class* matml0, MatML_Class* matml1);
 
@@ -456,28 +230,10 @@ if (element) {\
         std::pair<typename  MatML_Class*, typename MatML_Class*>
             MatMLFindAndBumpDownStrongtype(MatML_Class* matml, MatML_ContClass& cont);
 
-        /// <summary>
-        /// Similar to MatMLFindAndBumpDown with the added complication 
-        /// that the Required Id's cannot be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="matml"></param>
-        /// <param name="cont"></param>
-        /// <returns></returns>
         template<class MatML_Class, class MatML_ContClass>
         std::pair<typename  MatML_Class*, typename MatML_Class*>
             MatMLFindAndBumpDownHavingId(MatML_Class* matml, MatML_ContClass& cont);
 
-        /// <summary>
-        /// Similar to MatMLFindAndBumpDown with the added complication 
-        /// that the optional Id's cannot be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_Class"></typeparam>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="matml"></param>
-        /// <param name="cont"></param>
-        /// <returns></returns>
         template<class MatML_Class, class MatML_ContClass>
         std::pair<typename  MatML_Class*, typename MatML_Class*>
             MatMLFindAndBumpDownHavingOptionalId(MatML_Class* matml, MatML_ContClass& cont);
@@ -499,27 +255,10 @@ if (element) {\
         std::pair<typename  MatML_Class*, typename MatML_Class*>
             MatMLFindAndBumpUpStrongtype(MatML_Class* matml, MatML_ContClass& cont);
 
-
-        /// <summary>
-        /// Similar to MatMLFindAndBumpUp with the added complication 
-        /// that the Required Id's cannot be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="matml"></param>
-        /// <param name="cont"></param>
-        /// <returns></returns>
         template<class MatML_ContClass>
         std::pair<typename MatML_ContClass::value_type*, typename MatML_ContClass::value_type*>
             MatMLFindAndBumpUpHavingId(typename MatML_ContClass::value_type* matml, MatML_ContClass& cont);
 
-        /// <summary>
-        /// Similar to MatMLFindAndBumpUp with the added complication 
-        /// that the optional Id's cannot be duplicated during the swap.
-        /// </summary>
-        /// <typeparam name="MatML_ContClass"></typeparam>
-        /// <param name="matml"></param>
-        /// <param name="cont"></param>
-        /// <returns></returns>
         template<class MatML_ContClass>
         std::pair<typename MatML_ContClass::value_type*, typename MatML_ContClass::value_type*>
             MatMLFindAndBumpUpHavingOptionalId(typename MatML_ContClass::value_type* matml, MatML_ContClass& cont);
