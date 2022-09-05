@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="BT-MatML-Editor-55px.png"/></td>
   <td id="projectalign">
-   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.2</span>
+   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.3</span>
    </div>
    <div id="projectbrief">Editor for the MatML 3.1 XML Schema</div>
   </td>
@@ -150,58 +150,65 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnPasteSynonym(wxCommandEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnPasteNotes(wxCommandEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    };</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnBumpDown(wxCommandEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnBumpUp(wxCommandEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classbellshire_1_1_glossary_term___g_u_i.html">   85</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classbellshire_1_1_glossary_term___g_u_i.html">GlossaryTerm_GUI</a> : <span class="keyword">public</span> <a class="code hl_class" href="classbellshire_1_1_glossary_term___g_u_i___base.html">GlossaryTerm_GUI_Base</a></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>* m_MatMLTreeCtrl;<span class="comment">//Required before Event Handling.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        ::boost::any m_MatMLItemToCopy;<span class="comment">//Required before Paste Event Handling.</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#acc2a1aba7110a5d2b93f0dc220d16864">GlossaryTerm_GUI</a>();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#acc2a1aba7110a5d2b93f0dc220d16864">GlossaryTerm_GUI</a>(wxWindow* parent);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a2a6d2db5df2cc5aad0eb7878d6e53389">~GlossaryTerm_GUI</a>();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a41bd998133447af3be610b316d58268b">SetEvtHandlerVar</a>(<a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>*&amp; MatMLTreeCtrl);<span class="comment">//Required before Event Handling.</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a871558255a4cda325c9a8ee4289a952e">SetMatMLTreeCtrl</a>(<a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>*&amp; MatMLTreeCtrl);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">void</span> SetMatMLItemToCopy(const ::boost::any&amp; MatMLItemToCopy);<span class="comment">//Required before paste Event Handling.</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    };</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classbellshire_1_1_glossary_term___g_u_i.html">   89</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classbellshire_1_1_glossary_term___g_u_i.html">GlossaryTerm_GUI</a> : <span class="keyword">public</span> <a class="code hl_class" href="classbellshire_1_1_glossary_term___g_u_i___base.html">GlossaryTerm_GUI_Base</a></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>* m_MatMLTreeCtrl;<span class="comment">//Required before Event Handling.</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        ::boost::any m_MatMLItemToCopy;<span class="comment">//Required before Paste Event Handling.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#acc2a1aba7110a5d2b93f0dc220d16864">GlossaryTerm_GUI</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#acc2a1aba7110a5d2b93f0dc220d16864">GlossaryTerm_GUI</a>(wxWindow* parent);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a2a6d2db5df2cc5aad0eb7878d6e53389">~GlossaryTerm_GUI</a>();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">//Overwrites the base class functions</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">void</span> OnInsertName(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordtype">void</span> OnInsertDefinition(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordtype">void</span> OnInsertAbbreviation(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordtype">void</span> OnInsertSynonym(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordtype">void</span> OnInsertNotes(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordtype">void</span> OnDeleteDefinition(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordtype">void</span> OnDeleteAbbreviation(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> OnDeleteSynonym(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordtype">void</span> OnDeleteNotes(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">void</span> OnPasteName(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordtype">void</span> OnPasteDefinition(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">void</span> OnPasteAbbreviation(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordtype">void</span> OnPasteSynonym(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordtype">void</span> OnPasteNotes(wxCommandEvent&amp; event);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    };</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}; <span class="comment">//namespace bellshire end</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a41bd998133447af3be610b316d58268b">SetEvtHandlerVar</a>(<a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>*&amp; MatMLTreeCtrl);<span class="comment">//Required before Event Handling.</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_glossary_term___g_u_i.html#a871558255a4cda325c9a8ee4289a952e">SetMatMLTreeCtrl</a>(<a class="code hl_class" href="classbellshire_1_1_tree_ctrl_sorted.html">TreeCtrlSorted</a>*&amp; MatMLTreeCtrl);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordtype">void</span> SetMatMLItemToCopy(const ::boost::any&amp; MatMLItemToCopy);<span class="comment">//Required before paste Event Handling.</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="comment">//Overwrites the base class functions</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordtype">void</span> OnInsertName(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordtype">void</span> OnInsertDefinition(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordtype">void</span> OnInsertAbbreviation(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordtype">void</span> OnInsertSynonym(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> OnInsertNotes(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">void</span> OnDeleteDefinition(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">void</span> OnDeleteAbbreviation(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordtype">void</span> OnDeleteSynonym(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">void</span> OnDeleteNotes(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordtype">void</span> OnPasteName(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">void</span> OnPasteDefinition(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">void</span> OnPasteAbbreviation(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordtype">void</span> OnPasteSynonym(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordtype">void</span> OnPasteNotes(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">void</span> OnBumpDown(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordtype">void</span> OnBumpUp(wxCommandEvent&amp; event);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    };</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}; <span class="comment">//namespace bellshire end</span></div>
 <div class="ttc" id="aclass_element_html"><div class="ttname"><a href="class_element.html">Element</a></div><div class="ttdef"><b>Definition:</b> matml31.hxx:1705</div></div>
 <div class="ttc" id="aclass_glossary_term_html"><div class="ttname"><a href="class_glossary_term.html">GlossaryTerm</a></div><div class="ttdef"><b>Definition:</b> matml31.hxx:2113</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i___base_html"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i___base.html">bellshire::GlossaryTerm_GUI_Base</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.h:42</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i___base_html_a3be8155b2d81cfc626e5f9a9ecd081d6"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i___base.html#a3be8155b2d81cfc626e5f9a9ecd081d6">bellshire::GlossaryTerm_GUI_Base::Create</a></div><div class="ttdeci">static wxNotebook * Create(wxWindow *parent)</div><div class="ttdoc">Create the GUI for the GlossaryTerm MatML Data and Info</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:30</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i___base_html_ae93aa63b10053ddb9cfe4ceb30a8c7b2"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i___base.html#ae93aa63b10053ddb9cfe4ceb30a8c7b2">bellshire::GlossaryTerm_GUI_Base::SetupMatMLTreeCtrl</a></div><div class="ttdeci">static wxTreeItemId SetupMatMLTreeCtrl(TreeCtrlSorted *&amp;MatMLTreeCtrl, const wxTreeItemId &amp;ParentId, GlossaryTerm &amp;Element, const wxTreeItemId &amp;PreviousId)</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:79</div></div>
-<div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html">bellshire::GlossaryTerm_GUI</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.h:86</div></div>
+<div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html">bellshire::GlossaryTerm_GUI</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.h:90</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html_a2a6d2db5df2cc5aad0eb7878d6e53389"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html#a2a6d2db5df2cc5aad0eb7878d6e53389">bellshire::GlossaryTerm_GUI::~GlossaryTerm_GUI</a></div><div class="ttdeci">virtual ~GlossaryTerm_GUI()</div><div class="ttdoc">Destructor for the derived class</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:165</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html_a41bd998133447af3be610b316d58268b"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html#a41bd998133447af3be610b316d58268b">bellshire::GlossaryTerm_GUI::SetEvtHandlerVar</a></div><div class="ttdeci">void SetEvtHandlerVar(TreeCtrlSorted *&amp;MatMLTreeCtrl)</div><div class="ttdoc">Function used to set up this objects member variables which is used in the EventHandler's functions....</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:174</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html_a871558255a4cda325c9a8ee4289a952e"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html#a871558255a4cda325c9a8ee4289a952e">bellshire::GlossaryTerm_GUI::SetMatMLTreeCtrl</a></div><div class="ttdeci">void SetMatMLTreeCtrl(TreeCtrlSorted *&amp;MatMLTreeCtrl)</div><div class="ttdoc">Set the Event Handler associated with the MatML wxTreeCtrl Required before using the derived class's ...</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:184</div></div>
 <div class="ttc" id="aclassbellshire_1_1_glossary_term___g_u_i_html_acc2a1aba7110a5d2b93f0dc220d16864"><div class="ttname"><a href="classbellshire_1_1_glossary_term___g_u_i.html#acc2a1aba7110a5d2b93f0dc220d16864">bellshire::GlossaryTerm_GUI::GlossaryTerm_GUI</a></div><div class="ttdeci">GlossaryTerm_GUI()</div><div class="ttdoc">Constructor for the derived class</div><div class="ttdef"><b>Definition:</b> BT_MatML_GlossaryTerm_GUI.cpp:143</div></div>
-<div class="ttc" id="aclassbellshire_1_1_mat_m_l___base___g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_mat_m_l___base___g_u_i.html">bellshire::MatML_Base_GUI</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_Base_GUI.h:106</div></div>
+<div class="ttc" id="aclassbellshire_1_1_mat_m_l___base___g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_mat_m_l___base___g_u_i.html">bellshire::MatML_Base_GUI</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_Base_GUI.h:163</div></div>
 <div class="ttc" id="aclassbellshire_1_1_tree_ctrl_sorted_html"><div class="ttname"><a href="classbellshire_1_1_tree_ctrl_sorted.html">bellshire::TreeCtrlSorted</a></div><div class="ttdef"><b>Definition:</b> BT_MatML_TreeCtrlSorted.h:19</div></div>
 <div class="ttc" id="anamespacebellshire_html"><div class="ttname"><a href="namespacebellshire.html">bellshire</a></div><div class="ttdoc">Contains the GUI and GUI associated classes. OnInit() calls the creation of the MaterialFrame GUI</div><div class="ttdef"><b>Definition:</b> BT_MatML_App.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->

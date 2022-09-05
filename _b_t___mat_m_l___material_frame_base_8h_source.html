@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="BT-MatML-Editor-55px.png"/></td>
   <td id="projectalign">
-   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.2</span>
+   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.3</span>
    </div>
    <div id="projectbrief">Editor for the MatML 3.1 XML Schema</div>
   </td>
@@ -203,28 +203,28 @@ $(function() {
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classbellshire_1_1_material_frame_base.html#adf62d00ce1fcd00b6c6dc1be32534f95">  147</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#adf62d00ce1fcd00b6c6dc1be32534f95">OnElementCollapsed</a>(wxTreeEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classbellshire_1_1_material_frame_base.html#ab45fa1e681feb5a671b8cae4b853e1cc">  148</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#ab45fa1e681feb5a671b8cae4b853e1cc">OnElementExpanded</a>(wxTreeEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classbellshire_1_1_material_frame_base.html#aa87a18bf365e6ce80667446fbf6757d1">  149</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#aa87a18bf365e6ce80667446fbf6757d1">OnMatMLItemMenu</a>(wxTreeEvent&amp; event) { <span class="keyword">event</span>.Skip(); }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#aeed67876cae3e4d072f6272407ae2ab3">MaterialFrameBase</a>(wxWindow* parent,</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            wxWindowID <span class="keywordtype">id</span> = wxID_MATERIAL,</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keyword">const</span> wxString&amp; title = wxT(<span class="stringliteral">&quot;MatML Editer&quot;</span>),</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keyword">const</span> wxPoint&amp; pos = wxDefaultPosition,</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="keyword">const</span> wxSize&amp; size = wxSize(770, 628),</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordtype">long</span> style = wxCAPTION | wxCLOSE_BOX | wxMAXIMIZE_BOX | wxMINIMIZE_BOX | wxRESIZE_BORDER | wxSYSTEM_MENU | wxTAB_TRAVERSAL</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        );</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#abad83d2e6e1cca86002d32d908627085">~MaterialFrameBase</a>();</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordtype">void</span> m_splitter1OnIdle(wxIdleEvent&amp;)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            m_splitter1-&gt;SetSashPosition(200);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            m_splitter1-&gt;Disconnect(wxEVT_IDLE, wxIdleEventHandler(MaterialFrameBase::m_splitter1OnIdle), NULL, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    };</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}; <span class="comment">// namespace bellshire</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#aeed67876cae3e4d072f6272407ae2ab3">MaterialFrameBase</a>(wxWindow* parent,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            wxWindowID <span class="keywordtype">id</span> = wxID_MATERIAL,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keyword">const</span> wxString&amp; title = wxT(<span class="stringliteral">&quot;MatML Editer&quot;</span>),</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keyword">const</span> wxPoint&amp; pos = wxDefaultPosition,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keyword">const</span> wxSize&amp; size = wxSize(770, 628),</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="keywordtype">long</span> style = wxCAPTION | wxCLOSE_BOX | wxMAXIMIZE_BOX | wxMINIMIZE_BOX | wxRESIZE_BORDER | wxSYSTEM_MENU | wxTAB_TRAVERSAL</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        );</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_function" href="classbellshire_1_1_material_frame_base.html#abad83d2e6e1cca86002d32d908627085">~MaterialFrameBase</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">void</span> m_splitter1OnIdle(wxIdleEvent&amp;)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            m_splitter1-&gt;SetSashPosition(200);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            m_splitter1-&gt;Disconnect(wxEVT_IDLE, wxIdleEventHandler(MaterialFrameBase::m_splitter1OnIdle), NULL, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    };</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}; <span class="comment">// namespace bellshire</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif </span><span class="comment">//__BT_MatML_MaterialFrameBase_GUI__</span></div>
-<div class="ttc" id="aclassbellshire_1_1_g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_g_u_i.html">bellshire::GUI</a></div><div class="ttdoc">GUI for each of the MatML classes</div><div class="ttdef"><b>Definition:</b> BT_MatML_GUI.h:155</div></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#endif </span><span class="comment">//__BT_MatML_MaterialFrameBase_GUI__</span></div>
+<div class="ttc" id="aclassbellshire_1_1_g_u_i_html"><div class="ttname"><a href="classbellshire_1_1_g_u_i.html">bellshire::GUI</a></div><div class="ttdoc">GUI for each of the MatML classes</div><div class="ttdef"><b>Definition:</b> BT_MatML_GUI.h:159</div></div>
 <div class="ttc" id="aclassbellshire_1_1_material_frame_base_html"><div class="ttname"><a href="classbellshire_1_1_material_frame_base.html">bellshire::MaterialFrameBase</a></div><div class="ttdoc">Contains:</div><div class="ttdef"><b>Definition:</b> BT_MatML_MaterialFrameBase.h:86</div></div>
 <div class="ttc" id="aclassbellshire_1_1_material_frame_base_html_a028bc89879c1535de375db5451e9c96a"><div class="ttname"><a href="classbellshire_1_1_material_frame_base.html#a028bc89879c1535de375db5451e9c96a">bellshire::MaterialFrameBase::OnExitIsolateMaterialBranch</a></div><div class="ttdeci">virtual void OnExitIsolateMaterialBranch(wxCommandEvent &amp;event)</div><div class="ttdef"><b>Definition:</b> BT_MatML_MaterialFrameBase.h:141</div></div>
 <div class="ttc" id="aclassbellshire_1_1_material_frame_base_html_a0395e505b0981793704997f6d00f8596"><div class="ttname"><a href="classbellshire_1_1_material_frame_base.html#a0395e505b0981793704997f6d00f8596">bellshire::MaterialFrameBase::OnExportMaterial</a></div><div class="ttdeci">virtual void OnExportMaterial(wxCommandEvent &amp;event)</div><div class="ttdef"><b>Definition:</b> BT_MatML_MaterialFrameBase.h:134</div></div>
