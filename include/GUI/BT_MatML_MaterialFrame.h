@@ -62,6 +62,13 @@ public:
 
 	boost::any m_MatMLItemToCopy;//placeholder location for items to be copied.
 
+
+	bool Warning(::std::string msg)
+	{
+		wxMessageDialog WarningDialog(NULL, msg, _("MatML Editer"), wxOK | wxICON_EXCLAMATION, wxDefaultPosition);
+		return (WarningDialog.ShowModal() == wxID_YES);
+	}
+
 	// Event Handlers functions for MaterialFrameBase events.
 	void OnElementActivated(wxTreeEvent& event);/*!< Provides Calls for the updating the associated MatML GUI. */
 	void OnElementExpanded(wxTreeEvent& event);/*!< On element expansion sets the layout */
@@ -71,7 +78,7 @@ public:
 	void OnMatMLItemMenu(wxTreeEvent& event);/*!< On MatML item menu selection shows the GUI*/
 
 protected:
-	wxString m_CurrentDocPath;/*!< The Path to the file we have open */
+	//wxString m_CurrentDocPath;/*!< The Path to the file we have open */
 
 	boost::shared_ptr<MatML_Doc> doc;/*!< Main MatML Document Pointer */
 

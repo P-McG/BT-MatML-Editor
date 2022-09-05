@@ -107,9 +107,7 @@ void MatML_Doc_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl, MatM
 		MatMLTreeCtrl->DeleteAllItems();
 
     /// Create the current element and add the MatMLTreeItemData
-	wxString str;
-	str << wxT("MatML-Doc");
-	wxTreeItemId CurrentId = MatMLTreeCtrl->AddRoot(str, -1, -1, new MatMLTreeItemData(&Element));
+	wxTreeItemId CurrentId = MatMLTreeCtrl->AddRoot(wxT("MatML-Doc"), -1, -1, new MatMLTreeItemData(&Element));
 
 	/// Setup element Material
 	{

@@ -192,7 +192,8 @@ void Qualifier_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 	//Set the validators for the wxWidgets.
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
-	m_TextCtrlValidator = new TextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
+	if(!m_TextCtrlValidator)
+		m_TextCtrlValidator = new TextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
 	m_QualifierTextCtrl->SetValidator(*m_TextCtrlValidator);
 }
 

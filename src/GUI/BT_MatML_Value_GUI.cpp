@@ -199,10 +199,12 @@ Value_GUI::~Value_GUI() {
 void Value_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 	//Set the validators for the wxWidgets.
-	m_TextCtrlValidator = new TextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
+	if(!m_TextCtrlValidator)
+		m_TextCtrlValidator = new TextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
 	m_TextCtrl->SetValidator(*m_TextCtrlValidator);
 
-	m_FormatChoiceValidator = new FormatChoiceValidator(MatMLTreeCtrl);
+	if(!m_FormatChoiceValidator)
+		m_FormatChoiceValidator = new FormatChoiceValidator(MatMLTreeCtrl);
 	m_FormatChoice->SetValidator(*m_FormatChoiceValidator);
 
 }

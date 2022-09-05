@@ -68,7 +68,7 @@ void bellshire::MatML_Base_GUI::SetupSel(TreeCtrlSorted* MatMLTreeCtrl)
     if (selNextItemId.IsOk()) {
 
         MatMLTreeCtrl->SelectItem(selNextItemId);
-        //MatMLTreeCtrl->Expand(selNextItemId);
+        MatMLTreeCtrl->Expand(selNextItemId);
     }
     if (selItemId.IsOk()) MatMLTreeCtrl->Delete(selItemId);
 }

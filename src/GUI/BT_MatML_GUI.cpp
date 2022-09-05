@@ -544,7 +544,7 @@ void GUI::SetEvtHandlerVar(TreeCtrlSorted* MatMLTreeCtrl, ::boost::shared_ptr<Ma
 	m_Notes_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ParameterDetails_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ParameterValue_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
-	m_Data_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_Data_GUI->SetEvtHandlerVar(MatMLTreeCtrl);//CAUSES MEMORY LEAK ON SECOND NEWSELECT
 	m_PhaseComposition_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_ProcessingDetails_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
 	m_Result_GUI->SetEvtHandlerVar(MatMLTreeCtrl);

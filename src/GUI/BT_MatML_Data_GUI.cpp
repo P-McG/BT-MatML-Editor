@@ -184,7 +184,8 @@ Data_GUI::~Data_GUI() {
 void Data_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 	//Set the validators for the wxWidgets.
-	m_DataTextCtrlValidator = new DataTextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
+	if(!m_DataTextCtrlValidator)
+		m_DataTextCtrlValidator = new DataTextCtrlValidator(MatMLTreeCtrl, m_ValidationNewLineRemovalCheckBox);
 	m_DataTextCtrl->SetValidator(*m_DataTextCtrlValidator);
 
 }

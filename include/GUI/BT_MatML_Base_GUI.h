@@ -167,8 +167,8 @@ if (element) {\
 
         bool Warning(::std::string msg)
         {
-            wxMessageDialog* WarningDialog = new wxMessageDialog(NULL, msg, _("MatML Editer"), wxOK | wxICON_EXCLAMATION, wxDefaultPosition);
-            return (WarningDialog->ShowModal() == wxID_YES);
+            wxMessageDialog WarningDialog(NULL, msg, _("MatML Editer"), wxOK | wxICON_EXCLAMATION, wxDefaultPosition);
+            return (WarningDialog.ShowModal() == wxID_YES);
         }
 
         template<class MatML_Class>

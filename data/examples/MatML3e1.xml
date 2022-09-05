@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
-  <Material>
-    <BulkDetails>
-      <Name>silicon nitride</Name>
-      <Class>
-        <Name>ceramic</Name>
-      </Class>
-      <Subclass>
-        <Name>nitride</Name>
-      </Subclass>
-      <Specification>NCX-5102</Specification>
-      <Source source="SaintGobain"/>
-      <Form>
-        <Description>bar</Description>
-      </Form>
-      <ProcessingDetails>
-        <Name>hot isostatic pressing</Name>
-        <Notes>
+	<Material>
+		<BulkDetails>
+			<Name>silicon nitride</Name>
+			<Class>
+				<Name>ceramic</Name>
+			</Class>
+			<Subclass>
+				<Name>nitride</Name>
+			</Subclass>
+			<Specification>NCX-5102</Specification>
+			<Source source="SaintGobain"/>
+			<Form>
+				<Description>bar</Description>
+			</Form>
+			<ProcessingDetails>
+				<Name>hot isostatic pressing</Name>
+				<Notes>
 					"The material produced is designated NCX-5102 and consists of a silicon nitride-4% yttria composition
 					that is densified by glass-encapsulation HIPing. ... Large-scale batches (30 kg) of Si3N4-4% Y2O3
 					powder were milled in water, and the slurry was used to cast hundreds of tensile rods. The starting Si3N4
@@ -25,91 +25,91 @@
 					pressure, time and temperatures to assure full densification and development of an elongated
 					microstructure for desired fracture toughness..."
 				</Notes>
-      </ProcessingDetails>
-      <Characterization>
-        <Formula>Si3N4·4wt%Y2O3</Formula>
-        <ChemicalComposition>
-          <Compound>
-            <Element>
-              <Symbol subscript="3">Si</Symbol>
-            </Element>
-            <Element>
-              <Symbol subscript="4">N</Symbol>
-            </Element>
-          </Compound>
-          <Compound>
-            <Element>
-              <Symbol subscript="2">Y</Symbol>
-            </Element>
-            <Element>
-              <Symbol subscript="3">O</Symbol>
-            </Element>
-            <Concentration>
-              <Value format="integer">4</Value>
-              <Units description="mass fraction">
-                <Unit>
-                  <Name>%</Name>
-                </Unit>
-              </Units>
-            </Concentration>
-          </Compound>
-        </ChemicalComposition>
-      </Characterization>
-      <PropertyData delimiter="," property="pr1" source="ds1" technique="mt1">
-        <Data format="integer">972,561</Data>
-        <ParameterValue format="integer" parameter="pa1">
-          <Data>23,1370</Data>
-        </ParameterValue>
-      </PropertyData>
-      <PropertyData delimiter="," property="pr2" source="ds1" technique="mt1">
-        <Data format="integer">997,396</Data>
-        <ParameterValue format="integer" parameter="pa1">
-          <Data>23,1370</Data>
-        </ParameterValue>
-        <ParameterValue format="string" parameter="pa2">
-          <Data>540-1237,344-452</Data>
-        </ParameterValue>
-      </PropertyData>
-      <PropertyData delimiter="," property="pr3" source="ds1" technique="mt1">
-        <Data format="string">4,-,-</Data>
-        <ParameterValue format="string" parameter="pa5">
-          <Data>Tensile,Flexural,Flexural</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa1">
-          <Data>23,23,1370</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa4">
-          <Data>665,653,517</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa6">
-          <Data>1109,,</Data>
-        </ParameterValue>
-      </PropertyData>
-      <PropertyData delimiter="," property="pr4" source="ds1" technique="mt1">
-        <Data format="integer">1109</Data>
-        <ParameterValue format="string" parameter="pa5">
-          <Data>Tensile</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa1">
-          <Data>23</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa3">
-          <Data>4</Data>
-        </ParameterValue>
-        <ParameterValue format="integer" parameter="pa4">
-          <Data>665</Data>
-        </ParameterValue>
-      </PropertyData>
-    </BulkDetails>
-  </Material>
-  <Metadata>
-    <DataSourceDetails id="ds1" type="journal article">
-      <Name>
+			</ProcessingDetails>
+			<Characterization>
+				<Formula>Si3N4·4wt%Y2O3</Formula>
+				<ChemicalComposition>
+					<Compound>
+						<Element>
+							<Symbol subscript="3">Si</Symbol>
+						</Element>
+						<Element>
+							<Symbol subscript="4">N</Symbol>
+						</Element>
+					</Compound>
+					<Compound>
+						<Element>
+							<Symbol subscript="2">Y</Symbol>
+						</Element>
+						<Element>
+							<Symbol subscript="3">O</Symbol>
+						</Element>
+						<Concentration>
+							<Value format="integer">4</Value>
+							<Units description="mass fraction">
+								<Unit>
+									<Name>%</Name>
+								</Unit>
+							</Units>
+						</Concentration>
+					</Compound>
+				</ChemicalComposition>
+			</Characterization>
+			<PropertyData property="pr1" technique="mt1" source="ds1">
+				<Data format="integer">972,561</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>23,1370</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr2" technique="mt1" source="ds1">
+				<Data format="integer">997,396</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>23,1370</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="string">
+					<Data>540-1237,344-452</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr3" technique="mt1" source="ds1">
+				<Data format="string">4,-,-</Data>
+				<ParameterValue parameter="pa5" format="string">
+					<Data>Tensile,Flexural,Flexural</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>23,23,1370</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa4" format="integer">
+					<Data>665,653,517</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa6" format="integer">
+					<Data>1109,,</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr4" technique="mt1" source="ds1">
+				<Data format="integer">1109</Data>
+				<ParameterValue parameter="pa5" format="string">
+					<Data>Tensile</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>23</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="integer">
+					<Data>4</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa4" format="integer">
+					<Data>665</Data>
+				</ParameterValue>
+			</PropertyData>
+		</BulkDetails>
+	</Material>
+	<Metadata>
+		<DataSourceDetails id="ds1" type="journal article">
+			<Name>
 					"Reliable Ceramics for Advanced Heat Engines," V.K. Pujari, D.M. Tracey, M.F. Foley, N.I. Paille, P.J. Pelletier,
 					L.C. Sales, C.A. Willkens, and R.L. Yeckley, American Ceramic Society Bulletin, Vol. 74[4], pp. 86-90
 					(1995), published by American Ceramic Society
 				</Name>
-      <Notes>
+			<Notes>
 					Cautions
 					1. Data evaluated by acceptance criteria
 					2. "The nonlinear character of the distribution with multiple inflections suggests that a two-parameter Weibull
@@ -117,10 +117,10 @@
 					should be represented using competing risk analysis. ... The important feature of the three-parameter Weibull
 					distribution is the existence of a threshold stress below which there is zero probability of failure."
 				</Notes>
-    </DataSourceDetails>
-    <MeasurementTechniqueDetails id="mt1">
-      <Name>Literature survey</Name>
-      <Notes>
+		</DataSourceDetails>
+		<MeasurementTechniqueDetails id="mt1">
+			<Name>Literature survey</Name>
+			<Notes>
 					The authors cite V.R. Pujari et al., "Development of Improved Processing and Evaluation Methods for High
 					Reliability Structural Ceramics for Advanced Heat Engine Applications, Phase I," final report, ORNL/Sub/89-SB182/1,
 					NTIS Rept. No. DE93-040528, August (1993), and summarize the procedure as follows. "The cylindrical buttonhead
@@ -128,77 +128,77 @@
 					specimens... were machined as many flexure bars (3 mm by 4 mm by 50 mm) for assessment of the properties
 					across the 50-mm section."
 				</Notes>
-    </MeasurementTechniqueDetails>
-    <ParameterDetails id="pa1">
-      <Name>Test Temperature</Name>
-      <Units name="degree Celsius">
-        <Unit>
-          <Name>°C</Name>
-        </Unit>
-      </Units>
-    </ParameterDetails>
-    <ParameterDetails id="pa2">
-      <Name>Range of Strengths</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </ParameterDetails>
-    <ParameterDetails id="pa3">
-      <Name>Weibull Modulus</Name>
-      <Unitless/>
-    </ParameterDetails>
-    <ParameterDetails id="pa4">
-      <Name>Threshold Strength</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </ParameterDetails>
-    <ParameterDetails id="pa5">
-      <Name>Stress Mode</Name>
-      <Unitless/>
-    </ParameterDetails>
-    <ParameterDetails id="pa6">
-      <Name>Weibull Strength</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </ParameterDetails>
-    <PropertyDetails id="pr1" type="mechanical">
-      <Name>Flexural Strength</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </PropertyDetails>
-    <PropertyDetails id="pr2" type="mechanical">
-      <Name>Tensile Strength</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </PropertyDetails>
-    <PropertyDetails id="pr3" type="mechanical">
-      <Name>Weibull Modulus</Name>
-      <Unitless/>
-    </PropertyDetails>
-    <PropertyDetails id="pr4" type="mechanical">
-      <Name>Weibull Strength</Name>
-      <Units description="megapascals" name="MPa">
-        <Unit>
-          <Name>MPa</Name>
-        </Unit>
-      </Units>
-    </PropertyDetails>
-    <SourceDetails id="SaintGobain">
-      <Name>Saint-Gobain/Norton Industrial Ceramics</Name>
-    </SourceDetails>
-  </Metadata>
+		</MeasurementTechniqueDetails>
+		<ParameterDetails id="pa1">
+			<Name>Test Temperature</Name>
+			<Units name="degree Celsius">
+				<Unit>
+					<Name>°C</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<ParameterDetails id="pa2">
+			<Name>Range of Strengths</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<ParameterDetails id="pa3">
+			<Name>Weibull Modulus</Name>
+			<Unitless/>
+		</ParameterDetails>
+		<ParameterDetails id="pa4">
+			<Name>Threshold Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<ParameterDetails id="pa5">
+			<Name>Stress Mode</Name>
+			<Unitless/>
+		</ParameterDetails>
+		<ParameterDetails id="pa6">
+			<Name>Weibull Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</ParameterDetails>
+		<PropertyDetails id="pr1" type="mechanical">
+			<Name>Flexural Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<PropertyDetails id="pr2" type="mechanical">
+			<Name>Tensile Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<PropertyDetails id="pr3" type="mechanical">
+			<Name>Weibull Modulus</Name>
+			<Unitless/>
+		</PropertyDetails>
+		<PropertyDetails id="pr4" type="mechanical">
+			<Name>Weibull Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<SourceDetails id="SaintGobain">
+			<Name>Saint-Gobain/Norton Industrial Ceramics</Name>
+		</SourceDetails>
+	</Metadata>
 </MatML_Doc>

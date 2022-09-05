@@ -162,7 +162,8 @@ void Scale_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 
 	//Set the validators for the wxWidgets.
-	m_ScaleChoiceValidator = new ScaleChoiceValidator(MatMLTreeCtrl);
+	if(!m_ScaleChoiceValidator)
+		m_ScaleChoiceValidator = new ScaleChoiceValidator(MatMLTreeCtrl);
 	m_ScaleChoice->SetValidator(*m_ScaleChoiceValidator);
 
 }

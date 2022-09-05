@@ -108,16 +108,25 @@ void bellshire::MaterialFrame::OnCloseSel( wxCloseEvent& event )
     wxMessageDialog SaveDialog(this,message,wxT("MatML Closing"),wxYES_NO|wxYES_DEFAULT|wxICON_EXCLAMATION);/*! Create Save wxDialog*/
     if(SaveDialog.ShowModal()==wxID_YES){
 
-        xml_schema::namespace_infomap map;/*! Prepare namespace mapping */ 
+        wxString CurrentDocPath(""), RecentDocPath("");
+        if (!preferenceframe->config->Read(wxT("/General/CurrentDocPath"), &CurrentDocPath))
+            Warning(::std::string("Configuration read failed"));
+        
+        RecentDocPath=CurrentDocPath;
+        if(!preferenceframe->config->Write(wxT("/General/RecentDocPath"), RecentDocPath))
+            Warning(::std::string("Configuration read failed"));//Copy to recent doc path
+
+        xml_schema::namespace_infomap map;/*! Prepare namespace mapping */
         map[""].schema = "matml31.xsd";/*! Prepare schema location information.*/
 
-        ofstream outFile (m_CurrentDocPath.mb_str(),ios::trunc);/*! Write file out. */
+        ofstream outFile(CurrentDocPath.mb_str(), ios::trunc);/*! Write file out. */
 
         if (!outFile) exit(-1);/*! If there were any errors on opening? Exit.*/
 
-        MatML_Doc_ (outFile, *doc, map);/*! Parse MatML data*/
+        MatML_Doc_(outFile, *doc, map);/*! Parse MatML data*/
 
         outFile.close();/*! Close files */
+        
 
     }
     m_MatMLTreeCtrl->DeleteAllItems();/*! Delete all Items in MatML wxTreeCtrl */
@@ -134,9 +143,7 @@ void bellshire::MaterialFrame::OnNewSel( wxCommandEvent& event )
 {
 
     if(doc.get()!=NULL){
-        wxString message;
-        message << wxT("Would you like to Save?");
-        wxMessageDialog SaveDialog(this,message,wxT("MatML Closing"),wxYES_NO|wxYES_DEFAULT|wxICON_EXCLAMATION);/*! Create Save wxDialog*/
+        wxMessageDialog SaveDialog(this,wxT("Would you like to Save?"),wxT("MatML Closing"),wxYES_NO|wxYES_DEFAULT|wxICON_EXCLAMATION);/*! Create Save wxDialog*/
         if(SaveDialog.ShowModal()==wxID_YES) OnSaveSel(event);
     }
 
@@ -149,8 +156,13 @@ void bellshire::MaterialFrame::OnNewSel( wxCommandEvent& event )
     m_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl, doc);/*! Set the Event Handler's Variables for the MatML_GUIs.*/
 
     /// reset the path of our current open file
-    wxString str(wxT("c:/"));
-    m_CurrentDocPath << preferenceframe->config->Read(wxT("/General/WorkingDir"), &str) << wxT("/Untitled.xml");
+    wxString str(wxT("")), CurrentDocPath;
+    if(!preferenceframe->config->Read(wxT("/General/WorkingDir"), &str)) 
+        Warning(::std::string("Configuration read failed"));
+    CurrentDocPath << str << wxT("/Untitled.xml");
+
+    if(!preferenceframe->config->Write(wxT("/General/CurrentDocPath"), (const wxString)CurrentDocPath))
+        Warning(::std::string("Configuration write failed"));;
 
     /// Set the Title to reflect the file open
     SetTitle(_("Edit - Untitled.xml *"));
@@ -159,6 +171,7 @@ void bellshire::MaterialFrame::OnNewSel( wxCommandEvent& event )
     m_GUI->m_Metadata_GUI->Show(true);/*! Show the Metadata panel*/
     this->Layout();
     m_GUI->m_Metadata_GUI->m_GUI->Raise();
+
 }
 
 /// <summary>
@@ -179,8 +192,9 @@ void bellshire::MaterialFrame::OnOpenSel( wxCommandEvent& event )
 
 
     // TODO: Implement OnOpenSel
-    wxString defaultDir;
-    preferenceframe->config->Read(wxT("/General/WorkingDir"), &defaultDir);
+    wxString defaultDir("");
+    if(!preferenceframe->config->Read(wxT("/General/WorkingDir"), &defaultDir))
+        Warning(::std::string("Configuration read failed"));
 
     wxFileDialog OpenDialog(
         this, _("Choose a file to open"),defaultDir, wxEmptyString,
@@ -190,25 +204,27 @@ void bellshire::MaterialFrame::OnOpenSel( wxCommandEvent& event )
     // Creates a "open file" dialog with MatML file types
     if (OpenDialog.ShowModal() == wxID_OK) // if the user click "Open" instead of "cancel"
     {
-        //doc.reset(new DefaultMatML_Doc);
         m_MatMLTreeCtrl->DeleteAllItems();
         m_MatMLItemToCopy=nullptr;//NULL
-
-        m_CurrentDocPath = OpenDialog.GetPath();
-
+        
+        if (!preferenceframe->config->Write(wxT("/General/CurrentDocPath"), (const wxString)OpenDialog.GetPath()))
+            Warning(::std::string("Configuration write failed"));
+        
         // Sets our current document to the file the user selected
-//		MainEditBox->LoadFile(CurrentDocPath); //Opens that file
         LoadFile(); //Opens that file
 
         // Set the Title to reflect the  file open
         SetTitle(wxString(wxT("MatML Document - ")) << OpenDialog.GetFilename());
-        wxTreeItemId selItemId=m_MatMLTreeCtrl->GetRootItem();
-        if(selItemId.IsOk()) {
+
+        //Set up the MatML Tree
+        wxTreeItemId selItemId = m_MatMLTreeCtrl->GetRootItem();
+        if (selItemId.IsOk()) {
             m_MatMLTreeCtrl->SelectItem(selItemId);
             m_MatMLTreeCtrl->SortChildren(selItemId);
         }
         m_MultiPanel->Layout();
         m_GUI->m_MatML_Doc_GUI->Show(true);
+        
 
     }
 }
@@ -247,12 +263,12 @@ void bellshire::MaterialFrame::OnSaveSel( wxCommandEvent& event )
     map[""].schema = "matml31.xsd";
 
     // Write it out.
+    wxString CurrentDocPath("/Untitled.xml");//temps
+    if(!preferenceframe->config->Read(wxT("/General/CurrentDocPath"), &CurrentDocPath))
+        Warning(::std::string("Configuration read failed"));
 
-    ofstream outFile (m_CurrentDocPath.mb_str(),ios::trunc);
+    ofstream outFile (CurrentDocPath.mb_str(),ios::trunc);
     if (!outFile) exit(-1);// were there any errors on opening?
-
-    //CopyComponentNameToParentMaterial(); //just do once !!!!comment out!!!!!
-    //ReplaceIDwithUuid(); //!!!!just do once then comment out!!!!!
 
     MatML_Doc_ (outFile, *doc, map);
 
@@ -298,18 +314,21 @@ void bellshire::MaterialFrame::OnSaveAsSel( wxCommandEvent& event )
     }
 
     // TODO: Implement OnSaveAsSel
-    wxString defaultDir;
-    preferenceframe->config->Read(wxT("/General/WorkingDir"), &defaultDir);
+    wxString CurrentDocPath;
+    if(!preferenceframe->config->Read(wxT("/General/WorkingDir"), &CurrentDocPath))
+        Warning(::std::string("Configuration read failed"));
 
     wxFileDialog SaveDialog(
-        this, _("Save File As _?"),defaultDir, wxEmptyString,
+        this, _("Save File As _?"), CurrentDocPath, wxEmptyString,
         _("MatML files (*.xml)|*.xml"),
         wxFD_SAVE | wxFD_OVERWRITE_PROMPT, wxDefaultPosition);
 
     // Creates a Save Dialog with MatML file types
     if (SaveDialog.ShowModal() == wxID_OK) // If the user clicked "OK"
     {
-        m_CurrentDocPath = SaveDialog.GetPath();
+        CurrentDocPath = SaveDialog.GetPath();
+        if(!preferenceframe->config->Write(wxT("/General/CurrentDocPath"), (const wxString) CurrentDocPath))
+            Warning(::std::string("Configuration write failed"));
 
         // set the path of our current document to the file the user chose to save under
         // Save the file to the selected path
@@ -320,8 +339,10 @@ void bellshire::MaterialFrame::OnSaveAsSel( wxCommandEvent& event )
 
         // Write it out.
 
-        ofstream outFile (m_CurrentDocPath.mb_str(),ios::trunc);
+        ofstream outFile (CurrentDocPath.mb_str(),ios::trunc);
         if (!outFile) exit(-1);// were there any errors on opening?
+
+
 
         MatML_Doc_ (outFile, *doc, map);
 
@@ -352,7 +373,8 @@ void bellshire::MaterialFrame::OnExportMaterial( wxCommandEvent& event )
 {
     // TODO: Implement OnSaveAsSel
     wxString defaultDir;
-    preferenceframe->config->Read(wxT("/General/WorkingDir"), &defaultDir);
+    if(!preferenceframe->config->Read(wxT("/General/WorkingDir"), &defaultDir))
+        Warning(::std::string("Configuration read failed"));
 
     wxFileDialog SaveDialog(
         this, _("Save Material in File As _?"),defaultDir, wxEmptyString,
@@ -2110,15 +2132,18 @@ void bellshire::MaterialFrame::MaterialSetParentMaterial(::vector<ParentMaterial
 /// </summary>
 void bellshire::MaterialFrame::LoadFile()
 {
-    // TODO: Implement File Loading
   try
   {
       backup();
 
+      // TODO: Implement OnOpenSel
+      wxString CurrentDocPath("");
+      preferenceframe->config->Read(wxT("/General/CurrentDocPath"), &CurrentDocPath);
+
       using namespace xml_schema;
 
       //const char* File(m_CurrentDocPath.mb_str());
-      ::string File(_wx2std(m_CurrentDocPath));
+      ::string File(_wx2std(CurrentDocPath));
 
       ::auto_ptr< ::MatML_Doc > tmp0 = MatML_Doc_(File);// note you will get a parsing error if the *.xsd file is not with the *.xml file 
 
@@ -2137,8 +2162,8 @@ void bellshire::MaterialFrame::LoadFile()
   }
   catch (const xml_schema::exception& e)
   {
-    wxMessageDialog *OpenDialog = new wxMessageDialog(this, e.what(), _("MatML Message"), wxOK, wxDefaultPosition);
-    OpenDialog->ShowModal();
+    wxMessageDialog OpenDialog(this, e.what(), _("MatML Message"), wxOK, wxDefaultPosition);
+    OpenDialog.ShowModal();
   }
 
 }
@@ -2305,11 +2330,11 @@ void bellshire::MaterialFrame::ImportFile(const char* File)
   catch (const xml_schema::exception& )
   {
 
-    wxMessageDialog *OpenDialog = new wxMessageDialog(
+    wxMessageDialog OpenDialog(
         this, _("Error importing the file"), _("MatML Message"), wxOK, wxDefaultPosition);
 
     // Creates a "Message" dialog
-    OpenDialog->ShowModal();
+    OpenDialog.ShowModal();
   }
 
 }
@@ -2319,22 +2344,6 @@ void bellshire::MaterialFrame::ImportFile(const char* File)
 /// </summary>
 void bellshire::MaterialFrame::backup()
 {
-    //wxString bkupFileName;
-
-    //system("mkdir Back-up");
-
-    //time_t tms;
-    //time(&tms);
-
-    //tm *ptm = localtime(&tms);
-    //
-    //char strtime[100];
-    //strftime(strtime, 100,"%S-%M-%H-%j-%Y",ptm);
-
-    //bkupFileName << wxT("Back-up\\") << wxT("backupfile") << wxT("-") << strtime << wxT(".xml");
-
-    //FileCopy( m_CurrentDocPath,bkupFileName.mb_str());
-
     char * tmpname;
     char strdir[256]={".//Back-up//"};
     char strfilename[256]={"backupfile"};
@@ -2368,7 +2377,11 @@ void bellshire::MaterialFrame::backup()
     strcat(tmpname, strext);
 
     cerr << tmpname <<  endl;
-    FileCopy(m_CurrentDocPath.mb_str(),tmpname);
+
+    wxString CurrentDocPath("");
+    preferenceframe->config->Read(wxT("/General/WorkingDir"), &CurrentDocPath);
+
+    FileCopy(CurrentDocPath.mb_str(),tmpname);
     free(tmpname);
 
 }
