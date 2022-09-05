@@ -93,54 +93,60 @@
 \DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{91         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteScale(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{92 }
-\DoxyCodeLine{93     \textcolor{keyword}{private}:}
-\DoxyCodeLine{94     \};}
+\DoxyCodeLine{93         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{94         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{95 }
-\DoxyCodeLine{96     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i}{Uncertainty\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i___base}{Uncertainty\_GUI\_Base}}}
-\DoxyCodeLine{97     \{}
-\DoxyCodeLine{98     \textcolor{keyword}{public}:}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{101         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{96     \textcolor{keyword}{private}:}
+\DoxyCodeLine{97     \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i}{Uncertainty\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i___base}{Uncertainty\_GUI\_Base}}}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101     \textcolor{keyword}{public}:}
 \DoxyCodeLine{102 }
-\DoxyCodeLine{103         \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a41f91e30be344d3824bb2c712192d139}{Uncertainty\_GUI}}();}
-\DoxyCodeLine{104         \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a41f91e30be344d3824bb2c712192d139}{Uncertainty\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{103         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{104         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
 \DoxyCodeLine{105 }
-\DoxyCodeLine{106         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a4a675e9325b61c1c103bd5568c6eb172}{\string~Uncertainty\_GUI}}();}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a0c7f769c3a2516722af610f8425bd51d}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_aac28d14460980f0dbcf2c02f84a1a56a}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{110         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{113         \textcolor{keywordtype}{void} OnUncertaintyDistributionTypeTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnUncertaintyNum\_Std\_DevTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnUncertaintyPercentileTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnUncertaintyConfidenceLevelTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{117         \textcolor{comment}{//void OnUncertaintyScaleChoice(wxCommandEvent\& event); //todo}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnInsertValue(wxCommandEvent\& event);}
-\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnInsertUnits(wxCommandEvent\& event);}
-\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnInsertUnitless(wxCommandEvent\& event);}
-\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertScale(wxCommandEvent\& event);}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnDeleteUnitless(wxCommandEvent\& event);}
-\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnDeleteUnits(wxCommandEvent\& event);}
-\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnDeleteValue(wxCommandEvent\& event);}
-\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteScale(wxCommandEvent\& event);}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnPasteValue(wxCommandEvent\& event);}
-\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnPasteUnits(wxCommandEvent\& event);}
-\DoxyCodeLine{133         \textcolor{keywordtype}{void} OnPasteUnitless(wxCommandEvent\& event);}
-\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteScale(wxCommandEvent\& event);}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137     \textcolor{keyword}{private}:}
-\DoxyCodeLine{138     \};}
+\DoxyCodeLine{106         \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a41f91e30be344d3824bb2c712192d139}{Uncertainty\_GUI}}();}
+\DoxyCodeLine{107         \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a41f91e30be344d3824bb2c712192d139}{Uncertainty\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a4a675e9325b61c1c103bd5568c6eb172}{\string~Uncertainty\_GUI}}();}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_a0c7f769c3a2516722af610f8425bd51d}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_uncertainty___g_u_i_aac28d14460980f0dbcf2c02f84a1a56a}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnUncertaintyDistributionTypeTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} OnUncertaintyNum\_Std\_DevTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} OnUncertaintyPercentileTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnUncertaintyConfidenceLevelTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{120         \textcolor{comment}{//void OnUncertaintyScaleChoice(wxCommandEvent\& event); //todo}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnInsertValue(wxCommandEvent\& event);}
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertUnits(wxCommandEvent\& event);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnInsertUnitless(wxCommandEvent\& event);}
+\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnInsertScale(wxCommandEvent\& event);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteUnitless(wxCommandEvent\& event);}
+\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteUnits(wxCommandEvent\& event);}
+\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnDeleteValue(wxCommandEvent\& event);}
+\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnDeleteScale(wxCommandEvent\& event);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnPasteValue(wxCommandEvent\& event);}
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteUnits(wxCommandEvent\& event);}
+\DoxyCodeLine{136         \textcolor{keywordtype}{void} OnPasteUnitless(wxCommandEvent\& event);}
+\DoxyCodeLine{137         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{138         \textcolor{keywordtype}{void} OnPasteScale(wxCommandEvent\& event);}
 \DoxyCodeLine{139 }
-\DoxyCodeLine{140 \}; \textcolor{comment}{//namespace bellshire end}}
-\DoxyCodeLine{141 }
+\DoxyCodeLine{140         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{141         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keyword}{private}:}
+\DoxyCodeLine{144     \};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{147 }
 
 \end{DoxyCode}

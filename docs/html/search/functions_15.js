@@ -57,12 +57,14 @@ var searchData=
   ['_7esourcedetails_5fgui_54',['~SourceDetails_GUI',['../classbellshire_1_1_source_details___g_u_i.html#ad64bfa82beeb12e94d4a03a693c6c86b',1,'bellshire::SourceDetails_GUI']]],
   ['_7especification_5fgui_55',['~Specification_GUI',['../classbellshire_1_1_specification___g_u_i.html#a86db6d6caa3da31a765e4c697b5817be',1,'bellshire::Specification_GUI']]],
   ['_7especimendetails_5fgui_56',['~SpecimenDetails_GUI',['../classbellshire_1_1_specimen_details___g_u_i.html#ac148c9e0b2aaf2931434ce42c9deed18',1,'bellshire::SpecimenDetails_GUI']]],
-  ['_7esymbol_5fgui_57',['~Symbol_GUI',['../classbellshire_1_1_symbol___g_u_i.html#a6645947c499ff09ec5a204a0775c70c2',1,'bellshire::Symbol_GUI']]],
-  ['_7esynonym_5fgui_58',['~Synonym_GUI',['../classbellshire_1_1_synonym___g_u_i.html#abf3557e514a53fab0c51184f1a879333',1,'bellshire::Synonym_GUI']]],
-  ['_7etestconditiondetails_5fgui_59',['~TestConditionDetails_GUI',['../classbellshire_1_1_test_condition_details___g_u_i.html#ac04f89a863205c126393c3d8150ed1f4',1,'bellshire::TestConditionDetails_GUI']]],
-  ['_7euncertainty_5fgui_60',['~Uncertainty_GUI',['../classbellshire_1_1_uncertainty___g_u_i.html#a4a675e9325b61c1c103bd5568c6eb172',1,'bellshire::Uncertainty_GUI']]],
-  ['_7eunit_5fgui_61',['~Unit_GUI',['../classbellshire_1_1_unit___g_u_i.html#a50db318daf3074e100aa0abf931b5e54',1,'bellshire::Unit_GUI']]],
-  ['_7eunitless_5fgui_62',['~Unitless_GUI',['../classbellshire_1_1_unitless___g_u_i.html#ac3a4114e11c398243db2c3219cc86400',1,'bellshire::Unitless_GUI']]],
-  ['_7eunits_5fgui_63',['~Units_GUI',['../classbellshire_1_1_units___g_u_i.html#ac6597af091c27073c9e5a763cefe1b27',1,'bellshire::Units_GUI']]],
-  ['_7evalue_5fgui_64',['~Value_GUI',['../classbellshire_1_1_value___g_u_i.html#a3f65856f5b858a6976153e5a948ca873',1,'bellshire::Value_GUI']]]
+  ['_7esubclass1_5fgui_57',['~Subclass1_GUI',['../classbellshire_1_1_subclass1___g_u_i.html#a7e0664b0e784b93509c701c754b419d2',1,'bellshire::Subclass1_GUI']]],
+  ['_7esubclass_5fgui_58',['~Subclass_GUI',['../classbellshire_1_1_subclass___g_u_i.html#a5bfa6cfa979f1bbc5b19577ea768d932',1,'bellshire::Subclass_GUI']]],
+  ['_7esymbol_5fgui_59',['~Symbol_GUI',['../classbellshire_1_1_symbol___g_u_i.html#a6645947c499ff09ec5a204a0775c70c2',1,'bellshire::Symbol_GUI']]],
+  ['_7esynonym_5fgui_60',['~Synonym_GUI',['../classbellshire_1_1_synonym___g_u_i.html#abf3557e514a53fab0c51184f1a879333',1,'bellshire::Synonym_GUI']]],
+  ['_7etestconditiondetails_5fgui_61',['~TestConditionDetails_GUI',['../classbellshire_1_1_test_condition_details___g_u_i.html#ac04f89a863205c126393c3d8150ed1f4',1,'bellshire::TestConditionDetails_GUI']]],
+  ['_7euncertainty_5fgui_62',['~Uncertainty_GUI',['../classbellshire_1_1_uncertainty___g_u_i.html#a4a675e9325b61c1c103bd5568c6eb172',1,'bellshire::Uncertainty_GUI']]],
+  ['_7eunit_5fgui_63',['~Unit_GUI',['../classbellshire_1_1_unit___g_u_i.html#a50db318daf3074e100aa0abf931b5e54',1,'bellshire::Unit_GUI']]],
+  ['_7eunitless_5fgui_64',['~Unitless_GUI',['../classbellshire_1_1_unitless___g_u_i.html#ac3a4114e11c398243db2c3219cc86400',1,'bellshire::Unitless_GUI']]],
+  ['_7eunits_5fgui_65',['~Units_GUI',['../classbellshire_1_1_units___g_u_i.html#ac6597af091c27073c9e5a763cefe1b27',1,'bellshire::Units_GUI']]],
+  ['_7evalue_5fgui_66',['~Value_GUI',['../classbellshire_1_1_value___g_u_i.html#a3f65856f5b858a6976153e5a948ca873',1,'bellshire::Value_GUI']]]
 ];

@@ -41,6 +41,7 @@ Set the \char`\"{}\+Where to build the binaries\char`\"{} directory to the BT-\/
 \begin{DoxyItemize}
 \item Add the following entries (change paths depending on your installation)\+:
 \begin{DoxyItemize}
+\item CMAKE\+\_\+\+BUILD\+\_\+\+TYPE STREQUAL \char`\"{}\+Release\char`\"{}
 \item Xerces\+C\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/xerces-\/c\char`\"{}
 \item XSD\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/code\+\_\+synthesis\+\_\+xsd/xsd-\/4.\+0.\+0-\/i686-\/windows/bin\char`\"{}
 \item wx\+Widgets\+\_\+\+ROOT PATH \char`\"{}\+C\+:/\+Program Files/wx\+Widgets/wx\+Widgets-\/3.\+2.\+0\char`\"{}
@@ -72,7 +73,7 @@ To run\+:
 
 Package generation\+:
 \begin{DoxyItemize}
-\item dir \$\{source\}/build/win64
+\item cd \$\{source\}/build/win64
 \item cpack
 \end{DoxyItemize}
 
@@ -91,6 +92,17 @@ To build\+:
 To run\+:
 \begin{DoxyItemize}
 \item BT-\/\+Mat\+ML-\/\+Editor
+\end{DoxyItemize}
+
+Package generation\+:
+\begin{DoxyItemize}
+\item cd \$\{source\}/build/linux
+\item cpack
+\end{DoxyItemize}
+
+Package Checksum Values in Linux
+\begin{DoxyItemize}
+\item sha1sum BT-\/\+Mat\+ML-\/\+Editor-\/0.\+1.\+2-\/\+Linux.\+tar.\+gz
 \end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{Programming Guide}\label{index_autotoc_md5}
 \href{https://p-mcg.github.io/BT-MatML-Editor}{\texttt{ for doxygen doc see here for active hyperlinks}}
 

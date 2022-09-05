@@ -62,7 +62,7 @@
 \DoxyCodeLine{59         \textcolor{comment}{//EvtHandler functions to be binded and overwriten by derived class.}}
 \DoxyCodeLine{60         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{61         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertClass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{62         \textcolor{comment}{//virtual void OnInsertSubclass(wxCommandEvent\& event) \{ event.Skip(); \}}}
+\DoxyCodeLine{62         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSubclass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{63         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSpecification(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{64         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertSource(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{65         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertForm(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
@@ -73,82 +73,84 @@
 \DoxyCodeLine{70 }
 \DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteClass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteCharacterization(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteForm(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteProcessingDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSpecification(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSource(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteClass(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{83         \textcolor{comment}{//virtual void OnPasteSubclass(wxCommandEvent\& event)\{ event.Skip(); \}}}
-\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSpecification(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSource(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{86         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteForm(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteProcessingDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteCharacterization(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     \textcolor{keyword}{private}:}
-\DoxyCodeLine{93     \};}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i}{BulkDetails\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i___base}{BulkDetails\_GUI\_Base}}}
-\DoxyCodeLine{96     \{}
-\DoxyCodeLine{97     \textcolor{keyword}{public}:}
-\DoxyCodeLine{98         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{99         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101         \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_aa92ef96ea4799272bc73f93cdb96582e}{BulkDetails\_GUI}}();}
-\DoxyCodeLine{102         \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_aa92ef96ea4799272bc73f93cdb96582e}{BulkDetails\_GUI}}(wxWindow* parent);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_a5b3699dd0277a20978052a49727c5ed6}{\string~BulkDetails\_GUI}}();}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_a48066c1a14c473bb0db42583d70609ee}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_ab032bd47189fc40e3dd5b1964057b2d8}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{108         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//required before paste Event Handling.}}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{111         \textcolor{keywordtype}{void} InsertSeqContChild(MatML\_ContClass\& MatML);}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
-\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnInsertClass(wxCommandEvent\& event);}
-\DoxyCodeLine{116         \textcolor{comment}{//void OnInsertSubclass(wxCommandEvent\& event);}}
-\DoxyCodeLine{117         \textcolor{keywordtype}{void} OnInsertSpecification(wxCommandEvent\& event);}
-\DoxyCodeLine{118         \textcolor{keywordtype}{void} OnInsertSource(wxCommandEvent\& event);}
-\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnInsertForm(wxCommandEvent\& event);}
-\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnInsertProcessingDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnInsertCharacterization(wxCommandEvent\& event);}
-\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnInsertPropertyData(wxCommandEvent\& event);}
-\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
-\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnDeleteClass(wxCommandEvent\& event);}
-\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnDeleteForm(wxCommandEvent\& event);}
-\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteProcessingDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteCharacterization(wxCommandEvent\& event);}
-\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event);}
-\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnDeleteSpecification(wxCommandEvent\& event);}
-\DoxyCodeLine{133         \textcolor{keywordtype}{void} OnDeleteSource(wxCommandEvent\& event);}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
-\DoxyCodeLine{136         \textcolor{keywordtype}{void} OnPasteClass(wxCommandEvent\& event);}
-\DoxyCodeLine{137         \textcolor{comment}{//void OnPasteSubclass(wxCommandEvent\& event);}}
-\DoxyCodeLine{138         \textcolor{keywordtype}{void} OnPasteSpecification(wxCommandEvent\& event);}
-\DoxyCodeLine{139         \textcolor{keywordtype}{void} OnPasteSource(wxCommandEvent\& event);}
-\DoxyCodeLine{140         \textcolor{keywordtype}{void} OnPasteForm(wxCommandEvent\& event);}
-\DoxyCodeLine{141         \textcolor{keywordtype}{void} OnPasteProcessingDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{142         \textcolor{keywordtype}{void} OnPasteCharacterization(wxCommandEvent\& event);}
-\DoxyCodeLine{143         \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event);}
-\DoxyCodeLine{144         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146     \textcolor{keyword}{private}:}
-\DoxyCodeLine{147     \};}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSubclass(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteCharacterization(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteForm(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteProcessingDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSpecification(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteSource(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteClass(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSubclass(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSpecification(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{86         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteSource(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteForm(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteProcessingDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteCharacterization(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{91         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keyword}{private}:}
+\DoxyCodeLine{94     \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i}{BulkDetails\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i___base}{BulkDetails\_GUI\_Base}}}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98     \textcolor{keyword}{public}:}
+\DoxyCodeLine{99         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{100         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_aa92ef96ea4799272bc73f93cdb96582e}{BulkDetails\_GUI}}();}
+\DoxyCodeLine{103         \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_aa92ef96ea4799272bc73f93cdb96582e}{BulkDetails\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_a5b3699dd0277a20978052a49727c5ed6}{\string~BulkDetails\_GUI}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_a48066c1a14c473bb0db42583d70609ee}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_bulk_details___g_u_i_ab032bd47189fc40e3dd5b1964057b2d8}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//required before paste Event Handling.}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} InsertSeqContChild(MatML\_ContClass\& MatML);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnInsertClass(wxCommandEvent\& event);}
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} OnInsertSubclass(wxCommandEvent\& event);}
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} OnInsertSpecification(wxCommandEvent\& event);}
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnInsertSource(wxCommandEvent\& event);}
+\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnInsertForm(wxCommandEvent\& event);}
+\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnInsertProcessingDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnInsertCharacterization(wxCommandEvent\& event);}
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertPropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnDeleteClass(wxCommandEvent\& event);}
+\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteSubclass(wxCommandEvent\& event);}
+\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteForm(wxCommandEvent\& event);}
+\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnDeleteProcessingDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnDeleteCharacterization(wxCommandEvent\& event);}
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnDeletePropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{133         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnDeleteSpecification(wxCommandEvent\& event);}
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnDeleteSource(wxCommandEvent\& event);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event);}
+\DoxyCodeLine{138         \textcolor{keywordtype}{void} OnPasteClass(wxCommandEvent\& event);}
+\DoxyCodeLine{139         \textcolor{keywordtype}{void} OnPasteSubclass(wxCommandEvent\& event);}
+\DoxyCodeLine{140         \textcolor{keywordtype}{void} OnPasteSpecification(wxCommandEvent\& event);}
+\DoxyCodeLine{141         \textcolor{keywordtype}{void} OnPasteSource(wxCommandEvent\& event);}
+\DoxyCodeLine{142         \textcolor{keywordtype}{void} OnPasteForm(wxCommandEvent\& event);}
+\DoxyCodeLine{143         \textcolor{keywordtype}{void} OnPasteProcessingDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{144         \textcolor{keywordtype}{void} OnPasteCharacterization(wxCommandEvent\& event);}
+\DoxyCodeLine{145         \textcolor{keywordtype}{void} OnPastePropertyData(wxCommandEvent\& event);}
+\DoxyCodeLine{146         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keyword}{private}:}
+\DoxyCodeLine{149     \};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \}; \textcolor{comment}{//namespace bellshire end}}
 
 \end{DoxyCode}

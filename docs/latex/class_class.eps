@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 172.413788
+%%BoundingBox: 0 0 500 86.206894
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 2.900000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 5.800000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 3 def
-/cols 2 def
+/cols 4 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -177,6 +177,8 @@ boxfont setfont
 (xml_schema::type) cw
 (Default< Class >) cw
 (Default< ParentSubClass >) cw
+(Default< Subclass >) cw
+(Default< Subclass1 >) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -188,22 +190,28 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Class) 0.500000 1.000000 box
- (xml_schema::type) 0.500000 2.000000 box
+ (Class) 1.500000 1.000000 box
+ (xml_schema::type) 1.500000 2.000000 box
  (Default< Class >) 0.000000 0.000000 box
  (Default< ParentSubClass >) 1.000000 0.000000 box
+ (Default< Subclass >) 2.000000 0.000000 box
+ (Default< Subclass1 >) 3.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 0.500000 1.000000 out
+0 1.500000 1.000000 out
 solid
-1 0.500000 2.000000 in
+1 1.500000 2.000000 in
 solid
-1 0.500000 0.250000 out
+1 1.500000 0.250000 out
 solid
-0.000000 1.000000 1.000000 conn
+0.000000 3.000000 1.000000 conn
 solid
 0 0.000000 0.750000 in
 solid
 0 1.000000 0.750000 in
+solid
+0 2.000000 0.750000 in
+solid
+0 3.000000 0.750000 in

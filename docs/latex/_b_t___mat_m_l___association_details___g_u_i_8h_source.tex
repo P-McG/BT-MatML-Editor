@@ -72,42 +72,48 @@
 \DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteRelationship(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{71 }
-\DoxyCodeLine{72     \textcolor{keyword}{private}:}
-\DoxyCodeLine{73     \};}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{74 }
-\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i}{AssociationDetails\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i___base}{AssociationDetails\_GUI\_Base}}}
-\DoxyCodeLine{76     \{}
-\DoxyCodeLine{77     \textcolor{keyword}{public}:}
-\DoxyCodeLine{78         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{79         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_af5570f8ccfaaa4fa82e54ab479d7fade}{AssociationDetails\_GUI}}();}
-\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_af5570f8ccfaaa4fa82e54ab479d7fade}{AssociationDetails\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{75     \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i}{AssociationDetails\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i___base}{AssociationDetails\_GUI\_Base}}}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80     \textcolor{keyword}{public}:}
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{82         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
 \DoxyCodeLine{83 }
-\DoxyCodeLine{84         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a11a458f38414343fc008d05c6039a6e8}{\string~AssociationDetails\_GUI}}();}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a122ec0ba4270e6028dd1f72a8cff51d4}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_aeaa6daf11455f736d13665a42ca36c2b}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{88         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a567735bd462c796a108c2f7082c88a42}{OnInsertAssociate}}(wxCommandEvent\& event);}
-\DoxyCodeLine{93         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a2618b111d0c3515380307226237b69e9}{OnInsertRelationship}}(wxCommandEvent\& event);}
-\DoxyCodeLine{94         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_ada86fd8b1dd800779fd4c45562da134d}{OnInsertNotes}}(wxCommandEvent\& event);}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96         \textcolor{keywordtype}{void} OnDeleteAssociate(wxCommandEvent\& event);}
-\DoxyCodeLine{97         \textcolor{keywordtype}{void} OnDeleteRelationship(wxCommandEvent\& event);}
-\DoxyCodeLine{98         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100         \textcolor{keywordtype}{void} OnPasteAssociate(wxCommandEvent\& event);}
-\DoxyCodeLine{101         \textcolor{keywordtype}{void} OnPasteRelationship(wxCommandEvent\& event);}
-\DoxyCodeLine{102         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104     \textcolor{keyword}{private}:}
-\DoxyCodeLine{105     \};}
+\DoxyCodeLine{84         \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_af5570f8ccfaaa4fa82e54ab479d7fade}{AssociationDetails\_GUI}}();}
+\DoxyCodeLine{85         \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_af5570f8ccfaaa4fa82e54ab479d7fade}{AssociationDetails\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a11a458f38414343fc008d05c6039a6e8}{\string~AssociationDetails\_GUI}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a122ec0ba4270e6028dd1f72a8cff51d4}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_aeaa6daf11455f736d13665a42ca36c2b}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a567735bd462c796a108c2f7082c88a42}{OnInsertAssociate}}(wxCommandEvent\& event);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_a2618b111d0c3515380307226237b69e9}{OnInsertRelationship}}(wxCommandEvent\& event);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_association_details___g_u_i_ada86fd8b1dd800779fd4c45562da134d}{OnInsertNotes}}(wxCommandEvent\& event);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} OnDeleteAssociate(wxCommandEvent\& event);}
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} OnDeleteRelationship(wxCommandEvent\& event);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} OnPasteAssociate(wxCommandEvent\& event);}
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} OnPasteRelationship(wxCommandEvent\& event);}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
 \DoxyCodeLine{106 }
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keyword}{private}:}
+\DoxyCodeLine{111     \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \}; \textcolor{comment}{//namespace bellshire end}}
 
 \end{DoxyCode}

@@ -19,9 +19,21 @@ virtual {\bfseries $\sim$\+Qualifier\+\_\+\+GUI} ()
 \begin{DoxyCompactList}\small\item\em Destructor for the derived class \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a7f6247529a23065060dfd0b8c5b6ad40}{Set\+Evt\+Handler\+Var}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
 \begin{DoxyCompactList}\small\item\em Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a44e9a141055b43d96b6f54e41ca49d82}{Set\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a6b8ac2059550ba80225ca7d294160fc0}{On\+Qualifier\+Text\+Ctrl\+Kill\+Focus}} (wx\+Command\+Event \&event)
 \item 
 void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_ae8ff5655bc8276cbdcf841502aceedd2}{On\+Validation\+Button\+Button}} (wx\+Command\+Event \&event)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a477e78a61ad577be8c674bccacc4a9bf}{On\+Bump\+Down}} (wx\+Command\+Event \&event)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a929855acd5acf9f59a83ba3fa4543c11}{On\+Bump\+Up}} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_qualifier___g_u_i_ac35c93f9738d75d864e1963611ef29ec}\label{classbellshire_1_1_qualifier___g_u_i_ac35c93f9738d75d864e1963611ef29ec}} 
+\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$ {\bfseries m\+\_\+\+Mat\+MLTree\+Ctrl}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -47,6 +59,26 @@ Constructor for the derived class
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_qualifier___g_u_i_a477e78a61ad577be8c674bccacc4a9bf}\label{classbellshire_1_1_qualifier___g_u_i_a477e78a61ad577be8c674bccacc4a9bf}} 
+\index{bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}!OnBumpDown@{OnBumpDown}}
+\index{OnBumpDown@{OnBumpDown}!bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}}
+\doxysubsubsection{\texorpdfstring{OnBumpDown()}{OnBumpDown()}}
+{\footnotesize\ttfamily void Qualifier\+\_\+\+GUI\+::\+On\+Bump\+Down (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i___base}{bellshire\+::\+Qualifier\+\_\+\+GUI\+\_\+\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_qualifier___g_u_i_a929855acd5acf9f59a83ba3fa4543c11}\label{classbellshire_1_1_qualifier___g_u_i_a929855acd5acf9f59a83ba3fa4543c11}} 
+\index{bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}!OnBumpUp@{OnBumpUp}}
+\index{OnBumpUp@{OnBumpUp}!bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}}
+\doxysubsubsection{\texorpdfstring{OnBumpUp()}{OnBumpUp()}}
+{\footnotesize\ttfamily void Qualifier\+\_\+\+GUI\+::\+On\+Bump\+Up (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i___base}{bellshire\+::\+Qualifier\+\_\+\+GUI\+\_\+\+Base}}.
+
 \mbox{\Hypertarget{classbellshire_1_1_qualifier___g_u_i_a6b8ac2059550ba80225ca7d294160fc0}\label{classbellshire_1_1_qualifier___g_u_i_a6b8ac2059550ba80225ca7d294160fc0}} 
 \index{bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}!OnQualifierTextCtrlKillFocus@{OnQualifierTextCtrlKillFocus}}
 \index{OnQualifierTextCtrlKillFocus@{OnQualifierTextCtrlKillFocus}!bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}}
@@ -76,6 +108,21 @@ Reimplemented from \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i___base}
 
 
 Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLTree\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_qualifier___g_u_i_a44e9a141055b43d96b6f54e41ca49d82}\label{classbellshire_1_1_qualifier___g_u_i_a44e9a141055b43d96b6f54e41ca49d82}} 
+\index{bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}!SetMatMLTreeCtrl@{SetMatMLTreeCtrl}}
+\index{SetMatMLTreeCtrl@{SetMatMLTreeCtrl}!bellshire::Qualifier\_GUI@{bellshire::Qualifier\_GUI}}
+\doxysubsubsection{\texorpdfstring{SetMatMLTreeCtrl()}{SetMatMLTreeCtrl()}}
+{\footnotesize\ttfamily void Qualifier\+\_\+\+GUI\+::\+Set\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})}
+
+
+
+Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. 
 
 
 \begin{DoxyParams}{Parameters}

@@ -82,45 +82,50 @@
 \DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteName(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteCurrencyCode(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{keyword}{private}:}
-\DoxyCodeLine{83     \};}
+\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{84 }
-\DoxyCodeLine{85     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i}{Unit\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}}}
-\DoxyCodeLine{86     \{}
-\DoxyCodeLine{87     \textcolor{keyword}{public}:}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{90         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{85     \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_unit___g_u_i}{Unit\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i___base}{Unit\_GUI\_Base}}}
+\DoxyCodeLine{89     \{}
+\DoxyCodeLine{90     \textcolor{keyword}{public}:}
 \DoxyCodeLine{91 }
-\DoxyCodeLine{92         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}();}
-\DoxyCodeLine{93         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{92         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{93         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
 \DoxyCodeLine{94 }
-\DoxyCodeLine{95         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a50db318daf3074e100aa0abf931b5e54}{\string~Unit\_GUI}}();}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a43769513b36e79f8a756311279a7c367}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a6bac979b50b48857b7a6af2ab31ce727}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{99         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{102         \textcolor{keywordtype}{void} OnUnitNameTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{103         \textcolor{keywordtype}{void} OnUnitCurrencyCheckBox(wxCommandEvent\& event);}
-\DoxyCodeLine{104         \textcolor{keywordtype}{void} OnUnitCurrencyChoice(wxCommandEvent\& event);}
-\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnUnitPowerTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{106         \textcolor{keywordtype}{void} OnUnitDescriptionTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
-\DoxyCodeLine{109         \textcolor{keywordtype}{void} OnInsertCurrency(wxCommandEvent\& event);}
+\DoxyCodeLine{95         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}();}
+\DoxyCodeLine{96         \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_ab853c555a8b6c3828c124a683e2e6a7e}{Unit\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a50db318daf3074e100aa0abf931b5e54}{\string~Unit\_GUI}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a43769513b36e79f8a756311279a7c367}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_unit___g_u_i_a6bac979b50b48857b7a6af2ab31ce727}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} OnUnitNameTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{106         \textcolor{keywordtype}{void} OnUnitCurrencyCheckBox(wxCommandEvent\& event);}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnUnitCurrencyChoice(wxCommandEvent\& event);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnUnitPowerTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} OnUnitDescriptionTextCtrl(wxCommandEvent\& event);}
 \DoxyCodeLine{110 }
-\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113         \textcolor{comment}{//void OnPasteName(wxCommandEvent\& event);}}
-\DoxyCodeLine{114         \textcolor{comment}{//void OnPasteCurrencyCode(wxCommandEvent\& event);}}
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnInsertName(wxCommandEvent\& event);}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} OnInsertCurrency(wxCommandEvent\& event);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnDeleteName(wxCommandEvent\& event);}
 \DoxyCodeLine{115 }
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     \textcolor{keyword}{private}:}
-\DoxyCodeLine{118     \};}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{116         \textcolor{comment}{//void OnPasteName(wxCommandEvent\& event);}}
+\DoxyCodeLine{117         \textcolor{comment}{//void OnPasteCurrencyCode(wxCommandEvent\& event);}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
 \DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keyword}{private}:}
+\DoxyCodeLine{123     \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{126 }
 
 \end{DoxyCode}

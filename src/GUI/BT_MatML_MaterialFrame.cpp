@@ -168,9 +168,9 @@ void bellshire::MaterialFrame::OnNewSel( wxCommandEvent& event )
     SetTitle(_("Edit - Untitled.xml *"));
 
     m_GUI->HideAllPanels();/*! Hide all the MatML GUI panels*/
-    m_GUI->m_Metadata_GUI->Show(true);/*! Show the Metadata panel*/
+    m_GUI->m_MatML_Doc_GUI->Show(true);/*! Show the Metadata panel*/
     this->Layout();
-    m_GUI->m_Metadata_GUI->m_GUI->Raise();
+    m_GUI->m_MatML_Doc_GUI->m_GUI->Raise();
 
 }
 

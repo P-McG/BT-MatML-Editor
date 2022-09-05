@@ -87,46 +87,53 @@
 \DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteQualifier(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{86 }
-\DoxyCodeLine{87     \textcolor{keyword}{private}:}
-\DoxyCodeLine{88     \};}
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{89 }
-\DoxyCodeLine{90    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i}{ParameterValue\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i___base}{ParameterValue\_GUI\_Base}}}
-\DoxyCodeLine{91     \{}
-\DoxyCodeLine{92     \textcolor{keyword}{public}:}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{95         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{90     \textcolor{keyword}{private}:}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93    \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i}{ParameterValue\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i___base}{ParameterValue\_GUI\_Base}}}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95     \textcolor{keyword}{public}:}
 \DoxyCodeLine{96 }
-\DoxyCodeLine{97         \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad909a8c78e046f200d1556aff8ee341b}{ParameterValue\_GUI}}();}
-\DoxyCodeLine{98         \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad909a8c78e046f200d1556aff8ee341b}{ParameterValue\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{97         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{98         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
 \DoxyCodeLine{99 }
-\DoxyCodeLine{100         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_aaae90eb3a7b27e4b05f8608d6911891a}{\string~ParameterValue\_GUI}}();}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad386eb3142a1b26e303ef1fa2e613dac}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{103         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_a8efb671ad288553f320d8c4e60b2a813}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{104         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{107         \textcolor{keywordtype}{void} OnParameterValueParameterChoice(wxCommandEvent\& event);}
-\DoxyCodeLine{108         \textcolor{keywordtype}{void} OnParameterValueFormatChoice(wxCommandEvent\& event);}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110         \textcolor{keywordtype}{void} OnInsertData(wxCommandEvent\& event);}
-\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnInsertUncertainty(wxCommandEvent\& event);}
-\DoxyCodeLine{112         \textcolor{keywordtype}{void} OnInsertQualifier(wxCommandEvent\& event);}
-\DoxyCodeLine{113         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnDeleteQualifier(wxCommandEvent\& event);}
-\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{117         \textcolor{keywordtype}{void} OnDeleteUncertainty(wxCommandEvent\& event);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnPasteData(wxCommandEvent\& event);}
-\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnPasteUncertainty(wxCommandEvent\& event);}
-\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnPasteQualifier(wxCommandEvent\& event);}
-\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{124     \textcolor{keyword}{private}:}
-\DoxyCodeLine{125     \};}
+\DoxyCodeLine{100         \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad909a8c78e046f200d1556aff8ee341b}{ParameterValue\_GUI}}();}
+\DoxyCodeLine{101         \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad909a8c78e046f200d1556aff8ee341b}{ParameterValue\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_aaae90eb3a7b27e4b05f8608d6911891a}{\string~ParameterValue\_GUI}}();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_ad386eb3142a1b26e303ef1fa2e613dac}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{106         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_parameter_value___g_u_i_a8efb671ad288553f320d8c4e60b2a813}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{110         \textcolor{keywordtype}{void} OnParameterValueParameterChoice(wxCommandEvent\& event);}
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} OnParameterValueFormatChoice(wxCommandEvent\& event);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} OnInsertData(wxCommandEvent\& event);}
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} OnInsertUncertainty(wxCommandEvent\& event);}
+\DoxyCodeLine{115         \textcolor{keywordtype}{void} OnInsertQualifier(wxCommandEvent\& event);}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} OnInsertNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} OnDeleteQualifier(wxCommandEvent\& event);}
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnDeleteNotes(wxCommandEvent\& event);}
+\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnDeleteUncertainty(wxCommandEvent\& event);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnPasteData(wxCommandEvent\& event);}
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnPasteUncertainty(wxCommandEvent\& event);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnPasteQualifier(wxCommandEvent\& event);}
+\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnPasteNotes(wxCommandEvent\& event);}
 \DoxyCodeLine{126 }
-\DoxyCodeLine{127 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{keyword}{private}:}
+\DoxyCodeLine{132     \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \}; \textcolor{comment}{//namespace bellshire end}}
 
 \end{DoxyCode}

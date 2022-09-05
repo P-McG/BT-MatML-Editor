@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="BT-MatML-Editor-55px.png"/></td>
   <td id="projectalign">
-   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.2</span>
+   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.3</span>
    </div>
    <div id="projectbrief">Editor for the MatML 3.1 XML Schema</div>
   </td>
@@ -100,6 +100,7 @@ BT-MatML-Editor Windows Build</h2>
 </ul>
 <p >Set the "Where to build the binaries" directory to the BT-MatML-Editor root/build</p><ul>
 <li>Add the following entries (change paths depending on your installation):<ul>
+<li>CMAKE_BUILD_TYPE STREQUAL "Release"</li>
 <li>XercesC_ROOT PATH "C:/Program Files/xerces-c"</li>
 <li>XSD_ROOT PATH "C:/Program Files/code_synthesis_xsd/xsd-4.0.0-i686-windows/bin"</li>
 <li>wxWidgets_ROOT PATH "C:/Program Files/wxWidgets/wxWidgets-3.2.0"</li>
@@ -124,7 +125,7 @@ BT-MatML-Editor Windows Build</h2>
 <li>./BT-MatML-Editor</li>
 </ul>
 <p >Package generation:</p><ul>
-<li>dir ${source}/build/win64</li>
+<li>cd ${source}/build/win64</li>
 <li>cpack</li>
 </ul>
 <p >Package Checksum Values in Windows 10</p><ul>
@@ -140,6 +141,13 @@ BT-MatML-Editor Linux Build</h2>
 </ul>
 <p >To run:</p><ul>
 <li>BT-MatML-Editor</li>
+</ul>
+<p >Package generation:</p><ul>
+<li>cd ${source}/build/linux</li>
+<li>cpack</li>
+</ul>
+<p >Package Checksum Values in Linux</p><ul>
+<li>sha1sum BT-MatML-Editor-0.1.2-Linux.tar.gz</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Programming Guide</h1>

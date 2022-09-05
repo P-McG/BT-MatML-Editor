@@ -68,21 +68,32 @@
 \DoxyCodeLine{65         );}
 \DoxyCodeLine{66 }
 \DoxyCodeLine{67         \textcolor{keywordtype}{void} SetConnect() \{\};}
-\DoxyCodeLine{68     \textcolor{keyword}{private}:}
-\DoxyCodeLine{69     \};}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i}{Graph\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}}}
-\DoxyCodeLine{72     \{}
-\DoxyCodeLine{73     \textcolor{keyword}{public}:}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{70         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{private}:}
+\DoxyCodeLine{73     \};}
 \DoxyCodeLine{74 }
-\DoxyCodeLine{75         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}();}
-\DoxyCodeLine{76         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}(wxWindow* parent);}
-\DoxyCodeLine{77         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_afdd9f3b96d3fe9dfe83549fbdb7668ef}{\string~Graph\_GUI}}();}
+\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_graph___g_u_i}{Graph\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{Graph\_GUI\_Base}}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77     \textcolor{keyword}{public}:}
 \DoxyCodeLine{78 }
-\DoxyCodeLine{79         \textcolor{keywordtype}{void} SetEvtHandlerVar() \{\};}
-\DoxyCodeLine{80     \textcolor{keyword}{private}:}
-\DoxyCodeLine{81     \};}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{79         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}();}
+\DoxyCodeLine{82         \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a9c93c4ef4cf353eb80b23ca9be318e91}{Graph\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_afdd9f3b96d3fe9dfe83549fbdb7668ef}{\string~Graph\_GUI}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a79731a6ea68487d6021fef9808ce7266}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a0d637b5a3b29bb7c096a74d3bfb4a8bc}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keyword}{private}:}
+\DoxyCodeLine{92     \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \}; \textcolor{comment}{//namespace bellshire end}}
 
 \end{DoxyCode}

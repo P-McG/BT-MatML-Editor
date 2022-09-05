@@ -21,9 +21,13 @@ var searchData=
   ['specimendetails_5fgui_18',['SpecimenDetails_GUI',['../classbellshire_1_1_specimen_details___g_u_i.html',1,'bellshire']]],
   ['specimendetails_5fgui_5fbase_19',['SpecimenDetails_GUI_Base',['../classbellshire_1_1_specimen_details___g_u_i___base.html',1,'bellshire']]],
   ['stringvalidator_20',['StringValidator',['../classbellshire_1_1_string_validator.html',1,'bellshire']]],
-  ['symbol_21',['Symbol',['../class_symbol.html',1,'']]],
-  ['symbol_5fgui_22',['Symbol_GUI',['../classbellshire_1_1_symbol___g_u_i.html',1,'bellshire']]],
-  ['symbol_5fgui_5fbase_23',['Symbol_GUI_Base',['../classbellshire_1_1_symbol___g_u_i___base.html',1,'bellshire']]],
-  ['synonym_5fgui_24',['Synonym_GUI',['../classbellshire_1_1_synonym___g_u_i.html',1,'bellshire']]],
-  ['synonym_5fgui_5fbase_25',['Synonym_GUI_Base',['../classbellshire_1_1_synonym___g_u_i___base.html',1,'bellshire']]]
+  ['subclass1_5fgui_21',['Subclass1_GUI',['../classbellshire_1_1_subclass1___g_u_i.html',1,'bellshire']]],
+  ['subclass1_5fgui_5fbase_22',['Subclass1_GUI_Base',['../classbellshire_1_1_subclass1___g_u_i___base.html',1,'bellshire']]],
+  ['subclass_5fgui_23',['Subclass_GUI',['../classbellshire_1_1_subclass___g_u_i.html',1,'bellshire']]],
+  ['subclass_5fgui_5fbase_24',['Subclass_GUI_Base',['../classbellshire_1_1_subclass___g_u_i___base.html',1,'bellshire']]],
+  ['symbol_25',['Symbol',['../class_symbol.html',1,'']]],
+  ['symbol_5fgui_26',['Symbol_GUI',['../classbellshire_1_1_symbol___g_u_i.html',1,'bellshire']]],
+  ['symbol_5fgui_5fbase_27',['Symbol_GUI_Base',['../classbellshire_1_1_symbol___g_u_i___base.html',1,'bellshire']]],
+  ['synonym_5fgui_28',['Synonym_GUI',['../classbellshire_1_1_synonym___g_u_i.html',1,'bellshire']]],
+  ['synonym_5fgui_5fbase_29',['Synonym_GUI_Base',['../classbellshire_1_1_synonym___g_u_i___base.html',1,'bellshire']]]
 ];

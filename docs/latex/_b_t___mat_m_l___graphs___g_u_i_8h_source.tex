@@ -65,7 +65,7 @@
 \DoxyCodeLine{62         \textcolor{keywordtype}{void} SetConnect() \{\};}
 \DoxyCodeLine{63 }
 \DoxyCodeLine{64         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGraph(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{65 }
+\DoxyCodeLine{65         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteGraph(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGraph(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{67     \textcolor{keyword}{private}:}
 \DoxyCodeLine{68     \};}
@@ -87,7 +87,7 @@
 \DoxyCodeLine{84 }
 \DoxyCodeLine{85         \textcolor{comment}{//Overwrites the base class functions}}
 \DoxyCodeLine{86         \textcolor{keywordtype}{void} OnInsertGraph(wxCommandEvent\& event);}
-\DoxyCodeLine{87 }
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} OnDeleteGraph(wxCommandEvent\& event);}
 \DoxyCodeLine{88         \textcolor{keywordtype}{void} OnPasteGraph(wxCommandEvent\& event);}
 \DoxyCodeLine{89 }
 \DoxyCodeLine{90     \textcolor{keyword}{private}:}

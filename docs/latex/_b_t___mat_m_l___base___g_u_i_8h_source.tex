@@ -14,16 +14,16 @@
 \DoxyCodeLine{11 }
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include <algorithm>}    \textcolor{comment}{// std::find}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Default.h"{}}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Utilities\_GUI.h"{}}}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
-\DoxyCodeLine{21 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <wx/event.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <wx/msgdlg.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}BT\_MatML\_MatMLTreeItemData.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}BT\_MatML\_TreeCtrlSorted.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Default.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Utilities\_GUI.h"{}}}
 \DoxyCodeLine{22 }
-\DoxyCodeLine{23 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
 \DoxyCodeLine{24 }
 \DoxyCodeLine{25 \textcolor{comment}{// The following are added in the MatML\_defaults already. }}
 \DoxyCodeLine{26 \textcolor{comment}{// Therefore inserting new elements is not allowed. So do nothing.}}
@@ -43,294 +43,362 @@
 \DoxyCodeLine{40 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
 \DoxyCodeLine{41 \textcolor{preprocessor}{    \}}}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#define ON\_PARENT\_INSERT\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{45 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{if (element) \{\(\backslash\)}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{    MatML\_Base\_GUI::InsertSeqContChild<child>(element-\/>child());\(\backslash\)}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{    MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{49 \textcolor{preprocessor}{\}}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{    parent* element = GetSelMatML< parent>(m\_MatMLTreeCtrl); \(\backslash\)}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast< child* >(m\_MatMLItemToCopy); \(\backslash\)}}
-\DoxyCodeLine{55 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
-\DoxyCodeLine{56 \textcolor{preprocessor}{            PasteChild(copy\_element, element-\/>child()); \(\backslash\)}}
-\DoxyCodeLine{57 \textcolor{preprocessor}{            SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl); \(\backslash\)}}
-\DoxyCodeLine{58 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
-\DoxyCodeLine{61 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_CONT\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{62 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML< parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{63 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast< child* >(m\_MatMLItemToCopy);\(\backslash\)}}
-\DoxyCodeLine{64 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
-\DoxyCodeLine{65 \textcolor{preprocessor}{        PasteContChild(copy\_element, element-\/>child());\(\backslash\)}}
-\DoxyCodeLine{66 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{67 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
-\DoxyCodeLine{70 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{71 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{72 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast<child* >(m\_MatMLItemToCopy);\(\backslash\)}}
-\DoxyCodeLine{73 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
-\DoxyCodeLine{74 \textcolor{preprocessor}{        PasteSeqContChild(copy\_element, element-\/>child());\(\backslash\)}}
-\DoxyCodeLine{75 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{76 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
-\DoxyCodeLine{79 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{80 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{81 \textcolor{preprocessor}{    if (element) \{\(\backslash\)}}
-\DoxyCodeLine{82 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteChild(element-\/>child());\(\backslash\)}}
-\DoxyCodeLine{83 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{84 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
-\DoxyCodeLine{87 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_CONT\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{88 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{89 \textcolor{preprocessor}{    if (element) \{\(\backslash\)}}
-\DoxyCodeLine{90 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteContChild(element-\/>child());\(\backslash\)}}
-\DoxyCodeLine{91 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{92 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
-\DoxyCodeLine{95 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
-\DoxyCodeLine{96 \textcolor{preprocessor}{    child* element = MatML\_Base\_GUI::GetSelMatML<child>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{97 \textcolor{preprocessor}{    parent* elementparent = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{98 \textcolor{preprocessor}{    if (element \&\& elementparent) \{\(\backslash\)}}
-\DoxyCodeLine{99 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteSeqContChild(element, elementparent-\/>child());\(\backslash\)}}
-\DoxyCodeLine{100 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
-\DoxyCodeLine{101 \textcolor{preprocessor}{    \}}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}} : \textcolor{keyword}{public} wxEvtHandler, \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_utilities}{Utilities}}}
-\DoxyCodeLine{106     \{}
-\DoxyCodeLine{107     \textcolor{keyword}{public}:}
-\DoxyCodeLine{108         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}() \{\};}
-\DoxyCodeLine{109         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{\string~MatML\_Base\_GUI}}() \{\};}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_INSERT\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl); \(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    if (element) \{ \(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{        MatML\_Base\_GUI::InsertContChild<child>((element-\/>t)-\/>child()); \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl); \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define ON\_PARENT\_INSERT\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{if (element) \{\(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{    MatML\_Base\_GUI::InsertSeqContChild<child>(element-\/>child());\(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{    MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_INSERT\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{if (element) \{\(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    MatML\_Base\_GUI::InsertSeqContChild<child>(element-\/>t-\/>child());\(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{    MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{    parent* element = GetSelMatML< parent>(m\_MatMLTreeCtrl); \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast< child* >(m\_MatMLItemToCopy); \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{            PasteChild(copy\_element, element-\/>child()); \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{            SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl); \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML< parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast< child* >(m\_MatMLItemToCopy);\(\backslash\)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{        PasteContChild(copy\_element, element-\/>child());\(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_PASTE\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML< parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast< child* >(m\_MatMLItemToCopy);\(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{        PasteContChild(copy\_element, (element-\/>t)-\/>child());\(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define ON\_PARENT\_PASTE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast<child* >(m\_MatMLItemToCopy);\(\backslash\)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{        PasteSeqContChild(copy\_element, element-\/>child());\(\backslash\)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{// Note: PARENT is Selected in the menu }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_PASTE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    child* copy\_element = boost::any\_cast<child* >(m\_MatMLItemToCopy);\(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    if (element \&\& copy\_element) \{\(\backslash\)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{        PasteSeqContChild(copy\_element, (element-\/>t)-\/>child());\(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSel<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{    \}}}
 \DoxyCodeLine{110 }
-\DoxyCodeLine{111         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
-\DoxyCodeLine{112         MatML\_Class* GetSelMatML(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl)}
-\DoxyCodeLine{113         \{}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115             wxTreeItemId selItemId = MatMLTreeCtrl-\/>GetSelection();}
-\DoxyCodeLine{116             \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}* item = NULL;}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118             \textcolor{keywordflow}{if} (selItemId.IsOk()) \{}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120                 item = (\mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}*)(MatMLTreeCtrl-\/>GetItemData(selItemId));}
-\DoxyCodeLine{121                 const ::boost::any\& anyptr(item-\/>GetAnyMatMLDataPointer());}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123                 \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{124                     MatML\_Class* element = boost::any\_cast<MatML\_Class* >(anyptr);}
-\DoxyCodeLine{125                     \textcolor{keywordflow}{if} (element != 0) \{}
+\DoxyCodeLine{111 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{    if (element) \{\(\backslash\)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteChild(element-\/>child());\(\backslash\)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    if (element) \{\(\backslash\)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteContChild(element-\/>child());\(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{    \}}}
 \DoxyCodeLine{126 }
-\DoxyCodeLine{127                         \textcolor{keywordflow}{return} element;}
-\DoxyCodeLine{128                     \}}
-\DoxyCodeLine{129                 \}}
-\DoxyCodeLine{130                 \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} boost::bad\_any\_cast\&) \{\}}
-\DoxyCodeLine{131             \}}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{134         \}}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
-\DoxyCodeLine{137         MatML\_Class* GetSelParentMatML(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl)}
-\DoxyCodeLine{138         \{}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140             wxTreeItemId selItemId = MatMLTreeCtrl-\/>GetSelection();}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142             \textcolor{keywordflow}{if} (selItemId.IsOk()) \{}
-\DoxyCodeLine{143                 wxTreeItemId selItemParentId = MatMLTreeCtrl-\/>GetItemParent(selItemId);}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145                 \textcolor{keywordflow}{if} (selItemParentId.IsOk()) \{}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147                     \mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}* item = (\mbox{\hyperlink{classbellshire_1_1_mat_m_l_tree_item_data}{MatMLTreeItemData}}*)(MatMLTreeCtrl-\/>GetItemData(selItemParentId));}
-\DoxyCodeLine{148                     ::boost::any anyptr(item-\/>GetAnyMatMLDataPointer());}
-\DoxyCodeLine{149 }
-\DoxyCodeLine{150                     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{151                         MatML\_Class* element = boost::any\_cast<MatML\_Class* >(anyptr);}
-\DoxyCodeLine{152                         \textcolor{keywordflow}{if} (element != 0) \{}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154                             \textcolor{keywordflow}{return} element;}
-\DoxyCodeLine{155                         \}}
-\DoxyCodeLine{156                     \}}
-\DoxyCodeLine{157                     \textcolor{keywordflow}{catch} ( boost::bad\_any\_cast\&) \{\}}
-\DoxyCodeLine{158                 \}}
-\DoxyCodeLine{159             \}}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{161             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{162         \}}
-\DoxyCodeLine{163 }
-\DoxyCodeLine{164         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
-\DoxyCodeLine{165         \textcolor{keywordtype}{void} SetupSel(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl)}
-\DoxyCodeLine{166         \{}
-\DoxyCodeLine{167             wxTreeItemId selItemId = MatMLTreeCtrl-\/>GetSelection();}
-\DoxyCodeLine{168             wxTreeItemId selItemParentId = MatMLTreeCtrl-\/>GetItemParent(selItemId);}
-\DoxyCodeLine{169 }
-\DoxyCodeLine{170             MatML\_ParentClass* element = GetSelMatML<MatML\_ParentClass>(MatMLTreeCtrl);}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172             GUI\_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemParentId, *element, selItemId);}
+\DoxyCodeLine{127 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_DELETE\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{    parent* element = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{    if (element) \{\(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteContChild((element-\/>t)-\/>child());\(\backslash\)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{    child* element = MatML\_Base\_GUI::GetSelMatML<child>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{    parent* elementparent = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{    if (element \&\& elementparent) \{\(\backslash\)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteSeqContChild(element, elementparent-\/>child());\(\backslash\)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define ON\_PARENT\_DELETE\_ITER\_CONT\_CHILD\_STRONGTYPE(parent,child) \(\backslash\)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{    child* element = MatML\_Base\_GUI::GetSelMatML<child>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{    parent* elementparent = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{    if (element \&\& elementparent) \{\(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteSeqContChild(element-\/>t, elementparent-\/>child());\(\backslash\)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{comment}{// Note: CHILD is Selected in the menu }}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define ON\_PARENT\_STRONGTYPE\_DELETE\_ITER\_CONT\_CHILD(parent,child) \(\backslash\)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{    child* element = MatML\_Base\_GUI::GetSelMatML<child>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{    parent* elementparent = MatML\_Base\_GUI::GetSelParentMatML<parent>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{    if (element \&\& elementparent) \{\(\backslash\)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{        MatML\_Base\_GUI::DeleteSeqContChild(element, (elementparent-\/>t)-\/>child());\(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{        MatML\_Base\_GUI::SetupSelParent<parent, parent \#\#\_GUI>(m\_MatMLTreeCtrl);\(\backslash\)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}} : \textcolor{keyword}{public} wxEvtHandler, \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_utilities}{Utilities}}}
+\DoxyCodeLine{163     \{}
+\DoxyCodeLine{164     \textcolor{keyword}{public}:}
+\DoxyCodeLine{165         \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{MatML\_Base\_GUI}}() \{\};}
+\DoxyCodeLine{166         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i}{\string~MatML\_Base\_GUI}}() \{\};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168         \textcolor{keywordtype}{bool} Warning(::std::string msg)}
+\DoxyCodeLine{169         \{}
+\DoxyCodeLine{170             wxMessageDialog WarningDialog(NULL, msg, \_(\textcolor{stringliteral}{"{}MatML Editer"{}}), wxOK | wxICON\_EXCLAMATION, wxDefaultPosition);}
+\DoxyCodeLine{171             \textcolor{keywordflow}{return} (WarningDialog.ShowModal() == wxID\_YES);}
+\DoxyCodeLine{172         \}}
 \DoxyCodeLine{173 }
-\DoxyCodeLine{174             wxTreeItemId selNextItemId = MatMLTreeCtrl-\/>GetNextSibling(selItemId);}
-\DoxyCodeLine{175             \textcolor{keywordflow}{if} (selNextItemId.IsOk()) \{}
+\DoxyCodeLine{174         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
+\DoxyCodeLine{175         MatML\_Class* GetSelMatML(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl);}
 \DoxyCodeLine{176 }
-\DoxyCodeLine{177                 MatMLTreeCtrl-\/>SelectItem(selNextItemId);}
-\DoxyCodeLine{178                 \textcolor{comment}{//MatMLTreeCtrl-\/>Expand(selNextItemId);}}
-\DoxyCodeLine{179             \}}
-\DoxyCodeLine{180             \textcolor{keywordflow}{if} (selItemId.IsOk()) MatMLTreeCtrl-\/>Delete(selItemId);}
-\DoxyCodeLine{181         \}}
+\DoxyCodeLine{177         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
+\DoxyCodeLine{178         MatML\_Class* GetSelParentMatML(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
+\DoxyCodeLine{181         \textcolor{keywordtype}{void} SetupSel(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl);}
 \DoxyCodeLine{182 }
-\DoxyCodeLine{189         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
-\DoxyCodeLine{190         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}{SetupStrongTypeSel}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl)}
-\DoxyCodeLine{191         \{}
-\DoxyCodeLine{192             \textcolor{keyword}{const} wxTreeItemId selItemId = MatMLTreeCtrl-\/>GetSelection();}
-\DoxyCodeLine{193             \textcolor{keyword}{const} wxTreeItemId selItemParentId = MatMLTreeCtrl-\/>GetItemParent(selItemId);}
+\DoxyCodeLine{183         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
+\DoxyCodeLine{184         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}{SetupStrongTypeSel}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
+\DoxyCodeLine{187         \textcolor{keywordtype}{void} SetupSelParent(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189         \textcolor{keyword}{template}<\textcolor{keyword}{class} InputIterator, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{190         InputIterator find(InputIterator first, InputIterator last, \textcolor{keyword}{const} T\& val);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{193         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_aa9c2e36d8c6611c136b999612109b168}{InsertChild}}(MatML\_ContClass\& MatML\_Cont);}
 \DoxyCodeLine{194 }
-\DoxyCodeLine{195             \textcolor{comment}{/* Get the MatML Data, which is selected in the wxTreeCtrl */}}
-\DoxyCodeLine{196             MatML\_ParentClass* element = GetSelMatML<MatML\_ParentClass>(MatMLTreeCtrl);}
+\DoxyCodeLine{195         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{196         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a3a5b1eb0d66bfd30191d763ab0255d0d}{InsertContChild}}(MatML\_ContClass\& MatML\_Cont);}
 \DoxyCodeLine{197 }
-\DoxyCodeLine{198             \textcolor{comment}{/* Set up wxTreeCtrl to mimic the MatML Data starting at the selItemParent as the parent and the }}
-\DoxyCodeLine{199 \textcolor{comment}{               selItemId as the previous Item in the tree.}}
-\DoxyCodeLine{200 \textcolor{comment}{               Creates a new strongtype to weaktype linkage.}}
-\DoxyCodeLine{201 \textcolor{comment}{            */}}
-\DoxyCodeLine{202             GUI\_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemParentId, *(element-\/>t), selItemId);}
+\DoxyCodeLine{198         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{199         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a4a2f71ca0fea5a82ac16508901388e01}{InsertSeqContChild}}(MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{202         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a84169058071122986099316d3ad1eade}{DeleteChild}}(MatML\_ContClass\& MatML);}
 \DoxyCodeLine{203 }
-\DoxyCodeLine{204             \textcolor{keyword}{const} wxTreeItemId selNextItemId = MatMLTreeCtrl-\/>GetNextSibling(selItemId);\textcolor{comment}{/* Get the next sibling in the tree () */}}
-\DoxyCodeLine{205             \textcolor{comment}{/* If the next sibling is okay then select and expand */}}
-\DoxyCodeLine{206             \textcolor{keywordflow}{if} (selNextItemId.IsOk()) \{}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{208                 MatMLTreeCtrl-\/>SelectItem(selNextItemId);}
-\DoxyCodeLine{209                 MatMLTreeCtrl-\/>Expand(selNextItemId);}
-\DoxyCodeLine{210             \}}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{212             \textcolor{comment}{/* No longer need the original Selected Item, so delete */}}
-\DoxyCodeLine{213             element-\/>null();\textcolor{comment}{//Break old Strongtype to Weaktype linkage.}}
-\DoxyCodeLine{214              \textcolor{keywordflow}{if} (selItemId.IsOk())  MatMLTreeCtrl-\/>Delete(selItemId);     }
-\DoxyCodeLine{215             }
-\DoxyCodeLine{216         \}}
-\DoxyCodeLine{217 }
-\DoxyCodeLine{218         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ParentClass, \textcolor{keyword}{typename} GUI\_ParentClass>}
-\DoxyCodeLine{219         \textcolor{keywordtype}{void} SetupSelParent(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl)}
-\DoxyCodeLine{220         \{}
-\DoxyCodeLine{221             wxTreeItemId selItemId = MatMLTreeCtrl-\/>GetSelection();}
-\DoxyCodeLine{222             wxTreeItemId selItemParentId =MatMLTreeCtrl-\/>GetItemParent(selItemId);}
-\DoxyCodeLine{223             wxTreeItemId selItemGrandParentId =MatMLTreeCtrl-\/>GetItemParent(selItemParentId);}
+\DoxyCodeLine{204         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ContClass >}
+\DoxyCodeLine{205         \textcolor{keywordtype}{void} DeleteContChild(MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
+\DoxyCodeLine{208         \textcolor{keywordtype}{void} DeleteSeqContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
+\DoxyCodeLine{211         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}{PasteChild}}(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
+\DoxyCodeLine{214         \textcolor{keywordtype}{void} PasteContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
+\DoxyCodeLine{217         \textcolor{keywordtype}{void} PasteSeqContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont);}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
+\DoxyCodeLine{220         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ae92aa9803e4d311d2528903d83b0320f}{SwapHavingId}}(MatML\_Class* matml0, MatML\_Class* matml1);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class>}
+\DoxyCodeLine{223         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ac7d4b854d06ec64ba4460d8e01b98e1e}{SwapHavingOptionalId}}(MatML\_Class* matml0, MatML\_Class* matml1);}
 \DoxyCodeLine{224 }
-\DoxyCodeLine{225             MatML\_ParentClass* element = GetSelParentMatML<MatML\_ParentClass>(MatMLTreeCtrl);}
-\DoxyCodeLine{226 }
-\DoxyCodeLine{227             GUI\_ParentClass::SetupMatMLTreeCtrl(MatMLTreeCtrl, selItemGrandParentId, *element, selItemParentId);}
+\DoxyCodeLine{225         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{226         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{227             MatMLFindAndBumpDown(MatML\_Class* matml, MatML\_ContClass\& cont);}
 \DoxyCodeLine{228 }
-\DoxyCodeLine{229             wxTreeItemId selNextItemId = MatMLTreeCtrl-\/>GetNextSibling(selItemId);}
-\DoxyCodeLine{230             \textcolor{keywordflow}{if} (selNextItemId.IsOk()) \{}
-\DoxyCodeLine{231 }
-\DoxyCodeLine{232                 MatMLTreeCtrl-\/>SelectItem(selNextItemId);}
-\DoxyCodeLine{233                 MatMLTreeCtrl-\/>Expand(selNextItemId);}
-\DoxyCodeLine{234             \}}
-\DoxyCodeLine{235 }
-\DoxyCodeLine{236             \textcolor{keywordflow}{if} (selItemParentId.IsOk())}
-\DoxyCodeLine{237                 MatMLTreeCtrl-\/>Delete(selItemParentId);}
-\DoxyCodeLine{238         \}}
-\DoxyCodeLine{239 }
-\DoxyCodeLine{240         \textcolor{keyword}{template}<\textcolor{keyword}{class} InputIterator, \textcolor{keyword}{class} T>}
-\DoxyCodeLine{241         InputIterator find(InputIterator first, InputIterator last, \textcolor{keyword}{const} T\& val)}
-\DoxyCodeLine{242         \{}
-\DoxyCodeLine{243             \textcolor{keywordflow}{while} (first != last) \{}
-\DoxyCodeLine{244                 \textcolor{keywordflow}{if} (\&*first == val) \textcolor{keywordflow}{return} first;}
-\DoxyCodeLine{245                 ++first;}
-\DoxyCodeLine{246             \}}
-\DoxyCodeLine{247             \textcolor{keywordflow}{return} last;}
-\DoxyCodeLine{248         \}}
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250         \textcolor{keywordtype}{bool} Warning(::std::string msg)}
-\DoxyCodeLine{251         \{}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253             wxMessageDialog* WarningDialog = \textcolor{keyword}{new} wxMessageDialog(NULL, msg, \_(\textcolor{stringliteral}{"{}MatML Editer"{}}), wxOK | wxICON\_EXCLAMATION, wxDefaultPosition);}
-\DoxyCodeLine{254             \textcolor{keywordflow}{return} (WarningDialog-\/>ShowModal() == wxID\_YES);}
-\DoxyCodeLine{255         \}}
-\DoxyCodeLine{256 }
-\DoxyCodeLine{265         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{266         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_aa9c2e36d8c6611c136b999612109b168}{InsertChild}}(MatML\_ContClass\& MatML\_Cont) \{}
-\DoxyCodeLine{267             Warning(\textcolor{stringliteral}{"{}Required element already exist"{}});}
-\DoxyCodeLine{268         \}}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{276         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{277         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a3a5b1eb0d66bfd30191d763ab0255d0d}{InsertContChild}}(MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{278         \{}
-\DoxyCodeLine{279             \textcolor{keyword}{auto}\& cont(MatML\_Cont);}
-\DoxyCodeLine{280             \textcolor{keywordflow}{if} (cont.present())}
-\DoxyCodeLine{281                 cont = \mbox{\hyperlink{class_default}{Default<MatML\_Class>}}();}
-\DoxyCodeLine{282             \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{283                 cont.set(\mbox{\hyperlink{class_default}{Default<MatML\_Class>}}());}
-\DoxyCodeLine{284             \}}
-\DoxyCodeLine{285         \}}
-\DoxyCodeLine{286 }
-\DoxyCodeLine{293         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{294         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a4a2f71ca0fea5a82ac16508901388e01}{InsertSeqContChild}}(MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{295         \{}
-\DoxyCodeLine{296             \textcolor{keyword}{auto}\& cont(MatML\_Cont);}
-\DoxyCodeLine{297             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{298                 cont.push\_back(\mbox{\hyperlink{class_default}{Default<MatML\_Class>}}());}
-\DoxyCodeLine{299             \}}
-\DoxyCodeLine{300             \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} xml\_schema::duplicate\_id\&) \{\}}
-\DoxyCodeLine{301         \}}
-\DoxyCodeLine{302 }
-\DoxyCodeLine{311         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{312         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a84169058071122986099316d3ad1eade}{DeleteChild}}(MatML\_ContClass\& MatML) }
-\DoxyCodeLine{313         \{}
-\DoxyCodeLine{314             Warning(\textcolor{stringliteral}{"{}Can not delete required element"{}});}
-\DoxyCodeLine{315         \}}
-\DoxyCodeLine{316 }
-\DoxyCodeLine{317         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_ContClass >}
-\DoxyCodeLine{318         \textcolor{keywordtype}{void} DeleteContChild(MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{319         \{}
-\DoxyCodeLine{320             \textcolor{keyword}{auto}\& cont(MatML\_Cont);}
-\DoxyCodeLine{321             \textcolor{keywordflow}{if} (cont.present())}
-\DoxyCodeLine{322                 cont.reset();}
-\DoxyCodeLine{323         \}}
-\DoxyCodeLine{324 }
-\DoxyCodeLine{325         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
-\DoxyCodeLine{326         \textcolor{keywordtype}{void} DeleteSeqContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{327         \{}
-\DoxyCodeLine{328             \textcolor{keyword}{auto}\& cont(MatML\_Cont);}
-\DoxyCodeLine{329 }
-\DoxyCodeLine{330             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& iter = find(cont.begin(), cont.end(), MatML);}
-\DoxyCodeLine{331             \textcolor{keywordflow}{if} (iter != cont.end()) }
-\DoxyCodeLine{332                 cont.erase(iter);}
-\DoxyCodeLine{333         \}}
-\DoxyCodeLine{334 }
-\DoxyCodeLine{340         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
-\DoxyCodeLine{341         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}{PasteChild}}(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{342         \{}
-\DoxyCodeLine{343             Warning(\textcolor{stringliteral}{"{}Can not paste over Required element"{}});}
-\DoxyCodeLine{344         \}}
-\DoxyCodeLine{345 }
-\DoxyCodeLine{346         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
-\DoxyCodeLine{347         \textcolor{keywordtype}{void} PasteContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{348         \{}
-\DoxyCodeLine{349             \textcolor{keyword}{auto}\& cont(MatML\_Cont);   }
-\DoxyCodeLine{350 }
-\DoxyCodeLine{351             \textcolor{keywordflow}{if}(cont.present()) }
-\DoxyCodeLine{352                 cont=*MatML; }
-\DoxyCodeLine{353             \textcolor{keywordflow}{else} \{   }
-\DoxyCodeLine{354                 cont.set(*MatML);       }
-\DoxyCodeLine{355             \}}
-\DoxyCodeLine{356         \}}
-\DoxyCodeLine{357 }
-\DoxyCodeLine{358         \textcolor{keyword}{template}<\textcolor{keyword}{typename} MatML\_Class, \textcolor{keyword}{typename} MatML\_ContClass>}
-\DoxyCodeLine{359         \textcolor{keywordtype}{void} PasteSeqContChild(MatML\_Class* MatML, MatML\_ContClass\& MatML\_Cont)}
-\DoxyCodeLine{360         \{}
-\DoxyCodeLine{361             \textcolor{keyword}{auto}\& cont(MatML\_Cont);}
-\DoxyCodeLine{362 }
-\DoxyCodeLine{363             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{364                 cont.push\_back(*MatML);}
-\DoxyCodeLine{365             \}}
-\DoxyCodeLine{366             \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} xml\_schema::duplicate\_id\&) \{\}}
-\DoxyCodeLine{367         \}}
-\DoxyCodeLine{368     }
-\DoxyCodeLine{369     \};}
-\DoxyCodeLine{370 \};\textcolor{comment}{//bellshire namespace}}
+\DoxyCodeLine{229         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{230         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{231             MatMLFindAndBumpDownStrongtype(MatML\_Class* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{234         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{235             \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a05be701236ffc17990ad220fffea488b}{MatMLFindAndBumpDownHavingId}}(MatML\_Class* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{238         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{239             \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a24e85414908651c642c2c5739c036066}{MatMLFindAndBumpDownHavingOptionalId}}(MatML\_Class* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241         \textcolor{keyword}{template}<\textcolor{keyword}{class} Child\_GUI, \textcolor{keyword}{class} MatML>}
+\DoxyCodeLine{242         \textcolor{keywordtype}{void} MatMLTreeCtrlBumpDown(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& treectrl,}
+\DoxyCodeLine{243             wxTreeItemId\& itemParentId,}
+\DoxyCodeLine{244             wxTreeItemId\& itemId,}
+\DoxyCodeLine{245             MatML* first,}
+\DoxyCodeLine{246             wxTreeItemId\& nextitemId,}
+\DoxyCodeLine{247             MatML* second}
+\DoxyCodeLine{248         );}
+\DoxyCodeLine{249  }
+\DoxyCodeLine{250         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{251         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{252             MatMLFindAndBumpUp(MatML\_Class* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{253  }
+\DoxyCodeLine{254         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_Class, \textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{255         std::pair<typename  MatML\_Class*, typename MatML\_Class*>}
+\DoxyCodeLine{256             MatMLFindAndBumpUpStrongtype(MatML\_Class* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{259         std::pair<typename MatML\_ContClass::value\_type*, typename MatML\_ContClass::value\_type*>}
+\DoxyCodeLine{260             \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a78f17b2fec73bb23efb897996af720a5}{MatMLFindAndBumpUpHavingId}}(\textcolor{keyword}{typename} MatML\_ContClass::value\_type* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262         \textcolor{keyword}{template}<\textcolor{keyword}{class} MatML\_ContClass>}
+\DoxyCodeLine{263         std::pair<typename MatML\_ContClass::value\_type*, typename MatML\_ContClass::value\_type*>}
+\DoxyCodeLine{264             \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_abccd50f3e44f5099618ecac6cce01034}{MatMLFindAndBumpUpHavingOptionalId}}(\textcolor{keyword}{typename} MatML\_ContClass::value\_type* matml, MatML\_ContClass\& cont);}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266         \textcolor{keyword}{template}<\textcolor{keyword}{class} Child\_GUI, \textcolor{keyword}{class} MatML>}
+\DoxyCodeLine{267         \textcolor{keywordtype}{void} MatMLTreeCtrlBumpUp(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& treectrl,}
+\DoxyCodeLine{268             wxTreeItemId\& itemParentId,}
+\DoxyCodeLine{269             wxTreeItemId\& previtemId,}
+\DoxyCodeLine{270             MatML* first,}
+\DoxyCodeLine{271             wxTreeItemId\& itemId,}
+\DoxyCodeLine{272             MatML* second}
+\DoxyCodeLine{273         );}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         \textcolor{keyword}{template}<\textcolor{keyword}{class} Child\_GUI, \textcolor{keyword}{class} MatML>}
+\DoxyCodeLine{276         \textcolor{keywordtype}{void} MatMLTreeCtrlBumpUpStrongtype(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& treectrl,}
+\DoxyCodeLine{277             wxTreeItemId\& itemParentId,}
+\DoxyCodeLine{278             wxTreeItemId\& previtemId,}
+\DoxyCodeLine{279             MatML* first,}
+\DoxyCodeLine{280             wxTreeItemId\& itemId,}
+\DoxyCodeLine{281             MatML* second}
+\DoxyCodeLine{282         );}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{285             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{286             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{287             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{288             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{289         >}
+\DoxyCodeLine{290             \textcolor{keywordtype}{void} IndividualBumpUp(boost::any anyptr,}
+\DoxyCodeLine{291                 boost::any anyptrparent,}
+\DoxyCodeLine{292                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{293                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{294                 wxTreeItemId itemId,}
+\DoxyCodeLine{295                 wxTreeItemId nextitemId}
+\DoxyCodeLine{296             );}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{299             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{300             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{301             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{302             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{303         >}
+\DoxyCodeLine{304             \textcolor{keywordtype}{void} IndividualBumpUpStrongtype(boost::any anyptr,}
+\DoxyCodeLine{305                 boost::any anyptrparent,}
+\DoxyCodeLine{306                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{307                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{308                 wxTreeItemId itemId,}
+\DoxyCodeLine{309                 wxTreeItemId nextitemId}
+\DoxyCodeLine{310             );}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{313             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{314             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{315             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{316             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{317         >}
+\DoxyCodeLine{318             \textcolor{keywordtype}{void} IndividualBumpUpHavingId(boost::any anyptr,}
+\DoxyCodeLine{319                 boost::any anyptrparent,}
+\DoxyCodeLine{320                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{321                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{322                 wxTreeItemId itemId,}
+\DoxyCodeLine{323                 wxTreeItemId nextitemId}
+\DoxyCodeLine{324             );}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{327             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{328             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{329             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{330             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{331         >}
+\DoxyCodeLine{332             \textcolor{keywordtype}{void} IndividualBumpUpHavingOptionalId(boost::any anyptr,}
+\DoxyCodeLine{333                 boost::any anyptrparent,}
+\DoxyCodeLine{334                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{335                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{336                 wxTreeItemId itemId,}
+\DoxyCodeLine{337                 wxTreeItemId nextitemId}
+\DoxyCodeLine{338             );}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{341             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{342             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{343             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{344             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{345         >}
+\DoxyCodeLine{346             \textcolor{keywordtype}{void} IndividualBumpDown(boost::any\& anyptr,}
+\DoxyCodeLine{347                 boost::any\& anyptrparent,}
+\DoxyCodeLine{348                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{349                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{350                 wxTreeItemId previtemId,}
+\DoxyCodeLine{351                 wxTreeItemId itemId}
+\DoxyCodeLine{352             );}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{355             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{356             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{357             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{358             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{359         >}
+\DoxyCodeLine{360             \textcolor{keywordtype}{void} IndividualBumpDownStrongtype(boost::any\& anyptr,}
+\DoxyCodeLine{361                 boost::any\& anyptrparent,}
+\DoxyCodeLine{362                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{363                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{364                 wxTreeItemId previtemId,}
+\DoxyCodeLine{365                 wxTreeItemId itemId}
+\DoxyCodeLine{366             );}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{369             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{370             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{371             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{372             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{373         >}
+\DoxyCodeLine{374             \textcolor{keywordtype}{void} IndividualBumpDownHavingId(boost::any\& anyptr,}
+\DoxyCodeLine{375                 boost::any\& anyptrparent,}
+\DoxyCodeLine{376                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{377                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{378                 wxTreeItemId previtemId,}
+\DoxyCodeLine{379                 wxTreeItemId itemId}
+\DoxyCodeLine{380             );}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382         \textcolor{keyword}{template}< \textcolor{keyword}{class }MatML\_Class,}
+\DoxyCodeLine{383             \textcolor{keyword}{class }MatML\_ParentClass,}
+\DoxyCodeLine{384             \textcolor{keyword}{class }MatML\_ContClass,}
+\DoxyCodeLine{385             \textcolor{keyword}{class }MatML\_GUI,}
+\DoxyCodeLine{386             MatML\_ContClass\& (MatML\_ParentClass::* cont\_func)()}
+\DoxyCodeLine{387         >}
+\DoxyCodeLine{388             \textcolor{keywordtype}{void} IndividualBumpDownHavingOptionalId(boost::any\& anyptr,}
+\DoxyCodeLine{389                 boost::any\& anyptrparent,}
+\DoxyCodeLine{390                 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{391                 wxTreeItemId itemParentId,}
+\DoxyCodeLine{392                 wxTreeItemId previtemId,}
+\DoxyCodeLine{393                 wxTreeItemId itemId}
+\DoxyCodeLine{394             );}
+\DoxyCodeLine{395     }
+\DoxyCodeLine{396     \};}
+\DoxyCodeLine{397 \};\textcolor{comment}{//bellshire namespace}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#include "{}BT\_MatML\_Base\_GUI.inl"{}}}
 
 \end{DoxyCode}

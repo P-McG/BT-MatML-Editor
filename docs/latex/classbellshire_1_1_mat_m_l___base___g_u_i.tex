@@ -9,6 +9,9 @@ Inheritance diagram for bellshire\+::Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+:\begin{fig
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a15926baa9e62f7ee4bcd65d816970f2d}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a15926baa9e62f7ee4bcd65d816970f2d}} 
+bool {\bfseries Warning} (\+::std\+::string msg)
+\item 
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a7507a0403fd187d68b23440731a5cc97}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a7507a0403fd187d68b23440731a5cc97}} 
 {\footnotesize template$<$class Mat\+ML\+\_\+\+Class $>$ }\\Mat\+ML\+\_\+\+Class $\ast$ {\bfseries Get\+Sel\+Mat\+ML} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl)
 \item 
@@ -19,15 +22,12 @@ Inheritance diagram for bellshire\+::Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+:\begin{fig
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Parent\+Class , typename GUI\+\_\+\+Parent\+Class $>$ }\\void {\bfseries Setup\+Sel} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl)
 \item 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Parent\+Class , typename GUI\+\_\+\+Parent\+Class $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}{Setup\+Strong\+Type\+Sel}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl)
-\begin{DoxyCompactList}\small\item\em Setup the selected wx\+Tree\+Ctrl Item for Mat\+ML strongtypes \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_aa63a35f72b7137874e96b2ef23b50c89}\label{classbellshire_1_1_mat_m_l___base___g_u_i_aa63a35f72b7137874e96b2ef23b50c89}} 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Parent\+Class , typename GUI\+\_\+\+Parent\+Class $>$ }\\void {\bfseries Setup\+Sel\+Parent} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl)
 \item 
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a805d799c10ee79971234304256158f6c}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a805d799c10ee79971234304256158f6c}} 
 {\footnotesize template$<$class Input\+Iterator , class T $>$ }\\Input\+Iterator {\bfseries find} (Input\+Iterator first, Input\+Iterator last, const T \&val)
-\item 
-\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a15926baa9e62f7ee4bcd65d816970f2d}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a15926baa9e62f7ee4bcd65d816970f2d}} 
-bool {\bfseries Warning} (\+::std\+::string msg)
 \item 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_aa9c2e36d8c6611c136b999612109b168}{Insert\+Child}} (Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
 \begin{DoxyCompactList}\small\item\em Does Nothing. Child are required in the Mat\+ML structure and are inserted automatically through the \mbox{\hyperlink{class_default}{Default}} classes. \end{DoxyCompactList}\item 
@@ -43,14 +43,70 @@ bool {\bfseries Warning} (\+::std\+::string msg)
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a80d1b599a113aeac5c4bed6f1fc9f34c}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a80d1b599a113aeac5c4bed6f1fc9f34c}} 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void {\bfseries Delete\+Seq\+Cont\+Child} (Mat\+ML\+\_\+\+Class $\ast$Mat\+ML, Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
 \item 
-\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}\label{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}} 
-{\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void {\bfseries Paste\+Child} (Mat\+ML\+\_\+\+Class $\ast$Mat\+ML, Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
-\begin{DoxyCompactList}\small\item\em Does Nothing. Child are required in the Mat\+ML structure and are inserted automatically through the \mbox{\hyperlink{class_default}{Default}} classes. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}{Paste\+Child}} (Mat\+ML\+\_\+\+Class $\ast$Mat\+ML, Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
+\item 
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a8b9bd57aa0c09ffdf52bd712bddfcbbb}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a8b9bd57aa0c09ffdf52bd712bddfcbbb}} 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void {\bfseries Paste\+Cont\+Child} (Mat\+ML\+\_\+\+Class $\ast$Mat\+ML, Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
 \item 
 \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a7b26ff6dea608b3b21247ae76ec5906b}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a7b26ff6dea608b3b21247ae76ec5906b}} 
 {\footnotesize template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ }\\void {\bfseries Paste\+Seq\+Cont\+Child} (Mat\+ML\+\_\+\+Class $\ast$Mat\+ML, Mat\+ML\+\_\+\+Cont\+Class \&Mat\+ML\+\_\+\+Cont)
+\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ae92aa9803e4d311d2528903d83b0320f}{Swap\+Having\+Id}} (Mat\+ML\+\_\+\+Class $\ast$matml0, Mat\+ML\+\_\+\+Class $\ast$matml1)
+\begin{DoxyCompactList}\small\item\em Swap function with Mat\+ML Classes that have required Id. This has the added complication that the id\textquotesingle{}s can not be duplicated during the swap. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class $>$ }\\void \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_ac7d4b854d06ec64ba4460d8e01b98e1e}{Swap\+Having\+Optional\+Id}} (Mat\+ML\+\_\+\+Class $\ast$matml0, Mat\+ML\+\_\+\+Class $\ast$matml1)
+\begin{DoxyCompactList}\small\item\em Swap function with Mat\+ML Classes that have Optional Id. This has the added complication that the id\textquotesingle{}s can not be duplicated during the swap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a3a4832e1c7b03617471504eee4bcd504}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a3a4832e1c7b03617471504eee4bcd504}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ {\bfseries Mat\+MLFind\+And\+Bump\+Down} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a39ae962c7e1372765bc690ce29a2c073}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a39ae962c7e1372765bc690ce29a2c073}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ {\bfseries Mat\+MLFind\+And\+Bump\+Down\+Strongtype} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a05be701236ffc17990ad220fffea488b}{Mat\+MLFind\+And\+Bump\+Down\+Having\+Id}} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\begin{DoxyCompactList}\small\item\em Similar to Mat\+MLFind\+And\+Bump\+Down with the added complication that the Required Id\textquotesingle{}s cannot be duplicated during the swap. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a24e85414908651c642c2c5739c036066}{Mat\+MLFind\+And\+Bump\+Down\+Having\+Optional\+Id}} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\begin{DoxyCompactList}\small\item\em Similar to Mat\+MLFind\+And\+Bump\+Down with the added complication that the optional Id\textquotesingle{}s cannot be duplicated during the swap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_af73d94cf084925e653932317b67c7a42}\label{classbellshire_1_1_mat_m_l___base___g_u_i_af73d94cf084925e653932317b67c7a42}} 
+{\footnotesize template$<$class Child\+\_\+\+GUI , class Mat\+ML $>$ }\\void {\bfseries Mat\+MLTree\+Ctrl\+Bump\+Down} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&treectrl, wx\+Tree\+Item\+Id \&item\+Parent\+Id, wx\+Tree\+Item\+Id \&item\+Id, Mat\+ML $\ast$first, wx\+Tree\+Item\+Id \&nextitem\+Id, Mat\+ML $\ast$second)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a71b78ed65e0d9a8f86652eb86ed5409a}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a71b78ed65e0d9a8f86652eb86ed5409a}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ {\bfseries Mat\+MLFind\+And\+Bump\+Up} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a746092e88aff13517b5db99ed0f66a60}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a746092e88aff13517b5db99ed0f66a60}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ {\bfseries Mat\+MLFind\+And\+Bump\+Up\+Strongtype} (Mat\+ML\+\_\+\+Class $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$, typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_a78f17b2fec73bb23efb897996af720a5}{Mat\+MLFind\+And\+Bump\+Up\+Having\+Id}} (typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\begin{DoxyCompactList}\small\item\em Similar to Mat\+MLFind\+And\+Bump\+Up with the added complication that the Required Id\textquotesingle{}s cannot be duplicated during the swap. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Cont\+Class $>$ }\\std\+::pair$<$ typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$, typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$ $>$ \mbox{\hyperlink{classbellshire_1_1_mat_m_l___base___g_u_i_abccd50f3e44f5099618ecac6cce01034}{Mat\+MLFind\+And\+Bump\+Up\+Having\+Optional\+Id}} (typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$matml, Mat\+ML\+\_\+\+Cont\+Class \&cont)
+\begin{DoxyCompactList}\small\item\em Similar to Mat\+MLFind\+And\+Bump\+Up with the added complication that the optional Id\textquotesingle{}s cannot be duplicated during the swap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_afb56e3df4d0879207462188b3080218d}\label{classbellshire_1_1_mat_m_l___base___g_u_i_afb56e3df4d0879207462188b3080218d}} 
+{\footnotesize template$<$class Child\+\_\+\+GUI , class Mat\+ML $>$ }\\void {\bfseries Mat\+MLTree\+Ctrl\+Bump\+Up} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&treectrl, wx\+Tree\+Item\+Id \&item\+Parent\+Id, wx\+Tree\+Item\+Id \&previtem\+Id, Mat\+ML $\ast$first, wx\+Tree\+Item\+Id \&item\+Id, Mat\+ML $\ast$second)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a74350ef27f77889e7f00e8edfc71c9b8}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a74350ef27f77889e7f00e8edfc71c9b8}} 
+{\footnotesize template$<$class Child\+\_\+\+GUI , class Mat\+ML $>$ }\\void {\bfseries Mat\+MLTree\+Ctrl\+Bump\+Up\+Strongtype} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&treectrl, wx\+Tree\+Item\+Id \&item\+Parent\+Id, wx\+Tree\+Item\+Id \&previtem\+Id, Mat\+ML $\ast$first, wx\+Tree\+Item\+Id \&item\+Id, Mat\+ML $\ast$second)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a7f5ae5d9539132387f983a7cd30e9208}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a7f5ae5d9539132387f983a7cd30e9208}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Up} (boost\+::any anyptr, boost\+::any anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id item\+Id, wx\+Tree\+Item\+Id nextitem\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_aa7519e39288cc5a7172ec81eb0d2415e}\label{classbellshire_1_1_mat_m_l___base___g_u_i_aa7519e39288cc5a7172ec81eb0d2415e}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Up\+Strongtype} (boost\+::any anyptr, boost\+::any anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id item\+Id, wx\+Tree\+Item\+Id nextitem\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a30b8dbfa3f914b00f5f5bc0458e5515e}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a30b8dbfa3f914b00f5f5bc0458e5515e}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Up\+Having\+Id} (boost\+::any anyptr, boost\+::any anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id item\+Id, wx\+Tree\+Item\+Id nextitem\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a41a809b0f4da488889f485b39bf05b52}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a41a809b0f4da488889f485b39bf05b52}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Up\+Having\+Optional\+Id} (boost\+::any anyptr, boost\+::any anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id item\+Id, wx\+Tree\+Item\+Id nextitem\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a469e2aba6ee32fa9a6d4d8c11bf572aa}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a469e2aba6ee32fa9a6d4d8c11bf572aa}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Down} (boost\+::any \&anyptr, boost\+::any \&anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id previtem\+Id, wx\+Tree\+Item\+Id item\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_ae37b39e66948269d4e437cd71d518efa}\label{classbellshire_1_1_mat_m_l___base___g_u_i_ae37b39e66948269d4e437cd71d518efa}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Down\+Strongtype} (boost\+::any \&anyptr, boost\+::any \&anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id previtem\+Id, wx\+Tree\+Item\+Id item\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a61437a17a8c0f48596d518bad3b133cb}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a61437a17a8c0f48596d518bad3b133cb}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Down\+Having\+Id} (boost\+::any \&anyptr, boost\+::any \&anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id previtem\+Id, wx\+Tree\+Item\+Id item\+Id)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a045a1bd153e4276b475d08c50d90b8aa}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a045a1bd153e4276b475d08c50d90b8aa}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Parent\+Class , class Mat\+ML\+\_\+\+Cont\+Class , class Mat\+ML\+\_\+\+GUI , Mat\+ML\+\_\+\+Cont\+Class \&(Mat\+ML\+\_\+\+Parent\+Class\+::$\ast$)() cont\+\_\+func$>$ }\\void {\bfseries Individual\+Bump\+Down\+Having\+Optional\+Id} (boost\+::any \&anyptr, boost\+::any \&anyptrparent, \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$Mat\+MLTree\+Ctrl, wx\+Tree\+Item\+Id item\+Parent\+Id, wx\+Tree\+Item\+Id previtem\+Id, wx\+Tree\+Item\+Id item\+Id)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -61,7 +117,7 @@ bool {\bfseries Warning} (\+::std\+::string msg)
 \index{DeleteChild@{DeleteChild}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
 \doxysubsubsection{\texorpdfstring{DeleteChild()}{DeleteChild()}}
 {\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Cont\+Class $>$ \\
-void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Delete\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Delete\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML }\end{DoxyParamCaption})}
 
 
 
@@ -84,7 +140,7 @@ Does Nothing. Child are REQUIRED in the Mat\+ML structure and are inserted autom
 \index{InsertChild@{InsertChild}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
 \doxysubsubsection{\texorpdfstring{InsertChild()}{InsertChild()}}
 {\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ \\
-void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})}
 
 
 
@@ -107,7 +163,7 @@ Does Nothing. Child are required in the Mat\+ML structure and are inserted autom
 \index{InsertContChild@{InsertContChild}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
 \doxysubsubsection{\texorpdfstring{InsertContChild()}{InsertContChild()}}
 {\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ \\
-void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Cont\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Cont\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})}
 
 
 
@@ -130,7 +186,7 @@ Inserts the Mat\+ML \mbox{\hyperlink{class_data}{Data}} into the Mat\+ML contain
 \index{InsertSeqContChild@{InsertSeqContChild}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
 \doxysubsubsection{\texorpdfstring{InsertSeqContChild()}{InsertSeqContChild()}}
 {\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ \\
-void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Seq\+Cont\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Insert\+Seq\+Cont\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})}
 
 
 
@@ -148,12 +204,133 @@ Inserts the Mat\+ML \mbox{\hyperlink{class_data}{Data}} into the Mat\+ML sequenc
 {\em Mat\+ML} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}} 
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a05be701236ffc17990ad220fffea488b}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a05be701236ffc17990ad220fffea488b}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!MatMLFindAndBumpDownHavingId@{MatMLFindAndBumpDownHavingId}}
+\index{MatMLFindAndBumpDownHavingId@{MatMLFindAndBumpDownHavingId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{MatMLFindAndBumpDownHavingId()}{MatMLFindAndBumpDownHavingId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ \\
+std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Mat\+MLFind\+And\+Bump\+Down\+Having\+Id (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml,  }\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{cont }\end{DoxyParamCaption})}
+
+
+
+Similar to Mat\+MLFind\+And\+Bump\+Down with the added complication that the Required Id\textquotesingle{}s cannot be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+{\em Mat\+ML\+\_\+\+Cont\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml} & \\
+\hline
+{\em cont} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a24e85414908651c642c2c5739c036066}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a24e85414908651c642c2c5739c036066}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!MatMLFindAndBumpDownHavingOptionalId@{MatMLFindAndBumpDownHavingOptionalId}}
+\index{MatMLFindAndBumpDownHavingOptionalId@{MatMLFindAndBumpDownHavingOptionalId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{MatMLFindAndBumpDownHavingOptionalId()}{MatMLFindAndBumpDownHavingOptionalId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class , class Mat\+ML\+\_\+\+Cont\+Class $>$ \\
+std\+::pair$<$ typename Mat\+ML\+\_\+\+Class $\ast$, typename Mat\+ML\+\_\+\+Class $\ast$ $>$ bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Mat\+MLFind\+And\+Bump\+Down\+Having\+Optional\+Id (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml,  }\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{cont }\end{DoxyParamCaption})}
+
+
+
+Similar to Mat\+MLFind\+And\+Bump\+Down with the added complication that the optional Id\textquotesingle{}s cannot be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+{\em Mat\+ML\+\_\+\+Cont\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml} & \\
+\hline
+{\em cont} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a78f17b2fec73bb23efb897996af720a5}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a78f17b2fec73bb23efb897996af720a5}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!MatMLFindAndBumpUpHavingId@{MatMLFindAndBumpUpHavingId}}
+\index{MatMLFindAndBumpUpHavingId@{MatMLFindAndBumpUpHavingId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{MatMLFindAndBumpUpHavingId()}{MatMLFindAndBumpUpHavingId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Cont\+Class $>$ \\
+std\+::pair$<$ typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$, typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$ $>$ bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Mat\+MLFind\+And\+Bump\+Up\+Having\+Id (\begin{DoxyParamCaption}\item[{typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$}]{matml,  }\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{cont }\end{DoxyParamCaption})}
+
+
+
+Similar to Mat\+MLFind\+And\+Bump\+Up with the added complication that the Required Id\textquotesingle{}s cannot be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Cont\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml} & \\
+\hline
+{\em cont} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_abccd50f3e44f5099618ecac6cce01034}\label{classbellshire_1_1_mat_m_l___base___g_u_i_abccd50f3e44f5099618ecac6cce01034}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!MatMLFindAndBumpUpHavingOptionalId@{MatMLFindAndBumpUpHavingOptionalId}}
+\index{MatMLFindAndBumpUpHavingOptionalId@{MatMLFindAndBumpUpHavingOptionalId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{MatMLFindAndBumpUpHavingOptionalId()}{MatMLFindAndBumpUpHavingOptionalId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Cont\+Class $>$ \\
+std\+::pair$<$ typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$, typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$ $>$ bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Mat\+MLFind\+And\+Bump\+Up\+Having\+Optional\+Id (\begin{DoxyParamCaption}\item[{typename Mat\+ML\+\_\+\+Cont\+Class\+::value\+\_\+type $\ast$}]{matml,  }\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{cont }\end{DoxyParamCaption})}
+
+
+
+Similar to Mat\+MLFind\+And\+Bump\+Up with the added complication that the optional Id\textquotesingle{}s cannot be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Cont\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml} & \\
+\hline
+{\em cont} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}\label{classbellshire_1_1_mat_m_l___base___g_u_i_ac20da346802783fb21aff2e753e64ac5}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!PasteChild@{PasteChild}}
+\index{PasteChild@{PasteChild}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{PasteChild()}{PasteChild()}}
+{\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Class , typename Mat\+ML\+\_\+\+Cont\+Class $>$ \\
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Paste\+Child (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Class $\ast$}]{Mat\+ML,  }\item[{Mat\+ML\+\_\+\+Cont\+Class \&}]{Mat\+ML\+\_\+\+Cont }\end{DoxyParamCaption})}
+
+
+
+
+
+Does Nothing. Child are required in the Mat\+ML structure and are inserted automatically through the \mbox{\hyperlink{class_default}{Default}} classes. \mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}\label{classbellshire_1_1_mat_m_l___base___g_u_i_a2e5e11e3ba28e694c59e78feb656d0a3}} 
 \index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!SetupStrongTypeSel@{SetupStrongTypeSel}}
 \index{SetupStrongTypeSel@{SetupStrongTypeSel}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
 \doxysubsubsection{\texorpdfstring{SetupStrongTypeSel()}{SetupStrongTypeSel()}}
 {\footnotesize\ttfamily template$<$typename Mat\+ML\+\_\+\+Parent\+Class , typename GUI\+\_\+\+Parent\+Class $>$ \\
-void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Setup\+Strong\+Type\+Sel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Setup\+Strong\+Type\+Sel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})}
+
+
 
 
 
@@ -171,8 +348,55 @@ Setup the selected wx\+Tree\+Ctrl Item for Mat\+ML strongtypes
 {\em Mat\+MLTree\+Ctrl} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_ae92aa9803e4d311d2528903d83b0320f}\label{classbellshire_1_1_mat_m_l___base___g_u_i_ae92aa9803e4d311d2528903d83b0320f}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!SwapHavingId@{SwapHavingId}}
+\index{SwapHavingId@{SwapHavingId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{SwapHavingId()}{SwapHavingId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class $>$ \\
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Swap\+Having\+Id (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml0,  }\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml1 }\end{DoxyParamCaption})}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Swap function with Mat\+ML Classes that have required Id. This has the added complication that the id\textquotesingle{}s can not be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml0} & \\
+\hline
+{\em matml1} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_mat_m_l___base___g_u_i_ac7d4b854d06ec64ba4460d8e01b98e1e}\label{classbellshire_1_1_mat_m_l___base___g_u_i_ac7d4b854d06ec64ba4460d8e01b98e1e}} 
+\index{bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}!SwapHavingOptionalId@{SwapHavingOptionalId}}
+\index{SwapHavingOptionalId@{SwapHavingOptionalId}!bellshire::MatML\_Base\_GUI@{bellshire::MatML\_Base\_GUI}}
+\doxysubsubsection{\texorpdfstring{SwapHavingOptionalId()}{SwapHavingOptionalId()}}
+{\footnotesize\ttfamily template$<$class Mat\+ML\+\_\+\+Class $>$ \\
+void bellshire\+::\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI\+::\+Swap\+Having\+Optional\+Id (\begin{DoxyParamCaption}\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml0,  }\item[{Mat\+ML\+\_\+\+Class $\ast$}]{matml1 }\end{DoxyParamCaption})}
+
+
+
+Swap function with Mat\+ML Classes that have Optional Id. This has the added complication that the id\textquotesingle{}s can not be duplicated during the swap. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Mat\+ML\+\_\+\+Class} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matml0} & \\
+\hline
+{\em matml1} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+Base\+\_\+\+GUI.\+inl\end{DoxyCompactItemize}

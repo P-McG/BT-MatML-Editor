@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 1341.991333
+%%BoundingBox: 0 0 500 1385.281372
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.372581 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.360938 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 62 def
+/rows 64 def
 /cols 3 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -228,6 +228,8 @@ boxfont setfont
 (bellshire::Source_GUI_Base) cw
 (bellshire::Specification_GUI_Base) cw
 (bellshire::SpecimenDetails_GUI_Base) cw
+(bellshire::Subclass1_GUI_Base) cw
+(bellshire::Subclass_GUI_Base) cw
 (bellshire::Symbol_GUI_Base) cw
 (bellshire::Synonym_GUI_Base) cw
 (bellshire::TestConditionDetails_GUI_Base) cw
@@ -247,112 +249,116 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (bellshire::MatML_Base_GUI) 0.500000 60.000000 box
- (wxEvtHandler) 0.000000 61.000000 box
- (bellshire::Utilities) 1.000000 61.000000 box
- (bellshire::Abbreviation_GUI_Base) 1.500000 59.000000 box
+ (bellshire::MatML_Base_GUI) 0.500000 62.000000 box
+ (wxEvtHandler) 0.000000 63.000000 box
+ (bellshire::Utilities) 1.000000 63.000000 box
+ (bellshire::Abbreviation_GUI_Base) 1.500000 61.000000 box
+1.500000 61.000000 mark
+ (bellshire::Associate_GUI_Base) 1.500000 60.000000 box
+1.500000 60.000000 mark
+ (bellshire::AssociationDetails_GUI_Base) 1.500000 59.000000 box
 1.500000 59.000000 mark
- (bellshire::Associate_GUI_Base) 1.500000 58.000000 box
+ (bellshire::AuthorityDetails_GUI_Base) 1.500000 58.000000 box
 1.500000 58.000000 mark
- (bellshire::AssociationDetails_GUI_Base) 1.500000 57.000000 box
+ (bellshire::BulkDetails_GUI_Base) 1.500000 57.000000 box
 1.500000 57.000000 mark
- (bellshire::AuthorityDetails_GUI_Base) 1.500000 56.000000 box
+ (bellshire::Characterization_GUI_Base) 1.500000 56.000000 box
 1.500000 56.000000 mark
- (bellshire::BulkDetails_GUI_Base) 1.500000 55.000000 box
+ (bellshire::ChemicalComposition_GUI_Base) 1.500000 55.000000 box
 1.500000 55.000000 mark
- (bellshire::Characterization_GUI_Base) 1.500000 54.000000 box
+ (bellshire::ChemicalElementSymbol_GUI_Base) 1.500000 54.000000 box
 1.500000 54.000000 mark
- (bellshire::ChemicalComposition_GUI_Base) 1.500000 53.000000 box
+ (bellshire::Class_GUI_Base) 1.500000 53.000000 box
 1.500000 53.000000 mark
- (bellshire::ChemicalElementSymbol_GUI_Base) 1.500000 52.000000 box
+ (bellshire::ComponentDetails_GUI_Base) 1.500000 52.000000 box
 1.500000 52.000000 mark
- (bellshire::Class_GUI_Base) 1.500000 51.000000 box
+ (bellshire::Compound_GUI_Base) 1.500000 51.000000 box
 1.500000 51.000000 mark
- (bellshire::ComponentDetails_GUI_Base) 1.500000 50.000000 box
+ (bellshire::Concentration_GUI_Base) 1.500000 50.000000 box
 1.500000 50.000000 mark
- (bellshire::Compound_GUI_Base) 1.500000 49.000000 box
+ (bellshire::CurrencyCode_GUI_Base) 1.500000 49.000000 box
 1.500000 49.000000 mark
- (bellshire::Concentration_GUI_Base) 1.500000 48.000000 box
+ (bellshire::Data1_GUI_Base) 1.500000 48.000000 box
 1.500000 48.000000 mark
- (bellshire::CurrencyCode_GUI_Base) 1.500000 47.000000 box
+ (bellshire::DataSourceDetails_GUI_Base) 1.500000 47.000000 box
 1.500000 47.000000 mark
- (bellshire::Data1_GUI_Base) 1.500000 46.000000 box
+ (bellshire::Data_GUI_Base) 1.500000 46.000000 box
 1.500000 46.000000 mark
- (bellshire::DataSourceDetails_GUI_Base) 1.500000 45.000000 box
+ (bellshire::Definition_GUI_Base) 1.500000 45.000000 box
 1.500000 45.000000 mark
- (bellshire::Data_GUI_Base) 1.500000 44.000000 box
+ (bellshire::DimensionalDetails_GUI_Base) 1.500000 44.000000 box
 1.500000 44.000000 mark
- (bellshire::Definition_GUI_Base) 1.500000 43.000000 box
+ (bellshire::Dimensions_GUI_Base) 1.500000 43.000000 box
 1.500000 43.000000 mark
- (bellshire::DimensionalDetails_GUI_Base) 1.500000 42.000000 box
+ (bellshire::Element_GUI_Base) 1.500000 42.000000 box
 1.500000 42.000000 mark
- (bellshire::Dimensions_GUI_Base) 1.500000 41.000000 box
+ (bellshire::Form_GUI_Base) 1.500000 41.000000 box
 1.500000 41.000000 mark
- (bellshire::Element_GUI_Base) 1.500000 40.000000 box
+ (bellshire::Formula_GUI_Base) 1.500000 40.000000 box
 1.500000 40.000000 mark
- (bellshire::Form_GUI_Base) 1.500000 39.000000 box
+ (bellshire::Geometry_GUI_Base) 1.500000 39.000000 box
 1.500000 39.000000 mark
- (bellshire::Formula_GUI_Base) 1.500000 38.000000 box
+ (bellshire::GlossaryTerm_GUI_Base) 1.500000 38.000000 box
 1.500000 38.000000 mark
- (bellshire::Geometry_GUI_Base) 1.500000 37.000000 box
+ (bellshire::Glossary_GUI_Base) 1.500000 37.000000 box
 1.500000 37.000000 mark
- (bellshire::GlossaryTerm_GUI_Base) 1.500000 36.000000 box
+ (bellshire::Graph_GUI_Base) 1.500000 36.000000 box
 1.500000 36.000000 mark
- (bellshire::Glossary_GUI_Base) 1.500000 35.000000 box
+ (bellshire::Graphs_GUI_Base) 1.500000 35.000000 box
 1.500000 35.000000 mark
- (bellshire::Graph_GUI_Base) 1.500000 34.000000 box
+ (bellshire::Intro_GUI_Base) 1.500000 34.000000 box
 1.500000 34.000000 mark
- (bellshire::Graphs_GUI_Base) 1.500000 33.000000 box
+ (bellshire::MatML_Doc_GUI_Base) 1.500000 33.000000 box
 1.500000 33.000000 mark
- (bellshire::Intro_GUI_Base) 1.500000 32.000000 box
+ (bellshire::Material_GUI_Base) 1.500000 32.000000 box
 1.500000 32.000000 mark
- (bellshire::MatML_Doc_GUI_Base) 1.500000 31.000000 box
+ (bellshire::MeasurementTechniqueDetails_GUI_Base) 1.500000 31.000000 box
 1.500000 31.000000 mark
- (bellshire::Material_GUI_Base) 1.500000 30.000000 box
+ (bellshire::Metadata_GUI_Base) 1.500000 30.000000 box
 1.500000 30.000000 mark
- (bellshire::MeasurementTechniqueDetails_GUI_Base) 1.500000 29.000000 box
+ (bellshire::Name_GUI_Base) 1.500000 29.000000 box
 1.500000 29.000000 mark
- (bellshire::Metadata_GUI_Base) 1.500000 28.000000 box
+ (bellshire::Notes_GUI_Base) 1.500000 28.000000 box
 1.500000 28.000000 mark
- (bellshire::Name_GUI_Base) 1.500000 27.000000 box
+ (bellshire::Orientation_GUI_Base) 1.500000 27.000000 box
 1.500000 27.000000 mark
- (bellshire::Notes_GUI_Base) 1.500000 26.000000 box
+ (bellshire::ParameterDetails_GUI_Base) 1.500000 26.000000 box
 1.500000 26.000000 mark
- (bellshire::Orientation_GUI_Base) 1.500000 25.000000 box
+ (bellshire::ParameterValue_GUI_Base) 1.500000 25.000000 box
 1.500000 25.000000 mark
- (bellshire::ParameterDetails_GUI_Base) 1.500000 24.000000 box
+ (bellshire::ParentMaterial_GUI_Base) 1.500000 24.000000 box
 1.500000 24.000000 mark
- (bellshire::ParameterValue_GUI_Base) 1.500000 23.000000 box
+ (bellshire::ParentSubClass_GUI_Base) 1.500000 23.000000 box
 1.500000 23.000000 mark
- (bellshire::ParentMaterial_GUI_Base) 1.500000 22.000000 box
+ (bellshire::PhaseComposition_GUI_Base) 1.500000 22.000000 box
 1.500000 22.000000 mark
- (bellshire::ParentSubClass_GUI_Base) 1.500000 21.000000 box
+ (bellshire::ProcessingDetails_GUI_Base) 1.500000 21.000000 box
 1.500000 21.000000 mark
- (bellshire::PhaseComposition_GUI_Base) 1.500000 20.000000 box
+ (bellshire::PropertyData_GUI_Base) 1.500000 20.000000 box
 1.500000 20.000000 mark
- (bellshire::ProcessingDetails_GUI_Base) 1.500000 19.000000 box
+ (bellshire::PropertyDetails_GUI_Base) 1.500000 19.000000 box
 1.500000 19.000000 mark
- (bellshire::PropertyData_GUI_Base) 1.500000 18.000000 box
+ (bellshire::Qualifier_GUI_Base) 1.500000 18.000000 box
 1.500000 18.000000 mark
- (bellshire::PropertyDetails_GUI_Base) 1.500000 17.000000 box
+ (bellshire::Relationship_GUI_Base) 1.500000 17.000000 box
 1.500000 17.000000 mark
- (bellshire::Qualifier_GUI_Base) 1.500000 16.000000 box
+ (bellshire::Result_GUI_Base) 1.500000 16.000000 box
 1.500000 16.000000 mark
- (bellshire::Relationship_GUI_Base) 1.500000 15.000000 box
+ (bellshire::Scale_GUI_Base) 1.500000 15.000000 box
 1.500000 15.000000 mark
- (bellshire::Result_GUI_Base) 1.500000 14.000000 box
+ (bellshire::Shape_GUI_Base) 1.500000 14.000000 box
 1.500000 14.000000 mark
- (bellshire::Scale_GUI_Base) 1.500000 13.000000 box
+ (bellshire::SourceDetails_GUI_Base) 1.500000 13.000000 box
 1.500000 13.000000 mark
- (bellshire::Shape_GUI_Base) 1.500000 12.000000 box
+ (bellshire::Source_GUI_Base) 1.500000 12.000000 box
 1.500000 12.000000 mark
- (bellshire::SourceDetails_GUI_Base) 1.500000 11.000000 box
+ (bellshire::Specification_GUI_Base) 1.500000 11.000000 box
 1.500000 11.000000 mark
- (bellshire::Source_GUI_Base) 1.500000 10.000000 box
+ (bellshire::SpecimenDetails_GUI_Base) 1.500000 10.000000 box
 1.500000 10.000000 mark
- (bellshire::Specification_GUI_Base) 1.500000 9.000000 box
+ (bellshire::Subclass1_GUI_Base) 1.500000 9.000000 box
 1.500000 9.000000 mark
- (bellshire::SpecimenDetails_GUI_Base) 1.500000 8.000000 box
+ (bellshire::Subclass_GUI_Base) 1.500000 8.000000 box
 1.500000 8.000000 mark
  (bellshire::Symbol_GUI_Base) 1.500000 7.000000 box
 1.500000 7.000000 mark
@@ -374,15 +380,19 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-0 0.500000 60.000000 out
+0 0.500000 62.000000 out
 solid
-0.000000 1.000000 61.000000 conn
+0.000000 1.000000 63.000000 conn
 solid
-1 0.000000 61.000000 in
+1 0.000000 63.000000 in
 solid
-1 1.000000 61.000000 in
+1 1.000000 63.000000 in
 solid
-1 0.500000 59.250000 out
+1 0.500000 61.250000 out
+solid
+0 0.500000 61.500000 hedge
+solid
+0 0.500000 60.500000 hedge
 solid
 0 0.500000 59.500000 hedge
 solid
@@ -504,4 +514,4 @@ solid
 solid
 0 0.500000 0.500000 hedge
 solid
-0.500000 60.000000 0.500000 vedge
+0.500000 62.000000 0.500000 vedge

@@ -71,55 +71,65 @@
 \DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnQualifierTextCtrlKillFocus(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{69         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnValidationButtonButton(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{70 }
-\DoxyCodeLine{71     \textcolor{keyword}{private}:}
-\DoxyCodeLine{72     \};}
+\DoxyCodeLine{71         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{72         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{73 }
-\DoxyCodeLine{74   \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i}{Qualifier\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i___base}{Qualifier\_GUI\_Base}}}
-\DoxyCodeLine{75     \{}
-\DoxyCodeLine{76     \textcolor{keyword}{public}:}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78         \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a80b512422894b4f5e20dcd944eed31f2}{Qualifier\_GUI}}();}
-\DoxyCodeLine{79         \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a80b512422894b4f5e20dcd944eed31f2}{Qualifier\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{74     \textcolor{keyword}{private}:}
+\DoxyCodeLine{75     \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i}{Qualifier\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i___base}{Qualifier\_GUI\_Base}}}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79     \textcolor{keyword}{public}:}
 \DoxyCodeLine{80 }
-\DoxyCodeLine{81         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a13b14f19ad70d8e4d94d10e388c2eb01}{\string~Qualifier\_GUI}}();}
+\DoxyCodeLine{81         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
 \DoxyCodeLine{82 }
-\DoxyCodeLine{83         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a7f6247529a23065060dfd0b8c5b6ad40}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{86         \textcolor{keywordtype}{void} OnQualifierTextCtrlKillFocus(wxCommandEvent\& event);}
-\DoxyCodeLine{87         \textcolor{keywordtype}{void} OnValidationButtonButton(wxCommandEvent\& event);}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89     \textcolor{keyword}{private}:}
-\DoxyCodeLine{90         \textcolor{comment}{// validator for wxWidget Data1textCtrl}}
-\DoxyCodeLine{91         \textcolor{keyword}{class }TextCtrlValidator : \textcolor{keyword}{public} wxValidator, \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_string_validator}{StringValidator}}}
-\DoxyCodeLine{92         \{}
-\DoxyCodeLine{93         \textcolor{keyword}{public}:}
-\DoxyCodeLine{94             \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;}
-\DoxyCodeLine{95             wxCheckBox* m\_ValidationNewLineRemovalCheckBox;}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97             TextCtrlValidator(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
-\DoxyCodeLine{98                 wxCheckBox* ValidationNewLineRemovalCheckBox}
-\DoxyCodeLine{99             ) : m\_MatMLTreeCtrl(MatMLTreeCtrl),}
-\DoxyCodeLine{100                 m\_ValidationNewLineRemovalCheckBox(ValidationNewLineRemovalCheckBox)}
-\DoxyCodeLine{101             \{ \};}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} Validate(wxWindow* parent) wxOVERRIDE;}
-\DoxyCodeLine{104             \textcolor{keyword}{virtual} wxObject* Clone() \textcolor{keyword}{const} wxOVERRIDE \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} TextCtrlValidator(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{83         \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a80b512422894b4f5e20dcd944eed31f2}{Qualifier\_GUI}}();}
+\DoxyCodeLine{84         \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a80b512422894b4f5e20dcd944eed31f2}{Qualifier\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a13b14f19ad70d8e4d94d10e388c2eb01}{\string~Qualifier\_GUI}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a7f6247529a23065060dfd0b8c5b6ad40}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_qualifier___g_u_i_a44e9a141055b43d96b6f54e41ca49d82}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} OnQualifierTextCtrlKillFocus(wxCommandEvent\& event);}
+\DoxyCodeLine{93         \textcolor{keywordtype}{void} OnValidationButtonButton(wxCommandEvent\& event);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keyword}{private}:}
+\DoxyCodeLine{99         \textcolor{comment}{// validator for wxWidget Data1textCtrl}}
+\DoxyCodeLine{100         \textcolor{keyword}{class }TextCtrlValidator : \textcolor{keyword}{public} wxValidator, \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_string_validator}{StringValidator}}}
+\DoxyCodeLine{101         \{}
+\DoxyCodeLine{102         \textcolor{keyword}{public}:}
+\DoxyCodeLine{103             \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;}
+\DoxyCodeLine{104             wxCheckBox* m\_ValidationNewLineRemovalCheckBox;}
 \DoxyCodeLine{105 }
-\DoxyCodeLine{106             \textcolor{comment}{// Called to transfer data to the window}}
-\DoxyCodeLine{107             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferToWindow() wxOVERRIDE;}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109             \textcolor{comment}{// Called to transfer data from the window}}
-\DoxyCodeLine{110             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferFromWindow() wxOVERRIDE;}
+\DoxyCodeLine{106             TextCtrlValidator(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* MatMLTreeCtrl,}
+\DoxyCodeLine{107                 wxCheckBox* ValidationNewLineRemovalCheckBox}
+\DoxyCodeLine{108             ) : m\_MatMLTreeCtrl(MatMLTreeCtrl),}
+\DoxyCodeLine{109                 m\_ValidationNewLineRemovalCheckBox(ValidationNewLineRemovalCheckBox)}
+\DoxyCodeLine{110             \{ \};}
 \DoxyCodeLine{111 }
-\DoxyCodeLine{112         \textcolor{keyword}{private}:}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114         \};}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116         TextCtrlValidator* m\_TextCtrlValidator;}
-\DoxyCodeLine{117     \};}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{112             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} Validate(wxWindow* parent) wxOVERRIDE;}
+\DoxyCodeLine{113             \textcolor{keyword}{virtual} wxObject* Clone() \textcolor{keyword}{const} wxOVERRIDE \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} TextCtrlValidator(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115             \textcolor{comment}{// Called to transfer data to the window}}
+\DoxyCodeLine{116             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferToWindow() wxOVERRIDE;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118             \textcolor{comment}{// Called to transfer data from the window}}
+\DoxyCodeLine{119             \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} TransferFromWindow() wxOVERRIDE;}
 \DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keyword}{private}:}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         TextCtrlValidator* m\_TextCtrlValidator;}
+\DoxyCodeLine{127     \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{130 }
 
 \end{DoxyCode}

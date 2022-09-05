@@ -17,8 +17,19 @@ Inheritance diagram for bellshire\+::Graph\+\_\+\+GUI\+:\begin{figure}[H]
 \mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_afdd9f3b96d3fe9dfe83549fbdb7668ef}\label{classbellshire_1_1_graph___g_u_i_afdd9f3b96d3fe9dfe83549fbdb7668ef}} 
 virtual {\bfseries $\sim$\+Graph\+\_\+\+GUI} ()
 \begin{DoxyCompactList}\small\item\em Destructor for the derived class \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_a4a42de1e31b37de34cd223b8de0491b6}\label{classbellshire_1_1_graph___g_u_i_a4a42de1e31b37de34cd223b8de0491b6}} 
-void {\bfseries Set\+Evt\+Handler\+Var} ()
+void \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a79731a6ea68487d6021fef9808ce7266}{Set\+Evt\+Handler\+Var}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a0d637b5a3b29bb7c096a74d3bfb4a8bc}{Set\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
+\begin{DoxyCompactList}\small\item\em Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_ae888128d75b1ce08cae098bf634e4173}{On\+Bump\+Down}} (wx\+Command\+Event \&event)
+\item 
+void \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i_a0df79397476805f2c7b34c481f2587d2}{On\+Bump\+Up}} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_a5d6b398051d348460443ef4898071700}\label{classbellshire_1_1_graph___g_u_i_a5d6b398051d348460443ef4898071700}} 
+\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$ {\bfseries m\+\_\+\+Mat\+MLTree\+Ctrl}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -38,6 +49,59 @@ Constructor for the derived class
 \begin{DoxyParams}{Parameters}
 {\em parent} & \\
 \hline
+{\em Mat\+MLTree\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_ae888128d75b1ce08cae098bf634e4173}\label{classbellshire_1_1_graph___g_u_i_ae888128d75b1ce08cae098bf634e4173}} 
+\index{bellshire::Graph\_GUI@{bellshire::Graph\_GUI}!OnBumpDown@{OnBumpDown}}
+\index{OnBumpDown@{OnBumpDown}!bellshire::Graph\_GUI@{bellshire::Graph\_GUI}}
+\doxysubsubsection{\texorpdfstring{OnBumpDown()}{OnBumpDown()}}
+{\footnotesize\ttfamily void Graph\+\_\+\+GUI\+::\+On\+Bump\+Down (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{bellshire\+::\+Graph\+\_\+\+GUI\+\_\+\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_a0df79397476805f2c7b34c481f2587d2}\label{classbellshire_1_1_graph___g_u_i_a0df79397476805f2c7b34c481f2587d2}} 
+\index{bellshire::Graph\_GUI@{bellshire::Graph\_GUI}!OnBumpUp@{OnBumpUp}}
+\index{OnBumpUp@{OnBumpUp}!bellshire::Graph\_GUI@{bellshire::Graph\_GUI}}
+\doxysubsubsection{\texorpdfstring{OnBumpUp()}{OnBumpUp()}}
+{\footnotesize\ttfamily void Graph\+\_\+\+GUI\+::\+On\+Bump\+Up (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbellshire_1_1_graph___g_u_i___base}{bellshire\+::\+Graph\+\_\+\+GUI\+\_\+\+Base}}.
+
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_a79731a6ea68487d6021fef9808ce7266}\label{classbellshire_1_1_graph___g_u_i_a79731a6ea68487d6021fef9808ce7266}} 
+\index{bellshire::Graph\_GUI@{bellshire::Graph\_GUI}!SetEvtHandlerVar@{SetEvtHandlerVar}}
+\index{SetEvtHandlerVar@{SetEvtHandlerVar}!bellshire::Graph\_GUI@{bellshire::Graph\_GUI}}
+\doxysubsubsection{\texorpdfstring{SetEvtHandlerVar()}{SetEvtHandlerVar()}}
+{\footnotesize\ttfamily void Graph\+\_\+\+GUI\+::\+Set\+Evt\+Handler\+Var (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})}
+
+
+
+Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLTree\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_graph___g_u_i_a0d637b5a3b29bb7c096a74d3bfb4a8bc}\label{classbellshire_1_1_graph___g_u_i_a0d637b5a3b29bb7c096a74d3bfb4a8bc}} 
+\index{bellshire::Graph\_GUI@{bellshire::Graph\_GUI}!SetMatMLTreeCtrl@{SetMatMLTreeCtrl}}
+\index{SetMatMLTreeCtrl@{SetMatMLTreeCtrl}!bellshire::Graph\_GUI@{bellshire::Graph\_GUI}}
+\doxysubsubsection{\texorpdfstring{SetMatMLTreeCtrl()}{SetMatMLTreeCtrl()}}
+{\footnotesize\ttfamily void Graph\+\_\+\+GUI\+::\+Set\+Mat\+MLTree\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})}
+
+
+
+Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. 
+
+
+\begin{DoxyParams}{Parameters}
 {\em Mat\+MLTree\+Ctrl} & \\
 \hline
 \end{DoxyParams}

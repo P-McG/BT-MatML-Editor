@@ -70,31 +70,40 @@
 \DoxyCodeLine{67         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnSpecificationTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{68         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnSpecificationAuthorityChoice(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
 \DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{keyword}{private}:}
-\DoxyCodeLine{71     \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71  }
 \DoxyCodeLine{72 }
-\DoxyCodeLine{73     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_specification___g_u_i}{Specification\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i___base}{Specification\_GUI\_Base}}}
-\DoxyCodeLine{74     \{}
-\DoxyCodeLine{75     \textcolor{keyword}{public}:}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keyword}{private}:}
+\DoxyCodeLine{77     \};}
 \DoxyCodeLine{78 }
-\DoxyCodeLine{79         \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a5f4e14b55290dd5e6d6cb1dcd2aaf099}{Specification\_GUI}}();}
-\DoxyCodeLine{80         \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a5f4e14b55290dd5e6d6cb1dcd2aaf099}{Specification\_GUI}}(wxWindow* parent);}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a86db6d6caa3da31a765e4c697b5817be}{\string~Specification\_GUI}}();}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a907f8ded25b82c1b0437d9ea7de0de4b}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_aeb31c5640567b2881f978a929b98a43a}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{88         \textcolor{keywordtype}{void} OnSpecificationTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{89         \textcolor{keywordtype}{void} OnSpecificationAuthorityChoice(wxCommandEvent\& event);}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91     \textcolor{keyword}{private}:}
-\DoxyCodeLine{92     \};}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94 \}; \textcolor{comment}{//namespace bellshire end}}
-\DoxyCodeLine{95 }
+\DoxyCodeLine{79     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_specification___g_u_i}{Specification\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i___base}{Specification\_GUI\_Base}}}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81     \textcolor{keyword}{public}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a5f4e14b55290dd5e6d6cb1dcd2aaf099}{Specification\_GUI}}();}
+\DoxyCodeLine{86         \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a5f4e14b55290dd5e6d6cb1dcd2aaf099}{Specification\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a86db6d6caa3da31a765e4c697b5817be}{\string~Specification\_GUI}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_a907f8ded25b82c1b0437d9ea7de0de4b}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_specification___g_u_i_aeb31c5640567b2881f978a929b98a43a}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{94         \textcolor{keywordtype}{void} OnSpecificationTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} OnSpecificationAuthorityChoice(wxCommandEvent\& event);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keyword}{private}:}
+\DoxyCodeLine{101     \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{104 }
 
 \end{DoxyCode}
