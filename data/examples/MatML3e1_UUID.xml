@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
-  <Material>
+  <Material id="BT-936ff020-c2fa-4cac-b626-42c0557175d1">
     <BulkDetails>
       <Name>silicon nitride</Name>
       <Class>
@@ -10,7 +10,7 @@
         <Name>nitride</Name>
       </Subclass>
       <Specification>NCX-5102</Specification>
-      <Source source="SaintGobain"/>
+      <Source source="BT-895bb5e9-8814-4407-bfaf-a8d6fad7886d"/>
       <Form>
         <Description>bar</Description>
       </Form>
@@ -55,70 +55,66 @@
           </Compound>
         </ChemicalComposition>
       </Characterization>
-      <PropertyData delimiter="," property="pr1" source="ds1" technique="mt1">
+      <PropertyData delimiter="," property="BT-2716eb64-bf3c-4e6f-aacb-2f5c05288e06" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
         <Data format="integer">972,561</Data>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
           <Data>23,1370</Data>
         </ParameterValue>
       </PropertyData>
-      <PropertyData delimiter="," property="pr2" source="ds1" technique="mt1">
+      <PropertyData delimiter="," property="BT-959c5e8e-c09e-4516-8b2f-a9cbf94d7ab6" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
         <Data format="integer">997,396</Data>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
           <Data>23,1370</Data>
         </ParameterValue>
-        <ParameterValue format="string" parameter="pa2">
+        <ParameterValue format="string" parameter="BT-f1e4a1f8-0eb2-4da7-b2e5-1633660d6645">
           <Data>540-1237,344-452</Data>
         </ParameterValue>
       </PropertyData>
-      <PropertyData delimiter="," property="pr3" source="ds1" technique="mt1">
+      <PropertyData delimiter="," property="BT-e91a943e-3f0b-473f-8289-0d1d45b553c6" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
         <Data format="string">4,-,-</Data>
-        <ParameterValue format="string" parameter="pa5">
+        <ParameterValue format="string" parameter="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
           <Data>Tensile,Flexural,Flexural</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
           <Data>23,23,1370</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa4">
+        <ParameterValue format="integer" parameter="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
           <Data>665,653,517</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa6">
+        <ParameterValue format="integer" parameter="BT-c25318c3-834e-4bfa-8a7e-fe30d15ddfcc">
           <Data>1109,,</Data>
         </ParameterValue>
       </PropertyData>
-      <PropertyData delimiter="," property="pr4" source="ds1" technique="mt1">
+      <PropertyData delimiter="," property="BT-a3c3adab-a2e6-499c-bdb8-2402996b80e1" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
         <Data format="integer">1109</Data>
-        <ParameterValue format="string" parameter="pa5">
+        <ParameterValue format="string" parameter="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
           <Data>Tensile</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
           <Data>23</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa3">
+        <ParameterValue format="integer" parameter="BT-631775e3-7017-45e9-9397-20ce35a5bce4">
           <Data>4</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa4">
+        <ParameterValue format="integer" parameter="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
           <Data>665</Data>
         </ParameterValue>
       </PropertyData>
     </BulkDetails>
   </Material>
   <Metadata>
-    <DataSourceDetails id="ds1" type="journal article">
-      <Name>
-					"Reliable Ceramics for Advanced Heat Engines," V.K. Pujari, D.M. Tracey, M.F. Foley, N.I. Paille, P.J. Pelletier,
-					L.C. Sales, C.A. Willkens, and R.L. Yeckley, American Ceramic Society Bulletin, Vol. 74[4], pp. 86-90
-					(1995), published by American Ceramic Society
+    <DataSourceDetails id="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" type="journal article">
+      <Name>"Reliable Ceramics for Advanced Heat Engines," V.K. Pujari, D.M. Tracey, M.F. Foley, N.I. Paille, P.J. Pelletier,L.C. Sales, C.A. Willkens, and R.L. Yeckley, American Ceramic Society Bulletin, Vol. 74[4], pp. 86-90 (1995), published by American Ceramic Society
 				</Name>
-      <Notes>
-					Cautions
-					1. Data evaluated by acceptance criteria
-					2. "The nonlinear character of the distribution with multiple inflections suggests that a two-parameter Weibull
-					fit of these data (sigma = 1038 MPa, m = 10.4) is inappropriate and that the multimodal nature of the data
-					should be represented using competing risk analysis. ... The important feature of the three-parameter Weibull
-					distribution is the existence of a threshold stress below which there is zero probability of failure."
+      <Notes>Cautions
+1. Data evaluated by acceptance criteria
+2. "The nonlinear character of the distribution with multiple inflections suggests that a two-parameter Weibull
+fit of these data (sigma = 1038 MPa, m = 10.4) is inappropriate and that the multimodal nature of the data
+should be represented using competing risk analysis. ... The important feature of the three-parameter Weibull
+distribution is the existence of a threshold stress below which there is zero probability of failure."
 				</Notes>
     </DataSourceDetails>
-    <MeasurementTechniqueDetails id="mt1">
+    <MeasurementTechniqueDetails id="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
       <Name>Literature survey</Name>
       <Notes>
 					The authors cite V.R. Pujari et al., "Development of Improved Processing and Evaluation Methods for High
@@ -129,7 +125,7 @@
 					across the 50-mm section."
 				</Notes>
     </MeasurementTechniqueDetails>
-    <ParameterDetails id="pa1">
+    <ParameterDetails id="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
       <Name>Test Temperature</Name>
       <Units name="degree Celsius">
         <Unit>
@@ -137,7 +133,7 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <ParameterDetails id="pa2">
+    <ParameterDetails id="BT-f1e4a1f8-0eb2-4da7-b2e5-1633660d6645">
       <Name>Range of Strengths</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -145,11 +141,11 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <ParameterDetails id="pa3">
+    <ParameterDetails id="BT-631775e3-7017-45e9-9397-20ce35a5bce4">
       <Name>Weibull Modulus</Name>
       <Unitless/>
     </ParameterDetails>
-    <ParameterDetails id="pa4">
+    <ParameterDetails id="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
       <Name>Threshold Strength</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -157,11 +153,11 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <ParameterDetails id="pa5">
+    <ParameterDetails id="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
       <Name>Stress Mode</Name>
       <Unitless/>
     </ParameterDetails>
-    <ParameterDetails id="pa6">
+    <ParameterDetails id="BT-c25318c3-834e-4bfa-8a7e-fe30d15ddfcc">
       <Name>Weibull Strength</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -169,7 +165,7 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <PropertyDetails id="pr1" type="mechanical">
+    <PropertyDetails id="BT-2716eb64-bf3c-4e6f-aacb-2f5c05288e06" type="mechanical">
       <Name>Flexural Strength</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -177,7 +173,7 @@
         </Unit>
       </Units>
     </PropertyDetails>
-    <PropertyDetails id="pr2" type="mechanical">
+    <PropertyDetails id="BT-959c5e8e-c09e-4516-8b2f-a9cbf94d7ab6" type="mechanical">
       <Name>Tensile Strength</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -185,11 +181,11 @@
         </Unit>
       </Units>
     </PropertyDetails>
-    <PropertyDetails id="pr3" type="mechanical">
+    <PropertyDetails id="BT-e91a943e-3f0b-473f-8289-0d1d45b553c6" type="mechanical">
       <Name>Weibull Modulus</Name>
       <Unitless/>
     </PropertyDetails>
-    <PropertyDetails id="pr4" type="mechanical">
+    <PropertyDetails id="BT-a3c3adab-a2e6-499c-bdb8-2402996b80e1" type="mechanical">
       <Name>Weibull Strength</Name>
       <Units description="megapascals" name="MPa">
         <Unit>
@@ -197,7 +193,7 @@
         </Unit>
       </Units>
     </PropertyDetails>
-    <SourceDetails id="SaintGobain">
+    <SourceDetails id="BT-895bb5e9-8814-4407-bfaf-a8d6fad7886d">
       <Name>Saint-Gobain/Norton Industrial Ceramics</Name>
     </SourceDetails>
   </Metadata>

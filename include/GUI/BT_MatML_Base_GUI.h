@@ -222,20 +222,20 @@ if (element) {\
         template<class MatML_Class>
         void SwapHavingOptionalId(MatML_Class* matml0, MatML_Class* matml1);
 
-        template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        template< class MatML_Class, class MatML_ContClass >
+        std::pair< MatML_Class*, MatML_Class* >
             MatMLFindAndBumpDown(MatML_Class* matml, MatML_ContClass& cont);
 
-        template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        template< class MatML_Class, class MatML_ContClass >
+        std::pair<  MatML_Class*, MatML_Class* >
             MatMLFindAndBumpDownStrongtype(MatML_Class* matml, MatML_ContClass& cont);
 
-        template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        template< class MatML_Class, class MatML_ContClass>
+        std::pair<MatML_Class*, MatML_Class* >
             MatMLFindAndBumpDownHavingId(MatML_Class* matml, MatML_ContClass& cont);
 
         template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        std::pair<  MatML_Class*, MatML_Class* >
             MatMLFindAndBumpDownHavingOptionalId(MatML_Class* matml, MatML_ContClass& cont);
 
         template<class Child_GUI, class MatML>
@@ -248,11 +248,11 @@ if (element) {\
         );
  
         template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        std::pair<MatML_Class*, MatML_Class*>
             MatMLFindAndBumpUp(MatML_Class* matml, MatML_ContClass& cont);
  
         template<class MatML_Class, class MatML_ContClass>
-        std::pair<typename  MatML_Class*, typename MatML_Class*>
+        std::pair<MatML_Class*, MatML_Class*>
             MatMLFindAndBumpUpStrongtype(MatML_Class* matml, MatML_ContClass& cont);
 
         template<class MatML_ContClass>
@@ -392,7 +392,7 @@ if (element) {\
                 wxTreeItemId previtemId,
                 wxTreeItemId itemId
             );
-    
+  
     };
 };//bellshire namespace
 

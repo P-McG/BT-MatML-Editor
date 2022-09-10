@@ -268,7 +268,7 @@ void bellshire::MatML_Base_GUI::SwapHavingId(MatML_Class* matml0, MatML_Class* m
 
     //Replace the id to prevent id collision
     xml_schema::id tempid(temp1.id());
-    temp1.id(xml_schema::id(string("BT-TEMP-ID")));
+    temp1.id(xml_schema::id(std::string("BT-TEMP-ID")));
 
     *matml0 = temp1;
     *matml1 = temp0;
@@ -296,7 +296,7 @@ void bellshire::MatML_Base_GUI::SwapHavingOptionalId(MatML_Class* matml0, MatML_
     //Replace the id to prevent id collision
     if (temp1.id().present()) {
         tempid = temp1.id().get();
-        temp1.id(xml_schema::id(string("BT-TEMP-ID")));
+        temp1.id(xml_schema::id(std::string("BT-TEMP-ID")));
     }
 
     *matml0 = temp1;
@@ -308,7 +308,7 @@ void bellshire::MatML_Base_GUI::SwapHavingOptionalId(MatML_Class* matml0, MatML_
 }
 
 template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+std::pair<MatML_Class*, MatML_Class*>
 bellshire::MatML_Base_GUI::MatMLFindAndBumpDown(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return std::make_pair(nullptr, nullptr);
@@ -323,8 +323,8 @@ bellshire::MatML_Base_GUI::MatMLFindAndBumpDown(MatML_Class* matml, MatML_ContCl
     return std::make_pair(nullptr, nullptr);
 }
 
-template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+template< class MatML_Class, class MatML_ContClass >
+std::pair< MatML_Class*,MatML_Class* >
 bellshire::MatML_Base_GUI::MatMLFindAndBumpDownStrongtype(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return std::make_pair(nullptr, nullptr);
@@ -350,7 +350,7 @@ bellshire::MatML_Base_GUI::MatMLFindAndBumpDownStrongtype(MatML_Class* matml, Ma
 /// <param name="cont"></param>
 /// <returns></returns>
 template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+std::pair<MatML_Class*,MatML_Class*>
 bellshire::MatML_Base_GUI::MatMLFindAndBumpDownHavingId(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return std::make_pair(nullptr, nullptr);
@@ -376,7 +376,7 @@ bellshire::MatML_Base_GUI::MatMLFindAndBumpDownHavingId(MatML_Class* matml, MatM
 /// <param name="cont"></param>
 /// <returns></returns>
 template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+std::pair<MatML_Class*,MatML_Class*>
 bellshire::MatML_Base_GUI::MatMLFindAndBumpDownHavingOptionalId(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return std::make_pair(nullptr, nullptr);
@@ -411,7 +411,7 @@ void bellshire::MatML_Base_GUI::MatMLTreeCtrlBumpDown(TreeCtrlSorted*& treectrl,
 }
 
 template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+std::pair< MatML_Class*, MatML_Class*>
 bellshire::MatML_Base_GUI::MatMLFindAndBumpUp(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return  std::make_pair(nullptr, nullptr);
@@ -428,7 +428,7 @@ bellshire::MatML_Base_GUI::MatMLFindAndBumpUp(MatML_Class* matml, MatML_ContClas
 }
 
 template<class MatML_Class, class MatML_ContClass>
-std::pair<typename  MatML_Class*, typename MatML_Class*>
+std::pair< MatML_Class*, MatML_Class*>
 bellshire::MatML_Base_GUI::MatMLFindAndBumpUpStrongtype(MatML_Class* matml, MatML_ContClass& cont)
 {
     if (cont.empty() || cont.size() < 2)  return  std::make_pair(nullptr, nullptr);
@@ -561,7 +561,7 @@ void bellshire::MatML_Base_GUI::IndividualBumpUpStrongtype(boost::any anyptr,
             MatML_Class* element = boost::any_cast<MatML_Class*>(anyptr);
             MatML_ParentClass* elementParent = boost::any_cast<MatML_ParentClass*>(anyptrparent);
 
-            std::pair<MatML_Class::value_type, MatML_Class::value_type> data(MatMLFindAndBumpUp(element->t, (elementParent->*cont_func)()));
+            std::pair<typename MatML_Class::value_type, typename MatML_Class::value_type> data(MatMLFindAndBumpUp(element->t, (elementParent->*cont_func)()));
             if (data.second)
                 MatMLTreeCtrlBumpUp<MatML_GUI>(MatMLTreeCtrl, itemParentId, previtemId, data.first, itemId, data.second);
 
@@ -679,7 +679,7 @@ void bellshire::MatML_Base_GUI::IndividualBumpDownStrongtype(boost::any& anyptr,
             MatML_Class* element = boost::any_cast<MatML_Class*>(anyptr);
             MatML_ParentClass* elementParent = boost::any_cast<MatML_ParentClass*>(anyptrparent);
 
-            std::pair<MatML_Class::value_type, MatML_Class::value_type> data(MatMLFindAndBumpDown(element->t, (elementParent->*cont_func)()));
+            std::pair<typename MatML_Class::value_type, typename MatML_Class::value_type> data(MatMLFindAndBumpDown(element->t, (elementParent->*cont_func)()));
             if (data.second)
                 MatMLTreeCtrlBumpDown<MatML_GUI>(MatMLTreeCtrl, itemParentId, itemId, data.first, nextitemId, data.second);
 

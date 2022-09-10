@@ -256,7 +256,7 @@ public:
 	void CopyTemplateProcessingDetails(ComponentDetails& Element, ComponentDetails& TemplateElement);
 
 	void CopyComponentNameToParentMaterial();
-	void ReplaceIDwithUuid();
+
 
 };
 

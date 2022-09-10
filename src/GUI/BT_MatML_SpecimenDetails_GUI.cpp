@@ -188,9 +188,9 @@ SpecimenDetails_GUI::~SpecimenDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void SpecimenDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void SpecimenDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
-	m_SpecimenDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_SpecimenDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
 }
 

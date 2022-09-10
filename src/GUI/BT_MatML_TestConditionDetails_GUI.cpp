@@ -165,9 +165,9 @@ TestConditionDetails_GUI::~TestConditionDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void TestConditionDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void TestConditionDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
-	m_TestConditionDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_TestConditionDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
 }
 

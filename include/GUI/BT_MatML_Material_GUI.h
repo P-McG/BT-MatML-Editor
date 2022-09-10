@@ -66,6 +66,7 @@ namespace bellshire {
             Material& Element, 
             const wxTreeItemId& PreviousId
         );
+        void ReplaceIDwithUuid(MatML_Doc& doc);
         static wxTreeItemId SetupBranch(TreeCtrlSorted*& MatMLTreeCtrl, wxWindow*& ParentId, MatML_Doc& Element, std::vector<Material*>& materials);
         void Update( Material* element);
 

@@ -199,10 +199,10 @@ PropertyDetails_GUI::~PropertyDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void PropertyDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void PropertyDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
-	m_PropertyDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_PropertyDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 }
 
 

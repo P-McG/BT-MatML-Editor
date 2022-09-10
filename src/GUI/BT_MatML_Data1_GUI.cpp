@@ -115,7 +115,7 @@ wxNotebook* Data1_GUI_Base::Create(wxWindow* parent,
 	bSizer6911->Fit(DataPanel);
 
 	MatMLInfo_GUI matMLInfo_GUI(DataNotebook,
-		wxT("*********** :Data *************************\n\nData contains the property data and has one required attribute,\nformat, for indicating the format of the data. Data must occur once \nand only once within the  element.\n\nNote - Multiple entries in the Data, Qualifier, Uncertainty Value, and\nParameterValue elements must be comma delimited and\nsynchronized across elements, i.e., the number of entries\nin each of these four elements must be equal.\t\t\t")
+		wxT("*********** Data1 *************************\n\nData contains the property data and has one required attribute,\nformat, for indicating the format of the data. Data must occur once \nand only once within the  element.\n\nNote - Multiple entries in the Data, Qualifier, Uncertainty Value, and\nParameterValue elements must be comma delimited and\nsynchronized across elements, i.e., the number of entries\nin each of these four elements must be equal.\t\t\t")
 	);
 
 	bool b, b_dflt(false);//temps

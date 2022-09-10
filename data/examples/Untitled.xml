@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
-  <Material>
-    <BulkDetails>
-      <Name>REPLACE</Name>
-    </BulkDetails>
-  </Material>
-  <Metadata/>
-</MatML_Doc>

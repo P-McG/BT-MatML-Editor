@@ -41,10 +41,11 @@ namespace bellshire {
         wxPanel* m_GUI;
         wxButton* m_GenerateUuidButton;
         wxTextCtrl* m_IDTextCtrl;
+        wxCheckBox* m_ReplaceIDRefs;
 
         ID_GUI_Base();
         ID_GUI_Base(wxWindow* parent);
-        static wxPanel* Create(wxWindow* parent, wxButton*& GenerateUuidButton, wxTextCtrl*& IDTextCtrl);
+        static wxPanel* Create(wxWindow* parent, wxButton*& GenerateUuidButton, wxTextCtrl*& IDTextCtrl, wxCheckBox*& ReplaceIDRefs);
         virtual ~ID_GUI_Base();
 
         //template<class MatML_class>
@@ -77,16 +78,19 @@ namespace bellshire {
     {
     public:
         TreeCtrlSorted* m_MatMLTreeCtrl;//Required before Event Handling.
+        ::boost::shared_ptr<MatML_Doc> m_MatMLDoc;
 
         ID_GUI();
         ID_GUI(wxWindow* parent);
 
         virtual ~ID_GUI();
 
-        void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl);
+        void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc> MatMLdoc);
         void SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl);
+        void SetMatMLDoc(::boost::shared_ptr<MatML_Doc>& MatMLdoc);
         
         //Overwrites the base class functions
+        void SwapIDRefs(MatML_Doc* matmldoc, xml_schema::idref& oldid, xml_schema::idref& newid);
         void OnGenerateUuidButton(wxCommandEvent& event);
         void OnIDTextCtrl(wxCommandEvent& event);
         bool Warning();
@@ -103,8 +107,16 @@ namespace bellshire {
         void GenerateUuid(AuthorityDetails* element);
         ::string GetUUIDLabel();
 
+        template<class MatML_Class>
+        void ExchangeIDRefWithID(::boost::any any_ptr);
+
+        template<class MatML_Class>
+        void ExchangeIDRefWithOptionalID(::boost::any any_ptr);
+
     private:
     };
 
 };//ending Bellshire namespace
+
+#include "BT_MatML_ID_GUI.inl"
 

@@ -395,6 +395,9 @@ void Unit_GUI::OnUnitDescriptionTextCtrl(wxCommandEvent& event)
 	catch (const boost::bad_any_cast&) { return; }
 }
 
+
+
+
 void Unit_GUI::OnInsertName(wxCommandEvent& event) { ON_PARENT_INSERT_CONT_CHILD(Unit, Name) }
 void Unit_GUI::OnInsertCurrency(wxCommandEvent& event) { 
 	// Note: Macro below dosn't work because Currency default is CurrencyCode with a different name.
@@ -428,6 +431,19 @@ void Unit_GUI::OnInsertCurrency(wxCommandEvent& event) {
 
 void Unit_GUI::OnDeleteName(wxCommandEvent& event) {ON_PARENT_DELETE_CHILD(Unit, Name)}
 
+void Unit_GUI::OnPasteName(wxCommandEvent& event) {ON_PARENT_PASTE_CONT_CHILD(Unit, Name) }
+
+void Unit_GUI::OnPasteCurrencyCode(wxCommandEvent& event) { 
+	//ON_PARENT_PASTE_CONT_CHILD(Unit, CurrencyCode) 
+	//#define ON_PARENT_PASTE_CONT_CHILD(parent,child) 
+	Unit* element = MatML_Base_GUI::GetSelMatML< Unit>(m_MatMLTreeCtrl);
+	CurrencyCode* copy_element = boost::any_cast<CurrencyCode* >(m_MatMLItemToCopy);
+	if (element && copy_element) {
+		PasteContChild(copy_element, element->Currency());
+		MatML_Base_GUI::SetupSel<Unit, Unit_GUI>(m_MatMLTreeCtrl);
+	}
+
+}
 
 void Unit_GUI::OnBumpDown(wxCommandEvent& event)
 {

@@ -196,6 +196,60 @@ wxTreeItemId Material_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtr
 
 
 /// <summary>
+/// This was used only to make the old data format compatible with the new arrangement
+/// </summary>
+void Material_GUI_Base::ReplaceIDwithUuid(MatML_Doc& doc)
+{
+	MatML_Doc::Material_sequence& matcont(doc.Material());
+	MatML_Doc::Material_iterator matiter(matcont.begin());
+	for (; matiter != matcont.end(); ++matiter) {
+		if (matiter->id().present()) {
+			::vector<ParentMaterial*> compparentmateriallist;
+
+			MatML_Doc::Material_sequence& matcont2(doc.Material());
+			MatML_Doc::Material_iterator matiter2(matcont2.begin());
+			for (; matiter2 != matcont2.end(); ++matiter2) {
+				if (!matiter2->ComponentDetails().empty()) {
+					Material::ComponentDetails_sequence& compcont(matiter2->ComponentDetails());
+					Material::ComponentDetails_iterator compiter(compcont.begin());
+					for (; compiter != compcont.end(); ++compiter) {
+						if (!compiter->Class().empty()) {
+							ComponentDetails::Class_sequence& classcont(compiter->Class());
+							ComponentDetails::Class_iterator classiter(classcont.begin());
+							for (; classiter != classcont.end(); ++classiter) {
+								if (!classiter->ParentMaterial().empty()) {
+									Material* parentmaterial(dynamic_cast<Material*>(&*classiter->ParentMaterial().front().id()));
+									if (&*matiter == parentmaterial) {
+										compparentmateriallist.push_back(&classiter->ParentMaterial().front());
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			//generate newId
+			uuid_class iduuid;
+
+			::string idlabelstr("BTMAT-");
+			idlabelstr.append(cast_stream< ::string>(iduuid));
+
+			Material::id_type NewMatId(idlabelstr.c_str());
+			matiter->id().set(NewMatId);
+
+			if (!compparentmateriallist.empty()) {
+				::vector<ParentMaterial*>::iterator listiter(compparentmateriallist.begin());
+				for (; listiter != compparentmateriallist.end(); ++listiter) {
+					(*listiter)->id().clear();
+					(*listiter)->id() = ::ParentMaterial::id_type(matiter->id().get());
+				}
+
+			}
+		}
+	}
+}
+
+/// <summary>
 /// This set-up the Parent MatML Data into a wxTreeCtrl element and then call on the Children to do the same.
 /// Static Function
 /// </summary>
@@ -295,7 +349,7 @@ void Material_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::sha
 {
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
 	SetMatMLDoc(MatMLDoc);
-	m_Material_ID_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl);
+	m_Material_ID_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl, MatMLDoc);
 }
 
 

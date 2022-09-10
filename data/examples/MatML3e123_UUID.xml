@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
+  <Material id="BT-936ff020-c2fa-4cac-b626-42c0557175d1">
+    <BulkDetails>
+      <Name>silicon nitride</Name>
+      <Class>
+        <Name>ceramic</Name>
+      </Class>
+      <Subclass>
+        <Name>nitride</Name>
+      </Subclass>
+      <Specification>NCX-5102</Specification>
+      <Source source="BT-895bb5e9-8814-4407-bfaf-a8d6fad7886d"/>
+      <Form>
+        <Description>bar</Description>
+      </Form>
+      <ProcessingDetails>
+        <Name>hot isostatic pressing</Name>
+        <Notes>
+					"The material produced is designated NCX-5102 and consists of a silicon nitride-4% yttria composition
+					that is densified by glass-encapsulation HIPing. ... Large-scale batches (30 kg) of Si3N4-4% Y2O3
+					powder were milled in water, and the slurry was used to cast hundreds of tensile rods. The starting Si3N4
+					powder (Ube) was derived from a dimmide process. ... The net-shape-formed bars were HIPed using
+					glass encapsulation (ASEA Cerma AB, Robertsford, Sweden). The HIP process was optimized using
+					pressure, time and temperatures to assure full densification and development of an elongated
+					microstructure for desired fracture toughness..."
+				</Notes>
+      </ProcessingDetails>
+      <Characterization>
+        <Formula>Si3N4·4wt%Y2O3</Formula>
+        <ChemicalComposition>
+          <Compound>
+            <Element>
+              <Symbol subscript="3">Si</Symbol>
+            </Element>
+            <Element>
+              <Symbol subscript="4">N</Symbol>
+            </Element>
+          </Compound>
+          <Compound>
+            <Element>
+              <Symbol subscript="2">Y</Symbol>
+            </Element>
+            <Element>
+              <Symbol subscript="3">O</Symbol>
+            </Element>
+            <Concentration>
+              <Value format="integer">4</Value>
+              <Units description="mass fraction">
+                <Unit>
+                  <Name>%</Name>
+                </Unit>
+              </Units>
+            </Concentration>
+          </Compound>
+        </ChemicalComposition>
+      </Characterization>
+      <PropertyData delimiter="," property="BT-2716eb64-bf3c-4e6f-aacb-2f5c05288e06" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
+        <Data format="integer">972,561</Data>
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
+          <Data>23,1370</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-959c5e8e-c09e-4516-8b2f-a9cbf94d7ab6" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
+        <Data format="integer">997,396</Data>
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
+          <Data>23,1370</Data>
+        </ParameterValue>
+        <ParameterValue format="string" parameter="BT-f1e4a1f8-0eb2-4da7-b2e5-1633660d6645">
+          <Data>540-1237,344-452</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-e91a943e-3f0b-473f-8289-0d1d45b553c6" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
+        <Data format="string">4,-,-</Data>
+        <ParameterValue format="string" parameter="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
+          <Data>Tensile,Flexural,Flexural</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
+          <Data>23,23,1370</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
+          <Data>665,653,517</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-c25318c3-834e-4bfa-8a7e-fe30d15ddfcc">
+          <Data>1109,,</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-a3c3adab-a2e6-499c-bdb8-2402996b80e1" source="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" technique="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
+        <Data format="integer">1109</Data>
+        <ParameterValue format="string" parameter="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
+          <Data>Tensile</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
+          <Data>23</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-631775e3-7017-45e9-9397-20ce35a5bce4">
+          <Data>4</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
+          <Data>665</Data>
+        </ParameterValue>
+      </PropertyData>
+    </BulkDetails>
+  </Material>
+  <Material id="BT-eedaf6c1-27cb-4135-ac38-662fcae60095">
+    <BulkDetails>
+      <Name authority="BT-387d9056-3c75-43f8-acc3-cb8c68010ec4">1350</Name>
+      <Class>
+        <Name>metal</Name>
+      </Class>
+      <Subclass>
+        <Name>aluminum alloy</Name>
+      </Subclass>
+      <Specification>ASTM B230</Specification>
+      <Form>
+        <Description>Rolled rod and shapes</Description>
+      </Form>
+      <ProcessingDetails>
+        <Name>Temper H18</Name>
+      </ProcessingDetails>
+      <Characterization>
+        <Formula>Al</Formula>
+        <DimensionalDetails>
+          <Name>Thickness</Name>
+          <Value format="string">0.5,2.0</Value>
+          <Units name="inches">
+            <Unit>
+              <Name>in</Name>
+            </Unit>
+          </Units>
+          <Qualifier>min.,max.</Qualifier>
+        </DimensionalDetails>
+      </Characterization>
+      <PropertyData delimiter="," property="BT-4c17ad24-28b1-4618-b335-e1155f1be649" source="BT-e9356c86-0ba0-4bab-9e92-333a1c45bf4a" specimen="BT-aacb1d15-b3fa-4f1f-bc4d-c3cc55f3471c" technique="BT-d7a5066d-76c8-41be-bcd1-b8c6ca5a44c8">
+        <Data format="float">+23,+17,+15,+14.5,+14.5</Data>
+        <ParameterValue format="integer" parameter="BT-500ad16f-aaf4-4071-8cd5-15597301b45b">
+          <Data>0,0,0,0,0</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-1515de17-5701-4a84-a3e0-a23c6b997678">
+          <Data>1,1,1,1,1</Data>
+        </ParameterValue>
+        <ParameterValue format="exponential" parameter="BT-141dfb41-0187-497d-b4da-98a293b95247">
+          <Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-0c845e76-f20b-4b4c-9cae-40c707ed7df2" source="BT-e9356c86-0ba0-4bab-9e92-333a1c45bf4a" specimen="BT-aacb1d15-b3fa-4f1f-bc4d-c3cc55f3471c" technique="BT-d7a5066d-76c8-41be-bcd1-b8c6ca5a44c8">
+        <Data format="integer">+160,+115,+105,+100,+100</Data>
+        <ParameterValue format="integer" parameter="BT-500ad16f-aaf4-4071-8cd5-15597301b45b">
+          <Data>0,0,0,0,0</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-1515de17-5701-4a84-a3e0-a23c6b997678">
+          <Data>1,1,1,1,1</Data>
+        </ParameterValue>
+        <ParameterValue format="exponential" parameter="BT-141dfb41-0187-497d-b4da-98a293b95247">
+          <Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-4c17ad24-28b1-4618-b335-e1155f1be649" source="BT-e9356c86-0ba0-4bab-9e92-333a1c45bf4a" specimen="BT-aacb1d15-b3fa-4f1f-bc4d-c3cc55f3471c" technique="BT-d7a5066d-76c8-41be-bcd1-b8c6ca5a44c8">
+        <Data format="float">+11.5,+8.5,+7,+6.5,+6.5</Data>
+        <ParameterValue format="integer" parameter="BT-500ad16f-aaf4-4071-8cd5-15597301b45b">
+          <Data>-1,-1,-1,-1,-1</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-1515de17-5701-4a84-a3e0-a23c6b997678">
+          <Data>1,1,1,1,1</Data>
+        </ParameterValue>
+        <ParameterValue format="exponential" parameter="BT-141dfb41-0187-497d-b4da-98a293b95247">
+          <Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-0c845e76-f20b-4b4c-9cae-40c707ed7df2" source="BT-e9356c86-0ba0-4bab-9e92-333a1c45bf4a" specimen="BT-aacb1d15-b3fa-4f1f-bc4d-c3cc55f3471c" technique="BT-d7a5066d-76c8-41be-bcd1-b8c6ca5a44c8">
+        <Data format="integer">+80,+59,+48,+45,+45</Data>
+        <ParameterValue format="integer" parameter="BT-500ad16f-aaf4-4071-8cd5-15597301b45b">
+          <Data>-1,-1,-1,-1,-1</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-1515de17-5701-4a84-a3e0-a23c6b997678">
+          <Data>1,1,1,1,1</Data>
+        </ParameterValue>
+        <ParameterValue format="exponential" parameter="BT-141dfb41-0187-497d-b4da-98a293b95247">
+          <Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+        </ParameterValue>
+      </PropertyData>
+    </BulkDetails>
+    <Glossary>
+      <Term>
+        <Name>H18</Name>
+        <Definition>
+				"H18" is a code from The Aluminum Association Temper Designation System. The H is defined as "strain-hardened
+				(wrought products only). The 1 applies to products that are strain-hardened to obtain the desired strength without
+				supplementary thermal treatment. The 8 indicates the degree of strain-hardening and is assigned to the hardest
+				tempers normally produced.
+				</Definition>
+      </Term>
+      <Term>
+        <Name>1350</Name>
+        <Definition>
+				"1350" is a code from The Aluminum Association Alloy Designation System. The first digit of the code represents the
+				principal alloying constitutent(s). The second digit indicates variations of the initial alloy. The third and fourth digits
+				indicate individual alloy variations (the numbers have no significance but are unique). 1350 is an alloy that is pure
+				AL (99.00% or greater). For further details, contact The Aluminum Association, 900 19th Street, N.W., Washington,
+				D.C. 20006.
+				</Definition>
+      </Term>
+    </Glossary>
+  </Material>
+  <Material id="BT-85201d00-ad1d-4194-a0e8-0b730336062f">
+    <BulkDetails>
+      <Name>TiC coated AISI 1018 steel</Name>
+      <Class>
+        <Name>composite</Name>
+      </Class>
+      <Subclass>
+        <Name>ceramic coating on metal substrate</Name>
+      </Subclass>
+      <Form>
+        <Description>coupon</Description>
+      </Form>
+      <PropertyData delimiter="," property="BT-81b731d9-193e-4bbf-9993-18f987b37126" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-5b5fa360-71ef-455e-9313-77bbd7fff629">
+        <Data format="float">.0011,.0018,.0023,.0027,.0029</Data>
+        <ParameterValue format="integer" parameter="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
+          <Data>2,4,6,8,10</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-ffefcea4-53bc-4634-a216-32f711231075">
+          <Data>270,270,270,270,270</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
+          <Data>2,2,2,2,2</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-88517059-2f0b-4e20-8ca0-f576adb3246b" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-5e0666df-ddd7-4576-bd33-bf70d7e885a9">
+        <Data format="float">0.58</Data>
+      </PropertyData>
+    </BulkDetails>
+    <ComponentDetails id="BT-4b218dcb-15ec-4d17-9830-ed1e37e16767">
+      <Name>steel</Name>
+      <Class>
+        <Name>metal</Name>
+      </Class>
+      <Specification authority="BT-0bab4b9e-ca6b-4dc5-a88d-ab34c20c0836">AISI 1018</Specification>
+      <Form>
+        <Description>coupon</Description>
+        <Geometry>
+          <Shape>square</Shape>
+          <Dimensions>25mm x 25mm</Dimensions>
+        </Geometry>
+      </Form>
+      <ProcessingDetails>
+        <Name>Mechanical Polishing</Name>
+        <Notes>The coupons were mechanically polished on emery paper of grit size 240.</Notes>
+      </ProcessingDetails>
+      <ProcessingDetails>
+        <Name>Rinsing</Name>
+        <Notes>After polishing, the coupons were rinsed in acetone.</Notes>
+      </ProcessingDetails>
+      <ProcessingDetails>
+        <Name>Coating</Name>
+        <Notes>
+				"A sintered electrode of TiC was used to deposit a coating on these steel coupons. The TiC electrode
+				had 3 to 5 wt% Ni and 1 to 3 wt% Fe as binder. Deposition was carried out using a handheld gun in air
+				at room temperature. Pulsed electrode deposition was carried out at a voltage of 50V and spark time of
+				10�s. The discharge capacitance used for the PES process was 450�F with a current of 25A."
+				</Notes>
+      </ProcessingDetails>
+      <PropertyData delimiter="," property="BT-81b731d9-193e-4bbf-9993-18f987b37126" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-e0554c50-e3d2-490e-a60c-6f916d68b2c4">
+        <Data format="float">.0019,.0036,.0057,.0073,.0090</Data>
+        <ParameterValue format="integer" parameter="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
+          <Data>2,4,6,8,10</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-ffefcea4-53bc-4634-a216-32f711231075">
+          <Data>270,270,270,270,270</Data>
+        </ParameterValue>
+        <ParameterValue format="integer" parameter="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
+          <Data>2,2,2,2,2</Data>
+        </ParameterValue>
+      </PropertyData>
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
+        <Data format="integer">172</Data>
+        <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
+          <Value format="integer">12</Value>
+          <Units description="kilograms per square millimeter" name="kg/mm^2">
+            <Unit>
+              <Name>kg</Name>
+            </Unit>
+            <Unit power="-2">
+              <Name>mm</Name>
+            </Unit>
+          </Units>
+        </Uncertainty>
+      </PropertyData>
+      <AssociationDetails>
+        <Associate>titanium carbide coating</Associate>
+        <Relationship>substrate</Relationship>
+      </AssociationDetails>
+    </ComponentDetails>
+    <ComponentDetails id="BT-6ecd187f-b5b9-4d67-bcff-1bff32443f74">
+      <Name>titanium carbide coating</Name>
+      <Class>
+        <Name>carbide</Name>
+      </Class>
+      <Subclass>
+        <Name>monocarbide</Name>
+      </Subclass>
+      <Characterization>
+        <Formula>TiC�xFe</Formula>
+        <PhaseComposition>
+          <Name>TiC</Name>
+        </PhaseComposition>
+        <PhaseComposition>
+          <Name>Ti</Name>
+          <Concentration>
+            <Value format="string">5,25</Value>
+            <Units description="mass fraction">
+              <Unit>
+                <Name>%</Name>
+              </Unit>
+            </Units>
+            <Qualifier>min.,max.</Qualifier>
+          </Concentration>
+        </PhaseComposition>
+        <PhaseComposition>
+          <Name>Fe-C (austenite)</Name>
+        </PhaseComposition>
+        <PhaseComposition>
+          <Name>Fe (ferrite)</Name>
+        </PhaseComposition>
+        <PhaseComposition>
+          <Name>FeTi</Name>
+          <Notes>Possible</Notes>
+        </PhaseComposition>
+      </Characterization>
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
+        <Data format="integer">1235</Data>
+        <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
+          <Value format="integer">86</Value>
+          <Units description="kilograms per square millimeter" name="kg/mm^2">
+            <Unit>
+              <Name>kg</Name>
+            </Unit>
+            <Unit power="-2">
+              <Name>mm</Name>
+            </Unit>
+          </Units>
+        </Uncertainty>
+      </PropertyData>
+      <AssociationDetails>
+        <Associate>AISI 1018 steel</Associate>
+        <Relationship>coating</Relationship>
+      </AssociationDetails>
+    </ComponentDetails>
+    <ComponentDetails id="BT-7c1359d8-a471-46a3-8b4f-293ab246942d">
+      <Name>heat affected zone (HAZ)</Name>
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
+        <Data format="integer">352</Data>
+        <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
+          <Value format="integer">32</Value>
+          <Units description="kilograms per square millimeter" name="kg/mm^2">
+            <Unit>
+              <Name>kg</Name>
+            </Unit>
+            <Unit power="-2">
+              <Name>mm</Name>
+            </Unit>
+          </Units>
+        </Uncertainty>
+        <Notes>Martensitic Zone</Notes>
+      </PropertyData>
+    </ComponentDetails>
+  </Material>
+  <Metadata>
+    <AuthorityDetails id="BT-387d9056-3c75-43f8-acc3-cb8c68010ec4">
+      <Name>The Aluminum Association Alloy Designation System</Name>
+    </AuthorityDetails>
+    <AuthorityDetails id="BT-0bab4b9e-ca6b-4dc5-a88d-ab34c20c0836">
+      <Name>American Iron and Steel Institute</Name>
+    </AuthorityDetails>
+    <DataSourceDetails id="BT-2205119b-4ddd-4262-8231-09c0521e4f2a" type="journal article">
+      <Name>"Reliable Ceramics for Advanced Heat Engines," V.K. Pujari, D.M. Tracey, M.F. Foley, N.I. Paille, P.J. Pelletier,L.C. Sales, C.A. Willkens, and R.L. Yeckley, American Ceramic Society Bulletin, Vol. 74[4], pp. 86-90 (1995), published by American Ceramic Society
+				</Name>
+      <Notes>Cautions
+1. Data evaluated by acceptance criteria
+2. "The nonlinear character of the distribution with multiple inflections suggests that a two-parameter Weibull
+fit of these data (sigma = 1038 MPa, m = 10.4) is inappropriate and that the multimodal nature of the data
+should be represented using competing risk analysis. ... The important feature of the three-parameter Weibull
+distribution is the existence of a threshold stress below which there is zero probability of failure."
+				</Notes>
+    </DataSourceDetails>
+    <DataSourceDetails id="BT-e9356c86-0ba0-4bab-9e92-333a1c45bf4a" type="handbook, typical data">
+      <Name>"Properties of aluminum alloys : tensile, creep, and fatigue data at high and low temperatures" / edited by J. Gilbert Kaufman.
+			</Name>
+      <Notes>
+				Plus (+) indicates tension; minus (-) indicates compression.
+			</Notes>
+    </DataSourceDetails>
+    <DataSourceDetails id="BT-309c70fc-b503-4540-b6dc-5b878f5df062" type="journal article">
+      <Name>A. Agarwal and N.B. Dahotre, "Pulse Electrode Surfacing of Steel with TiC Coating: Microstructure and Wear Properties," ASM Journal of Materials Engineering and Performance, Vol. 8, No. 4, pp. 479-486, 1999
+			</Name>
+      <Notes>Data were digitized from Fig. 9. The reported unit, "gm", is interpreted to mean "g", grams.
+			</Notes>
+    </DataSourceDetails>
+    <MeasurementTechniqueDetails id="BT-020116f3-89aa-47f3-8fc8-28b41d0e4057">
+      <Name>Literature survey</Name>
+      <Notes>
+					The authors cite V.R. Pujari et al., "Development of Improved Processing and Evaluation Methods for High
+					Reliability Structural Ceramics for Advanced Heat Engine Applications, Phase I," final report, ORNL/Sub/89-SB182/1,
+					NTIS Rept. No. DE93-040528, August (1993), and summarize the procedure as follows. "The cylindrical buttonhead
+					specimens were machined to ORNL design with a gauge diameter of 6.0±0.1 mm. ...50 mm diameter, 150 mm long
+					specimens... were machined as many flexure bars (3 mm by 4 mm by 50 mm) for assessment of the properties
+					across the 50-mm section."
+				</Notes>
+    </MeasurementTechniqueDetails>
+    <MeasurementTechniqueDetails id="BT-d7a5066d-76c8-41be-bcd1-b8c6ca5a44c8">
+      <Name>ASTM E597</Name>
+    </MeasurementTechniqueDetails>
+    <MeasurementTechniqueDetails id="BT-5b5fa360-71ef-455e-9313-77bbd7fff629">
+      <Name>Block-on-Disk Tribometer</Name>
+      <Notes>
+				"Coated coupons of dimension 25 x 25mm were tested for dry sliding wear against a hardened steel ring
+				rotating at a linear speed of 270m/min. Weight loss measurements were made after successive 2 min. The
+				dry sliding wear test was conducted for 10 min with an applied normal load of 2 kg."
+			</Notes>
+    </MeasurementTechniqueDetails>
+    <MeasurementTechniqueDetails id="BT-5e0666df-ddd7-4576-bd33-bf70d7e885a9">
+      <Name>Block-on-Disk Tribometer</Name>
+      <Notes>
+				"The coefficient of friction (�) was also recorded simultaneously by an interface computer, which acquired
+				data in the form of electrical output power of the motor. Even though data were recorded at a frequency of
+				1 Hz for a total test time of 10 min, an average of 10 successive points was taken for computing the coefficient
+				of friction, �. ...the coefficient of friction is calculated by measuring the changes in voltage and current in the
+				electrical circuit of the motor driving the block-on-ring tribometer during loading..."
+			</Notes>
+    </MeasurementTechniqueDetails>
+    <MeasurementTechniqueDetails id="BT-e0554c50-e3d2-490e-a60c-6f916d68b2c4">
+      <Name>Block-on-Disk Tribometer</Name>
+    </MeasurementTechniqueDetails>
+    <MeasurementTechniqueDetails id="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
+      <Name>Knoop Indentation</Name>
+      <Notes>
+				"Microhardness measurements were performed on a Buehler Micromet II microhardness tester using a Knoop
+				indenter with normal load of 200 g applied for 15 s."
+			</Notes>
+    </MeasurementTechniqueDetails>
+    <ParameterDetails id="BT-cf08f9ad-7b43-4e3a-9567-cb4f88df8b7c">
+      <Name>Test Temperature</Name>
+      <Units name="degree Celsius">
+        <Unit>
+          <Name>°C</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-f1e4a1f8-0eb2-4da7-b2e5-1633660d6645">
+      <Name>Range of Strengths</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-631775e3-7017-45e9-9397-20ce35a5bce4">
+      <Name>Weibull Modulus</Name>
+      <Unitless/>
+    </ParameterDetails>
+    <ParameterDetails id="BT-23987df2-4e4b-455f-9abd-cbcf4f57f61b">
+      <Name>Threshold Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-6a0afeb8-3186-4955-b70f-2bb2e4f38478">
+      <Name>Stress Mode</Name>
+      <Unitless/>
+    </ParameterDetails>
+    <ParameterDetails id="BT-c25318c3-834e-4bfa-8a7e-fe30d15ddfcc">
+      <Name>Weibull Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-500ad16f-aaf4-4071-8cd5-15597301b45b">
+      <Name>Stress Ratio</Name>
+      <Unitless/>
+      <Notes>Stress Ratio (R) = (minimum stress)/(maximum stress)</Notes>
+    </ParameterDetails>
+    <ParameterDetails id="BT-1515de17-5701-4a84-a3e0-a23c6b997678">
+      <Name>Number of Samples</Name>
+      <Unitless/>
+    </ParameterDetails>
+    <ParameterDetails id="BT-141dfb41-0187-497d-b4da-98a293b95247">
+      <Name>Number of Cycles</Name>
+      <Unitless/>
+    </ParameterDetails>
+    <ParameterDetails id="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
+      <Name>Time</Name>
+      <Units description="minutes" name="min">
+        <Unit>
+          <Name>min</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-ffefcea4-53bc-4634-a216-32f711231075">
+      <Name>Sliding Speed (Steel Ring)</Name>
+      <Units description="meters per minute" name="m/min">
+        <Unit>
+          <Name>m</Name>
+        </Unit>
+        <Unit power="-1">
+          <Name>min</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <ParameterDetails id="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
+      <Name>Applied Normal Load</Name>
+      <Units description="kilograms" name="kg">
+        <Unit>
+          <Name>kg</Name>
+        </Unit>
+      </Units>
+    </ParameterDetails>
+    <PropertyDetails id="BT-2716eb64-bf3c-4e6f-aacb-2f5c05288e06" type="mechanical">
+      <Name>Flexural Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-959c5e8e-c09e-4516-8b2f-a9cbf94d7ab6" type="mechanical">
+      <Name>Tensile Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-e91a943e-3f0b-473f-8289-0d1d45b553c6" type="mechanical">
+      <Name>Weibull Modulus</Name>
+      <Unitless/>
+    </PropertyDetails>
+    <PropertyDetails id="BT-a3c3adab-a2e6-499c-bdb8-2402996b80e1" type="mechanical">
+      <Name>Weibull Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-4c17ad24-28b1-4618-b335-e1155f1be649" type="mechanical">
+      <Name>Axial-Stress Fatigue Strength</Name>
+      <Units description="kip per square inch" name="ksi">
+        <Unit>
+          <Name>ksi</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-0c845e76-f20b-4b4c-9cae-40c707ed7df2" type="mechanical">
+      <Name>Axial-Stress Fatigue Strength</Name>
+      <Units description="megapascals" name="MPa">
+        <Unit>
+          <Name>MPa</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-81b731d9-193e-4bbf-9993-18f987b37126" type="mechanical">
+      <Name>Wear (Weight Loss Analysis)</Name>
+      <Units description="gram" name="g">
+        <Unit>
+          <Name>g</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <PropertyDetails id="BT-88517059-2f0b-4e20-8ca0-f576adb3246b" type="mechanical">
+      <Name>Coefficient of Friction</Name>
+      <Unitless/>
+    </PropertyDetails>
+    <PropertyDetails id="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" type="mechanical">
+      <Name>Microhardness</Name>
+      <Units description="kilograms per square millimeter" name="kg/mm^2">
+        <Unit>
+          <Name>kg</Name>
+        </Unit>
+        <Unit power="-2">
+          <Name>mm</Name>
+        </Unit>
+      </Units>
+    </PropertyDetails>
+    <SourceDetails id="BT-895bb5e9-8814-4407-bfaf-a8d6fad7886d">
+      <Name>Saint-Gobain/Norton Industrial Ceramics</Name>
+    </SourceDetails>
+    <SpecimenDetails id="BT-aacb1d15-b3fa-4f1f-bc4d-c3cc55f3471c" type="cylindrical">
+      <Name>smooth specimen</Name>
+      <Notes>diameter = 0.375 inches</Notes>
+    </SpecimenDetails>
+  </Metadata>
+</MatML_Doc>

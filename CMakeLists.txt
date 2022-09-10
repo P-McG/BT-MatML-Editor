@@ -9,7 +9,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 # set the project name
-project(BT-MatML-Editor VERSION 0.1.3)
+project(BT-MatML-Editor VERSION 0.1.4)
 
 set(CMAKE_BUILD_TYPE)
 set(CMAKE_DEBUG_POSTFIX d)

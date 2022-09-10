@@ -187,9 +187,9 @@ SourceDetails_GUI::~SourceDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void SourceDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void SourceDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
-	m_SourceDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_SourceDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
 }
 

@@ -15,7 +15,7 @@ MeasurementTechniqueDetails_GUI_Base::MeasurementTechniqueDetails_GUI_Base(wxWin
 	: m_GUI(nullptr),
 	m_MeasurementTechniqueDetails_ID_GUI(nullptr)
 {
-	m_GUI = Create(parent, m_MeasurementTechniqueDetails_ID_GUI);
+	m_GUI = Create(parent, m_MeasurementTechniqueDetails_ID_GUI );
 }
 
 MeasurementTechniqueDetails_GUI_Base::~MeasurementTechniqueDetails_GUI_Base() {
@@ -153,10 +153,10 @@ MeasurementTechniqueDetails_GUI::~MeasurementTechniqueDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void MeasurementTechniqueDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void MeasurementTechniqueDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
-	m_MeasurementTechniqueDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_MeasurementTechniqueDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 }
 
 /// <summary>

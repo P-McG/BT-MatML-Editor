@@ -192,9 +192,9 @@ DataSourceDetails_GUI::~DataSourceDetails_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void DataSourceDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void DataSourceDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
-	m_DataSourceDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl);
+	m_DataSourceDetails_ID_GUI->SetEvtHandlerVar(MatMLTreeCtrl, MatMLDoc);
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
 }
 

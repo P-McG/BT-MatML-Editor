@@ -113,8 +113,8 @@ namespace bellshire {
 
         void OnDeleteName(wxCommandEvent& event);
 
-        //void OnPasteName(wxCommandEvent& event);
-        //void OnPasteCurrencyCode(wxCommandEvent& event);
+        void OnPasteName(wxCommandEvent& event);
+        void OnPasteCurrencyCode(wxCommandEvent& event);
 
         void OnBumpDown(wxCommandEvent& event);
         void OnBumpUp(wxCommandEvent& event);

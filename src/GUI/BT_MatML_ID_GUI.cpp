@@ -1,12 +1,14 @@
 #include <wx/config.h>
 #include "BT_MatML_ID_GUI.h"
+#include "BT_MatML_GatherIDRefs.h"
 
 using namespace bellshire;
 
 
 ID_GUI_Base::ID_GUI_Base() 
 	: m_GenerateUuidButton(nullptr),
-	m_IDTextCtrl(nullptr), 
+	m_IDTextCtrl(nullptr),
+	m_ReplaceIDRefs(nullptr),
 	m_GUI(nullptr)
 {
 
@@ -15,9 +17,10 @@ ID_GUI_Base::ID_GUI_Base()
 ID_GUI_Base::ID_GUI_Base(wxWindow* parent) 
 	: m_GenerateUuidButton(nullptr), 
 	m_IDTextCtrl(nullptr),
+	m_ReplaceIDRefs(nullptr),
 	m_GUI(nullptr)
 {
-	m_GUI = Create(parent, m_GenerateUuidButton, m_IDTextCtrl);
+	m_GUI = Create(parent, m_GenerateUuidButton, m_IDTextCtrl, m_ReplaceIDRefs);
 	SetConnect();
 }
 
@@ -33,7 +36,7 @@ ID_GUI_Base::~ID_GUI_Base() {
 /// <param name="GenerateUuidButton"></param>
 /// <param name="IDTextCtrl"></param>
 /// <returns>wxPanel*</returns>
-wxPanel* ID_GUI_Base::Create(wxWindow* parent, wxButton*& GenerateUuidButton, wxTextCtrl*& IDTextCtrl)
+wxPanel* ID_GUI_Base::Create(wxWindow* parent, wxButton*& GenerateUuidButton, wxTextCtrl*& IDTextCtrl, wxCheckBox*& ReplaceIDRefs)
 {
 	wxPanel* IDCtrlPanel = new wxPanel(parent);
 
@@ -43,13 +46,15 @@ wxPanel* ID_GUI_Base::Create(wxWindow* parent, wxButton*& GenerateUuidButton, wx
 	fgSizer1->SetFlexibleDirection(wxBOTH);
 	fgSizer1->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
 
-	fgSizer1->Add(0, 0, 1, wxEXPAND, 5);
+	fgSizer1->AddSpacer(0);
 
 	GenerateUuidButton = new wxButton(IDCtrlPanel, wxID_ANY, wxT("Uuid->ID"), wxDefaultPosition, wxDefaultSize, 0);
+
 	fgSizer1->Add(GenerateUuidButton, 1, wxALL | wxEXPAND, 5);
 
 	wxStaticText* staticText = new wxStaticText(IDCtrlPanel, wxID_ANY, wxT("ID"), wxDefaultPosition, wxDefaultSize, 0);
 	staticText->Wrap(-1);
+
 	fgSizer1->Add(staticText, 0, wxALL, 5);
 
 	IDTextCtrl = new wxTextCtrl(IDCtrlPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
@@ -57,12 +62,19 @@ wxPanel* ID_GUI_Base::Create(wxWindow* parent, wxButton*& GenerateUuidButton, wx
 
 	fgSizer1->Add(IDTextCtrl, 1, wxALL | wxEXPAND, 5);
 
-	fgSizer1->Add(0, 1, wxALL | wxEXPAND);
+	fgSizer1->AddSpacer(0);
+
+	ReplaceIDRefs = new wxCheckBox(IDCtrlPanel, wxID_ANY, wxT("Replace all IDREFs and maintain conectivity"), wxDefaultPosition, wxDefaultSize, 0);
+	ReplaceIDRefs->SetValue(true);
+	staticText->Wrap(-1);
+
+	fgSizer1->Add(ReplaceIDRefs, 0, wxALL, 5);
+
+	fgSizer1->AddSpacer(0);
 
 	wxStaticText* staticText1 = new wxStaticText(IDCtrlPanel, wxID_ANY, wxT("Note: \n1) xs:IDs cannot have \":\" characters anywhere in the name. \n2) cannot have a digit as the first character of the ID"), wxDefaultPosition, wxDefaultSize, 0);
 	//staticText1->Wrap(-1);
 	fgSizer1->Add(staticText1, 0, wxALL, 5);
-
 
 
 	IDCtrlPanel->SetSizer(fgSizer1);
@@ -196,7 +208,9 @@ void ID_GUI_Base::SetConnect()
 /// <summary>
 /// Constructor for the derived class
 /// </summary>
-ID_GUI::ID_GUI() : ID_GUI_Base(), m_MatMLTreeCtrl(nullptr)
+ID_GUI::ID_GUI() : 
+	ID_GUI_Base(), 
+	m_MatMLTreeCtrl(nullptr)
 {}
 
 /// <summary>
@@ -205,7 +219,8 @@ ID_GUI::ID_GUI() : ID_GUI_Base(), m_MatMLTreeCtrl(nullptr)
 /// <param name="parent"></param>
 /// <param name="MatMLTreeCtrl"></param>
 ID_GUI::ID_GUI(wxWindow* parent)
-	: ID_GUI_Base(parent), m_MatMLTreeCtrl(nullptr)
+	: ID_GUI_Base(parent),
+	m_MatMLTreeCtrl(nullptr)
 {
 	SetConnect();
 }
@@ -222,9 +237,10 @@ ID_GUI::~ID_GUI() {
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void ID_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void ID_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc> MatMLDoc)
 {
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
+	SetMatMLDoc(MatMLDoc);
 }
 
 
@@ -237,6 +253,32 @@ void ID_GUI::SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl)
 {
 	m_MatMLTreeCtrl = MatMLTreeCtrl;
 }
+
+/// <summary>
+/// Set the Event Handler Variable associated with the MatML wxTreeCtrl 
+/// Required before using the derived class's event handler functions.
+/// </summary>
+/// <param name="MatMLTreeCtrl"></param>
+void ID_GUI::SetMatMLDoc(::boost::shared_ptr<MatML_Doc>& MatMLDoc)
+{
+	m_MatMLDoc = MatMLDoc;
+}
+
+void ID_GUI::SwapIDRefs(MatML_Doc* matmldoc, xml_schema::idref& oldid, xml_schema::idref& newid)
+{
+	if (!oldid.empty()) {
+		GatherIDRefs gatheridrefs;
+		auto& cont(gatheridrefs.IDRefs(matmldoc));
+		for (auto i : cont) {
+			if (*i == oldid) {
+				*i = xml_schema::idref(newid);
+			}
+		}
+	}
+}
+
+
+
 
 /// <summary>
 /// Event Handler call
@@ -253,109 +295,18 @@ void ID_GUI::OnGenerateUuidButton(wxCommandEvent& event)
 	wxTreeItemId ItemId = m_MatMLTreeCtrl->GetSelection();
 	MatMLTreeItemData* Item = (MatMLTreeItemData*)(m_MatMLTreeCtrl->GetItemData(ItemId));
 
-	try {
-		Material* const element = boost::any_cast<Material* const>(Item->GetAnyMatMLDataPointer());
-		if (element->id().present() && !element->id().get().empty())
-			if (!Warning()) return;
-	
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
+	boost::any any_ptr(Item->GetAnyMatMLDataPointer());
 
-	try {
-		TestConditionDetails* const element = boost::any_cast<TestConditionDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		SpecimenDetails* const element = boost::any_cast<SpecimenDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-
-	try {
-		PropertyDetails* const element = boost::any_cast<PropertyDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-
-	try {
-		ParameterDetails* const element = boost::any_cast<ParameterDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		MeasurementTechniqueDetails* const element = boost::any_cast<MeasurementTechniqueDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		DataSourceDetails* const element = boost::any_cast<DataSourceDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		ComponentDetails* const element = boost::any_cast<ComponentDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (element->id().present() && !element->id().get().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		AuthorityDetails* const element = boost::any_cast<AuthorityDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
-	try {
-		SourceDetails* const element = boost::any_cast<SourceDetails* const>(Item->GetAnyMatMLDataPointer());
-		if (!element->id().empty())
-			if (!Warning()) return;
-		GenerateUuid(element);
-		Update(element);
-		return;
-	}
-	catch (const boost::bad_any_cast&) {}
-
+	ExchangeIDRefWithOptionalID<Material>(any_ptr);
+	ExchangeIDRefWithID<TestConditionDetails>(any_ptr);
+	ExchangeIDRefWithID<SpecimenDetails>(any_ptr);
+	ExchangeIDRefWithID<PropertyDetails>(any_ptr);
+	ExchangeIDRefWithID<ParameterDetails>(any_ptr);
+	ExchangeIDRefWithID<MeasurementTechniqueDetails>(any_ptr);
+	ExchangeIDRefWithID<DataSourceDetails>(any_ptr);
+	ExchangeIDRefWithOptionalID<ComponentDetails>(any_ptr);
+	ExchangeIDRefWithID<AuthorityDetails>(any_ptr);
+	ExchangeIDRefWithID<SourceDetails>(any_ptr);
 }
 
 bool ID_GUI::Warning()

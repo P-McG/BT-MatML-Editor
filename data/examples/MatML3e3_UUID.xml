@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
-  <Material>
+  <Material id="BT-85201d00-ad1d-4194-a0e8-0b730336062f">
     <BulkDetails>
       <Name>TiC coated AISI 1018 steel</Name>
       <Class>
@@ -12,28 +12,28 @@
       <Form>
         <Description>coupon</Description>
       </Form>
-      <PropertyData delimiter="," property="pr1" source="ds1" technique="mt1">
+      <PropertyData delimiter="," property="BT-81b731d9-193e-4bbf-9993-18f987b37126" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-5b5fa360-71ef-455e-9313-77bbd7fff629">
         <Data format="float">.0011,.0018,.0023,.0027,.0029</Data>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
           <Data>2,4,6,8,10</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa2">
+        <ParameterValue format="integer" parameter="BT-ffefcea4-53bc-4634-a216-32f711231075">
           <Data>270,270,270,270,270</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa3">
+        <ParameterValue format="integer" parameter="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
           <Data>2,2,2,2,2</Data>
         </ParameterValue>
       </PropertyData>
-      <PropertyData delimiter="," property="pr2" source="ds1" technique="mt2">
+      <PropertyData delimiter="," property="BT-88517059-2f0b-4e20-8ca0-f576adb3246b" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-5e0666df-ddd7-4576-bd33-bf70d7e885a9">
         <Data format="float">0.58</Data>
       </PropertyData>
     </BulkDetails>
-    <ComponentDetails>
+    <ComponentDetails id="BT-4b218dcb-15ec-4d17-9830-ed1e37e16767">
       <Name>steel</Name>
       <Class>
         <Name>metal</Name>
       </Class>
-      <Specification authority="AISI">AISI 1018</Specification>
+      <Specification authority="BT-0bab4b9e-ca6b-4dc5-a88d-ab34c20c0836">AISI 1018</Specification>
       <Form>
         <Description>coupon</Description>
         <Geometry>
@@ -58,19 +58,19 @@
 				10�s. The discharge capacitance used for the PES process was 450�F with a current of 25A."
 				</Notes>
       </ProcessingDetails>
-      <PropertyData delimiter="," property="pr1" source="ds1" technique="mt3">
+      <PropertyData delimiter="," property="BT-81b731d9-193e-4bbf-9993-18f987b37126" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-e0554c50-e3d2-490e-a60c-6f916d68b2c4">
         <Data format="float">.0019,.0036,.0057,.0073,.0090</Data>
-        <ParameterValue format="integer" parameter="pa1">
+        <ParameterValue format="integer" parameter="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
           <Data>2,4,6,8,10</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa2">
+        <ParameterValue format="integer" parameter="BT-ffefcea4-53bc-4634-a216-32f711231075">
           <Data>270,270,270,270,270</Data>
         </ParameterValue>
-        <ParameterValue format="integer" parameter="pa3">
+        <ParameterValue format="integer" parameter="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
           <Data>2,2,2,2,2</Data>
         </ParameterValue>
       </PropertyData>
-      <PropertyData delimiter="," property="pr3" source="ds1" technique="mt4">
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
         <Data format="integer">172</Data>
         <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
           <Value format="integer">12</Value>
@@ -89,7 +89,7 @@
         <Relationship>substrate</Relationship>
       </AssociationDetails>
     </ComponentDetails>
-    <ComponentDetails>
+    <ComponentDetails id="BT-6ecd187f-b5b9-4d67-bcff-1bff32443f74">
       <Name>titanium carbide coating</Name>
       <Class>
         <Name>carbide</Name>
@@ -125,7 +125,7 @@
           <Notes>Possible</Notes>
         </PhaseComposition>
       </Characterization>
-      <PropertyData delimiter="," property="pr3" source="ds1" technique="mt4">
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
         <Data format="integer">1235</Data>
         <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
           <Value format="integer">86</Value>
@@ -144,9 +144,9 @@
         <Relationship>coating</Relationship>
       </AssociationDetails>
     </ComponentDetails>
-    <ComponentDetails>
+    <ComponentDetails id="BT-7c1359d8-a471-46a3-8b4f-293ab246942d">
       <Name>heat affected zone (HAZ)</Name>
-      <PropertyData delimiter="," property="pr3" source="ds1" technique="mt4">
+      <PropertyData delimiter="," property="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" source="BT-309c70fc-b503-4540-b6dc-5b878f5df062" technique="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
         <Data format="integer">352</Data>
         <Uncertainty DistributionType="Normal/Gaussian" Num_Std_Dev="2">
           <Value format="integer">32</Value>
@@ -164,16 +164,16 @@
     </ComponentDetails>
   </Material>
   <Metadata>
-    <AuthorityDetails id="AISI">
+    <AuthorityDetails id="BT-0bab4b9e-ca6b-4dc5-a88d-ab34c20c0836">
       <Name>American Iron and Steel Institute</Name>
     </AuthorityDetails>
-    <DataSourceDetails id="ds1" type="journal article">
+    <DataSourceDetails id="BT-309c70fc-b503-4540-b6dc-5b878f5df062" type="journal article">
       <Name>A. Agarwal and N.B. Dahotre, "Pulse Electrode Surfacing of Steel with TiC Coating: Microstructure and Wear Properties," ASM Journal of Materials Engineering and Performance, Vol. 8, No. 4, pp. 479-486, 1999
 			</Name>
       <Notes>Data were digitized from Fig. 9. The reported unit, "gm", is interpreted to mean "g", grams.
 			</Notes>
     </DataSourceDetails>
-    <MeasurementTechniqueDetails id="mt1">
+    <MeasurementTechniqueDetails id="BT-5b5fa360-71ef-455e-9313-77bbd7fff629">
       <Name>Block-on-Disk Tribometer</Name>
       <Notes>
 				"Coated coupons of dimension 25 x 25mm were tested for dry sliding wear against a hardened steel ring
@@ -181,7 +181,7 @@
 				dry sliding wear test was conducted for 10 min with an applied normal load of 2 kg."
 			</Notes>
     </MeasurementTechniqueDetails>
-    <MeasurementTechniqueDetails id="mt2">
+    <MeasurementTechniqueDetails id="BT-5e0666df-ddd7-4576-bd33-bf70d7e885a9">
       <Name>Block-on-Disk Tribometer</Name>
       <Notes>
 				"The coefficient of friction (�) was also recorded simultaneously by an interface computer, which acquired
@@ -191,17 +191,17 @@
 				electrical circuit of the motor driving the block-on-ring tribometer during loading..."
 			</Notes>
     </MeasurementTechniqueDetails>
-    <MeasurementTechniqueDetails id="mt3">
+    <MeasurementTechniqueDetails id="BT-e0554c50-e3d2-490e-a60c-6f916d68b2c4">
       <Name>Block-on-Disk Tribometer</Name>
     </MeasurementTechniqueDetails>
-    <MeasurementTechniqueDetails id="mt4">
+    <MeasurementTechniqueDetails id="BT-1dd867f8-afbd-425f-bfba-ac38a6f41104">
       <Name>Knoop Indentation</Name>
       <Notes>
 				"Microhardness measurements were performed on a Buehler Micromet II microhardness tester using a Knoop
 				indenter with normal load of 200 g applied for 15 s."
 			</Notes>
     </MeasurementTechniqueDetails>
-    <ParameterDetails id="pa1">
+    <ParameterDetails id="BT-7350c66b-b268-46a4-9f44-8be30e304a7d">
       <Name>Time</Name>
       <Units description="minutes" name="min">
         <Unit>
@@ -209,7 +209,7 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <ParameterDetails id="pa2">
+    <ParameterDetails id="BT-ffefcea4-53bc-4634-a216-32f711231075">
       <Name>Sliding Speed (Steel Ring)</Name>
       <Units description="meters per minute" name="m/min">
         <Unit>
@@ -220,7 +220,7 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <ParameterDetails id="pa3">
+    <ParameterDetails id="BT-458d9246-baf2-40da-87c2-f6a6cb30e780">
       <Name>Applied Normal Load</Name>
       <Units description="kilograms" name="kg">
         <Unit>
@@ -228,7 +228,7 @@
         </Unit>
       </Units>
     </ParameterDetails>
-    <PropertyDetails id="pr1" type="mechanical">
+    <PropertyDetails id="BT-81b731d9-193e-4bbf-9993-18f987b37126" type="mechanical">
       <Name>Wear (Weight Loss Analysis)</Name>
       <Units description="gram" name="g">
         <Unit>
@@ -236,11 +236,11 @@
         </Unit>
       </Units>
     </PropertyDetails>
-    <PropertyDetails id="pr2" type="mechanical">
+    <PropertyDetails id="BT-88517059-2f0b-4e20-8ca0-f576adb3246b" type="mechanical">
       <Name>Coefficient of Friction</Name>
       <Unitless/>
     </PropertyDetails>
-    <PropertyDetails id="pr3" type="mechanical">
+    <PropertyDetails id="BT-27b53bf3-0aff-48be-b97d-2cc965dd382c" type="mechanical">
       <Name>Microhardness</Name>
       <Units description="kilograms per square millimeter" name="kg/mm^2">
         <Unit>

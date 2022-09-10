@@ -147,10 +147,10 @@ AuthorityDetails_GUI::~AuthorityDetails_GUI()
 /// Required before using the derived class's event handler functions.
 /// </summary>
 /// <param name="MatMLTreeCtrl"></param>
-void AuthorityDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl)
+void AuthorityDetails_GUI::SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc)
 {
 	SetMatMLTreeCtrl(MatMLTreeCtrl);
-	m_AuthorityDetails_ID_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl);
+	m_AuthorityDetails_ID_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl, MatMLDoc);
 }
 
 /// <summary>

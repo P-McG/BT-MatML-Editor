@@ -792,7 +792,7 @@ void bellshire::MaterialFrame::OnAbout(wxCommandEvent& WXUNUSED(event))
 {
     wxAboutDialogInfo info;
     info.SetName("BT-MatML-Editor");
-    info.SetVersion("0.1.3","version 0.1.3");
+    info.SetVersion("0.1.4","version 0.1.4");
     info.SetDescription(_("Editor for the XML MatML Schema"));
     info.SetCopyright("(C) 2022-2023");
     info.SetWebSite("https://p-mcg.github.io/BT-MatML-Editor/");
@@ -3077,59 +3077,6 @@ void bellshire::MaterialFrame::CopyComponentNameToParentMaterial()
 
 }
 
-/// <summary>
-/// This was used only to make the old data format compatible with the new arrangement
-/// </summary>
-void bellshire::MaterialFrame::ReplaceIDwithUuid()
-{
-    MatML_Doc::Material_sequence& matcont(doc->Material());
-    MatML_Doc::Material_iterator matiter(matcont.begin());
-    for(;matiter!=matcont.end();++matiter){
-        if(matiter->id().present()){
-            ::vector<ParentMaterial*> compparentmateriallist;
-
-            MatML_Doc::Material_sequence& matcont2(doc->Material());
-            MatML_Doc::Material_iterator matiter2(matcont2.begin());
-            for(;matiter2!=matcont2.end();++matiter2){
-                if(!matiter2->ComponentDetails().empty()){
-                    Material::ComponentDetails_sequence& compcont(matiter2->ComponentDetails());
-                    Material::ComponentDetails_iterator compiter(compcont.begin());
-                        for(;compiter!=compcont.end();++compiter){
-                        if(!compiter->Class().empty()){
-                            ComponentDetails::Class_sequence& classcont(compiter->Class());
-                            ComponentDetails::Class_iterator classiter(classcont.begin());
-                            for(;classiter!=classcont.end();++classiter){
-                                if(!classiter->ParentMaterial().empty()){
-                                    Material* parentmaterial(dynamic_cast<Material*>(&*classiter->ParentMaterial().front().id()));
-                                    if(&*matiter==parentmaterial){
-                                        compparentmateriallist.push_back(&classiter->ParentMaterial().front());
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            //generate newId
-            uuid_class iduuid;
-
-            ::string idlabelstr("BTMAT-");
-            idlabelstr.append(cast_stream< ::string>(iduuid));
-
-            Material::id_type NewMatId(idlabelstr.c_str());
-            matiter->id().set(NewMatId);
-
-            if(!compparentmateriallist.empty()){
-                ::vector<ParentMaterial*>::iterator listiter(compparentmateriallist.begin());
-                for(;listiter!=compparentmateriallist.end();++listiter){
-                    (*listiter)->id().clear();
-                    (*listiter)->id()=::ParentMaterial::id_type(matiter->id().get());
-                }
-
-            }
-        }
-    }
-}
 
 
 /// <summary>

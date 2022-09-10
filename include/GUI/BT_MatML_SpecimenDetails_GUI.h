@@ -104,7 +104,7 @@ namespace bellshire {
         SpecimenDetails_GUI(wxWindow* parent);
         virtual ~SpecimenDetails_GUI();
 
-        void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl);//Required before Event Handling.
+        void SetEvtHandlerVar(TreeCtrlSorted*& MatMLTreeCtrl, ::boost::shared_ptr<MatML_Doc>& MatMLDoc);//Required before Event Handling.
         void SetMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl);
         void SetMatMLItemToCopy(const ::boost::any& MatMLItemToCopy);//Required before paste Event Handling.
 
