@@ -69,83 +69,84 @@
 \DoxyCodeLine{66             \mbox{\hyperlink{class_material}{Material}}\& \mbox{\hyperlink{class_element}{Element}}, }
 \DoxyCodeLine{67             \textcolor{keyword}{const} wxTreeItemId\& PreviousId}
 \DoxyCodeLine{68         );}
-\DoxyCodeLine{69         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a7119291933b405890df8ad7e58b84b17}{SetupBranch}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, wxWindow*\& ParentId, \mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}\& \mbox{\hyperlink{class_element}{Element}}, std::vector<Material*>\& materials);}
-\DoxyCodeLine{70         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a96e10adb8c92e3f11c28a19c57fd341b}{Update}}( \mbox{\hyperlink{class_material}{Material}}* element);}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a7f035a75bd98852bf310cf18cf24d3af}{SetConnect}}();}
-\DoxyCodeLine{73         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnMaterialLayersTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnMaterialLFORTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertBulkDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertComponentDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGraphs(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteBulkDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{83         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteComponentDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteGraphs(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteBulkDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteComponentDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGraphs(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnCopyMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{95         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     \textcolor{keyword}{private}:}
-\DoxyCodeLine{98     \};}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100  \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_material___g_u_i}{Material\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base}{Material\_GUI\_Base}}}
-\DoxyCodeLine{101     \{}
-\DoxyCodeLine{102     \textcolor{keyword}{public}:}
-\DoxyCodeLine{103   }
-\DoxyCodeLine{104         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{105         ::boost::shared\_ptr<MatML\_Doc> m\_MatMLDoc;\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{106         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5dd733880123d436df9e019e5a3ae5b4}{Material\_GUI}}();}
-\DoxyCodeLine{109         \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5dd733880123d436df9e019e5a3ae5b4}{Material\_GUI}}(wxWindow* parent);}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a9f30aa3d948d71595f53904717c6d53e}{\string~Material\_GUI}}();}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a736cdee99e82938a31d8dba5dc57a2ed}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, ::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);\textcolor{comment}{//Required before Event Handling.}}
-\DoxyCodeLine{114         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5d3842c59cb1098ad829fb52b3fb570c}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
-\DoxyCodeLine{115         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_aa7dca4ba7ed2f801f185a54f50bfc44c}{SetMatMLDoc}}(::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);}
-\DoxyCodeLine{116         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118         \textcolor{comment}{//Overwrites the base class functions}}
-\DoxyCodeLine{119         \textcolor{keywordtype}{void} OnMaterialLayersTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnMaterialLFORTextCtrl(wxCommandEvent\& event);}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122         \textcolor{keywordtype}{void} OnInsertMaterial(wxCommandEvent\& event);}
-\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertBulkDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnInsertComponentDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnInsertGraphs(wxCommandEvent\& event);}
-\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnInsertGlossary(wxCommandEvent\& event);}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128         \textcolor{keywordtype}{void} OnDeleteBulkDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteComponentDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnDeleteGraphs(wxCommandEvent\& event);}
-\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnDeleteGlossary(wxCommandEvent\& event);}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133         \textcolor{keywordtype}{void} OnPasteBulkDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnPasteComponentDetails(wxCommandEvent\& event);}
-\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteGraphs(wxCommandEvent\& event);}
-\DoxyCodeLine{136         \textcolor{keywordtype}{void} OnPasteGlossary(wxCommandEvent\& event);}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138         \textcolor{keywordtype}{void} OnCopyMaterial(wxCommandEvent\& event);}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
-\DoxyCodeLine{141         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143     \textcolor{keyword}{private}:}
-\DoxyCodeLine{144     \};}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146 \}; \textcolor{comment}{//namespace bellshire end}}
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_ab29cdc2a573adf302568bd8a638b42e2}{ReplaceIDwithUuid}}(\mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}\& doc);}
+\DoxyCodeLine{70         \textcolor{keyword}{static} wxTreeItemId \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a7119291933b405890df8ad7e58b84b17}{SetupBranch}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, wxWindow*\& ParentId, \mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}\& \mbox{\hyperlink{class_element}{Element}}, std::vector<Material*>\& materials);}
+\DoxyCodeLine{71         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a96e10adb8c92e3f11c28a19c57fd341b}{Update}}( \mbox{\hyperlink{class_material}{Material}}* element);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base_a7f035a75bd98852bf310cf18cf24d3af}{SetConnect}}();}
+\DoxyCodeLine{74         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnMaterialLayersTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{75         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnMaterialLFORTextCtrl(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertBulkDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertComponentDetails(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGraphs(wxCommandEvent\& event)\{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{81         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnInsertGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteBulkDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteComponentDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteGraphs(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{86         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnDeleteGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteBulkDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteComponentDetails(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{90         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGraphs(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{91         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnPasteGlossary(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnCopyMaterial(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{96         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event) \{ \textcolor{keyword}{event}.Skip(); \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keyword}{private}:}
+\DoxyCodeLine{99     \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101  \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_material___g_u_i}{Material\_GUI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i___base}{Material\_GUI\_Base}}}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103     \textcolor{keyword}{public}:}
+\DoxyCodeLine{104   }
+\DoxyCodeLine{105         \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}* m\_MatMLTreeCtrl;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{106         ::boost::shared\_ptr<MatML\_Doc> m\_MatMLDoc;\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{107         ::boost::any m\_MatMLItemToCopy;\textcolor{comment}{//Required before Paste Event Handling.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5dd733880123d436df9e019e5a3ae5b4}{Material\_GUI}}();}
+\DoxyCodeLine{110         \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5dd733880123d436df9e019e5a3ae5b4}{Material\_GUI}}(wxWindow* parent);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a9f30aa3d948d71595f53904717c6d53e}{\string~Material\_GUI}}();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a736cdee99e82938a31d8dba5dc57a2ed}{SetEvtHandlerVar}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl, ::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);\textcolor{comment}{//Required before Event Handling.}}
+\DoxyCodeLine{115         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_a5d3842c59cb1098ad829fb52b3fb570c}{SetMatMLTreeCtrl}}(\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{TreeCtrlSorted}}*\& MatMLTreeCtrl);}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbellshire_1_1_material___g_u_i_aa7dca4ba7ed2f801f185a54f50bfc44c}{SetMatMLDoc}}(::boost::shared\_ptr<MatML\_Doc>\& MatMLDoc);}
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} SetMatMLItemToCopy(const ::boost::any\& MatMLItemToCopy);\textcolor{comment}{//Required before paste Event Handling.}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119         \textcolor{comment}{//Overwrites the base class functions}}
+\DoxyCodeLine{120         \textcolor{keywordtype}{void} OnMaterialLayersTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{121         \textcolor{keywordtype}{void} OnMaterialLFORTextCtrl(wxCommandEvent\& event);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} OnInsertMaterial(wxCommandEvent\& event);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} OnInsertBulkDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{125         \textcolor{keywordtype}{void} OnInsertComponentDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} OnInsertGraphs(wxCommandEvent\& event);}
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} OnInsertGlossary(wxCommandEvent\& event);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129         \textcolor{keywordtype}{void} OnDeleteBulkDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{130         \textcolor{keywordtype}{void} OnDeleteComponentDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{131         \textcolor{keywordtype}{void} OnDeleteGraphs(wxCommandEvent\& event);}
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} OnDeleteGlossary(wxCommandEvent\& event);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         \textcolor{keywordtype}{void} OnPasteBulkDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} OnPasteComponentDetails(wxCommandEvent\& event);}
+\DoxyCodeLine{136         \textcolor{keywordtype}{void} OnPasteGraphs(wxCommandEvent\& event);}
+\DoxyCodeLine{137         \textcolor{keywordtype}{void} OnPasteGlossary(wxCommandEvent\& event);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{keywordtype}{void} OnCopyMaterial(wxCommandEvent\& event);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{keywordtype}{void} OnBumpDown(wxCommandEvent\& event);}
+\DoxyCodeLine{142         \textcolor{keywordtype}{void} OnBumpUp(wxCommandEvent\& event);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keyword}{private}:}
+\DoxyCodeLine{145     \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \}; \textcolor{comment}{//namespace bellshire end}}
 
 \end{DoxyCode}

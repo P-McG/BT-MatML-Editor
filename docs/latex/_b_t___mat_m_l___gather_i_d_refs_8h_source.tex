@@ -1,0 +1,97 @@
+\hypertarget{_b_t___mat_m_l___gather_i_d_refs_8h_source}{}\doxysection{BT\+\_\+\+Mat\+ML\+\_\+\+Gather\+IDRefs.\+h}
+\label{_b_t___mat_m_l___gather_i_d_refs_8h_source}\index{C:/Users/paulm/source/repos/BT-\/MatML-\/Editor/include/BT\_MatML\_GatherIDRefs.h@{C:/Users/paulm/source/repos/BT-\/MatML-\/Editor/include/BT\_MatML\_GatherIDRefs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}matml31.hxx"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}matml31\_strongtypedef.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacebellshire}{bellshire}} \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classbellshire_1_1_gather_i_d_refs}{GatherIDRefs}} \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \mbox{\hyperlink{classbellshire_1_1_gather_i_d_refs}{GatherIDRefs}}() \{\};}
+\DoxyCodeLine{16         \textcolor{keyword}{virtual} \mbox{\hyperlink{classbellshire_1_1_gather_i_d_refs}{\string~GatherIDRefs}}() \{\};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{keyword}{typedef} xml\_schema::idref* idref\_ptr;}
+\DoxyCodeLine{19         \textcolor{keyword}{typedef} std::vector< idref\_ptr> idref\_ptrs;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keyword}{template}<\textcolor{keyword}{typename} sequence\_type>}
+\DoxyCodeLine{22         idref\_ptrs Sequence\_IDRefs(sequence\_type\& cont);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keyword}{template}<\textcolor{keyword}{typename} sequence\_type, \textcolor{keyword}{typename} strongtype\_type>}
+\DoxyCodeLine{25         idref\_ptrs Sequence\_IDRefs\_Strongtype(sequence\_type\& cont);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         idref\_ptrs IDRefs(\mbox{\hyperlink{class_associate}{Associate}}* element);}
+\DoxyCodeLine{28         idref\_ptrs IDRefs(\mbox{\hyperlink{class_association_details}{AssociationDetails}}* element);}
+\DoxyCodeLine{29         idref\_ptrs IDRefs(\mbox{\hyperlink{class_bulk_details}{BulkDetails}}* element);}
+\DoxyCodeLine{30         idref\_ptrs IDRefs(\mbox{\hyperlink{class_characterization}{Characterization}}* element);}
+\DoxyCodeLine{31         idref\_ptrs IDRefs(\mbox{\hyperlink{class_chemical_composition}{ChemicalComposition}}* element);}
+\DoxyCodeLine{32         idref\_ptrs IDRefs(\mbox{\hyperlink{class_class}{Class}}* element);}
+\DoxyCodeLine{33         idref\_ptrs IDRefs(\mbox{\hyperlink{class_component_details}{ComponentDetails}}* element);}
+\DoxyCodeLine{34         idref\_ptrs IDRefs(\mbox{\hyperlink{class_compound}{Compound}}* element);}
+\DoxyCodeLine{35         idref\_ptrs IDRefs(\mbox{\hyperlink{class_concentration}{Concentration}}* element);}
+\DoxyCodeLine{36         idref\_ptrs IDRefs(\mbox{\hyperlink{class_data_format}{DataFormat}}* element);}
+\DoxyCodeLine{37         idref\_ptrs IDRefs(\mbox{\hyperlink{class_dimensional_details}{DimensionalDetails}}* element);}
+\DoxyCodeLine{38         idref\_ptrs IDRefs(\mbox{\hyperlink{class_element}{Element}}* element);}
+\DoxyCodeLine{39         idref\_ptrs IDRefs(\mbox{\hyperlink{class_form}{Form}}* element);}
+\DoxyCodeLine{40         idref\_ptrs IDRefs(\mbox{\hyperlink{class_formula}{Formula}}* element);}
+\DoxyCodeLine{41         idref\_ptrs IDRefs(\mbox{\hyperlink{class_geometry}{Geometry}}* element);}
+\DoxyCodeLine{42         idref\_ptrs IDRefs(\mbox{\hyperlink{class_glossary}{Glossary}}* element);}
+\DoxyCodeLine{43         idref\_ptrs IDRefs(\mbox{\hyperlink{class_glossary_term}{GlossaryTerm}}* element);}
+\DoxyCodeLine{44         idref\_ptrs IDRefs(\mbox{\hyperlink{class_graphs}{Graphs}}* element);}
+\DoxyCodeLine{45         idref\_ptrs IDRefs(\mbox{\hyperlink{class_material}{Material}}* element);}
+\DoxyCodeLine{46         idref\_ptrs IDRefs(\mbox{\hyperlink{class_metadata}{Metadata}}* element);}
+\DoxyCodeLine{47         idref\_ptrs IDRefs(\mbox{\hyperlink{class_name}{Name}}* element);}
+\DoxyCodeLine{48         idref\_ptrs IDRefs(\mbox{\hyperlink{class_notes}{Notes}}* element);}
+\DoxyCodeLine{49         idref\_ptrs IDRefs(\mbox{\hyperlink{class_parameter_value}{ParameterValue}}* element);}
+\DoxyCodeLine{50         idref\_ptrs IDRefs(\mbox{\hyperlink{class_phase_composition}{PhaseComposition}}* element);}
+\DoxyCodeLine{51         idref\_ptrs IDRefs(\mbox{\hyperlink{class_processing_details}{ProcessingDetails}}* element);}
+\DoxyCodeLine{52         idref\_ptrs IDRefs(\mbox{\hyperlink{class_property_data}{PropertyData}}* element);}
+\DoxyCodeLine{53         idref\_ptrs IDRefs(\mbox{\hyperlink{class_qualifier}{Qualifier}}* element);}
+\DoxyCodeLine{54         idref\_ptrs IDRefs(\mbox{\hyperlink{class_relationship}{Relationship}}* element);}
+\DoxyCodeLine{55         idref\_ptrs IDRefs(\mbox{\hyperlink{class_source}{Source}}* element);}
+\DoxyCodeLine{56         idref\_ptrs IDRefs(\mbox{\hyperlink{class_specification}{Specification}}* element);}
+\DoxyCodeLine{57         idref\_ptrs IDRefs(\mbox{\hyperlink{class_uncertainty}{Uncertainty}}* element);}
+\DoxyCodeLine{58         idref\_ptrs IDRefs(\mbox{\hyperlink{class_unit}{Unit}}* element);}
+\DoxyCodeLine{59         idref\_ptrs IDRefs(\mbox{\hyperlink{class_unitless}{Unitless}}* element);}
+\DoxyCodeLine{60         idref\_ptrs IDRefs(\mbox{\hyperlink{class_units}{Units}}* element);}
+\DoxyCodeLine{61         idref\_ptrs IDRefs(\mbox{\hyperlink{class_value}{Value}}* element);}
+\DoxyCodeLine{62         idref\_ptrs IDRefs(\mbox{\hyperlink{class_authority_details}{AuthorityDetails}}* element);}
+\DoxyCodeLine{63         idref\_ptrs IDRefs(\mbox{\hyperlink{class_data_source_details}{DataSourceDetails}}* element);}
+\DoxyCodeLine{64         idref\_ptrs IDRefs(\mbox{\hyperlink{class_measurement_technique_details}{MeasurementTechniqueDetails}}* element);}
+\DoxyCodeLine{65         idref\_ptrs IDRefs(\mbox{\hyperlink{class_parameter_details}{ParameterDetails}}* element);}
+\DoxyCodeLine{66         idref\_ptrs IDRefs(\mbox{\hyperlink{class_property_details}{PropertyDetails}}* element);}
+\DoxyCodeLine{67         idref\_ptrs IDRefs(\mbox{\hyperlink{class_source_details}{SourceDetails}}* element);}
+\DoxyCodeLine{68         idref\_ptrs IDRefs(\mbox{\hyperlink{class_specimen_details}{SpecimenDetails}}* element);}
+\DoxyCodeLine{69         idref\_ptrs IDRefs(\mbox{\hyperlink{class_test_condition_details}{TestConditionDetails}}* element);}
+\DoxyCodeLine{70         idref\_ptrs IDRefs(\mbox{\hyperlink{class_chemical_element_symbol}{ChemicalElementSymbol}}* element);}
+\DoxyCodeLine{71         idref\_ptrs IDRefs(\mbox{\hyperlink{class_currency_code}{CurrencyCode}}* element);}
+\DoxyCodeLine{72         idref\_ptrs IDRefs(\mbox{\hyperlink{class_mat_m_l___doc}{MatML\_Doc}}* element);}
+\DoxyCodeLine{73         idref\_ptrs IDRefs(\mbox{\hyperlink{class_parent_material}{ParentMaterial}}* element);}
+\DoxyCodeLine{74         idref\_ptrs IDRefs(\mbox{\hyperlink{class_symbol}{Symbol}}* element);}
+\DoxyCodeLine{75         idref\_ptrs IDRefs(\mbox{\hyperlink{class_graph}{Graph}}* element);}
+\DoxyCodeLine{76         idref\_ptrs IDRefs(\mbox{\hyperlink{class_data}{Data}}* element);}
+\DoxyCodeLine{77         idref\_ptrs IDRefs(\mbox{\hyperlink{class_data1}{Data1}}* element);}
+\DoxyCodeLine{78         idref\_ptrs IDRefs(\mbox{\hyperlink{classdelimiter}{delimiter}}* element);}
+\DoxyCodeLine{79         idref\_ptrs IDRefs(\mbox{\hyperlink{class_scale}{Scale}}* element);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         idref\_ptrs IDRefs(Definition* element);}
+\DoxyCodeLine{82         idref\_ptrs IDRefs(Abbreviation* element);}
+\DoxyCodeLine{83         idref\_ptrs IDRefs(Synonym* element);}
+\DoxyCodeLine{84         idref\_ptrs IDRefs(Shape* element);}
+\DoxyCodeLine{85         idref\_ptrs IDRefs(Dimensions* element);}
+\DoxyCodeLine{86         idref\_ptrs IDRefs(Orientation* element);}
+\DoxyCodeLine{87         idref\_ptrs IDRefs(Result* element);}
+\DoxyCodeLine{88         idref\_ptrs IDRefs(ParentSubClass* element);}
+\DoxyCodeLine{89         idref\_ptrs IDRefs(Description* element);}
+\DoxyCodeLine{90         idref\_ptrs IDRefs(Subclass* element);}
+\DoxyCodeLine{91         idref\_ptrs IDRefs(Subclass1* element);    }
+\DoxyCodeLine{92     \};}
+\DoxyCodeLine{93 \}\textcolor{comment}{//Namespace bellshire}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#include "{}BT\_MatML\_GatherIDRefs.inl"{}}}
+
+\end{DoxyCode}

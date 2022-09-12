@@ -17,10 +17,15 @@ Inheritance diagram for bellshire\+::ID\+\_\+\+GUI\+:\begin{figure}[H]
 \mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a07c6bab110b569502219a4b09097136b}\label{classbellshire_1_1_i_d___g_u_i_a07c6bab110b569502219a4b09097136b}} 
 virtual {\bfseries $\sim$\+ID\+\_\+\+GUI} ()
 \begin{DoxyCompactList}\small\item\em Destructor for the derived class \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a40c025d5825c96b97c19478aaedfbc4b}{Set\+Evt\+Handler\+Var}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
+void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a20cd5cabb7c9b85caf5972f0fe9e99b2}{Set\+Evt\+Handler\+Var}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl, \+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ Mat\+MLdoc)
 \begin{DoxyCompactList}\small\item\em Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_af94c0e8a33f4e4e1bde197f3ed5d7e28}{Set\+Mat\+MLTree\+Ctrl}} (\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&Mat\+MLTree\+Ctrl)
 \begin{DoxyCompactList}\small\item\em Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a2c05fc1b25f57ff309837eda59b1a56a}{Set\+Mat\+MLDoc}} (\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ \&Mat\+MLdoc)
+\begin{DoxyCompactList}\small\item\em Set the Event Handler Variable associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a0dbcb257420215838bf3f39c2f0ef7a1}\label{classbellshire_1_1_i_d___g_u_i_a0dbcb257420215838bf3f39c2f0ef7a1}} 
+void {\bfseries Swap\+IDRefs} (\mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $\ast$matmldoc, xml\+\_\+schema\+::idref \&oldid, xml\+\_\+schema\+::idref \&newid)
+\item 
 void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_aacac1a3b495e641747145f89661fca61}{On\+Generate\+Uuid\+Button}} (wx\+Command\+Event \&event)
 \begin{DoxyCompactList}\small\item\em Event Handler call Overwrites the base class calls \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_a9a986a2d283fb7def6df84082a507968}{On\+IDText\+Ctrl}} (wx\+Command\+Event \&event)
@@ -58,12 +63,21 @@ void {\bfseries Generate\+Uuid} (\mbox{\hyperlink{class_component_details}{Compo
 void {\bfseries Generate\+Uuid} (\mbox{\hyperlink{class_authority_details}{Authority\+Details}} $\ast$element)
 \item 
 \+::string \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i_ab72c43798efadd3d9c77c5f1e24015be}{Get\+UUIDLabel}} ()
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a968d9557109a35bdc0889a514d73e013}\label{classbellshire_1_1_i_d___g_u_i_a968d9557109a35bdc0889a514d73e013}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class $>$ }\\void {\bfseries Exchange\+IDRef\+With\+ID} (\+::boost\+::any any\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a32fef3f8da57a4223917d20976877404}\label{classbellshire_1_1_i_d___g_u_i_a32fef3f8da57a4223917d20976877404}} 
+{\footnotesize template$<$class Mat\+ML\+\_\+\+Class $>$ }\\void {\bfseries Exchange\+IDRef\+With\+Optional\+ID} (\+::boost\+::any any\+\_\+ptr)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a162a1e3db8aa86e6d1eb9d18896b489d}\label{classbellshire_1_1_i_d___g_u_i_a162a1e3db8aa86e6d1eb9d18896b489d}} 
 \mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$ {\bfseries m\+\_\+\+Mat\+MLTree\+Ctrl}
+\item 
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_aef962645afe1f2ec80d228dea912cb5e}\label{classbellshire_1_1_i_d___g_u_i_aef962645afe1f2ec80d228dea912cb5e}} 
+\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ {\bfseries m\+\_\+\+Mat\+MLDoc}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -139,15 +153,30 @@ Reimplemented from \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{bells
 
 Reimplemented from \mbox{\hyperlink{classbellshire_1_1_i_d___g_u_i___base}{bellshire\+::\+ID\+\_\+\+GUI\+\_\+\+Base}}.
 
-\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a40c025d5825c96b97c19478aaedfbc4b}\label{classbellshire_1_1_i_d___g_u_i_a40c025d5825c96b97c19478aaedfbc4b}} 
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a20cd5cabb7c9b85caf5972f0fe9e99b2}\label{classbellshire_1_1_i_d___g_u_i_a20cd5cabb7c9b85caf5972f0fe9e99b2}} 
 \index{bellshire::ID\_GUI@{bellshire::ID\_GUI}!SetEvtHandlerVar@{SetEvtHandlerVar}}
 \index{SetEvtHandlerVar@{SetEvtHandlerVar}!bellshire::ID\_GUI@{bellshire::ID\_GUI}}
 \doxysubsubsection{\texorpdfstring{SetEvtHandlerVar()}{SetEvtHandlerVar()}}
-{\footnotesize\ttfamily void ID\+\_\+\+GUI\+::\+Set\+Evt\+Handler\+Var (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ID\+\_\+\+GUI\+::\+Set\+Evt\+Handler\+Var (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbellshire_1_1_tree_ctrl_sorted}{Tree\+Ctrl\+Sorted}} $\ast$\&}]{Mat\+MLTree\+Ctrl,  }\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$}]{Mat\+MLDoc }\end{DoxyParamCaption})}
 
 
 
 Function used to set up this objects member variables which is used in the Event\+Handler\textquotesingle{}s functions. Required before using the derived class\textquotesingle{}s event handler functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mat\+MLTree\+Ctrl} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbellshire_1_1_i_d___g_u_i_a2c05fc1b25f57ff309837eda59b1a56a}\label{classbellshire_1_1_i_d___g_u_i_a2c05fc1b25f57ff309837eda59b1a56a}} 
+\index{bellshire::ID\_GUI@{bellshire::ID\_GUI}!SetMatMLDoc@{SetMatMLDoc}}
+\index{SetMatMLDoc@{SetMatMLDoc}!bellshire::ID\_GUI@{bellshire::ID\_GUI}}
+\doxysubsubsection{\texorpdfstring{SetMatMLDoc()}{SetMatMLDoc()}}
+{\footnotesize\ttfamily void ID\+\_\+\+GUI\+::\+Set\+Mat\+MLDoc (\begin{DoxyParamCaption}\item[{\+::boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_mat_m_l___doc}{Mat\+ML\+\_\+\+Doc}} $>$ \&}]{Mat\+MLDoc }\end{DoxyParamCaption})}
+
+
+
+Set the Event Handler Variable associated with the Mat\+ML wx\+Tree\+Ctrl Required before using the derived class\textquotesingle{}s event handler functions. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -174,4 +203,5 @@ Set the Event Handler associated with the Mat\+ML wx\+Tree\+Ctrl Required before
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+ID\+\_\+\+GUI.\+h\item 
+C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/include/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+ID\+\_\+\+GUI.\+inl\item 
 C\+:/\+Users/paulm/source/repos/\+BT-\/\+Mat\+ML-\/\+Editor/src/\+GUI/BT\+\_\+\+Mat\+ML\+\_\+\+ID\+\_\+\+GUI.\+cpp\end{DoxyCompactItemize}

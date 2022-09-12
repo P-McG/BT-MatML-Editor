@@ -24,7 +24,9 @@ BT-MatML-Editor Usage
 
  Once running click on 'File->Open', or 'File->New', to start. 
 
- The general approach to the program is to use the Tree Control user interface to navigate through the MatML data elements. The tree on the left side is the main navigation aid. Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The MatML Schema Information will show up on the right panel. The tabs for the right panel will display either the MatML Schema Information (default) or the MatML data itself (can be changed in 'Edit->Preferences').
+ The general approach to the program is to use the Tree Control user interface to navigate through the MatML data elements. The tree on the left side is the main navigation aid (1). Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The MatML Schema Information will show up on the right panel (2). The tabs for the right panel (3) will display either the MatML Schema Information (default) or the MatML data itself (can be changed in 'Edit->Preferences').
+
+ ![BT-MatML-Editor](../../images/BT-MatML-Editor-Application-1.png)
 
  While the BT-MatML-Editor is not a database, and not optimized for extremely large files, it can handle multimaterial files. These larger files are more manageable using the following tools.
 

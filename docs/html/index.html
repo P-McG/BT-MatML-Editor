@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="BT-MatML-Editor-55px.png"/></td>
   <td id="projectalign">
-   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.3</span>
+   <div id="projectname">BT-MatML-Editor<span id="projectnumber">&#160;0.1.4</span>
    </div>
    <div id="projectbrief">Editor for the MatML 3.1 XML Schema</div>
   </td>
@@ -77,7 +77,8 @@ Binary Downloads</h1>
 BT-MatML-Editor Usage</h1>
 <p >To run the program, click on the BT-MatML-Editor application.</p>
 <p >Once running click on 'File-&gt;Open', or 'File-&gt;New', to start.</p>
-<p >The general approach to the program is to use the Tree Control user interface to navigate through the MatML data elements. The tree on the left side is the main navigation aid. Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The MatML Schema Information will show up on the right panel. The tabs for the right panel will display either the MatML Schema Information (default) or the MatML data itself (can be changed in 'Edit-&gt;Preferences').</p>
+<p >The general approach to the program is to use the Tree Control user interface to navigate through the MatML data elements. The tree on the left side is the main navigation aid (1). Mouse click on the elements of the tree and then left mouse click to get more options, such as to add more data elements to the Tree Control. The MatML Schema Information will show up on the right panel (2). The tabs for the right panel (3) will display either the MatML Schema Information (default) or the MatML data itself (can be changed in 'Edit-&gt;Preferences').</p>
+<p ><img src="../../images/BT-MatML-Editor-Application-1.png" alt="BT-MatML-Editor" class="inline"/></p>
 <p >While the BT-MatML-Editor is not a database, and not optimized for extremely large files, it can handle multimaterial files. These larger files are more manageable using the following tools.</p>
 <p >Sorting the view of the materials. In 'Edit-&gt;Preferences-&gt;Sort class', it is possible to add sort classes. This option will changed the view (not the xml file) of the materials. Adding "STEEL" for an example, will display the Materials with the class name of "STEEL" first. Then the remainding materials will be displayed in the order the are in inside the XML file. Once set, 'view-&gt;perform material sort' will change the view order of the materials.</p>
 <p >One other option for viewing larger files is the use of 'view-&gt;Isolate material branch'. This will isolate materials which are interconnected with ' <a class="el" href="class_material.html">Material</a> -&gt; <a class="el" href="class_component_details.html">ComponentDetails</a> -&gt; <a class="el" href="class_class.html">Class</a> -&gt; <a class="el" href="class_parent_material.html">ParentMaterial</a> ' associations. To exit this view, 'View-&gt;Exit Isolate material branch' will bring back the original list of materials.</p>
@@ -100,7 +101,7 @@ BT-MatML-Editor Windows Build</h2>
 </ul>
 <p >Set the "Where to build the binaries" directory to the BT-MatML-Editor root/build</p><ul>
 <li>Add the following entries (change paths depending on your installation):<ul>
-<li>CMAKE_BUILD_TYPE STREQUAL "Release"</li>
+<li>CMAKE_BUILD_TYPE "Release"</li>
 <li>XercesC_ROOT PATH "C:/Program Files/xerces-c"</li>
 <li>XSD_ROOT PATH "C:/Program Files/code_synthesis_xsd/xsd-4.0.0-i686-windows/bin"</li>
 <li>wxWidgets_ROOT PATH "C:/Program Files/wxWidgets/wxWidgets-3.2.0"</li>
