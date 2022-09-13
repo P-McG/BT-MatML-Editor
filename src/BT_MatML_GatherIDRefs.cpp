@@ -218,13 +218,23 @@ GatherIDRefs::idref_ptrs bellshire::GatherIDRefs::IDRefs(Formula* element) {
 GatherIDRefs::idref_ptrs bellshire::GatherIDRefs::IDRefs(Geometry* element) {
     GatherIDRefs::idref_ptrs rtn;
 
-    if (element->Dimensions().present())
-        for (auto i : IDRefs(&Dimensions(&element->Dimensions().get()))) rtn.push_back(i);
+    if (element->Dimensions().present()) {
+        Geometry::Dimensions_type* tmp(&element->Dimensions().get());
+        Dimensions tmp2(tmp);
+        for (auto i : IDRefs(&tmp2)) rtn.push_back(i);
+    }
 
-    if (element->Orientation().present())
-        for (auto i : IDRefs(&Orientation(&element->Orientation().get()))) rtn.push_back(i);
+    if (element->Orientation().present()) {
+        Geometry::Orientation_type* tmp(&element->Orientation().get());
+        Orientation tmp2(tmp);
+        for (auto i : IDRefs(&tmp2)) rtn.push_back(i);
+    }
 
-    for (auto i : IDRefs(&Shape(&element->Shape()))) rtn.push_back(i);
+    {
+        Geometry::Shape_type* tmp(& element->Shape());
+        Shape tmp2(tmp);
+        for (auto i : IDRefs(&tmp2)) rtn.push_back(i);
+    }
 
     if (element->Notes().present())
         for (auto i : IDRefs(&element->Notes().get())) rtn.push_back(i);
@@ -245,7 +255,11 @@ GatherIDRefs::idref_ptrs bellshire::GatherIDRefs::IDRefs(GlossaryTerm* element) 
 
     for (auto i : Sequence_IDRefs_Strongtype<GlossaryTerm::Abbreviation_sequence, Abbreviation>(element->Abbreviation())) rtn.push_back(i);
 
-    for (auto i : IDRefs(&Definition(&element->Definition()))) rtn.push_back(i);
+    {
+        GlossaryTerm::Definition_type& tmp(element->Definition());
+        Definition tmp2(&tmp);
+        for (auto i : IDRefs(&tmp2)) rtn.push_back(i);
+    }
 
     for (auto i : Sequence_IDRefs_Strongtype<GlossaryTerm::Synonym_sequence, Synonym>(element->Synonym())) rtn.push_back(i);
 
@@ -354,8 +368,11 @@ GatherIDRefs::idref_ptrs bellshire::GatherIDRefs::IDRefs(ProcessingDetails* elem
 
     for (auto i : IDRefs(&element->Name())) rtn.push_back(i);
 
-    if (element->Result().present())
-        for (auto i : IDRefs(&Result(&element->Result().get()))) rtn.push_back(i);
+    if (element->Result().present()) {
+        ProcessingDetails::Result_type& tmp(element->Result().get());
+        Result tmp2(&tmp);
+        for (auto i : IDRefs(&tmp2)) rtn.push_back(i);
+    }
 
     for (auto i : Sequence_IDRefs(element->ParameterValue())) rtn.push_back(i);
 

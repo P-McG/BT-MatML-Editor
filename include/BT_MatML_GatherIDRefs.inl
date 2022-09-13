@@ -36,9 +36,10 @@ bellshire::GatherIDRefs::idref_ptrs bellshire::GatherIDRefs::Sequence_IDRefs_Str
 
     //Loop through all the elements within the sequence.
     if (!cont.empty())
-        for (auto& matml_class : cont)
-            for (idref_ptr  i : IDRefs(&strongtype_type(&matml_class)))
+        for (auto& matml_class : cont) {
+            strongtype_type tmp(&matml_class);
+            for (idref_ptr i : IDRefs(&tmp))
                 rtn.push_back(i);
-
+        }
     return rtn;
 }

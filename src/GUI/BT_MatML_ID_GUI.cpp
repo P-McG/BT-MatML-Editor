@@ -268,7 +268,7 @@ void ID_GUI::SwapIDRefs(MatML_Doc* matmldoc, xml_schema::idref& oldid, xml_schem
 {
 	if (!oldid.empty()) {
 		GatherIDRefs gatheridrefs;
-		auto& cont(gatheridrefs.IDRefs(matmldoc));
+		GatherIDRefs::idref_ptrs cont(gatheridrefs.IDRefs(matmldoc));
 		for (auto i : cont) {
 			if (*i == oldid) {
 				*i = xml_schema::idref(newid);
