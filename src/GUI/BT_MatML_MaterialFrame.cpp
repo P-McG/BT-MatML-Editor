@@ -2138,25 +2138,57 @@ void bellshire::MaterialFrame::LoadFile()
 
       // TODO: Implement OnOpenSel
       wxString CurrentDocPath("");
-      preferenceframe->config->Read(wxT("/General/CurrentDocPath"), &CurrentDocPath);
+      if (preferenceframe->config->Read(wxT("/General/CurrentDocPath"), &CurrentDocPath)) {
 
-      using namespace xml_schema;
+          ::string File(_wx2std(CurrentDocPath));
 
-      //const char* File(m_CurrentDocPath.mb_str());
-      ::string File(_wx2std(CurrentDocPath));
+          ::auto_ptr< ::MatML_Doc > tmp0 = MatML_Doc_(File);// note you will get a parsing error if the *.xsd file is not with the *.xml file 
 
-      ::auto_ptr< ::MatML_Doc > tmp0 = MatML_Doc_(File);// note you will get a parsing error if the *.xsd file is not with the *.xml file 
+          ::auto_ptr< ::MatML_Doc > temp(tmp0);
+          auto tmp = temp.release();
+          doc.reset(tmp);
 
-      ::auto_ptr< ::MatML_Doc > temp(tmp0);
-       auto tmp=temp.release();
-      doc.reset(tmp);
-
-      MatML_Doc_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, *doc);//Set up the MatML elements to the wxTreeCtrl.
-      m_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl, doc);//Set the Event Handler's Variables for the MatML_GUIs.
+          MatML_Doc_GUI::SetupMatMLTreeCtrl(m_MatMLTreeCtrl, *doc);//Set up the MatML elements to the wxTreeCtrl.
+          m_GUI->SetEvtHandlerVar(m_MatMLTreeCtrl, doc);//Set the Event Handler's Variables for the MatML_GUIs.
+      }
   }
+  //catch (const xml_schema::no_element_info& e)
+  //{
+  //    // This exception indicates that we tried to parse or serialize
+  //    // an unknown element.
+  //    //
+  //    cerr << "unknown request: " << e.element_namespace() << "#" <<
+  //        e.element_name() << endl;
+  //    r = 1;
+  //}
+  //catch (const xml_schema::exception& e)
+  //{
+  //    cerr << e << endl;
+  //    r = 1;
+  //}
+  //catch (const std::ios_base::failure&)
+  //{
+  //    cerr << argv[1] << ": unable to open or read failure" << endl;
+  //    r = 1;
+  //}
   catch (const xml_schema::parsing& e)
   { 
-      ::string msg(e.what()); msg.append("\n\n Note: Common problems with parsing \n1) *.xml file is not in the same directory as the *.xsd file. \n2) *.xml file has xmlns:xsi entry different than the *.xsd file \n3) xs:IDs cannot have \":\" characters anywhere in the name and cannot\n have a digit as the first character of the ID");
+
+      ::string msg;
+      
+      msg.append(e.what());
+
+      for (auto diag : e.diagnostics()) {
+          msg.append("\n");
+          msg.append("Line: ");
+          msg.append(to_string(diag.line()) + "\n");
+          msg.append("column: ");
+          msg.append(to_string(diag.column()) + "\n");
+          msg.append("Message: ");
+          msg.append(diag.message() + "\n");
+      }
+
+      msg.append("\n\n Note: Common problems with parsing \n1) *.xml file is not in the same directory as the *.xsd file. \n2) *.xml file has xmlns:xsi entry different than the *.xsd file \n3) xs:IDs cannot have \":\" characters anywhere in the name and cannot\n have a digit as the first character of the ID");
       wxMessageDialog OpenDialog(this, msg, _("MatML Message"), wxOK, wxDefaultPosition);
       OpenDialog.ShowModal();
   }
