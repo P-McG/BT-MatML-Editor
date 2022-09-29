@@ -77,7 +77,9 @@ bool bellshire::MaterialFrame::reEstabilishTreeCtrlSizer()
      fgSizer->AddGrowableRow( 0 );
      fgSizer->SetFlexibleDirection( wxBOTH );
      fgSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_ALL );
+
      fgSizer->Add( m_MatMLTreeCtrl, 1, wxEXPAND, 0 );/*! Add member wxTreeCtrl to sizer*/
+
      m_panel68->SetSizer( fgSizer );/*! Set main member panel sizer*/
      m_panel68->Layout();
      m_MatMLTreeCtrl->SetSize(m_MatMLTreeCtrl->GetClientSize());/*! Set member wxTreeCtrl size*/

@@ -57,10 +57,13 @@ namespace bellshire {
         wxNotebook* get() { return m_GUI; };
 
         void Update( Unit* element);
+        static wxString GetTreeLabel(Unit& Element);
         static wxTreeItemId  SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl,
             const wxTreeItemId& ParentId, 
             Unit& Element, 
-            const wxTreeItemId& PreviousId
+            const wxTreeItemId& PreviousId,
+            bool Recursive=true,
+            bool ChildRecursive=true
         );
 
         void SetConnect();

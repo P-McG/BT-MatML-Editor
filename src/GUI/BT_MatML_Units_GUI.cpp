@@ -2,6 +2,13 @@
 #include "BT_MatML_Units_GUI.h"
 #include "BT_MatML_Unit_GUI.h"
 #include "BT_MatML_Default.h"
+#include "BT_MatML_MatMLDropSource.h"
+
+#include <wx/dnd.h>
+#include <wx/treectrl.h>
+#include <wx/gdicmn.h>
+#include <wx/dataobj.h>
+
 
 using namespace bellshire;
 
@@ -11,7 +18,11 @@ Units_GUI_Base::Units_GUI_Base()
 	m_UnitsFactorTextCtrl(nullptr),
 	m_UnitsNameTextCtrl(nullptr),
 	m_UnitsDescriptionTextCtrl(nullptr),
-	m_AutoInsertBaseUnitsButton(nullptr)
+	m_AutoInsertBaseUnitsButton(nullptr),
+	m_MatMLLibTreeCtrl(nullptr),
+	m_dataformat(nullptr),
+	m_dropdata(nullptr),
+	m_dragSource(nullptr)
 {
 
 }
@@ -22,13 +33,19 @@ Units_GUI_Base::Units_GUI_Base(wxWindow* parent)
 	m_UnitsFactorTextCtrl(nullptr),
 	m_UnitsNameTextCtrl(nullptr),
 	m_UnitsDescriptionTextCtrl(nullptr),
-	m_AutoInsertBaseUnitsButton(nullptr)
+	m_AutoInsertBaseUnitsButton(nullptr),
+	m_MatMLLibTreeCtrl(nullptr),
+	m_dataformat(nullptr),
+	m_dropdata(nullptr),
+	m_dragSource(nullptr)
 {
 	m_GUI = Create(parent,
 		m_UnitsSystemTextCtrl,
 		m_UnitsFactorTextCtrl,
 		m_UnitsNameTextCtrl,
-		m_UnitsDescriptionTextCtrl);
+		m_UnitsDescriptionTextCtrl,
+		m_MatMLLibTreeCtrl
+	);
 }
 
 Units_GUI_Base::~Units_GUI_Base() {
@@ -58,11 +75,16 @@ wxNotebook* Units_GUI_Base::Create(wxWindow* parent,
 	wxTextCtrl*& UnitsSystemTextCtrl, 
 	wxTextCtrl*& UnitsFactorTextCtrl, 
 	wxTextCtrl*& UnitsNameTextCtrl, 
-	wxTextCtrl*& UnitsDescriptionTextCtrl)
+	wxTextCtrl*& UnitsDescriptionTextCtrl,
+	TreeCtrlSorted*& MatMLLibTreeCtrl
+)
 {
 
 	wxNotebook* UnitsNotebook = new wxNotebook(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0);
 	UnitsNotebook->Hide();
+
+	// Units Panel
+	// ===========
 
 	wxScrolledWindow* UnitsPanel = new wxScrolledWindow(UnitsNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL | wxVSCROLL);
 	UnitsPanel->SetScrollRate(5, 5);
@@ -119,15 +141,42 @@ wxNotebook* Units_GUI_Base::Create(wxWindow* parent,
 	UnitsPanel->Layout();
 	fgSizer26->Fit(UnitsPanel);
 
+	//MatML Info Panel
+	//================
+
 	MatMLInfo_GUI matMLInfo_GUI(UnitsNotebook,
 		wxT("*********** Units *************************\n\nThis element declares the content model for Units, which contains units\nand has four optional attributes.\n\nThe first attribute, system, is used to indicate the units system, such as\n\"SI.\"\n\nThe second attribute, factor, is used to indicate a constant multiplier in\nfloating point format.\n\nThe third attribute, name, is used to indicate the name of the units\n\nThe fourth attribute, description, is used to describe the units.\n\nUnits is composed of the following elements.\n\nUnit contains a unit and *MUST* occur one or more times within the Units\nelement. For additional information, see the documentation for the Unit\nelement.\n\nBase Unit\n\nUnit conversins are done using \nGnu Units [ http://www.gnu.org/software/units/ ]\nso it is recomended the unit entered here\nbe in the form supported by that system.\n\nIf \"Auto Insert Base Units\" function was uses \nthe units inserted in \"Unit\" will be one of the\nthe primitive base units defined in Gnu Units \ndefinition files. The default setting will likely\nprovide a SI base unit.\n\nFactor\n\n\n\n\n")
 	);
 
-	bool b, b_dflt(false);//temps
+	// UnitsLibPanel
+	// =============
+
+	wxScrolledWindow* UnitsLibPanel = new wxScrolledWindow(UnitsNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL | wxVSCROLL);
+	UnitsLibPanel->SetScrollRate(5, 5);
+
+	wxBoxSizer* bxSizer=new wxBoxSizer(wxVERTICAL);
+
+	wxStaticText* staticText3 = new wxStaticText(UnitsLibPanel, wxID_ANY, wxT("Library of MatML elements. \nPlease drag and drop children into the MatML Tree"), wxDefaultPosition, wxDefaultSize, 0);
+	staticText3->Wrap(-1);
+	bxSizer->Add(staticText3, 0, wxALL, 5);
+
+	MatMLLibTreeCtrl = new TreeCtrlSorted(UnitsLibPanel, wxID_ANY, wxDefaultPosition, wxSize(-1, -1), wxTR_HAS_BUTTONS | wxTR_HAS_VARIABLE_ROW_HEIGHT | wxTR_LINES_AT_ROOT | wxTR_SINGLE | wxTR_TWIST_BUTTONS | wxALWAYS_SHOW_SB | wxCLIP_CHILDREN | wxFULL_REPAINT_ON_RESIZE | wxNO_BORDER | wxTAB_TRAVERSAL | wxVSCROLL);
+	MatMLLibTreeCtrl->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial")));
+	MatMLLibTreeCtrl->SetMinSize(wxSize(100, 500));
+
+	bxSizer->Add(MatMLLibTreeCtrl, 1, wxEXPAND, 0);
+
+	UnitsLibPanel->SetSizer(bxSizer);
+	UnitsLibPanel->Layout();
+	bxSizer->Fit(UnitsLibPanel);
+
+
+	bool b_dflt(false);//temps
 	wxConfig(wxT("BTMatML")).Read(wxT("/General/MatMLDataSelection"), &b_dflt);
 
 	UnitsNotebook->AddPage(UnitsPanel, wxT("MatML Data."), b_dflt);
 	UnitsNotebook->AddPage(matMLInfo_GUI.get(), wxT("MatML Info."), !b_dflt);
+	UnitsNotebook->AddPage(UnitsLibPanel, wxT("MatML Lib."), false);
 
 	return UnitsNotebook;
 }
@@ -164,9 +213,35 @@ void Units_GUI_Base::Update( Units* element)
 		m_UnitsDescriptionTextCtrl->ChangeValue(str);
 	}
 
+	// Build some test units
+	Units* units(new Default<Units>());
+
+	m_MatMLLibTreeCtrl->DeleteAllItems();
+	SetupMatMLTreeCtrl(m_MatMLLibTreeCtrl, m_MatMLLibTreeCtrl->GetRootItem(), *units/*[<-THIS NEEDS CHANGED TO LIB DATA SOURCE] */ , NULL, true, false);
+	m_MatMLLibTreeCtrl->ExpandAll();
+
+	//test code starts
+	//wxTreeItemId itemId = m_MatMLLibTreeCtrl->GetSelection();
+	wxTreeItemIdValue cookie;
+	wxTreeItemId child = m_MatMLLibTreeCtrl->GetFirstChild(m_MatMLLibTreeCtrl->GetRootItem(), cookie);
+
+	wxTreeItemData* treeitemdata(m_MatMLLibTreeCtrl->GetItemData(child));
+	MatMLTreeItemData* item = (MatMLTreeItemData*)(treeitemdata);
+	//test code ends
+
 	Show(true);
 }
 
+wxString Units_GUI_Base::GetTreeLabel(Units& Element)
+{
+	wxString str;
+	str << wxT("Units");
+	if (Element.name().present()) {
+		str << "-" << _std2wx(Element.name().get());
+	}
+
+	return str;
+}
 
 /// <summary>
 /// This set-up the Parent MatML Data into a wxTreeCtrl element and then call on the Children to do the same.
@@ -177,18 +252,21 @@ void Units_GUI_Base::Update( Units* element)
 wxTreeItemId Units_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl,
 	const wxTreeItemId& ParentId,
 	Units& Element,
-	const wxTreeItemId& PreviousId
+	const wxTreeItemId& PreviousId,
+	bool Recursive,
+	bool ChildRecursive
 )
 {
-	wxString str;
-	str << wxT("Units");
+	wxString str(GetTreeLabel(Element));
+
+	MatMLTreeItemData* data(new MatMLTreeItemData(&Element));
 
 	wxTreeItemId CurrentId;
 
 	if (PreviousId.IsOk())
-		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, str, -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, str, -1, -1, data);
 	else
-		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, str, -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, str, -1, -1, data);
 
 	//MatML Attributes
 	//system
@@ -196,15 +274,16 @@ wxTreeItemId Units_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl,
 	//name
 	//description
 
-	//Setup Elements Units
-	{
-		Units::Unit_sequence& cont(Element.Unit());
-		Units::Unit_iterator iter(cont.begin());
-		if (!cont.empty())
-			for (; iter != cont.end(); ++iter)
-				Unit_GUI::SetupMatMLTreeCtrl(MatMLTreeCtrl, CurrentId, *iter, wxTreeItemId());
+	if (Recursive) {
+		//Setup Elements Units
+		{
+			Units::Unit_sequence& cont(Element.Unit());
+			Units::Unit_iterator iter(cont.begin());
+			if (!cont.empty())
+				for (; iter != cont.end(); ++iter)
+					Unit_GUI::SetupMatMLTreeCtrl(MatMLTreeCtrl, CurrentId, *iter, wxTreeItemId(), ChildRecursive, ChildRecursive);
+		}
 	}
-
 	return CurrentId;
 }
 
@@ -220,6 +299,10 @@ void Units_GUI_Base::SetConnect()
 	m_UnitsNameTextCtrl->Connect(wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler(Units_GUI_Base::OnUnitsNameTextCtrl), NULL, this);
 	m_UnitsDescriptionTextCtrl->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(Units_GUI_Base::OnUnitsDescriptionTextCtrl), NULL, this);
 	m_UnitsDescriptionTextCtrl->Connect(wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler(Units_GUI_Base::OnUnitsDescriptionTextCtrl), NULL, this);
+	//m_MatMLLibTreeCtrl->Connect(wxEVT_TREE_BEGIN_DRAG, wxTreeEventHandler(Units_GUI_Base::OnBeginDrag), NULL, this);/*! Connection of the wxTreeCtrl event handler to fn OnElementActivated*/
+	//m_MatMLLibTreeCtrl->Connect(wxEVT_TREE_END_DRAG, wxTreeEventHandler(Units_GUI_Base::OnEndDrag), NULL, this);/*! Connection of the wxTreeCtrl event handler to fn OnElementActivated*/
+	m_MatMLLibTreeCtrl->Connect(wxEVT_TREE_BEGIN_DRAG, wxTreeEventHandler(Units_GUI_Base::OnLeftDown), NULL, this);/*! Connection of the wxTreeCtrl event handler to fn OnElementActivated*/
+
 }
 
 
@@ -247,6 +330,9 @@ Units_GUI::Units_GUI(wxWindow* parent)
 /// </summary>
 Units_GUI::~Units_GUI() {
 	/*parent will distroy Ctrl or window */
+	delete m_dataformat;
+	delete m_dropdata;
+	delete m_dragSource;
 }
 
 /// <summary>
@@ -370,3 +456,44 @@ void Units_GUI::OnInsertUnit(wxCommandEvent& event) { ON_PARENT_INSERT_ITER_CONT
 void Units_GUI::OnDeleteUnit(wxCommandEvent& event) {ON_PARENT_DELETE_ITER_CONT_CHILD(Units, Unit)}
 
 void Units_GUI::OnPasteUnit(wxCommandEvent& event) { ON_PARENT_PASTE_ITER_CONT_CHILD(Units, Unit) }
+
+void Units_GUI::OnLeftDown(wxTreeEvent& event)
+{
+
+	//Get the item from the current event.
+	wxTreeItemId itemId = event.GetItem();
+
+	if (itemId.IsOk()) {
+
+		wxTreeItemData* treeitemdata(m_MatMLLibTreeCtrl->GetItemData(itemId));
+		MatMLTreeItemData* item = (MatMLTreeItemData*)(treeitemdata);
+
+		try {
+			Unit* unit = boost::any_cast<Unit*>(item->GetAnyMatMLDataPointer());
+
+			m_dndmatmldata = new DnDUnitMatMLData(unit);
+
+			DnDMatMLDataObject matmldata(m_dndmatmldata);
+			m_dragSource = new MatMLDropSource(m_GUI);
+			m_dragSource->SetData(matmldata);
+
+			wxDragResult result = m_dragSource->DoDragDrop();
+
+			switch (result)
+			{
+			case wxDragCopy:
+				// copy the data
+				break;
+			case wxDragMove:
+				// move the data
+				break;
+			default:
+				// do nothing
+				break;
+			}
+		}
+		catch (...) {}
+
+	//LogDragResult(dragSource.DoDragDrop());
+	}
+}

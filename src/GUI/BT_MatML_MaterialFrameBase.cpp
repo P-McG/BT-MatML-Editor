@@ -21,7 +21,12 @@ using namespace bellshire;
 /// MatML Data and Info, then connects the Event Handler Functions.
 /// </summary>
 MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) 
-	: wxFrame( parent, id, title, pos, size, style )
+	: wxFrame( parent, id, title, pos, size, style ), 
+	m_GUI(nullptr)/*,*/
+	//m_dataformat(nullptr), 
+	//m_dropdata(nullptr),
+	//m_droptarget(nullptr),
+	//unit_dnd_buf(nullptr)
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	
@@ -110,6 +115,9 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 	
 	m_panel68 = new wxPanel( m_splitter1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL|wxVSCROLL );
 	m_panel68->SetMinSize( wxSize( 100,500 ) );
+
+
+
 	
 	wxFlexGridSizer* fgSizer125 = new wxFlexGridSizer( 2, 2, 0, 0 );
 	fgSizer125->AddGrowableCol( 0 );
@@ -122,6 +130,14 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 	m_MatMLTreeCtrl->SetMinSize( wxSize( 100,500 ) );
 	
 	fgSizer125->Add( m_MatMLTreeCtrl, 1, wxEXPAND, 0 );
+
+	//Set up dnd target
+
+    wxDataFormat dataformat(ShapeFormatId());
+	m_dndmatmldata=new DnDUnitMatMLData(new Unit);	
+	MatMLDropTarget* droptarget(new MatMLDropTarget(m_MatMLTreeCtrl, m_dndmatmldata));
+
+	m_MatMLTreeCtrl->SetDropTarget(droptarget);
 	
 	m_panel68->SetSizer( fgSizer125 );
 	m_panel68->Layout();
@@ -166,6 +182,11 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 MaterialFrameBase::~MaterialFrameBase()
 {
 	delete m_GUI;
+
+	//delete m_dataformat;
+	//delete m_dropdata;
+	//delete m_droptarget;
+	//delete unit_dnd_buf;
 }
 
 void MaterialFrameBase::SetMenuConnect() 
@@ -199,4 +220,3 @@ void MaterialFrameBase::SetTreeCtrlConnect()
 	m_MatMLTreeCtrl->Connect(wxEVT_COMMAND_TREE_SEL_CHANGED, wxTreeEventHandler(MaterialFrameBase::OnElementActivated), NULL, this);
 	
 }
-

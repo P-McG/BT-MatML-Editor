@@ -184,6 +184,21 @@ void Unit_GUI_Base::Update( Unit* element)
 	Show(true);
 }
 
+wxString Unit_GUI_Base::GetTreeLabel(Unit& Element)
+{
+	wxString str;
+
+	str << wxT("Unit");
+
+	if(Element.Name().present())
+		str << "-" << _std2wx(Element.Name().get());
+
+	if(Element.Currency().present())
+		str << "-" << _std2wx(Element.Currency().get());
+
+	return str;
+}
+
 /// <summary>
 /// This set-up the Parent MatML Data into a wxTreeCtrl element and then call on the Children to do the same.
 /// </summary>
@@ -193,27 +208,32 @@ void Unit_GUI_Base::Update( Unit* element)
 wxTreeItemId  Unit_GUI_Base::SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl, 
 	const wxTreeItemId& ParentId, 
 	Unit& Element, 
-	const wxTreeItemId& PreviousId
+	const wxTreeItemId& PreviousId,
+	bool Recursive,
+	bool ChildRecursive
 )
 {
-	wxString str;
-	str << wxT("Unit");
+	wxString str(GetTreeLabel(Element));
+
+	MatMLTreeItemData* data(new MatMLTreeItemData(&Element));
 
 	wxTreeItemId CurrentId;
 
 	if (PreviousId.IsOk())
-		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, str, -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->InsertItem(ParentId, PreviousId, str, -1, -1, data);
 	else
-		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, str, -1, -1, new MatMLTreeItemData(&Element));
+		CurrentId = MatMLTreeCtrl->AppendItem(ParentId, str, -1, -1, data);
 
 	//MatML Attributes
 	//Power
 	//Discription
 
-	//The following are treated as MatML Attributes due to casting (e.g. reinterpret_cast) from
-	// one cardinality to _optional cardinality not working properly (Authority portion is miscast)
-	//Name
-	//Currency 
+	if (Recursive) {
+		//The following are treated as MatML Attributes due to casting (e.g. reinterpret_cast) from
+		// one cardinality to _optional cardinality not working properly (Authority portion is miscast)
+		//Name
+		//Currency 
+	}
 
 	return  CurrentId;
 }

@@ -172,13 +172,13 @@ if (element) {\
         }
 
         template<class MatML_Class>
-        MatML_Class* GetSelMatML(TreeCtrlSorted* MatMLTreeCtrl);
+        static MatML_Class*GetSelMatML(TreeCtrlSorted* MatMLTreeCtrl);
 
         template<class MatML_Class>
         MatML_Class* GetSelParentMatML(TreeCtrlSorted* MatMLTreeCtrl);
 
         template<typename MatML_ParentClass, typename GUI_ParentClass>
-        void SetupSel(TreeCtrlSorted* MatMLTreeCtrl);
+        void static SetupSel(TreeCtrlSorted* MatMLTreeCtrl);
 
         template<typename MatML_ParentClass, typename GUI_ParentClass>
         void SetupStrongTypeSel(TreeCtrlSorted* MatMLTreeCtrl);

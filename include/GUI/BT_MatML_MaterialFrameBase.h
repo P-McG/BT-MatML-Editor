@@ -57,9 +57,13 @@
 #include <wx/listctrl.h>
 #include <wx/checklst.h>
 #include "wx/dcsvg.h"
+#include <wx/dnd.h>
+#include <wx/dataobj.h>
  
 #include "BT_MatML_GUI.h"
 #include "PreferenceFrameBase.h"
+#include "BT_MatML_MatMLDataObject.h"
+#include "BT_MatML_MatMLDropTarget.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -119,7 +123,12 @@ namespace bellshire
 		wxStaticBitmap* m_logobitmap;
 		wxStaticText* m_IntroStaticText;
 
+		//wxDataFormat* m_dataformat;
+		//MatMLDataObjectSimple* m_dropdata;
+		//MatMLDropTarget* m_droptarget;
+		//Unit* unit_dnd_buf;
 
+		DnDMatMLData* m_dndmatmldata;
 
 		GUI* m_GUI;/*!< MatML GUIs Classes*/
 
@@ -163,7 +172,9 @@ namespace bellshire
 			m_splitter1->SetSashPosition(200);
 			m_splitter1->Disconnect(wxEVT_IDLE, wxIdleEventHandler(MaterialFrameBase::m_splitter1OnIdle), NULL, this);
 		}
+
 	};
+
 
 }; // namespace bellshire
 

@@ -33,6 +33,8 @@
 #include "BT_MatML_GUI.h"
 #include "BT_MatML_MatMLTreeItemData.h"
 #include "BT_MatML_TreeCtrlSorted.h"
+#include "BT_MatML_MatMLDropSource.h"
+#include "BT_MatML_MatMLDataObject.h"
 
 
 
@@ -47,10 +49,22 @@ namespace bellshire {
         wxTextCtrl* m_UnitsNameTextCtrl;
         wxButton* m_AutoInsertBaseUnitsButton;
         wxTextCtrl* m_UnitsDescriptionTextCtrl;
+        TreeCtrlSorted* m_MatMLLibTreeCtrl;
+
+        wxDataFormat* m_dataformat;
+        DnDMatMLDataObject* m_dropdata;
+        MatMLDropSource* m_dragSource;
+        DnDMatMLData* m_dndmatmldata;
 
         Units_GUI_Base();
         Units_GUI_Base(wxWindow* parent);
-        static wxNotebook* Create(wxWindow* parent, wxTextCtrl*& UnitsSystemTextCtrl, wxTextCtrl*& UnitsFactorTextCtrl, wxTextCtrl*& UnitsNameTextCtrl, wxTextCtrl*& UnitsDescriptionTextCtrl);
+        static wxNotebook* Create(wxWindow* parent, 
+            wxTextCtrl*& UnitsSystemTextCtrl,
+            wxTextCtrl*& UnitsFactorTextCtrl, 
+            wxTextCtrl*& UnitsNameTextCtrl, 
+            wxTextCtrl*& UnitsDescriptionTextCtrl,
+            TreeCtrlSorted*& MatMLLibTreeCtrl
+        );
         virtual ~Units_GUI_Base();
 
         void Show(bool show = true) { if (m_GUI != nullptr) m_GUI->Show(show); };
@@ -58,10 +72,13 @@ namespace bellshire {
         wxNotebook* get() { return m_GUI; };
 
         void Update( Units* element);
+        static wxString GetTreeLabel(Units& Element);
         static wxTreeItemId SetupMatMLTreeCtrl(TreeCtrlSorted*& MatMLTreeCtrl, 
             const wxTreeItemId& ParentId, 
             Units& Element,
-            const wxTreeItemId& PreviousId
+            const wxTreeItemId& PreviousId,
+            bool Recursive=true,
+            bool ChildRecursive=true
         );
 
         void SetConnect();
@@ -78,6 +95,10 @@ namespace bellshire {
 
         virtual void OnPasteUnit(wxCommandEvent& event){ event.Skip(); }
 
+        virtual void OnLeftDown(wxTreeEvent& event){ event.Skip(); }
+
+ 
+
     private:
     };
 
@@ -87,6 +108,7 @@ namespace bellshire {
 
         TreeCtrlSorted* m_MatMLTreeCtrl;//Required before Event Handling.
         ::boost::any m_MatMLItemToCopy;//Required before Paste Event Handling.
+        wxTreeItemId m_draggedItem;// item being dragged right now
 
         Units_GUI();
         Units_GUI(wxWindow* parent);
@@ -108,6 +130,8 @@ namespace bellshire {
         void OnDeleteUnit(wxCommandEvent& event);
 
         void OnPasteUnit(wxCommandEvent& event);
+
+        void OnLeftDown(wxTreeEvent& event);
 
     private:
     };
