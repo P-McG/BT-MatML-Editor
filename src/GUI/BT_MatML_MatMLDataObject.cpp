@@ -4,7 +4,7 @@
 using namespace bellshire;
 
 DnDMatMLDataObject::DnDMatMLDataObject(DnDMatMLData* matmldata)
-:m_matmldata(matmldata)
+	:m_matmldata(nullptr)
 {
 	if (matmldata)
 	{
@@ -13,6 +13,8 @@ DnDMatMLDataObject::DnDMatMLDataObject(DnDMatMLData* matmldata)
 		// reuse the serialisation methods here to copy it
 		void* buf = malloc(matmldata->DnDMatMLData::GetDataSize());
 		matmldata->GetDataHere(buf);
+		if(m_matmldata)
+			delete m_matmldata;
 		m_matmldata = DnDMatMLData::New(buf);
 
 		free( buf);
@@ -60,17 +62,6 @@ void DnDMatMLDataObject::GetAllFormats(wxDataFormat* formats, Direction dir) con
 	if (dir == Get){/*future use*/ }
 }
 
-
-///// <summary>
-///// Gets the size of our data. 
-///// Must be implemented in the derived class if the object supports rendering its data.
-///// </summary>
-///// <returns></returns>
-//size_t DnDMatMLDataObject::GetDataSize() const
-//{
-//	return sizeof(Unit);
-//}
-
 size_t DnDMatMLDataObject::GetDataSize(const wxDataFormat& format) const 
 {
 	if (format == m_dataformat)
@@ -90,33 +81,6 @@ bool DnDMatMLDataObject::GetDataHere(const wxDataFormat& format, void* pBuf) con
 	return false;
 }
 
-//
-///// <summary>
-///// Copy the data to the buffer, return true on success. 
-///// Must be implemented in the derived class if the object supports rendering its data.
-///// </summary>
-///// <param name="buf"></param>
-///// <returns></returns>
-//bool DnDMatMLDataObject::GetDataHere(void* buf)	const
-//{
-//	Unit& dump =*(Unit*) buf;
-//	try {
-//		if (&dump) {
-//			dump.Name() = m_data->Name();
-//			dump.Currency() = m_data->Currency();
-//			dump.power() = m_data->power();
-//			dump.description() = m_data->description();
-//
-//			//dump = *m_data;
-//			return true;
-//		}
-//	}
-//	catch (...) {
-//		return false;
-//	}
-//
-//	return false;
-//}
 
 /// <summary>
 /// Copy the data from the buffer, return true on success. 
@@ -130,7 +94,7 @@ bool DnDMatMLDataObject::SetData(const wxDataFormat& format, size_t WXUNUSED(len
 {
 	if (format != m_dataformat) return false;
 
-	delete m_matmldata;
+	delete m_matmldata; m_matmldata = nullptr;
 	m_matmldata = DnDMatMLData::New(buf);
 
 	return true;
@@ -144,10 +108,6 @@ DnDMatMLData* DnDMatMLDataObject::GetMatMLData()
 
 	return matmldata;
 }
-
-//MatMLTreeItemData* DnDMatMLDataObject::GetMatMLTreeItemData(){
-//	return m_data;
-//}
 
 
 DnDMatMLData* DnDMatMLData::New(const void* buf)

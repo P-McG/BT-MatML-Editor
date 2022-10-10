@@ -123,11 +123,9 @@ namespace bellshire
 		wxStaticBitmap* m_logobitmap;
 		wxStaticText* m_IntroStaticText;
 
-		//wxDataFormat* m_dataformat;
-		//MatMLDataObjectSimple* m_dropdata;
-		//MatMLDropTarget* m_droptarget;
-		//Unit* unit_dnd_buf;
+		MatMLDropTarget* m_droptarget;
 
+		Unit* m_data;
 		DnDMatMLData* m_dndmatmldata;
 
 		GUI* m_GUI;/*!< MatML GUIs Classes*/

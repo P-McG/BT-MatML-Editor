@@ -51,10 +51,13 @@ namespace bellshire {
         wxTextCtrl* m_UnitsDescriptionTextCtrl;
         TreeCtrlSorted* m_MatMLLibTreeCtrl;
 
+        Default<Units>* m_test_units;
+
         wxDataFormat* m_dataformat;
         DnDMatMLDataObject* m_dropdata;
         MatMLDropSource* m_dragSource;
         DnDMatMLData* m_dndmatmldata;
+        DnDMatMLDataObject* m_matmldata;
 
         Units_GUI_Base();
         Units_GUI_Base(wxWindow* parent);
@@ -63,7 +66,8 @@ namespace bellshire {
             wxTextCtrl*& UnitsFactorTextCtrl, 
             wxTextCtrl*& UnitsNameTextCtrl, 
             wxTextCtrl*& UnitsDescriptionTextCtrl,
-            TreeCtrlSorted*& MatMLLibTreeCtrl
+            TreeCtrlSorted*& MatMLLibTreeCtrl,
+            Default<Units>* test_units
         );
         virtual ~Units_GUI_Base();
 

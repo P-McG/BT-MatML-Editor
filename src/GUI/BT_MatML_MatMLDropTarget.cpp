@@ -5,22 +5,20 @@
 using namespace bellshire;
 
 MatMLDropTarget::MatMLDropTarget()
-	:wxDropTarget(new DnDMatMLDataObject)/*,
-	m_dropdata(nullptr)*/
+	:wxDropTarget(new DnDMatMLDataObject),
+	m_MatMLTreeCtrl(nullptr)
 {
 	return;
 }
 
 MatMLDropTarget::MatMLDropTarget(TreeCtrlSorted* MatMLTreeCtrl, DnDMatMLData* dndmatmldata) 
 	:wxDropTarget(new DnDMatMLDataObject(dndmatmldata)),
-	m_MatMLTreeCtrl(MatMLTreeCtrl)/*,
-	m_dropdata(nullptr)*/
+	m_MatMLTreeCtrl(MatMLTreeCtrl)
 {
 	return;
 }
 
 MatMLDropTarget::~MatMLDropTarget() {
-	//delete m_dropdata;
 };
 
 void MatMLDropTarget::SetMatMLTreeCtrl(TreeCtrlSorted* MatMLTreeCtrl)
@@ -48,8 +46,6 @@ wxDragResult MatMLDropTarget::OnData(wxCoord x, wxCoord y, wxDragResult defResul
 	// This method (wxDropTarget::GetData()) may only be called from within OnData(). 
 	// By default, this method copies the data from the drop source to the wxDataObject 
 	// associated with this drop target, calling its wxDataObject::SetData() method.
-	wxDataFormat dataformat(const wxString("DF_ANYMATMLDATA"));
-
 	DnDMatMLDataObject* dnd_data_obj((DnDMatMLDataObject*)this->GetDataObject());
 	DnDUnitMatMLData* dnd_data((DnDUnitMatMLData * )dnd_data_obj->GetMatMLData());
 
@@ -62,16 +58,19 @@ wxDragResult MatMLDropTarget::OnData(wxCoord x, wxCoord y, wxDragResult defResul
 		try {
 
 			Units* parentelement = boost::any_cast<Units*>(parentdata);
-			const Unit* element(dnd_data->GetUnit());
+			const Unit* element(dnd_data->GetUnit());// take ownership of the data.
 
 			if (parentelement && element ) {
 
-				parentelement->Unit().push_back(*element);
+				parentelement->Unit().push_back(*element);//copy matml element
+				
+				delete dnd_data; dnd_data = nullptr;
 
 				MatML_Base_GUI::SetupSel<Units, Units_GUI>(m_MatMLTreeCtrl);
 
 				return defResult;
 			}
+			
 		}
 		catch (const boost::bad_any_cast&) { return wxDragNone; }
 	}

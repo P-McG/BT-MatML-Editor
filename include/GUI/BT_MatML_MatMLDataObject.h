@@ -28,12 +28,9 @@ namespace bellshire {
         wxDataFormat GetPreferredFormat(Direction WXUNUSED(dir)) const;
         size_t GetFormatCount(Direction dir) const;
         void GetAllFormats(wxDataFormat* formats, Direction dir) const;
-        //size_t GetDataSize() const;
         size_t GetDataSize(const wxDataFormat& format) const;
         bool GetDataHere(const wxDataFormat& format, void* pBuf) const;
-        //bool GetDataHere(void* buf)	const;
         bool SetData(const wxDataFormat& format, size_t WXUNUSED(len), const void* buf);
-        //bool SetData(const wxDataFormat& format, size_t len, const void* buf);
         DnDMatMLData* GetMatMLData();
 
     private:
@@ -58,7 +55,7 @@ namespace bellshire {
             :m_data(data)
         {};
 
-        virtual ~DnDMatMLData() {};
+        virtual ~DnDMatMLData() { /*delete m_data;*/ };
 
         // restore from buffer
         static DnDMatMLData* New(const void* buf);
@@ -73,7 +70,8 @@ namespace bellshire {
         // to implement in derived classes
         virtual Kind GetKind() const = 0;
 
-        const Unit* GetUnit() { return m_data; }
+        //Gives away ownership of the m_data
+        const Unit* GetUnit() { auto* rtn = m_data; m_data = nullptr; return rtn; }
 
     protected:
 

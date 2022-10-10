@@ -20,9 +20,10 @@ Units_GUI_Base::Units_GUI_Base()
 	m_UnitsDescriptionTextCtrl(nullptr),
 	m_AutoInsertBaseUnitsButton(nullptr),
 	m_MatMLLibTreeCtrl(nullptr),
-	m_dataformat(nullptr),
-	m_dropdata(nullptr),
-	m_dragSource(nullptr)
+
+	m_dndmatmldata(nullptr),
+	m_dragSource(nullptr),
+	m_test_units(nullptr)
 {
 
 }
@@ -35,21 +36,26 @@ Units_GUI_Base::Units_GUI_Base(wxWindow* parent)
 	m_UnitsDescriptionTextCtrl(nullptr),
 	m_AutoInsertBaseUnitsButton(nullptr),
 	m_MatMLLibTreeCtrl(nullptr),
-	m_dataformat(nullptr),
-	m_dropdata(nullptr),
-	m_dragSource(nullptr)
+
+	m_dndmatmldata(nullptr),
+	m_dragSource(nullptr),
+	m_test_units(nullptr)
 {
+	m_test_units = new Default<Units>();//<- to be replaced by library data
+
 	m_GUI = Create(parent,
 		m_UnitsSystemTextCtrl,
 		m_UnitsFactorTextCtrl,
 		m_UnitsNameTextCtrl,
 		m_UnitsDescriptionTextCtrl,
-		m_MatMLLibTreeCtrl
+		m_MatMLLibTreeCtrl,
+		m_test_units//<- to be replaced by library data
 	);
 }
 
 Units_GUI_Base::~Units_GUI_Base() {
 	/*parent will distroy Ctrl or window */
+	delete m_test_units;//<- to be replaced by library data
 }
 
 
@@ -76,7 +82,8 @@ wxNotebook* Units_GUI_Base::Create(wxWindow* parent,
 	wxTextCtrl*& UnitsFactorTextCtrl, 
 	wxTextCtrl*& UnitsNameTextCtrl, 
 	wxTextCtrl*& UnitsDescriptionTextCtrl,
-	TreeCtrlSorted*& MatMLLibTreeCtrl
+	TreeCtrlSorted*& MatMLLibTreeCtrl,
+	Default<Units>* test_units//<- to be replaced by library data
 )
 {
 
@@ -170,6 +177,11 @@ wxNotebook* Units_GUI_Base::Create(wxWindow* parent,
 	UnitsLibPanel->Layout();
 	bxSizer->Fit(UnitsLibPanel);
 
+	// Build some test units
+	MatMLLibTreeCtrl->DeleteAllItems();
+	SetupMatMLTreeCtrl(MatMLLibTreeCtrl, MatMLLibTreeCtrl->GetRootItem(), *test_units/*[<-THIS NEEDS CHANGED TO LIB DATA SOURCE] */, NULL, true, false);
+	MatMLLibTreeCtrl->ExpandAll();
+
 
 	bool b_dflt(false);//temps
 	wxConfig(wxT("BTMatML")).Read(wxT("/General/MatMLDataSelection"), &b_dflt);
@@ -213,20 +225,20 @@ void Units_GUI_Base::Update( Units* element)
 		m_UnitsDescriptionTextCtrl->ChangeValue(str);
 	}
 
-	// Build some test units
-	Units* units(new Default<Units>());
+	//// Build some test units
+	//m_test_units=new Default<Units>();//<- to be replaced by library data
 
-	m_MatMLLibTreeCtrl->DeleteAllItems();
-	SetupMatMLTreeCtrl(m_MatMLLibTreeCtrl, m_MatMLLibTreeCtrl->GetRootItem(), *units/*[<-THIS NEEDS CHANGED TO LIB DATA SOURCE] */ , NULL, true, false);
-	m_MatMLLibTreeCtrl->ExpandAll();
+	//m_MatMLLibTreeCtrl->DeleteAllItems();
+	//SetupMatMLTreeCtrl(m_MatMLLibTreeCtrl, m_MatMLLibTreeCtrl->GetRootItem(), *m_test_units/*[<-THIS NEEDS CHANGED TO LIB DATA SOURCE] */ , NULL, true, false);
+	//m_MatMLLibTreeCtrl->ExpandAll();
 
 	//test code starts
 	//wxTreeItemId itemId = m_MatMLLibTreeCtrl->GetSelection();
-	wxTreeItemIdValue cookie;
-	wxTreeItemId child = m_MatMLLibTreeCtrl->GetFirstChild(m_MatMLLibTreeCtrl->GetRootItem(), cookie);
+	//wxTreeItemIdValue cookie;
+	//wxTreeItemId child = m_MatMLLibTreeCtrl->GetFirstChild(m_MatMLLibTreeCtrl->GetRootItem(), cookie);
 
-	wxTreeItemData* treeitemdata(m_MatMLLibTreeCtrl->GetItemData(child));
-	MatMLTreeItemData* item = (MatMLTreeItemData*)(treeitemdata);
+	//wxTreeItemData* treeitemdata(m_MatMLLibTreeCtrl->GetItemData(child));
+	//MatMLTreeItemData* item = (MatMLTreeItemData*)(treeitemdata);
 	//test code ends
 
 	Show(true);
@@ -320,7 +332,8 @@ Units_GUI::Units_GUI() : Units_GUI_Base(), m_MatMLTreeCtrl(nullptr)
 /// <param name="parent"></param>
 /// <param name="MatMLTreeCtrl"></param>
 Units_GUI::Units_GUI(wxWindow* parent)
-	: Units_GUI_Base(parent), m_MatMLTreeCtrl(nullptr)
+	: Units_GUI_Base(parent), 
+	m_MatMLTreeCtrl(nullptr)
 {
 	SetConnect();
 }
@@ -330,9 +343,7 @@ Units_GUI::Units_GUI(wxWindow* parent)
 /// </summary>
 Units_GUI::~Units_GUI() {
 	/*parent will distroy Ctrl or window */
-	delete m_dataformat;
-	delete m_dropdata;
-	delete m_dragSource;
+
 }
 
 /// <summary>
@@ -472,10 +483,9 @@ void Units_GUI::OnLeftDown(wxTreeEvent& event)
 			Unit* unit = boost::any_cast<Unit*>(item->GetAnyMatMLDataPointer());
 
 			m_dndmatmldata = new DnDUnitMatMLData(unit);
-
-			DnDMatMLDataObject matmldata(m_dndmatmldata);
+			m_matmldata = new DnDMatMLDataObject(m_dndmatmldata);
 			m_dragSource = new MatMLDropSource(m_GUI);
-			m_dragSource->SetData(matmldata);
+			m_dragSource->SetData(*m_matmldata);
 
 			wxDragResult result = m_dragSource->DoDragDrop();
 
@@ -493,6 +503,13 @@ void Units_GUI::OnLeftDown(wxTreeEvent& event)
 			}
 		}
 		catch (...) {}
+
+		//delete m_dndmatmldata;		
+		delete m_matmldata; m_matmldata=nullptr;		
+		delete m_dndmatmldata; m_dndmatmldata=nullptr;
+		delete m_dragSource; m_dragSource=nullptr;
+
+
 
 	//LogDragResult(dragSource.DoDragDrop());
 	}

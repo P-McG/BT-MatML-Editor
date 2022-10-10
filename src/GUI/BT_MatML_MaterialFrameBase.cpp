@@ -115,9 +115,6 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 	
 	m_panel68 = new wxPanel( m_splitter1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL|wxVSCROLL );
 	m_panel68->SetMinSize( wxSize( 100,500 ) );
-
-
-
 	
 	wxFlexGridSizer* fgSizer125 = new wxFlexGridSizer( 2, 2, 0, 0 );
 	fgSizer125->AddGrowableCol( 0 );
@@ -132,12 +129,8 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 	fgSizer125->Add( m_MatMLTreeCtrl, 1, wxEXPAND, 0 );
 
 	//Set up dnd target
-
-    wxDataFormat dataformat(ShapeFormatId());
-	m_dndmatmldata=new DnDUnitMatMLData(new Unit);	
-	MatMLDropTarget* droptarget(new MatMLDropTarget(m_MatMLTreeCtrl, m_dndmatmldata));
-
-	m_MatMLTreeCtrl->SetDropTarget(droptarget);
+	m_droptarget=new MatMLDropTarget(m_MatMLTreeCtrl);
+	m_MatMLTreeCtrl->SetDropTarget(m_droptarget);
 	
 	m_panel68->SetSizer( fgSizer125 );
 	m_panel68->Layout();
@@ -181,12 +174,8 @@ MaterialFrameBase::MaterialFrameBase( wxWindow* parent, wxWindowID id, const wxS
 /// </summary>
 MaterialFrameBase::~MaterialFrameBase()
 {
-	delete m_GUI;
-
-	//delete m_dataformat;
-	//delete m_dropdata;
-	//delete m_droptarget;
-	//delete unit_dnd_buf;
+	delete m_GUI; m_GUI = nullptr;
+	delete m_dropTarget; m_dropTarget = nullptr;
 }
 
 void MaterialFrameBase::SetMenuConnect() 

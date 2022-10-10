@@ -22,6 +22,7 @@ BT_MatML_App::BT_MatML_App()
 
 BT_MatML_App::~BT_MatML_App()
 {
+
 }
 
 bool BT_MatML_App::OnInit()
@@ -43,7 +44,7 @@ bool BT_MatML_App::OnInit()
 
 int BT_MatML_App::OnExit()
 {
-    return 1;
+    return 0;
 }
 
 

@@ -17,7 +17,6 @@ namespace bellshire {
 
 	private:
 		TreeCtrlSorted* m_MatMLTreeCtrl;
-		//MatMLDataObjectSimple* m_dropdata;
 
 	};
 }//bellshire
