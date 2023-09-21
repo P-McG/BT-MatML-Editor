@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	******************************************************************************************************************************
+	MatML Version 3.0 Schema Example 2 - Aluminum Alloy from a Printed Handbook
+	Prepared by - E.F. Begley, NIST and J.G. Kaufman, The Aluminum Association, Inc.
+	Source - Handbook data generously provided by F. Cverna of ASM International and J.G. Kaufman of the 
+	Aluminum Association from Properties of Aluminum Alloys, p. 291, ASM International, Materials Park, Ohio, 
+	ISBN: 0-87170-632-6, 1999.
+
+	Modified 16 July 2004 by Craig Seymour, Granta Design to match MatML Version 3.1
+	******************************************************************************************************************************	
+-->
+<MatML_Doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31.xsd">
+	<Material>
+		<BulkDetails>
+			<Name authority="AAADS">1350</Name>
+			<Class>
+				<Name>metal</Name>
+			</Class>
+			<Subclass>
+				<Name>aluminum alloy</Name>
+			</Subclass>
+			<Specification>ASTM B230</Specification>
+			<Form>
+				<Description>Rolled rod and shapes</Description>
+			</Form>
+			<ProcessingDetails>
+				<Name>Temper H18</Name>
+			</ProcessingDetails>
+			<Characterization>
+				<Formula>Al</Formula>
+				<DimensionalDetails>
+					<Name>Thickness</Name>
+					<Value format="string">0.5,2.0</Value>
+					<Units name="inches">
+						<Unit>
+							<Name>in</Name>
+						</Unit>
+					</Units>
+					<Qualifier>min.,max.</Qualifier>
+				</DimensionalDetails>
+			</Characterization>
+			<PropertyData property="pr1" technique="mt1" source="ds1" specimen="sp1">
+				<Data format="float">+23,+17,+15,+14.5,+14.5</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>0,0,0,0,0</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>1,1,1,1,1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="exponential">
+					<Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr2" technique="mt1" source="ds1" specimen="sp1">
+				<Data format="integer">+160,+115,+105,+100,+100</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>0,0,0,0,0</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>1,1,1,1,1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="exponential">
+					<Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr1" technique="mt1" source="ds1" specimen="sp1">
+				<Data format="float">+11.5,+8.5,+7,+6.5,+6.5</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>-1,-1,-1,-1,-1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>1,1,1,1,1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="exponential">
+					<Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+				</ParameterValue>
+			</PropertyData>
+			<PropertyData property="pr2" technique="mt1" source="ds1" specimen="sp1">
+				<Data format="integer">+80,+59,+48,+45,+45</Data>
+				<ParameterValue parameter="pa1" format="integer">
+					<Data>-1,-1,-1,-1,-1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa2" format="integer">
+					<Data>1,1,1,1,1</Data>
+				</ParameterValue>
+				<ParameterValue parameter="pa3" format="exponential">
+					<Data>1.0E5,1.0E6,1.0E7,1.0E8,5.0E8</Data>
+				</ParameterValue>
+			</PropertyData>
+		</BulkDetails>
+		<Glossary>
+			<Term>
+				<Name>H18</Name>
+				<Definition>
+				"H18" is a code from The Aluminum Association Temper Designation System. The H is defined as "strain-hardened
+				(wrought products only). The 1 applies to products that are strain-hardened to obtain the desired strength without
+				supplementary thermal treatment. The 8 indicates the degree of strain-hardening and is assigned to the hardest
+				tempers normally produced.
+				</Definition>
+			</Term>
+			<Term>
+				<Name>1350</Name>
+				<Definition>
+				"1350" is a code from The Aluminum Association Alloy Designation System. The first digit of the code represents the
+				principal alloying constitutent(s). The second digit indicates variations of the initial alloy. The third and fourth digits
+				indicate individual alloy variations (the numbers have no significance but are unique). 1350 is an alloy that is pure
+				AL (99.00% or greater). For further details, contact The Aluminum Association, 900 19th Street, N.W., Washington,
+				D.C. 20006.
+				</Definition>
+			</Term>
+		</Glossary>
+	</Material>
+	<Metadata>
+		<AuthorityDetails id="AAADS">
+			<Name>The Aluminum Association Alloy Designation System</Name>
+		</AuthorityDetails>
+		<DataSourceDetails id="ds1" type="handbook, typical data">
+			<Name>
+				"Properties of aluminum alloys : tensile, creep, and fatigue data at high and low temperatures" / edited by J. Gilbert Kaufman.
+			</Name>
+			<Notes>
+				Plus (+) indicates tension; minus (-) indicates compression.
+			</Notes>
+		</DataSourceDetails>
+		<MeasurementTechniqueDetails id="mt1">
+			<Name>ASTM E597</Name>
+		</MeasurementTechniqueDetails>
+		<ParameterDetails id="pa1">
+			<Name>Stress Ratio</Name>
+			<Unitless/>
+			<Notes>Stress Ratio (R) = (minimum stress)/(maximum stress)</Notes>
+		</ParameterDetails>
+		<ParameterDetails id="pa2">
+			<Name>Number of Samples</Name>
+			<Unitless/>
+		</ParameterDetails>
+		<ParameterDetails id="pa3">
+			<Name>Number of Cycles</Name>
+			<Unitless/>
+		</ParameterDetails>
+		<PropertyDetails id="pr1" type="mechanical">
+			<Name>Axial-Stress Fatigue Strength</Name>
+			<Units name="ksi" description="kip per square inch">
+				<Unit>
+					<Name>ksi</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<PropertyDetails id="pr2" type="mechanical">
+			<Name>Axial-Stress Fatigue Strength</Name>
+			<Units name="MPa" description="megapascals">
+				<Unit>
+					<Name>MPa</Name>
+				</Unit>
+			</Units>
+		</PropertyDetails>
+		<SpecimenDetails id="sp1" type="cylindrical">
+			<Name>smooth specimen</Name>
+			<Notes>diameter = 0.375 inches</Notes>
+		</SpecimenDetails>
+	</Metadata>
+</MatML_Doc>

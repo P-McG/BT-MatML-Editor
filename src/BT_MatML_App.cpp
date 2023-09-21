@@ -1,10 +1,18 @@
+//#define _HAS_STD_BYTE 0
+#include "pch.h"
+
+#include "bellshire/BT_MatML_App.h"
+#include "bellshire/GUI/BT_MatML_MaterialFrame.h"
 #include "BT_MatML_Editor-Config.h"
-#include "BT_MatML_App.h"
-#include "GUI/BT_MatML_MaterialFrame.h"
 
 using namespace bellshire;
 
-IMPLEMENT_APP(BT_MatML_App); /*! As per wxWidget, IMPLEMENT_APP(appClass), which allows wxWidgets to dynamically create an instance of the application object at the appropriate point in wxWidgets initialization.*/
+/*!
+As per wxWidget, IMPLEMENT_APP(appClass), which allows wxWidgets to 
+dynamically create an instance of the application object at the 
+appropriate point in wxWidgets initialization.
+*/
+IMPLEMENT_APP(BT_MatML_App); 
 
 using std::cerr;
 using std::endl;
@@ -22,7 +30,6 @@ BT_MatML_App::BT_MatML_App()
 
 BT_MatML_App::~BT_MatML_App()
 {
-
 }
 
 bool BT_MatML_App::OnInit()

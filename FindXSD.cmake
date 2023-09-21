@@ -5,11 +5,11 @@
 #
 FIND_PROGRAM( XSD_EXECUTABLE xsd
 		   	  HINTS ${RWSL_DEPS}/xsd/bin $ENV{XSD_ROOT}/bin
-			  PATHS /usr/local/xsd-3.2.0-i686-macosx/bin
-			  		/usr/local/xsd-3.2.0-x86_64-linux-gnu/bin
+			  PATHS /usr/local/xsd-4.2.0-i686-macosx/bin
+			  		/usr/local/xsd-4.2.0-x86_64-linux-gnu/bin
 			  		/usr/local/bin
-					/opt/xsd-3.2.0-i686-macosx/bin
-			  		/opt/xsd-3.2.0-x86_64-linux-gnu/bin
+					/opt/xsd-4.2.0-i686-macosx/bin
+			  		/opt/xsd-4.2.0-x86_64-linux-gnu/bin
 			  		/usr/bin
 					ENV PATH )
 
@@ -21,7 +21,7 @@ IF( XSD_EXECUTABLE )
   #
   GET_FILENAME_COMPONENT( XSD_BIN_DIR "${XSD_EXECUTABLE}" PATH )
   GET_FILENAME_COMPONENT( XSD_ROOT_DIR "${XSD_BIN_DIR}" PATH )
-  SET( XSD_INCLUDE_DIR "${XSD_ROOT_DIR}/libxsd" )
+  SET( XSD_INCLUDE_DIR "${XSD_ROOT_DIR}/debug/include" )
 ENDIF( XSD_EXECUTABLE )
 
 #

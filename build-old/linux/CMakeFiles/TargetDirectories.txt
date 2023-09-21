@@ -1,0 +1,9 @@
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/BT-MatML-Editor.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/package.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/package_source.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/edit_cache.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/rebuild_cache.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/list_install_components.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/install.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/install/local.dir
+/media/sf_BT-MatML-Editor/build/linux/CMakeFiles/install/strip.dir

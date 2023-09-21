@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\build\CMakeFiles\BT-MatML-Editor.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\BT_MatML_App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\fcopy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Abbreviation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Associate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_AssociationDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_AuthorityDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_BulkDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Characterization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ChemicalComposition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ChemicalElementSymbol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ComponentDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Compound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Concentration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_CurrencyCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Data1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_DataFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_DataSourceDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Definition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Description.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_DimensionalDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Dimensions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Formula.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Geometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Glossary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_GlossaryTerm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Graphs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_MatML_Doc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_MeasurementTechniqueDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Metadata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Name.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Notes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Orientation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ParameterDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ParameterValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ParentMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ParentSubClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_PhaseComposition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_ProcessingDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_PropertyData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_PropertyDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Qualifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Relationship.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Result.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Scale.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_SourceDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Specification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_SpecimenDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Subclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Subclass1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Symbol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Synonym.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_TestConditionDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Uncertainty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Unitless.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Units.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\BT_MatML_Value.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\matml31_strongly_typed_def.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\matml31.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\utilities\BT_MatML_Functor_GatherIdRefPtrs_MatMLTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\utilities\BT_MatML_Functor_ReplaceIdRef_MatMLTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\utilities\BT_MatML_Get_Associated_Base_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML\utilities\BT_MatML_has_a_idref.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML_Lib\BT_MatML_MatML_Lib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML_Lib\dom-parse.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML_Lib\dom-serialize.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML_Lib\matml31_lib.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\MatML_Lib\utilities\BT_MatML_Get_Associated_Lib_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Abbreviation_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Associate_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_AssociationDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_AuthorityDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_AuthorityDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Base_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_BulkDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Characterization_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ChemicalComposition_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ChemicalElementSymbol_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Class_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ComponentDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Compound_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Concentration_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_CurrencyCode_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Data1_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_DataFormat_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_DataSourceDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_DataSourceDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Data_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Definition_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Description_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_DimensionalDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Dimensions_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Element_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Form_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Formula_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Geometry_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_GlossaryTerm_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Glossary_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Graph_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Graphs_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ID_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Intro_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Lib_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLDropSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLDropTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLInfo_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLLibDropTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatMLTreeItemData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MatML_Doc_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MaterialFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MaterialFrameBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Material_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MeasurementTechniqueDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_MeasurementTechniqueDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Metadata_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Name_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Notes_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Orientation_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ParameterDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ParameterDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ParameterValue_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ParentMaterial_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ParentSubClass_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_PhaseComposition_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_ProcessingDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_PropertyData_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_PropertyDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_PropertyDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Qualifier_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Relationship_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Result_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Scale_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Shape_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_SourceDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_SourceDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Source_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Specification_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_SpecimenDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_SpecimenDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_StringValidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Subclass1_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Subclass_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Symbol_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Synonym_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_TestConditionDetails_Display_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_TestConditionDetails_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_TreeCtrlSorted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Uncertainty_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Unit_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Unitless_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Units_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Utilities_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\BT_MatML_Value_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\HTMLFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\HTMLFrameBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\MaterialFrameHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\PreferenceFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\PreferenceFrameBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\utilities\BT_MatML_Functor_SetupCtrl_MatMLTree_GUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\paulm\source\repos\BT-MatML-Editor\src\GUI\utilities\BT_MatML_Get_Associated_GUI_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\BT_MatML_App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\StringStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\Uuid-Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\bt_matml_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\fcopy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\observer_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\include\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\build\CMakeFiles\BT-MatML-Editor.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\build\CMakeFiles\BT-MatML-Editor.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\build\CMakeFiles\BT-MatML-Editor.dir\MinSizeRel\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\paulm\source\repos\BT-MatML-Editor\build\CMakeFiles\BT-MatML-Editor.dir\RelWithDebInfo\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\paulm\source\repos\BT-MatML-Editor\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ADDFA469-6378-3814-9ACB-DA7B20E4F150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{81D21194-01A4-32FB-B907-33C7C33DA5E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{639F1AB1-642C-308A-B63A-E321CC210E2E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

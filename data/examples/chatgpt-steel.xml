@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matml version="3.0"
+    xmlns="http://www.matml.org/matml-3.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.matml.org/matml-3.0 matml-3.0.xsd">
+  <material>
+    <name>Steel</name>
+    <description>A general-purpose steel material</description>
+    <composition>
+      <element symbol="Fe" fraction="0.98"/>
+      <element symbol="C" fraction="0.02"/>
+    </composition>
+    <property type="density">
+      <value>7.85E-6</value>
+      <unit>g/nm^3</unit>
+    </property>
+    <property type="Young's modulus">
+      <value>200000</value>
+      <unit>GPa</unit>
+    </property>
+    <property type="Poisson's ratio">
+      <value>0.3</value>
+      <unit>none</unit>
+    </property>
+    <property type="thermal conductivity">
+      <value>50</value>
+      <unit>W/m-K</unit>
+    </property>
+    <property type="specific heat capacity">
+      <value>500</value>
+      <unit>J/kg-K</unit>
+    </property>
+  </material>
+</matml>

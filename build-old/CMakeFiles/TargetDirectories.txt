@@ -1,0 +1,5 @@
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/BT-MatML-Editor.dir
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/PACKAGE.dir
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/INSTALL.dir
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/ZERO_CHECK.dir

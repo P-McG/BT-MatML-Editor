@@ -1,0 +1,37 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindBoost.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindICU.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindXercesC.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindwxWidgets.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/InstallRequiredSystemLibraries.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/UsewxWidgets.cmake
+C:/Program Files/CMake/share/cmake-3.26/Templates/CPackConfig.cmake.in
+C:/Users/paulm/source/repos/BT-MatML-Editor/BT_MatML_Editor-Config.h.in
+C:/Users/paulm/source/repos/BT-MatML-Editor/CMakeLists.txt
+C:/Users/paulm/source/repos/BT-MatML-Editor/FindXSD.cmake
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/3.26.0/CMakeCCompiler.cmake
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/3.26.0/CMakeCXXCompiler.cmake
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/3.26.0/CMakeRCCompiler.cmake
+C:/Users/paulm/source/repos/BT-MatML-Editor/build/CMakeFiles/3.26.0/CMakeSystem.cmake

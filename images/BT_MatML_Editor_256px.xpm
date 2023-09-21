@@ -1,5 +1,5 @@
 /* XPM */
-static char * BT_MatML_Editor_256px_xpm[] = {
+static const char * BT_MatML_Editor_256px_xpm[] = {
 "256 256 49 1",
 " 	c None",
 ".	c #FFFFFF",

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<BulkDetails_lib xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31_lib.xsd">
+  <Name>Replace</Name>
+  <Class>
+    <Name>ceramic</Name>
+  </Class>
+</BulkDetails_lib>

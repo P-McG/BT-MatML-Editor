@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ComponentDetails_lib xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="matml31_lib.xsd">
+  <Name>ComponentDetails_lib</Name>
+  <Class>
+    <Name>metal</Name>
+  </Class>
+</ComponentDetails_lib>

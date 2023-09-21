@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MatML_Doc xmlns="http://www.matml.org/matml-3.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="matml31.xsd">
+  <Material>
+    <Name>Stainless Steel (Type 304)</Name>
+    <Description>A common austenitic stainless steel</Description>
+    <Category>Metal</Category>
+    <Class>Steel</Class>
+    <Sub_class>Austenitic</Sub_class>
+    <Composition>
+      <Element symbol="Fe" fraction="0.66" />
+      <Element symbol="Cr" fraction="0.18" />
+      <Element symbol="Ni" fraction="0.10" />
+      <Element symbol="C" fraction="0.08" />
+    </Composition>
+    <Property name="Density">
+      <Value>7900</Value>
+      <Unit>kg/m^3</Unit>
+    </Property>
+    <Property name="Young's modulus">
+      <Value>193E9</Value>
+      <Unit>Pa</Unit>
+    </Property>
+    <Property name="Poisson's ratio">
+      <Value>0.3</Value>
+      <Unit>none</Unit>
+    </Property>
+    <Property name="Thermal conductivity">
+      <Value>16.2</Value>
+      <Unit>W/m-K</Unit>
+    </Property>
+    <Property name="Specific heat capacity">
+      <Value>500</Value>
+      <Unit>J/kg-K</Unit>
+    </Property>
+    <Property name="Coefficient of thermal expansion">
+      <Value>17.3E-6</Value>
+      <Unit>/K</Unit>
+    </Property>
+    <Property name="Melting point">
+      <Value>1425</Value>
+      <Unit>K</Unit>
+    </Property>
+    <Property name="Heat of fusion">
+      <Value>310</Value>
+      <Unit>J/g</Unit>
+    </Property>
+    <Property name="Electrical resistivity">
+      <Value>720E-9</Value>
+      <Unit>Ohm-m</Unit>
+    </Property>
+    <Property name="Magnetic permeability">
+      <Value>1.002</Value>
+      <Unit>none</Unit>
+    </Property>
+  </Material>
+</MatML_Doc>
