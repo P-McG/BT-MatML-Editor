@@ -120,7 +120,7 @@ namespace bellshire::GUI
 		DnDMatMLData* m_dndmatmldata;
 		std::unique_ptr<GUI> m_GUI;/*!< MatML GUIs Classes*/
 
-	protected:
+	public:
 		void SetMenuConnect();/*!<Connect event handlers for Menu Select*/
 
 		// Virtual event handlers, overide them in your derived class

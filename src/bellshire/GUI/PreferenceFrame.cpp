@@ -9,11 +9,12 @@
  */
 #include "pch.h"
 #include "bellshire/GUI/PreferenceFrame.h"
+#include "bellshire/GUI/BT_MatML_MaterialFrame.h"
+
 using namespace bellshire::GUI;
 
 PreferenceFrame::PreferenceFrame( wxWindow* parent )
-:
-PreferenceFrameBase( parent )
+:PreferenceFrameBase( parent )
 {
 	config = new wxConfig(wxT("BTMatML"));
 	SetPreferenceControls();
@@ -59,6 +60,9 @@ void PreferenceFrame::OnSavePreferencesButton( wxCommandEvent& event )
 	worked=config->Write(wxT("/General/LibDir"), (const wxString)m_LibDirPicker->GetPath());
 	assert(worked);
 
+	worked = config->Write(wxT("/General/ClassSortSelection"), (const bool)m_ClassSortSelection->GetValue());
+	assert(worked);
+
 	wxArrayString strarray;
 	m_ClassSortOrderListBox->GetStrings(strarray);
 	for (unsigned i = 0; i < strarray.GetCount(); ++i) {
@@ -70,6 +74,8 @@ void PreferenceFrame::OnSavePreferencesButton( wxCommandEvent& event )
 
 	this->Show(false);
 	//this->MakeModal(false);
+	static_cast<MaterialFrameBase*>(this->GetParent())->OnSortMenuItem(event);
+	
 }
 
 void PreferenceFrame::OnCancelPreferencesButton( wxCommandEvent& event )
@@ -115,12 +121,17 @@ void PreferenceFrame::SetPreferenceControls()
 		m_LibDirPicker->SetPath(str);
 	}
 
-
 	m_ClassSortOrderListBox->SetStrings(GetSortClasses());
 }
 
 wxArrayString PreferenceFrame::GetSortClasses()
 {
+	bool b_dflt(false);//temps
+
+	if (config->Read(wxT("/General/ClassSortSelection"), &b_dflt)) {
+		m_ClassSortSelection->SetValue(b_dflt);
+	}
+
 	unsigned i(0);
 	bool b(true);
 	wxString str;

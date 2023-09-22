@@ -35,6 +35,11 @@ IMPLEMENT_DYNAMIC_CLASS(TreeCtrlSorted, wxTreeCtrl)
  */
 int TreeCtrlSorted::OnCompareItems(const wxTreeItemId& item1, const wxTreeItemId& item2)
 {
+
+	//Get preference infomation for sorting
+
+	wxConfig config(wxT("BTMatML"));
+
 	//Get the current MatML data pointer
 
     MatMLTreeItemData* item1_MatML_Data((MatMLTreeItemData *)(this->GetItemData(item1)));
@@ -56,63 +61,68 @@ int TreeCtrlSorted::OnCompareItems(const wxTreeItemId& item1, const wxTreeItemId
 	}
 	catch(const boost::bad_any_cast &){}//do nothing
 
-	//Testing the Material elements
-	try{
-		if (temp1.type() == typeid(Material*) && temp2.type() == typeid(Material*)) {
-			Material* material1 = any_cast<Material*>(temp1);
-			Material* material2 = any_cast<Material*>(temp2);
+	bool b_dflt(false);//default value
+	assert(config.Read(wxT("/General/ClassSortSelection"), &b_dflt));
 
-			if (!material1->BulkDetails().Class().empty() && material2->BulkDetails().Class().empty()) return -1;
+	if (b_dflt) {
+		//Testing the Material elements
+		try {
+			if (temp1.type() == typeid(Material*) && temp2.type() == typeid(Material*)) {
+				Material* material1 = any_cast<Material*>(temp1);
+				Material* material2 = any_cast<Material*>(temp2);
 
-			else if (material1->BulkDetails().Class().empty() && !material2->BulkDetails().Class().empty()) return +1;
+				if (!material1->BulkDetails().Class().empty() && material2->BulkDetails().Class().empty()) return -1;
 
-			else if (!material1->BulkDetails().Class().empty() && !material2->BulkDetails().Class().empty()) {
+				else if (material1->BulkDetails().Class().empty() && !material2->BulkDetails().Class().empty()) return +1;
 
-				BulkDetails::Class_sequence& cont1(material1->BulkDetails().Class());
-				BulkDetails::Class_iterator iter1(cont1.begin());
-				BulkDetails::Class_sequence& cont2(material2->BulkDetails().Class());
-				BulkDetails::Class_iterator iter2(cont2.begin());
-				for (;;) {
+				else if (!material1->BulkDetails().Class().empty() && !material2->BulkDetails().Class().empty()) {
 
-					//Test the Class order
-					int classorder1 = ClassOrder(*iter1), classorder2 = ClassOrder(*iter2);
+					BulkDetails::Class_sequence& cont1(material1->BulkDetails().Class());
+					BulkDetails::Class_iterator iter1(cont1.begin());
+					BulkDetails::Class_sequence& cont2(material2->BulkDetails().Class());
+					BulkDetails::Class_iterator iter2(cont2.begin());
+					for (;;) {
 
-					//If one of the preordered classes
-					if (classorder1 < classorder2)return -1;
-					else if (classorder1 > classorder2) return +1;
+						//Test the Class order
+						int classorder1 = ClassOrder(*iter1), classorder2 = ClassOrder(*iter2);
 
-					//If not one of the preordered classes
-					else if (classorder1 == INT_MAX && classorder2 == INT_MAX) {
-						std::string str1;
-						if (iter1->Name().present()) {
-							str1 = iter1->Name()->c_str();
+						//If one of the preordered classes
+						if (classorder1 < classorder2)return -1;
+						else if (classorder1 > classorder2) return +1;
+
+						//If not one of the preordered classes
+						else if (classorder1 == INT_MAX && classorder2 == INT_MAX) {
+							std::string str1;
+							if (iter1->Name().present()) {
+								str1 = iter1->Name()->c_str();
+							}
+							else if (!iter1->ParentMaterial().empty()) {
+								str1 = iter1->ParentMaterial().front().id().c_str();
+							}
+							std::string str2;
+							if (iter2->Name().present()) {
+								str2 = iter2->Name()->c_str();
+							}
+							else if (!iter2->ParentMaterial().empty()) {
+								str2 = iter2->ParentMaterial().front().id().c_str();
+							}
+							int cmp = str1.compare(str2);
+							if (cmp < 0) return -1;
+							else if (cmp > 0) return +1;
 						}
-						else if (!iter1->ParentMaterial().empty()) {
-							str1 = iter1->ParentMaterial().front().id().c_str();
-						}
-						std::string str2;
-						if (iter2->Name().present()) {
-							str2 = iter2->Name()->c_str();
-						}
-						else if (!iter2->ParentMaterial().empty()) {
-							str2 = iter2->ParentMaterial().front().id().c_str();
-						}
-						int cmp = str1.compare(str2);
-						if (cmp < 0) return -1;
-						else if (cmp > 0) return +1;
+
+						++iter1; ++iter2;
+
+						//If one or both run run out of Classes to compare
+						if (iter1 == cont1.end() && iter2 != cont2.end()) return -1;
+						else if (iter1 != cont1.end() && iter2 == cont2.end()) return +1;
+						else if (iter1 == cont1.end() && iter2 == cont2.end()) return -1;
 					}
-
-					++iter1; ++iter2;
-
-					//If one or both run run out of Classes to compare
-					if (iter1 == cont1.end() && iter2 != cont2.end()) return -1;
-					else if (iter1 != cont1.end() && iter2 == cont2.end()) return +1;
-					else if (iter1 == cont1.end() && iter2 == cont2.end()) return -1;
 				}
 			}
 		}
+		catch (const boost::bad_any_cast&) {}//do nothing
 	}
-	catch(const boost::bad_any_cast &){}//do nothing
 
 	//If not a Class then use the position for ordering
 	try{

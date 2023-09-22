@@ -73,6 +73,7 @@ class MaterialFrame : public MaterialFrameBase, public Utilities
 	std::stack<TreeCtrlSorted*> m_MatMLTreeCtrlStack;/*!< Stack of wxTreeCtrl Pointers. Allows for different Tree versions. */
 	std::unique_ptr<MatML_Doc> template_doc;/*!<used in the class templates *///Templates
 	//wxTreeItemId m_draggedItem;
+protected:
 	PreferenceFrame* preferenceframe;
 	HTMLFrame* htmlframe;
 

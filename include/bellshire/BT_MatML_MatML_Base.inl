@@ -23,10 +23,7 @@ namespace bellshire
     {
        
        if (element) {
-           //auto& child{std::shared_ptr<Child_cont>(&((*element_observer).*cont_func)())};
-
            observer_ptr<Child_cont> matml_element = &((*element).*cont_func)();
-           //observer_ptr<Child> child = reinterpret_cast<Child*>(matml_element);
 
            Child_MatML_Base::TraverseMatMLTree(matml_element, func, recursive);
        }
@@ -45,13 +42,6 @@ namespace bellshire
         RecursiveFlags recursive
     )
     {
-        //auto tmp{Element.lock()};
-        //if (tmp) {
-        //    Child_cont& cont((tmp.get()->*cont_func)());
-        //    if (cont.present())
-        //        Child_MatML_Base::TraverseMatMLTree(&*cont, func, recursive);
-        //}
-
         auto element_observer{ remove_strongly_typed_on_observer_ptr_v(element) };
         if (element_observer) {
 
@@ -219,6 +209,17 @@ namespace bellshire
             catch (const xml_schema::duplicate_id&) {}
         }
 
+        template<class MatML_Class>
+        void MatML_Base::Swap(observer_ptr < MatML_Class >& matml0, observer_ptr < MatML_Class >& matml1)
+        {
+            assert(matml0 && matml1);
+
+            auto temp0(*matml0);
+            auto temp1(*matml1);
+
+            *matml0 = temp1;
+            *matml1 = temp0;
+        }
 
         /// <summary>
         /// Swap function with MatML Classes that have required Id.
@@ -259,46 +260,35 @@ namespace bellshire
         /// <param name="matml1"></param>
         template<class MatML_Class>
         void  MatML_Base::SwapHavingOptionalId(
-            observer_ptr < MatML_Class >& matml0, 
+            observer_ptr < MatML_Class >& matml0,
             observer_ptr < MatML_Class >& matml1
         )
         {
-            if (matml0 && matml1) {
-                auto temp0(*matml0);
-                auto temp1(*matml1);
+            assert(matml0 && matml1);
 
-                xml_schema::id tempid("");
+            xml_schema::id temp_id0("");
+            xml_schema::id temp_id1("");
 
-                //Replace the id to prevent id collision
-                if (temp1.id().present()) {
-                    tempid = temp1.id().get();
-                    temp1.id(xml_schema::id(std::string("BT-TEMP-ID")));
-                }
-
-                *matml0 = temp1;
-                *matml1 = temp0;
-
-                //Replace the temp id with the previous one
-                if (temp1.id().present())
-                    matml0->id().set(tempid);
-
-                //xml_schema::id tempid("");
-
-                ////Replace the id to prevent id collision
-                //if (matml1->id().present()) {
-                //    tempid = matml1->id().get();
-                //    matml1->id(xml_schema::id(std::string("BT-TEMP-ID")));
-                //}
-
-                //std::swap(matml0, matml1);
-
-                ////Replace the temp id with the previous one
-                //matml0->id(tempid);
-
-                ////Replace the temp id with the previous one
-                //if (matml1->id().present())
-                //    matml1->id().set(tempid);
+            //temporarily store and remove the id to prevent id collision
+            if (matml0->id().present()) {
+                temp_id0 = matml0->id().get();
+                matml0->id().reset();
             }
+            if (matml1->id().present()) {
+                temp_id1 = matml1->id().get();
+                matml1->id().reset();
+            }
+
+            //perform the swap
+            auto temp1( *matml1 );          
+            *matml1 = *matml0;
+            *matml0 = temp1;
+
+            //Replace the id with the previous stored ones
+            if (!temp_id0.empty())
+                matml1->id().set(temp_id0);
+            if (!temp_id1.empty())
+                matml0->id().set(temp_id1);
         }
 
 
@@ -308,7 +298,7 @@ namespace bellshire
         >
         decltype(auto)
             MatML_Base::FindAndBumpUp(
-                observer_ptr < MatML_Class> element,
+                const observer_ptr < MatML_Class> element,
                 MatML_ContClass& cont
             )
         {
@@ -327,9 +317,9 @@ namespace bellshire
                 auto iter = std::find_if(cont.begin() + 1, cont.end(), is_equal);
                 if (iter != cont.end()) {
 
-                    auto pair0{ observer_ptr<element_type>(&*(iter - 1)) };
-                    auto pair1{ observer_ptr<element_type>(&*(iter)) };
-                    std::swap(pair0, pair1);
+                    observer_ptr<element_type> pair0(&*(iter - 1));
+                    observer_ptr<element_type> pair1(&*(iter));
+                    MatML_Base::Swap(pair0, pair1);
                     return std::make_pair(pair0, pair1);
                 }
             }  
@@ -354,7 +344,7 @@ namespace bellshire
         >
         std::pair<observer_ptr<MatML_Class>, observer_ptr<MatML_Class> >
             MatML_Base::FindAndBumpUpHavingId(
-                observer_ptr<MatML_Class> element,
+                const observer_ptr<MatML_Class> element,
                 MatML_ContClass& cont
             )
         {
@@ -369,6 +359,7 @@ namespace bellshire
 
                 auto iter = std::find_if(cont.begin() + 1, cont.end(), is_equal);
                 if (iter != cont.end()) {
+
                     observer_ptr<MatML_Class> pair0 =(&*(iter - 1));
                     observer_ptr<MatML_Class> pair1=(&*(iter));
                     MatML_Base::SwapHavingId(pair0, pair1);
@@ -395,7 +386,7 @@ namespace bellshire
         >
         decltype(auto)
             MatML_Base::FindAndBumpUpHavingOptionalId(
-                observer_ptr<MatML_Class> element,
+                const observer_ptr<MatML_Class> element,
                 MatML_ContClass& cont
             )
         {
@@ -409,9 +400,11 @@ namespace bellshire
                 auto is_equal = [&element](MatML_Class& matml) {return (void*)&matml == (void*)element; };
                 auto iter = std::find_if(cont.begin() + 1, cont.end(), is_equal);
                 if (iter != cont.end()) {
-                    auto matml1{observer_ptr<MatML_Class>(&*(iter - 1))};
-                    auto matml2{observer_ptr<MatML_Class>(&*(iter))};
-                    SwapHavingOptionalId(matml1,matml2);
+
+                    observer_ptr<MatML_Class> pair0(&*(iter - 1));
+                    observer_ptr<MatML_Class> pair1(&*(iter));
+                    MatML_Base::SwapHavingOptionalId(pair0,pair1);
+                    return std::make_pair(pair0, pair1);
                 }
             }
             return  std::make_pair(
@@ -440,7 +433,10 @@ namespace bellshire
             class MatML_Class
         >
         decltype(auto)
-            MatML_Base::FindAndBumpDown(const observer_ptr<MatML_Class>& element, MatML_ContClass& cont)
+            MatML_Base::FindAndBumpDown(
+                const observer_ptr<MatML_Class>& element,
+                MatML_ContClass& cont
+            )
         {
             if (element) {
 
@@ -451,19 +447,14 @@ namespace bellshire
                 );
 
                 auto is_equal = [&element](MatML_Class& matml) {return (void*)&matml == (void*)element; };
-
                 auto iter = std::find_if(cont.begin(), cont.end() - 1, is_equal);
-
                 if (iter != cont.end() - 1) {
-                    std::swap(*(iter), *(iter + 1));
-                    return std::make_pair(&*(iter), &*(iter + 1));
+
+                    observer_ptr<MatML_Class> pair0 = (&*(iter));
+                    observer_ptr<MatML_Class> pair1 = (&*(iter + 1));
+                    MatML_Base::Swap(pair0, pair1);
+                    return std::make_pair(pair0, pair1);
                 }
-
-
-                return std::make_pair(
-                    observer_ptr<MatML_Class>(),
-                    observer_ptr<MatML_Class>()
-                );
             }
             return std::make_pair(
                 observer_ptr<MatML_Class>(),
@@ -487,7 +478,7 @@ namespace bellshire
         >
         std::pair<observer_ptr<MatML_Class>,observer_ptr<MatML_Class> >
             MatML_Base::FindAndBumpDownHavingId(
-                observer_ptr < MatML_Class> element,
+                const observer_ptr < MatML_Class> element,
                 MatML_ContClass& cont
             )
         {
@@ -499,7 +490,6 @@ namespace bellshire
                 );
 
                 auto is_equal = [&element](MatML_Class& matml) {return (void*)&matml == (void*)element; };
-
                 auto iter = std::find_if(cont.begin(), cont.end() - 1, is_equal);
                 if (iter != cont.end() - 1) {
                     observer_ptr<MatML_Class> pair0=(&*(iter));
@@ -529,10 +519,12 @@ namespace bellshire
             class MatML_Class
         >
         decltype(auto)
-            MatML_Base::FindAndBumpDownHavingOptionalId(observer_ptr < MatML_Class> element, MatML_ContClass& cont)
+            MatML_Base::FindAndBumpDownHavingOptionalId(
+               const observer_ptr < MatML_Class> element,
+                MatML_ContClass& cont
+            )
         {
             if (element) {
-
                 if (cont.empty() || cont.size() < 2)
                     return std::make_pair(
                         observer_ptr<MatML_Class>(),
@@ -540,17 +532,14 @@ namespace bellshire
                 );
 
                 auto is_equal = [&element](MatML_Class& matml) {return (void*)&matml == (void*)element; };
-
                 auto iter = std::find_if(cont.begin(), cont.end() - 1, is_equal);
                 if (iter != cont.end() - 1) {
-                    auto matml1{ observer_ptr<MatML_Class>(&*(iter)) };
-                    auto matml2{ observer_ptr<MatML_Class>(&*(iter + 1)) };
-                    if (matml1 && matml2) {
-                        SwapHavingOptionalId(matml1,matml2);
-                        return std::make_pair(matml1,matml2);
-                    }
+                    observer_ptr<MatML_Class> pair0=(&*(iter));
+                    observer_ptr<MatML_Class> pair1=(&*(iter+1));
+                    MatML_Base::SwapHavingOptionalId(pair0,pair1);
+                    return std::make_pair(pair0,pair1);
+                    
                 }
-
             }
             return std::make_pair(
                 observer_ptr<MatML_Class>(),

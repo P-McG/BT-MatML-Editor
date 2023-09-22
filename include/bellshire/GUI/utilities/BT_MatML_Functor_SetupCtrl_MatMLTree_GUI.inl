@@ -40,7 +40,6 @@ namespace bellshire::GUI::utilities
 
         if (element) {
             if (typeid(MatML) == typeid(MatML_Doc)) {
-
                 /// As this is the root element in the wxTreeCtrl, clear out all wxTreeCtrl data and start fresh.
                 if (!data_.MatMLTreeCtrl_->IsEmpty())
                     data_.MatMLTreeCtrl_->DeleteAllItems();

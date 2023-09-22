@@ -84,6 +84,9 @@ namespace bellshire {
 		static void InsertSeqContChild(MatML_ContClass& MatML_Cont);
 
 		template<class MatML_Class>
+		static void Swap(observer_ptr < MatML_Class >& matml0, observer_ptr < MatML_Class >& matml1);
+
+		template<class MatML_Class>
 		static void SwapHavingId(observer_ptr<MatML_Class>& matml0, observer_ptr<MatML_Class>& matml1);
 
 		template<class MatML_Class>
@@ -94,21 +97,21 @@ namespace bellshire {
 			class MatML_Class = typename MatML_ContClass::value_type
 		>
 		static decltype(auto)
-			FindAndBumpUp(observer_ptr<MatML_Class> matml, MatML_ContClass& cont);
+			FindAndBumpUp(const observer_ptr<MatML_Class> matml, MatML_ContClass& cont);
 
 		template<
 			class MatML_ContClass,
 			class MatML_Class = typename MatML_ContClass::value_type
 		>
 		static std::pair<observer_ptr<MatML_Class>, observer_ptr<MatML_Class> >
-			FindAndBumpUpHavingId(observer_ptr<MatML_Class> element, MatML_ContClass& cont);
+			FindAndBumpUpHavingId(const observer_ptr<MatML_Class> element, MatML_ContClass& cont);
 
 		template<
 			class MatML_ContClass,
 			class MatML_Class = typename MatML_ContClass::value_type
 		>
 		static decltype(auto)
-			FindAndBumpUpHavingOptionalId(observer_ptr<MatML_Class> element, MatML_ContClass& cont);
+			FindAndBumpUpHavingOptionalId(const observer_ptr<MatML_Class> element, MatML_ContClass& cont);
 
 		template<
 			class MatML_ContClass,
@@ -122,14 +125,14 @@ namespace bellshire {
 			class MatML_Class = typename MatML_ContClass::value_type
 		>
 		std::pair<observer_ptr<MatML_Class>, observer_ptr<MatML_Class> >
-			FindAndBumpDownHavingId(observer_ptr<MatML_Class> matml, MatML_ContClass& cont);
+			FindAndBumpDownHavingId(const observer_ptr<MatML_Class> matml, MatML_ContClass& cont);
 
 		template<
 			class MatML_ContClass,
 			class MatML_Class = typename MatML_ContClass::value_type
 		>
 		static decltype(auto)
-			FindAndBumpDownHavingOptionalId(observer_ptr<MatML_Class> matml, MatML_ContClass& cont);
+			FindAndBumpDownHavingOptionalId(const observer_ptr<MatML_Class> element, MatML_ContClass& cont);
 
 	};
 

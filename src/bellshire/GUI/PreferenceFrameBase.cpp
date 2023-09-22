@@ -133,39 +133,44 @@ void PreferenceFrameBase::CreateSortClassPanel()
 
 	m_SortClassPanel = new wxPanel(m_listbook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
 
-	wxBoxSizer* bSizer20 = new wxBoxSizer(wxVERTICAL);
+	wxFlexGridSizer* fgSizer215 = new wxFlexGridSizer(4, 2, 0, 0);
+	fgSizer215->AddGrowableCol(1);
+	fgSizer215->AddGrowableRow(3);
+	fgSizer215->SetFlexibleDirection(wxBOTH);
+	fgSizer215->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
 
-	wxStaticText* staticText20 = new wxStaticText(m_SortClassPanel, wxID_ANY, wxT("Sort Class"), wxDefaultPosition, wxDefaultSize, 0);
+	wxStaticText* m_staticText41 = new wxStaticText(m_SortClassPanel, wxID_ANY, wxT("Click to sort Material by Class order"), wxDefaultPosition, wxDefaultSize, 0);
+	m_staticText41->Wrap(-1);
+	fgSizer215->Add(m_staticText41, 0, wxALL, 5);
+
+	m_ClassSortSelection = new wxCheckBox(m_SortClassPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0);
+	m_ClassSortSelection->SetValue(false);
+	fgSizer215->Add(m_ClassSortSelection, 1, wxALL, 5);
+
+	wxStaticText* staticText20 = new wxStaticText(m_SortClassPanel, wxID_ANY, wxT("Sort Class Order"), wxDefaultPosition, wxDefaultSize, 0);
 	staticText20->Wrap(-1);
 	staticText20->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 
-	bSizer20->Add(staticText20, 0, wxALL, 5);
+	fgSizer215->Add(staticText20, 0, wxALL, 5);
 
-	wxFlexGridSizer* fgSizer20 = new wxFlexGridSizer(2, 2, 0, 0);
-	fgSizer20->AddGrowableCol(1);
-	fgSizer20->AddGrowableRow(1);
-	fgSizer20->SetFlexibleDirection(wxBOTH);
-	fgSizer20->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
+	fgSizer215->Add(0,0,0);
 
 	wxStaticText* staticText21 = new wxStaticText(m_SortClassPanel, wxID_ANY, wxT("Material's Class Sort Order"), wxDefaultPosition, wxDefaultSize, 0);
 	staticText21->Wrap(-1);
-	fgSizer20->Add(staticText21, 0, wxALL, 5);
+	fgSizer215->Add(staticText21, 0, wxALL, 5);
 
 	wxStaticText* staticText22 = new wxStaticText(m_SortClassPanel, wxID_ANY, wxT("Sorts view (not the xml file) as per the following: \n1) Material as per its Class->Name,\n2) Material as per its position in the xml file."), wxDefaultPosition, wxDefaultSize, 0);
 	staticText22->Wrap(-1);
-	fgSizer20->Add(staticText22, 0, wxALL, 5);
+	fgSizer215->Add(staticText22, 0, wxALL, 5);
 
-	fgSizer20->AddSpacer(0);
+	fgSizer215->AddSpacer(0);
 
 	m_ClassSortOrderListBox = new wxEditableListBox(m_SortClassPanel, wxID_ANY,wxT("Edit Sort Classes"), wxDefaultPosition, wxSize(50, 200));
-	fgSizer20->Add(m_ClassSortOrderListBox, 0, wxALL | wxEXPAND, 5);
+	fgSizer215->Add(m_ClassSortOrderListBox, 0, wxALL | wxEXPAND, 5);
 	
-
-	bSizer20->Add(fgSizer20, 0,wxALL| wxEXPAND, 5);
-
-	m_SortClassPanel->SetSizer(bSizer20);
+	m_SortClassPanel->SetSizer(fgSizer215);
 	m_SortClassPanel->Layout();
-	bSizer20->Fit(m_SortClassPanel);
+	fgSizer215->Fit(m_SortClassPanel);
 
 }
 

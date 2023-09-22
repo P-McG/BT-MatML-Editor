@@ -773,7 +773,6 @@ void MaterialFrame::OnExitSel( wxCommandEvent& event )
 /// <param name="event"></param>
 void MaterialFrame::OnEditMenuPreferencesItem( wxCommandEvent& event )
 {
-    //preferenceframe->MakeModal();
     preferenceframe->CenterOnScreen();
     preferenceframe->Show();
     preferenceframe->SetFocus();
@@ -978,6 +977,8 @@ void MaterialFrame::Popup_Paste(const boost::any& MatMLItemToCopy, Parent_GUICla
 /// <param name="pt"></param>
 void MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& pt)
 {
+    //for preferences
+    wxConfig config(wxT("BTMatML"));
 
     wxString title;
     if ( id.IsOk() )
@@ -1614,10 +1615,16 @@ void MaterialFrame::ShowContextMenu(wxTreeItemId id, const wxPoint& pt)
         Popup_Paste<Graphs>(m_MatMLItemToCopy, m_GUI->m_Material_GUI.get(), menu, ::std::string("Paste Graphs"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnPasteGraphs, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
         Popup_Paste<Glossary>(m_MatMLItemToCopy, m_GUI->m_Material_GUI.get(), menu, ::std::string("Paste Glossary"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnPasteGlossary, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
 
-        menu.AppendSeparator();
+        //only perform if the configuration is set for non-Class Sort.
+        bool b_dflt(false);//default value
+        assert(config.Read(wxT("/General/ClassSortSelection"), &b_dflt));
 
-        PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnBumpUp, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
-        PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnBumpDown, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
+        if (!b_dflt) {
+            menu.AppendSeparator();
+
+            PopupLinkBind(menu, ::std::string("BumpUp"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnBumpUp, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
+            PopupLinkBind(menu, ::std::string("BumpDown"), wxEVT_COMMAND_MENU_SELECTED, &::bellshire::GUI::Material_GUI_Base::OnBumpDown, (Material_GUI_Base*)m_GUI->m_Material_GUI.get());
+        }
 
         menu.AppendSeparator();
 

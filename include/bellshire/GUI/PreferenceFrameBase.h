@@ -69,9 +69,9 @@ namespace bellshire::GUI {
 		wxDirPickerCtrl* m_LibDirPicker;
 
 		wxPanel* m_SortClassPanel;
+		wxCheckBox* m_ClassSortSelection;
 		wxTextCtrl* m_ClassSortOrderTextCtrl;
 		wxButton* m_ClassSortOrderAddButton;
-		//wxListBox* m_ClassSortOrderListBox;
 		wxEditableListBox* m_ClassSortOrderListBox;
 
 		wxPanel* m_SavePanel;
