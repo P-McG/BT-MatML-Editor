@@ -11,7 +11,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Synonym_Base::TraverseMatMLTree(
-		observer_ptr < GlossaryTerm::Synonym_type > element,
+		const observer_ptr < GlossaryTerm::Synonym_type > element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

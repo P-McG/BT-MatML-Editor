@@ -14,7 +14,7 @@ namespace bellshire
 
 		template< class func_class>
 		static void TraverseMatMLTree(
-			observer_ptr < MatML_Doc > Element,
+			const observer_ptr < MatML_Doc > Element,
 			func_class& func,
 			RecursiveFlags recursive = {}
 		);

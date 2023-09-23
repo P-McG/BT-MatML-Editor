@@ -158,9 +158,10 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				doc->Metadata()->AuthorityDetails().push_back(*iterAuthorityDetails);
 
 				const observer_ptr<AuthorityDetails> authority_details (static_cast<AuthorityDetails*>( & doc->Metadata()->AuthorityDetails().back()));
-				AuthorityDetails_GUI::TraverseMatMLTree(authority_details,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+
+				AuthorityDetails_GUI::TraverseMatMLTree(authority_details, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -174,9 +175,9 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 			try	{
 				doc->Metadata()->DataSourceDetails().push_back(*iterDataSourceDetails);
 				 const observer_ptr<DataSourceDetails> datasourcedetails(static_cast<DataSourceDetails*> ( & doc->Metadata()->DataSourceDetails().back()));
-				DataSourceDetails_GUI::TraverseMatMLTree( datasourcedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(m_MatMLTreeCtrl)
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(m_MatMLTreeCtrl);
+				DataSourceDetails_GUI::TraverseMatMLTree( datasourcedetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -193,9 +194,10 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				const observer_ptr<MeasurementTechniqueDetails> 
 					measurementtechniquedetails 
 					(static_cast<MeasurementTechniqueDetails*>(& doc->Metadata()->MeasurementTechniqueDetails().back()));
-				MeasurementTechniqueDetails_GUI::TraverseMatMLTree(measurementtechniquedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+
+				MeasurementTechniqueDetails_GUI::TraverseMatMLTree(measurementtechniquedetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -212,9 +214,10 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				const observer_ptr<ParameterDetails>
 				parameterdetails
 				(static_cast<ParameterDetails*>(& doc->Metadata()->ParameterDetails().back()));
-				ParameterDetails_GUI::TraverseMatMLTree(parameterdetails,
-					Functor_SetupCtrl_MatMLTree_GUI(m_MatMLTreeCtrl)
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(m_MatMLTreeCtrl);
+
+				ParameterDetails_GUI::TraverseMatMLTree(parameterdetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -232,9 +235,10 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				observer_ptr<PropertyDetails>
 					propertydetails
 					(static_cast<PropertyDetails*>(&doc->Metadata()->PropertyDetails().back()));
-				PropertyDetails_GUI::TraverseMatMLTree(propertydetails,
-					Functor_SetupCtrl_MatMLTree_GUI(m_MatMLTreeCtrl)
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(m_MatMLTreeCtrl);
+
+				PropertyDetails_GUI::TraverseMatMLTree(propertydetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -249,10 +253,12 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				doc->Metadata()->SourceDetails().push_back(*iterSourceDetails);
 				observer_ptr<SourceDetails>
 					sourcedetails
-					(static_cast<SourceDetails*>(&doc->Metadata()->SourceDetails().back()));
-				SourceDetails_GUI::TraverseMatMLTree(sourcedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId })
-				);
+					(static_cast<SourceDetails*>(&doc->Metadata()->SourceDetails().back())
+					);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId });
+
+				SourceDetails_GUI::TraverseMatMLTree(sourcedetails,func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -269,9 +275,9 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				observer_ptr<SpecimenDetails>
 					specimendetails
 					(static_cast<SpecimenDetails*>(&doc->Metadata()->SpecimenDetails().back()));
-				SpecimenDetails_GUI::TraverseMatMLTree(specimendetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId,wxTreeItemId() })
-				);
+
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId,wxTreeItemId() });
+				SpecimenDetails_GUI::TraverseMatMLTree(specimendetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -287,9 +293,10 @@ void MaterialFrame::SetupTemplateDoc(observer_ptr<Material> element)
 				observer_ptr<TestConditionDetails>
 					testconditiondetails
 					(static_cast<TestConditionDetails*>(&doc->Metadata()->TestConditionDetails().back()));
-				TestConditionDetails_GUI::TraverseMatMLTree(testconditiondetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId })
-				);
+
+
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl,MetadataId });
+				TestConditionDetails_GUI::TraverseMatMLTree(testconditiondetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -409,9 +416,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					authoritydetails
 					(static_cast<AuthorityDetails*>(&doc->Metadata()->AuthorityDetails().back()));
 
-				AuthorityDetails_GUI::TraverseMatMLTree(authoritydetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				AuthorityDetails_GUI::TraverseMatMLTree(authoritydetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -429,9 +435,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					datasourcedetails
 					(static_cast<DataSourceDetails*>(&doc->Metadata()->DataSourceDetails().back()));
 
-				DataSourceDetails_GUI::TraverseMatMLTree(datasourcedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				DataSourceDetails_GUI::TraverseMatMLTree(datasourcedetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -450,9 +455,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					measurementtechniquedetails
 					(static_cast<MeasurementTechniqueDetails*>(&doc->Metadata()->MeasurementTechniqueDetails().back()));
 
-				MeasurementTechniqueDetails_GUI::TraverseMatMLTree(measurementtechniquedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				MeasurementTechniqueDetails_GUI::TraverseMatMLTree(measurementtechniquedetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -471,9 +475,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					parameterdetails
 					(static_cast<ParameterDetails*>(&doc->Metadata()->ParameterDetails().back()));
 
-				ParameterDetails_GUI::TraverseMatMLTree(parameterdetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				ParameterDetails_GUI::TraverseMatMLTree(parameterdetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -493,9 +496,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					propertydetails
 					(static_cast<PropertyDetails*>(&doc->Metadata()->PropertyDetails().back()));
 
-				PropertyDetails_GUI::TraverseMatMLTree(propertydetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				PropertyDetails_GUI::TraverseMatMLTree(propertydetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -513,9 +515,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					sourcedetails
 					(static_cast<SourceDetails*>(&doc->Metadata()->SourceDetails().back()));
 
-				SourceDetails_GUI::TraverseMatMLTree(sourcedetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				SourceDetails_GUI::TraverseMatMLTree(sourcedetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -534,9 +535,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					specimendetails
 					(static_cast<SpecimenDetails*>(&doc->Metadata()->SpecimenDetails().back()));
 
-				SpecimenDetails_GUI::TraverseMatMLTree(specimendetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				SpecimenDetails_GUI::TraverseMatMLTree(specimendetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}
@@ -554,9 +554,8 @@ void MaterialFrame::CopyTemplateMetadata()
 					testconditiondetails
 					(static_cast<TestConditionDetails*>(&doc->Metadata()->TestConditionDetails().back()));
 
-				TestConditionDetails_GUI::TraverseMatMLTree(testconditiondetails,
-					Functor_SetupCtrl_MatMLTree_GUI(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId })
-				);
+				Functor_SetupCtrl_MatMLTree_GUI func(Functor_SetupCtrl_MatMLTree_GUI::Data{ m_MatMLTreeCtrl, MetadataId });
+				TestConditionDetails_GUI::TraverseMatMLTree(testconditiondetails, func);
 			}
 			catch(...){}//tried this exception. Didn't work "const xml_schema::xsi_already_in_use&"
 		}

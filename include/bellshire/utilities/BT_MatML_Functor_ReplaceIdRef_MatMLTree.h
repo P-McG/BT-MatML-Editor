@@ -12,39 +12,39 @@
 
 namespace bellshire::utilities
 {
-    class Functor_ReplaceIdRef_MatMLTree
-    {
-    public:
-        using Find_type = ::xml_schema::idref;
-        using Replace_type = ::xml_schema::idref;
+    //class Functor_ReplaceIdRef_MatMLTree
+    //{
+    //public:
+    //    using Find_type = ::xml_schema::idref;
+    //    using Replace_type = ::xml_schema::idref;
 
-        struct Data {
-            Find_type find_;
-            Replace_type replace_;
-        };
+    //    struct Data {
+    //        Find_type find_;
+    //        Replace_type replace_;
+    //    };
 
-        Data data_;//!< Data to be used during tree transversal
+    //    Data data_;//!< Data to be used during tree transversal
 
-        /// <summary>
-        /// Ctor
-        /// </summary>
-        /// <param name="data_in"></param>
-        Functor_ReplaceIdRef_MatMLTree(Functor_ReplaceIdRef_MatMLTree::Data data
-        ) : data_(data)
-        {}
+    //    /// <summary>
+    //    /// Ctor
+    //    /// </summary>
+    //    /// <param name="data_in"></param>
+    //    Functor_ReplaceIdRef_MatMLTree(Functor_ReplaceIdRef_MatMLTree::Data data
+    //    ) : data_(data)
+    //    {}
 
-        /// <summary>
-        /// Ctor Function to Setup the next child functor.
-        /// </summary>
-        /// <param name="func"></param>
-        Functor_ReplaceIdRef_MatMLTree(Functor_ReplaceIdRef_MatMLTree& func)
-            :data_(func.data_)
-        {}
+    //    /// <summary>
+    //    /// Ctor Function to Setup the next child functor.
+    //    /// </summary>
+    //    /// <param name="func"></param>
+    //    Functor_ReplaceIdRef_MatMLTree(Functor_ReplaceIdRef_MatMLTree& func)
+    //        :data_(func.data_)
+    //    {}
 
-        template<class MatML>
-            wxTreeItemId operator()(const observer_ptr<MatML> element);
+    //    template<class MatML>
+    //        wxTreeItemId operator()(const observer_ptr<MatML> element);
 
-    };
+    //};
 
 };//end namespace bellshire
 

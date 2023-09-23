@@ -12,10 +12,10 @@ namespace bellshire
 		Name_Base() {};
 		virtual ~Name_Base() {};
 
-		template<class cur_func_class>
+		template<class func_class>
 		static void TraverseMatMLTree(
-			observer_ptr < Name > element,
-			cur_func_class& cur_func,
+			const observer_ptr < Name > element,
+			func_class& cur_func,
 			RecursiveFlags recursive = {}
 		);
 

@@ -12,7 +12,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Concentration_Base::TraverseMatMLTree(
-		observer_ptr<Concentration> element,
+		const observer_ptr<Concentration> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

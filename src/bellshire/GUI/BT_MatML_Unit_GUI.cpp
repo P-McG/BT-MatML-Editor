@@ -458,9 +458,8 @@ void Unit_GUI::OnInsertCurrency(wxCommandEvent& event) {
 				bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI::Data data{ 
 					m_MatMLTreeCtrl, m_MatMLTreeCtrl->GetItemParent(selItemId),selItemId 
 				};
-				Unit_GUI::TraverseMatMLTree(element_observer,
-					bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI(data)
-				);
+				bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI func(data);
+				Unit_GUI::TraverseMatMLTree(element_observer, func);
 
                 wxTreeItemId selNextItemId = m_MatMLTreeCtrl->GetNextSibling(selItemId); 
 				if(selNextItemId.IsOk()) { 

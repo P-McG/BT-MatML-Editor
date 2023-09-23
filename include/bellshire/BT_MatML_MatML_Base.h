@@ -2,6 +2,7 @@
 
 #include <list>
 #include <utility>
+#include <execution>
 
 #include "bellshire/matml31.hxx"
 #include "bellshire/matml31_strongly_typed_def.h"
@@ -47,13 +48,15 @@ namespace bellshire {
 			class Child,
 			class Child_cont,
 			class Child_MatML_Base,
-			class func_class
+			class Func_class,
+			class ExecutionPolicy = std::execution::sequenced_policy
 		>
 		static void SetUpChildSequence(
 			observer_ptr<Parent> Element,
 			Child_cont& (Parent::* cont_func)(),
-			func_class& func,
-			RecursiveFlags recursive = {}
+			Func_class& func,
+			RecursiveFlags recursive = {},
+			ExecutionPolicy policy = std::execution::seq
 		);
 
 		template<typename MatML_ContClass >

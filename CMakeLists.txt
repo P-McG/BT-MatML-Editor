@@ -18,7 +18,7 @@ set(CMAKE_DEBUG_POSTFIX d)
 set(CPACK_PACKAGE_VENDOR "BT-MatML-Editor development team")
 
 add_library(BT-MatML-Editor_compiler_flags INTERFACE)
-target_compile_features(BT-MatML-Editor_compiler_flags INTERFACE cxx_std_17)
+target_compile_features(BT-MatML-Editor_compiler_flags INTERFACE cxx_std_20)
 
 
 set(gcc_like_cxx "$<COMPILE_LANG_AND_ID:CXX,ARMClang,AppleClang,Clang,GNU,LCC>")

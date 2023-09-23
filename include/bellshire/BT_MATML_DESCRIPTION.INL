@@ -7,7 +7,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Description_Base::TraverseMatMLTree(
-		observer_ptr<Form::Description_type> element,
+		const observer_ptr<Form::Description_type> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

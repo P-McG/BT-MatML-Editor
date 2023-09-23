@@ -10,9 +10,9 @@ namespace bellshire
 {
 	template<class func_class>
 	void Element_Base::TraverseMatMLTree(
-		observer_ptr<Element> element,
+		const observer_ptr<Element> element,
 		func_class& func,
-		std::list<bool> recursive
+		RecursiveFlags recursive
 	)
 	{
 		func.operator()(element);//Setup current

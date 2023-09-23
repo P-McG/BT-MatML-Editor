@@ -14,7 +14,8 @@
 namespace bellshire
 {
 	template<class func_class>
-	void Metadata_Base::TraverseMatMLTree(observer_ptr<Metadata> element,
+	void Metadata_Base::TraverseMatMLTree(
+		const observer_ptr<Metadata> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

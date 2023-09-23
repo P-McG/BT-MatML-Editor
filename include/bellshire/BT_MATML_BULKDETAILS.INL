@@ -15,7 +15,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void BulkDetails_Base::TraverseMatMLTree(
-		observer_ptr<BulkDetails> element,
+		const observer_ptr<BulkDetails> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

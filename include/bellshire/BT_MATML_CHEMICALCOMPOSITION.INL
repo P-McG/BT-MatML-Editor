@@ -9,7 +9,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void ChemicalComposition_Base::TraverseMatMLTree(
-		observer_ptr<ChemicalComposition> element,
+		const observer_ptr<ChemicalComposition> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

@@ -1,4 +1,7 @@
 #pragma once
+
+#include <memory>
+
 #include "bellshire/GUI/BT_MatML_MatMLDropTarget.h"
 #include "bellshire/utilities/BT_MatML_Functor_GatherIdRefPtrs_MatMLTree.h"
 #include "bellshire/BT_MatML.h"
@@ -29,19 +32,19 @@ namespace bellshire::GUI
 		{
 			try {
 
-				 auto element_parent_observer = boost::any_cast<observer_ptr<MatML_ParentClass>>(parentdata);
-				 auto element_observer = remove_strongly_typed_on_observer_ptr_v(boost::any_cast<observer_ptr<MatML_Class>>(data));
+				auto element_parent_observer = boost::any_cast<observer_ptr<MatML_ParentClass>>(parentdata);
+				auto element_observer = remove_strongly_typed_on_observer_ptr_v(boost::any_cast<observer_ptr<MatML_Class>>(data));
 
-				if (element_parent_observer && element_observer)
-				{
-					//Make a unique element to go into the MatML Tree container.
-					 auto& element_unique=make_unique<MatML_ContClass::value_type>(*element_observer);
-					(element_parent_observer->*cont_func)().push_back(std::move(element_unique));//copy matml element
+				assert(element_parent_observer && element_observer);
 
-					MatML_GUI_Base::SetupSel<MatML_ParentClass, MatML_GUI>(m_MatMLTreeCtrl);
+				//Make a unique element to go into the MatML Tree container.
+				auto element_unique = std::make_unique<typename MatML_ContClass::value_type>(*element_observer);
+				(element_parent_observer->*cont_func)().push_back(std::move(element_unique));//copy matml element
 
-					return defResult;
-				}
+				MatML_GUI_Base::SetupSel<MatML_ParentClass, MatML_GUI>(m_MatMLTreeCtrl);
+
+				return defResult;
+
 
 			}
 			catch (const boost::bad_any_cast&) {};

@@ -162,10 +162,9 @@ void MaterialFrame::OnNewSel( wxCommandEvent& event )
     GetMatMLTreeCtrl()->DeleteAllItems();/*! Delete all Items in MatML wxTreeCtrl */
     m_MatMLItemToCopy=nullptr;/*! reset MatML Item to copy to nullptr */
 
-    
-    MatML_Doc_GUI::TraverseMatMLTree(doc.get(),
-        bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI(m_MatMLTreeCtrl)
-    );/*! Set the MatML Elements to the wxTreeCtrl.*/
+    bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI func(m_MatMLTreeCtrl);
+
+    MatML_Doc_GUI::TraverseMatMLTree( doc.get(), func);/*! Set the MatML Elements to the wxTreeCtrl.*/
 
     GetGUI()->SetEvtHandlerVar(GetMatMLTreeCtrl(), doc.get());/*! Set the Event Handler's Variables for the MatML_GUIs.*/
 
@@ -3121,12 +3120,12 @@ wxTreeItemId MaterialFrame::findTreeItem(TreeCtrlSorted* pTreeCtrl, const wxTree
     wxTreeItemId item=root, child;
     wxTreeItemIdValue cookie;
     MatMLTreeItemData findMatML_Data(MatML_Data);
-    bool bFound;
+    bool bFound=false;
 
     while(item.IsOk())
     {
         MatMLTreeItemData* ItemData=(MatMLTreeItemData *)(pTreeCtrl->GetItemData(item));
-        bFound=(findMatML_Data==*ItemData);
+        bFound= findMatML_Data.operator==(*ItemData );
         if(bFound) return item;
         child = pTreeCtrl->GetFirstChild(item, cookie);
         if(child.IsOk()) child = findTreeItem(pTreeCtrl, child, MatML_Data);

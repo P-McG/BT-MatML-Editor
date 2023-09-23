@@ -7,7 +7,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Orientation_Base::TraverseMatMLTree(
-		observer_ptr<Geometry::Orientation_type> element,
+		const observer_ptr<Geometry::Orientation_type> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

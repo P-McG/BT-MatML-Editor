@@ -7,7 +7,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Dimensions_Base::TraverseMatMLTree(
-		observer_ptr<Geometry::Dimensions_type> element,
+		const observer_ptr<Geometry::Dimensions_type> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

@@ -6,19 +6,19 @@
 namespace bellshire::utilities
 {
 
-    /// <summary>
-    /// Main evaluation function
-    /// </summary>
-    /// <typeparam name="MatML"></typeparam>
-    /// <typeparam name="MatML_GUI"></typeparam>
-    /// <param name="Element"></param>
-    /// <returns></returns>
-    template<class MatML >
-    wxTreeItemId Functor_ReplaceIdRef_MatMLTree
-        ::operator()(const observer_ptr<MatML> element)
-    {     
-       Replace_IdRef(element, find_, replace_);
-    };
+    ///// <summary>
+    ///// Main evaluation function
+    ///// </summary>
+    ///// <typeparam name="MatML"></typeparam>
+    ///// <typeparam name="MatML_GUI"></typeparam>
+    ///// <param name="Element"></param>
+    ///// <returns></returns>
+    //template<class MatML >
+    //wxTreeItemId Functor_ReplaceIdRef_MatMLTree
+    //    ::operator()(const observer_ptr<MatML> element)
+    //{     
+    //   Replace_IdRef(element, find_, replace_);
+    //};
 
 };//end namespace bellshire
 

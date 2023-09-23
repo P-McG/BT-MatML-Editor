@@ -1,6 +1,9 @@
 #pragma once
 
 #include <algorithm>
+#include <future>
+#include <ranges>
+#include < execution >
 
 #include "bellshire/matml31.hxx"
 #include "bellshire/matml31_strongly_typed_def.h"
@@ -45,7 +48,6 @@ namespace bellshire
         auto element_observer{ remove_strongly_typed_on_observer_ptr_v(element) };
         if (element_observer) {
 
-            //const auto& cont {&(element_observer.get()->*cont_func)() };
             const auto* cont{ &((*element_observer).*cont_func)() };
 
             if (cont->present()) { 
@@ -59,25 +61,51 @@ namespace bellshire
         class Child,
         class Child_cont,
         class Child_MatML_Base,
-        class func_class
+        class Func_class,
+        class ExecutionPolicy
     >
     void MatML_Base::SetUpChildSequence(observer_ptr<Parent> element,
         Child_cont& (Parent::* cont_func)(),
-        func_class& func,
-        RecursiveFlags recursive
+        Func_class& func,
+        RecursiveFlags recursive,
+        ExecutionPolicy policy
     )
     {
-        if (element) {
-            Child_cont& cont((element->*cont_func)());
+        assert(element);
 
-            if (!cont.empty())
-                for (typename Child_cont::iterator itr{ cont.begin() };
-                    itr != cont.end();
-                    ++itr
-                    ) {
-                     auto element_child{ remove_strongly_typed_on_observer_ptr_v( &*itr) };
-                    Child_MatML_Base::TraverseMatMLTree(element_child, func, recursive);
-                }
+        //Run the MatML_Doc children in parallel.
+        if (typeid(element) == typeid(observer_ptr<MatML_Doc>)) {
+
+            const Child_cont& cont((element->*cont_func)());
+            if (!cont.empty()) {
+                auto ints = std::views::iota(0, int(cont.size()));
+                std::for_each
+                    (
+                    policy,
+                    std::begin(ints),
+                    std::end(ints),
+                    [&cont, &func, recursive](size_t i) {
+                        Child_MatML_Base::TraverseMatMLTree(observer_ptr<Child_cont::value_type>( & cont[i]), func, recursive);
+                    }
+                );
+            }
+        }
+        else {
+            //run all other MatML Class types in sequential policy
+            const Child_cont& cont((element->*cont_func)());
+            if (!cont.empty()) {
+                auto ints = std::views::iota(0, int(cont.size()));
+                std::for_each
+                (
+                    std::execution::seq,
+                    std::begin(ints),
+                    std::end(ints),
+                    [&cont, &func, recursive](size_t i) {
+                        Child_MatML_Base::TraverseMatMLTree(observer_ptr<Child_cont::value_type>(&cont[i]), func, recursive);
+                    }
+                );
+            }
+            
         }
     }
 
@@ -109,7 +137,6 @@ namespace bellshire
         {
             auto& cont(matml_cont);
             if (matml) {
-                //auto is_equal = [matml_shared](MatML_Class matml) {return (void*)&matml == (void*)matml_shared.get(); };
               
                 auto is_equal = [matml](auto element) {
                     auto rhs{ remove_strongly_typed_on_observer_ptr_v(matml)};

@@ -11,7 +11,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void CurrencyCode_Base::TraverseMatMLTree(
-		std::shared_ptr<CurrencyCode> element,
+		const observer_ptr<CurrencyCode> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

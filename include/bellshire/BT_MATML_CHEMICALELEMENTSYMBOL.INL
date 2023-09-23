@@ -7,7 +7,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void ChemicalElementSymbol_Base::TraverseMatMLTree(
-		std::shared_ptr<ChemicalElementSymbol> element,
+		const observer_ptr<ChemicalElementSymbol> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

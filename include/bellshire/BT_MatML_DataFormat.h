@@ -13,7 +13,7 @@ namespace bellshire
 
 		template<class func_class>
 		static void TraverseMatMLTree(
-			std::shared_ptr<DataFormat> Element,
+			const observer_ptr<DataFormat> Element,
 			func_class& func,
 			RecursiveFlags recursive = {}
 		);

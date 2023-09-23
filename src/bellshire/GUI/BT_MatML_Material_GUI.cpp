@@ -580,11 +580,13 @@ void Material_GUI::OnCopyMaterial(wxCommandEvent& event) {
 					}
 
 					auto material_new{observer_ptr<Material>( & *NewIter)};
-					Material_GUI::TraverseMatMLTree(material_new,
-						bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI(
-							bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI::Data{
-								m_MatMLTreeCtrl, m_MatMLTreeCtrl->GetRootItem(), itemId 
-							}));
+
+					bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI func(
+						bellshire::GUI::utilities::Functor_SetupCtrl_MatMLTree_GUI::Data{
+							m_MatMLTreeCtrl, m_MatMLTreeCtrl->GetRootItem(), itemId
+						});
+
+					Material_GUI::TraverseMatMLTree(material_new, func);
 
 					wxTreeItemId newselection(m_MatMLTreeCtrl->GetNextSibling(itemId));//nay give problems if the copy did not suceed.
 					m_MatMLTreeCtrl->SelectItem(newselection);

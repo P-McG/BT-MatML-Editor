@@ -7,13 +7,13 @@ namespace bellshire
 {
 	template<class func_class>
 	void Unit_Base::TraverseMatMLTree(
-		observer_ptr < Unit > element,
+		const observer_ptr <Unit > element,
 		func_class& func,
 		RecursiveFlags recursive
 	)
 	{
 		func.operator()(element);//Setup current
-		func_class next_func(func);//Setup child
+		//func_class next_func(func);//Setup child
 	}
 
 };//end bellshire namespace

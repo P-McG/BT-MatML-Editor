@@ -7,7 +7,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void Graph_Base::TraverseMatMLTree(
-		observer_ptr < Graph > element,
+		const observer_ptr < Graph > element,
 		func_class& func, 
 		RecursiveFlags recursive
 	)

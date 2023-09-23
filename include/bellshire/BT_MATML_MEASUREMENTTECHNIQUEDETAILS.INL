@@ -9,7 +9,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void MeasurementTechniqueDetails_Base::TraverseMatMLTree(
-		observer_ptr < MeasurementTechniqueDetails > element,
+		const observer_ptr < MeasurementTechniqueDetails > element,
 		func_class& func,
 		RecursiveFlags recursive
 	)

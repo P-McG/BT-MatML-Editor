@@ -11,7 +11,7 @@ namespace bellshire
 {
 	template<class func_class>
 	void PhaseComposition_Base::TraverseMatMLTree(
-		observer_ptr<PhaseComposition> element,
+		const observer_ptr<PhaseComposition> element,
 		func_class& func,
 		RecursiveFlags recursive
 	)
